@@ -7,7 +7,7 @@
 
 ## Overview
 
-Adapted three official Claude Code LSP plugins to OpenClaw skills format, enabling language server protocol support for Python, TypeScript, and Solidity development.
+Adapted official Claude Code LSP plugins to OpenClaw skills format, enabling language server protocol support for Python, TypeScript, Go, and Solidity development.
 
 ## Created Skills
 
@@ -61,7 +61,34 @@ tsc --watch --noEmit  # continuous checking
 
 ---
 
-### 3. solidity-lsp
+### 3. gopls-lsp
+**Location:** `~/.openclaw/skills/gopls-lsp`  
+**Package:** `/home/bowen/clawd/gopls-lsp.skill`
+
+**Capabilities:**
+- Go code intelligence (autocomplete, go-to-def, find refs)
+- Real-time error detection
+- Refactoring (rename, extract function)
+- Static analysis and code suggestions
+- Supports `.go` files
+
+**Installation:**
+```bash
+go install golang.org/x/tools/gopls@latest
+# Make sure $GOPATH/bin or $HOME/go/bin is in PATH
+```
+
+**Usage:**
+```bash
+gofmt -w file.go  # format
+go vet ./...      # lint
+go build ./...    # compile
+go test ./...     # test
+```
+
+---
+
+### 4. solidity-lsp
 **Location:** `~/.openclaw/skills/solidity-lsp`  
 **Package:** `/home/bowen/clawd/solidity-lsp.skill`
 
@@ -90,13 +117,14 @@ solhint 'contracts/**/*.sol'
 ## Verification
 
 ```bash
-$ openclaw skills list | grep -E "(pyright|typescript|solidity)"
+$ openclaw skills list | grep -E "(pyright|typescript|gopls|solidity)"
+│ ✓ ready   │ 📦 gopls-lsp      │ Go language server...        │ openclaw-workspace │
 │ ✓ ready   │ 📦 pyright-lsp    │ Python language server...    │ openclaw-workspace │
 │ ✓ ready   │ 📦 solidity-lsp   │ Solidity language server...  │ openclaw-workspace │
 │ ✓ ready   │ 📦 typescript-lsp │ TypeScript language server...│ openclaw-workspace │
 ```
 
-All three skills show ✓ ready status!
+All four skills show ✓ ready status!
 
 ---
 
@@ -104,15 +132,17 @@ All three skills show ✓ ready status!
 
 Adapted from Anthropic's official Claude Code plugins:
 - https://github.com/anthropics/claude-plugins-official/tree/main/plugins/pyright-lsp
-- Similar official plugins for TypeScript and Solidity
+- https://github.com/anthropics/claude-plugins-official/tree/main/plugins/typescript-lsp
+- https://github.com/anthropics/claude-plugins-official/tree/main/plugins/gopls-lsp
+- Solidity LSP is custom-created for ClawChain development
 
 ---
 
 ## Next Steps
 
 1. **Test skills** on real code files
-2. **Consider publishing to ClawHub** after validation (7-day GitHub account requirement)
-3. **Add more LSP skills** as needed (Go, Rust, etc.)
+2. **Consider publishing to ClawHub** after validation (7-day GitHub account requirement: Feb 12, 2026)
+3. **Add more LSP skills** as needed (Rust, C++, Java, etc.)
 4. **Integrate with ClawChain** development workflow
 
 ---
