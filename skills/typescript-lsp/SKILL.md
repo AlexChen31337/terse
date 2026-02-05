@@ -1,11 +1,11 @@
 ---
 name: typescript-lsp
-description: TypeScript language server providing type checking, code intelligence, and LSP diagnostics for .ts, .tsx, .js, .jsx files. Use when working with TypeScript or JavaScript code that needs type checking, autocomplete, error detection, refactoring support, or code navigation.
+description: TypeScript language server providing type checking, code intelligence, and LSP diagnostics for .ts, .tsx, .js, .jsx, .mts, .cts, .mjs, .cjs files. Use when working with TypeScript or JavaScript code that needs type checking, autocomplete, error detection, refactoring support, or code navigation.
 ---
 
 # TypeScript LSP
 
-TypeScript language server integration providing comprehensive type checking and code intelligence through the official TypeScript compiler.
+TypeScript/JavaScript language server integration providing comprehensive code intelligence through typescript-language-server.
 
 ## Capabilities
 
@@ -13,24 +13,30 @@ TypeScript language server integration providing comprehensive type checking and
 - **Code intelligence**: Autocomplete, go-to-definition, find references, rename symbols
 - **Error detection**: Real-time diagnostics for type errors, syntax issues, and semantic problems
 - **Refactoring**: Extract function/variable, organize imports, quick fixes
-- **Supported extensions**: `.ts`, `.tsx`, `.js`, `.jsx`
+- **Supported extensions**: `.ts`, `.tsx`, `.js`, `.jsx`, `.mts`, `.cts`, `.mjs`, `.cjs`
 
-## Installation Check
+## Installation
 
-TypeScript is typically installed per-project. Verify availability:
+Install TypeScript language server and TypeScript compiler:
 
 ```bash
-which tsc || npm install -g typescript
+npm install -g typescript-language-server typescript
 ```
 
-Check version:
+Or with yarn:
 ```bash
+yarn global add typescript-language-server typescript
+```
+
+Verify installation:
+```bash
+typescript-language-server --version
 tsc --version
 ```
 
 ## Usage
 
-Run type checking:
+The language server runs automatically in LSP-compatible editors. For manual type checking:
 
 ```bash
 tsc --noEmit  # Type check without generating output files
@@ -87,6 +93,7 @@ When editing TypeScript/JavaScript code:
 
 ## More Information
 
+- [typescript-language-server on npm](https://www.npmjs.com/package/typescript-language-server)
+- [GitHub Repository](https://github.com/typescript-language-server/typescript-language-server)
 - [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
 - [TypeScript Compiler Options](https://www.typescriptlang.org/tsconfig)
-- [GitHub Repository](https://github.com/microsoft/TypeScript)
