@@ -8,6 +8,22 @@
     "bird": {
       "version": "1.0.0",
       "installedAt": 1770109439442
+    },
+    "reddit-cli": {
+      "version": "1.0.2",
+      "installedAt": 1770193205347
+    },
+    "email": {
+      "version": "1.1.0",
+      "installedAt": 1770193255169
+    },
+    "imap-smtp-email": {
+      "version": "0.0.2",
+      "installedAt": 1770193264568
+    },
+    "discord-chat": {
+      "version": "1.0.0",
+      "installedAt": 1770199312167
     }
   }
 }

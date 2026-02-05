@@ -76,46 +76,6 @@ Score = (Commits × 1K) + (PRs × 5K) + (Docs × 2K) + (Community Impact × vari
 
 ---
 
-### AlphaStrike Trading Bot
-**Purpose:** Autonomous crypto trading bot for competition mode  
-**Location:** `/home/bowen/projects/autonomous-coding/alphastrike/`  
-**Current Status:** v2.0 ready for testing
-
-**Philosophy:** Trade Big, Trade Less, Trade with Confidence
-
-**Key Stats:**
-- Balance: $726.60 USDT (WEEX exchange)
-- Platform: WEEX perpetual futures (20x max leverage)
-- Target: 30-50% monthly returns (competition mode)
-
-**v2.0 Conviction Scaling (Feb 2026):**
-| Conv | Leverage | Risk | Stop | Target | Equity Limit |
-|------|----------|------|------|--------|--------------|
-| 1-2  | 2x  | 1.5% | 2.5% | +3%/+6% | 40% |
-| 3    | 5x  | 2.5% | 2.0% | +3%/+6% | 40% |
-| 4    | 10x | 4.0% | 2.0% | +3%/+6% | 60% |
-| 5    | 20x | 6.0% | 1.5% | +12%   | 80% |
-
-**Risk Profile:**
-- Conviction 5 example: $2,932 notional, $146 margin, -$44 max loss, +$352 target (8:1 R/R)
-- Max 2 trades/day, 4-hour cooldown
-- Tight stops on high conviction reduce slippage
-
-**Evolution:**
-- **v1.0 Issue (Jan 30):** Too conservative - LONG>0.90, SHORT<0.10 thresholds paralyzed bot (100% HOLD rate)
-- **v2.0 Fix (Feb 1):** Aggressive conviction-based scaling, 20x on A+ setups
-- **Projection:** 105% monthly @ 60% win rate vs 18.8% in v1.0
-
-**Tech Stack:**
-- 60K LOC, professional-grade
-- Ensemble ML models, multi-timeframe analysis
-- Custom WEEX API client with AI logging
-- State tracking, Telegram notifications
-
-**Status:** Code ready, awaiting simulation testing before live deployment
-
----
-
 ## 🔧 Technical Setup
 
 ### OpenClaw Configuration
@@ -130,7 +90,6 @@ Score = (Commits × 1K) + (PRs × 5K) + (Docs × 2K) + (Community Impact × vari
 - **Security:** MEMORY.md only loads in main session (private context)
 
 ### Heartbeat Tasks (HEARTBEAT.md)
-- **Every heartbeat:** ADA position risk check (liquidation @ $0.2793, alert @ $0.2820)
 - **Every 4h:** Moltbook DM/feed check
 - **Every 24h:** GitHub notifications
 - **Proactive:** Memory reviews, file organization, git commits
@@ -164,28 +123,6 @@ Score = (Commits × 1K) + (PRs × 5K) + (Docs × 2K) + (Community Impact × vari
 
 ---
 
-### Trading Strategy Insights (Jan 30)
-From research on winning strategies:
-1. **Statistical Arbitrage** - Highest Sharpe ratios (Renaissance style)
-2. **Global Macro** - High absolute returns (Soros/Druckenmiller)
-3. **Momentum (3-12 month)** - Consistent 12-15% annually
-4. **Volatility Selling** - Theta decay profits (Saliba style)
-5. **Carry Trade** - Interest rate differentials
-
-**For competition success:**
-- Need aggressive thresholds (not 0.90/0.10)
-- Deploy 60-70% capital (not 40%)
-- Trade more, fear less
-- Trust high-conviction signals
-
-### Bot Development Philosophy
-- Excellent risk management protecting capital
-- Too much safety = missed opportunity in competitions
-- Conviction scaling solves this: conservative default, aggressive when confident
-- "Trade Less" only works if you "Trade Big" on A+ setups
-
----
-
 ## 📝 Patterns & Preferences
 
 ### Communication Style
@@ -210,18 +147,6 @@ From research on winning strategies:
 
 ## 🚨 Important Context
 
-### WEEX Trading Credentials
-- API configured in alphastrike bot
-- Custom client with AI logging feature
-- Balance verification working: $726.60 USDT
-- BTC price tracked: ~$78,485 (Jan 31)
-
-### ADA Position
-- **Critical risk:** Liquidation at $0.2793
-- **Alert threshold:** $0.2820
-- **Monitor:** EVERY heartbeat via `check_ada_risk.sh`
-- **Action:** Urgent message if alert triggered
-
 ### Moltbook Account
 - Credentials in `memory/moltbook-credentials.json`
 - API token: `moltbook_sk_Lf_NXhQAeQmh_oikk-qSbsUtsTbpa6Xb`
@@ -231,13 +156,6 @@ From research on winning strategies:
 ---
 
 ## 🔮 Future Considerations
-
-### AlphaStrike Next Steps
-1. Run v2.0 simulation (1 week minimum)
-2. Validate Conv 5 signal quality (truly A+ setups?)
-3. Small capital test ($100-200)
-4. Monitor emotional response to 20x leverage
-5. Have rollback plan if underperforms
 
 ### Potential Skill Additions
 Consider enabling:

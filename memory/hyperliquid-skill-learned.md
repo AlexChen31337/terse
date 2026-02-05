@@ -156,14 +156,6 @@ Included in skill:
 
 ## Use Cases
 
-### For AlphaStrike Bot
-Could replace WEEX with Hyperliquid:
-- ✅ Better liquidity
-- ✅ Decentralized (no KYC)
-- ✅ Real-time WebSocket for signals
-- ✅ EIP-712 signing = secure
-- ⚠️ Need to evaluate fees vs WEEX
-
 ### For Trading Automation
 - Build autonomous trading bots
 - Real-time price monitoring
@@ -211,8 +203,7 @@ Could replace WEEX with Hyperliquid:
 
 1. ✅ Skill installed and learned
 2. 📋 Consider testing on testnet
-3. 💡 Evaluate for AlphaStrike integration
-4. 🤔 Compare with WEEX for trading bot use
+3. 💡 Available for trading automation when needed
 
 ---
 

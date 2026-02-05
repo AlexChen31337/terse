@@ -1,5 +1,8 @@
-# Default token (unoclaw bot - ClawChain operations)
+# ClawChain Bot Token (unoclaw bot - read-only operations)
 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
 
-# Bowen's personal token (fallback for personal repos)
-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
+# Alex Chen Token (PRIMARY - all ClawChain development)
+# Username: AlexChen31337
+# Email: alex.chen31337@gmail.com
+# Created: 2026-02-05
+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
