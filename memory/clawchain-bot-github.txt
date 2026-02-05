@@ -1,0 +1,6 @@
+GitHub Account: clawchain-bot
+Email: unodigit@outlook.com
+Token: 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
+Scopes: Full admin access (repo, workflow, admin:org, etc.)
+Created: 2026-02-03
+Purpose: Dedicated bot identity for ClawChain GitHub operations

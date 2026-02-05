@@ -1,0 +1,56 @@
+================================================================================
+AlphaStrike v2.0 - Paper Trading Mode
+================================================================================
+Philosophy: Trade Big, Trade Less, Trade with Confidence
+Simulation: ON (no real trades)
+================================================================================
+
+Warning: WEEX_API_KEY, WEEX_API_SECRET, and WEEX_PASSPHRASE required for authenticated endpoints
+Warning: WEEX_API_KEY, WEEX_API_SECRET, and WEEX_PASSPHRASE required for authenticated endpoints
+Warning: WEEX_API_KEY, WEEX_API_SECRET, and WEEX_PASSPHRASE required for authenticated endpoints
+Warning: WEEX_API_KEY, WEEX_API_SECRET, and WEEX_PASSPHRASE required for authenticated endpoints
+Starting equity: $10000.00
+Universe: cmt_btcusdt, cmt_ethusdt, cmt_solusdt, cmt_dogeusdt, cmt_xrpusdt, cmt_adausdt, cmt_bnbusdt, cmt_ltcusdt
+
+Starting trading loop... (Ctrl+C to stop)
+
+
+[2026-02-02 11:38:36] Iteration #1
+------------------------------------------------------------
+[2026-02-02 11:38:36] [INFO] 
+============================================================
+[2026-02-02 11:38:36] [INFO] AlphaStrike Bot Run - 2026-02-02 11:38:36
+[2026-02-02 11:38:36] [INFO] ============================================================
+[2026-02-02 11:38:36] [INFO] Account Equity: $10000.00
+[2026-02-02 11:38:36] [INFO] Daily P&L: $+0.00
+[2026-02-02 11:38:36] [INFO] Open Positions: 0
+[2026-02-02 11:38:36] [INFO] Daily Trades: 0/2
+[2026-02-02 11:38:36] [INFO] Scanning market for A+ setups...
+Error checking orderbook for cmt_btcusdt: 'NoneType' object has no attribute 'get'
+Error checking volume delta for cmt_btcusdt: 'WeexClient' object has no attribute 'get_trades'
+Error checking orderbook for cmt_ethusdt: 'NoneType' object has no attribute 'get'
+Error checking volume delta for cmt_ethusdt: 'WeexClient' object has no attribute 'get_trades'
+Error checking orderbook for cmt_solusdt: 'NoneType' object has no attribute 'get'
+Error checking volume delta for cmt_solusdt: 'WeexClient' object has no attribute 'get_trades'
+Error checking orderbook for cmt_dogeusdt: 'NoneType' object has no attribute 'get'
+Error checking volume delta for cmt_dogeusdt: 'WeexClient' object has no attribute 'get_trades'
+Error checking orderbook for cmt_xrpusdt: 'NoneType' object has no attribute 'get'
+Error checking volume delta for cmt_xrpusdt: 'WeexClient' object has no attribute 'get_trades'
+Error checking orderbook for cmt_adausdt: 'NoneType' object has no attribute 'get'
+Error checking volume delta for cmt_adausdt: 'WeexClient' object has no attribute 'get_trades'
+Error checking orderbook for cmt_bnbusdt: 'NoneType' object has no attribute 'get'
+Error checking volume delta for cmt_bnbusdt: 'WeexClient' object has no attribute 'get_trades'
+Error checking orderbook for cmt_ltcusdt: 'NoneType' object has no attribute 'get'
+Error checking volume delta for cmt_ltcusdt: 'WeexClient' object has no attribute 'get_trades'
+[2026-02-02 11:38:53] [INFO] No A+ setups found. Patience.
+
+Status:
+  Equity: $10000.00
+  Open Positions: 0
+Traceback (most recent call last):
+  File "/home/peter/clawd/alphastrike/run_paper_trading.py", line 86, in <module>
+    main()
+  File "/home/peter/clawd/alphastrike/run_paper_trading.py", line 52, in main
+    print(f"  Trades Today: {state.get('trades_today', 0)}/2")
+                             ^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'

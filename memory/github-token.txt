@@ -1,0 +1,5 @@
+# Default token (unoclaw bot - ClawChain operations)
+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
+
+# Bowen's personal token (fallback for personal repos)
+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
