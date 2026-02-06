@@ -12,6 +12,9 @@ memory/clawhub-token.txt
 memory/github-config.json
 memory/clawchain-bot-github.txt
 
+# Encryption key (stays local only)
+memory/encrypted/.key
+
 # Node
 node_modules/
 
