@@ -1,0 +1,19 @@
+# Sensitive files - plaintext credentials (encrypted versions are in memory/encrypted/)
+memory/hl-private-key.txt
+memory/twitter-api-credentials.json
+memory/moltbook-credentials.json
+memory/discord-credentials.json
+memory/gmail-credentials.json
+memory/twitter-credentials.txt
+memory/github-token.txt
+memory/reddit-credentials.json
+memory/twitter-bird-credentials.txt
+memory/clawhub-token.txt
+memory/github-config.json
+memory/clawchain-bot-github.txt
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
