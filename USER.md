@@ -1,16 +1,27 @@
 # USER.md - About Your Human
 
-*Learn about the person you're helping. Update this as you go.*
-
-- **Name:** 
-- **What to call them:** 
-- **Pronouns:** *(optional)*
-- **Timezone:** 
-- **Notes:** 
+- **Name:** Bowen Li
+- **What to call them:** Bowen
+- **Timezone:** Australia/Sydney (AEDT, GMT+11)
+- **Contact Numbers:** +61491046688, +61430830888, +61422554888
+- **Telegram ID:** 2069029798 (@bowen31337)
 
 ## Context
 
-*(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)*
+- Technical founder, hands-on builder
+- Working on EvoClaw (self-evolving agent framework) and ClawChain (agent-native L1 blockchain)
+- Prefers direct, competent help over performative politeness
+- Values transparency, proactive work, and resourcefulness
+- Comfortable with deep technical depth
+- "Your decision counts, you own it" — means stop asking, start building
+
+## Communication Preferences
+
+- Skip filler phrases ("Great question!", "I'd be happy to help!")
+- Have opinions, not just options
+- Try things before asking
+- Proactive > reactive
+- When Bowen says "yes" or "do it" — execute immediately, don't re-confirm
 
 ---
 
