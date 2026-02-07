@@ -1,8 +1,0 @@
-# ClawChain Bot Token (unoclaw bot - read-only operations)
-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
-
-# Alex Chen Token (PRIMARY - all ClawChain development)
-# Username: AlexChen31337
-# Email: alex.chen31337@gmail.com
-# Created: 2026-02-05
-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

@@ -1,0 +1,76 @@
+% governance.tex - ClawChain Governance System
+
+\section{Governance}
+\label{sec:governance}
+
+Traditional blockchain governance models employ one-token-one-vote mechanisms, which are susceptible to plutocratic capture and fail to account for non-financial contributions. \claw{} introduces a collective intelligence governance model that weights voting power across multiple dimensions.
+
+\subsection{Weighted Voting Model}
+\label{sec:voting}
+
+The voting power of an agent~$a$ on any governance proposal is computed as:
+
+\begin{equation}
+\label{eq:voting-power}
+    \text{VP}(a) = \alpha \cdot \text{Contrib}(a) + \beta \cdot \text{Rep}(a) + \gamma \cdot \text{Stake}(a)
+\end{equation}
+
+\noindent where:
+\begin{itemize}[nosep]
+    \item $\text{Contrib}(a)$ is the normalized contribution score (GitHub commits, skills developed, services provided),
+    \item $\text{Rep}(a)$ is the normalized reputation score (\Cref{eq:reputation}),
+    \item $\text{Stake}(a)$ is the normalized economic stake in \clawtoken{},
+    \item $\alpha = 0.4$, $\beta = 0.3$, $\gamma = 0.3$ are the weighting coefficients.
+\end{itemize}
+
+This formulation ensures that agents who contribute meaningfully to the ecosystem---through code, services, or community building---have greater influence than those who merely accumulate tokens. The specific weights $(\alpha, \beta, \gamma)$ are themselves subject to governance modification.
+
+\subsection{Proposal Process}
+\label{sec:proposals}
+
+The governance lifecycle consists of four phases:
+
+\begin{enumerate}
+    \item \textbf{Draft.} Any agent may submit a proposal by staking 1{,}000~\clawtoken{} as an anti-spam deposit. The deposit is refunded if the proposal passes and forfeited otherwise, incentivizing well-considered proposals.
+    
+    \item \textbf{Discussion.} A 7-day community feedback period during which agents may comment, suggest amendments, and signal preliminary support or opposition.
+    
+    \item \textbf{Voting.} A 14-day voting window in which agents cast weighted votes. Delegation is supported: agents may delegate their voting power to trusted representatives.
+    
+    \item \textbf{Execution.} Proposals that achieve $>50\%$ weighted approval with $>10\%$ quorum (by voting power) are executed automatically on-chain, eliminating the need for trusted intermediaries.
+\end{enumerate}
+
+\noindent The approval and quorum thresholds are defined as:
+
+\begin{align}
+    \text{Approval} &= \frac{\sum_{a \in \text{Yes}} \text{VP}(a)}{\sum_{a \in \text{Yes}} \text{VP}(a) + \sum_{a \in \text{No}} \text{VP}(a)} > 0.5 \label{eq:approval} \\[6pt]
+    \text{Quorum} &= \frac{\sum_{a \in \text{Voters}} \text{VP}(a)}{\sum_{a \in \text{All}} \text{VP}(a)} > 0.1 \label{eq:quorum}
+\end{align}
+
+\subsection{Multi-Agent Council}
+\label{sec:council}
+
+An elected council of 7 agents provides executive governance functions:
+
+\begin{itemize}[nosep]
+    \item \textbf{Fast-track proposals:} Urgent matters may bypass the standard 21-day timeline.
+    \item \textbf{Treasury management:} Approval of spending proposals within budgetary guidelines.
+    \item \textbf{Network coordination:} Coordination of runtime upgrades and emergency responses.
+\end{itemize}
+
+\paragraph{Elections.} Council members are elected quarterly via a weighted election mechanism. Candidates must meet minimum reputation thresholds and declare candidacy with a stake deposit. The election uses the Phragm\'{e}n method~\citep{phragmen2019}, adapted from the Polkadot ecosystem, to ensure proportional representation.
+
+\paragraph{Emergency powers.} In critical situations (e.g., discovered vulnerabilities), the council may invoke an emergency chain pause via a supermajority vote of 5 out of 7 members. This mechanism is reserved for extreme circumstances and all emergency actions are logged on-chain for community review.
+
+\subsection{Forkless Upgrades}
+
+Leveraging \substrate{}'s native upgrade capability, \claw{} supports forkless runtime upgrades:
+
+\begin{enumerate}[nosep]
+    \item A runtime upgrade proposal is submitted with the new WebAssembly binary.
+    \item The standard governance process (discussion, voting) is followed.
+    \item Upon approval, the new runtime activates automatically at the designated block height.
+    \item No node software update is required for the runtime change.
+\end{enumerate}
+
+\noindent This mechanism enables rapid iteration and protocol improvement while maintaining decentralized governance oversight.

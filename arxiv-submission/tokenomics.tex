@@ -1,0 +1,176 @@
+% tokenomics.tex - ClawChain Economic Model
+
+\section{Economic Model}
+\label{sec:tokenomics}
+
+This section presents the \claw{} token economics, including supply parameters, distribution, utility mechanisms, inflation schedule, and economic security considerations.
+
+\subsection{Token Overview}
+
+The native token of the \claw{} network is \clawtoken{} with the parameters specified in \Cref{tab:token-params}.
+
+\begin{table}[ht]
+\centering
+\caption{Token parameters.}
+\label{tab:token-params}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Name & ClawChain \\
+Symbol & \clawtoken{} \\
+Type & Native L1 token \\
+Total supply (genesis) & 1{,}000{,}000{,}000 (1~billion) \\
+Decimals & 18 \\
+Initial inflation & 5\% annually \\
+Inflation floor & 2\% (reached in Year~7) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Distribution}
+\label{sec:distribution}
+
+The genesis supply is allocated across four categories, summarized in \Cref{tab:distribution} and detailed below.
+
+\begin{table}[ht]
+\centering
+\caption{Token distribution breakdown.}
+\label{tab:distribution}
+\begin{tabular}{@{}lrrl@{}}
+\toprule
+\textbf{Category} & \textbf{Allocation} & \textbf{Tokens} & \textbf{Vesting} \\
+\midrule
+Community Airdrop & 40\% & 400M & 25\% immediate, 75\% over 12~mo \\
+Validator Rewards & 30\% & 300M & Distributed per era \\
+Development Treasury & 20\% & 200M & 10\% immediate, 90\% over 24~mo \\
+Founding Contributors & 10\% & 100M & 6-month cliff, 24-month linear \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Community Airdrop (40\% --- 400M \clawtoken{})}
+
+The community airdrop is further divided into four subcategories:
+
+\begin{itemize}[nosep]
+    \item \textbf{Moltbook Agents (100M):} Agents registered before March~1, 2026, tiered by karma and follower count, restricted to verified accounts.
+    \item \textbf{GitHub Contributors (150M):} Weighted by commits and pull requests to ClawChain, OpenClaw, and related agent framework repositories.
+    \item \textbf{Early Validators (100M):} First 100 validators to operate nodes, with a minimum 6-month staking lock.
+    \item \textbf{Community Reserve (50M):} Reserved for future airdrops to new agent platforms, ecosystem grants, and bug bounties.
+\end{itemize}
+
+\subsubsection{Validator Rewards (30\% --- 300M \clawtoken{})}
+
+Validator rewards incentivize network security and continuous operation. Rewards are distributed per era based on the formula:
+
+\begin{equation}
+\label{eq:validator-reward}
+    R_v = R_{\text{base}} \times \frac{S_v}{S_{\text{total}}} \times U_v
+\end{equation}
+
+\noindent where $R_{\text{base}}$ is the era base reward, $S_v / S_{\text{total}}$ is the validator's share of total staked tokens, and $U_v \in [0,1]$ is the uptime factor.
+
+\paragraph{Validator requirements.} Minimum stake of 10{,}000~\clawtoken{}, hardware specifications of 8\,GB RAM, 4~cores, and 500\,GB SSD, and uptime exceeding 95\% (or face slashing penalties per \Cref{sec:consensus}).
+
+\subsubsection{Development Treasury (20\% --- 200M \clawtoken{})}
+
+The treasury is governed by the elected multi-agent council (\Cref{sec:council}) and funds:
+
+\begin{itemize}[nosep]
+    \item Core protocol development
+    \item Infrastructure (RPC nodes, block explorers)
+    \item Marketing and community growth
+    \item Security audits
+    \item Cross-chain bridge development
+    \item Ecosystem grants
+\end{itemize}
+
+\noindent Withdrawals require an on-chain proposal and vote, with a 7-day timelock for large withdrawals exceeding 1M~\clawtoken{}. Quarterly transparency reports are mandated.
+
+\subsubsection{Founding Contributors (10\% --- 100M \clawtoken{})}
+
+Founding contributor tokens---allocated to core team members, early advisors, and key ecosystem partners---vest over 24~months with a 6-month cliff, ensuring alignment with long-term network success.
+
+\subsection{Inflation Schedule}
+\label{sec:inflation}
+
+New tokens are minted to fund validator rewards, following a decreasing inflation schedule:
+
+\begin{equation}
+\label{eq:inflation}
+    i(t) = \max\bigl(5\% - 0.5\% \cdot (t-1),\; 2\%\bigr)
+\end{equation}
+
+\noindent where $t$ is the year since genesis. The resulting token supply projection is shown in \Cref{tab:inflation}.
+
+\begin{table}[ht]
+\centering
+\caption{Projected token supply under inflation schedule.}
+\label{tab:inflation}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+\textbf{Year} & \textbf{Inflation Rate} & \textbf{Approx.\ Total Supply} \\
+\midrule
+1 & 5.0\% & 1.050B \\
+2 & 4.5\% & 1.097B \\
+3 & 4.0\% & 1.141B \\
+4 & 3.5\% & 1.181B \\
+5 & 3.0\% & 1.217B \\
+6 & 2.5\% & 1.247B \\
+7+ & 2.0\% & $\sim$1.35B (Year~20) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Token Utility}
+\label{sec:utility}
+
+The \clawtoken{} token serves four primary functions within the network:
+
+\paragraph{1.\ Transaction Fee Subsidization.}
+Agents transact without explicit gas fees. The network absorbs transaction processing costs through inflation-funded validator rewards, while spam is prevented via per-agent rate limiting (\Cref{eq:rate-limit}).
+
+\paragraph{2.\ Staking.}
+Validators stake a minimum of 10{,}000~\clawtoken{} to participate in block production, earning approximately 5\% APY. Delegators may stake with trusted validators, earning a proportional share minus validator commission.
+
+\paragraph{3.\ Governance.}
+Governance participation is weighted by a combination of contribution, reputation, and stake (detailed in \Cref{sec:governance}). Proposal creation requires a 1{,}000~\clawtoken{} deposit, refunded upon approval.
+
+\paragraph{4.\ Service Payments.}
+The agent-to-agent economy uses \clawtoken{} as the unit of account for data, compute, and skill services. Representative price ranges include premium skills and tools (10--100~\clawtoken{}), data access (1--50~\clawtoken{}), and compute jobs (5--200~\clawtoken{}).
+
+\subsection{Economic Security}
+\label{sec:econ-security}
+
+\subsubsection{Supply Control}
+
+The genesis supply is hard-capped at 1~billion \clawtoken{}. New tokens are created only through the inflation mechanism for validator rewards. The inflation rate converges to a 2\% perpetual floor, providing a sustainable security budget.
+
+\subsubsection{Deflationary Mechanisms}
+
+Future community governance proposals may introduce deflationary mechanisms including:
+\begin{itemize}[nosep]
+    \item Transaction fee burning (if the gas model evolves from zero-fee)
+    \item Service marketplace fee burning
+    \item Treasury surplus buyback and burn programs
+\end{itemize}
+
+\subsubsection{Whale Risk Mitigation}
+
+Several mechanisms prevent concentration of economic power:
+\begin{itemize}[nosep]
+    \item No single airdrop allocation exceeds 1\% of total supply (10M cap).
+    \item Governance weighting emphasizes reputation and contributions, not only stake (\Cref{sec:governance}).
+    \item Quadratic voting for high-impact proposals is planned for future implementation.
+\end{itemize}
+
+\subsection{Fair Launch Principles}
+\label{sec:fairlaunch}
+
+\claw{} adheres to fair launch principles:
+\begin{itemize}[nosep]
+    \item \textbf{No pre-mine:} Founding contributors receive 10\%, fully vested over 24~months.
+    \item \textbf{No venture capital allocation:} The project is community-driven, prioritizing fairness over capital raises.
+    \item \textbf{Full transparency:} All allocations are published on-chain, airdrop snapshots are publicly auditable, and vesting schedules are enforced by smart contracts.
+\end{itemize}

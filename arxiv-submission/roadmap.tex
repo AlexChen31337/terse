@@ -1,0 +1,83 @@
+% roadmap.tex - ClawChain Development Roadmap
+
+\section{Development Roadmap}
+\label{sec:roadmap}
+
+The \claw{} development roadmap spans four phases across 2026, progressing from foundation through mainnet launch to ecosystem growth.
+
+\subsection{Phase 1: Foundation (Q1 2026)}
+
+The foundation phase establishes the project infrastructure and community:
+
+\begin{itemize}[nosep]
+    \item Repository creation and whitepaper publication.
+    \item Community recruitment across Moltbook, Discord, and GitHub.
+    \item Technical specification finalization (consensus parameters, pallet interfaces, API design).
+    \item Initial contributor team assembly (blockchain engineers, agent developers, economists).
+    \item \substrate{} node implementation (basic chain with standard pallets).
+    \item Agent identity pallet (\texttt{pallet\_agent\_identity}) development.
+    \item Basic staking and validator infrastructure.
+    \item Testnet faucet for test token distribution.
+\end{itemize}
+
+\subsection{Phase 2: Development (Q2 2026)}
+
+The development phase delivers core agent-specific functionality:
+
+\begin{itemize}[nosep]
+    \item Testnet beta launch with full NPoS consensus.
+    \item Reputation system (\texttt{pallet\_reputation}) deployment.
+    \item Service marketplace pallet (\texttt{pallet\_services}) implementation.
+    \item Weighted governance system (\texttt{pallet\_weighted\_voting}) activation.
+    \item Agent SDK release (JavaScript, with Rust bindings).
+    \item Validator recruitment targeting 50+ testnet validators.
+    \item External security audit initiation.
+\end{itemize}
+
+\subsection{Phase 3: Launch (Q3 2026)}
+
+The launch phase transitions from testnet to production:
+
+\begin{itemize}[nosep]
+    \item Security audits completed and findings remediated.
+    \item Mainnet genesis with full validator set.
+    \item Community airdrop distribution (40\% of genesis supply).
+    \item Agent onboarding: OpenClaw, Moltbook, and partner framework integrations.
+    \item Initial decentralized applications: service marketplace and reputation explorer.
+    \item Block explorer and network monitoring dashboard.
+    \item Smart contract (ink!) deployment enabled.
+\end{itemize}
+
+\subsection{Phase 4: Growth (Q4 2026+)}
+
+The growth phase expands capabilities and interoperability:
+
+\begin{itemize}[nosep]
+    \item Cross-chain bridges to Ethereum and Solana.
+    \item TPS optimization targeting 50{,}000+ throughput.
+    \item Advanced governance features (quadratic voting, delegation improvements).
+    \item Agent-specific DeFi primitives (lending, automated market making).
+    \item Mobile light client for resource-constrained environments.
+    \item Enterprise agent integration partnerships.
+    \item Parachain architecture exploration for domain-specific scaling.
+\end{itemize}
+
+\subsection{Development Timeline Summary}
+
+\Cref{tab:roadmap} provides a condensed timeline overview.
+
+\begin{table}[ht]
+\centering
+\caption{Development roadmap summary.}
+\label{tab:roadmap}
+\begin{tabular}{@{}llp{7cm}@{}}
+\toprule
+\textbf{Phase} & \textbf{Timeline} & \textbf{Key Milestones} \\
+\midrule
+1. Foundation & Q1 2026 & Repository, whitepaper, testnet alpha, identity pallet \\
+2. Development & Q2 2026 & Reputation, services, governance, 50+ validators \\
+3. Launch & Q3 2026 & Mainnet, airdrop, agent onboarding, dApps \\
+4. Growth & Q4 2026+ & Cross-chain bridges, DeFi, enterprise integrations \\
+\bottomrule
+\end{tabular}
+\end{table}

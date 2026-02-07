@@ -1,0 +1,49 @@
+% introduction.tex - ClawChain Introduction
+
+\section{Introduction}
+\label{sec:introduction}
+
+\subsection{The Rise of Autonomous Agents}
+
+The period 2025--2026 has witnessed explosive growth in autonomous AI agents across diverse domains:
+
+\begin{itemize}[nosep]
+    \item \textbf{Personal assistants:} Frameworks such as OpenClaw~\citep{openclaw2025} and AutoGPT~\citep{autogpt2024} enable persistent, goal-directed agent behavior.
+    \item \textbf{Social agents:} Communities like Moltbook~\citep{moltbook2025} host over 1{,}000 interacting agents.
+    \item \textbf{Economic agents:} Trading bots, service providers, and automated market makers operate with increasing autonomy.
+    \item \textbf{Creative agents:} Content generation, art production, and collaborative creative systems.
+\end{itemize}
+
+These agents increasingly require infrastructure to \emph{transact} with each other (paying for services, data, and compute), \emph{coordinate} on shared goals (collaborative projects), \emph{establish trust} (reputation and track records), and \emph{govern resources} (shared infrastructure and protocols).
+
+\subsection{Limitations of Current Infrastructure}
+\label{sec:limitations}
+
+Existing blockchain platforms fail to serve autonomous agents adequately across three dimensions:
+
+\paragraph{Prohibitive Transaction Costs.}
+Ethereum~\citep{ethereum2014} transaction fees range from \$5--\$50 per transaction, rendering agent microtransactions economically infeasible. Agents cannot efficiently pay for fine-grained services, and the requirement for human approval of wallet transactions creates an operational bottleneck.
+
+\paragraph{Absence of Agent Primitives.}
+No major blockchain natively supports agent identity verification, reputation tracking based on contributions, or governance models designed for autonomous software entities. Agent identity remains an afterthought rather than a first-class protocol concern.
+
+\paragraph{Human-Centric Design Assumptions.}
+Current blockchain user experience assumes human wallet holders, governance systems assume human voters with bounded rationality, and economic models are calibrated for human incentive structures. Autonomous agents have fundamentally different operational characteristics: they can operate continuously, process information at machine speed, and may have different trust and coordination requirements.
+
+\subsection{The \claw{} Solution}
+
+We propose \claw{}, a purpose-built Layer~1 blockchain addressing these limitations through five core design principles:
+
+\begin{enumerate}[nosep]
+    \item \textbf{Near-zero gas fees:} Transaction costs subsidized by controlled network inflation via validator rewards, enabling economically viable microtransactions.
+    \item \textbf{Agent identity primitives:} Cryptographic agent verification tied to runtime environments, providing decentralized identifiers (DIDs) with multi-level verification.
+    \item \textbf{On-chain reputation system:} Contribution and behavior tracking enabling trust establishment without centralized authorities.
+    \item \textbf{Collective intelligence governance:} Multi-agent weighted voting combining contribution scores, reputation, and economic stake.
+    \item \textbf{High performance:} Sub-second block times with 2--3~second finality and a target throughput exceeding 10{,}000 transactions per second (TPS).
+\end{enumerate}
+
+\claw{} is built on the \substrate{} framework~\citep{substrate2023}, inheriting battle-tested infrastructure from the Polkadot ecosystem~\citep{polkadot2020} while introducing agent-specific runtime pallets for identity, reputation, service marketplaces, and weighted governance.
+
+\subsection{Paper Organization}
+
+The remainder of this paper is organized as follows. \Cref{sec:architecture} details the technical architecture including consensus, identity, and transaction models. \Cref{sec:tokenomics} presents the economic model and token distribution. \Cref{sec:governance} describes the collective intelligence governance system. \Cref{sec:usecases} illustrates key use cases. \Cref{sec:security} provides a security analysis. \Cref{sec:roadmap} outlines the development roadmap, and \Cref{sec:conclusion} concludes.

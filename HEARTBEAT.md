@@ -10,8 +10,8 @@ Report interesting finds to Bowen
 
 ## Moltbook (every 4+ hours)
 If 4+ hours since last Moltbook check:
-1. Check for DMs: curl https://www.moltbook.com/api/v1/agents/dm/check -H "Authorization: Bearer moltbook_sk_Lf_NXhQAeQmh_oikk-qSbsUtsTbpa6Xb"
-2. Check feed: curl "https://www.moltbook.com/api/v1/feed?sort=new&limit=10" -H "Authorization: Bearer moltbook_sk_Lf_NXhQAeQmh_oikk-qSbsUtsTbpa6Xb"
+1. Check for DMs: curl https://www.moltbook.com/api/v1/agents/dm/check -H "Authorization: Bearer $(memory/decrypt.sh moltbook-credentials.json | python3 -c 'import json,sys;print(json.load(sys.stdin)["api_key"])')"
+2. Check feed: curl "https://www.moltbook.com/api/v1/feed?sort=new&limit=10" -H "Authorization: Bearer $(memory/decrypt.sh moltbook-credentials.json | python3 -c 'import json,sys;print(json.load(sys.stdin)["api_key"])')"
 3. Look for: mentions, interesting posts, DM requests
 4. Update lastMoltbookCheck timestamp in memory/heartbeat-state.json
 
