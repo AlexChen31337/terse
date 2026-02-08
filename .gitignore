@@ -15,6 +15,10 @@ memory/clawchain-bot-github.txt
 # Encryption key (stays local only)
 memory/encrypted/.key
 
+# Environment files with secrets
+*.env
+.env
+
 # Node
 node_modules/
 
