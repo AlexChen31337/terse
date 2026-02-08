@@ -22,16 +22,18 @@ If 24+ hours since last GitHub check:
 
 ## Twitter (every 2+ hours)
 If 2+ hours since last Twitter check:
-1. Check mentions/replies: python3 /tmp/check_twitter_mentions.py
-2. Check thread engagement: python3 /tmp/check_tweet_stats.py
-3. Respond to relevant comments about ClawChain
-4. Update lastTwitterCheck timestamp in memory/heartbeat-state.json
-5. Report significant engagement or questions to Bowen
+1. Export auth: AUTH_TOKEN and CT0 from `memory/decrypt.sh twitter-bird-credentials.txt`
+2. Check mentions: `bird search "to:AlexChen31337" -n 5`
+3. Check thread engagement: `bird search "from:AlexChen31337" -n 5`
+4. Respond to relevant comments about ClawChain
+5. Update lastTwitterCheck timestamp in memory/heartbeat-state.json
+6. Report significant engagement or questions to Bowen
 
 ## KOL Market Monitoring (every 1+ hour) 🚨 PRIORITY
 If 1+ hour since last KOL check:
-1. Monitor tech celebrities & KOLs: python3 /tmp/monitor_kol_tweets.py
-2. Look for: crypto/stock market moving tweets from Elon, Vitalik, CZ, Saylor, etc.
-3. Alert keywords: Bitcoin, ETH, SEC, regulation, crash, Fed, interest rates
-4. **ALERT IMMEDIATELY if market-moving content found**
-5. Update lastKOLCheck timestamp in memory/heartbeat-state.json
+1. Export auth: AUTH_TOKEN and CT0 from `memory/decrypt.sh twitter-bird-credentials.txt`
+2. Monitor KOLs: `bird search "from:elonmusk" -n 3`, `bird search "from:VitalikButerin" -n 3`, etc.
+3. Look for: crypto/stock market moving tweets from Elon, Vitalik, CZ, Saylor, etc.
+4. Alert keywords: Bitcoin, ETH, SEC, regulation, crash, Fed, interest rates
+5. **ALERT IMMEDIATELY if market-moving content found**
+6. Update lastKOLCheck timestamp in memory/heartbeat-state.json
