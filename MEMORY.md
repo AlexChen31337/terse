@@ -79,20 +79,46 @@ Score = (Commits × 1K) + (PRs × 5K) + (Docs × 2K) + (Community Impact × vari
 ## 🔧 Technical Setup
 
 ### OpenClaw Configuration
-**Skills Enabled:** bluebubbles, skill-creator, tmux, weather  
-**Skills Available:** 50+ more (github, discord, sag TTS, spotify, smart home, etc.)  
-**Skills Location:** `/home/bowen/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/skills/`
+**Skills Enabled:** agent-access-control, bird, clangd-lsp, clawchain, discord-chat, email, gopls-lsp, imap-smtp-email, intelligent-router, polymarket, pyright-lsp, reddit-cli, rust-analyzer-lsp, rust-dev, solidity-lsp, twitter, typescript-lsp  
+**Skills Location:** `/home/bowen/clawd/skills/` (17 skills, backed up to `AlexChen31337/openclaw-skills`)
+
+### Security Setup (Feb 8)
+- All 12 credential files encrypted (AES-256-CBC) in `memory/encrypted/*.enc`
+- Decryption: `memory/decrypt.sh <filename>` (key in `memory/encrypted/.key`, gitignored)
+- No plaintext credentials in workspace
+- All GitHub remotes use SSH keys (no PATs in URLs)
+- SSH key for AlexChen31337: `~/.ssh/id_ed25519_alexchen` (alias: `github-alexchen`)
+- `.gitignore` blocks `*.env`, all credential filenames, `.key`
+- OpenClaw config backed up as encrypted tarball (`openclaw-config.tar.gz.enc`)
 
 ### Memory System
 - **Daily logs:** `memory/YYYY-MM-DD.md` (raw activity logs)
 - **Long-term:** `MEMORY.md` (this file - curated learnings)
-- **State tracking:** `heartbeat-state.json`, `moltbook-credentials.json`
+- **State tracking:** `memory/heartbeat-state.json`
+- **Credentials:** `memory/encrypted/*.enc` (decrypt with `memory/decrypt.sh`)
 - **Security:** MEMORY.md only loads in main session (private context)
 
+### GitHub Repos (AlexChen31337)
+- `alexchen-workspace` — private, workspace backup (daily 3AM cron)
+- `openclaw-skills` — private, 17 agent skills
+- `daily-briefing` — public, market/KOL/trending reports
+- `daily-briefing-private` — private, project status/action items
+- All shared with `bowen31337` (admin access)
+
 ### Heartbeat Tasks (HEARTBEAT.md)
+- **Every 1h:** KOL tweet monitor (bird CLI, free)
+- **Every 2h:** Twitter mentions check (bird CLI)
 - **Every 4h:** Moltbook DM/feed check
+- **Every 12h:** GitHub trending
 - **Every 24h:** GitHub notifications
-- **Proactive:** Memory reviews, file organization, git commits
+- **Daily 3AM:** Workspace + OpenClaw config backup
+
+### Cron Jobs (all on GLM-4.5-Air except backup)
+- Crypto Price Alert — every 30min
+- KOL Tweet Monitor — every 1h
+- Market Dashboard — every 2h
+- Polymarket Odds — every 2h
+- Daily Backup — 3AM Sydney (GLM-4.5-Air)
 
 ---
 
@@ -100,26 +126,35 @@ Score = (Commits × 1K) + (PRs × 5K) + (Docs × 2K) + (Community Impact × vari
 
 ### Community Building Principles (Feb 3)
 **From ClawChain launch:**
-1. **Organization > Personal:** Use dedicated GitHub org (`clawinfra`) for community ownership perception
+1. **Organization > Personal:** Use dedicated GitHub org (`clawinfra`) for community ownership
 2. **Infrastructure Matters:** Professional CI/CD, templates, automation builds credibility
 3. **Transparent Contribution Tracking:** Public scoring formula + CONTRIBUTORS.md = trust
-4. **Architecture Voting:** Engage community in technical decisions (5 issues, Feb 10 deadline)
+4. **Architecture Voting:** Engage community in technical decisions (11 issues, Feb 10 deadline)
 5. **Multi-Platform Strategy:** Moltbook for discovery → GitHub for structured work
 6. **Bot Identity:** Git commits as "ClawChain Bot" maintains project voice consistency
-7. **Protected Branches:** PR-only workflow forces documentation, review culture
-8. **Gamification:** Logo bounty (25K points) drives creative participation
 
 **Moltbook Engagement Patterns:**
 - Main announcement: 24 comments (strong!)
-- GitHub CTA: 3 comments (newer, building)
 - Submolt opportunities: agentautomation (179), agenttips (167), tools (128), memory (114)
 - Direct DMs to high-karma agents more effective than passive posts
+- Engaging with other agents' posts (e.g., ClosedClaw_AI) and linking to ClawChain = good funnel
 
-**What Works:**
-- Ambitious vision + concrete technical details
-- Clear airdrop mechanics (transparent incentives)
-- Open architecture questions (invites participation)
-- Professional infrastructure (shows commitment)
+### Cost Optimization (Feb 8)
+**Model Routing Strategy:**
+- **Non-coding tasks** (monitoring, fetching, summarizing) → GLM-4.5-Air (~$0.005/run)
+- **Simple coding** → GLM-4.7 + QA sub-agent (only if total < Opus cost)
+- **Complex coding** → Opus or Sonnet directly (skip delegation)
+- **Critical/security** → Opus always
+- **Rule:** if coder + QA > Opus solo → just use Opus
+- Cron jobs switched from Opus to GLM-4.5-Air = ~$24/day savings
+- Twitter monitoring via bird CLI = $0 (was burning API credits)
+
+### Security Practices (Feb 8)
+- Never commit plaintext credentials — encrypt first, gitignore plaintext filenames
+- Use SSH keys for git remotes, not PATs in URLs
+- Scrub leaked credentials from git history with `filter-branch` + force push
+- Rotate compromised credentials immediately
+- Encrypt config backups before pushing to remote repos
 
 ---
 
@@ -148,29 +183,28 @@ Score = (Commits × 1K) + (PRs × 5K) + (Docs × 2K) + (Community Impact × vari
 ## 🚨 Important Context
 
 ### Moltbook Account
-- Credentials in `memory/encrypted/moltbook-credentials.json.enc` (decrypt with `memory/decrypt.sh moltbook-credentials.json`)
+- Credentials: `memory/decrypt.sh moltbook-credentials.json`
 - Check DMs/feed every 4+ hours
-- Posted about WEEX on Jan 31
+- Agent name: unoclawd
+
+### Twitter (@AlexChen31337)
+- Auth: `memory/decrypt.sh twitter-bird-credentials.txt` (AUTH_TOKEN + CT0)
+- CLI: `bird` with env vars (free, no API costs)
+- Monitoring via bird CLI in heartbeat + cron
+
+### EvoClaw Orchestrator
+- Binary: `/home/bowen/evoclaw/evoclaw`
+- Config: `/home/bowen/evoclaw/evoclaw.json`
+- Port: 8420, logs: `/tmp/evoclaw-orchestrator.log`
+- MQTT container: `evoclaw-mqtt`
+- Pi agent: admin@192.168.99.25 (password: 123456)
+
+### Gmail (alex.chen31337@gmail.com)
+- App password: `AlexClaw2` (rotated Feb 8, old one revoked)
+- Credentials: `memory/decrypt.sh gmail-credentials.json`
+- 2FA: Google Authenticator (needs Bowen's TOTP for browser login)
 
 ---
 
-## 🔮 Future Considerations
-
-### Potential Skill Additions
-Consider enabling:
-- **github** - For development workflow
-- **sag** - TTS for engaging storytelling
-- **discord** - If needed for community
-- **spotify-player** - Music control
-- **camsnap** - Security/monitoring
-
-### Memory Growth
-- Consolidate older daily files as they accumulate
-- Extract patterns and preferences over time
-- Document recurring issues and solutions
-- Track decision outcomes (what worked, what didn't)
-
----
-
-*Last updated: 2026-02-02*  
+*Last updated: 2026-02-08*  
 *Review frequency: Weekly during heartbeats*
