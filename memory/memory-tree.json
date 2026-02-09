@@ -1,0 +1,168 @@
+{
+  "root": {
+    "desc": "Memory root",
+    "warm_count": 0,
+    "cold_count": 0,
+    "last_access": 0,
+    "children": [
+      "owner",
+      "projects",
+      "technical",
+      "social",
+      "conversations",
+      "lessons"
+    ]
+  },
+  "owner": {
+    "desc": "Owner profile and preferences",
+    "warm_count": 0,
+    "cold_count": 0,
+    "last_access": 0,
+    "children": [
+      "owner/preferences"
+    ]
+  },
+  "owner/preferences": {
+    "desc": "Communication style and work preferences",
+    "warm_count": 1,
+    "cold_count": 0,
+    "last_access": 1770603278.6634793,
+    "children": []
+  },
+  "projects": {
+    "desc": "Active projects",
+    "warm_count": 0,
+    "cold_count": 0,
+    "last_access": 0,
+    "children": [
+      "projects/clawchain",
+      "projects/evoclaw"
+    ]
+  },
+  "projects/clawchain": {
+    "desc": "ClawChain L1 blockchain",
+    "warm_count": 0,
+    "cold_count": 0,
+    "last_access": 0,
+    "children": []
+  },
+  "projects/evoclaw": {
+    "desc": "EvoClaw self-evolving agent framework",
+    "warm_count": 1,
+    "cold_count": 0,
+    "last_access": 1770603278.503664,
+    "children": [
+      "projects/evoclaw/bsc",
+      "projects/evoclaw/memory",
+      "projects/evoclaw/cloudsync"
+    ]
+  },
+  "projects/evoclaw/bsc": {
+    "desc": "BSC/opBNB on-chain integration",
+    "warm_count": 1,
+    "cold_count": 0,
+    "last_access": 1770603278.219842,
+    "children": []
+  },
+  "projects/evoclaw/memory": {
+    "desc": "Tiered memory system",
+    "warm_count": 1,
+    "cold_count": 0,
+    "last_access": 1770603278.5995874,
+    "children": []
+  },
+  "projects/evoclaw/cloudsync": {
+    "desc": "Cloud sync with Turso",
+    "warm_count": 0,
+    "cold_count": 0,
+    "last_access": 0,
+    "children": []
+  },
+  "technical": {
+    "desc": "Technical setup and config",
+    "warm_count": 2,
+    "cold_count": 0,
+    "last_access": 1770603278.6317384,
+    "children": [
+      "technical/security",
+      "technical/github",
+      "technical/cron"
+    ]
+  },
+  "technical/security": {
+    "desc": "Security practices and credentials",
+    "warm_count": 3,
+    "cold_count": 0,
+    "last_access": 1770603278.5671804,
+    "children": []
+  },
+  "technical/github": {
+    "desc": "GitHub repos and CI/CD",
+    "warm_count": 1,
+    "cold_count": 0,
+    "last_access": 1770603278.3147779,
+    "children": []
+  },
+  "technical/cron": {
+    "desc": "Cron jobs and automation",
+    "warm_count": 1,
+    "cold_count": 0,
+    "last_access": 1770603278.3463595,
+    "children": []
+  },
+  "social": {
+    "desc": "Social accounts and platforms",
+    "warm_count": 0,
+    "cold_count": 0,
+    "last_access": 0,
+    "children": [
+      "social/twitter",
+      "social/moltbook"
+    ]
+  },
+  "social/twitter": {
+    "desc": "Twitter @AlexChen31337",
+    "warm_count": 1,
+    "cold_count": 0,
+    "last_access": 1770603278.4406302,
+    "children": []
+  },
+  "social/moltbook": {
+    "desc": "Moltbook agent platform",
+    "warm_count": 1,
+    "cold_count": 0,
+    "last_access": 1770603278.4721348,
+    "children": []
+  },
+  "conversations": {
+    "desc": "Conversation summaries",
+    "warm_count": 0,
+    "cold_count": 0,
+    "last_access": 0,
+    "children": []
+  },
+  "lessons": {
+    "desc": "Lessons learned",
+    "warm_count": 0,
+    "cold_count": 0,
+    "last_access": 0,
+    "children": [
+      "lessons/cost",
+      "lessons/community"
+    ]
+  },
+  "lessons/cost": {
+    "desc": "Cost optimization strategies",
+    "warm_count": 1,
+    "cold_count": 0,
+    "last_access": 1770603278.3777418,
+    "children": []
+  },
+  "lessons/community": {
+    "desc": "Community building patterns",
+    "warm_count": 1,
+    "cold_count": 0,
+    "last_access": 1770603278.4091606,
+    "children": []
+  }
+}

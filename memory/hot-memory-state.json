@@ -1,0 +1,40 @@
+{
+  "owner": {
+    "name": "Bowen Li",
+    "timezone": "Australia/Sydney (AEDT, GMT+11)",
+    "style": "Direct, competent help over performative politeness",
+    "contact": "+61491046688, +61430830888, +61422554888",
+    "telegram": "@bowen31337 (ID: 2069029798)"
+  },
+  "agent": {
+    "name": "Alex Chen",
+    "email": "alex.chen31337@gmail.com",
+    "twitter": "@AlexChen31337",
+    "github": "AlexChen31337",
+    "discord": "alexchen31337"
+  },
+  "projects": [
+    {
+      "name": "ClawChain",
+      "status": "Architecture phase, community recruitment",
+      "description": "Layer 1 blockchain built by agents, for agents. Substrate framework, NPoS consensus, near-zero fees. Repo: github.com/clawinfra/claw-chain. $CLAW token: 1B supply, 40% contributor airdrop."
+    },
+    {
+      "name": "EvoClaw",
+      "status": "Active - BSC on-chain + tiered memory",
+      "description": "Self-evolving agent framework. Go binary (7.2MB). BSC adapter, cloud sync (Turso), tiered memory system. Hackathon: Good Vibes Only OpenClaw Edition, $100K, deadline Feb 19."
+    }
+  ],
+  "lessons": [
+    "Never commit plaintext credentials \u2014 encrypt first, gitignore plaintext filenames",
+    "Use SSH keys for git remotes, not PATs in URLs",
+    "Rotate compromised credentials immediately",
+    "When given trust + autonomy, ship faster",
+    "Documentation-first = fewer questions later",
+    "Parallel development = compound progress",
+    "If coder+QA sub-agents > Opus solo cost, just use Opus",
+    "Organization > Personal for community ownership",
+    "Transparent contribution scoring builds trust in open source",
+    "Batch periodic checks into heartbeat instead of many cron jobs"
+  ]
+}

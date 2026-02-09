@@ -1,0 +1,145 @@
+[
+  {
+    "id": "00319a352ffa",
+    "text": "Deployer wallet 0x2331F0fA9A35fDBE6D60b6b7ADAC5F813B3e33d0 awaiting tBNB for BSC testnet deployment",
+    "category": "projects/evoclaw/bsc",
+    "importance": 0.8,
+    "created_at": 1770603278.2195358,
+    "access_count": 1,
+    "score": 0.7999928485727151,
+    "tier": "warm",
+    "tree_relevance": 0.6666538966332228
+  },
+  {
+    "id": "fdebeb1729b2",
+    "text": "All 12 credential files encrypted AES-256-CBC in memory/encrypted/*.enc, decrypt with memory/decrypt.sh",
+    "category": "technical/security",
+    "importance": 0.9,
+    "created_at": 1770603278.2508664,
+    "access_count": 1,
+    "score": 0.8999919764591614,
+    "tier": "warm",
+    "tree_relevance": 1.333308210833677
+  },
+  {
+    "id": "2428387b2b0f",
+    "text": "SSH key for AlexChen31337: ~/.ssh/id_ed25519_alexchen (alias: github-alexchen)",
+    "category": "technical/security",
+    "importance": 0.8,
+    "created_at": 1770603278.2826345,
+    "access_count": 1,
+    "score": 0.7999928777677663,
+    "tier": "warm",
+    "tree_relevance": 1.333308210833677
+  },
+  {
+    "id": "9ce19f7f30aa",
+    "text": "GitHub repos: alexchen-workspace (private backup), openclaw-skills (17 skills), daily-briefing (public), daily-briefing-private. All shared with bowen31337.",
+    "category": "technical/github",
+    "importance": 0.7,
+    "created_at": 1770603278.3144336,
+    "access_count": 0,
+    "score": 0.7
+  },
+  {
+    "id": "7cf2d5530a6b",
+    "text": "Cron jobs all on GLM-4.5-Air: crypto price (30min), KOL tweets (1h), market dashboard (2h), polymarket (2h), daily backup (3AM)",
+    "category": "technical/cron",
+    "importance": 0.7,
+    "created_at": 1770603278.3460078,
+    "access_count": 0,
+    "score": 0.7
+  },
+  {
+    "id": "0b2d277b6aab",
+    "text": "Non-coding tasks use GLM-4.5-Air (~$0.005/run). Complex coding uses Opus. If coder+QA > Opus solo, just use Opus.",
+    "category": "lessons/cost",
+    "importance": 0.8,
+    "created_at": 1770603278.377375,
+    "access_count": 0,
+    "score": 0.8
+  },
+  {
+    "id": "278cce3a4c89",
+    "text": "Organization > Personal for community projects. Use dedicated GitHub org (clawinfra). Transparent contribution scoring builds trust.",
+    "category": "lessons/community",
+    "importance": 0.7,
+    "created_at": 1770603278.4087877,
+    "access_count": 0,
+    "score": 0.7
+  },
+  {
+    "id": "b2530c48428f",
+    "text": "Twitter monitoring via bird CLI is free (no API costs). Auth: AUTH_TOKEN + CT0 from encrypted credentials.",
+    "category": "social/twitter",
+    "importance": 0.6,
+    "created_at": 1770603278.4402564,
+    "access_count": 0,
+    "score": 0.6
+  },
+  {
+    "id": "887380a56a8b",
+    "text": "Moltbook account: unoclawd. Check DMs/feed every 4+ hours. Strong engagement on ClawChain posts (24 comments on main).",
+    "category": "social/moltbook",
+    "importance": 0.6,
+    "created_at": 1770603278.4717386,
+    "access_count": 0,
+    "score": 0.6
+  },
+  {
+    "id": "694a5f66c032",
+    "text": "EvoClaw Pi agent: admin@192.168.99.25, password 8JJ3yKNrmCoHo90F. MQTT container: evoclaw-mqtt.",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770603278.50327,
+    "access_count": 0,
+    "score": 0.7
+  },
+  {
+    "id": "d797c623b2d0",
+    "text": "Turso DB: libsql://alphastrike-bowen31337.aws-us-east-1.turso.io. Used for cloud sync and cold memory tier.",
+    "category": "technical",
+    "importance": 0.7,
+    "created_at": 1770603278.5348988,
+    "access_count": 0,
+    "score": 0.7
+  },
+  {
+    "id": "84cbe0f913c3",
+    "text": "Gmail app password: AlexClaw2 (rotated Feb 8). 2FA needs Bowen's TOTP for browser login.",
+    "category": "technical/security",
+    "importance": 0.8,
+    "created_at": 1770603278.5667691,
+    "access_count": 1,
+    "score": 0.7999929654624948,
+    "tier": "warm",
+    "tree_relevance": 1.333308210833677
+  },
+  {
+    "id": "38b7dc0b651b",
+    "text": "EvoClaw tiered memory: 7,301 lines (20 Go files), LLM-powered distillation + tree search + monthly rebuild. All tests pass.",
+    "category": "projects/evoclaw/memory",
+    "importance": 0.8,
+    "created_at": 1770603278.5991645,
+    "access_count": 0,
+    "score": 0.8
+  },
+  {
+    "id": "5d834e3a00b2",
+    "text": "Go toolchain: export GOROOT=/home/bowen/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.13.linux-amd64 && export PATH=$GOROOT/bin:$PATH",
+    "category": "technical",
+    "importance": 0.6,
+    "created_at": 1770603278.6313019,
+    "access_count": 0,
+    "score": 0.6
+  },
+  {
+    "id": "edf9d3ae8809",
+    "text": "Skip filler phrases. Have opinions. Try things before asking. Proactive > reactive.",
+    "category": "owner/preferences",
+    "importance": 0.7,
+    "created_at": 1770603278.6630323,
+    "access_count": 0,
+    "score": 0.7
+  }
+]
