@@ -24,9 +24,9 @@
   },
   "owner/preferences": {
     "desc": "Communication style and work preferences",
-    "warm_count": 1,
+    "warm_count": 2,
     "cold_count": 0,
-    "last_access": 1770603278.6634793,
+    "last_access": 1770606835.053981,
     "children": []
   },
   "projects": {
@@ -41,16 +41,16 @@
   },
   "projects/clawchain": {
     "desc": "ClawChain L1 blockchain",
-    "warm_count": 0,
+    "warm_count": 1,
     "cold_count": 0,
-    "last_access": 0,
+    "last_access": 1770606835.1180875,
     "children": []
   },
   "projects/evoclaw": {
     "desc": "EvoClaw self-evolving agent framework",
-    "warm_count": 1,
+    "warm_count": 2,
     "cold_count": 0,
-    "last_access": 1770603278.503664,
+    "last_access": 1770606835.0861812,
     "children": [
       "projects/evoclaw/bsc",
       "projects/evoclaw/memory",

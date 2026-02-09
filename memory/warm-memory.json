@@ -5,7 +5,7 @@
     "category": "projects/evoclaw/bsc",
     "importance": 0.8,
     "created_at": 1770603278.2195358,
-    "access_count": 1,
+    "access_count": 2,
     "score": 0.7999928485727151,
     "tier": "warm",
     "tree_relevance": 0.6666538966332228
@@ -27,7 +27,7 @@
     "category": "technical/security",
     "importance": 0.8,
     "created_at": 1770603278.2826345,
-    "access_count": 1,
+    "access_count": 2,
     "score": 0.7999928777677663,
     "tier": "warm",
     "tree_relevance": 1.333308210833677
@@ -56,7 +56,7 @@
     "category": "lessons/cost",
     "importance": 0.8,
     "created_at": 1770603278.377375,
-    "access_count": 0,
+    "access_count": 2,
     "score": 0.8
   },
   {
@@ -65,7 +65,7 @@
     "category": "lessons/community",
     "importance": 0.7,
     "created_at": 1770603278.4087877,
-    "access_count": 0,
+    "access_count": 2,
     "score": 0.7
   },
   {
@@ -74,7 +74,7 @@
     "category": "social/twitter",
     "importance": 0.6,
     "created_at": 1770603278.4402564,
-    "access_count": 0,
+    "access_count": 1,
     "score": 0.6
   },
   {
@@ -83,7 +83,7 @@
     "category": "social/moltbook",
     "importance": 0.6,
     "created_at": 1770603278.4717386,
-    "access_count": 0,
+    "access_count": 1,
     "score": 0.6
   },
   {
@@ -101,7 +101,7 @@
     "category": "technical",
     "importance": 0.7,
     "created_at": 1770603278.5348988,
-    "access_count": 0,
+    "access_count": 1,
     "score": 0.7
   },
   {
@@ -110,7 +110,7 @@
     "category": "technical/security",
     "importance": 0.8,
     "created_at": 1770603278.5667691,
-    "access_count": 1,
+    "access_count": 2,
     "score": 0.7999929654624948,
     "tier": "warm",
     "tree_relevance": 1.333308210833677
@@ -141,5 +141,34 @@
     "created_at": 1770603278.6630323,
     "access_count": 0,
     "score": 0.7
+  },
+  {
+    "id": "9e317964ddc2",
+    "text": "Bowen prefers Sonnet for coding tasks and GLM for cheap background work",
+    "category": "owner/preferences",
+    "importance": 0.8,
+    "created_at": 1770606835.0535045,
+    "access_count": 1,
+    "score": 0.8
+  },
+  {
+    "id": "38258ed7987e",
+    "text": "EvoClaw hackathon deadline is Feb 19 3AM UTC, Good Vibes Only OpenClaw Edition on BNBChain",
+    "category": "projects/evoclaw",
+    "importance": 0.9,
+    "created_at": 1770606835.0856192,
+    "access_count": 1,
+    "score": 0.9
+  },
+  {
+    "id": "ba74c1714564",
+    "text": "ClawChain uses Substrate framework with NPoS consensus and near-zero fees",
+    "category": "projects/clawchain",
+    "importance": 0.7,
+    "created_at": 1770606835.1175792,
+    "access_count": 1,
+    "score": 0.6999999741909501,
+    "tier": "warm",
+    "tree_relevance": 0.39999996857715914
   }
 ]
