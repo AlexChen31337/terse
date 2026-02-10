@@ -38,10 +38,11 @@ HOT_STATE_FILE = os.path.join(MEMORY_DIR, "hot-memory-state.json")
 MEMORY_MD = os.path.join(WORKSPACE, "MEMORY.md")
 
 # Constraints
-HOT_MAX_BYTES = 5120       # 5KB
+HOT_MAX_BYTES = 4096       # 4KB (~80% of old 5KB, leaves headroom)
 WARM_MAX_KB = 50           # 50KB
 WARM_MAX_BYTES = WARM_MAX_KB * 1024
 WARM_RETENTION_DAYS = 30
+COLD_ARCHIVE_DAYS = 2       # Archive facts older than 2 days to cold (keeps warm fresh)
 HALF_LIFE_DAYS = 30.0
 REINFORCEMENT_BOOST = 0.1
 EVICTION_THRESHOLD = 0.3
@@ -267,24 +268,45 @@ class WarmMemory:
         sorted_facts = sorted(self.facts, key=lambda x: x["created_at"], reverse=True)
         return sorted_facts[:limit]
     
-    def evict_expired(self) -> int:
-        """Remove facts older than retention period with low scores."""
-        cutoff = time.time() - (WARM_RETENTION_DAYS * 86400)
-        before = len(self.facts)
+    def evict_expired(self, archive_old: bool = True) -> list:
+        """Remove expired facts AND archive older facts to cold. Returns evicted facts.
+        
+        Two eviction paths:
+        1. Hard evict: facts older than WARM_RETENTION_DAYS with low scores (removed from warm)
+        2. Age archive: facts older than COLD_ARCHIVE_DAYS (copied to cold, kept in warm until hard evict)
+        
+        When archive_old=True, returns facts older than COLD_ARCHIVE_DAYS for cold archival
+        even if they stay in warm (dual-residence until they age out).
+        """
+        hard_cutoff = time.time() - (WARM_RETENTION_DAYS * 86400)
+        archive_cutoff = time.time() - (COLD_ARCHIVE_DAYS * 86400)
         
         keep = []
-        evicted = []
+        evicted = []       # Hard evicted (removed from warm)
+        to_archive = []    # Old enough for cold archival (may stay in warm)
+        
         for fact in self.facts:
             score = calculate_score(fact["importance"], fact["created_at"], fact["access_count"])
-            if fact["created_at"] < cutoff and score < EVICTION_THRESHOLD:
+            fact["score"] = score
+            
+            if fact["created_at"] < hard_cutoff and score < EVICTION_THRESHOLD:
+                # Hard evict — too old + low score
                 evicted.append(fact)
             else:
-                fact["score"] = score
                 keep.append(fact)
+                # Also flag for cold archival if old enough
+                if archive_old and fact["created_at"] < archive_cutoff and not fact.get("_archived"):
+                    to_archive.append(fact)
+        
+        # Mark archived facts so we don't re-archive
+        for fact in to_archive:
+            fact["_archived"] = True
         
         self.facts = keep
         self.save()
-        return len(evicted)
+        
+        # Return both hard-evicted and to-archive facts
+        return evicted + to_archive
     
     def _enforce_limits(self):
         """Evict lowest-scored facts if over size limit."""
@@ -320,9 +342,17 @@ class WarmMemory:
 
 # ─── Cold Memory (Turso) ───
 
+def _normalize_db_url(db_url: str) -> str:
+    """Convert libsql:// URLs to https:// for HTTP API access."""
+    if db_url.startswith("libsql://"):
+        return db_url.replace("libsql://", "https://", 1)
+    return db_url
+
+
 def cold_store(text: str, category: str, importance: float, db_url: str, auth_token: str) -> bool:
     """Store a fact in Turso cold storage."""
     import urllib.request
+    db_url = _normalize_db_url(db_url)
     
     fact_id = hashlib.md5(f"{text}{time.time()}".encode()).hexdigest()[:16]
     
@@ -366,6 +396,7 @@ def cold_store(text: str, category: str, importance: float, db_url: str, auth_to
 def cold_query(query: str, limit: int, db_url: str, auth_token: str) -> list:
     """Search cold storage by keyword (simple LIKE query)."""
     import urllib.request
+    db_url = _normalize_db_url(db_url)
     
     words = query.split()[:3]  # Top 3 keywords
     conditions = " OR ".join([f"text LIKE '%{w}%'" for w in words])
@@ -412,8 +443,83 @@ def cold_query(query: str, limit: int, db_url: str, auth_token: str) -> list:
         return []
 
 
+def cold_sync_hot_state(state: dict, db_url: str, auth_token: str) -> bool:
+    """Sync hot-state JSON to Turso (cloud-first: critical sync)."""
+    import urllib.request
+    db_url = _normalize_db_url(db_url)
+
+    payload = {
+        "requests": [
+            {
+                "type": "execute",
+                "stmt": {
+                    "sql": """INSERT OR REPLACE INTO hot_state (id, data, updated_at)
+                              VALUES ('current', ?, ?)""",
+                    "args": [
+                        {"type": "text", "value": json.dumps(state)},
+                        {"type": "integer", "value": str(int(time.time()))}
+                    ]
+                }
+            },
+            {"type": "close"}
+        ]
+    }
+
+    req = urllib.request.Request(
+        f"{db_url}/v2/pipeline",
+        data=json.dumps(payload).encode(),
+        headers={
+            "Authorization": f"Bearer {auth_token}",
+            "Content-Type": "application/json"
+        }
+    )
+
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            return resp.status == 200
+    except Exception as e:
+        print(f"Hot state cloud sync error: {e}", file=sys.stderr)
+        return False
+
+
+def cold_restore_hot_state(db_url: str, auth_token: str) -> dict:
+    """Restore hot-state from Turso (disaster recovery)."""
+    import urllib.request
+    db_url = _normalize_db_url(db_url)
+
+    payload = {
+        "requests": [
+            {
+                "type": "execute",
+                "stmt": {"sql": "SELECT data FROM hot_state WHERE id = 'current'"}
+            },
+            {"type": "close"}
+        ]
+    }
+
+    req = urllib.request.Request(
+        f"{db_url}/v2/pipeline",
+        data=json.dumps(payload).encode(),
+        headers={
+            "Authorization": f"Bearer {auth_token}",
+            "Content-Type": "application/json"
+        }
+    )
+
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            body = json.loads(resp.read())
+            rows = body.get("results", [{}])[0].get("response", {}).get("result", {}).get("rows", [])
+            if rows:
+                return json.loads(rows[0][0]["value"])
+    except Exception as e:
+        print(f"Hot state restore error: {e}", file=sys.stderr)
+    return {}
+
+
 def cold_init_table(db_url: str, auth_token: str) -> bool:
-    """Create cold_memories table if not exists."""
+    db_url = _normalize_db_url(db_url)
+    """Create cold_memories and hot_state tables if not exists."""
     import urllib.request
     
     payload = {
@@ -438,6 +544,16 @@ def cold_init_table(db_url: str, auth_token: str) -> bool:
             {
                 "type": "execute",
                 "stmt": {"sql": "CREATE INDEX IF NOT EXISTS idx_cold_created ON cold_memories(created_at)"}
+            },
+            {
+                "type": "execute",
+                "stmt": {
+                    "sql": """CREATE TABLE IF NOT EXISTS hot_state (
+                        id TEXT PRIMARY KEY,
+                        data TEXT NOT NULL,
+                        updated_at INTEGER NOT NULL
+                    )"""
+                }
             },
             {"type": "close"}
         ]
@@ -483,7 +599,7 @@ def rebuild_hot(output_path: str = MEMORY_MD):
     for f in all_warm:
         f["score"] = calculate_score(f["importance"], f["created_at"], f["access_count"])
     all_warm.sort(key=lambda x: x["score"], reverse=True)
-    top_facts = all_warm[:20]  # Top 20 recent distilled facts
+    top_facts = all_warm[:10]  # Top 10 recent distilled facts (keep hot well under 4KB)
     
     # Build MEMORY.md
     lines = [
@@ -581,15 +697,23 @@ def consolidate(db_url: str = None, auth_token: str = None):
     warm = WarmMemory()
     tree = MemoryTree()
     
-    # 1. Evict expired warm facts
-    evicted_count = warm.evict_expired()
+    # 1. Evict expired warm facts (now returns the actual evicted facts)
+    evicted_facts = warm.evict_expired()
+    evicted_count = len(evicted_facts)
     
     # 2. Archive evicted to cold (if Turso configured)
     archived = 0
     if db_url and auth_token and evicted_count > 0:
-        # Re-read to get evicted facts — actually we already removed them
-        # For now just report; cold archival happens at eviction time in production
-        pass
+        for fact in evicted_facts:
+            ok = cold_store(
+                fact["text"],
+                fact.get("category", "uncategorized"),
+                fact.get("importance", 0.5),
+                db_url,
+                auth_token
+            )
+            if ok:
+                archived += 1
     
     # 3. Recalculate tree counts
     for path in tree.nodes:
@@ -661,8 +785,8 @@ def retrieve(query: str, limit: int = 5, db_url: str = None, auth_token: str = N
 
 # ─── Hot State Management ───
 
-def update_hot_state(key: str, data: dict):
-    """Update hot memory state (owner profile, lessons, projects)."""
+def update_hot_state(key: str, data: dict, db_url: str = None, auth_token: str = None):
+    """Update hot memory state (owner profile, lessons, projects). Cloud-first: syncs to Turso."""
     state = {}
     if os.path.exists(HOT_STATE_FILE):
         with open(HOT_STATE_FILE) as f:
@@ -688,9 +812,17 @@ def update_hot_state(key: str, data: dict):
             state["projects"].append(data)
             state["projects"] = state["projects"][-5:]  # Max 5 active
     
+    # Write local
     os.makedirs(os.path.dirname(HOT_STATE_FILE), exist_ok=True)
     with open(HOT_STATE_FILE, "w") as f:
         json.dump(state, f, indent=2)
+    
+    # Cloud-first: critical sync to Turso
+    cloud_synced = False
+    if db_url and auth_token:
+        cloud_synced = cold_sync_hot_state(state, db_url, auth_token)
+    
+    return cloud_synced
 
 
 # ─── CLI ───
@@ -704,6 +836,8 @@ def main():
     p_store.add_argument("--text", required=True)
     p_store.add_argument("--category", required=True)
     p_store.add_argument("--importance", type=float, default=0.5)
+    p_store.add_argument("--db-url", default=None, help="Turso URL for cloud-first dual-write")
+    p_store.add_argument("--auth-token", default=None, help="Turso auth token")
     
     # retrieve
     p_ret = sub.add_parser("retrieve", help="Search across all tiers")
@@ -753,6 +887,8 @@ def main():
     p_hs = sub.add_parser("hot-state", help="Update hot memory state")
     p_hs.add_argument("--key", required=True, choices=["owner", "agent", "lesson", "project"])
     p_hs.add_argument("--data", required=True, help="JSON data")
+    p_hs.add_argument("--db-url", default=None, help="Turso URL for cloud-first sync")
+    p_hs.add_argument("--auth-token", default=None, help="Turso auth token")
     
     args = parser.parse_args()
     
@@ -767,7 +903,11 @@ def main():
         # Ensure tree node exists
         tree.add_node(args.category, args.category.split("/")[-1].title())
         tree.update_counts(args.category, warm_delta=1)
-        print(json.dumps({"id": fact_id, "category": args.category, "status": "stored"}))
+        # Cloud-first: dual-write to cold storage
+        cloud_synced = False
+        if args.db_url and args.auth_token:
+            cloud_synced = cold_store(args.text, args.category, args.importance, args.db_url, args.auth_token)
+        print(json.dumps({"id": fact_id, "category": args.category, "status": "stored", "cloud_synced": cloud_synced}))
     
     elif args.command == "retrieve":
         results = retrieve(args.query, args.limit, args.db_url, args.auth_token)
@@ -847,8 +987,8 @@ def main():
     
     elif args.command == "hot-state":
         data = json.loads(args.data)
-        update_hot_state(args.key, data)
-        print(json.dumps({"key": args.key, "updated": True}))
+        cloud_synced = update_hot_state(args.key, data, args.db_url, args.auth_token)
+        print(json.dumps({"key": args.key, "updated": True, "cloud_synced": cloud_synced}))
 
 
 if __name__ == "__main__":

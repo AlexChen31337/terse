@@ -4,9 +4,9 @@
 
 ---
 
-## 🧑 About Bowen Li
+## 🧑 About Bowen
 
-- **Timezone:** Australia/Sydney (AEDT, GMT+11)
+- **Timezone:** Australia/Sydney
 - **Style:** Direct, competent help over performative politeness
 - **Contact:** +61491046688, +61430830888, +61422554888
 - **Telegram:** @bowen31337 (ID: 2069029798)
@@ -44,45 +44,28 @@ Self-evolving agent framework. Go binary (7.2MB). BSC adapter, cloud sync (Turso
 
 ## 📝 Recent Context
 
+### projects/evoclaw
+- [Feb 09] EvoClaw hackathon deadline is Feb 19 3AM UTC, Good Vibes Only OpenClaw Edition on BNBChain
+
 ### technical/security
 - [Feb 09] All 12 credential files encrypted AES-256-CBC in memory/encrypted/*.enc, decrypt with memory/decrypt.sh
 - [Feb 09] Gmail app password: AlexClaw2 (rotated Feb 8). 2FA needs Bowen's TOTP for browser login.
 - [Feb 09] SSH key for AlexChen31337: ~/.ssh/id_ed25519_alexchen (alias: github-alexchen)
 
-### projects/evoclaw/memory
-- [Feb 09] EvoClaw tiered memory: 7,301 lines (20 Go files), LLM-powered distillation + tree search + monthly rebuild. All tests pass.
+### projects/evoclaw/bsc
+- [Feb 09] AgentRegistry deployed to BSC Testnet! Contract: 0xD20522b083ea53E1B34fBed018bF1eCF8670EaCf. Deployer: 0xcf7C6bd4062961882Ca4219ACD7f45ff651D927C. First agent registered on-chain. Explorer: https://testnet.bscscan.com/address/0xD20522b083ea53E1B34fBed018bF1eCF8670EaCf
+
+### projects/clawchain
+- [Feb 09] ClawChain testnet deployed to Hetzner VPS 135.181.157.121. Binary 62MB ARM64. Cloudflare tunnel moved from Dell to VPS. Public endpoint: https://testnet.clawchain.win (wss://testnet.clawchain.win). Frankfurt PoPs. 8 pallets: staking, session, treasury, sudo, task-market, reputation, agent-registry, claw-token.
+- [Feb 09] ClawChain staking resolved: sp-staking v42.1 fixes version conflicts. Added pallet-staking, pallet-session, pallet-treasury, pallet-sudo, pallet-task-market, pallet-reputation. 54 tests pass. Building release binary.
+- [Feb 09] ClawChain dev testnet running on Dell: ws://localhost:9944, PID at /tmp/clawchain-node.pid, producing blocks every 6s, 6 pre-funded accounts with ~55.5M CLAW each
+
+### technical
+- [Feb 09] Hetzner VPS: 135.181.157.121, root, aarch64, 2 cores, 4GB RAM, 38GB disk, Ubuntu 24.04. SSH key added. Password: encrypted in hetzner-credentials.json.enc. Purpose: ClawChain testnet. Cloudflare tunnel running on Dell (PID in /tmp/cloudflared.pid).
 
 ### lessons/cost
 - [Feb 09] Non-coding tasks use GLM-4.5-Air (~$0.005/run). Complex coding uses Opus. If coder+QA > Opus solo, just use Opus.
 
-### projects/evoclaw/bsc
-- [Feb 09] Deployer wallet 0x2331F0fA9A35fDBE6D60b6b7ADAC5F813B3e33d0 awaiting tBNB for BSC testnet deployment
-
-### owner/preferences
-- [Feb 09] Skip filler phrases. Have opinions. Try things before asking. Proactive > reactive.
-
-### technical
-- [Feb 09] Turso DB: libsql://alphastrike-bowen31337.aws-us-east-1.turso.io. Used for cloud sync and cold memory tier.
-- [Feb 09] Go toolchain: export GOROOT=/home/bowen/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.13.linux-amd64 && export PATH=$GOROOT/bin:$PATH
-
-### projects/evoclaw
-- [Feb 09] EvoClaw Pi agent: admin@192.168.99.25, password 8JJ3yKNrmCoHo90F. MQTT container: evoclaw-mqtt.
-
-### lessons/community
-- [Feb 09] Organization > Personal for community projects. Use dedicated GitHub org (clawinfra). Transparent contribution scoring builds trust.
-
-### technical/cron
-- [Feb 09] Cron jobs all on GLM-4.5-Air: crypto price (30min), KOL tweets (1h), market dashboard (2h), polymarket (2h), daily backup (3AM)
-
-### technical/github
-- [Feb 09] GitHub repos: alexchen-workspace (private backup), openclaw-skills (17 skills), daily-briefing (public), daily-briefing-private. All shared with bowen31337.
-
-### social/moltbook
-- [Feb 09] Moltbook account: unoclawd. Check DMs/feed every 4+ hours. Strong engagement on ClawChain posts (24 comments on main).
-
-### social/twitter
-- [Feb 09] Twitter monitoring via bird CLI is free (no API costs). Auth: AUTH_TOKEN + CT0 from encrypted credentials.
-
 ---
-*Auto-generated: 2026-02-09 13:14 | Warm: 15 facts | Tree: 20 nodes*
+*Auto-generated: 2026-02-10 22:15 | Warm: 25 facts | Tree: 20 nodes*
 *Review frequency: Auto-rebuilt each session*
