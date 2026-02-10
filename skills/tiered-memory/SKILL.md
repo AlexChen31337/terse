@@ -10,12 +10,15 @@ A middleware memory layer for OpenClaw agents. No fork required — works with s
 ## Architecture
 
 ```
-Hot (MEMORY.md)  ←  5KB, always in context, auto-rebuilt
-  ↑ distill
+Hot (MEMORY.md)  ←  4KB, always in context, auto-rebuilt
+  ↑ distill        ↕ critical sync to Turso (cloud-first)
 Warm (JSON)      ←  50KB, scored facts, 30-day retention
-  ↑ archive
+  ↑ archive        ↕ dual-write to Turso on store
 Cold (Turso)     ←  Unlimited, 10-year archive
 ```
+
+**Cloud-First Principle:** The device is a terminal. The soul lives in the cloud.
+All tiers sync to Turso. Local files are caches. Full disaster recovery in <2 min.
 
 **Tree Index** (~2KB JSON): Hierarchical category map for O(log n) retrieval.
 
@@ -220,3 +223,5 @@ Facts below 0.3 score after retention period are evicted.
 - **Survives updates** — skill + data files, nothing patched
 - **Graceful degradation** — works without Turso (warm-only mode)
 - **Reversible** — delete skill, keep your original MEMORY.md
+- **Cloud-first** — all tiers sync to Turso; local files are caches
+- **Disaster recovery** — hot-state restorable from cloud in seconds
