@@ -15,7 +15,7 @@
   },
   "owner": {
     "desc": "Owner profile and preferences",
-    "warm_count": 0,
+    "warm_count": 2,
     "cold_count": 0,
     "last_access": 0,
     "children": [
@@ -31,7 +31,7 @@
   },
   "projects": {
     "desc": "Active projects",
-    "warm_count": 0,
+    "warm_count": 10,
     "cold_count": 0,
     "last_access": 0,
     "children": [
@@ -41,14 +41,14 @@
   },
   "projects/clawchain": {
     "desc": "ClawChain L1 blockchain",
-    "warm_count": 1,
+    "warm_count": 5,
     "cold_count": 0,
-    "last_access": 1770606835.1180875,
+    "last_access": 1770629133.8019993,
     "children": []
   },
   "projects/evoclaw": {
     "desc": "EvoClaw self-evolving agent framework",
-    "warm_count": 2,
+    "warm_count": 5,
     "cold_count": 0,
     "last_access": 1770606835.0861812,
     "children": [
@@ -59,9 +59,9 @@
   },
   "projects/evoclaw/bsc": {
     "desc": "BSC/opBNB on-chain integration",
-    "warm_count": 1,
+    "warm_count": 2,
     "cold_count": 0,
-    "last_access": 1770603278.219842,
+    "last_access": 1770630505.136027,
     "children": []
   },
   "projects/evoclaw/memory": {
@@ -80,9 +80,9 @@
   },
   "technical": {
     "desc": "Technical setup and config",
-    "warm_count": 2,
+    "warm_count": 9,
     "cold_count": 0,
-    "last_access": 1770603278.6317384,
+    "last_access": 1770694130.7244046,
     "children": [
       "technical/security",
       "technical/github",
@@ -112,7 +112,7 @@
   },
   "social": {
     "desc": "Social accounts and platforms",
-    "warm_count": 0,
+    "warm_count": 2,
     "cold_count": 0,
     "last_access": 0,
     "children": [
@@ -143,7 +143,7 @@
   },
   "lessons": {
     "desc": "Lessons learned",
-    "warm_count": 0,
+    "warm_count": 2,
     "cold_count": 0,
     "last_access": 0,
     "children": [

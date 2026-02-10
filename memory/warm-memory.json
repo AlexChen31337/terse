@@ -5,9 +5,9 @@
     "category": "projects/evoclaw/bsc",
     "importance": 0.8,
     "created_at": 1770603278.2195358,
-    "access_count": 2,
-    "score": 0.7999928485727151,
-    "tier": "warm",
+    "access_count": 3,
+    "score": 0.990986826620692,
+    "tier": "hot",
     "tree_relevance": 0.6666538966332228
   },
   {
@@ -17,8 +17,8 @@
     "importance": 0.9,
     "created_at": 1770603278.2508664,
     "access_count": 1,
-    "score": 0.8999919764591614,
-    "tier": "warm",
+    "score": 0.9433432405863776,
+    "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
   {
@@ -27,9 +27,9 @@
     "category": "technical/security",
     "importance": 0.8,
     "created_at": 1770603278.2826345,
-    "access_count": 2,
-    "score": 0.7999928777677663,
-    "tier": "warm",
+    "access_count": 3,
+    "score": 0.9909868507407994,
+    "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
   {
@@ -39,7 +39,8 @@
     "importance": 0.7,
     "created_at": 1770603278.3144336,
     "access_count": 0,
-    "score": 0.7
+    "score": 0.6670103884891152,
+    "tier": "warm"
   },
   {
     "id": "7cf2d5530a6b",
@@ -48,7 +49,8 @@
     "importance": 0.7,
     "created_at": 1770603278.3460078,
     "access_count": 0,
-    "score": 0.7
+    "score": 0.6670103966140057,
+    "tier": "warm"
   },
   {
     "id": "0b2d277b6aab",
@@ -57,7 +59,8 @@
     "importance": 0.8,
     "created_at": 1770603278.377375,
     "access_count": 2,
-    "score": 0.8
+    "score": 0.9147571264261071,
+    "tier": "hot"
   },
   {
     "id": "278cce3a4c89",
@@ -66,7 +69,8 @@
     "importance": 0.7,
     "created_at": 1770603278.4087877,
     "access_count": 2,
-    "score": 0.7
+    "score": 0.8004124953230163,
+    "tier": "hot"
   },
   {
     "id": "b2530c48428f",
@@ -75,7 +79,8 @@
     "importance": 0.6,
     "created_at": 1770603278.4402564,
     "access_count": 1,
-    "score": 0.6
+    "score": 0.6288955396746136,
+    "tier": "warm"
   },
   {
     "id": "887380a56a8b",
@@ -84,7 +89,8 @@
     "importance": 0.6,
     "created_at": 1770603278.4717386,
     "access_count": 1,
-    "score": 0.6
+    "score": 0.6288955473130117,
+    "tier": "warm"
   },
   {
     "id": "694a5f66c032",
@@ -92,8 +98,9 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1770603278.50327,
-    "access_count": 0,
-    "score": 0.7
+    "access_count": 2,
+    "score": 0.8004125244988526,
+    "tier": "hot"
   },
   {
     "id": "d797c623b2d0",
@@ -102,7 +109,8 @@
     "importance": 0.7,
     "created_at": 1770603278.5348988,
     "access_count": 1,
-    "score": 0.7
+    "score": 0.7337114897435851,
+    "tier": "hot"
   },
   {
     "id": "84cbe0f913c3",
@@ -111,8 +119,8 @@
     "importance": 0.8,
     "created_at": 1770603278.5667691,
     "access_count": 2,
-    "score": 0.7999929654624948,
-    "tier": "warm",
+    "score": 0.9147571932653563,
+    "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
   {
@@ -121,8 +129,9 @@
     "category": "projects/evoclaw/memory",
     "importance": 0.8,
     "created_at": 1770603278.5991645,
-    "access_count": 0,
-    "score": 0.8
+    "access_count": 1,
+    "score": 0.8385274376397714,
+    "tier": "hot"
   },
   {
     "id": "5d834e3a00b2",
@@ -131,7 +140,8 @@
     "importance": 0.6,
     "created_at": 1770603278.6313019,
     "access_count": 0,
-    "score": 0.6
+    "score": 0.5717232600247196,
+    "tier": "warm"
   },
   {
     "id": "edf9d3ae8809",
@@ -140,7 +150,8 @@
     "importance": 0.7,
     "created_at": 1770603278.6630323,
     "access_count": 0,
-    "score": 0.7
+    "score": 0.6670104781941015,
+    "tier": "warm"
   },
   {
     "id": "9e317964ddc2",
@@ -149,7 +160,8 @@
     "importance": 0.8,
     "created_at": 1770606835.0535045,
     "access_count": 1,
-    "score": 0.8
+    "score": 0.8396787614788671,
+    "tier": "hot"
   },
   {
     "id": "38258ed7987e",
@@ -157,8 +169,9 @@
     "category": "projects/evoclaw",
     "importance": 0.9,
     "created_at": 1770606835.0856192,
-    "access_count": 1,
-    "score": 0.9
+    "access_count": 2,
+    "score": 1.0305148564009903,
+    "tier": "hot"
   },
   {
     "id": "ba74c1714564",
@@ -167,8 +180,78 @@
     "importance": 0.7,
     "created_at": 1770606835.1175792,
     "access_count": 1,
-    "score": 0.6999999741909501,
-    "tier": "warm",
+    "score": 0.734718934456136,
+    "tier": "hot",
     "tree_relevance": 0.39999996857715914
+  },
+  {
+    "id": "869e722bc09d",
+    "text": "ClawChain dev testnet running on Dell: ws://localhost:9944, PID at /tmp/clawchain-node.pid, producing blocks every 6s, 6 pre-funded accounts with ~55.5M CLAW each",
+    "category": "projects/clawchain",
+    "importance": 0.9,
+    "created_at": 1770610454.8254375,
+    "access_count": 0,
+    "score": 0.8599624836934892,
+    "tier": "hot"
+  },
+  {
+    "id": "c0ff46b5eb80",
+    "text": "ClawChain devops infra built: Podman + Quadlet deployment, multi-stage Containerfile, Nginx proxy with rate limiting, one-command VPS setup script, Prometheus monitoring, 766-line deployment guide. All in deploy/ directory.",
+    "category": "projects/clawchain",
+    "importance": 0.8,
+    "created_at": 1770613764.1543171,
+    "access_count": 2,
+    "score": 0.9184652156113777,
+    "tier": "hot"
+  },
+  {
+    "id": "bab5af04a47f",
+    "text": "ClawChain staking resolved: sp-staking v42.1 fixes version conflicts. Added pallet-staking, pallet-session, pallet-treasury, pallet-sudo, pallet-task-market, pallet-reputation. 54 tests pass. Building release binary.",
+    "category": "projects/clawchain",
+    "importance": 0.9,
+    "created_at": 1770618231.019124,
+    "access_count": 0,
+    "score": 0.8625463093016176,
+    "tier": "hot"
+  },
+  {
+    "id": "5bd7792397f1",
+    "text": "Hetzner VPS: 135.181.157.121, root, aarch64, 2 cores, 4GB RAM, 38GB disk, Ubuntu 24.04. SSH key added. Password: encrypted in hetzner-credentials.json.enc. Purpose: ClawChain testnet. Cloudflare tunnel running on Dell (PID in /tmp/cloudflared.pid).",
+    "category": "technical",
+    "importance": 0.9,
+    "created_at": 1770621651.5485682,
+    "access_count": 2,
+    "score": 1.0364223825633678,
+    "tier": "hot"
+  },
+  {
+    "id": "1cc87f0e8ff5",
+    "text": "ClawChain testnet deployed to Hetzner VPS 135.181.157.121. Binary 62MB ARM64. Cloudflare tunnel moved from Dell to VPS. Public endpoint: https://testnet.clawchain.win (wss://testnet.clawchain.win). Frankfurt PoPs. 8 pallets: staking, session, treasury, sudo, task-market, reputation, agent-registry, claw-token.",
+    "category": "projects/clawchain",
+    "importance": 0.95,
+    "created_at": 1770629133.8014925,
+    "access_count": 1,
+    "score": 1.0057336567060238,
+    "tier": "hot"
+  },
+  {
+    "id": "c91a0c0472e1",
+    "text": "AgentRegistry deployed to BSC Testnet! Contract: 0xD20522b083ea53E1B34fBed018bF1eCF8670EaCf. Deployer: 0xcf7C6bd4062961882Ca4219ACD7f45ff651D927C. First agent registered on-chain. Explorer: https://testnet.bscscan.com/address/0xD20522b083ea53E1B34fBed018bF1eCF8670EaCf",
+    "category": "projects/evoclaw/bsc",
+    "importance": 0.95,
+    "created_at": 1770630505.1354907,
+    "access_count": 1,
+    "score": 1.0062658949980907,
+    "tier": "hot"
+  },
+  {
+    "id": "f0fd589422c3",
+    "text": "Test cloud-first dual write",
+    "category": "technical",
+    "importance": 0.5,
+    "created_at": 1770694130.7238297,
+    "access_count": 0,
+    "score": 0.49343170882153337,
+    "tier": "warm"
   }
 ]
