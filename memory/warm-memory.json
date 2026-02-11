@@ -6,7 +6,7 @@
     "importance": 0.8,
     "created_at": 1770603278.2195358,
     "access_count": 3,
-    "score": 0.990986826620692,
+    "score": 0.9584945886022274,
     "tier": "hot",
     "tree_relevance": 0.6666538966332228
   },
@@ -17,7 +17,7 @@
     "importance": 0.9,
     "created_at": 1770603278.2508664,
     "access_count": 1,
-    "score": 0.9433432405863776,
+    "score": 0.9124131290225513,
     "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
@@ -28,7 +28,7 @@
     "importance": 0.8,
     "created_at": 1770603278.2826345,
     "access_count": 3,
-    "score": 0.9909868507407994,
+    "score": 0.9584946119320195,
     "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
@@ -39,7 +39,7 @@
     "importance": 0.7,
     "created_at": 1770603278.3144336,
     "access_count": 0,
-    "score": 0.6670103884891152,
+    "score": 0.6451406120994657,
     "tier": "warm"
   },
   {
@@ -49,7 +49,7 @@
     "importance": 0.7,
     "created_at": 1770603278.3460078,
     "access_count": 0,
-    "score": 0.6670103966140057,
+    "score": 0.6451406199580186,
     "tier": "warm"
   },
   {
@@ -59,7 +59,7 @@
     "importance": 0.8,
     "created_at": 1770603278.377375,
     "access_count": 2,
-    "score": 0.9147571264261071,
+    "score": 0.8847642895063723,
     "tier": "hot"
   },
   {
@@ -69,7 +69,7 @@
     "importance": 0.7,
     "created_at": 1770603278.4087877,
     "access_count": 2,
-    "score": 0.8004124953230163,
+    "score": 0.7741687627001302,
     "tier": "hot"
   },
   {
@@ -79,7 +79,7 @@
     "importance": 0.6,
     "created_at": 1770603278.4402564,
     "access_count": 1,
-    "score": 0.6288955396746136,
+    "score": 0.6082754637919522,
     "tier": "warm"
   },
   {
@@ -89,7 +89,7 @@
     "importance": 0.6,
     "created_at": 1770603278.4717386,
     "access_count": 1,
-    "score": 0.6288955473130117,
+    "score": 0.6082754711799043,
     "tier": "warm"
   },
   {
@@ -99,7 +99,7 @@
     "importance": 0.7,
     "created_at": 1770603278.50327,
     "access_count": 2,
-    "score": 0.8004125244988526,
+    "score": 0.7741687909192138,
     "tier": "hot"
   },
   {
@@ -109,7 +109,7 @@
     "importance": 0.7,
     "created_at": 1770603278.5348988,
     "access_count": 1,
-    "score": 0.7337114897435851,
+    "score": 0.7096547336687017,
     "tier": "hot"
   },
   {
@@ -119,7 +119,7 @@
     "importance": 0.8,
     "created_at": 1770603278.5667691,
     "access_count": 2,
-    "score": 0.9147571932653563,
+    "score": 0.8847643541538682,
     "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
@@ -130,7 +130,7 @@
     "importance": 0.8,
     "created_at": 1770603278.5991645,
     "access_count": 1,
-    "score": 0.8385274376397714,
+    "score": 0.8110340014440375,
     "tier": "hot"
   },
   {
@@ -140,7 +140,7 @@
     "importance": 0.6,
     "created_at": 1770603278.6313019,
     "access_count": 0,
-    "score": 0.5717232600247196,
+    "score": 0.5529777351133937,
     "tier": "warm"
   },
   {
@@ -150,7 +150,7 @@
     "importance": 0.7,
     "created_at": 1770603278.6630323,
     "access_count": 0,
-    "score": 0.6670104781941015,
+    "score": 0.6451406988630485,
     "tier": "warm"
   },
   {
@@ -160,7 +160,7 @@
     "importance": 0.8,
     "created_at": 1770606835.0535045,
     "access_count": 1,
-    "score": 0.8396787614788671,
+    "score": 0.8121475759535164,
     "tier": "hot"
   },
   {
@@ -170,7 +170,7 @@
     "importance": 0.9,
     "created_at": 1770606835.0856192,
     "access_count": 2,
-    "score": 1.0305148564009903,
+    "score": 0.996726582837613,
     "tier": "hot"
   },
   {
@@ -180,7 +180,7 @@
     "importance": 0.7,
     "created_at": 1770606835.1175792,
     "access_count": 1,
-    "score": 0.734718934456136,
+    "score": 0.7106291465259588,
     "tier": "hot",
     "tree_relevance": 0.39999996857715914
   },
@@ -191,7 +191,7 @@
     "importance": 0.9,
     "created_at": 1770610454.8254375,
     "access_count": 0,
-    "score": 0.8599624836934892,
+    "score": 0.8317662403566056,
     "tier": "hot"
   },
   {
@@ -201,7 +201,7 @@
     "importance": 0.8,
     "created_at": 1770613764.1543171,
     "access_count": 2,
-    "score": 0.9184652156113777,
+    "score": 0.8883507987538609,
     "tier": "hot"
   },
   {
@@ -211,7 +211,7 @@
     "importance": 0.9,
     "created_at": 1770618231.019124,
     "access_count": 0,
-    "score": 0.8625463093016176,
+    "score": 0.8342653481114529,
     "tier": "hot"
   },
   {
@@ -221,7 +221,7 @@
     "importance": 0.9,
     "created_at": 1770621651.5485682,
     "access_count": 2,
-    "score": 1.0364223825633678,
+    "score": 1.0024404144510888,
     "tier": "hot"
   },
   {
@@ -231,7 +231,7 @@
     "importance": 0.95,
     "created_at": 1770629133.8014925,
     "access_count": 1,
-    "score": 1.0057336567060238,
+    "score": 0.9727579031651739,
     "tier": "hot"
   },
   {
@@ -241,7 +241,7 @@
     "importance": 0.95,
     "created_at": 1770630505.1354907,
     "access_count": 1,
-    "score": 1.0062658949980907,
+    "score": 0.9732726905593756,
     "tier": "hot"
   },
   {
@@ -251,7 +251,18 @@
     "importance": 0.5,
     "created_at": 1770694130.7238297,
     "access_count": 0,
-    "score": 0.49343170882153337,
+    "score": 0.4772531884854901,
+    "tier": "warm"
+  },
+  {
+    "text": "GPU server (Dell XPS 8940): peter@10.0.0.44, password peter@2025. Has RTX 3090+3080+2070S. ComfyUI at /home/peter/ai-stack/comfyui/ComfyUI/. SSH via sshpass. Credentials encrypted in gpu-server-credentials.json.enc.",
+    "category": "technical",
+    "timestamp": 1770755636.2197883,
+    "source": "user-provided",
+    "importance": 0.5,
+    "created_at": 1770755636.2197883,
+    "access_count": 0,
+    "score": 0.48871334729657884,
     "tier": "warm"
   }
 ]

@@ -545,6 +545,16 @@ class WarmMemory:
     def _recalculate_scores(self):
         """Recalculate all scores."""
         for fact in self.facts:
+            # Ensure required fields exist
+            if 'importance' not in fact:
+                fact['importance'] = 0.5  # Default importance
+            if 'created_at' not in fact and 'timestamp' in fact:
+                fact['created_at'] = fact['timestamp']
+            elif 'created_at' not in fact:
+                fact['created_at'] = time.time()
+            if 'access_count' not in fact:
+                fact['access_count'] = 0
+            
             fact['score'] = calculate_score(
                 fact['importance'],
                 fact['created_at'],
