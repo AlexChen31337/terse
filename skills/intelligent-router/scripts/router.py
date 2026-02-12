@@ -98,10 +98,10 @@ class IntelligentRouter:
             if model.get('tier') == tier
         ]
 
-    def recommend_model(self, task_description):
+    def recommend_model(self, task_description, use_fallback=False):
         """
         Classify task and recommend the best model for it.
-        Returns dict with tier, recommended model, and reasoning.
+        Returns dict with tier, recommended model, fallback, and reasoning.
         """
         tier = self.classify_task(task_description)
         models = self.get_models_by_tier(tier)
@@ -110,15 +110,36 @@ class IntelligentRouter:
             return {
                 'tier': tier,
                 'model': None,
+                'fallback': None,
                 'reasoning': f"No models configured for {tier} tier"
             }
         
-        # Recommend the first model in the tier (users can order by preference)
-        recommended = models[0]
+        # Get primary and fallback from routing_rules if available
+        routing_rules = self.config.get('routing_rules', {}).get(tier, {})
+        primary_id = routing_rules.get('primary')
+        fallback_id = routing_rules.get('fallback')
+        
+        # Find primary model
+        if primary_id and not use_fallback:
+            primary = next((m for m in models if m['id'] == primary_id), models[0])
+        else:
+            primary = models[0]
+        
+        # Find fallback model
+        fallback = None
+        if fallback_id:
+            fallback = next((m for m in models if m['id'] == fallback_id), None)
+        elif len(models) > 1:
+            fallback = models[1]
+        
+        # If use_fallback requested, swap primary/fallback
+        if use_fallback and fallback:
+            primary, fallback = fallback, primary
         
         return {
             'tier': tier,
-            'model': recommended,
+            'model': primary,
+            'fallback': fallback,
             'reasoning': self._explain_tier(tier)
         }
 

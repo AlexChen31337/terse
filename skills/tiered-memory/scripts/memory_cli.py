@@ -77,12 +77,133 @@ def load_config():
 
 CONFIG = load_config()
 
+# ─── Security & Robustness ───
+
+import tempfile
+import shutil
+
+# Schema version for compatibility checking
+SCHEMA_VERSION = "2.0"
+
+def sanitize_agent_id(agent_id):
+    """
+    Sanitize agent_id to prevent path traversal attacks.
+    Only allows alphanumeric, hyphens, underscores, and 'default'.
+    """
+    if agent_id == 'default':
+        return agent_id
+    
+    # Remove any path separators and parent directory references
+    agent_id = agent_id.replace('/', '').replace('\\', '').replace('..', '')
+    
+    # Only allow safe characters
+    if not re.match(r'^[a-zA-Z0-9_-]+$', agent_id):
+        raise ValueError(f"Invalid agent_id: {agent_id}. Only alphanumeric, hyphens, and underscores allowed.")
+    
+    return agent_id
+
+def atomic_write_json(filepath, data, ensure_version=True):
+    """
+    Atomically write JSON file using temp file + rename pattern.
+    Adds schema version if ensure_version=True and data is a dict.
+    """
+    # Only add version to dicts (not lists)
+    if ensure_version and isinstance(data, dict) and '_schema_version' not in data:
+        data = dict(data)  # Copy to avoid mutating original
+        data['_schema_version'] = SCHEMA_VERSION
+    
+    # Write to temp file first
+    dir_path = os.path.dirname(filepath)
+    os.makedirs(dir_path, exist_ok=True)
+    
+    with tempfile.NamedTemporaryFile(mode='w', dir=dir_path, delete=False, suffix='.tmp') as tmp:
+        json.dump(data, tmp, indent=2)
+        tmp_path = tmp.name
+    
+    try:
+        # Atomic rename (on POSIX systems)
+        shutil.move(tmp_path, filepath)
+    except Exception:
+        # Cleanup on failure
+        if os.path.exists(tmp_path):
+            os.remove(tmp_path)
+        raise
+
+def load_json_with_version(filepath, expected_version=SCHEMA_VERSION):
+    """
+    Load JSON file and check schema version.
+    Returns (data, is_compatible) tuple.
+    """
+    if not os.path.exists(filepath):
+        return None, True
+    
+    with open(filepath) as f:
+        data = json.load(f)
+    
+    # Check version if present
+    file_version = data.get('_schema_version')
+    if file_version and file_version != expected_version:
+        print(f"Warning: File {filepath} has version {file_version}, expected {expected_version}", 
+              file=sys.stderr)
+        return data, False
+    
+    return data, True
+
+# Turso connection pool (simple implementation)
+_turso_pool = {'conn': None, 'last_used': 0, 'ttl': 300}  # 5min TTL
+
+def get_turso_connection(db_url, auth_token):
+    """
+    Get Turso connection from pool or create new one.
+    Reuses connection if less than TTL seconds old.
+    """
+    global _turso_pool
+    
+    now = time.time()
+    if _turso_pool['conn'] and (now - _turso_pool['last_used']) < _turso_pool['ttl']:
+        _turso_pool['last_used'] = now
+        return _turso_pool['conn']
+    
+    # Create new connection
+    try:
+        import libsql_client
+        conn = libsql_client.create_client_sync(url=db_url, auth_token=auth_token)
+        _turso_pool['conn'] = conn
+        _turso_pool['last_used'] = now
+        return conn
+    except ImportError:
+        print("Error: libsql_client not installed. Run: pip install libsql-client", file=sys.stderr)
+        sys.exit(1)
+
+def turso_execute_with_retry(db_url, auth_token, query, params=None, max_retries=3):
+    """
+    Execute Turso query with exponential backoff retry.
+    """
+    for attempt in range(max_retries):
+        try:
+            conn = get_turso_connection(db_url, auth_token)
+            if params:
+                return conn.execute(query, params)
+            else:
+                return conn.execute(query)
+        except Exception as e:
+            if attempt == max_retries - 1:
+                raise
+            # Exponential backoff: 1s, 2s, 4s
+            wait_time = 2 ** attempt
+            print(f"Turso query failed (attempt {attempt+1}/{max_retries}): {e}. Retrying in {wait_time}s...",
+                  file=sys.stderr)
+            time.sleep(wait_time)
+            # Invalidate connection on error
+            _turso_pool['conn'] = None
+
 # Paths
 WORKSPACE = os.environ.get("WORKSPACE", os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
 MEMORY_DIR = os.path.join(WORKSPACE, "memory")
 
 def get_agent_paths(agent_id='default'):
     """Get file paths for a specific agent."""
+    agent_id = sanitize_agent_id(agent_id)  # Security: prevent path traversal
     agent_dir = os.path.join(MEMORY_DIR, agent_id) if agent_id != 'default' else MEMORY_DIR
     return {
         'warm_file': os.path.join(agent_dir, 'warm-memory.json'),
@@ -158,8 +279,7 @@ class MemoryTree:
                   file=sys.stderr)
             self._prune_to_fit()
         
-        with open(self.tree_file, 'w') as f:
-            json.dump(self.nodes, f, indent=2)
+        atomic_write_json(self.tree_file, self.nodes, ensure_version=True)
     
     def _prune_to_fit(self):
         """Remove least important nodes to fit size limit."""
@@ -332,8 +452,7 @@ class HotMemory:
     def save(self):
         os.makedirs(os.path.dirname(self.state_file), exist_ok=True)
         self._enforce_limits()
-        with open(self.state_file, 'w') as f:
-            json.dump(self.state, f, indent=2)
+        atomic_write_json(self.state_file, self.state, ensure_version=True)
     
     def _enforce_limits(self):
         """Auto-prune to stay within limits."""
@@ -521,8 +640,7 @@ class WarmMemory:
     
     def save(self):
         os.makedirs(os.path.dirname(self.warm_file), exist_ok=True)
-        with open(self.warm_file, 'w') as f:
-            json.dump(self.facts, f, indent=2)
+        atomic_write_json(self.warm_file, self.facts, ensure_version=True)
     
     def add(self, text, category, importance=0.5):
         """Add a fact to warm memory."""
@@ -930,6 +1048,279 @@ def retrieve(query, agent_id='default', limit=5, use_llm=False,
 
 # ─── Consolidation ───
 
+def _llm_distill_chunk(text, llm_endpoint, tree_categories, api_key=None):
+    """
+    Use LLM to extract structured facts from a chunk of daily notes.
+    
+    Supports two endpoint formats:
+    - Simple: POST {prompt, max_tokens} → {text}
+    - OpenAI-compatible: POST {model, messages} → {choices: [{message: {content}}]}
+    
+    Returns list of dicts: [{text, category, importance}, ...]
+    Returns None on failure (signals caller to use rule-based fallback).
+    """
+    import urllib.request
+    
+    cats_str = ", ".join(tree_categories[:20]) if tree_categories else "general, technical, projects, lessons"
+    
+    user_prompt = f"""You are a memory distillation system. Extract important facts from these daily notes.
+
+For each fact, output a JSON object with:
+- "text": concise one-line fact (max 120 chars)
+- "category": best matching category from [{cats_str}]
+- "importance": float 0.0-1.0 (0.9+ for critical decisions/credentials, 0.7-0.8 for project decisions, 0.5-0.6 for general facts)
+
+Rules:
+- Extract ONLY actionable facts, decisions, completions, blockers, and key technical details
+- Skip narrative, commentary, and filler text
+- Each fact must be self-contained (understandable without context)
+- Deduplicate similar facts
+- Output ONLY a JSON array of objects, no other text
+
+Daily Notes:
+{text[:3000]}
+
+Output JSON array:"""
+
+    # Detect endpoint format: if it ends in /v1/... or contains "openai" or "anthropic", use OpenAI format
+    use_openai_format = any(x in llm_endpoint for x in ['/v1/', 'openai', 'integrate.api', 'api.z.ai'])
+    
+    headers = {'Content-Type': 'application/json'}
+    if api_key:
+        headers['Authorization'] = f'Bearer {api_key}'
+    
+    if use_openai_format:
+        # OpenAI-compatible chat completions
+        payload = {
+            'messages': [{'role': 'user', 'content': user_prompt}],
+            'max_tokens': 1000,
+            'temperature': 0.2
+        }
+        # If endpoint doesn't specify model, some APIs need it
+        if 'model' not in llm_endpoint:
+            payload['model'] = 'default'
+    else:
+        # Simple format
+        payload = {
+            'prompt': user_prompt,
+            'max_tokens': 1000,
+            'temperature': 0.2
+        }
+    
+    try:
+        req = urllib.request.Request(
+            llm_endpoint,
+            data=json.dumps(payload).encode(),
+            headers=headers
+        )
+        
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            result = json.load(resp)
+            
+            # Extract response text from various formats
+            response_text = ''
+            if 'choices' in result and result['choices']:
+                # OpenAI format
+                choice = result['choices'][0]
+                if isinstance(choice.get('message'), dict):
+                    response_text = choice['message'].get('content', '')
+                elif isinstance(choice.get('text'), str):
+                    response_text = choice['text']
+            elif 'text' in result:
+                response_text = result['text']
+            elif 'response' in result:
+                response_text = result['response']
+            
+            if not response_text:
+                print("LLM returned empty response", file=sys.stderr)
+                return None
+            
+            # Parse JSON from response (handle markdown code blocks)
+            if '```json' in response_text:
+                response_text = response_text.split('```json')[1].split('```')[0]
+            elif '```' in response_text:
+                parts = response_text.split('```')
+                if len(parts) >= 3:
+                    response_text = parts[1]
+            
+            # Try to find JSON array in response
+            response_text = response_text.strip()
+            if not response_text.startswith('['):
+                # Try to find the array
+                idx = response_text.find('[')
+                if idx >= 0:
+                    response_text = response_text[idx:]
+            
+            facts = json.loads(response_text)
+            if isinstance(facts, list):
+                valid = []
+                for f in facts:
+                    if isinstance(f, dict) and 'text' in f and len(f['text']) >= 10:
+                        valid.append({
+                            'text': f['text'][:150],
+                            'category': f.get('category', 'general'),
+                            'importance': max(0.0, min(1.0, float(f.get('importance', 0.6))))
+                        })
+                return valid
+            return []
+    
+    except Exception as e:
+        print(f"LLM distillation failed: {e}", file=sys.stderr)
+        return None  # Signal caller to use rule-based fallback
+
+
+def _rule_based_extract(lines):
+    """
+    Rule-based fallback: extract facts from daily note lines using patterns.
+    Used when LLM distillation is unavailable.
+    
+    Returns list of dicts: [{text, category, importance}, ...]
+    """
+    decision_re = re.compile(r'\b(decided|agreed|confirmed|fixed|blocked|resolved|deployed|installed|created|published|completed|migrated|downloaded)\b', re.IGNORECASE)
+    
+    results = []
+    current_section = 'general'
+    
+    for line in lines:
+        line = line.strip()
+        
+        # Track section headers for category context
+        if line.startswith('## '):
+            section_text = line.lstrip('#').strip().lower()
+            if any(w in section_text for w in ['gpu', 'server', 'media', 'video', 'image', 'comfyui', 'ltx']):
+                current_section = 'technical/gpu'
+            elif any(w in section_text for w in ['evoclaw', 'coverage', 'ci', 'test']):
+                current_section = 'projects/evoclaw'
+            elif any(w in section_text for w in ['clawchain', 'substrate', 'blockchain']):
+                current_section = 'projects/clawchain'
+            elif any(w in section_text for w in ['memory', 'tiered', 'consolidat']):
+                current_section = 'projects/evoclaw/memory'
+            elif any(w in section_text for w in ['cron', 'monitor', 'alert']):
+                current_section = 'technical/cron'
+            elif any(w in section_text for w in ['twitter', 'social', 'moltbook']):
+                current_section = 'social'
+            else:
+                current_section = 'general'
+            continue
+        
+        fact_text = None
+        importance = 0.5
+        
+        # Completed items
+        if line.startswith('- [x]') or line.startswith('- [X]'):
+            fact_text = line[5:].strip().lstrip('* ').rstrip()
+            importance = 0.7
+        # Bold markers (key facts)
+        elif line.startswith('**') and '**' in line[2:] and len(line) > 10:
+            fact_text = line.replace('**', '').strip().rstrip(':')
+            if len(fact_text) < 15:
+                continue
+            importance = 0.7
+        # Decision lines in bullet points
+        elif line.startswith('- ') and decision_re.search(line) and len(line) > 30:
+            fact_text = line[2:].strip()
+            importance = 0.75
+        
+        if fact_text and len(fact_text) >= 15:
+            results.append({'text': fact_text, 'category': current_section, 'importance': importance})
+    
+    return results
+
+
+def ingest_daily_notes(days=2, agent_id='default', db_url=None, auth_token=None, dry_run=False, llm_endpoint=None):
+    """
+    Scan recent daily note files (memory/YYYY-MM-DD.md) and extract facts
+    that aren't already in warm memory.
+    
+    Uses LLM-based distillation as primary method (--llm-endpoint).
+    Falls back to rule-based extraction if LLM unavailable or fails.
+    """
+    paths = get_agent_paths(agent_id)
+    warm = WarmMemory(paths['warm_file'])
+    tree = MemoryTree(paths['tree_file'])
+    
+    # Get existing fact texts to avoid duplicates
+    existing_texts = set()
+    for fact in warm.facts:
+        existing_texts.add(fact.get('text', '').lower().strip())
+    
+    # Get tree categories for LLM context
+    tree_categories = [p for p in tree.nodes.keys() if p != 'root']
+    
+    # Find recent daily note files
+    today = datetime.now()
+    daily_files = []
+    for i in range(days):
+        day = today - timedelta(days=i)
+        date_str = day.strftime('%Y-%m-%d')
+        for f in sorted(os.listdir(MEMORY_DIR)):
+            if f.startswith(date_str) and f.endswith('.md'):
+                daily_files.append(os.path.join(MEMORY_DIR, f))
+    
+    daily_files = sorted(set(daily_files))
+    
+    results = {
+        'files_scanned': len(daily_files),
+        'mode': 'llm' if llm_endpoint else 'rule',
+        'facts_found': 0,
+        'facts_stored': 0,
+        'facts_skipped': 0,
+        'llm_fallbacks': 0,
+        'facts': []
+    }
+    
+    for fpath in daily_files:
+        try:
+            with open(fpath) as f:
+                content = f.read()
+                lines = content.splitlines()
+        except Exception:
+            continue
+        
+        # Try LLM distillation first, fall back to rule-based
+        extracted = None
+        if llm_endpoint:
+            extracted = _llm_distill_chunk(content, llm_endpoint, tree_categories)
+            if extracted is None:
+                results['llm_fallbacks'] += 1
+                extracted = _rule_based_extract(lines)
+        else:
+            extracted = _rule_based_extract(lines)
+        
+        for fact_data in extracted:
+            fact_text = fact_data['text']
+            category = fact_data['category']
+            importance = fact_data['importance']
+            
+            if len(fact_text) < 10:
+                continue
+            
+            # Skip if duplicate
+            if fact_text.lower().strip() in existing_texts:
+                results['facts_skipped'] += 1
+                continue
+            
+            results['facts_found'] += 1
+            
+            if dry_run:
+                results['facts'].append({'text': fact_text, 'category': category, 'importance': importance})
+                continue
+            
+            # Store fact
+            fact_id = warm.add(fact_text, category, importance)
+            tree.add_node(category, category.split('/')[-1].replace('_', ' ').title())
+            tree.update_counts(category, warm_delta=1)
+            existing_texts.add(fact_text.lower().strip())
+            results['facts_stored'] += 1
+            results['facts'].append({'id': fact_id, 'text': fact_text, 'category': category, 'importance': importance})
+            
+            # Also store to cold if configured
+            if db_url and auth_token:
+                cold_store(fact_id, fact_text, category, importance, agent_id, db_url, auth_token)
+    
+    return results
+
+
 def consolidate(mode='quick', agent_id='default', db_url=None, auth_token=None):
     """
     Run consolidation based on mode.
@@ -1027,8 +1418,7 @@ def save_metrics(agent_id, metrics):
     """Save metrics for an agent."""
     paths = get_agent_paths(agent_id)
     os.makedirs(paths['agent_dir'], exist_ok=True)
-    with open(paths['metrics_file'], 'w') as f:
-        json.dump(metrics, f, indent=2)
+    atomic_write_json(paths['metrics_file'], metrics, ensure_version=True)
 
 def update_metrics(agent_id, updates):
     """Update specific metrics."""
@@ -1146,6 +1536,13 @@ def main():
     p_cold.add_argument('--agent-id', default='default')
     p_cold.add_argument('--db-url', required=True)
     p_cold.add_argument('--auth-token', required=True)
+    
+    # ingest-daily
+    p_ingest = sub.add_parser('ingest-daily', help='Ingest facts from daily note files (LLM primary, rule-based fallback)')
+    p_ingest.add_argument('--days', type=int, default=2, help='How many recent days to scan')
+    p_ingest.add_argument('--dry-run', action='store_true', help='Show what would be ingested without storing')
+    p_ingest.add_argument('--llm-endpoint', help='LLM HTTP endpoint for distillation (falls back to rule-based if not provided)')
+    add_common_args(p_ingest)
     
     args = parser.parse_args()
     
@@ -1321,6 +1718,17 @@ def main():
         elif args.query:
             results = cold_query(args.query, args.agent_id, args.limit, args.db_url, args.auth_token)
             print(json.dumps(results, indent=2))
+    
+    elif args.command == 'ingest-daily':
+        results = ingest_daily_notes(
+            days=args.days,
+            agent_id=args.agent_id,
+            db_url=args.db_url if hasattr(args, 'db_url') else None,
+            auth_token=args.auth_token if hasattr(args, 'auth_token') else None,
+            dry_run=args.dry_run,
+            llm_endpoint=args.llm_endpoint if hasattr(args, 'llm_endpoint') else None
+        )
+        print(json.dumps(results, indent=2))
 
 if __name__ == '__main__':
     main()
