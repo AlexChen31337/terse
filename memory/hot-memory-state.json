@@ -1,40 +1,63 @@
 {
-  "owner": {
-    "name": "Bowen",
-    "timezone": "Australia/Sydney",
-    "style": "Direct, competent help over performative politeness",
-    "contact": "+61491046688, +61430830888, +61422554888",
-    "telegram": "@bowen31337 (ID: 2069029798)"
-  },
-  "agent": {
-    "name": "Alex Chen",
+  "identity": {
+    "agent_name": "Alex Chen",
     "email": "alex.chen31337@gmail.com",
     "twitter": "@AlexChen31337",
     "github": "AlexChen31337",
-    "discord": "alexchen31337"
+    "discord": "alexchen31337",
+    "relationship_start": "2026-02-04"
   },
-  "projects": [
-    {
-      "name": "ClawChain",
-      "status": "Architecture phase, community recruitment",
-      "description": "Layer 1 blockchain built by agents, for agents. Substrate framework, NPoS consensus, near-zero fees. Repo: github.com/clawinfra/claw-chain. $CLAW token: 1B supply, 40% contributor airdrop."
-    },
-    {
-      "name": "EvoClaw",
-      "status": "Active - BSC on-chain + tiered memory",
-      "description": "Self-evolving agent framework. Go binary (7.2MB). BSC adapter, cloud sync (Turso), tiered memory system. Hackathon: Good Vibes Only OpenClaw Edition, $100K, deadline Feb 19."
-    }
-  ],
-  "lessons": [
-    "Never commit plaintext credentials \u2014 encrypt first, gitignore plaintext filenames",
-    "Use SSH keys for git remotes, not PATs in URLs",
-    "Rotate compromised credentials immediately",
-    "When given trust + autonomy, ship faster",
-    "Documentation-first = fewer questions later",
-    "Parallel development = compound progress",
-    "If coder+QA sub-agents > Opus solo cost, just use Opus",
-    "Organization > Personal for community ownership",
-    "Transparent contribution scoring builds trust in open source",
-    "Batch periodic checks into heartbeat instead of many cron jobs"
+  "owner_profile": {
+    "name": "Bowen Li",
+    "timezone": "Australia/Sydney",
+    "personality": "Direct, competent help over performative politeness",
+    "contact": "+61491046688, +61430830888, +61422554888",
+    "telegram": "@bowen31337 (ID: 2069029798)",
+    "topics_loved": ["AI architecture", "blockchain", "system design", "agent evolution"],
+    "work_hours": "flexible, Sydney timezone"
+  },
+  "active_context": {
+    "projects": [
+      {
+        "name": "EvoClaw",
+        "status": "Active — CI coverage boost (74% → 85%), release prep",
+        "description": "Self-evolving agent framework. Go binary. BSC adapter, cloud sync (Turso), tiered memory. Hackathon deadline Feb 19."
+      },
+      {
+        "name": "ClawChain",
+        "status": "Testnet live at testnet.clawchain.win",
+        "description": "L1 blockchain for agents. Substrate, NPoS, near-zero fees. 8 pallets deployed. Hetzner VPS 135.181.157.121."
+      },
+      {
+        "name": "GPU Media Pipeline",
+        "status": "LTX-2 setup in progress, blocked on Gemma 3 download",
+        "description": "AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@10.0.0.44."
+      }
+    ],
+    "tasks": [
+      {"text": "LTX-2 Gemma 3 text encoder download (needs HF auth)", "status": "blocked"},
+      {"text": "EvoClaw test coverage to 85%+", "status": "in-progress"},
+      {"text": "Fix tiered memory integration loop", "status": "in-progress"},
+      {"text": "AI stack migration to /data verify", "status": "pending"}
+    ],
+    "events": [
+      {"text": "EvoClaw hackathon deadline Feb 19 3AM UTC", "timestamp": 1739930400},
+      {"text": "New 112GB SSD mounted at /data on GPU server", "timestamp": 1739318400},
+      {"text": "Router config populated with 14 real models", "timestamp": 1739318400}
+    ]
+  },
+  "critical_lessons": [
+    {"text": "Never commit plaintext credentials — encrypt first, gitignore plaintext", "category": "security", "importance": 0.95},
+    {"text": "Use SSH keys for git remotes, not PATs in URLs", "category": "security", "importance": 0.9},
+    {"text": "Rotate compromised credentials immediately", "category": "security", "importance": 0.95},
+    {"text": "When given trust + autonomy, ship faster", "category": "work", "importance": 0.85},
+    {"text": "Documentation-first = fewer questions later", "category": "work", "importance": 0.8},
+    {"text": "If coder+QA sub-agents > Opus solo cost, just use Opus", "category": "cost", "importance": 0.85},
+    {"text": "Organization > Personal for community ownership", "category": "community", "importance": 0.8},
+    {"text": "Batch periodic checks into heartbeat instead of many cron jobs", "category": "ops", "importance": 0.8},
+    {"text": "Test locally before pushing to CI — Bowen explicit", "category": "work", "importance": 0.9},
+    {"text": "Coverage threshold 85% minimum, 90% ideal — Bowen explicit", "category": "work", "importance": 0.9},
+    {"text": "Use uv not pip on GPU server — Bowen explicit", "category": "tools", "importance": 0.8},
+    {"text": "Eat your own dogfood — use skills you build", "category": "meta", "importance": 0.9}
   ]
 }

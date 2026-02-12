@@ -6,7 +6,7 @@
     "importance": 0.8,
     "created_at": 1770603278.2195358,
     "access_count": 3,
-    "score": 0.9584945886022274,
+    "score": 0.927065903142774,
     "tier": "hot",
     "tree_relevance": 0.6666538966332228
   },
@@ -17,7 +17,7 @@
     "importance": 0.9,
     "created_at": 1770603278.2508664,
     "access_count": 1,
-    "score": 0.9124131290225513,
+    "score": 0.8824954376960947,
     "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
@@ -28,7 +28,7 @@
     "importance": 0.8,
     "created_at": 1770603278.2826345,
     "access_count": 3,
-    "score": 0.9584946119320195,
+    "score": 0.9270659257089552,
     "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
@@ -39,7 +39,7 @@
     "importance": 0.7,
     "created_at": 1770603278.3144336,
     "access_count": 0,
-    "score": 0.6451406120994657,
+    "score": 0.6239866884205835,
     "tier": "warm"
   },
   {
@@ -49,7 +49,7 @@
     "importance": 0.7,
     "created_at": 1770603278.3460078,
     "access_count": 0,
-    "score": 0.6451406199580186,
+    "score": 0.6239866960213999,
     "tier": "warm"
   },
   {
@@ -59,7 +59,7 @@
     "importance": 0.8,
     "created_at": 1770603278.377375,
     "access_count": 2,
-    "score": 0.8847642895063723,
+    "score": 0.8557531934707159,
     "tier": "hot"
   },
   {
@@ -69,7 +69,7 @@
     "importance": 0.7,
     "created_at": 1770603278.4087877,
     "access_count": 2,
-    "score": 0.7741687627001302,
+    "score": 0.7487840533613656,
     "tier": "hot"
   },
   {
@@ -79,7 +79,7 @@
     "importance": 0.6,
     "created_at": 1770603278.4402564,
     "access_count": 1,
-    "score": 0.6082754637919522,
+    "score": 0.5883303347836922,
     "tier": "warm"
   },
   {
@@ -89,7 +89,7 @@
     "importance": 0.6,
     "created_at": 1770603278.4717386,
     "access_count": 1,
-    "score": 0.6082754711799043,
+    "score": 0.5883303419293962,
     "tier": "warm"
   },
   {
@@ -99,7 +99,7 @@
     "importance": 0.7,
     "created_at": 1770603278.50327,
     "access_count": 2,
-    "score": 0.7741687909192138,
+    "score": 0.7487840806552246,
     "tier": "hot"
   },
   {
@@ -109,8 +109,8 @@
     "importance": 0.7,
     "created_at": 1770603278.5348988,
     "access_count": 1,
-    "score": 0.7096547336687017,
-    "tier": "hot"
+    "score": 0.686385415642709,
+    "tier": "warm"
   },
   {
     "id": "84cbe0f913c3",
@@ -119,7 +119,7 @@
     "importance": 0.8,
     "created_at": 1770603278.5667691,
     "access_count": 2,
-    "score": 0.8847643541538682,
+    "score": 0.8557532559985228,
     "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
@@ -130,7 +130,7 @@
     "importance": 0.8,
     "created_at": 1770603278.5991645,
     "access_count": 1,
-    "score": 0.8110340014440375,
+    "score": 0.7844404944693432,
     "tier": "hot"
   },
   {
@@ -140,7 +140,7 @@
     "importance": 0.6,
     "created_at": 1770603278.6313019,
     "access_count": 0,
-    "score": 0.5529777351133937,
+    "score": 0.5348457983149296,
     "tier": "warm"
   },
   {
@@ -150,7 +150,7 @@
     "importance": 0.7,
     "created_at": 1770603278.6630323,
     "access_count": 0,
-    "score": 0.6451406988630485,
+    "score": 0.6239867723392777,
     "tier": "warm"
   },
   {
@@ -160,7 +160,7 @@
     "importance": 0.8,
     "created_at": 1770606835.0535045,
     "access_count": 1,
-    "score": 0.8121475759535164,
+    "score": 0.7855175552797993,
     "tier": "hot"
   },
   {
@@ -170,7 +170,7 @@
     "importance": 0.9,
     "created_at": 1770606835.0856192,
     "access_count": 2,
-    "score": 0.996726582837613,
+    "score": 0.9640442843331252,
     "tier": "hot"
   },
   {
@@ -180,8 +180,8 @@
     "importance": 0.7,
     "created_at": 1770606835.1175792,
     "access_count": 1,
-    "score": 0.7106291465259588,
-    "tier": "hot",
+    "score": 0.6873278778604528,
+    "tier": "warm",
     "tree_relevance": 0.39999996857715914
   },
   {
@@ -191,7 +191,7 @@
     "importance": 0.9,
     "created_at": 1770610454.8254375,
     "access_count": 0,
-    "score": 0.8317662403566056,
+    "score": 0.8044929308839388,
     "tier": "hot"
   },
   {
@@ -201,7 +201,7 @@
     "importance": 0.8,
     "created_at": 1770613764.1543171,
     "access_count": 2,
-    "score": 0.8883507987538609,
+    "score": 0.8592221023976377,
     "tier": "hot"
   },
   {
@@ -211,7 +211,7 @@
     "importance": 0.9,
     "created_at": 1770618231.019124,
     "access_count": 0,
-    "score": 0.8342653481114529,
+    "score": 0.8069100938135498,
     "tier": "hot"
   },
   {
@@ -221,7 +221,7 @@
     "importance": 0.9,
     "created_at": 1770621651.5485682,
     "access_count": 2,
-    "score": 1.0024404144510888,
+    "score": 0.9695707615069667,
     "tier": "hot"
   },
   {
@@ -231,7 +231,7 @@
     "importance": 0.95,
     "created_at": 1770629133.8014925,
     "access_count": 1,
-    "score": 0.9727579031651739,
+    "score": 0.9408615288622689,
     "tier": "hot"
   },
   {
@@ -241,7 +241,7 @@
     "importance": 0.95,
     "created_at": 1770630505.1354907,
     "access_count": 1,
-    "score": 0.9732726905593756,
+    "score": 0.9413594365669217,
     "tier": "hot"
   },
   {
@@ -251,7 +251,7 @@
     "importance": 0.5,
     "created_at": 1770694130.7238297,
     "access_count": 0,
-    "score": 0.4772531884854901,
+    "score": 0.4616042317536068,
     "tier": "warm"
   },
   {
@@ -262,7 +262,907 @@
     "importance": 0.5,
     "created_at": 1770755636.2197883,
     "access_count": 0,
-    "score": 0.48871334729657884,
+    "score": 0.4726886161672031,
+    "tier": "warm"
+  },
+  {
+    "id": "4eac6f35ad77",
+    "text": "Mistakenly created `skills/llm-monitor/` \u2014 needs cleanup/deletion",
+    "category": "technical/cron",
+    "importance": 0.75,
+    "created_at": 1770848917.9565687,
+    "access_count": 0,
+    "score": 0.7350145444748428,
+    "tier": "hot"
+  },
+  {
+    "id": "a316fed71d5f",
+    "text": "**Installed on Pi** (`192.168.99.25`) at `~/.evoclaw/skills/evo-lens/`.",
+    "category": "general",
+    "importance": 0.75,
+    "created_at": 1770848917.9575284,
+    "access_count": 0,
+    "score": 0.7350145447468316,
+    "tier": "hot"
+  },
+  {
+    "id": "47fc11fd77ef",
+    "text": "Setup: Installed `uv`, PyTorch, ComfyUI.",
+    "category": "general",
+    "importance": 0.75,
+    "created_at": 1770848917.9582047,
+    "access_count": 0,
+    "score": 0.7350145449385016,
+    "tier": "hot"
+  },
+  {
+    "id": "e1ef72926ca6",
+    "text": "Model: SDXL Turbo (~6.9GB) downloaded (verified).",
+    "category": "general",
+    "importance": 0.75,
+    "created_at": 1770848917.9588628,
+    "access_count": 0,
+    "score": 0.7350145451249657,
+    "tier": "hot"
+  },
+  {
+    "id": "22641ceef357",
+    "text": "Script deployed to Pi: `evo-lens-comfy.sh`.",
+    "category": "general",
+    "importance": 0.75,
+    "created_at": 1770848917.9595273,
+    "access_count": 0,
+    "score": 0.7350145453132553,
+    "tier": "hot"
+  },
+  {
+    "id": "d604e112a108",
+    "text": "**Pull Request**: Created and merged PR #1 to `main`.",
+    "category": "general",
+    "importance": 0.75,
+    "created_at": 1770848917.9601994,
+    "access_count": 0,
+    "score": 0.735014545503776,
+    "tier": "hot"
+  },
+  {
+    "id": "83ae83844ea3",
+    "text": "Cold tier was empty because eviction only triggered at 30 days \u2014 now fixed",
+    "category": "projects/evoclaw/memory",
+    "importance": 0.75,
+    "created_at": 1770848917.960907,
+    "access_count": 0,
+    "score": 0.735014545704235,
+    "tier": "hot"
+  },
+  {
+    "id": "04735a7f0575",
+    "text": "**intelligent-router@2.0.0** published \u2014 provider-agnostic, config.json, router.py CLI, README",
+    "category": "general",
+    "importance": 0.75,
+    "created_at": 1770848917.9617884,
+    "access_count": 0,
+    "score": 0.7350145459540482,
+    "tier": "hot"
+  },
+  {
+    "id": "a37a6d6a6c6f",
+    "text": "**tiered-memory@1.3.0** published \u2014 cold archival fix, hot trimming, README",
+    "category": "general",
+    "importance": 0.75,
+    "created_at": 1770848917.962556,
+    "access_count": 0,
+    "score": 0.7350145461715447,
+    "tier": "hot"
+  },
+  {
+    "id": "368b1889230d",
+    "text": "Published to ClawHub: tiered-memory@2.0.0",
+    "category": "projects/evoclaw/memory",
+    "importance": 0.75,
+    "created_at": 1770848917.963316,
+    "access_count": 0,
+    "score": 0.7350145463869452,
+    "tier": "hot"
+  },
+  {
+    "id": "342aecf4c650",
+    "text": "Deployed to Pi at ~/.evoclaw/skills/evo-lens/scripts/evo-lens-comfy.sh",
+    "category": "technical/gpu",
+    "importance": 0.75,
+    "created_at": 1770848917.9641461,
+    "access_count": 0,
+    "score": 0.7350145466222227,
+    "tier": "hot"
+  },
+  {
+    "id": "f50bae7cdabe",
+    "text": "Pi can't reach GPU server directly (192.168.99.44:8188 blocked, only 10.0.0.44:8188 works)",
+    "category": "technical/gpu",
+    "importance": 0.75,
+    "created_at": 1770848917.9648752,
+    "access_count": 0,
+    "score": 0.735014546828834,
+    "tier": "hot"
+  },
+  {
+    "id": "cdaf90ed49bf",
+    "text": "Bowen mentioned nginx reverse proxy on Dell \u2014 but nginx is NOT installed on Dell",
+    "category": "technical/gpu",
+    "importance": 0.75,
+    "created_at": 1770848917.9656515,
+    "access_count": 0,
+    "score": 0.7350145470487643,
+    "tier": "hot"
+  },
+  {
+    "id": "6903c6454338",
+    "text": "SSH key deployed: ~/.ssh/id_ed25519_alexchen \u2192 Pi authorized_keys",
+    "category": "general",
+    "importance": 0.75,
+    "created_at": 1770848917.966519,
+    "access_count": 0,
+    "score": 0.7350145472946563,
+    "tier": "hot"
+  },
+  {
+    "id": "8c654e86b24e",
+    "text": "Fixed: Turso DB URL \u2192 agentmemory-bowen31337.aws-ap-northeast-1.turso.io",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9673443,
+    "access_count": 0,
+    "score": 0.7350145475285816,
+    "tier": "hot"
+  },
+  {
+    "id": "95ff5b61c34d",
+    "text": "Fixed: agent name = Bloop, model = ollama/qwen2.5:1.5b",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.968247,
+    "access_count": 0,
+    "score": 0.735014547784412,
+    "tier": "hot"
+  },
+  {
+    "id": "28a430eca45f",
+    "text": "Fixed: dataDir \u2192 /tmp/evoclaw-data (writable)",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9691088,
+    "access_count": 0,
+    "score": 0.7350145480286814,
+    "tier": "hot"
+  },
+  {
+    "id": "eff216af177c",
+    "text": "Fixed: intelligentRouter MEDIUM tier \u2192 zhipu-1/glm-4.7",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9700267,
+    "access_count": 0,
+    "score": 0.7350145482888388,
+    "tier": "hot"
+  },
+  {
+    "id": "ddcb7fd20fd3",
+    "text": "Pi (192.168.99.25) can ping GPU server at 192.168.99.44 but port 8188 blocked",
+    "category": "general",
+    "importance": 0.75,
+    "created_at": 1770848917.9708931,
+    "access_count": 0,
+    "score": 0.7350145485333786,
+    "tier": "hot"
+  },
+  {
+    "id": "9b62fbd8bb83",
+    "text": "**Switched to uv** per Bowen's request \u2014 uv installed at `/home/peter/.local/bin/uv`",
+    "category": "general",
+    "importance": 0.75,
+    "created_at": 1770848917.9717722,
+    "access_count": 0,
+    "score": 0.7350145487823805,
+    "tier": "hot"
+  },
+  {
+    "id": "71b01111fde1",
+    "text": "ComfyUI + Juggernaut XL confirmed working on 3090",
+    "category": "technical/gpu",
+    "importance": 0.75,
+    "created_at": 1770848917.9726174,
+    "access_count": 0,
+    "score": 0.7350145490219849,
+    "tier": "hot"
+  },
+  {
+    "id": "5da77e8aee79",
+    "text": "Checkpoints: sd_xl_turbo_1.0_fp16.safetensors (6.9GB) + juggernautXL_v9.safetensors (7.1GB) \u2705 downloaded",
+    "category": "technical/gpu",
+    "importance": 0.75,
+    "created_at": 1770848917.9736397,
+    "access_count": 0,
+    "score": 0.7350145493117547,
+    "tier": "hot"
+  },
+  {
+    "id": "00fd1be12828",
+    "text": "First fix (sub-agent): Go lint, Go test races, Rust clippy \u2014 all fixed \u2705",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9745195,
+    "access_count": 0,
+    "score": 0.7350145495610947,
+    "tier": "hot"
+  },
+  {
+    "id": "095b13c5a8f0",
+    "text": "Created docs/INSTALLATION.md \u2014 comprehensive guide covering Solo/Fleet/Podman/E2B",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9754503,
+    "access_count": 0,
+    "score": 0.7350145498167899,
+    "tier": "hot"
+  },
+  {
+    "id": "16ac4063e214",
+    "text": "Fixed: edge agent auto-discovery via mDNS (manual config as fallback)",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.976349,
+    "access_count": 0,
+    "score": 0.7350145500715386,
+    "tier": "hot"
+  },
+  {
+    "id": "b504edb5515d",
+    "text": "Fixed: hot memory recovery explanation (hot is cache of warm, rebuilt on boot)",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.977328,
+    "access_count": 0,
+    "score": 0.7350145503489361,
+    "tier": "hot"
+  },
+  {
+    "id": "0be23f0002a3",
+    "text": "Fixed: broker placement (runs on hub machine with orchestrator, not on edge)",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9782953,
+    "access_count": 0,
+    "score": 0.7350145506230884,
+    "tier": "hot"
+  },
+  {
+    "id": "a9fce994a561",
+    "text": "Created getGenomeLocked/updateGenomeLocked internal helpers",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9793704,
+    "access_count": 0,
+    "score": 0.7350145509277998,
+    "tier": "hot"
+  },
+  {
+    "id": "e846807d185e",
+    "text": "Published: clawhub agent-self-governance@1.0.0",
+    "category": "general",
+    "importance": 0.75,
+    "created_at": 1770848917.9804323,
+    "access_count": 0,
+    "score": 0.7350145512287926,
+    "tier": "hot"
+  },
+  {
+    "id": "93a69a858b9c",
+    "text": "Also published agent-wal@1.0.0 separately (WAL-only version)",
+    "category": "general",
+    "importance": 0.75,
+    "created_at": 1770848917.9812965,
+    "access_count": 0,
+    "score": 0.7350145514737381,
+    "tier": "hot"
+  },
+  {
+    "id": "60dcafee0756",
+    "text": "First attempt OOM (ComfyUI using 6.8GB on same GPU) \u2014 fixed with sequential CPU offload",
+    "category": "technical/gpu",
+    "importance": 0.75,
+    "created_at": 1770848917.9821937,
+    "access_count": 0,
+    "score": 0.7350145517280133,
+    "tier": "hot"
+  },
+  {
+    "id": "0aa181adfa41",
+    "text": "`ltx-2-19b-distilled-lora-384.safetensors` \u2014 Downloaded 7.2GB but likely corrupted (too large). DELETED. Need to re-download.",
+    "category": "technical/gpu",
+    "importance": 0.75,
+    "created_at": 1770848917.9832788,
+    "access_count": 0,
+    "score": 0.7350145520354967,
+    "tier": "hot"
+  },
+  {
+    "id": "e4e679e98cfc",
+    "text": "**Gemma 3 text encoder NOT downloaded yet** \u2014 gated model, needs HF auth",
+    "category": "technical/gpu",
+    "importance": 0.75,
+    "created_at": 1770848917.9841816,
+    "access_count": 0,
+    "score": 0.7350145522913272,
+    "tier": "hot"
+  },
+  {
+    "id": "772e2c902ea2",
+    "text": "ComfyUI confirmed working on 3090",
+    "category": "technical/gpu",
+    "importance": 0.75,
+    "created_at": 1770848917.9852047,
+    "access_count": 0,
+    "score": 0.7350145525812998,
+    "tier": "hot"
+  },
+  {
+    "id": "b181e164c127",
+    "text": "Tiered memory loop closed \u2014 daily notes auto-ingest, consolidation cron fixed",
+    "category": "projects/evoclaw/memory",
+    "importance": 0.9,
+    "created_at": 1770858030.757867,
+    "access_count": 0,
+    "score": 0.8851238559437773,
+    "tier": "hot"
+  },
+  {
+    "id": "0f7dd304fa26",
+    "text": "Intelligent router populated with 14 real models across 4 tiers (SIMPLE/MEDIUM/COMPLEX/CRITICAL)",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770858030.8004234,
+    "access_count": 0,
+    "score": 0.688429677036781,
+    "tier": "warm"
+  },
+  {
+    "id": "6e65bd87a1f3",
+    "text": "GPU server new 112GB SSD mounted at /data, ai-stack migration in progress",
+    "category": "technical/gpu",
+    "importance": 0.8,
+    "created_at": 1770858030.8423762,
+    "access_count": 0,
+    "score": 0.786776786490562,
+    "tier": "hot"
+  },
+  {
+    "id": "43d9a517274a",
+    "text": "LTX-2 setup: models downloaded, Gemma 3 encoder needs HF auth token",
+    "category": "technical/gpu",
+    "importance": 0.7,
+    "created_at": 1770858030.885095,
+    "access_count": 0,
+    "score": 0.6884296995250975,
+    "tier": "warm"
+  },
+  {
+    "id": "dda2c9a44033",
+    "text": "EvoClaw CI RED, coverage 76.2%, target 85%+, cold.go untestable (cloudsync.Client not interface)",
+    "category": "projects/evoclaw",
+    "importance": 0.9,
+    "created_at": 1770858030.926781,
+    "access_count": 0,
+    "score": 0.8851239136242466,
+    "tier": "hot"
+  },
+  {
+    "id": "42da29a5dd55",
+    "text": "Main session switched from Opus to Sonnet to reduce token consumption",
+    "category": "lessons/cost",
+    "importance": 0.9,
+    "created_at": 1770858030.968056,
+    "access_count": 0,
+    "score": 0.8851239277188027,
+    "tier": "hot"
+  },
+  {
+    "id": "c2d74363e217",
+    "text": "z.ai models confirmed: glm-4.5-air, glm-4.7, glm-5, glm-4-plus valid; glm-4-air/phony-alpha NOT found",
+    "category": "technical/cron",
+    "importance": 0.6,
+    "created_at": 1770858031.009829,
+    "access_count": 0,
+    "score": 0.5900826279889578,
+    "tier": "warm"
+  },
+  {
+    "id": "76ec444a6864",
+    "text": "Proxy2 credits exhausted \u2014 use Sonnet-OAuth or Sonnet-Proxy3 instead",
+    "category": "technical/cron",
+    "importance": 0.7,
+    "created_at": 1770858031.0521615,
+    "access_count": 0,
+    "score": 0.6884297438970565,
+    "tier": "warm"
+  },
+  {
+    "id": "43b0af820297",
+    "text": "Genome layers 2-3 implemented \u2014 skill selection weights, behavioral evolution with mutation",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770858031.0936832,
+    "access_count": 0,
+    "score": 0.7867768627714622,
+    "tier": "hot"
+  },
+  {
+    "id": "227039352d18",
+    "text": "Agent patterns integrated \u2014 WAL, VBR, ADL, VFM protocols in Go + Rust",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770858031.1349287,
+    "access_count": 0,
+    "score": 0.7867768752909835,
+    "tier": "hot"
+  },
+  {
+    "id": "b461732f5e01",
+    "text": "EvoClaw security layers done \u2014 signed constraints, JWT API auth, evolution firewall",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770858051.8253617,
+    "access_count": 0,
+    "score": 0.7867831556994146,
+    "tier": "hot"
+  },
+  {
+    "id": "67934f14c587",
+    "text": "agent-self-governance skill published to ClawHub with 4 protocols (WAL/VBR/ADL/VFM)",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770858051.867881,
+    "access_count": 0,
+    "score": 0.6884352725299965,
+    "tier": "warm"
+  },
+  {
+    "id": "382583424773",
+    "text": "ComfyUI + Juggernaut XL working on RTX 3090, ~30s per 1024x1024 image",
+    "category": "technical/gpu",
+    "importance": 0.7,
+    "created_at": 1770858051.9100068,
+    "access_count": 0,
+    "score": 0.6884352837183941,
+    "tier": "warm"
+  },
+  {
+    "id": "febadf92028f",
+    "text": "CogVideoX-2B working on RTX 3090, max 49 frames (6s), 5B model needs GPU pooling",
+    "category": "technical/gpu",
+    "importance": 0.7,
+    "created_at": 1770858051.95244,
+    "access_count": 0,
+    "score": 0.6884352949885433,
+    "tier": "warm"
+  },
+  {
+    "id": "a578cd7e70fd",
+    "text": "Pi agent renamed to bloop-eye, config at ~/.evoclaw/agent.toml",
+    "category": "technical/gpu",
+    "importance": 0.5,
+    "created_at": 1770858051.9939911,
+    "access_count": 0,
+    "score": 0.49173950430313856,
+    "tier": "warm"
+  },
+  {
+    "id": "50b9bd7c6403",
+    "text": "SSH key auth for GPU server via ~/.ssh/id_ed25519_alexchen, password backup encrypted",
+    "category": "technical/security",
+    "importance": 0.7,
+    "created_at": 1770858052.0366695,
+    "access_count": 0,
+    "score": 0.6884353173596406,
+    "tier": "warm"
+  },
+  {
+    "id": "e197eef4db97",
+    "text": "Use uv not pip for Python on GPU server \u2014 Bowen explicit preference",
+    "category": "owner/preferences",
+    "importance": 0.9,
+    "created_at": 1770858052.078376,
+    "access_count": 0,
+    "score": 0.8851311365615728,
+    "tier": "hot"
+  },
+  {
+    "id": "bd87731e5bff",
+    "text": "Test locally before pushing to CI \u2014 Bowen explicit preference",
+    "category": "owner/preferences",
+    "importance": 0.9,
+    "created_at": 1770858052.1201756,
+    "access_count": 0,
+    "score": 0.8851311508352789,
+    "tier": "hot"
+  },
+  {
+    "id": "fd274db53614",
+    "text": "Coverage threshold 85% minimum, 90% ideal \u2014 Bowen explicit preference",
+    "category": "owner/preferences",
+    "importance": 0.9,
+    "created_at": 1770858052.1621907,
+    "access_count": 0,
+    "score": 0.8851311651826672,
+    "tier": "hot"
+  },
+  {
+    "id": "9cacdd1b4329",
+    "text": "SadTalker + Bark TTS setup in progress, sub-agent timed out on PyTorch download",
+    "category": "technical/gpu",
+    "importance": 0.6,
+    "created_at": 1770858052.2037742,
+    "access_count": 0,
+    "score": 0.5900874529217944,
+    "tier": "warm"
+  },
+  {
+    "id": "b213a7f8dc2a",
+    "text": "Tiered memory loop closed: hot/warm/cold all working, MEMORY.md auto-generates from daily notes",
+    "category": "projects/evoclaw",
+    "importance": 0.9,
+    "created_at": 1770879637.1740577,
+    "access_count": 0,
+    "score": 0.8925329164464917,
+    "tier": "hot"
+  },
+  {
+    "id": "a2072493215d",
+    "text": "Intelligent router working: 14 models across 4 tiers, delivering 40-83% cost savings",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879637.2224507,
+    "access_count": 0,
+    "score": 0.7933626072089288,
+    "tier": "hot"
+  },
+  {
+    "id": "2500290aec8c",
+    "text": "GPU server: new 112GB SSD mounted at /data, ai-stack migration in progress",
+    "category": "technical/gpu",
+    "importance": 0.7,
+    "created_at": 1770879637.270016,
+    "access_count": 0,
+    "score": 0.694192294046655,
+    "tier": "warm"
+  },
+  {
+    "id": "8fd62f21fc48",
+    "text": "LTX-2 setup: 14GB+950MB models downloaded, Gemma 3 encoder needs HF auth",
+    "category": "technical/gpu",
+    "importance": 0.6,
+    "created_at": 1770879637.3183775,
+    "access_count": 0,
+    "score": 0.5950219774274609,
+    "tier": "warm"
+  },
+  {
+    "id": "f26e7a87a894",
+    "text": "EvoClaw coverage boost: 76.2% achieved, blocked by cold.go (0% - needs interface refactor)",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770879637.3683846,
+    "access_count": 0,
+    "score": 0.6941923203915349,
+    "tier": "warm"
+  },
+  {
+    "id": "09b01e75a4fe",
+    "text": "Default model switched from Opus 4.6 to Sonnet 4.5 for 40% cost savings on routine work",
+    "category": "technical/cron",
+    "importance": 0.8,
+    "created_at": 1770879637.418223,
+    "access_count": 0,
+    "score": 0.7933626671304657,
+    "tier": "hot"
+  },
+  {
+    "id": "84de4f2e5c21",
+    "text": "NIM reasoning models added: R1-32B/14B, QwQ-32B, Qwen3-Thinking, Kimi-K2, Phi-4-Reasoning",
+    "category": "technical/cron",
+    "importance": 0.7,
+    "created_at": 1770879637.4672735,
+    "access_count": 0,
+    "score": 0.6941923468757443,
+    "tier": "warm"
+  },
+  {
+    "id": "59e8ccbe2615",
+    "text": "Skills robustness fixes: atomic writes, schema v2.0, sanitization, pooling, retry logic all implemented",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879637.515192,
+    "access_count": 0,
+    "score": 0.7933626968105356,
+    "tier": "hot"
+  },
+  {
+    "id": "7ab3337c4b2c",
+    "text": "ClawChain auto-discovery designed: 6-hour health check cron for mainnet registration",
+    "category": "projects/clawchain",
+    "importance": 0.7,
+    "created_at": 1770879637.5628903,
+    "access_count": 0,
+    "score": 0.6941923724836926,
+    "tier": "warm"
+  },
+  {
+    "id": "066ae7a53292",
+    "text": "EvoClaw Little Brother installed on Dell XPS: 2 agents (dell-xps-agent + bloop-eye Pi) running",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770879637.610139,
+    "access_count": 0,
+    "score": 0.6941923851377391,
+    "tier": "warm"
+  },
+  {
+    "id": "81a5b283e044",
+    "text": "Config backup system implemented: automated Turso backups on startup, restore by ID",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879637.6592467,
+    "access_count": 0,
+    "score": 0.7933627409024592,
+    "tier": "hot"
+  },
+  {
+    "id": "3167bda09b08",
+    "text": "Messaging interfaces implemented: HTTP Chat API, Web Terminal, TUI all working",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879637.7071779,
+    "access_count": 0,
+    "score": 0.7933627555731558,
+    "tier": "hot"
+  },
+  {
+    "id": "e42aca512f45",
+    "text": "Multi-arch CI pipeline implemented: 7 targets for orchestrator, 5 for edge agent",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879637.7547972,
+    "access_count": 0,
+    "score": 0.7933627701484008,
+    "tier": "hot"
+  },
+  {
+    "id": "7966242055ee",
+    "text": "Homebrew tap created: clawinfra/evoclaw with automated release workflow",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770879637.8022408,
+    "access_count": 0,
+    "score": 0.6941924365861303,
+    "tier": "warm"
+  },
+  {
+    "id": "6b4be3eda9d5",
+    "text": "Open source strategy: keeping EvoClaw fully open for trust and community",
+    "category": "lessons/community",
+    "importance": 0.9,
+    "created_at": 1770879637.8497229,
+    "access_count": 0,
+    "score": 0.8925331491034593,
+    "tier": "hot"
+  },
+  {
+    "id": "c1c01dad8e92",
+    "text": "Lesson: test locally before pushing to CI - Bowen explicit after repeated failures",
+    "category": "lessons/cost",
+    "importance": 0.9,
+    "created_at": 1770879637.8976207,
+    "access_count": 0,
+    "score": 0.8925331655965005,
+    "tier": "hot"
+  },
+  {
+    "id": "a1a0e626e24a",
+    "text": "GitHub Actions cache corruption can block CI - delete and rebuild when stuck",
+    "category": "lessons/cost",
+    "importance": 0.7,
+    "created_at": 1770879637.945951,
+    "access_count": 0,
+    "score": 0.6941924750743631,
+    "tier": "warm"
+  },
+  {
+    "id": "0de2e5dd61fd",
+    "text": "GPU server cleaned: freed 27GB (HF cache 21GB, uv 6GB, SDXL Turbo 6.5GB, logs 4.6GB)",
+    "category": "technical/gpu",
+    "importance": 0.6,
+    "created_at": 1770879637.9936793,
+    "access_count": 0,
+    "score": 0.5950221324487036,
+    "tier": "warm"
+  },
+  {
+    "id": "df6a370aceb9",
+    "text": "EvoClaw security layers implemented: signed constraints, JWT auth, evolution firewall",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879638.046249,
+    "access_count": 0,
+    "score": 0.7933628593553748,
+    "tier": "hot"
+  },
+  {
+    "id": "e5802d060a78",
+    "text": "Agent self-governance skill published to ClawHub: WAL+VBR+ADL+VFM protocols",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879638.099425,
+    "access_count": 0,
+    "score": 0.7933628756313882,
+    "tier": "hot"
+  },
+  {
+    "id": "336b2eec9712",
+    "text": "Video generation working: CogVideoX-2B on RTX 3090, max 49 frames (6s at 8fps)",
+    "category": "technical/gpu",
+    "importance": 0.6,
+    "created_at": 1770879638.15906,
+    "access_count": 0,
+    "score": 0.5950221704132856,
+    "tier": "warm"
+  },
+  {
+    "id": "f5460269b937",
+    "text": "EvoClaw gateway/daemon mode implemented with systemd/launchd integration, auto-restart, PID management",
+    "category": "projects/evoclaw",
+    "importance": 0.9,
+    "created_at": 1770901223.8614366,
+    "access_count": 0,
+    "score": 0.8999971453024852,
+    "tier": "hot"
+  },
+  {
+    "id": "50c59a212ca6",
+    "text": "EvoClaw agent editor modal UI complete with edit button, model dropdown, save functionality",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770901223.9106195,
+    "access_count": 0,
+    "score": 0.7999974776708076,
+    "tier": "hot"
+  },
+  {
+    "id": "5431ee064d17",
+    "text": "EvoClaw desktop tools skill deployed: 14 tools (read, write, edit, glob, grep, websearch, webfetch, codesearch, bash, question, todowrite, todoread, task, skill) with 87.3% coverage",
+    "category": "projects/evoclaw",
+    "importance": 0.9,
+    "created_at": 1770901223.957171,
+    "access_count": 0,
+    "score": 0.8999971785430629,
+    "tier": "hot"
+  },
+  {
+    "id": "a7307833a4bf",
+    "text": "EvoClaw tool schema injection implemented: automatic tool discovery, OpenAI-compatible JSON schemas, agentic loop with max 5 iterations",
+    "category": "projects/evoclaw",
+    "importance": 0.9,
+    "created_at": 1770901224.0043564,
+    "access_count": 0,
+    "score": 0.8999971949266728,
+    "tier": "hot"
+  },
+  {
+    "id": "59bf9c0142a5",
+    "text": "EvoClaw CI pipeline multi-arch builds: 7 orchestrator targets (Linux/macOS/Windows), 5 edge targets",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770901224.0515876,
+    "access_count": 0,
+    "score": 0.6999978310314715,
+    "tier": "warm"
+  },
+  {
+    "id": "3d3722b6d2fb",
+    "text": "Homebrew tap created for EvoClaw macOS distribution: clawinfra/evoclaw with automated release workflow",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770901224.0993655,
+    "access_count": 0,
+    "score": 0.6999978439342827,
+    "tier": "warm"
+  },
+  {
+    "id": "199f62881fe2",
+    "text": "EvoClaw clean reinstalled at ~/.evoclaw-hub/ with agents: alex-hub (desktop orchestrator), alex-eye (Pi camera)",
+    "category": "projects/evoclaw",
+    "importance": 0.6,
+    "created_at": 1770901224.1466029,
+    "access_count": 0,
+    "score": 0.5999981628781094,
+    "tier": "warm"
+  },
+  {
+    "id": "29c0f86ac5fc",
+    "text": "Tiered memory loop closed: daily notes \u2192 ingest-daily \u2192 warm memory \u2192 consolidation \u2192 MEMORY.md auto-generated",
+    "category": "technical/cron",
+    "importance": 0.9,
+    "created_at": 1770901224.1941369,
+    "access_count": 0,
+    "score": 0.8999972608139409,
+    "tier": "hot"
+  },
+  {
+    "id": "4dfc9f1e0cc5",
+    "text": "Intelligent router dogfooding working: cron jobs use GLM-4.7 SIMPLE tier (83% savings), sub-agents use Sonnet COMPLEX tier (67% savings), main session on Sonnet (40% savings vs Opus)",
+    "category": "lessons/cost",
+    "importance": 0.8,
+    "created_at": 1770901224.240646,
+    "access_count": 0,
+    "score": 0.7999975795223949,
+    "tier": "hot"
+  },
+  {
+    "id": "5139d973c6f2",
+    "text": "Main session default model switched from Opus 4.6 \u2192 Sonnet 4.5 for token cost savings (Opus kept as fallback for critical tasks)",
+    "category": "lessons/cost",
+    "importance": 0.8,
+    "created_at": 1770901224.2868898,
+    "access_count": 0,
+    "score": 0.7999975937950152,
+    "tier": "hot"
+  },
+  {
+    "id": "984b90de1813",
+    "text": "NIM reasoning models added to OpenClaw config: R1-32B, R1-14B, QwQ-32B, Qwen3-Thinking, Kimi-K2-Thinking, Phi-4-Reasoning",
+    "category": "technical/gpu",
+    "importance": 0.8,
+    "created_at": 1770901229.0416515,
+    "access_count": 0,
+    "score": 0.7999990613108421,
+    "tier": "hot"
+  },
+  {
+    "id": "238e6bc05671",
+    "text": "Web terminal markdown rendering implemented: agent responses render rich text (headers, lists, code blocks, tables)",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770901229.0877585,
+    "access_count": 0,
+    "score": 0.6999991910985941,
+    "tier": "warm"
+  },
+  {
+    "id": "d685eafd885e",
+    "text": "EvoClaw config backup system implemented: automated Turso backups on startup, interactive restore tool",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770901229.1338842,
+    "access_count": 0,
+    "score": 0.6999992035551594,
+    "tier": "warm"
+  },
+  {
+    "id": "5ae297035eff",
+    "text": "Hyperliquid BTC position closed via stop-loss at 5,781, realized PnL -.41 (net loss -.51 with fees)",
+    "category": "projects/clawchain",
+    "importance": 0.6,
+    "created_at": 1770901229.1808827,
+    "access_count": 0,
+    "score": 0.5999993282121538,
+    "tier": "warm"
+  },
+  {
+    "id": "3f3ef806f7a4",
+    "text": "OpenClaw sandbox restriction removed: sudo and filesystem write access restored for development",
+    "category": "technical/security",
+    "importance": 0.7,
+    "created_at": 1770901229.2276142,
+    "access_count": 0,
+    "score": 0.699999228867752,
     "tier": "warm"
   }
 ]
