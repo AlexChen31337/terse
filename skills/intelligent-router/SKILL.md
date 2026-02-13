@@ -1,7 +1,7 @@
 ---
 name: intelligent-router
 description: Intelligent model routing for sub-agent task delegation. Choose the optimal model based on task complexity, cost, and capability requirements. Reduces costs by routing simple tasks to cheaper models while preserving quality for complex work.
-version: 2.1.0
+version: 2.2.0
 ---
 
 # Intelligent Router
@@ -29,7 +29,7 @@ version: 2.1.0
 
 ---
 
-## 🆕 What's New in v2.1
+## 🆕 What's New in v2.2
 
 **Major enhancements inspired by ClawRouter:**
 
