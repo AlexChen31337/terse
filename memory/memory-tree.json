@@ -9,7 +9,8 @@
       "projects",
       "technical",
       "social",
-      "lessons"
+      "lessons",
+      "general"
     ]
   },
   "owner": {
@@ -23,9 +24,9 @@
   },
   "owner/preferences": {
     "desc": "Communication style and work preferences",
-    "warm_count": 5,
+    "warm_count": 6,
     "cold_count": 0,
-    "last_access": 1770858052.163356,
+    "last_access": 1770922858.765796,
     "children": []
   },
   "projects": {
@@ -40,16 +41,16 @@
   },
   "projects/clawchain": {
     "desc": "ClawChain L1 blockchain",
-    "warm_count": 7,
+    "warm_count": 10,
     "cold_count": 0,
-    "last_access": 1770901229.1832674,
+    "last_access": 1770944439.4594097,
     "children": []
   },
   "projects/evoclaw": {
     "desc": "EvoClaw self-evolving agent framework",
-    "warm_count": 41,
+    "warm_count": 100,
     "cold_count": 0,
-    "last_access": 1770901229.1361194,
+    "last_access": 1770987661.7387354,
     "children": [
       "projects/evoclaw/bsc",
       "projects/evoclaw/memory"
@@ -64,9 +65,9 @@
   },
   "projects/evoclaw/memory": {
     "desc": "Tiered memory system",
-    "warm_count": 4,
+    "warm_count": 14,
     "cold_count": 0,
-    "last_access": 1770858030.7588606,
+    "last_access": 1770987661.5933745,
     "children": []
   },
   "technical": {
@@ -115,23 +116,23 @@
   },
   "technical/gpu": {
     "desc": "Gpu",
-    "warm_count": 11,
+    "warm_count": 99,
     "cold_count": 0,
-    "last_access": 1770901229.0438437,
+    "last_access": 1770987661.8878582,
     "children": []
   },
   "lessons/cost": {
     "desc": "Cost",
-    "warm_count": 5,
+    "warm_count": 7,
     "cold_count": 0,
-    "last_access": 1770901224.2890284,
+    "last_access": 1770944439.3054128,
     "children": []
   },
   "technical/cron": {
     "desc": "Cron",
-    "warm_count": 5,
+    "warm_count": 9,
     "cold_count": 0,
-    "last_access": 1770901224.1963065,
+    "last_access": 1770987661.7840865,
     "children": []
   },
   "_schema_version": "2.0",
@@ -140,6 +141,13 @@
     "warm_count": 1,
     "cold_count": 0,
     "last_access": 1770879637.8516474,
+    "children": []
+  },
+  "general": {
+    "desc": "General",
+    "warm_count": 68,
+    "cold_count": 0,
+    "last_access": 1770987661.7094774,
     "children": []
   }
 }
