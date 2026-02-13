@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-Tiered Memory CLI v2.0 - EvoClaw Architecture Implementation
+Tiered Memory CLI v2.1.0 - EvoClaw Architecture Implementation
 
 Three-tier memory system with LLM-powered search, distillation, and consolidation.
+Enhanced with structured metadata extraction, validation, and URL preservation.
 
 Tiers:
   Hot (5KB):  Core memory — identity, owner profile, active context, critical lessons
@@ -11,6 +12,9 @@ Tiers:
 
 Features:
   - LLM-powered tree search and distillation
+  - Structured metadata extraction (URLs, commands, paths)
+  - Memory completeness validation
+  - URL-aware distillation and search
   - Score-based tier placement (>=0.7 Hot, >=0.3 Warm, >=0.05 Cold, <0.05 Frozen)
   - Auto-pruning hot memory (max 20 lessons, 10 events, 10 tasks)
   - Multi-agent support (agent_id scoping)
@@ -22,6 +26,9 @@ Usage:
   memory_cli.py retrieve --query "..." [--llm] [--limit 5] [--agent-id default]
   memory_cli.py distill --text "conversation" [--llm] [--llm-endpoint http://...]
   memory_cli.py consolidate [--mode quick|daily|monthly|full] [--agent-id default]
+  memory_cli.py validate [--file PATH] [--agent-id default]
+  memory_cli.py extract-metadata --file PATH
+  memory_cli.py search-url --url FRAGMENT [--limit 5] [--agent-id default]
   memory_cli.py sync-critical [--agent-id default]
   memory_cli.py metrics [--agent-id default]
   memory_cli.py hot --update key=value [--agent-id default]
@@ -38,6 +45,121 @@ import hashlib
 import re
 from datetime import datetime, timedelta
 from pathlib import Path
+from urllib.parse import urlparse
+
+# ─── Structured Metadata Extraction ───
+
+def extract_structured_metadata(text):
+    """
+    Extract structured metadata from text: URLs, commands, file paths.
+    Returns dict with keys: urls, commands, paths
+    """
+    metadata = {
+        'urls': [],
+        'commands': [],
+        'paths': []
+    }
+    
+    # Extract URLs - look for http/https or domain patterns
+    url_pattern = r'https?://[^\s<>"\')]+|www\.[^\s<>"\')]+|(?:^|\s)([a-z0-9-]+\.(com|org|ai|io|net|dev|app|studio|co)[^\s<>"\')]*)'
+    matches = re.finditer(url_pattern, text, re.IGNORECASE | re.MULTILINE)
+    for match in matches:
+        url = match.group(0).strip()
+        if match.lastindex and match.group(match.lastindex):
+            # Domain without protocol captured by group
+            url = match.group(1)
+        # Clean up trailing punctuation
+        url = url.rstrip('.,;:!?)')
+        # Skip if it looks like a path (starts with /)
+        if url.startswith('/'):
+            continue
+        # Validate URL
+        try:
+            parsed = urlparse(url if url.startswith('http') else f'https://{url}')
+            if parsed.netloc:
+                metadata['urls'].append(url if url.startswith('http') else url)
+        except:
+            pass
+    
+    # Extract shell commands (lines starting with $ or commands in backticks)
+    command_patterns = [
+        r'`([^`]+)`',  # Backtick commands
+        r'^\$\s+(.+)$',  # Lines starting with $
+        r'^(?:sudo\s+)?(?:cd|ls|mkdir|rm|mv|cp|wget|curl|git|docker|npm|pip|python|node|go|rust|cargo|ssh|scp)\s+(.+)$'  # Common commands
+    ]
+    for pattern in command_patterns:
+        for match in re.finditer(pattern, text, re.MULTILINE):
+            cmd = match.group(1 if match.lastindex else 0).strip()
+            if len(cmd) > 3 and len(cmd) < 200:  # Reasonable command length
+                metadata['commands'].append(cmd)
+    
+    # Extract file paths (Unix-style) - but not URL paths
+    path_patterns = [
+        r'(/[a-zA-Z0-9_.-]+(?:/[a-zA-Z0-9_.-]+)+)',  # Absolute paths
+        r'(~?/[a-zA-Z0-9_.-]+(?:/[a-zA-Z0-9_.-]+)+)',  # Home-relative paths
+        r'(\./[a-zA-Z0-9_.-]+(?:/[a-zA-Z0-9_.-]+)*)',  # Relative paths
+    ]
+    for pattern in path_patterns:
+        for match in re.finditer(pattern, text):
+            path = match.group(1)
+            # Filter out URLs mistakenly matched as paths
+            # Check for domain-like patterns (e.g., github.com, docs.comfy.org)
+            if not any(x in path for x in ['http://', 'https://', '://']) and \
+               not re.search(r'\.(com|org|ai|io|net|dev|app|studio|co)/', path) and \
+               len(path) > 5:
+                metadata['paths'].append(path)
+    
+    # Deduplicate
+    metadata['urls'] = list(dict.fromkeys(metadata['urls']))[:10]  # Max 10 URLs
+    metadata['commands'] = list(dict.fromkeys(metadata['commands']))[:5]  # Max 5 commands
+    metadata['paths'] = list(dict.fromkeys(metadata['paths']))[:10]  # Max 10 paths
+    
+    return metadata
+
+
+def validate_memory_completeness(daily_notes_path, warm_memory_path=None):
+    """
+    Validate that daily notes have complete actionable information.
+    Returns list of warnings about missing details.
+    """
+    warnings = []
+    
+    if not os.path.exists(daily_notes_path):
+        return [f"Daily notes file not found: {daily_notes_path}"]
+    
+    with open(daily_notes_path) as f:
+        content = f.read()
+    
+    # Check for tools mentioned without URLs
+    tool_keywords = ['z-image', 'LTX-2', 'ComfyUI', 'SadTalker', 'whisper', 'AnimateDiff', 'Stable Diffusion', 'FLUX']
+    for tool in tool_keywords:
+        if tool.lower() in content.lower():
+            # Check if there's a URL nearby (within 500 chars)
+            idx = content.lower().find(tool.lower())
+            context = content[max(0, idx-250):idx+250]
+            if not re.search(r'https?://|www\.', context, re.IGNORECASE):
+                warnings.append(f"Tool '{tool}' mentioned without URL/documentation link")
+    
+    # Check for commands mentioned without examples
+    command_keywords = ['download', 'install', 'configure', 'setup', 'deploy']
+    for keyword in command_keywords:
+        if keyword in content.lower():
+            idx = content.lower().find(keyword)
+            context = content[max(0, idx-100):idx+200]
+            if not re.search(r'`[^`]+`|\$\s+\w+', context):
+                warnings.append(f"Action '{keyword}' mentioned without command example")
+    
+    # Check for decisions without next steps
+    decision_keywords = ['decided', 'chose', 'selected', 'will use']
+    for keyword in decision_keywords:
+        if keyword in content.lower():
+            idx = content.lower().find(keyword)
+            context = content[max(0, idx-50):idx+300]
+            if not any(word in context.lower() for word in ['next', 'todo', 'action', 'download', 'install', 'configure', 'http']):
+                section = content[max(0, idx-100):idx+50]
+                warnings.append(f"Decision near '{section[-50:].strip()}...' may lack implementation details")
+    
+    return warnings
 
 # ─── Configuration ───
 
@@ -642,9 +764,25 @@ class WarmMemory:
         os.makedirs(os.path.dirname(self.warm_file), exist_ok=True)
         atomic_write_json(self.warm_file, self.facts, ensure_version=True)
     
-    def add(self, text, category, importance=0.5):
-        """Add a fact to warm memory."""
+    def add(self, text, category, importance=0.5, metadata=None):
+        """
+        Add a fact to warm memory with optional structured metadata.
+        
+        Args:
+            text: Fact text
+            category: Category path
+            importance: 0.0-1.0
+            metadata: Dict with optional keys: urls, commands, paths
+        
+        Returns:
+            fact_id
+        """
         fact_id = hashlib.md5(f"{text}{time.time()}".encode()).hexdigest()[:12]
+        
+        # Extract metadata if not provided
+        if metadata is None:
+            metadata = extract_structured_metadata(text)
+        
         fact = {
             'id': fact_id,
             'text': text,
@@ -652,7 +790,8 @@ class WarmMemory:
             'importance': importance,
             'created_at': time.time(),
             'access_count': 0,
-            'score': importance
+            'score': importance,
+            'metadata': metadata  # NEW: structured metadata
         }
         self.facts.append(fact)
         self._recalculate_scores()
@@ -742,6 +881,23 @@ class WarmMemory:
         matches = [f for f in self.facts if f.get('category', '').startswith(category)]
         matches.sort(key=lambda x: x['score'], reverse=True)
         return matches[:limit]
+    
+    def search_by_url(self, url_fragment, limit=5):
+        """Search facts by URL fragment."""
+        results = []
+        for fact in self.facts:
+            urls = fact.get('metadata', {}).get('urls', [])
+            if any(url_fragment.lower() in url.lower() for url in urls):
+                results.append(fact)
+        results.sort(key=lambda x: x.get('score', 0), reverse=True)
+        return results[:limit]
+    
+    def get_all_urls(self):
+        """Extract all unique URLs from warm memory."""
+        urls = set()
+        for fact in self.facts:
+            urls.update(fact.get('metadata', {}).get('urls', []))
+        return sorted(urls)
 
 # ─── Cold Memory (Turso) ───
 
@@ -1051,36 +1207,51 @@ def retrieve(query, agent_id='default', limit=5, use_llm=False,
 def _llm_distill_chunk(text, llm_endpoint, tree_categories, api_key=None):
     """
     Use LLM to extract structured facts from a chunk of daily notes.
+    Enhanced to preserve URLs and technical details with metadata extraction.
     
     Supports two endpoint formats:
     - Simple: POST {prompt, max_tokens} → {text}
     - OpenAI-compatible: POST {model, messages} → {choices: [{message: {content}}]}
     
-    Returns list of dicts: [{text, category, importance}, ...]
+    Returns list of dicts: [{text, category, importance, metadata}, ...]
     Returns None on failure (signals caller to use rule-based fallback).
     """
     import urllib.request
     
     cats_str = ", ".join(tree_categories[:20]) if tree_categories else "general, technical, projects, lessons"
     
+    # Extract URLs before LLM processing to ensure they're not lost
+    extracted_metadata = extract_structured_metadata(text)
+    urls_context = ""
+    if extracted_metadata['urls']:
+        urls_context = f"\n\nIMPORTANT URLs found (MUST include in relevant facts):\n" + "\n".join(f"- {url}" for url in extracted_metadata['urls'][:5])
+    
     user_prompt = f"""You are a memory distillation system. Extract important facts from these daily notes.
 
 For each fact, output a JSON object with:
-- "text": concise one-line fact (max 120 chars)
+- "text": concise one-line fact (max 150 chars) - INCLUDE URLs if relevant!
 - "category": best matching category from [{cats_str}]
-- "importance": float 0.0-1.0 (0.9+ for critical decisions/credentials, 0.7-0.8 for project decisions, 0.5-0.6 for general facts)
+- "importance": float 0.0-1.0 
+  * 0.9+ for critical: credentials, API keys, URLs for new tools
+  * 0.7-0.8 for important: project decisions, completed work, URLs for docs
+  * 0.5-0.6 for general: routine updates, meeting notes
+- "metadata": object with:
+  * "urls": array of relevant URLs (empty if none)
+  * "commands": array of shell commands (empty if none)
+  * "paths": array of file paths (empty if none)
 
-Rules:
-- Extract ONLY actionable facts, decisions, completions, blockers, and key technical details
-- Skip narrative, commentary, and filler text
-- Each fact must be self-contained (understandable without context)
+CRITICAL RULES:
+- ALWAYS preserve URLs, especially documentation links, API endpoints, and tool links
+- Include commands/paths when they're part of implementation details
+- Each fact must be ACTIONABLE (can be used later to complete a task)
+- Skip narrative/commentary
 - Deduplicate similar facts
-- Output ONLY a JSON array of objects, no other text
+{urls_context}
 
 Daily Notes:
 {text[:3000]}
 
-Output JSON array:"""
+Output JSON array (no other text):"""
 
     # Detect endpoint format: if it ends in /v1/... or contains "openai" or "anthropic", use OpenAI format
     use_openai_format = any(x in llm_endpoint for x in ['/v1/', 'openai', 'integrate.api', 'api.z.ai'])
@@ -1156,10 +1327,15 @@ Output JSON array:"""
                 valid = []
                 for f in facts:
                     if isinstance(f, dict) and 'text' in f and len(f['text']) >= 10:
+                        # Ensure metadata is present, extract if LLM didn't provide it
+                        if 'metadata' not in f or not f['metadata']:
+                            f['metadata'] = extract_structured_metadata(f['text'])
+                        
                         valid.append({
                             'text': f['text'][:150],
                             'category': f.get('category', 'general'),
-                            'importance': max(0.0, min(1.0, float(f.get('importance', 0.6))))
+                            'importance': max(0.0, min(1.0, float(f.get('importance', 0.6)))),
+                            'metadata': f['metadata']
                         })
                 return valid
             return []
@@ -1173,8 +1349,9 @@ def _rule_based_extract(lines):
     """
     Rule-based fallback: extract facts from daily note lines using patterns.
     Used when LLM distillation is unavailable.
+    Enhanced to include metadata extraction.
     
-    Returns list of dicts: [{text, category, importance}, ...]
+    Returns list of dicts: [{text, category, importance, metadata}, ...]
     """
     decision_re = re.compile(r'\b(decided|agreed|confirmed|fixed|blocked|resolved|deployed|installed|created|published|completed|migrated|downloaded)\b', re.IGNORECASE)
     
@@ -1222,7 +1399,14 @@ def _rule_based_extract(lines):
             importance = 0.75
         
         if fact_text and len(fact_text) >= 15:
-            results.append({'text': fact_text, 'category': current_section, 'importance': importance})
+            # Extract metadata from the fact text
+            metadata = extract_structured_metadata(fact_text)
+            results.append({
+                'text': fact_text, 
+                'category': current_section, 
+                'importance': importance,
+                'metadata': metadata
+            })
     
     return results
 
@@ -1291,6 +1475,7 @@ def ingest_daily_notes(days=2, agent_id='default', db_url=None, auth_token=None,
             fact_text = fact_data['text']
             category = fact_data['category']
             importance = fact_data['importance']
+            metadata = fact_data.get('metadata', {})
             
             if len(fact_text) < 10:
                 continue
@@ -1303,16 +1488,27 @@ def ingest_daily_notes(days=2, agent_id='default', db_url=None, auth_token=None,
             results['facts_found'] += 1
             
             if dry_run:
-                results['facts'].append({'text': fact_text, 'category': category, 'importance': importance})
+                results['facts'].append({
+                    'text': fact_text, 
+                    'category': category, 
+                    'importance': importance,
+                    'metadata': metadata
+                })
                 continue
             
-            # Store fact
-            fact_id = warm.add(fact_text, category, importance)
+            # Store fact with metadata
+            fact_id = warm.add(fact_text, category, importance, metadata=metadata)
             tree.add_node(category, category.split('/')[-1].replace('_', ' ').title())
             tree.update_counts(category, warm_delta=1)
             existing_texts.add(fact_text.lower().strip())
             results['facts_stored'] += 1
-            results['facts'].append({'id': fact_id, 'text': fact_text, 'category': category, 'importance': importance})
+            results['facts'].append({
+                'id': fact_id, 
+                'text': fact_text, 
+                'category': category, 
+                'importance': importance,
+                'metadata': metadata
+            })
             
             # Also store to cold if configured
             if db_url and auth_token:
@@ -1483,6 +1679,9 @@ def main():
     p_store.add_argument('--text', required=True)
     p_store.add_argument('--category', required=True)
     p_store.add_argument('--importance', type=float, default=0.5)
+    p_store.add_argument('--url', action='append', help='Add URL to metadata (can be used multiple times)')
+    p_store.add_argument('--command', action='append', help='Add command to metadata (can be used multiple times)')
+    p_store.add_argument('--path', action='append', help='Add file path to metadata (can be used multiple times)')
     add_common_args(p_store)
     
     # retrieve
@@ -1544,6 +1743,21 @@ def main():
     p_ingest.add_argument('--llm-endpoint', help='LLM HTTP endpoint for distillation (falls back to rule-based if not provided)')
     add_common_args(p_ingest)
     
+    # validate
+    p_validate = sub.add_parser('validate', help='Validate memory completeness')
+    p_validate.add_argument('--file', help='Daily notes file to validate (optional, checks today if not specified)')
+    p_validate.add_argument('--agent-id', default='default')
+    
+    # extract-metadata
+    p_extract = sub.add_parser('extract-metadata', help='Extract structured metadata from file')
+    p_extract.add_argument('--file', required=True, help='File to extract metadata from')
+    
+    # search-url
+    p_search_url = sub.add_parser('search-url', help='Search facts by URL fragment')
+    p_search_url.add_argument('--url', required=True, help='URL fragment to search for')
+    p_search_url.add_argument('--limit', type=int, default=5, help='Max results')
+    p_search_url.add_argument('--agent-id', default='default')
+    
     args = parser.parse_args()
     
     if not args.command:
@@ -1556,8 +1770,19 @@ def main():
         tree = MemoryTree(paths['tree_file'])
         warm = WarmMemory(paths['warm_file'])
         
-        # Add to warm
-        fact_id = warm.add(args.text, args.category, args.importance)
+        # Build metadata from args or extract from text
+        metadata = None
+        if (hasattr(args, 'url') and args.url) or \
+           (hasattr(args, 'command') and args.command) or \
+           (hasattr(args, 'path') and args.path):
+            metadata = {
+                'urls': getattr(args, 'url', None) or [],
+                'commands': getattr(args, 'command', None) or [],
+                'paths': getattr(args, 'path', None) or []
+            }
+        
+        # Add to warm with metadata
+        fact_id = warm.add(args.text, args.category, args.importance, metadata=metadata)
         
         # Update tree
         tree.add_node(args.category, args.category.split('/')[-1].replace('_', ' ').title())
@@ -1573,10 +1798,14 @@ def main():
             if cold_synced:
                 tree.update_counts(args.category, cold_delta=1)
         
+        # Get the stored fact to show metadata
+        stored_fact = next((f for f in warm.facts if f['id'] == fact_id), None)
+        
         print(json.dumps({
             'id': fact_id,
             'category': args.category,
             'tier': classify_tier(args.importance),
+            'metadata': stored_fact.get('metadata', {}) if stored_fact else {},
             'cold_synced': cold_synced
         }))
     
@@ -1729,6 +1958,70 @@ def main():
             llm_endpoint=args.llm_endpoint if hasattr(args, 'llm_endpoint') else None
         )
         print(json.dumps(results, indent=2))
+    
+    elif args.command == 'validate':
+        # Determine file to validate
+        if args.file:
+            daily_path = args.file
+        else:
+            # Check today's daily notes
+            today = datetime.now().strftime('%Y-%m-%d')
+            daily_path = os.path.join(MEMORY_DIR, f'{today}.md')
+        
+        warnings = validate_memory_completeness(daily_path)
+        
+        if not warnings:
+            print(json.dumps({
+                'status': 'ok',
+                'message': 'Memory validation passed - no issues found',
+                'file': daily_path
+            }))
+            sys.exit(0)
+        
+        print(json.dumps({
+            'status': 'warning',
+            'warnings_count': len(warnings),
+            'warnings': warnings,
+            'file': daily_path,
+            'suggestions': [
+                'Add URLs for mentioned tools/services',
+                'Include command examples for setup/installation steps',
+                'Document next steps after decisions'
+            ]
+        }, indent=2))
+        sys.exit(len(warnings))
+    
+    elif args.command == 'extract-metadata':
+        if not os.path.exists(args.file):
+            print(json.dumps({'error': f'File not found: {args.file}'}), file=sys.stderr)
+            sys.exit(1)
+        
+        with open(args.file) as f:
+            text = f.read()
+        
+        metadata = extract_structured_metadata(text)
+        
+        print(json.dumps({
+            'file': args.file,
+            'metadata': metadata,
+            'summary': {
+                'urls_count': len(metadata['urls']),
+                'commands_count': len(metadata['commands']),
+                'paths_count': len(metadata['paths'])
+            }
+        }, indent=2))
+    
+    elif args.command == 'search-url':
+        paths = get_agent_paths(args.agent_id)
+        warm = WarmMemory(paths['warm_file'])
+        
+        results = warm.search_by_url(args.url, limit=args.limit)
+        
+        print(json.dumps({
+            'query': args.url,
+            'results_count': len(results),
+            'results': results
+        }, indent=2))
 
 if __name__ == '__main__':
     main()
