@@ -62,9 +62,8 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - **[ops]** Batch periodic checks into heartbeat instead of many cron jobs
 - **[work]** Test locally before pushing to CI — Bowen explicit
 - **[work]** Coverage threshold 85% minimum, 90% ideal — Bowen explicit
-- **[tools]** Use `uv run` not `python3` for Python commands — Bowen explicit
-- **[tools]** Use `uv` not `pip` for package management — Bowen explicit
+- **[tools]** Use uv not pip on GPU server — Bowen explicit
 - **[meta]** Eat your own dogfood — use skills you build
 
 ---
-*Generated: 2026-02-14 18:00*
+*Generated: 2026-02-15 00:00*

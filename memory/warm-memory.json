@@ -1,227 +1,12 @@
 [
   {
-    "id": "e5d6ff483d88",
-    "text": "Agents (2/2 active)",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.2966654,
-    "access_count": 0,
-    "score": 0.6960181129016992,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "85584e4758f9",
-    "text": "Models: 19 total (16 NIM + 1 Ollama + 2 GLM failing)",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.300865,
-    "access_count": 0,
-    "score": 0.696018114028477,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "00b46d882a8c",
-    "text": "Intelligent Router: 4-tier system (SIMPLE\u2192MEDIUM\u2192COMPLEX\u2192REASONING)",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.305443,
-    "access_count": 0,
-    "score": 0.6960181152572411,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "7a7734883653",
-    "text": "Skills: desktop-tools 2.0.0 (30/30 binaries built)",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.3096335,
-    "access_count": 0,
-    "score": 0.6960181163821624,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "2d74c3a65ffd",
-    "text": "Memory: Tiered system + Turso cloud sync active",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.313826,
-    "access_count": 0,
-    "score": 0.6960181175077879,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "a708a28f94e1",
-    "text": "Self-Governance: WAL/VBR/ADL/VFM all enabled",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.318099,
-    "access_count": 0,
-    "score": 0.6960181186549886,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": [
-        "/VBR/ADL/VFM"
-      ]
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "4726f1176f27",
-    "text": "Overall: GREEN \u2705 - All critical systems operational",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.322303,
-    "access_count": 0,
-    "score": 0.6960181197837512,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "42c67c91a66b",
-    "text": "Workaround Used: Direct SSH access to Pi",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.3349037,
-    "access_count": 0,
-    "score": 0.6960181231671578,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "d319e603b129",
-    "text": "Limitation: Pi lacks GPIO utilities (`gpio`, `raspi-gpio` not installed)",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.3391035,
-    "access_count": 0,
-    "score": 0.696018124294768,
-    "metadata": {
-      "urls": [],
-      "commands": [
-        "gpio",
-        "raspi-gpio"
-      ],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "f49a199a4edc",
-    "text": "What ClawRouter Does",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.3478484,
-    "access_count": 0,
-    "score": 0.6960181266428194,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "cd362ca17e04",
-    "text": "Their 15-Dimension Scoring Weights",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.35202,
-    "access_count": 0,
-    "score": 0.6960181277628751,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "ba189023d8c7",
-    "text": "Key Gaps in Our Intelligent-Router",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.355941,
-    "access_count": 0,
-    "score": 0.6960181288156442,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "d59a03928e2f",
-    "text": "What We Do Better",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.3601942,
-    "access_count": 0,
-    "score": 0.6960181299575311,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "e35aa42670d6",
-    "text": "Cost Comparison: ClawRouter is ~2.9x cheaper due to Kimi K2.5 SIMPLE tier ($0.001/M vs our $0.50/M)",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.3643925,
-    "access_count": 0,
-    "score": 0.6960181310847572,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
     "id": "ff79c30e4c93",
     "text": "Full analysis saved: /tmp/clawrouter-comparison.md",
     "category": "general",
     "importance": 0.7,
     "created_at": 1771037649.368621,
     "access_count": 0,
-    "score": 0.6960181322201139,
+    "score": 0.6902378588923388,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -238,7 +23,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3728154,
     "access_count": 0,
-    "score": 0.6960181333461876,
+    "score": 0.6902378600084893,
     "metadata": {
       "urls": [],
       "commands": [
@@ -255,7 +40,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3770752,
     "access_count": 0,
-    "score": 0.6960181344899312,
+    "score": 0.6902378611424804,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -270,7 +55,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3813002,
     "access_count": 0,
-    "score": 0.6960181356243277,
+    "score": 0.6902378622673925,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -285,7 +70,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3855898,
     "access_count": 0,
-    "score": 0.6960181367760099,
+    "score": 0.6902378634095737,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -300,7 +85,7 @@
     "importance": 0.7,
     "created_at": 1771037649.389823,
     "access_count": 0,
-    "score": 0.696018137912583,
+    "score": 0.6902378645366445,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -315,7 +100,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3939886,
     "access_count": 0,
-    "score": 0.6960181390310382,
+    "score": 0.690237865645811,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -330,7 +115,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4023926,
     "access_count": 0,
-    "score": 0.696018141287539,
+    "score": 0.6902378678831912,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -345,7 +130,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4065568,
     "access_count": 0,
-    "score": 0.69601814240561,
+    "score": 0.6902378689914055,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -360,7 +145,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4107575,
     "access_count": 0,
-    "score": 0.6960181435334123,
+    "score": 0.6902378701097781,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -375,7 +160,7 @@
     "importance": 0.7,
     "created_at": 1771037649.414869,
     "access_count": 0,
-    "score": 0.6960181446373346,
+    "score": 0.6902378712045325,
     "metadata": {
       "urls": [],
       "commands": [
@@ -392,7 +177,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4189897,
     "access_count": 0,
-    "score": 0.6960181457436896,
+    "score": 0.6902378723016995,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -407,7 +192,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4234476,
     "access_count": 0,
-    "score": 0.696018146940635,
+    "score": 0.6902378734887046,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -422,7 +207,7 @@
     "importance": 0.7,
     "created_at": 1771037649.427618,
     "access_count": 0,
-    "score": 0.6960181480602425,
+    "score": 0.690237874599141,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -437,7 +222,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4317365,
     "access_count": 0,
-    "score": 0.6960181491660214,
+    "score": 0.6902378756956732,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -452,7 +237,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4450715,
     "access_count": 0,
-    "score": 0.6960181527466783,
+    "score": 0.6902378792465936,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -467,7 +252,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4540482,
     "access_count": 0,
-    "score": 0.6960181551570229,
+    "score": 0.6902378816369207,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -482,7 +267,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4627213,
     "access_count": 0,
-    "score": 0.696018157485868,
+    "score": 0.6902378839464254,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -497,7 +282,7 @@
     "importance": 0.7,
     "created_at": 1771037649.467127,
     "access_count": 0,
-    "score": 0.6960181586687928,
+    "score": 0.6902378851195262,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -512,7 +297,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4714766,
     "access_count": 0,
-    "score": 0.6960181598366084,
+    "score": 0.6902378862776435,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -527,7 +312,82 @@
     "importance": 0.7,
     "created_at": 1771037649.4758494,
     "access_count": 0,
-    "score": 0.6960181610105702,
+    "score": 0.6902378874420462,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "warm"
+  },
+  {
+    "id": "b0027aa92e57",
+    "text": "LTX-2 video model setup: 23GB Gemma-3 text encoder download corrupted, re-downloading 12GB version",
+    "category": "technical/gpu",
+    "importance": 0.7,
+    "created_at": 1771074042.8703747,
+    "access_count": 0,
+    "score": 0.6999976403087965,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "warm"
+  },
+  {
+    "id": "ae3184ec0320",
+    "text": "EvoClaw paper: added Nicholas Qi as 3rd author, sent to nicholas68663@gmail.com",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1771074043.1834877,
+    "access_count": 0,
+    "score": 0.6999977248682188,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "warm"
+  },
+  {
+    "id": "6ecf5ae9c357",
+    "text": "Z-Image 20GB model requires VAE tiling on 24GB RTX 3090 (OOM at decode stage)",
+    "category": "technical/gpu",
+    "importance": 0.7,
+    "created_at": 1771074043.5734932,
+    "access_count": 0,
+    "score": 0.6999978301933389,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "warm"
+  },
+  {
+    "id": "64bd85f8506b",
+    "text": "ClawChain Q1 Foundation: whitepaper done, 10 open architecture issues, Substrate impl in Q2",
+    "category": "projects/clawchain",
+    "importance": 0.7,
+    "created_at": 1771074043.729813,
+    "access_count": 0,
+    "score": 0.6999978724090913,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "warm"
+  },
+  {
+    "id": "b39448c2adeb",
+    "text": "GPU storage: /data 110GB (18GB free) + /data2 916GB (870GB free)",
+    "category": "technical/gpu",
+    "importance": 0.7,
+    "created_at": 1771074044.0434432,
+    "access_count": 0,
+    "score": 0.6999979571081981,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -542,7 +402,7 @@
     "importance": 0.7,
     "created_at": 1770603278.4087877,
     "access_count": 2,
-    "score": 0.7063535421016386,
+    "score": 0.7004874355276253,
     "tier": "hot"
   },
   {
@@ -552,7 +412,7 @@
     "importance": 0.75,
     "created_at": 1770987661.178712,
     "access_count": 0,
-    "score": 0.7314896098206145,
+    "score": 0.7254147538834248,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -567,7 +427,7 @@
     "importance": 0.75,
     "created_at": 1770987661.1821334,
     "access_count": 0,
-    "score": 0.7314896107860086,
+    "score": 0.7254147548407348,
     "metadata": {
       "urls": [],
       "commands": [
@@ -586,7 +446,7 @@
     "importance": 0.75,
     "created_at": 1770987661.185425,
     "access_count": 0,
-    "score": 0.7314896117148001,
+    "score": 0.7254147557618128,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -601,7 +461,7 @@
     "importance": 0.75,
     "created_at": 1770987661.1886067,
     "access_count": 0,
-    "score": 0.7314896126125735,
+    "score": 0.7254147566521305,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -616,7 +476,7 @@
     "importance": 0.75,
     "created_at": 1770987661.1918793,
     "access_count": 0,
-    "score": 0.7314896135359149,
+    "score": 0.7254147575678704,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -631,7 +491,7 @@
     "importance": 0.75,
     "created_at": 1770987661.1984448,
     "access_count": 0,
-    "score": 0.7314896153886534,
+    "score": 0.7254147594052224,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -646,7 +506,7 @@
     "importance": 0.75,
     "created_at": 1770987661.2021625,
     "access_count": 0,
-    "score": 0.7314896164376817,
+    "score": 0.7254147604455388,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -661,7 +521,7 @@
     "importance": 0.75,
     "created_at": 1770987661.205823,
     "access_count": 0,
-    "score": 0.731489617470562,
+    "score": 0.7254147614698411,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -676,7 +536,7 @@
     "importance": 0.75,
     "created_at": 1770987661.2091544,
     "access_count": 0,
-    "score": 0.7314896184105225,
+    "score": 0.7254147624020624,
     "metadata": {
       "urls": [],
       "commands": [
@@ -695,7 +555,7 @@
     "importance": 0.75,
     "created_at": 1770987661.261259,
     "access_count": 0,
-    "score": 0.7314896331148848,
+    "score": 0.7254147769843082,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -710,7 +570,7 @@
     "importance": 0.75,
     "created_at": 1770987661.269107,
     "access_count": 0,
-    "score": 0.731489635329478,
+    "score": 0.7254147791805763,
     "metadata": {
       "urls": [],
       "commands": [
@@ -729,7 +589,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3031929,
     "access_count": 0,
-    "score": 0.7314896449487005,
+    "score": 0.7254147887199133,
     "metadata": {
       "urls": [],
       "commands": [
@@ -746,7 +606,7 @@
     "importance": 0.75,
     "created_at": 1770987661.307023,
     "access_count": 0,
-    "score": 0.731489646029487,
+    "score": 0.7254147897917242,
     "metadata": {
       "urls": [],
       "commands": [
@@ -763,7 +623,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3108175,
     "access_count": 0,
-    "score": 0.7314896471001809,
+    "score": 0.7254147908535931,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -778,7 +638,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3150253,
     "access_count": 0,
-    "score": 0.7314896482875457,
+    "score": 0.725414792031097,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -793,7 +653,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3542347,
     "access_count": 0,
-    "score": 0.7314896593527065,
+    "score": 0.7254148030042974,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -808,7 +668,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3621044,
     "access_count": 0,
-    "score": 0.7314896615733553,
+    "score": 0.7254148052066376,
     "metadata": {
       "urls": [],
       "commands": [
@@ -828,7 +688,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3739398,
     "access_count": 0,
-    "score": 0.7314896649132772,
+    "score": 0.7254148085188222,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -843,7 +703,7 @@
     "importance": 0.75,
     "created_at": 1770987661.4180217,
     "access_count": 0,
-    "score": 0.731489677353526,
+    "score": 0.7254148208558243,
     "metadata": {
       "urls": [],
       "commands": [
@@ -860,7 +720,7 @@
     "importance": 0.75,
     "created_at": 1770987661.4301832,
     "access_count": 0,
-    "score": 0.7314896807854928,
+    "score": 0.7254148242592894,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -875,7 +735,7 @@
     "importance": 0.75,
     "created_at": 1770987661.505556,
     "access_count": 0,
-    "score": 0.731489702056394,
+    "score": 0.7254148453535405,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -890,7 +750,7 @@
     "importance": 0.75,
     "created_at": 1770987661.539123,
     "access_count": 0,
-    "score": 0.7314897115292068,
+    "score": 0.7254148547476837,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -905,7 +765,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5432181,
     "access_count": 0,
-    "score": 0.7314897126847462,
+    "score": 0.72541485589356,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -920,7 +780,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5477233,
     "access_count": 0,
-    "score": 0.73148971395588,
+    "score": 0.7254148571543375,
     "metadata": {
       "urls": [],
       "commands": [
@@ -937,7 +797,7 @@
     "importance": 0.75,
     "created_at": 1770987661.601858,
     "access_count": 0,
-    "score": 0.7314897292331022,
+    "score": 0.7254148723046859,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -952,7 +812,7 @@
     "importance": 0.75,
     "created_at": 1770987661.681078,
     "access_count": 0,
-    "score": 0.7314897515897032,
+    "score": 0.7254148944756204,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -967,7 +827,7 @@
     "importance": 0.75,
     "created_at": 1770987661.7431667,
     "access_count": 0,
-    "score": 0.7314897691116631,
+    "score": 0.7254149118520643,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -982,7 +842,7 @@
     "importance": 0.75,
     "created_at": 1770987661.7554824,
     "access_count": 0,
-    "score": 0.7314897725871632,
+    "score": 0.7254149152987012,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -997,7 +857,7 @@
     "importance": 0.75,
     "created_at": 1770987661.76779,
     "access_count": 0,
-    "score": 0.7314897760603758,
+    "score": 0.7254149187430694,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1012,7 +872,7 @@
     "importance": 0.75,
     "created_at": 1770987661.792633,
     "access_count": 0,
-    "score": 0.7314897830711247,
+    "score": 0.7254149256957291,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1027,7 +887,7 @@
     "importance": 0.75,
     "created_at": 1770987661.7967486,
     "access_count": 0,
-    "score": 0.7314897842324506,
+    "score": 0.7254149268473438,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1044,7 +904,7 @@
     "importance": 0.75,
     "created_at": 1770987661.8009956,
     "access_count": 0,
-    "score": 0.7314897854308503,
+    "score": 0.725414928035791,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1059,7 +919,7 @@
     "importance": 0.8,
     "created_at": 1770606835.0535045,
     "access_count": 1,
-    "score": 0.7410055076108464,
+    "score": 0.7348516242931339,
     "tier": "hot"
   },
   {
@@ -1069,7 +929,7 @@
     "importance": 0.8,
     "created_at": 1770858030.8423762,
     "access_count": 0,
-    "score": 0.742193383386192,
+    "score": 0.7360296350285543,
     "tier": "hot"
   },
   {
@@ -1079,7 +939,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2403712,
     "access_count": 0,
-    "score": 0.7457336761858137,
+    "score": 0.7395405264963699,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1094,7 +954,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2448103,
     "access_count": 0,
-    "score": 0.7457336774628361,
+    "score": 0.7395405277627871,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1111,7 +971,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2491612,
     "access_count": 0,
-    "score": 0.7457336787143416,
+    "score": 0.739540529004035,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1126,7 +986,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2534513,
     "access_count": 0,
-    "score": 0.7457336799484926,
+    "score": 0.7395405302278686,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1141,7 +1001,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2577338,
     "access_count": 0,
-    "score": 0.7457336811804486,
+    "score": 0.7395405314495935,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1156,7 +1016,7 @@
     "importance": 0.75,
     "created_at": 1771037649.261971,
     "access_count": 0,
-    "score": 0.7457336823993717,
+    "score": 0.7395405326584616,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1171,7 +1031,7 @@
     "importance": 0.75,
     "created_at": 1771037649.27514,
     "access_count": 0,
-    "score": 0.7457336861880478,
+    "score": 0.7395405364156737,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1186,7 +1046,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2793593,
     "access_count": 0,
-    "score": 0.7457336874018262,
+    "score": 0.7395405376193721,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1201,7 +1061,7 @@
     "importance": 0.75,
     "created_at": 1771037649.283633,
     "access_count": 0,
-    "score": 0.7457336886311756,
+    "score": 0.7395405388385801,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1219,7 +1079,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2882166,
     "access_count": 0,
-    "score": 0.7457336899497664,
+    "score": 0.7395405401462202,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1234,7 +1094,7 @@
     "importance": 0.75,
     "created_at": 1771037649.4361045,
     "access_count": 0,
-    "score": 0.7457337324978646,
+    "score": 0.739540582340966,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1249,7 +1109,7 @@
     "importance": 0.75,
     "created_at": 1771037649.440404,
     "access_count": 0,
-    "score": 0.7457337337346224,
+    "score": 0.7395405835675208,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1268,7 +1128,7 @@
     "importance": 0.75,
     "created_at": 1771037649.45841,
     "access_count": 0,
-    "score": 0.7457337389149428,
+    "score": 0.7395405887048199,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1283,7 +1143,7 @@
     "importance": 0.75,
     "created_at": 1771037649.480239,
     "access_count": 0,
-    "score": 0.7457337451951063,
+    "score": 0.7395405949328281,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1300,7 +1160,7 @@
     "importance": 0.75,
     "created_at": 1771037649.4845905,
     "access_count": 0,
-    "score": 0.7457337464468863,
+    "score": 0.7395405961742803,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1317,7 +1177,7 @@
     "importance": 0.8,
     "created_at": 1770879637.418223,
     "access_count": 0,
-    "score": 0.7484060692704172,
+    "score": 0.7421907259606167,
     "tier": "hot"
   },
   {
@@ -1327,7 +1187,7 @@
     "importance": 0.8,
     "created_at": 1770901224.240646,
     "access_count": 0,
-    "score": 0.7546650084882129,
+    "score": 0.7483976861023586,
     "tier": "hot"
   },
   {
@@ -1337,7 +1197,7 @@
     "importance": 0.8,
     "created_at": 1770901224.2868898,
     "access_count": 0,
-    "score": 0.7546650219520625,
+    "score": 0.7483976994543939,
     "tier": "hot"
   },
   {
@@ -1347,7 +1207,7 @@
     "importance": 0.8,
     "created_at": 1770901229.0416515,
     "access_count": 0,
-    "score": 0.7546664063097365,
+    "score": 0.7483990723152902,
     "tier": "hot"
   },
   {
@@ -1357,7 +1217,7 @@
     "importance": 0.9,
     "created_at": 1770610454.8254375,
     "access_count": 0,
-    "score": 0.7589056267550904,
+    "score": 0.7526030869926585,
     "tier": "hot"
   },
   {
@@ -1367,7 +1227,7 @@
     "importance": 0.9,
     "created_at": 1770618231.019124,
     "access_count": 0,
-    "score": 0.7611858190075025,
+    "score": 0.7548643427636723,
     "tier": "hot"
   },
   {
@@ -1377,7 +1237,7 @@
     "importance": 0.7,
     "created_at": 1771037649.449347,
     "access_count": 1,
-    "score": 0.7656199692741825,
+    "score": 0.7592616684142434,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1392,7 +1252,7 @@
     "importance": 0.8,
     "created_at": 1770944439.0948613,
     "access_count": 0,
-    "score": 0.7673525554768594,
+    "score": 0.7609798658800393,
     "tier": "hot"
   },
   {
@@ -1402,7 +1262,7 @@
     "importance": 0.8,
     "created_at": 1770944439.3028843,
     "access_count": 0,
-    "score": 0.7673526170612252,
+    "score": 0.7609799269529607,
     "tier": "hot"
   },
   {
@@ -1412,7 +1272,7 @@
     "importance": 0.8,
     "created_at": 1770970138.546251,
     "access_count": 0,
-    "score": 0.7749986308287579,
+    "score": 0.7685624423037022,
     "metadata": {
       "urls": [
         "https://docs.comfy.org/z-image"
@@ -1425,13 +1285,88 @@
     "tier": "hot"
   },
   {
+    "id": "9773b0738b9c",
+    "text": "intelligent-router v2.2.0: REASONING tier, 3x fallback chains, agentic detection, weighted scoring",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1771074043.3392706,
+    "access_count": 0,
+    "score": 0.7999974479208993,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "982a1aa36f01",
+    "text": "Tiered memory v2.2.0: auto-ingest daily files, argparse bug fix, tree prune crash fix",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1771074043.4960601,
+    "access_count": 0,
+    "score": 0.7999974963124329,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "105b743b8414",
+    "text": "Memory semantic search broken: no embedding API keys configured, wrong search terms used",
+    "category": "lessons/cost",
+    "importance": 0.8,
+    "created_at": 1771074043.6508107,
+    "access_count": 0,
+    "score": 0.7999975440747377,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "24a5d9a12e97",
+    "text": "1TB USB drive mounted at /data2: 916GB total, 870GB free for AI models",
+    "category": "technical/gpu",
+    "importance": 0.8,
+    "created_at": 1771074043.887379,
+    "access_count": 0,
+    "score": 0.7999976170892501,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "a398b79d2354",
+    "text": "LTX-2 GGUF solution: 12GB Q4_K_M model fits 16GB RAM (vs 25GB original)",
+    "category": "technical/gpu",
+    "importance": 0.8,
+    "created_at": 1771074044.122165,
+    "access_count": 0,
+    "score": 0.7999976895537156,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
     "id": "0b2d277b6aab",
     "text": "Non-coding tasks use GLM-4.5-Air (~$0.005/run). Complex coding uses Opus. If coder+QA > Opus solo, just use Opus.",
     "category": "lessons/cost",
     "importance": 0.8,
     "created_at": 1770603278.377375,
     "access_count": 2,
-    "score": 0.8072611811798083,
+    "score": 0.800557059462784,
     "tier": "hot"
   },
   {
@@ -1441,7 +1376,7 @@
     "importance": 0.8,
     "created_at": 1770603278.5667691,
     "access_count": 2,
-    "score": 0.8072612401652385,
+    "score": 0.8005571179583536,
     "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
@@ -1452,7 +1387,7 @@
     "importance": 0.8,
     "created_at": 1770613764.1543171,
     "access_count": 2,
-    "score": 0.8105335213132129,
+    "score": 0.8038022235508816,
     "tier": "hot"
   },
   {
@@ -1462,7 +1397,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7719114,
     "access_count": 2,
-    "score": 0.819268550484312,
+    "score": 0.8124647102783096,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1477,7 +1412,7 @@
     "importance": 0.7,
     "created_at": 1770987661.8755405,
     "access_count": 2,
-    "score": 0.8192685832388195,
+    "score": 0.8124647427607984,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1492,7 +1427,7 @@
     "importance": 0.9,
     "created_at": 1770603278.2508664,
     "access_count": 1,
-    "score": 0.8324880524592784,
+    "score": 0.8255744272761921,
     "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
@@ -1503,7 +1438,7 @@
     "importance": 0.9,
     "created_at": 1770858030.968056,
     "access_count": 0,
-    "score": 0.8349675967893921,
+    "score": 0.8280333795508731,
     "tier": "hot"
   },
   {
@@ -1513,7 +1448,7 @@
     "importance": 0.9,
     "created_at": 1770858052.078376,
     "access_count": 0,
-    "score": 0.8349743971383946,
+    "score": 0.8280401234245136,
     "tier": "hot"
   },
   {
@@ -1523,7 +1458,7 @@
     "importance": 0.9,
     "created_at": 1770858052.1621907,
     "access_count": 0,
-    "score": 0.8349744241378031,
+    "score": 0.8280401501998503,
     "tier": "hot"
   },
   {
@@ -1533,7 +1468,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3307042,
     "access_count": 2,
-    "score": 0.8352217464301713,
+    "score": 0.8282854185364606,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1548,7 +1483,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3432972,
     "access_count": 2,
-    "score": 0.8352217504878777,
+    "score": 0.8282854225603926,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1563,7 +1498,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3982527,
     "access_count": 2,
-    "score": 0.8352217681960631,
+    "score": 0.8282854401215154,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1578,7 +1513,7 @@
     "importance": 0.7,
     "created_at": 1771037649.493801,
     "access_count": 2,
-    "score": 0.8352217989844507,
+    "score": 0.8282854706542885,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1593,7 +1528,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4981942,
     "access_count": 2,
-    "score": 0.8352218003998887,
+    "score": 0.8282854720579717,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1608,7 +1543,7 @@
     "importance": 0.85,
     "created_at": 1771041476.1792974,
     "access_count": 0,
-    "score": 0.8464135919051108,
+    "score": 0.8393843182634215,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1625,7 +1560,7 @@
     "importance": 0.85,
     "created_at": 1771049139.3538048,
     "access_count": 0,
-    "score": 0.8489196924726505,
+    "score": 0.8418696062321323,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1640,7 +1575,7 @@
     "importance": 0.9,
     "created_at": 1770901224.1941369,
     "access_count": 0,
-    "score": 0.8489981193109621,
+    "score": 0.8419473817532714,
     "tier": "hot"
   },
   {
@@ -1650,7 +1585,7 @@
     "importance": 0.9,
     "created_at": 1770944438.939319,
     "access_count": 0,
-    "score": 0.863271573104146,
+    "score": 0.8561022977375777,
     "tier": "hot"
   },
   {
@@ -1660,7 +1595,7 @@
     "importance": 0.8,
     "created_at": 1770603278.2826345,
     "access_count": 3,
-    "score": 0.8745329143096268,
+    "score": 0.8672701160488205,
     "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
@@ -1671,7 +1606,7 @@
     "importance": 0.7,
     "created_at": 1770603278.50327,
     "access_count": 5,
-    "score": 0.8829419597968711,
+    "score": 0.8756093263132383,
     "tier": "hot"
   },
   {
@@ -1681,7 +1616,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7097778,
     "access_count": 3,
-    "score": 0.8875409084127462,
+    "score": 0.8801700816999481,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1696,7 +1631,7 @@
     "importance": 0.7,
     "created_at": 1770987661.713866,
     "access_count": 3,
-    "score": 0.8875409098123518,
+    "score": 0.8801700830880922,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1711,7 +1646,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7180986,
     "access_count": 3,
-    "score": 0.8875409112615117,
+    "score": 0.8801700845252171,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1726,7 +1661,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7222998,
     "access_count": 3,
-    "score": 0.8875409126998953,
+    "score": 0.8801700859516552,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1741,7 +1676,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7264295,
     "access_count": 3,
-    "score": 0.8875409141137874,
+    "score": 0.8801700873538054,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1756,7 +1691,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7308817,
     "access_count": 3,
-    "score": 0.8875409156381363,
+    "score": 0.8801700888654137,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1771,7 +1706,7 @@
     "importance": 0.7,
     "created_at": 1770987661.73495,
     "access_count": 3,
-    "score": 0.8875409170309657,
+    "score": 0.8801700902467571,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1786,7 +1721,7 @@
     "importance": 0.95,
     "created_at": 1770629133.8014925,
     "access_count": 1,
-    "score": 0.8875467773992367,
+    "score": 0.8801759019460746,
     "tier": "hot"
   },
   {
@@ -1796,7 +1731,7 @@
     "importance": 0.75,
     "created_at": 1770848917.960907,
     "access_count": 3,
-    "score": 0.9013735845090487,
+    "score": 0.8938878805469634,
     "tier": "hot"
   },
   {
@@ -1806,7 +1741,7 @@
     "importance": 0.75,
     "created_at": 1770848917.963316,
     "access_count": 3,
-    "score": 0.9013735853466114,
+    "score": 0.8938878813775704,
     "tier": "hot"
   },
   {
@@ -1816,7 +1751,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9673443,
     "access_count": 3,
-    "score": 0.9013735867473026,
+    "score": 0.8938878827666293,
     "tier": "hot"
   },
   {
@@ -1826,7 +1761,7 @@
     "importance": 0.75,
     "created_at": 1770848917.968247,
     "access_count": 3,
-    "score": 0.9013735870610363,
+    "score": 0.8938878830777572,
     "tier": "hot"
   },
   {
@@ -1836,7 +1771,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9691088,
     "access_count": 3,
-    "score": 0.9013735873605921,
+    "score": 0.8938878833747433,
     "tier": "hot"
   },
   {
@@ -1846,7 +1781,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9700267,
     "access_count": 3,
-    "score": 0.9013735876795491,
+    "score": 0.8938878836911336,
     "tier": "hot"
   },
   {
@@ -1856,7 +1791,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9754503,
     "access_count": 3,
-    "score": 0.9013735895653502,
+    "score": 0.8938878855614378,
     "tier": "hot"
   },
   {
@@ -1866,7 +1801,7 @@
     "importance": 0.75,
     "created_at": 1770848917.976349,
     "access_count": 3,
-    "score": 0.9013735898777572,
+    "score": 0.8938878858712506,
     "tier": "hot"
   },
   {
@@ -1876,7 +1811,7 @@
     "importance": 0.75,
     "created_at": 1770848917.977328,
     "access_count": 3,
-    "score": 0.9013735902180222,
+    "score": 0.8938878862086896,
     "tier": "hot"
   },
   {
@@ -1886,7 +1821,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9782953,
     "access_count": 3,
-    "score": 0.9013735905542246,
+    "score": 0.8938878865420999,
     "tier": "hot"
   },
   {
@@ -1896,7 +1831,37 @@
     "importance": 0.75,
     "created_at": 1770848917.9793704,
     "access_count": 3,
-    "score": 0.9013735909279026,
+    "score": 0.8938878869126746,
+    "tier": "hot"
+  },
+  {
+    "id": "bd0eca8393e0",
+    "text": "GPU server has 3 GPUs: RTX 3090 24GB + RTX 3080 10GB + RTX 2070 SUPER 8GB = 42GB total VRAM",
+    "category": "technical/gpu",
+    "importance": 0.9,
+    "created_at": 1771074043.419154,
+    "access_count": 0,
+    "score": 0.8999971566409912,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "4b43eff15895",
+    "text": "USE UV NOT PYTHON3: Bowen directive for all Python commands (uv run)",
+    "category": "owner/preferences",
+    "importance": 0.9,
+    "created_at": 1771074043.966223,
+    "access_count": 0,
+    "score": 0.8999973465947847,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
     "tier": "hot"
   },
   {
@@ -1906,7 +1871,7 @@
     "importance": 0.9,
     "created_at": 1770621651.5485682,
     "access_count": 2,
-    "score": 0.9146291759579306,
+    "score": 0.907033387303594,
     "tier": "hot"
   },
   {
@@ -1916,7 +1881,7 @@
     "importance": 0.8,
     "created_at": 1770603278.5991645,
     "access_count": 4,
-    "score": 0.9418047919558563,
+    "score": 0.9339833159509077,
     "tier": "hot"
   },
   {
@@ -1926,7 +1891,7 @@
     "importance": 0.75,
     "created_at": 1770987661.4968448,
     "access_count": 3,
-    "score": 0.9509366094613445,
+    "score": 0.9430392957752639,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1946,7 +1911,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5010297,
     "access_count": 3,
-    "score": 0.9509366109964343,
+    "score": 0.9430392972976919,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1966,7 +1931,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5811749,
     "access_count": 3,
-    "score": 0.9509366403993962,
+    "score": 0.9430393264564688,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1983,7 +1948,7 @@
     "importance": 0.75,
     "created_at": 1770987661.585305,
     "access_count": 3,
-    "score": 0.9509366419144554,
+    "score": 0.9430393279588591,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1998,7 +1963,7 @@
     "importance": 0.8,
     "created_at": 1770858031.0936832,
     "access_count": 3,
-    "score": 0.9648514919347141,
+    "score": 0.9568386182936336,
     "tier": "hot"
   },
   {
@@ -2008,7 +1973,7 @@
     "importance": 0.8,
     "created_at": 1770858031.1349287,
     "access_count": 3,
-    "score": 0.9648515072878331,
+    "score": 0.9568386335193364,
     "tier": "hot"
   },
   {
@@ -2018,7 +1983,7 @@
     "importance": 0.8,
     "created_at": 1770858051.8253617,
     "access_count": 3,
-    "score": 0.9648592091684187,
+    "score": 0.956846271437632,
     "tier": "hot"
   },
   {
@@ -2028,7 +1993,7 @@
     "importance": 0.8,
     "created_at": 1770879637.2224507,
     "access_count": 3,
-    "score": 0.9729278165550852,
+    "score": 0.9648478708629821,
     "tier": "hot"
   },
   {
@@ -2038,7 +2003,7 @@
     "importance": 0.8,
     "created_at": 1770879637.515192,
     "access_count": 3,
-    "score": 0.9729279264376873,
+    "score": 0.964847979833034,
     "tier": "hot"
   },
   {
@@ -2048,7 +2013,7 @@
     "importance": 0.8,
     "created_at": 1770879637.6592467,
     "access_count": 3,
-    "score": 0.9729279805095751,
+    "score": 0.964848033455867,
     "tier": "hot"
   },
   {
@@ -2058,7 +2023,7 @@
     "importance": 0.8,
     "created_at": 1770879637.7071779,
     "access_count": 3,
-    "score": 0.9729279985006647,
+    "score": 0.9648480512977223,
     "tier": "hot"
   },
   {
@@ -2068,7 +2033,7 @@
     "importance": 0.8,
     "created_at": 1770879637.7547972,
     "access_count": 3,
-    "score": 0.9729280163747883,
+    "score": 0.9648480690233167,
     "tier": "hot"
   },
   {
@@ -2078,7 +2043,7 @@
     "importance": 0.8,
     "created_at": 1770879638.046249,
     "access_count": 3,
-    "score": 0.9729281257732594,
+    "score": 0.964848177513347,
     "tier": "hot"
   },
   {
@@ -2088,7 +2053,7 @@
     "importance": 0.8,
     "created_at": 1770879638.099425,
     "access_count": 3,
-    "score": 0.9729281457331834,
+    "score": 0.9648481973075083,
     "tier": "hot"
   },
   {
@@ -2098,7 +2063,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3265023,
     "access_count": 4,
-    "score": 0.9744253692461485,
+    "score": 0.9663329867174828,
     "metadata": {
       "urls": [
         "cs.AI"
@@ -2115,7 +2080,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4890444,
     "access_count": 4,
-    "score": 0.9744254303513533,
+    "score": 0.9663330473153116,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -2130,7 +2095,7 @@
     "importance": 0.8,
     "created_at": 1770901223.9106195,
     "access_count": 3,
-    "score": 0.9810643861071143,
+    "score": 0.9729168680435358,
     "tier": "hot"
   },
   {
@@ -2140,7 +2105,7 @@
     "importance": 0.8,
     "created_at": 1770922835.0454159,
     "access_count": 3,
-    "score": 0.9892783319795072,
+    "score": 0.9810625989513286,
     "tier": "hot"
   },
   {
@@ -2150,7 +2115,7 @@
     "importance": 0.8,
     "created_at": 1770922837.8350434,
     "access_count": 3,
-    "score": 0.989279396685952,
+    "score": 0.9810636548155367,
     "tier": "hot"
   },
   {
@@ -2160,7 +2125,7 @@
     "importance": 0.8,
     "created_at": 1770922857.5116065,
     "access_count": 3,
-    "score": 0.989286906597825,
+    "score": 0.9810711023593788,
     "tier": "hot"
   },
   {
@@ -2170,7 +2135,7 @@
     "importance": 0.8,
     "created_at": 1770922872.2013025,
     "access_count": 3,
-    "score": 0.9892925132200069,
+    "score": 0.98107666241983,
     "tier": "hot"
   },
   {
@@ -2180,7 +2145,7 @@
     "importance": 0.8,
     "created_at": 1770944439.7650976,
     "access_count": 3,
-    "score": 0.9975585800539345,
+    "score": 0.9892740814364394,
     "tier": "hot"
   },
   {
@@ -2190,7 +2155,7 @@
     "importance": 0.9,
     "created_at": 1770858052.1201756,
     "access_count": 2,
-    "score": 1.001969292712494,
+    "score": 0.9936481641229326,
     "tier": "hot"
   },
   {
@@ -2200,7 +2165,7 @@
     "importance": 0.9,
     "created_at": 1770879637.8976207,
     "access_count": 2,
-    "score": 1.01034838036624,
+    "score": 1.00195766534699,
     "tier": "hot"
   },
   {
@@ -2210,7 +2175,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9745195,
     "access_count": 5,
-    "score": 1.0400464491183996,
+    "score": 1.031409098348191,
     "tier": "hot"
   },
   {
@@ -2220,7 +2185,7 @@
     "importance": 0.9,
     "created_at": 1771037807.2176938,
     "access_count": 2,
-    "score": 1.073921945131307,
+    "score": 1.0650032660206914,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -2237,7 +2202,7 @@
     "importance": 0.8,
     "created_at": 1770603278.2195358,
     "access_count": 6,
-    "score": 1.0763481760140297,
+    "score": 1.0674093476040214,
     "tier": "hot",
     "tree_relevance": 0.6666538966332228
   },
@@ -2248,7 +2213,7 @@
     "importance": 0.9,
     "created_at": 1770858030.757867,
     "access_count": 3,
-    "score": 1.0854577877908547,
+    "score": 1.076443306113379,
     "tier": "hot"
   },
   {
@@ -2258,7 +2223,7 @@
     "importance": 0.9,
     "created_at": 1770858030.926781,
     "access_count": 3,
-    "score": 1.0854578585270942,
+    "score": 1.07644337626217,
     "tier": "hot"
   },
   {
@@ -2268,7 +2233,7 @@
     "importance": 0.9,
     "created_at": 1770879637.1740577,
     "access_count": 3,
-    "score": 1.0945437731842484,
+    "score": 1.085453834450983,
     "tier": "hot"
   },
   {
@@ -2278,7 +2243,7 @@
     "importance": 0.9,
     "created_at": 1770879637.8497229,
     "access_count": 3,
-    "score": 1.0945440585023989,
+    "score": 1.0854541173996308,
     "tier": "hot"
   },
   {
@@ -2288,7 +2253,7 @@
     "importance": 0.9,
     "created_at": 1770901223.8614366,
     "access_count": 3,
-    "score": 1.1036974134246258,
+    "score": 1.094531455777353,
     "tier": "hot"
   },
   {
@@ -2298,7 +2263,7 @@
     "importance": 0.9,
     "created_at": 1770901223.957171,
     "access_count": 3,
-    "score": 1.1036974541888913,
+    "score": 1.0945314962032815,
     "tier": "hot"
   },
   {
@@ -2308,7 +2273,7 @@
     "importance": 0.9,
     "created_at": 1770901224.0043564,
     "access_count": 3,
-    "score": 1.1036974742806749,
+    "score": 1.0945315161282074,
     "tier": "hot"
   },
   {
@@ -2318,7 +2283,7 @@
     "importance": 0.95,
     "created_at": 1770630505.1354907,
     "access_count": 4,
-    "score": 1.1302027809092852,
+    "score": 1.1208167021738218,
     "tier": "hot"
   },
   {
@@ -2328,7 +2293,7 @@
     "importance": 0.9,
     "created_at": 1770606835.0856192,
     "access_count": 5,
-    "score": 1.1367698268721447,
+    "score": 1.127329210303833,
     "tier": "hot"
   }
 ]

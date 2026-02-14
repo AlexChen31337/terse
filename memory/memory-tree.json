@@ -24,9 +24,9 @@
   },
   "owner/preferences": {
     "desc": "Communication style and work preferences",
-    "warm_count": 6,
+    "warm_count": 7,
     "cold_count": 0,
-    "last_access": 1770922858.765796,
+    "last_access": 1771074043.9701161,
     "children": []
   },
   "projects": {
@@ -41,16 +41,16 @@
   },
   "projects/clawchain": {
     "desc": "ClawChain L1 blockchain",
-    "warm_count": 10,
+    "warm_count": 12,
     "cold_count": 0,
-    "last_access": 1770944439.4594097,
+    "last_access": 1771074043.7337248,
     "children": []
   },
   "projects/evoclaw": {
     "desc": "EvoClaw self-evolving agent framework",
-    "warm_count": 127,
+    "warm_count": 132,
     "cold_count": 0,
-    "last_access": 1771037807.2219067,
+    "last_access": 1771074043.8128994,
     "children": [
       "projects/evoclaw/bsc",
       "projects/evoclaw/memory"
@@ -116,16 +116,16 @@
   },
   "technical/gpu": {
     "desc": "Gpu",
-    "warm_count": 227,
+    "warm_count": 233,
     "cold_count": 0,
-    "last_access": 1771049139.3583899,
+    "last_access": 1771074044.1260314,
     "children": []
   },
   "lessons/cost": {
     "desc": "Cost",
-    "warm_count": 7,
+    "warm_count": 8,
     "cold_count": 0,
-    "last_access": 1770944439.3054128,
+    "last_access": 1771074043.6547155,
     "children": []
   },
   "technical/cron": {
@@ -138,16 +138,16 @@
   "_schema_version": "2.0",
   "lessons/community": {
     "desc": "Community",
-    "warm_count": 1,
+    "warm_count": 2,
     "cold_count": 0,
-    "last_access": 1770879637.8516474,
+    "last_access": 1771074043.2651696,
     "children": []
   },
   "general": {
     "desc": "General",
-    "warm_count": 256,
+    "warm_count": 257,
     "cold_count": 0,
-    "last_access": 1771037794.296672,
+    "last_access": 1771074043.0322692,
     "children": []
   }
 }
