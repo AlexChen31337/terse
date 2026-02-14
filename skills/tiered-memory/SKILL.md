@@ -105,9 +105,9 @@ EvoClaw-compatible three-tier memory system inspired by human cognition and Page
 ```json
 {
   "identity": {
-    "agent_name": "Alex",
-    "owner_name": "Bowen",
-    "owner_preferred_name": "Bowen",
+    "agent_name": "Agent",
+    "owner_name": "User",
+    "owner_preferred_name": "User",
     "relationship_start": "2026-01-15",
     "trust_level": 0.95
   },
@@ -274,9 +274,9 @@ Core summary (20B)
 
 ```json
 {
-  "fact": "Bowen decided to use raw JSON-RPC for BSC to avoid go-ethereum dependency",
+  "fact": "User decided to use raw JSON-RPC for BSC to avoid go-ethereum dependency",
   "emotion": "determined",
-  "people": ["Bowen"],
+  "people": ["User"],
   "topics": ["blockchain", "architecture", "dependencies"],
   "actions": ["decided to use raw JSON-RPC", "avoid go-ethereum"],
   "outcome": "positive"
@@ -306,7 +306,7 @@ distiller.py --text "..." --mode rule --core-summary
 **Example:**
 ```
 Distilled: {
-  "fact": "Bowen decided raw JSON-RPC for BSC, no go-ethereum",
+  "fact": "User decided raw JSON-RPC for BSC, no go-ethereum",
   "outcome": "positive"
 }
 
