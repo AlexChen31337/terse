@@ -7,8 +7,8 @@ set -euo pipefail
 TEXT="${1:-Hello, I am Alex Chen}"
 VOICE_STYLE="${2:-gentle}"
 AVATAR="${3:-}"
-SSH_KEY="$HOME/.ssh/id_ed25519_alexchen"
-GPU_HOST="peter@10.0.0.44"
+SSH_KEY="$HOME/.ssh/${SSH_KEY_NAME:-id_ed25519_gpu}"
+GPU_HOST="${GPU_USER:-user}@${GPU_HOST:-localhost}"
 SADTALKER_DIR="/data/ai-stack/sadtalker"
 OUTPUT_DIR="/data/ai-stack/output"
 

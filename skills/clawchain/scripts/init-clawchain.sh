@@ -4,9 +4,9 @@
 
 RPC_URL="${1:-ws://localhost:9944}"
 
-mkdir -p /home/bowen/clawd/memory
+mkdir -p ${WORKSPACE:-$HOME/workspace}/memory
 
-cat > /home/bowen/clawd/memory/clawchain-config.json << HEREDOC
+cat > ${WORKSPACE:-$HOME/workspace}/memory/clawchain-config.json << HEREDOC
 {
   "rpc_url": "$RPC_URL",
   "node_endpoint": "http://localhost:9944",
@@ -16,7 +16,7 @@ cat > /home/bowen/clawd/memory/clawchain-config.json << HEREDOC
 }
 HEREDOC
 
-echo "✅ ClawChain config created at /home/bowen/clawd/memory/clawchain-config.json"
+echo "✅ ClawChain config created at ${WORKSPACE:-$HOME/workspace}/memory/clawchain-config.json"
 echo ""
 echo "RPC URL: $RPC_URL"
 echo ""

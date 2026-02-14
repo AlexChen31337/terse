@@ -11,8 +11,8 @@ Full-stack AI media generation powered by GPU server (RTX 3090/3080/2070S).
 
 ## GPU Server
 
-- **Host:** `peter@10.0.0.44`
-- **SSH Key:** `~/.ssh/id_ed25519_alexchen`
+- **Host:** `${GPU_USER}@${GPU_HOST}`
+- **SSH Key:** `~/.ssh/id_ed25519_gpu`
 - **ComfyUI:** `/data/ai-stack/comfyui/ComfyUI/` (port 8188)
 - **SadTalker:** `/data/ai-stack/sadtalker/`
 - **Voxtral:** `/data/ai-stack/whisper/`
@@ -50,7 +50,7 @@ Full-stack AI media generation powered by GPU server (RTX 3090/3080/2070S).
 ### Generate Talking Head
 
 ```bash
-./scripts/talking-head.sh "Hello, I'm Alex Chen" gentle input.jpg
+./scripts/talking-head.sh "Hello, I'm Agent" gentle input.jpg
 ./scripts/talking-head.sh "Welcome to the future" neutral photo.png
 ```
 
@@ -126,5 +126,5 @@ Scripts will:
 ---
 
 **Status:** Active development
-**Maintainer:** Alex Chen
-**GPU Server:** peter@10.0.0.44
+**Maintainer:** Agent
+**GPU Server:** ${GPU_USER}@${GPU_HOST}

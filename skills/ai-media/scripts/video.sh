@@ -7,8 +7,8 @@ set -euo pipefail
 PROMPT="${1:-waves crashing on shore}"
 MODEL="${2:-animatediff}"
 DURATION="${3:-4}"
-SSH_KEY="$HOME/.ssh/id_ed25519_alexchen"
-GPU_HOST="peter@10.0.0.44"
+SSH_KEY="$HOME/.ssh/${SSH_KEY_NAME:-id_ed25519_gpu}"
+GPU_HOST="${GPU_USER:-user}@${GPU_HOST:-localhost}"
 COMFYUI_DIR="/data/ai-stack/comfyui/ComfyUI"
 OUTPUT_DIR="/data/ai-stack/output"
 

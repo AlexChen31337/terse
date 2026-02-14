@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Test ComfyUI server connectivity and status
 
-GPU_HOST="10.0.0.44"
+GPU_HOST="${GPU_HOST:-localhost}"
 COMFYUI_PORT="8188"
 
 echo "🔍 Testing ComfyUI server..."

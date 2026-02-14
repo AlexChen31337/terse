@@ -15,7 +15,7 @@ import os
 from pathlib import Path
 
 class ComfyUIClient:
-    def __init__(self, server_address="10.0.0.44:8188"):
+    def __init__(self, server_address="localhost:8188"):
         self.server_address = server_address
         self.client_id = f"ai-media-{random.randint(1000, 9999)}"
     
@@ -156,7 +156,7 @@ def generate_image_comfyui(prompt, style="realistic", width=1024, height=1024, o
     # For now, return a placeholder
     # TODO: Implement proper workflow execution
     print("⚠️  Image generation via ComfyUI API not yet implemented")
-    print("   Use ComfyUI web interface at http://10.0.0.44:8188")
+    print("   Use ComfyUI web interface at http://localhost:8188")
     return None
 
 if __name__ == "__main__":
