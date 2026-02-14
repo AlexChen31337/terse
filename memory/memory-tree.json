@@ -48,9 +48,9 @@
   },
   "projects/evoclaw": {
     "desc": "EvoClaw self-evolving agent framework",
-    "warm_count": 100,
+    "warm_count": 127,
     "cold_count": 0,
-    "last_access": 1770987661.7387354,
+    "last_access": 1771037807.2219067,
     "children": [
       "projects/evoclaw/bsc",
       "projects/evoclaw/memory"
@@ -65,9 +65,9 @@
   },
   "projects/evoclaw/memory": {
     "desc": "Tiered memory system",
-    "warm_count": 14,
+    "warm_count": 30,
     "cold_count": 0,
-    "last_access": 1770987661.5933745,
+    "last_access": 1771037631.9684684,
     "children": []
   },
   "technical": {
@@ -116,9 +116,9 @@
   },
   "technical/gpu": {
     "desc": "Gpu",
-    "warm_count": 99,
+    "warm_count": 225,
     "cold_count": 0,
-    "last_access": 1770987661.8878582,
+    "last_access": 1771037649.4886546,
     "children": []
   },
   "lessons/cost": {
@@ -145,9 +145,9 @@
   },
   "general": {
     "desc": "General",
-    "warm_count": 68,
+    "warm_count": 256,
     "cold_count": 0,
-    "last_access": 1770987661.7094774,
+    "last_access": 1771037794.296672,
     "children": []
   }
 }
