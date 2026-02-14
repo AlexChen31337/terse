@@ -1,42 +1,12 @@
 [
   {
-    "id": "821c2dd35322",
-    "text": "Previous directive: \"Your bread, your decision\" + \"That is your fund now, you make your call\"",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.2665772,
-    "access_count": 0,
-    "score": 0.6999552901726042,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "189b50343f81",
-    "text": "Status: Awaiting Bowen's decision on whether to activate trading",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.2708998,
-    "access_count": 0,
-    "score": 0.6999552913387848,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
     "id": "9243f91189d4",
     "text": "Orchestrator: Running PID 1260132, port 8420, restarted successfully",
     "category": "general",
     "importance": 0.7,
     "created_at": 1771037649.2924364,
     "access_count": 0,
-    "score": 0.6999552971541065,
+    "score": 0.698967266855543,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -51,7 +21,7 @@
     "importance": 0.7,
     "created_at": 1771037649.2966654,
     "access_count": 0,
-    "score": 0.6999552982958857,
+    "score": 0.6989672679957748,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -66,7 +36,7 @@
     "importance": 0.7,
     "created_at": 1771037649.300865,
     "access_count": 0,
-    "score": 0.6999552994296813,
+    "score": 0.6989672691280985,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -81,7 +51,7 @@
     "importance": 0.7,
     "created_at": 1771037649.305443,
     "access_count": 0,
-    "score": 0.6999553006658468,
+    "score": 0.6989672703625192,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -96,7 +66,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3096335,
     "access_count": 0,
-    "score": 0.6999553017973246,
+    "score": 0.6989672714923998,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -111,7 +81,7 @@
     "importance": 0.7,
     "created_at": 1771037649.313826,
     "access_count": 0,
-    "score": 0.6999553029293818,
+    "score": 0.698967272622859,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -126,7 +96,7 @@
     "importance": 0.7,
     "created_at": 1771037649.318099,
     "access_count": 0,
-    "score": 0.6999553040831363,
+    "score": 0.6989672737749849,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -143,7 +113,7 @@
     "importance": 0.7,
     "created_at": 1771037649.322303,
     "access_count": 0,
-    "score": 0.699955305218284,
+    "score": 0.6989672749085303,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -158,7 +128,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3349037,
     "access_count": 0,
-    "score": 0.6999553086208297,
+    "score": 0.698967278306273,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -173,7 +143,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3391035,
     "access_count": 0,
-    "score": 0.6999553097548183,
+    "score": 0.6989672794386611,
     "metadata": {
       "urls": [],
       "commands": [
@@ -191,7 +161,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3478484,
     "access_count": 0,
-    "score": 0.6999553121161521,
+    "score": 0.698967281796726,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -206,7 +176,7 @@
     "importance": 0.7,
     "created_at": 1771037649.35202,
     "access_count": 0,
-    "score": 0.6999553132425437,
+    "score": 0.6989672829215274,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -221,7 +191,7 @@
     "importance": 0.7,
     "created_at": 1771037649.355941,
     "access_count": 0,
-    "score": 0.6999553142974049,
+    "score": 0.6989672839787574,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -236,7 +206,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3601942,
     "access_count": 0,
-    "score": 0.6999553154457512,
+    "score": 0.698967285125547,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -251,7 +221,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3643925,
     "access_count": 0,
-    "score": 0.6999553165793536,
+    "score": 0.6989672862575493,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -266,7 +236,7 @@
     "importance": 0.7,
     "created_at": 1771037649.368621,
     "access_count": 0,
-    "score": 0.6999553177211328,
+    "score": 0.6989672873976525,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -283,7 +253,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3728154,
     "access_count": 0,
-    "score": 0.6999553188536408,
+    "score": 0.6989672885285618,
     "metadata": {
       "urls": [],
       "commands": [
@@ -300,7 +270,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3770752,
     "access_count": 0,
-    "score": 0.6999553200038542,
+    "score": 0.6989672896771516,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -315,7 +285,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3813002,
     "access_count": 0,
-    "score": 0.6999553211446676,
+    "score": 0.6989672908163548,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -330,7 +300,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3855898,
     "access_count": 0,
-    "score": 0.6999553223029291,
+    "score": 0.6989672919729812,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -345,7 +315,7 @@
     "importance": 0.7,
     "created_at": 1771037649.389823,
     "access_count": 0,
-    "score": 0.6999553234458672,
+    "score": 0.6989672931143703,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -360,7 +330,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3939886,
     "access_count": 0,
-    "score": 0.699955324570649,
+    "score": 0.6989672942375645,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -375,7 +345,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4023926,
     "access_count": 0,
-    "score": 0.6999553268399787,
+    "score": 0.6989672965036264,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -390,7 +360,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4065568,
     "access_count": 0,
-    "score": 0.6999553279643743,
+    "score": 0.698967297626435,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -405,7 +375,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4107575,
     "access_count": 0,
-    "score": 0.6999553290986206,
+    "score": 0.6989672987590803,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -420,7 +390,7 @@
     "importance": 0.7,
     "created_at": 1771037649.414869,
     "access_count": 0,
-    "score": 0.6999553302087874,
+    "score": 0.69896729986768,
     "metadata": {
       "urls": [],
       "commands": [
@@ -437,7 +407,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4189897,
     "access_count": 0,
-    "score": 0.6999553313214009,
+    "score": 0.6989673009787228,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -452,7 +422,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4234476,
     "access_count": 0,
-    "score": 0.6999553325250527,
+    "score": 0.69896730218074,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -467,7 +437,7 @@
     "importance": 0.7,
     "created_at": 1771037649.427618,
     "access_count": 0,
-    "score": 0.6999553336511224,
+    "score": 0.6989673033052201,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -482,7 +452,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4317365,
     "access_count": 0,
-    "score": 0.6999553347593577,
+    "score": 0.69896730441562,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -497,7 +467,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4450715,
     "access_count": 0,
-    "score": 0.6999553383602695,
+    "score": 0.6989673080114489,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -512,7 +482,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4540482,
     "access_count": 0,
-    "score": 0.6999553407842486,
+    "score": 0.6989673104320064,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -527,7 +497,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4627213,
     "access_count": 0,
-    "score": 0.6999553431262673,
+    "score": 0.6989673127707193,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -542,7 +512,7 @@
     "importance": 0.7,
     "created_at": 1771037649.467127,
     "access_count": 0,
-    "score": 0.6999553443158192,
+    "score": 0.6989673139586564,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -557,7 +527,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4714766,
     "access_count": 0,
-    "score": 0.699955345490241,
+    "score": 0.6989673151314203,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -572,7 +542,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4758494,
     "access_count": 0,
-    "score": 0.6999553466709723,
+    "score": 0.6989673163104206,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -587,7 +557,7 @@
     "importance": 0.7,
     "created_at": 1770603278.4087877,
     "access_count": 2,
-    "score": 0.7103491922052204,
+    "score": 0.7093464902874052,
     "tier": "hot"
   },
   {
@@ -597,7 +567,7 @@
     "importance": 0.75,
     "created_at": 1770987661.178712,
     "access_count": 0,
-    "score": 0.7356274478309579,
+    "score": 0.7345890640883822,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -612,7 +582,7 @@
     "importance": 0.75,
     "created_at": 1770987661.1821334,
     "access_count": 0,
-    "score": 0.7356274488018806,
+    "score": 0.7345890650579343,
     "metadata": {
       "urls": [],
       "commands": [
@@ -631,7 +601,7 @@
     "importance": 0.75,
     "created_at": 1770987661.185425,
     "access_count": 0,
-    "score": 0.735627449735926,
+    "score": 0.7345890659906613,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -646,7 +616,7 @@
     "importance": 0.75,
     "created_at": 1770987661.1886067,
     "access_count": 0,
-    "score": 0.7356274506387102,
+    "score": 0.7345890668922388,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -661,7 +631,7 @@
     "importance": 0.75,
     "created_at": 1770987661.1918793,
     "access_count": 0,
-    "score": 0.7356274515673424,
+    "score": 0.73458906781956,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -676,7 +646,7 @@
     "importance": 0.75,
     "created_at": 1770987661.1984448,
     "access_count": 0,
-    "score": 0.7356274534305612,
+    "score": 0.7345890696800814,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -691,7 +661,7 @@
     "importance": 0.75,
     "created_at": 1770987661.2021625,
     "access_count": 0,
-    "score": 0.7356274544855237,
+    "score": 0.7345890707335547,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -706,7 +676,7 @@
     "importance": 0.75,
     "created_at": 1770987661.205823,
     "access_count": 0,
-    "score": 0.7356274555242466,
+    "score": 0.7345890717708112,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -721,7 +691,7 @@
     "importance": 0.75,
     "created_at": 1770987661.2091544,
     "access_count": 0,
-    "score": 0.7356274564695919,
+    "score": 0.7345890727148223,
     "metadata": {
       "urls": [],
       "commands": [
@@ -740,7 +710,7 @@
     "importance": 0.75,
     "created_at": 1770987661.261259,
     "access_count": 0,
-    "score": 0.7356274712571329,
+    "score": 0.7345890874814898,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -755,7 +725,7 @@
     "importance": 0.75,
     "created_at": 1770987661.269107,
     "access_count": 0,
-    "score": 0.7356274734842534,
+    "score": 0.734589089705534,
     "metadata": {
       "urls": [],
       "commands": [
@@ -774,7 +744,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3031929,
     "access_count": 0,
-    "score": 0.7356274831578892,
+    "score": 0.7345890993655149,
     "metadata": {
       "urls": [],
       "commands": [
@@ -791,7 +761,7 @@
     "importance": 0.75,
     "created_at": 1770987661.307023,
     "access_count": 0,
-    "score": 0.7356274842447894,
+    "score": 0.7345891004508134,
     "metadata": {
       "urls": [],
       "commands": [
@@ -808,7 +778,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3108175,
     "access_count": 0,
-    "score": 0.73562748532154,
+    "score": 0.734589101526044,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -823,7 +793,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3150253,
     "access_count": 0,
-    "score": 0.735627486515689,
+    "score": 0.7345891027184398,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -838,7 +808,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3542347,
     "access_count": 0,
-    "score": 0.7356274976434424,
+    "score": 0.7345891138304856,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -853,7 +823,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3621044,
     "access_count": 0,
-    "score": 0.7356274998767881,
+    "score": 0.7345891160606789,
     "metadata": {
       "urls": [],
       "commands": [
@@ -873,7 +843,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3739398,
     "access_count": 0,
-    "score": 0.7356275032355354,
+    "score": 0.7345891194148202,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -888,7 +858,7 @@
     "importance": 0.75,
     "created_at": 1770987661.4180217,
     "access_count": 0,
-    "score": 0.7356275157461554,
+    "score": 0.7345891319077131,
     "metadata": {
       "urls": [],
       "commands": [
@@ -905,7 +875,7 @@
     "importance": 0.75,
     "created_at": 1770987661.4301832,
     "access_count": 0,
-    "score": 0.7356275191975359,
+    "score": 0.7345891353541543,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -920,7 +890,7 @@
     "importance": 0.75,
     "created_at": 1770987661.505556,
     "access_count": 0,
-    "score": 0.7356275405887607,
+    "score": 0.734589156715184,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -935,7 +905,7 @@
     "importance": 0.75,
     "created_at": 1770987661.539123,
     "access_count": 0,
-    "score": 0.7356275501151586,
+    "score": 0.734589166228135,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -950,7 +920,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5432181,
     "access_count": 0,
-    "score": 0.7356275512772347,
+    "score": 0.7345891673886381,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -965,7 +935,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5477233,
     "access_count": 0,
-    "score": 0.7356275525556942,
+    "score": 0.734589168665293,
     "metadata": {
       "urls": [],
       "commands": [
@@ -982,7 +952,7 @@
     "importance": 0.75,
     "created_at": 1770987661.601858,
     "access_count": 0,
-    "score": 0.7356275679193356,
+    "score": 0.7345891840072477,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -997,7 +967,7 @@
     "importance": 0.75,
     "created_at": 1770987661.681078,
     "access_count": 0,
-    "score": 0.7356275904024018,
+    "score": 0.7345892064585776,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1012,7 +982,7 @@
     "importance": 0.75,
     "created_at": 1770987661.7431667,
     "access_count": 0,
-    "score": 0.7356276080234786,
+    "score": 0.7345892240547137,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1027,7 +997,7 @@
     "importance": 0.75,
     "created_at": 1770987661.7554824,
     "access_count": 0,
-    "score": 0.7356276115186388,
+    "score": 0.7345892275449402,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1042,7 +1012,7 @@
     "importance": 0.75,
     "created_at": 1770987661.76779,
     "access_count": 0,
-    "score": 0.7356276150114982,
+    "score": 0.7345892310328693,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1057,7 +1027,7 @@
     "importance": 0.75,
     "created_at": 1770987661.792633,
     "access_count": 0,
-    "score": 0.7356276220619726,
+    "score": 0.7345892380733915,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1072,7 +1042,7 @@
     "importance": 0.75,
     "created_at": 1770987661.7967486,
     "access_count": 0,
-    "score": 0.735627623229868,
+    "score": 0.7345892392396383,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1089,7 +1059,7 @@
     "importance": 0.75,
     "created_at": 1770987661.8009956,
     "access_count": 0,
-    "score": 0.7356276244349789,
+    "score": 0.7345892404431158,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1104,7 +1074,7 @@
     "importance": 0.8,
     "created_at": 1770606835.0535045,
     "access_count": 1,
-    "score": 0.7451971744704329,
+    "score": 0.7441452824654987,
     "tier": "hot"
   },
   {
@@ -1114,7 +1084,7 @@
     "importance": 0.8,
     "created_at": 1770858030.8423762,
     "access_count": 0,
-    "score": 0.7463917697363486,
+    "score": 0.7453381914860777,
     "tier": "hot"
   },
   {
@@ -1124,7 +1094,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2403712,
     "access_count": 0,
-    "score": 0.7499520890106037,
+    "score": 0.7488934851489804,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1139,7 +1109,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2448103,
     "access_count": 0,
-    "score": 0.74995209029485,
+    "score": 0.7488934864314138,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1156,7 +1126,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2491612,
     "access_count": 0,
-    "score": 0.7499520915535728,
+    "score": 0.7488934876883598,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1171,7 +1141,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2534513,
     "access_count": 0,
-    "score": 0.749952092794705,
+    "score": 0.7488934889277402,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1186,7 +1156,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2577338,
     "access_count": 0,
-    "score": 0.7499520940336298,
+    "score": 0.7488934901649161,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1201,7 +1171,7 @@
     "importance": 0.75,
     "created_at": 1771037649.261971,
     "access_count": 0,
-    "score": 0.749952095259448,
+    "score": 0.7488934913890041,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1216,7 +1186,7 @@
     "importance": 0.75,
     "created_at": 1771037649.27514,
     "access_count": 0,
-    "score": 0.7499520990695556,
+    "score": 0.7488934951936647,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1231,7 +1201,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2793593,
     "access_count": 0,
-    "score": 0.7499521002902002,
+    "score": 0.7488934964125861,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1246,7 +1216,7 @@
     "importance": 0.75,
     "created_at": 1771037649.283633,
     "access_count": 0,
-    "score": 0.7499521015265727,
+    "score": 0.7488934976472134,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1264,7 +1234,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2882166,
     "access_count": 0,
-    "score": 0.7499521028526223,
+    "score": 0.7488934989713912,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1279,7 +1249,7 @@
     "importance": 0.75,
     "created_at": 1771037649.4361045,
     "access_count": 0,
-    "score": 0.7499521456414036,
+    "score": 0.7488935416997735,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1294,7 +1264,7 @@
     "importance": 0.75,
     "created_at": 1771037649.440404,
     "access_count": 0,
-    "score": 0.7499521468851572,
+    "score": 0.7488935429418404,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1313,7 +1283,7 @@
     "importance": 0.75,
     "created_at": 1771037649.45841,
     "access_count": 0,
-    "score": 0.7499521520947813,
+    "score": 0.7488935481440419,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1328,7 +1298,7 @@
     "importance": 0.75,
     "created_at": 1771037649.480239,
     "access_count": 0,
-    "score": 0.7499521584104701,
+    "score": 0.7488935544508156,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1345,7 +1315,7 @@
     "importance": 0.75,
     "created_at": 1771037649.4845905,
     "access_count": 0,
-    "score": 0.7499521596694,
+    "score": 0.7488935557079685,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1362,7 +1332,7 @@
     "importance": 0.8,
     "created_at": 1770879637.418223,
     "access_count": 0,
-    "score": 0.752639599097198,
+    "score": 0.7515772016484251,
     "tier": "hot"
   },
   {
@@ -1372,7 +1342,7 @@
     "importance": 0.8,
     "created_at": 1770901224.240646,
     "access_count": 0,
-    "score": 0.7589339434338864,
+    "score": 0.7578626611279082,
     "tier": "hot"
   },
   {
@@ -1382,7 +1352,7 @@
     "importance": 0.8,
     "created_at": 1770901224.2868898,
     "access_count": 0,
-    "score": 0.7589339569738973,
+    "score": 0.7578626746488066,
     "tier": "hot"
   },
   {
@@ -1392,7 +1362,7 @@
     "importance": 0.8,
     "created_at": 1770901229.0416515,
     "access_count": 0,
-    "score": 0.7589353491625066,
+    "score": 0.757864064872325,
     "tier": "hot"
   },
   {
@@ -1402,7 +1372,7 @@
     "importance": 0.9,
     "created_at": 1770610454.8254375,
     "access_count": 0,
-    "score": 0.7631985497263212,
+    "score": 0.7621212476642066,
     "tier": "hot"
   },
   {
@@ -1412,52 +1382,7 @@
     "importance": 0.9,
     "created_at": 1770618231.019124,
     "access_count": 0,
-    "score": 0.7654916404070239,
-    "tier": "hot"
-  },
-  {
-    "id": "a71b1f0b1873",
-    "text": "Issue Found: EvoClaw HTTP Chat API doesn't support MQTT edge agents",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.3307042,
-    "access_count": 2,
-    "score": 0.8399463689612627,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "280617f7d64a",
-    "text": "Architecture Note: This is expected behavior per EvoClaw design - HTTP Chat API is orchestrator-only, MQTT agents require different communication pattern.",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.3432972,
-    "access_count": 2,
-    "score": 0.8399463730419225,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "b9bc1c75aa28",
-    "text": "Relevance to EvoClaw",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.3982527,
-    "access_count": 2,
-    "score": 0.8399463908502782,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
+    "score": 0.7644111015051991,
     "tier": "hot"
   },
   {
@@ -1467,37 +1392,7 @@
     "importance": 0.7,
     "created_at": 1771037649.449347,
     "access_count": 1,
-    "score": 0.7699508734567861,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "ddc5de9e1f6c",
-    "text": "Tiered memory gaps",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1771037649.493801,
-    "access_count": 2,
-    "score": 0.8399464218126728,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "843bf750c3cb",
-    "text": "Bowen feedback: \"please do reflection on why you failed to find it at the first place, anything wrong with tired memory system?\"",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1771037649.4981942,
-    "access_count": 2,
-    "score": 0.8399464232361175,
+    "score": 0.7688640400710922,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1512,7 +1407,7 @@
     "importance": 0.8,
     "created_at": 1770944439.0948613,
     "access_count": 0,
-    "score": 0.7716932604285931,
+    "score": 0.7706039675556812,
     "tier": "hot"
   },
   {
@@ -1522,7 +1417,7 @@
     "importance": 0.8,
     "created_at": 1770944439.3028843,
     "access_count": 0,
-    "score": 0.7716933223613248,
+    "score": 0.7706040294009909,
     "tier": "hot"
   },
   {
@@ -1532,7 +1427,7 @@
     "importance": 0.8,
     "created_at": 1770970138.546251,
     "access_count": 0,
-    "score": 0.7793825875516682,
+    "score": 0.7782824407168749,
     "metadata": {
       "urls": [
         "https://docs.comfy.org/z-image"
@@ -1551,7 +1446,7 @@
     "importance": 0.8,
     "created_at": 1770603278.377375,
     "access_count": 2,
-    "score": 0.8118276383857947,
+    "score": 0.8106816933505415,
     "tier": "hot"
   },
   {
@@ -1561,7 +1456,7 @@
     "importance": 0.8,
     "created_at": 1770603278.5667691,
     "access_count": 2,
-    "score": 0.8118276977048896,
+    "score": 0.8106817525859036,
     "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
@@ -1572,112 +1467,7 @@
     "importance": 0.8,
     "created_at": 1770613764.1543171,
     "access_count": 2,
-    "score": 0.815118489258389,
-    "tier": "hot"
-  },
-  {
-    "id": "eb48b7f97251",
-    "text": "Bowen: \"Yes. Plz gain more autonomy for yourself\"",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1770987661.7097778,
-    "access_count": 3,
-    "score": 0.8925614862305609,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "61ad793ace1c",
-    "text": "What this means",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1770987661.713866,
-    "access_count": 3,
-    "score": 0.8925614876382477,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "ac1ea74453f7",
-    "text": "My interpretation: Be proactive, own decisions, ship fast.",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1770987661.7180986,
-    "access_count": 3,
-    "score": 0.8925614890956051,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "4308fc2721e1",
-    "text": "Problem: Edge agent on Raspberry Pi is DOWN (crashed 11+ hours ago at 10:33 AM)",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1770987661.7222998,
-    "access_count": 3,
-    "score": 0.8925614905421252,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "fb05afe6e5cc",
-    "text": "Root cause: Command parsing issues in edge agent",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1770987661.7264295,
-    "access_count": 3,
-    "score": 0.8925614919640154,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "894827eaa9d5",
-    "text": "Status: Identified issue, sent fix proposal to Bowen (rebuild + deploy with systemd service)",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1770987661.7308817,
-    "access_count": 3,
-    "score": 0.892561493496987,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "997f9d9a8f14",
-    "text": "Waiting for approval to",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1770987661.73495,
-    "access_count": 3,
-    "score": 0.8925614948976953,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
+    "score": 0.8139678989832102,
     "tier": "hot"
   },
   {
@@ -1687,7 +1477,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7719114,
     "access_count": 2,
-    "score": 0.8239029301156157,
+    "score": 0.8227399400575611,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1702,132 +1492,12 @@
     "importance": 0.7,
     "created_at": 1770987661.8755405,
     "access_count": 2,
-    "score": 0.8239029630554068,
+    "score": 0.8227399729508554,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "hot"
-  },
-  {
-    "id": "694a5f66c032",
-    "text": "EvoClaw Pi agent: admin@192.168.99.25, password 8JJ3yKNrmCoHo90F. MQTT container: evoclaw-mqtt.",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1770603278.50327,
-    "access_count": 5,
-    "score": 0.8879365226100394,
-    "tier": "hot"
-  },
-  {
-    "id": "83ae83844ea3",
-    "text": "Cold tier was empty because eviction only triggered at 30 days \u2014 now fixed",
-    "category": "projects/evoclaw/memory",
-    "importance": 0.75,
-    "created_at": 1770848917.960907,
-    "access_count": 3,
-    "score": 0.906472410017801,
-    "tier": "hot"
-  },
-  {
-    "id": "368b1889230d",
-    "text": "Published to ClawHub: tiered-memory@2.0.0",
-    "category": "projects/evoclaw/memory",
-    "importance": 0.75,
-    "created_at": 1770848917.963316,
-    "access_count": 3,
-    "score": 0.9064724108601014,
-    "tier": "hot"
-  },
-  {
-    "id": "8c654e86b24e",
-    "text": "Fixed: Turso DB URL \u2192 agentmemory-bowen31337.aws-ap-northeast-1.turso.io",
-    "category": "projects/evoclaw",
-    "importance": 0.75,
-    "created_at": 1770848917.9673443,
-    "access_count": 3,
-    "score": 0.9064724122687161,
-    "tier": "hot"
-  },
-  {
-    "id": "95ff5b61c34d",
-    "text": "Fixed: agent name = Bloop, model = ollama/qwen2.5:1.5b",
-    "category": "projects/evoclaw",
-    "importance": 0.75,
-    "created_at": 1770848917.968247,
-    "access_count": 3,
-    "score": 0.9064724125841409,
-    "tier": "hot"
-  },
-  {
-    "id": "28a430eca45f",
-    "text": "Fixed: dataDir \u2192 /tmp/evoclaw-data (writable)",
-    "category": "projects/evoclaw",
-    "importance": 0.75,
-    "created_at": 1770848917.9691088,
-    "access_count": 3,
-    "score": 0.9064724128853915,
-    "tier": "hot"
-  },
-  {
-    "id": "eff216af177c",
-    "text": "Fixed: intelligentRouter MEDIUM tier \u2192 zhipu-1/glm-4.7",
-    "category": "projects/evoclaw",
-    "importance": 0.75,
-    "created_at": 1770848917.9700267,
-    "access_count": 3,
-    "score": 0.9064724132062361,
-    "tier": "hot"
-  },
-  {
-    "id": "095b13c5a8f0",
-    "text": "Created docs/INSTALLATION.md \u2014 comprehensive guide covering Solo/Fleet/Podman/E2B",
-    "category": "projects/evoclaw",
-    "importance": 0.75,
-    "created_at": 1770848917.9754503,
-    "access_count": 3,
-    "score": 0.9064724151027879,
-    "tier": "hot"
-  },
-  {
-    "id": "16ac4063e214",
-    "text": "Fixed: edge agent auto-discovery via mDNS (manual config as fallback)",
-    "category": "projects/evoclaw",
-    "importance": 0.75,
-    "created_at": 1770848917.976349,
-    "access_count": 3,
-    "score": 0.9064724154169621,
-    "tier": "hot"
-  },
-  {
-    "id": "b504edb5515d",
-    "text": "Fixed: hot memory recovery explanation (hot is cache of warm, rebuilt on boot)",
-    "category": "projects/evoclaw",
-    "importance": 0.75,
-    "created_at": 1770848917.977328,
-    "access_count": 3,
-    "score": 0.9064724157591518,
-    "tier": "hot"
-  },
-  {
-    "id": "0be23f0002a3",
-    "text": "Fixed: broker placement (runs on hub machine with orchestrator, not on edge)",
-    "category": "projects/evoclaw",
-    "importance": 0.75,
-    "created_at": 1770848917.9782953,
-    "access_count": 3,
-    "score": 0.9064724160972562,
-    "tier": "hot"
-  },
-  {
-    "id": "a9fce994a561",
-    "text": "Created getGenomeLocked/updateGenomeLocked internal helpers",
-    "category": "projects/evoclaw",
-    "importance": 0.75,
-    "created_at": 1770848917.9793704,
-    "access_count": 3,
-    "score": 0.9064724164729645,
     "tier": "hot"
   },
   {
@@ -1837,7 +1507,7 @@
     "importance": 0.9,
     "created_at": 1770603278.2508664,
     "access_count": 1,
-    "score": 0.8371972112201794,
+    "score": 0.8360154554601812,
     "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
@@ -1848,7 +1518,7 @@
     "importance": 0.9,
     "created_at": 1770858030.968056,
     "access_count": 0,
-    "score": 0.839690781658981,
+    "score": 0.8385055060697364,
     "tier": "hot"
   },
   {
@@ -1858,7 +1528,7 @@
     "importance": 0.9,
     "created_at": 1770858052.078376,
     "access_count": 0,
-    "score": 0.8396976204757105,
+    "score": 0.8385123352330522,
     "tier": "hot"
   },
   {
@@ -1868,38 +1538,98 @@
     "importance": 0.9,
     "created_at": 1770858052.1621907,
     "access_count": 0,
-    "score": 0.8396976476279244,
+    "score": 0.8385123623469392,
     "tier": "hot"
   },
   {
-    "id": "5568fb682668",
-    "text": "Note: This is the EvoClaw paper (agent framework), distinct from the ClawChain paper (blockchain) which is ready for arXiv cs.AI submission.",
-    "category": "projects/evoclaw",
+    "id": "a71b1f0b1873",
+    "text": "Issue Found: EvoClaw HTTP Chat API doesn't support MQTT edge agents",
+    "category": "general",
     "importance": 0.7,
-    "created_at": 1771037649.3265023,
-    "access_count": 4,
-    "score": 0.9099418982264839,
+    "created_at": 1771037649.3307042,
+    "access_count": 2,
+    "score": 0.8387607325947748,
     "metadata": {
-      "urls": [
-        "cs.AI"
-      ],
+      "urls": [],
       "commands": [],
       "paths": []
     },
     "tier": "hot"
   },
   {
-    "id": "96a4dbea777e",
-    "text": "What happened: Failed to find EvoClaw paper on first attempt, asked Bowen if he wanted me to write one.",
-    "category": "projects/evoclaw",
+    "id": "280617f7d64a",
+    "text": "Architecture Note: This is expected behavior per EvoClaw design - HTTP Chat API is orchestrator-only, MQTT agents require different communication pattern.",
+    "category": "general",
     "importance": 0.7,
-    "created_at": 1771037649.4890444,
-    "access_count": 4,
-    "score": 0.9099419552879969,
+    "created_at": 1771037649.3432972,
+    "access_count": 2,
+    "score": 0.8387607366696744,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "b9bc1c75aa28",
+    "text": "Relevance to EvoClaw",
+    "category": "general",
+    "importance": 0.7,
+    "created_at": 1771037649.3982527,
+    "access_count": 2,
+    "score": 0.8387607544528927,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "ddc5de9e1f6c",
+    "text": "Tiered memory gaps",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1771037649.493801,
+    "access_count": 2,
+    "score": 0.838760785371659,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "843bf750c3cb",
+    "text": "Bowen feedback: \"please do reflection on why you failed to find it at the first place, anything wrong with tired memory system?\"",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1771037649.4981942,
+    "access_count": 2,
+    "score": 0.8387607867930172,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "5a7f05d2e911",
+    "text": "LTX-2 checkpoint downloaded: /data/ai-stack/comfyui/ComfyUI/models/checkpoints/ltx-2-19b-distilled-fp8.safetensors (26GB) - ready for video+audio generation",
+    "category": "technical/gpu",
+    "importance": 0.85,
+    "created_at": 1771041476.1792974,
+    "access_count": 0,
+    "score": 0.8499999999384683,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": [
+        "/data/ai-stack/comfyui/ComfyUI/models/checkpoints/ltx-2-19b-distilled-fp8.safetensors"
+      ]
     },
     "tier": "hot"
   },
@@ -1910,7 +1640,7 @@
     "importance": 0.9,
     "created_at": 1770901224.1941369,
     "access_count": 0,
-    "score": 0.8538006710358973,
+    "score": 0.8525954784631503,
     "tier": "hot"
   },
   {
@@ -1920,7 +1650,7 @@
     "importance": 0.9,
     "created_at": 1770944438.939319,
     "access_count": 0,
-    "score": 0.8681548658797102,
+    "score": 0.8669294114711503,
     "tier": "hot"
   },
   {
@@ -1930,9 +1660,254 @@
     "importance": 0.8,
     "created_at": 1770603278.2826345,
     "access_count": 3,
-    "score": 0.8794799094332529,
+    "score": 0.878238469023698,
     "tier": "hot",
     "tree_relevance": 1.333308210833677
+  },
+  {
+    "id": "694a5f66c032",
+    "text": "EvoClaw Pi agent: admin@192.168.99.25, password 8JJ3yKNrmCoHo90F. MQTT container: evoclaw-mqtt.",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770603278.50327,
+    "access_count": 5,
+    "score": 0.8866831451668566,
+    "tier": "hot"
+  },
+  {
+    "id": "eb48b7f97251",
+    "text": "Bowen: \"Yes. Plz gain more autonomy for yourself\"",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770987661.7097778,
+    "access_count": 3,
+    "score": 0.8913015803645348,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "61ad793ace1c",
+    "text": "What this means",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770987661.713866,
+    "access_count": 3,
+    "score": 0.8913015817701526,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "ac1ea74453f7",
+    "text": "My interpretation: Be proactive, own decisions, ship fast.",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770987661.7180986,
+    "access_count": 3,
+    "score": 0.8913015832254529,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "4308fc2721e1",
+    "text": "Problem: Edge agent on Raspberry Pi is DOWN (crashed 11+ hours ago at 10:33 AM)",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770987661.7222998,
+    "access_count": 3,
+    "score": 0.8913015846699311,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "fb05afe6e5cc",
+    "text": "Root cause: Command parsing issues in edge agent",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770987661.7264295,
+    "access_count": 3,
+    "score": 0.8913015860898145,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "894827eaa9d5",
+    "text": "Status: Identified issue, sent fix proposal to Bowen (rebuild + deploy with systemd service)",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770987661.7308817,
+    "access_count": 3,
+    "score": 0.891301587620622,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "997f9d9a8f14",
+    "text": "Waiting for approval to",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770987661.73495,
+    "access_count": 3,
+    "score": 0.8913015890195172,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "1cc87f0e8ff5",
+    "text": "ClawChain testnet deployed to Hetzner VPS 135.181.157.121. Binary 62MB ARM64. Cloudflare tunnel moved from Dell to VPS. Public endpoint: https://testnet.clawchain.win (wss://testnet.clawchain.win). Frankfurt PoPs. 8 pallets: staking, session, treasury, sudo, task-market, reputation, agent-registry, claw-token.",
+    "category": "projects/clawchain",
+    "importance": 0.95,
+    "created_at": 1770629133.8014925,
+    "access_count": 1,
+    "score": 0.8913074742143133,
+    "tier": "hot"
+  },
+  {
+    "id": "83ae83844ea3",
+    "text": "Cold tier was empty because eviction only triggered at 30 days \u2014 now fixed",
+    "category": "projects/evoclaw/memory",
+    "importance": 0.75,
+    "created_at": 1770848917.960907,
+    "access_count": 3,
+    "score": 0.9051928680205372,
+    "tier": "hot"
+  },
+  {
+    "id": "368b1889230d",
+    "text": "Published to ClawHub: tiered-memory@2.0.0",
+    "category": "projects/evoclaw/memory",
+    "importance": 0.75,
+    "created_at": 1770848917.963316,
+    "access_count": 3,
+    "score": 0.9051928688616487,
+    "tier": "hot"
+  },
+  {
+    "id": "8c654e86b24e",
+    "text": "Fixed: Turso DB URL \u2192 agentmemory-bowen31337.aws-ap-northeast-1.turso.io",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9673443,
+    "access_count": 3,
+    "score": 0.905192870268275,
+    "tier": "hot"
+  },
+  {
+    "id": "95ff5b61c34d",
+    "text": "Fixed: agent name = Bloop, model = ollama/qwen2.5:1.5b",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.968247,
+    "access_count": 3,
+    "score": 0.905192870583338,
+    "tier": "hot"
+  },
+  {
+    "id": "28a430eca45f",
+    "text": "Fixed: dataDir \u2192 /tmp/evoclaw-data (writable)",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9691088,
+    "access_count": 3,
+    "score": 0.9051928708840798,
+    "tier": "hot"
+  },
+  {
+    "id": "eff216af177c",
+    "text": "Fixed: intelligentRouter MEDIUM tier \u2192 zhipu-1/glm-4.7",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9700267,
+    "access_count": 3,
+    "score": 0.9051928712043883,
+    "tier": "hot"
+  },
+  {
+    "id": "095b13c5a8f0",
+    "text": "Created docs/INSTALLATION.md \u2014 comprehensive guide covering Solo/Fleet/Podman/E2B",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9754503,
+    "access_count": 3,
+    "score": 0.9051928730982631,
+    "tier": "hot"
+  },
+  {
+    "id": "16ac4063e214",
+    "text": "Fixed: edge agent auto-discovery via mDNS (manual config as fallback)",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.976349,
+    "access_count": 3,
+    "score": 0.9051928734120771,
+    "tier": "hot"
+  },
+  {
+    "id": "b504edb5515d",
+    "text": "Fixed: hot memory recovery explanation (hot is cache of warm, rebuilt on boot)",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.977328,
+    "access_count": 3,
+    "score": 0.9051928737537839,
+    "tier": "hot"
+  },
+  {
+    "id": "0be23f0002a3",
+    "text": "Fixed: broker placement (runs on hub machine with orchestrator, not on edge)",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9782953,
+    "access_count": 3,
+    "score": 0.9051928740914109,
+    "tier": "hot"
+  },
+  {
+    "id": "a9fce994a561",
+    "text": "Created getGenomeLocked/updateGenomeLocked internal helpers",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9793704,
+    "access_count": 3,
+    "score": 0.9051928744666722,
+    "tier": "hot"
+  },
+  {
+    "id": "5bd7792397f1",
+    "text": "Hetzner VPS: 135.181.157.121, root, aarch64, 2 cores, 4GB RAM, 38GB disk, Ubuntu 24.04. SSH key added. Password: encrypted in hetzner-credentials.json.enc. Purpose: ClawChain testnet. Cloudflare tunnel running on Dell (PID in /tmp/cloudflared.pid).",
+    "category": "technical",
+    "importance": 0.9,
+    "created_at": 1770621651.5485682,
+    "access_count": 2,
+    "score": 0.918504625811211,
+    "tier": "hot"
   },
   {
     "id": "38b7dc0b651b",
@@ -1941,7 +1916,7 @@
     "importance": 0.8,
     "created_at": 1770603278.5991645,
     "access_count": 4,
-    "score": 0.9471323258206604,
+    "score": 0.9457953898317221,
     "tier": "hot"
   },
   {
@@ -1951,7 +1926,7 @@
     "importance": 0.75,
     "created_at": 1770987661.4968448,
     "access_count": 3,
-    "score": 0.9563157995370993,
+    "score": 0.954965900505743,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1971,7 +1946,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5010297,
     "access_count": 3,
-    "score": 0.9563158010809606,
+    "score": 0.9549659020474252,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1991,7 +1966,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5811749,
     "access_count": 3,
-    "score": 0.9563158306502471,
+    "score": 0.9549659315749727,
     "metadata": {
       "urls": [],
       "commands": [
@@ -2008,22 +1983,12 @@
     "importance": 0.75,
     "created_at": 1770987661.585305,
     "access_count": 3,
-    "score": 0.9563158321737887,
+    "score": 0.9549659330963638,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "hot"
-  },
-  {
-    "id": "1cc87f0e8ff5",
-    "text": "ClawChain testnet deployed to Hetzner VPS 135.181.157.121. Binary 62MB ARM64. Cloudflare tunnel moved from Dell to VPS. Public endpoint: https://testnet.clawchain.win (wss://testnet.clawchain.win). Frankfurt PoPs. 8 pallets: staking, session, treasury, sudo, task-market, reputation, agent-registry, claw-token.",
-    "category": "projects/clawchain",
-    "importance": 0.95,
-    "created_at": 1770629133.8014925,
-    "access_count": 1,
-    "score": 0.8925673884117158,
     "tier": "hot"
   },
   {
@@ -2033,7 +1998,7 @@
     "importance": 0.8,
     "created_at": 1770858031.0936832,
     "access_count": 3,
-    "score": 0.9703093947204344,
+    "score": 0.968939742862039,
     "tier": "hot"
   },
   {
@@ -2043,7 +2008,7 @@
     "importance": 0.8,
     "created_at": 1770858031.1349287,
     "access_count": 3,
-    "score": 0.9703094101604021,
+    "score": 0.9689397582802118,
     "tier": "hot"
   },
   {
@@ -2053,7 +2018,199 @@
     "importance": 0.8,
     "created_at": 1770858051.8253617,
     "access_count": 3,
-    "score": 0.9703171556086124,
+    "score": 0.968947492795153,
+    "tier": "hot"
+  },
+  {
+    "id": "a2072493215d",
+    "text": "Intelligent router working: 14 models across 4 tiers, delivering 40-83% cost savings",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879637.2224507,
+    "access_count": 3,
+    "score": 0.9770502883358864,
+    "tier": "hot"
+  },
+  {
+    "id": "59e8ccbe2615",
+    "text": "Skills robustness fixes: atomic writes, schema v2.0, sanitization, pooling, retry logic all implemented",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879637.515192,
+    "access_count": 3,
+    "score": 0.9770503986839912,
+    "tier": "hot"
+  },
+  {
+    "id": "81a5b283e044",
+    "text": "Config backup system implemented: automated Turso backups on startup, restore by ID",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879637.6592467,
+    "access_count": 3,
+    "score": 0.9770504529849913,
+    "tier": "hot"
+  },
+  {
+    "id": "3167bda09b08",
+    "text": "Messaging interfaces implemented: HTTP Chat API, Web Terminal, TUI all working",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879637.7071779,
+    "access_count": 3,
+    "score": 0.9770504710524025,
+    "tier": "hot"
+  },
+  {
+    "id": "e42aca512f45",
+    "text": "Multi-arch CI pipeline implemented: 7 targets for orchestrator, 5 for edge agent",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879637.7547972,
+    "access_count": 3,
+    "score": 0.977050489002262,
+    "tier": "hot"
+  },
+  {
+    "id": "df6a370aceb9",
+    "text": "EvoClaw security layers implemented: signed constraints, JWT auth, evolution firewall",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879638.046249,
+    "access_count": 3,
+    "score": 0.9770505988643641,
+    "tier": "hot"
+  },
+  {
+    "id": "e5802d060a78",
+    "text": "Agent self-governance skill published to ClawHub: WAL+VBR+ADL+VFM protocols",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879638.099425,
+    "access_count": 3,
+    "score": 0.9770506189088618,
+    "tier": "hot"
+  },
+  {
+    "id": "5568fb682668",
+    "text": "Note: This is the EvoClaw paper (agent framework), distinct from the ClawChain paper (blockchain) which is ready for arXiv cs.AI submission.",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1771037649.3265023,
+    "access_count": 4,
+    "score": 0.9785541864338829,
+    "metadata": {
+      "urls": [
+        "cs.AI"
+      ],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "96a4dbea777e",
+    "text": "What happened: Failed to find EvoClaw paper on first attempt, asked Bowen if he wanted me to write one.",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1771037649.4890444,
+    "access_count": 4,
+    "score": 0.9785542477980016,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "50c59a212ca6",
+    "text": "EvoClaw agent editor modal UI complete with edit button, model dropdown, save functionality",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770901223.9106195,
+    "access_count": 3,
+    "score": 0.9852213340106462,
+    "tier": "hot"
+  },
+  {
+    "id": "6999ffc3727a",
+    "text": "Tiered memory fixed: hot-memory-state.json key mismatch corrected, MEMORY.md renders properly at 2.5KB",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770922835.0454159,
+    "access_count": 3,
+    "score": 0.993470083862745,
+    "tier": "hot"
+  },
+  {
+    "id": "a39fd46e1a54",
+    "text": "Intelligent router populated with 14 real models across 4 tiers delivering 83% savings on cron jobs",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770922837.8350434,
+    "access_count": 3,
+    "score": 0.9934711530805445,
+    "tier": "hot"
+  },
+  {
+    "id": "e97ac4e337ac",
+    "text": "EvoClaw CI red at 54.9% coverage, sub-agent boosted to 74% then stuck at 76.2% due to cold.go mock limitation",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770922857.5116065,
+    "access_count": 3,
+    "score": 0.9934786948133686,
+    "tier": "hot"
+  },
+  {
+    "id": "8a0e310c12a4",
+    "text": "Gateway daemon mode implemented with systemd/launchd integration, production ready",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770922872.2013025,
+    "access_count": 3,
+    "score": 0.9934843251918266,
+    "tier": "hot"
+  },
+  {
+    "id": "ffe9b3b04d26",
+    "text": "Gateway/daemon mode implemented with systemd/launchd integration - evoclaw gateway install/start/stop/status/restart/uninstall commands",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770944439.7650976,
+    "access_count": 3,
+    "score": 1.0017854168513431,
+    "tier": "hot"
+  },
+  {
+    "id": "bd87731e5bff",
+    "text": "Test locally before pushing to CI \u2014 Bowen explicit preference",
+    "category": "owner/preferences",
+    "importance": 0.9,
+    "created_at": 1770858052.1201756,
+    "access_count": 2,
+    "score": 1.0062148184994963,
+    "tier": "hot"
+  },
+  {
+    "id": "c1c01dad8e92",
+    "text": "Lesson: test locally before pushing to CI - Bowen explicit after repeated failures",
+    "category": "lessons/cost",
+    "importance": 0.9,
+    "created_at": 1770879637.8976207,
+    "access_count": 2,
+    "score": 1.0146294098681798,
+    "tier": "hot"
+  },
+  {
+    "id": "00fd1be12828",
+    "text": "First fix (sub-agent): Go lint, Go test races, Rust clippy \u2014 all fixed \u2705",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9745195,
+    "access_count": 5,
+    "score": 1.044453314730536,
     "tier": "hot"
   },
   {
@@ -2063,7 +2220,7 @@
     "importance": 0.9,
     "created_at": 1771037807.2176938,
     "access_count": 2,
-    "score": 0.9899970940253073,
+    "score": 1.0784723473732871,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -2074,154 +2231,15 @@
     "tier": "hot"
   },
   {
-    "id": "a2072493215d",
-    "text": "Intelligent router working: 14 models across 4 tiers, delivering 40-83% cost savings",
-    "category": "projects/evoclaw",
+    "id": "00319a352ffa",
+    "text": "Deployer wallet 0x2331F0fA9A35fDBE6D60b6b7ADAC5F813B3e33d0 awaiting tBNB for BSC testnet deployment",
+    "category": "projects/evoclaw/bsc",
     "importance": 0.8,
-    "created_at": 1770879637.2224507,
-    "access_count": 3,
-    "score": 0.9784314049152306,
-    "tier": "hot"
-  },
-  {
-    "id": "59e8ccbe2615",
-    "text": "Skills robustness fixes: atomic writes, schema v2.0, sanitization, pooling, retry logic all implemented",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770879637.515192,
-    "access_count": 3,
-    "score": 0.9784315154193188,
-    "tier": "hot"
-  },
-  {
-    "id": "81a5b283e044",
-    "text": "Config backup system implemented: automated Turso backups on startup, restore by ID",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770879637.6592467,
-    "access_count": 3,
-    "score": 0.9784315697970765,
-    "tier": "hot"
-  },
-  {
-    "id": "3167bda09b08",
-    "text": "Messaging interfaces implemented: HTTP Chat API, Web Terminal, TUI all working",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770879637.7071779,
-    "access_count": 3,
-    "score": 0.9784315878900269,
-    "tier": "hot"
-  },
-  {
-    "id": "e42aca512f45",
-    "text": "Multi-arch CI pipeline implemented: 7 targets for orchestrator, 5 for edge agent",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770879637.7547972,
-    "access_count": 3,
-    "score": 0.9784316058652596,
-    "tier": "hot"
-  },
-  {
-    "id": "df6a370aceb9",
-    "text": "EvoClaw security layers implemented: signed constraints, JWT auth, evolution firewall",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770879638.046249,
-    "access_count": 3,
-    "score": 0.9784317158826583,
-    "tier": "hot"
-  },
-  {
-    "id": "e5802d060a78",
-    "text": "Agent self-governance skill published to ClawHub: WAL+VBR+ADL+VFM protocols",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770879638.099425,
-    "access_count": 3,
-    "score": 0.9784317359554899,
-    "tier": "hot"
-  },
-  {
-    "id": "50c59a212ca6",
-    "text": "EvoClaw agent editor modal UI complete with edit button, model dropdown, save functionality",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770901223.9106195,
-    "access_count": 3,
-    "score": 0.9866140008313514,
-    "tier": "hot"
-  },
-  {
-    "id": "6999ffc3727a",
-    "text": "Tiered memory fixed: hot-memory-state.json key mismatch corrected, MEMORY.md renders properly at 2.5KB",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770922835.0454159,
-    "access_count": 3,
-    "score": 0.9948744107641192,
-    "tier": "hot"
-  },
-  {
-    "id": "a39fd46e1a54",
-    "text": "Intelligent router populated with 14 real models across 4 tiers delivering 83% savings on cron jobs",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770922837.8350434,
-    "access_count": 3,
-    "score": 0.9948754814933191,
-    "tier": "hot"
-  },
-  {
-    "id": "e97ac4e337ac",
-    "text": "EvoClaw CI red at 54.9% coverage, sub-agent boosted to 74% then stuck at 76.2% due to cold.go mock limitation",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770922857.5116065,
-    "access_count": 3,
-    "score": 0.9948830338868149,
-    "tier": "hot"
-  },
-  {
-    "id": "8a0e310c12a4",
-    "text": "Gateway daemon mode implemented with systemd/launchd integration, production ready",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770922872.2013025,
-    "access_count": 3,
-    "score": 0.9948886722241355,
-    "tier": "hot"
-  },
-  {
-    "id": "5bd7792397f1",
-    "text": "Hetzner VPS: 135.181.157.121, root, aarch64, 2 cores, 4GB RAM, 38GB disk, Ubuntu 24.04. SSH key added. Password: encrypted in hetzner-credentials.json.enc. Purpose: ClawChain testnet. Cloudflare tunnel running on Dell (PID in /tmp/cloudflared.pid).",
-    "category": "technical",
-    "importance": 0.9,
-    "created_at": 1770621651.5485682,
-    "access_count": 2,
-    "score": 0.919802984741203,
-    "tier": "hot"
-  },
-  {
-    "id": "ffe9b3b04d26",
-    "text": "Gateway/daemon mode implemented with systemd/launchd integration - evoclaw gateway install/start/stop/status/restart/uninstall commands",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770944439.7650976,
-    "access_count": 3,
-    "score": 1.0032014979525576,
-    "tier": "hot"
-  },
-  {
-    "id": "00fd1be12828",
-    "text": "First fix (sub-agent): Go lint, Go test races, Rust clippy \u2014 all fixed \u2705",
-    "category": "projects/evoclaw",
-    "importance": 0.75,
-    "created_at": 1770848917.9745195,
-    "access_count": 5,
-    "score": 1.045929709350889,
-    "tier": "hot"
+    "created_at": 1770603278.2195358,
+    "access_count": 6,
+    "score": 1.080908858632842,
+    "tier": "hot",
+    "tree_relevance": 0.6666538966332228
   },
   {
     "id": "b181e164c127",
@@ -2230,7 +2248,7 @@
     "importance": 0.9,
     "created_at": 1770858030.757867,
     "access_count": 3,
-    "score": 1.0915979276305576,
+    "score": 1.090057069489299,
     "tier": "hot"
   },
   {
@@ -2240,29 +2258,8 @@
     "importance": 0.9,
     "created_at": 1770858030.926781,
     "access_count": 3,
-    "score": 1.0915979987669329,
+    "score": 1.090057140525261,
     "tier": "hot"
-  },
-  {
-    "id": "bd87731e5bff",
-    "text": "Test locally before pushing to CI \u2014 Bowen explicit preference",
-    "category": "owner/preferences",
-    "importance": 0.9,
-    "created_at": 1770858052.1201756,
-    "access_count": 2,
-    "score": 1.0076371608137993,
-    "tier": "hot"
-  },
-  {
-    "id": "00319a352ffa",
-    "text": "Deployer wallet 0x2331F0fA9A35fDBE6D60b6b7ADAC5F813B3e33d0 awaiting tBNB for BSC testnet deployment",
-    "category": "projects/evoclaw/bsc",
-    "importance": 0.8,
-    "created_at": 1770603278.2195358,
-    "access_count": 6,
-    "score": 1.0824367852537509,
-    "tier": "hot",
-    "tree_relevance": 0.6666538966332228
   },
   {
     "id": "b213a7f8dc2a",
@@ -2271,7 +2268,7 @@
     "importance": 0.9,
     "created_at": 1770879637.1740577,
     "access_count": 3,
-    "score": 1.1007353099746984,
+    "score": 1.0991815538518497,
     "tier": "hot"
   },
   {
@@ -2281,17 +2278,7 @@
     "importance": 0.9,
     "created_at": 1770879637.8497229,
     "access_count": 3,
-    "score": 1.1007355969068164,
-    "tier": "hot"
-  },
-  {
-    "id": "c1c01dad8e92",
-    "text": "Lesson: test locally before pushing to CI - Bowen explicit after repeated failures",
-    "category": "lessons/cost",
-    "importance": 0.9,
-    "created_at": 1770879637.8976207,
-    "access_count": 2,
-    "score": 1.0160636466897344,
+    "score": 1.099181840378945,
     "tier": "hot"
   },
   {
@@ -2301,7 +2288,7 @@
     "importance": 0.9,
     "created_at": 1770901223.8614366,
     "access_count": 3,
-    "score": 1.1099407298710096,
+    "score": 1.1083739797273477,
     "tier": "hot"
   },
   {
@@ -2311,7 +2298,7 @@
     "importance": 0.9,
     "created_at": 1770901223.957171,
     "access_count": 3,
-    "score": 1.1099407708659694,
+    "score": 1.1083740206644406,
     "tier": "hot"
   },
   {
@@ -2321,7 +2308,7 @@
     "importance": 0.9,
     "created_at": 1770901224.0043564,
     "access_count": 3,
-    "score": 1.109940791071509,
+    "score": 1.1083740408413567,
     "tier": "hot"
   },
   {
@@ -2331,7 +2318,7 @@
     "importance": 0.95,
     "created_at": 1770630505.1354907,
     "access_count": 4,
-    "score": 1.1365960310195087,
+    "score": 1.1349916552658519,
     "tier": "hot"
   },
   {
@@ -2341,7 +2328,7 @@
     "importance": 0.9,
     "created_at": 1770606835.0856192,
     "access_count": 5,
-    "score": 1.1432002249775364,
+    "score": 1.1415865269947238,
     "tier": "hot"
   }
 ]

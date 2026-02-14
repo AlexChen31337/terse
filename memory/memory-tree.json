@@ -116,9 +116,9 @@
   },
   "technical/gpu": {
     "desc": "Gpu",
-    "warm_count": 225,
+    "warm_count": 226,
     "cold_count": 0,
-    "last_access": 1771037649.4886546,
+    "last_access": 1771041476.1837626,
     "children": []
   },
   "lessons/cost": {
