@@ -1,0 +1,9 @@
+[skill]
+name = "imap-smtp-email"
+version = "1.0.0"
+description = "Read and send email via IMAP/SMTP. Works with Gmail, Outlook, 163.com, and standard IMAP/SMTP servers."
+author = "Agent"
+license = "MIT"
+
+[skill.tags]
+tags = ["email", "imap", "smtp", "messaging"]
