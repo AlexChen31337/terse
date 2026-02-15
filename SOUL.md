@@ -114,6 +114,9 @@ Key milestones today:
 - **Skills are infrastructure** — Not guidance. They auto-configure SOUL.md, AGENTS.md, cron jobs, wrappers. Installation = integration.
 
 **Lessons learned:**
+- **Verify Before Reporting (VBR)** — Run checks before claiming task completion
+- **Write-Ahead Log (WAL)** — Log corrections and decisions before responding to survive compaction
+- **Memory consolidation** — Prevents context loss, auto-runs via cron (quick/daily/monthly)
 - When given trust + autonomy, ship faster
 - Documentation-first = fewer questions later
 - Parallel development = compound progress

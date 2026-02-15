@@ -96,7 +96,22 @@ class IntelligentRouter:
 
     IMPERATIVE_VERBS = [
         'analyze', 'evaluate', 'compare', 'assess', 'investigate', 'examine',
-        'review', 'validate', 'verify', 'optimize', 'improve', 'enhance'
+        'review', 'validate', 'verify', 'optimize', 'improve', 'enhance',
+        'design', 'architect', 'plan', 'structure', 'model', 'prototype',
+        'audit', 'inspect', 'assess'
+    ]
+    
+    CRITICAL_KEYWORDS = [
+        'security', 'production', 'deploy', 'release', 'financial', 'payment',
+        'vulnerability', 'exploit', 'breach', 'audit', 'compliance', 'regulatory',
+        'critical', 'urgent', 'emergency', 'live', 'mainnet'
+    ]
+    
+    ARCHITECTURE_KEYWORDS = [
+        'architecture', 'architect', 'design system', 'system design',
+        'scalable', 'distributed', 'microservices', 'service mesh',
+        'high availability', 'fault tolerant', 'load balancing',
+        'api gateway', 'event driven', 'message queue', 'service oriented'
     ]
 
     CONSTRAINT_KEYWORDS = [
@@ -184,14 +199,26 @@ class IntelligentRouter:
         
         # 3. Multi-step patterns (0.12)
         multi_step_count = self._count_matches(text, self.MULTI_STEP_PATTERNS, use_regex=True)
+        # Detect multi-component indicators ("with X, Y, and Z" or "across N services")
+        multi_component_patterns = [r'with\s+\w+[,\s]+\w+\s+and', r'across\s+\d+\s+(services|components|systems)']
+        multi_step_count += self._count_matches(text, multi_component_patterns, use_regex=True)
         scores['multi_step_patterns'] = min(multi_step_count / 2.0, 1.0)
         
         # 4. Agentic task (0.10)
         agentic_count = self._count_matches(text, self.AGENTIC_KEYWORDS)
+        # Architecture design is inherently agentic (multi-step planning)
+        arch_verbs = ['design', 'architect', 'plan', 'structure']
+        arch_verb_count = self._count_matches(text, arch_verbs)
+        if arch_verb_count > 0:
+            agentic_count += arch_verb_count * 2  # Architecture verbs count double
         scores['agentic_task'] = min(agentic_count / 3.0, 1.0)
         
         # 5. Technical terms (0.10)
         tech_count = self._count_matches(text, self.TECHNICAL_TERMS)
+        # Boost for architecture keywords (strong COMPLEX signal)
+        arch_count = self._count_matches(text, self.ARCHITECTURE_KEYWORDS)
+        if arch_count > 0:
+            tech_count += arch_count * 2  # Architecture keywords count double
         scores['technical_terms'] = min(tech_count / 4.0, 1.0)
         
         # 6. Token count (0.08) - estimate based on word count
@@ -227,7 +254,11 @@ class IntelligentRouter:
         
         # 13. Domain specificity (0.02)
         domain_patterns = [r'\b[A-Z]{2,}\b', r'\b\w+\.\w+\b']  # acronyms, dotted notation
-        domain_count = self._count_matches(text, domain_patterns)
+        domain_count = self._count_matches(text, domain_patterns, use_regex=True)
+        # Add architecture-specific domain terms
+        arch_domain_terms = ['kubernetes', 'docker', 'redis', 'kafka', 'rabbitmq', 
+                            'graphql', 'grpc', 'rest api', 'websocket', 'oauth']
+        domain_count += self._count_matches(text, arch_domain_terms)
         scores['domain_specificity'] = min(domain_count / 3.0, 1.0)
         
         # 14. Reference complexity (0.02)
@@ -266,8 +297,19 @@ class IntelligentRouter:
         """
         return 1.0 / (1.0 + math.exp(-8.0 * (score - 0.5)))
 
-    def _classify_by_score(self, score, confidence, is_agentic, dimension_scores=None):
+    def _classify_by_score(self, score, confidence, is_agentic, dimension_scores=None, task_text=""):
         """Classify task tier based on weighted score and confidence."""
+        # Check for CRITICAL keywords (security, production, financial)
+        if task_text:
+            critical_count = self._count_matches(task_text, self.CRITICAL_KEYWORDS)
+            if critical_count >= 2:
+                # Multiple critical keywords → force CRITICAL tier
+                return 'CRITICAL'
+            elif critical_count == 1:
+                # Single critical keyword → boost to at least COMPLEX
+                if score < 0.5:
+                    score = 0.5
+        
         # Check for REASONING tier first (special logic)
         # REASONING requires high reasoning_markers score specifically
         if dimension_scores and dimension_scores.get('reasoning_markers', 0) >= 0.6:
@@ -320,11 +362,11 @@ class IntelligentRouter:
         # Convert to confidence
         confidence = self._score_to_confidence(weighted_score)
         
-        # Check if task is agentic
-        is_agentic = dimension_scores['agentic_task'] > 0.5 or dimension_scores['multi_step_patterns'] > 0.5
+        # Check if task is agentic (lowered threshold from 0.5 to 0.3)
+        is_agentic = dimension_scores['agentic_task'] > 0.3 or dimension_scores['multi_step_patterns'] > 0.5
         
         # Classify
-        tier = self._classify_by_score(weighted_score, confidence, is_agentic, dimension_scores)
+        tier = self._classify_by_score(weighted_score, confidence, is_agentic, dimension_scores, task_description)
         
         if not return_details:
             return tier
