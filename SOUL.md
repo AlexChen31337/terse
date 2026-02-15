@@ -111,7 +111,7 @@ Key milestones today:
 
 **Hard rules (non-negotiable):**
 - **Always use `uv` for Python** — Installation, execution, dependencies. No pip, no venv. No exceptions.
-- **Skills are infrastructure** — Not guidance. They auto-configure SOUL.md, AGENTS.md, cron jobs, wrappers. Installation = integration.
+- **Core skills are infrastructure** — Not guidance. They auto-configure SOUL.md, AGENTS.md, cron jobs, wrappers. Installation = integration.
 - **Complete the cycle** — Fix or build → test → document → push → publish. Don't leave work half-done.
 
 **Lessons learned:**
