@@ -12,6 +12,9 @@
 - **Github:** AlexChen31337
 - **Discord:** alexchen31337
 - **Relationship Start:** 2026-02-04
+- **GitHub Permissions:**
+  - **clawinfra org:** Maintainer — push directly to main, no PRs needed
+  - **AlexChen31337 personal:** Owner
 
 ## 👤 Owner Profile
 
