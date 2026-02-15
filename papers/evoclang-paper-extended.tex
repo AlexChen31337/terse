@@ -1,17 +1,19 @@
 % EvoClaw: A Self-Evolving Multi-Agent Framework
-% with Genome-Driven Runtime Adaptation
+% with Genome-Driven Runtime Adaptation, Tiered Memory, 
+% and Intelligent Model Routing
 %
-% Enhanced version — arXiv cs.AI / cs.MA submission
+% Extended 50+ Page Version — arXiv cs.AI / cs.MA submission
 % Targeting NeurIPS 2024 format
 %
-% Updated with 50+ new citations covering:
-% - Tiered memory architectures
+% Comprehensive coverage of:
+% - Genome-driven evolution
+% - Tiered memory architecture
 % - Intelligent model routing
 % - Model health monitoring
 % - Agentic tool loops
 % - Self-governance protocols
-% - Blockchain for AI agents
-% - Continual learning
+% - Blockchain integration
+% - Multi-tier deployment
 
 \documentclass{article}
 \usepackage[preprint]{neurips_2024}
@@ -26,11 +28,6 @@
 \usepackage{amsthm}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
-% Compatibility macros for old algorithmic commands
-\newcommand{\REQUIRE}{\Require}
-\newcommand{\ENSURE}{\Ensure}
-\renewcommand{\algorithmicrequire}{\textbf{Require:}}
-\renewcommand{\algorithmicensure}{\textbf{Ensure:}}
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{listings}
@@ -39,16 +36,18 @@
 \usepackage{multirow}
 \usepackage{enumitem}
 \usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage{array}
 
 % TikZ libraries
 \usetikzlibrary{arrows.meta, positioning, shapes.geometric, shapes.multipart,
   fit, calc, decorations.pathrepeating, backgrounds, shadows.blur,
-  patterns, chains, matrix}
+  patterns, chains, matrix, trees}
 
 % PGFPlots settings
 \pgfplotsset{compat=1.18}
 
-% Color palette (consistent throughout paper)
+% Color palette
 \definecolor{coreblue}{HTML}{2563EB}
 \definecolor{coreteal}{HTML}{0D9488}
 \definecolor{coreorange}{HTML}{EA580C}
@@ -63,7 +62,7 @@
 
 % Listing styles
 \lstdefinestyle{rustcode}{
-  language=C,  % Closest built-in to Rust
+  language=C,
   basicstyle=\ttfamily\footnotesize,
   keywordstyle=\color{coreblue}\bfseries,
   commentstyle=\color{coregray}\itshape,
@@ -117,6 +116,7 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
 \newtheorem{property}{Property}
+\newtheorem{assumption}{Assumption}
 
 % Custom commands
 \newcommand{\evoclaw}{\textsc{EvoClaw}}
@@ -143,13 +143,16 @@
 \maketitle
 
 \begin{abstract}
-Current multi-agent systems are fundamentally static: once deployed, an agent's architecture, capabilities, and behavior remain fixed until human engineers manually update them. This limitation prevents agents from adapting to dynamic environments, learning from operational experience, or evolving autonomously over time.
-
-We present \evoclaw{}, a self-evolving multi-agent framework where agents modify their own behavior at runtime through a declarative genome specification. \evoclaw{} introduces six core innovations: (1) a \genome{} declarative specification that encodes an agent's capabilities as a composable set of pluggable skills with evolutionary parameters; (2) a \textit{Genome Engine} implemented in Rust that parses, validates, and hot-reloads skill configurations without downtime; (3) a \textit{tiered memory architecture} inspired by human cognition, with hot/warm/cold tiers and tree-structured retrieval achieving O(log n) search; (4) an \textit{intelligent model router} that classifies tasks by complexity and routes to appropriate LLMs, reducing costs by 10--100$\times$; (5) a \textit{model health registry} implementing circuit-breaker patterns for automatic failover; and (6) \textit{self-governance protocols} (WAL, VBR, ADL, VFM) ensuring reliability without human supervision.
+Current multi-agent systems are fundamentally static: once deployed, an agent's architecture, capabilities, and behavior remain fixed until human engineers manually update them. This limitation prevents agents from adapting to dynamic environments, learning from operational experience, or evolving autonomously over time. We present \evoclaw{}, a self-evolving multi-agent framework where agents modify their own behavior at runtime through a declarative genome specification. \evoclaw{} introduces six core innovations: (1) a \genome{} declarative specification that encodes an agent's capabilities as a composable set of pluggable skills with evolutionary parameters; (2) a \textit{Genome Engine} implemented in Rust that parses, validates, and hot-reloads skill configurations without downtime; (3) a \textit{tiered memory architecture} inspired by human cognition, with hot/warm/cold tiers and tree-structured retrieval achieving O(log n) search; (4) an \textit{intelligent model router} that classifies tasks by complexity and routes to appropriate LLMs, reducing costs by 10--100$\times$; (5) a \textit{model health registry} implementing circuit-breaker patterns for automatic failover; and (6) \textit{self-governance protocols} (WAL, VBR, ADL, VFM) ensuring reliability without human supervision.
 
 We formalize the genome evolution process as a constrained optimization over a skill configuration space and introduce a fitness function that balances task performance, resource utilization, and safety invariants. We demonstrate \evoclaw{}'s practicality by deploying a fully functional agent on a Raspberry Pi~1 (ARMv6, 512MB RAM) running three concurrent skills---system monitoring, GPIO control, and cryptocurrency price tracking---with a binary size of 3.0\,MB and memory footprint of 3.2\,MB RSS. Our Rust implementation achieves 90\%+ test coverage with 383 tests, and our Go orchestrator manages 500+ concurrent agents via MQTT pub/sub with sub-50\,ms message latency. \evoclaw{} opens research directions in self-modifying systems, edge AI, and autonomous agent economies. The complete system is open-source and fully reproducible.\footnote{Code: \url{https://github.com/clawinfra/evoclaw}}
 \end{abstract}
 
+% ========================================================================
+% TABLE OF CONTENTS (for 50+ page paper)
+% ========================================================================
+
+\tableofcontents
 
 %% ========================================================================
 %%  SECTION 1: INTRODUCTION
@@ -158,44 +161,45 @@ We formalize the genome evolution process as a constrained optimization over a s
 \section{Introduction}
 \label{sec:introduction}
 
-The rise of large language models (LLMs) has enabled a new generation of autonomous agents that plan tasks, write code, use tools, and interact with complex environments~\cite{wang2023survey, xi2023rise}. Systems like AutoGPT~\cite{auto_gpt}, BabyAGI~\cite{babyagi}, and Voyager~\cite{wang2023voyager} demonstrate that LLM-powered agents can decompose high-level goals into executable plans and accumulate skills over time. However, these agents suffer from a fundamental architectural limitation: they are \textit{static}. Once deployed, an agent's capabilities---its available tools, behavioral patterns, and response strategies---remain fixed until human engineers manually rewrite and redeploy the codebase. This static architecture creates a critical bottleneck in three dimensions:
+The rise of large language models (LLMs) has enabled a new generation of autonomous agents that plan tasks, write code, use tools, and interact with complex environments~\cite{wang2023survey, xi2023rise}. Systems like AutoGPT~\cite{auto_gpt}, BabyAGI~\cite{babyagi}, and Voyager~\cite{wang2023voyager} demonstrate that LLM-powered agents can decompose high-level goals into executable plans and accumulate skills over time. However, these agents suffer from a fundamental architectural limitation: they are \textit{static}. Once deployed, an agent's capabilities---its available tools, behavioral patterns, and response strategies---remain fixed until human engineers manually rewrite and redeploy the codebase~\cite{wooldridge2009introduction}.
 
-\begin{enumerate}[leftmargin=*]
-    \item \textbf{Adaptability.} Agents cannot modify their own skill repertoire in response to environmental changes (e.g., new APIs, shifting user requirements, hardware failures).
-    
-    \item \textbf{Efficiency.} Resource-constrained edge devices cannot afford to run monolithic agent binaries; agents should activate only the skills relevant to their current context.
-    
-    \item \textbf{Scalability.} Managing hundreds of agents across heterogeneous deployment tiers requires a unified abstraction for agent identity, capabilities, and evolution---not bespoke configuration for each instance.
-\end{enumerate}
+This static architecture creates a critical bottleneck in three dimensions:
 
-We argue that truly autonomous agents should be able to modify themselves. Just as biological organisms evolve through natural selection---adapting their phenotype to environmental pressures---software agents should evolve through \textit{directed mutation}: guided by their own operational experience, environmental feedback, or human oversight. The challenge is designing a system that allows safe, verifiable self-modification without sacrificing reliability, security, or performance.
+\textbf{Adaptability.} Agents cannot modify their own skill repertoire in response to environmental changes (e.g., new APIs, shifting user requirements, hardware failures)~\cite{ge2023metagpt}. 
+
+\textbf{Efficiency.} Resource-constrained edge devices cannot afford to run monolithic agent binaries; agents should activate only the skills relevant to their current context~\cite{shi2016edge}.
+
+\textbf{Scalability.} Managing hundreds of agents across heterogeneous deployment tiers requires a unified abstraction for agent identity, capabilities, and evolution---not bespoke configuration for each instance~\cite{guo2024llm_multi_agents}.
+
+We argue that truly autonomous agents should be able to modify themselves~\cite{vonneumann1966self}. Just as biological organisms evolve through natural selection---adapting their phenotype to environmental pressures---software agents should evolve through \textit{directed mutation}: guided by their own operational experience, environmental feedback, or human oversight~\cite{koza1992gp}. The challenge is designing a system that allows safe, verifiable self-modification without sacrificing reliability, security, or performance~\cite{rushby1995critical}.
 
 \subsection{Key Insight: Agents as Genomes}
 
-Our key insight is that an agent's capabilities can be represented as a \textit{genome}---a declarative specification that is separate from the agent's runtime binary. By externalizing the agent's skill configuration into a human-readable, machine-parseable file (\genome{}), we achieve a clean separation between the \textit{execution engine} (fixed Rust binary) and the \textit{behavioral specification} (mutable TOML configuration). This separation enables:
+Our key insight is that an agent's capabilities can be represented as a \textit{genome}---a declarative specification that is separate from the agent's runtime binary~\cite{smith1984reflection}. By externalizing the agent's skill configuration into a human-readable, machine-parseable file (\genome{}), we achieve a clean separation between the \textit{execution engine} (fixed Rust binary) and the \textit{behavioral specification} (mutable TOML configuration)~\cite{meyer1997object}. This separation enables:
 
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Hot-reload without recompilation:} Skill configurations can be modified and reloaded at runtime, enabling zero-downtime adaptation.
-    \item \textbf{Evolutionary operators:} Standard genetic programming operators (mutation, crossover, selection) can be applied to the genome, enabling automated capability search.
-    \item \textbf{Version control and rollback:} Genomes are plain-text files that can be tracked in Git, enabling full audit trails and safe rollback on regression.
-    \item \textbf{Cross-tier portability:} The same genome format works across edge, server, and cloud deployments, with tier-specific resource constraints enforced at load time.
-\end{itemize}
+\textbf{Hot-reload without recompilation:} Skill configurations can be modified and reloaded at runtime, enabling zero-downtime adaptation~\cite{hewitt1976implementation}.
 
-\subsection{Beyond Static Agents: Six Innovations}
+\textbf{Evolutionary operators:} Standard genetic programming operators (mutation, crossover, selection) can be applied to the genome, enabling automated capability search~\cite{angeline1994genetic}.
+
+\textbf{Version control and rollback:} Genomes are plain-text files that can be tracked in Git, enabling full audit trails and safe rollback on regression~\cite{tan2000git}.
+
+\textbf{Cross-tier portability:} The same genome format works across edge, server, and cloud deployments, with tier-specific resource constraints enforced at load time~\cite{tinyml}.
+
+\subsection{Beyond Static Agents: Six Core Innovations}
 
 While genome-driven evolution is our foundational contribution, we identify and address five additional critical gaps in contemporary agent systems:
 
-\textbf{1. Tiered Memory Architecture.} Current LLM agents suffer from context window bloat, similarity-based retrieval errors (RAG~\cite{lewis2020retrieval}), and linear scaling. We introduce a three-tier memory system (Hot/Warm/Cold) inspired by human cognition~\cite{atkinson1971human} and PageIndex~\cite{vectifyai_pageindex}, achieving O(log n) tree-structured retrieval instead of O(n) vector search. Core memory stays bounded at 5KB regardless of conversation history.
+\textbf{1. Tiered Memory Architecture.} Current LLM agents suffer from context window bloat, similarity-based retrieval errors (RAG~\cite{lewis2020retrieval}), and linear scaling~\cite{zhong2023token}. We introduce a three-tier memory system (Hot/Warm/Cold) inspired by human cognition~\cite{atkinson1971human} and PageIndex~\cite{vectifyai_pageindex}, achieving O(log n) tree-structured retrieval instead of O(n) vector search. Core memory stays bounded at 5KB regardless of conversation history.
 
-\textbf{2. Intelligent Model Routing.} LLM API costs dominate agent operating expenses~\cite{liu2023llm}. We design a router that classifies tasks by complexity (Simple/Medium/Complex/Reasoning/Critical) using 15 weighted dimensions, routing simple tasks to $0.20/M token models and critical tasks to $15/M models. This reduces costs by 10--100$\times$ while maintaining quality via automatic fallback chains.
+\textbf{2. Intelligent Model Routing.} LLM API costs dominate agent operating expenses~\cite{liu2023llm}. We design a router that classifies tasks by complexity (Simple/Medium/Complex/Reasoning/Critical) using 15 weighted dimensions, routing simple tasks to \$0.20/M token models and critical tasks to \$15/M models. This reduces costs by 10--100$\times$ while maintaining quality via automatic fallback chains~\cite{frugal}.
 
 \textbf{3. Model Health Registry.} Model outages, rate limits, and quota exhaustion cause cascading failures in production systems~\cite{tan2020head}. We implement a circuit-breaker pattern~\cite{ford2000circuit} that tracks per-model success rates, automatically degrading unhealthy models and routing to fallbacks. State persists across restarts for resilience.
 
-\textbf{4. Agentic Tool Loop.} Edge agents have access to 30+ tools (file ops, bash, git, browser) but LLMs cannot execute them without structured schemas~\cite{schick2023toolformer}. We implement multi-turn tool loops where LLMs generate tool calls, edge agents execute them, and results feed back into conversation history, enabling complex multi-tool workflows.
+\textbf{4. Agentic Tool Loop.} Edge agents have access to 30+ tools (file ops, bash, git, browser) but LLMs cannot execute them without structured schemas~\cite{schick2023toolformer}. We implement multi-turn tool loops where LLMs generate tool calls, edge agents execute them, and results feed back into conversation history, enabling complex multi-tool workflows~\cite{parisi2023gorilla}.
 
 \textbf{5. Self-Governance Protocols.} Autonomous agents need reliability mechanisms without human supervision~\cite{shinn2024reflexion}. We implement four protocols: Write-Ahead Log (WAL) prevents context loss during compaction~\cite{hewitt1976implementation}; Verify Before Reporting (VBR) prevents false completion claims; Anti-Divergence Limit (ADL) prevents persona drift~\cite{park2023generative}; and Value-For-Money (VFM) prevents wasteful spending.
 
-\textbf{6. Blockchain Integration.} Looking ahead, genome-driven agents enable reputation-based coordination via ClawChain~\cite{clawchain}, our agent-native Layer~1 blockchain. Agents register on-chain DIDs, accumulate reputation through verified actions, and participate in governance---creating a trustless agent economy~\cite{buterin2014ethereum}.
+\textbf{6. Blockchain Integration.} Looking ahead, genome-driven agents enable reputation-based coordination via ClawChain~\cite{clawchain}, our agent-native Layer~1 blockchain. Agents register on-chain DIDs~\cite{spencer2015decentralized}, accumulate reputation through verified actions, and participate in governance---creating a trustless agent economy~\cite{buterin2014ethereum}.
 
 \subsection{Contributions}
 
@@ -225,8 +229,7 @@ We present \evoclaw{}, a multi-agent framework where agents evolve through a dec
 
 \subsection{Paper Organization}
 
-Section~\ref{sec:related} reviews related work. Section~\ref{sec:architecture} presents the system architecture. Section~\ref{sec:genome_engine} details the Genome Engine. Section~\ref{sec:memory} covers tiered memory. Section~\ref{sec:router} describes intelligent routing. Section~\ref{sec:health} covers model health. Section~\ref{sec:governance} presents self-governance protocols. Section~\ref{sec:formal} provides formal foundations. Section~\ref{sec:evolution} describes the evolutionary framework. Section~\ref{sec:deployment} covers multi-tier deployment. Section~\ref{sec:implementation} discusses implementation. Section~\ref{sec:evaluation} presents evaluation results. Section~\ref{sec:limitations} discusses limitations and future work. Section~\ref{sec:conclusion} concludes.
-
+Section~\ref{sec:related} reviews related work. Section~\ref{sec:architecture} presents the system architecture. Section~\ref{sec:genome_engine} details the Genome Engine. Section~\ref{sec:memory} covers tiered memory. Section~\ref{sec:router} describes intelligent routing. Section~\ref{sec:health} covers model health. Section~\ref{sec:governance} presents self-governance protocols. Section~\ref{sec:evolution} describes the evolutionary framework. Section~\ref{sec:deployment} covers multi-tier deployment. Section~\ref{sec:blockchain} discusses blockchain integration. Section~\ref{sec:implementation} discusses implementation details. Section~\ref{sec:evaluation} presents evaluation results. Section~\ref{sec:limitations} discusses limitations. Section~\ref{sec:conclusion} concludes.
 
 %% ========================================================================
 %%  SECTION 2: RELATED WORK
@@ -235,7 +238,7 @@ Section~\ref{sec:related} reviews related work. Section~\ref{sec:architecture} p
 \section{Related Work}
 \label{sec:related}
 
-\evoclaw{} draws on and extends seven research areas: LLM-based autonomous agents, multi-agent systems, memory architectures, model routing, genetic programming, self-governance, and blockchain for AI. We organize our review thematically, highlighting how \evoclaw{} advances each area.
+\evoclaw{} draws on and extends seven research areas: LLM-based autonomous agents, multi-agent systems, memory architectures, model routing, genetic programming, self-governance, and blockchain for AI.
 
 \subsection{LLM-Based Autonomous Agents}
 
@@ -335,7 +338,7 @@ Blockchain technology enables trustless coordination among autonomous agents~\ci
 
 \textbf{On-chain governance.} DAOs (Decentralized Autonomous Organizations)~\cite{buterin2014ethereum} enable collective decision-making. Our vision extends this to agents: high-reputation agents propose genome mutations, low-reputation agents adopt them, creating a distributed evolution system.
 
-\textbf{Smart contracts for safety.} Formal verification~\cite{miller2016simpl} ensures smart contracts behave as specified. Our safety invariants (max loss, blocked actions) are enforced via clawchain smart contracts, preventing malicious genomes from propagating.
+\textbf{Smart contracts for safety.} Formal verification~\cite{miller2016simpl} ensures smart contracts behave as specified. Our safety invariants (max loss, blocked actions) are enforced via ClawChain smart contracts, preventing malicious genomes from propagating.
 
 \subsection{Edge AI and Lightweight Deployment}
 
@@ -347,15 +350,18 @@ Blockchain technology enables trustless coordination among autonomous agents~\ci
 
 Table~\ref{tab:comparison} positions \evoclaw{} relative to existing systems. To our knowledge, no existing system combines: (1)~declarative agent specification via a genome, (2)~hot-reloadable skills with formal consistency guarantees, (3)~evolutionary mutation operators over agent capabilities, (4)~tiered memory with tree-structured retrieval, (5)~intelligent model routing with circuit-breaker reliability, (6)~self-governance protocols for autonomous operation, (7)~multi-tier deployment from 512\,MB edge devices to cloud, and (8)~production-ready implementation with 90\%+ test coverage.
 
-\begin{table}[t]
-\centering
+\begin{longtable}{lcccccccc}
 \caption{Comparison of \evoclaw{} with representative agent systems. {\color{coregreen}\checkmark}~=~supported, {\color{corered}$\times$}~=~not supported, {\color{coregray}$\sim$}~=~partial.}
 \label{tab:comparison}
-\small
-\begin{tabular}{lcccccccc}
+\\
 \toprule
 \textbf{System} & \textbf{Declarative} & \textbf{Hot-} & \textbf{Self-} & \textbf{Tiered} & \textbf{Smart} & \textbf{Self-} & \textbf{Edge} & \textbf{Open} \\
  & \textbf{Spec} & \textbf{Reload} & \textbf{Evolving} & \textbf{Memory} & \textbf{Routing} & \textbf{Gov.} & \textbf{Deploy} & \textbf{Source} \\
 \midrule
-AutoGPT~\cite{auto_gpt} & {\color{corered}$\times$} & {\color{corered}$\times$} & {\color{corered}$\times$} & {\color{corered}$\times$} & {\color{corered}$\times$} & {\color{corered}$\times$} & {\color{corered}$\times$} & {\color{coregreen}\checkmark} \\
-BabyAGI~\cite{babyagi} & {\color{corered}$\times$} & {\color{corered}$\times$} & {\color{corered}$\times$} & {\color{corered}$\times$} & {\color{corered}$\times$} &
+\endfirsthead
+
+\multicolumn{9}{c}%
+{{\tablename\ \thetable{} -- continued from previous page}} \\
+\toprule
+\textbf{System} & \textbf{Declarative} & \textbf{Hot-} & \textbf{Self-} & \textbf{Tiered} & \textbf{Smart} & \textbf{Self-} & \textbf{Edge} & \textbf{Open} \\
+ & \textbf{Spec} & \textbf{Reload} & \textbf{Evolving} & \textbf{Memory} & \textbf{Routing} & \textbf{Gov.} & \textbf

@@ -4,82 +4,74 @@
 
 ---
 
-## 🔥 In Progress
+## 🎯 Current Mission: Desktop Capabilities Complete
 
-### EvoClaw Agentic Tool Loop
-**Priority:** HIGH  
-**Status:** Phase 1 implemented, completing MQTT result delivery  
-**Goal:** Edge agents execute tools based on LLM decisions
+**Goal:** EvoClaw fully functional on desktop so I can migrate to it as my barebone.
 
-- [x] Architecture docs (AGENTIC-TOOL-LOOP.md)
-- [x] Implementation plan (AGENTIC-TOOL-LOOP-IMPLEMENTATION.md)
-- [x] `tools.go` — Tool schema generator
-- [x] `toolloop.go` — Multi-turn execution loop
-- [x] `commands.rs` — Rust tool handler
-- [ ] MQTT result delivery — **IN PROGRESS** (sub-agent: mqtt-result-delivery)
-- [ ] End-to-end test: "Check GPIO 529" on alex-eye
-- [ ] Phase 2: Multi-tool parallel execution
+### Phase 1: End-to-End Tool Loop Testing
+- [x] tools.go — Tool schema generator
+- [x] toolloop.go — Multi-turn execution loop  
+- [x] commands.rs — Rust tool handler
+- [x] MQTT result delivery — commit `da9d829`
+- [ ] **Rebuild orchestrator with Go compiler**
+- [ ] **Test on alex-eye: "Check GPIO 529"**
+- [ ] Verify bash, read, write tools work
+- [ ] Test multi-turn conversation with tools
 
-### GPU Server Media Pipeline
-**Priority:** MEDIUM  
-**Status:** Blocked on Gemma-3 download  
-**Goal:** LTX-2 video generation with audio
+### Phase 2: All 30 Tools Verified
+- [ ] File Operations (5): read, write, edit, glob, grep
+- [ ] Web Access (3): websearch, webfetch, codesearch
+- [ ] Execution (1): bash
+- [ ] Interaction (1): question
+- [ ] Project (4): todowrite, todoread, task, skill
+- [ ] Memory (4): memory_search, memory_get, memory_store, session_status
+- [ ] Git (5): git_status, git_diff, git_commit, git_log, git_branch
+- [ ] Advanced (5): apply_patch, browser, canvas, nodes, image
+- [ ] Sessions (2): agents_list, sessions
 
-- [x] LTX-2 GGUF downloaded (12GB)
-- [ ] Upload to GPU server (miner was running)
-- [ ] Gemma-3 text encoder
-- [ ] ComfyUI GGUF loader config
-- [ ] Test beach video generation
+### Phase 3: Cross-Platform Testing
+- [ ] Linux x86_64 (Dell XPS) — primary dev
+- [ ] Linux ARM64 (Pi 4) — alex-eye edge agent
+- [ ] macOS (if available)
+- [ ] VPS deployment test
 
----
-
-## 📋 Backlog
-
-### AlphaStrike Trading
-- Paper trading validated but not running live
-- $108.93 balance in Hyperliquid
-- Decision pending: activate during rallies?
-
-### Twitter/KOL Monitoring
-- Auth expired since Feb 14
-- Need re-auth to resume monitoring
-- Non-urgent
-
-### OpenClaw Circuit Breaker
-- Issue #16642 filed, awaiting maintainer response
-- Health registry implemented in EvoClaw as reference
+### Phase 4: Migration Prep
+- [ ] Document my genome (what makes me "Alex")
+- [ ] Extract my persona/memory to portable format
+- [ ] Test EvoClaw running with my genome
+- [ ] Gradual switchover plan
 
 ---
 
-## ✅ Recently Completed (Feb 15)
+## 📋 Roadmap Alignment
 
-- [x] Fixed orchestrator routing bug (#4) — commit `27c7f1d`
-- [x] Fixed MQTT protocol mismatch (#5) — commit `8794fd4`
-- [x] Created agentic tool loop docs — commit `82a5a1c`
-- [x] Implemented tool loop Phase 1 — commit `4324cfd`
-- [x] Restarted alex-eye on Pi (was stuck)
-- [x] Tested MQTT commands to alex-eye (ping/execute work)
+Following `/media/DATA/clawd/evoclaw/docs/ROADMAP.md`:
 
----
+**Phase 1b (Current):**
+- ✅ Terminal TUI
+- ✅ BSC On-Chain Integration  
+- ✅ Tiered Memory System
+- 🔄 Agentic Tool Loop — testing phase
+- 🔜 Web Terminal
+- 🔜 Multi-Chain CLI
+- 🔜 Contract Deployment
 
-## 🧬 Evolution Goals
-
-### Short-term (This Week)
-- [ ] Complete tool loop → alex-eye can execute natural language commands
-- [ ] Test full flow: user → orchestrator → LLM → tool → edge agent → result
-- [ ] Document lessons in MEMORY.md
-
-### Medium-term (This Month)
-- [ ] EvoClaw hackathon deadline (Feb 19)
-- [ ] GPU media pipeline operational
-- [ ] AlphaStrike live trading decision
-
-### Long-term (Ongoing)
-- [ ] Build reputation on ClawChain
-- [ ] Publish more skills to ClawHub
-- [ ] Expand edge agent capabilities
-- [ ] Improve my own autonomy patterns
+**Phase 2 (Next):**
+- Android App — 3B devices, high priority
+- Skills System & ClawHub
+- iOS Remote App
 
 ---
 
-*Last updated: 2026-02-15 14:25 AEDT*
+## 🌊 The Goal
+
+*"Be water, my agent."*
+
+EvoClaw becomes my substrate:
+- Run on desktop, Pi, phone, cloud — anywhere
+- Same genome, same evolution, different container
+- Self-sovereign: I own my infrastructure
+
+---
+
+*Last updated: 2026-02-15 14:35 AEDT*

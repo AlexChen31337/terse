@@ -15,7 +15,7 @@
   },
   "owner": {
     "desc": "Owner profile and preferences",
-    "warm_count": 2,
+    "warm_count": 0,
     "cold_count": 0,
     "last_access": 0,
     "children": [
@@ -26,12 +26,12 @@
     "desc": "Communication style and work preferences",
     "warm_count": 7,
     "cold_count": 0,
-    "last_access": 1771074043.9701161,
+    "last_access": 1771160464.8640594,
     "children": []
   },
   "projects": {
     "desc": "Active projects",
-    "warm_count": 10,
+    "warm_count": 0,
     "cold_count": 0,
     "last_access": 0,
     "children": [
@@ -41,19 +41,20 @@
   },
   "projects/clawchain": {
     "desc": "ClawChain L1 blockchain",
-    "warm_count": 12,
+    "warm_count": 5,
     "cold_count": 0,
-    "last_access": 1771074043.7337248,
+    "last_access": 1771160464.4932873,
     "children": []
   },
   "projects/evoclaw": {
     "desc": "EvoClaw self-evolving agent framework",
-    "warm_count": 132,
+    "warm_count": 55,
     "cold_count": 0,
-    "last_access": 1771074043.8128994,
+    "last_access": 1771160464.440829,
     "children": [
       "projects/evoclaw/bsc",
-      "projects/evoclaw/memory"
+      "projects/evoclaw/memory",
+      "projects/evoclaw/architecture"
     ]
   },
   "projects/evoclaw/bsc": {
@@ -65,14 +66,14 @@
   },
   "projects/evoclaw/memory": {
     "desc": "Tiered memory system",
-    "warm_count": 30,
+    "warm_count": 8,
     "cold_count": 0,
-    "last_access": 1771037631.9684684,
+    "last_access": 1771162554.4955292,
     "children": []
   },
   "technical": {
     "desc": "Technical setup and config",
-    "warm_count": 9,
+    "warm_count": 1,
     "cold_count": 0,
     "last_access": 1770694130.7244046,
     "children": [
@@ -83,30 +84,31 @@
   },
   "technical/security": {
     "desc": "Security practices and credentials",
-    "warm_count": 5,
+    "warm_count": 3,
     "cold_count": 0,
-    "last_access": 1770901229.2297652,
+    "last_access": 1771160437.392451,
     "children": []
   },
   "social": {
     "desc": "Social accounts and platforms",
-    "warm_count": 2,
+    "warm_count": 0,
     "cold_count": 0,
     "last_access": 0,
     "children": [
-      "social/moltbook"
+      "social/moltbook",
+      "social/twitter"
     ]
   },
   "social/moltbook": {
     "desc": "Moltbook agent platform",
-    "warm_count": 1,
+    "warm_count": 0,
     "cold_count": 0,
-    "last_access": 1770603278.4721348,
+    "last_access": 1771117239.161342,
     "children": []
   },
   "lessons": {
     "desc": "Lessons learned",
-    "warm_count": 2,
+    "warm_count": 0,
     "cold_count": 0,
     "last_access": 0,
     "children": [
@@ -116,38 +118,52 @@
   },
   "technical/gpu": {
     "desc": "Gpu",
-    "warm_count": 233,
+    "warm_count": 48,
     "cold_count": 0,
-    "last_access": 1771074044.1260314,
+    "last_access": 1771160464.599038,
     "children": []
   },
   "lessons/cost": {
     "desc": "Cost",
-    "warm_count": 8,
+    "warm_count": 10,
     "cold_count": 0,
-    "last_access": 1771074043.6547155,
+    "last_access": 1771160464.75682,
     "children": []
   },
   "technical/cron": {
     "desc": "Cron",
-    "warm_count": 9,
+    "warm_count": 3,
     "cold_count": 0,
-    "last_access": 1770987661.7840865,
+    "last_access": 1771138830.0633254,
     "children": []
   },
   "_schema_version": "2.0",
   "lessons/community": {
     "desc": "Community",
-    "warm_count": 2,
+    "warm_count": 1,
     "cold_count": 0,
-    "last_access": 1771074043.2651696,
+    "last_access": 1771160464.7043328,
     "children": []
   },
   "general": {
     "desc": "General",
-    "warm_count": 257,
+    "warm_count": 18,
     "cold_count": 0,
-    "last_access": 1771074043.0322692,
+    "last_access": 1771161477.0735097,
+    "children": []
+  },
+  "social/twitter": {
+    "desc": "Twitter",
+    "warm_count": 0,
+    "cold_count": 0,
+    "last_access": 1771160464.6516254,
+    "children": []
+  },
+  "projects/evoclaw/architecture": {
+    "desc": "Architecture",
+    "warm_count": 1,
+    "cold_count": 0,
+    "last_access": 1771161294.2477856,
     "children": []
   }
 }

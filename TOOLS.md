@@ -33,7 +33,7 @@ Things like:
 - **Password backup:** encrypted in `memory/gpu-server-credentials.json.enc`
 
 ### Pi (Bloop-Eye)
-- **Host:** `admin@192.168.99.25`
+- **Host:** `admin@192.168.99.188` (was .25, changed after reboot)
 - **Key:** `~/.ssh/id_ed25519_alexchen`
 - **Connect:** `ssh -i ~/.ssh/id_ed25519_alexchen admin@192.168.99.25`
 - **Agent config:** `~/.evoclaw/agent.toml`

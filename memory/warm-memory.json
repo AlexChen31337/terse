@@ -1,512 +1,12 @@
 [
   {
-    "id": "ff79c30e4c93",
-    "text": "Full analysis saved: /tmp/clawrouter-comparison.md",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.368621,
-    "access_count": 0,
-    "score": 0.6902378588923388,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": [
-        "/tmp/clawrouter-comparison.md"
-      ]
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "1a3330423d10",
-    "text": "Session: `4da16283-dc67-4efe-ac3a-5c900b0533d5`",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.3728154,
-    "access_count": 0,
-    "score": 0.6902378600084893,
-    "metadata": {
-      "urls": [],
-      "commands": [
-        "4da16283-dc67-4efe-ac3a-5c900b0533d5"
-      ],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "8047b934b252",
-    "text": "Model: Sonnet 4.5",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.3770752,
-    "access_count": 0,
-    "score": 0.6902378611424804,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "d6ed1c6bcfe7",
-    "text": "Task: Implement 4 intelligent-router improvements",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.3813002,
-    "access_count": 0,
-    "score": 0.6902378622673925,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "ffd40adb5f1d",
-    "text": "Files to modify",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.3855898,
-    "access_count": 0,
-    "score": 0.6902378634095737,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "7a7c81dc9eb3",
-    "text": "What ClawPhone Does",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.389823,
-    "access_count": 0,
-    "score": 0.6902378645366445,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "1804b13cb5ad",
-    "text": "Key Workarounds",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.3939886,
-    "access_count": 0,
-    "score": 0.690237865645811,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "d73f82ab6a70",
-    "text": "Architecture Vision",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.4023926,
-    "access_count": 0,
-    "score": 0.6902378678831912,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "1870e06dba4e",
-    "text": "Features Shipped",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.4065568,
-    "access_count": 0,
-    "score": 0.6902378689914055,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "770ab29002e5",
-    "text": "ClawHub Publication",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.4107575,
-    "access_count": 0,
-    "score": 0.6902378701097781,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "08a056a7a724",
-    "text": "Install: `clawhub install intelligent-router --version 2.2.0`",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771037649.414869,
-    "access_count": 0,
-    "score": 0.6902378712045325,
-    "metadata": {
-      "urls": [],
-      "commands": [
-        "clawhub install intelligent-router --version 2.2.0"
-      ],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "c8c2a162502b",
-    "text": "All-in-One Phone Architecture",
-    "category": "technical/gpu",
-    "importance": 0.7,
-    "created_at": 1771037649.4189897,
-    "access_count": 0,
-    "score": 0.6902378723016995,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "a75993ab9443",
-    "text": "User interacts via: Telegram/Discord (already on phone)",
-    "category": "technical/gpu",
-    "importance": 0.7,
-    "created_at": 1771037649.4234476,
-    "access_count": 0,
-    "score": 0.6902378734887046,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "78b006c635ba",
-    "text": "Decision: Start Android (1-2 days), then iOS native app later.",
-    "category": "technical/gpu",
-    "importance": 0.7,
-    "created_at": 1771037649.427618,
-    "access_count": 0,
-    "score": 0.690237874599141,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "415e073e1124",
-    "text": "Gemma-3 Text Encoder: COMPLETE! \ud83c\udf89",
-    "category": "technical/gpu",
-    "importance": 0.7,
-    "created_at": 1771037649.4317365,
-    "access_count": 0,
-    "score": 0.6902378756956732,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "6dd0d20b8bf1",
-    "text": "Disk: 76GB/110GB (74% used, 29GB free)",
-    "category": "technical/gpu",
-    "importance": 0.7,
-    "created_at": 1771037649.4450715,
-    "access_count": 0,
-    "score": 0.6902378792465936,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "ccf87462dddc",
-    "text": "Download Progress",
-    "category": "technical/gpu",
-    "importance": 0.7,
-    "created_at": 1771037649.4540482,
-    "access_count": 0,
-    "score": 0.6902378816369207,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "a4f53c4f81da",
-    "text": "What it is: Persistent memory plugin for Claude Code",
-    "category": "technical/gpu",
-    "importance": 0.7,
-    "created_at": 1771037649.4627213,
-    "access_count": 0,
-    "score": 0.6902378839464254,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "ecd56bc3d6da",
-    "text": "Comparison to our tiered-memory",
-    "category": "technical/gpu",
-    "importance": 0.7,
-    "created_at": 1771037649.467127,
-    "access_count": 0,
-    "score": 0.6902378851195262,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "e1f78dea7609",
-    "text": "Ideas worth stealing",
-    "category": "technical/gpu",
-    "importance": 0.7,
-    "created_at": 1771037649.4714766,
-    "access_count": 0,
-    "score": 0.6902378862776435,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "b097d0106d51",
-    "text": "Fix: Re-downloading with nohup for persistence",
-    "category": "technical/gpu",
-    "importance": 0.7,
-    "created_at": 1771037649.4758494,
-    "access_count": 0,
-    "score": 0.6902378874420462,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "b0027aa92e57",
-    "text": "LTX-2 video model setup: 23GB Gemma-3 text encoder download corrupted, re-downloading 12GB version",
-    "category": "technical/gpu",
-    "importance": 0.7,
-    "created_at": 1771074042.8703747,
-    "access_count": 0,
-    "score": 0.6999976403087965,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "ae3184ec0320",
-    "text": "EvoClaw paper: added Nicholas Qi as 3rd author, sent to nicholas68663@gmail.com",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1771074043.1834877,
-    "access_count": 0,
-    "score": 0.6999977248682188,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "6ecf5ae9c357",
-    "text": "Z-Image 20GB model requires VAE tiling on 24GB RTX 3090 (OOM at decode stage)",
-    "category": "technical/gpu",
-    "importance": 0.7,
-    "created_at": 1771074043.5734932,
-    "access_count": 0,
-    "score": 0.6999978301933389,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "64bd85f8506b",
-    "text": "ClawChain Q1 Foundation: whitepaper done, 10 open architecture issues, Substrate impl in Q2",
-    "category": "projects/clawchain",
-    "importance": 0.7,
-    "created_at": 1771074043.729813,
-    "access_count": 0,
-    "score": 0.6999978724090913,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "b39448c2adeb",
-    "text": "GPU storage: /data 110GB (18GB free) + /data2 916GB (870GB free)",
-    "category": "technical/gpu",
-    "importance": 0.7,
-    "created_at": 1771074044.0434432,
-    "access_count": 0,
-    "score": 0.6999979571081981,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "278cce3a4c89",
-    "text": "Organization > Personal for community projects. Use dedicated GitHub org (clawinfra). Transparent contribution scoring builds trust.",
-    "category": "lessons/community",
-    "importance": 0.7,
-    "created_at": 1770603278.4087877,
-    "access_count": 2,
-    "score": 0.7004874355276253,
-    "tier": "hot"
-  },
-  {
-    "id": "6f464b82495f",
-    "text": "Bowen confirmed endorsement is complete (code Q3UKJK from Feb 8)",
-    "category": "general",
-    "importance": 0.75,
-    "created_at": 1770987661.178712,
-    "access_count": 0,
-    "score": 0.7254147538834248,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "12458e1c2799",
-    "text": "Created submission tarball: `/tmp/clawchain-submission.tar.gz` (23KB)",
-    "category": "general",
-    "importance": 0.75,
-    "created_at": 1770987661.1821334,
-    "access_count": 0,
-    "score": 0.7254147548407348,
-    "metadata": {
-      "urls": [],
-      "commands": [
-        "/tmp/clawchain-submission.tar.gz"
-      ],
-      "paths": [
-        "/tmp/clawchain-submission.tar.gz"
-      ]
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "a12c2ad3b31e",
-    "text": "**BLOCKED**: Awaiting Bowen to log in to arXiv account",
-    "category": "general",
-    "importance": 0.75,
-    "created_at": 1770987661.185425,
-    "access_count": 0,
-    "score": 0.7254147557618128,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "cc333c5472ad",
-    "text": "Package v2: clawchain-submission-fixed.tar.gz (26KB)",
-    "category": "general",
-    "importance": 0.75,
-    "created_at": 1770987661.1886067,
-    "access_count": 0,
-    "score": 0.7254147566521305,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "2ca84994f234",
-    "text": "Playwright automation blocked by modal dialogs",
-    "category": "general",
-    "importance": 0.75,
-    "created_at": 1770987661.1918793,
-    "access_count": 0,
-    "score": 0.7254147575678704,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "270ada1c5272",
-    "text": "**AnimateDiff-Evolved:** Installed in custom_nodes \u2705",
-    "category": "technical/gpu",
-    "importance": 0.75,
-    "created_at": 1770987661.1984448,
-    "access_count": 0,
-    "score": 0.7254147594052224,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
     "id": "9e5fd41e925e",
     "text": "**SD 1.5 checkpoint:** NOT INSTALLED \u26a0\ufe0f",
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1770987661.2021625,
     "access_count": 0,
-    "score": 0.7254147604455388,
+    "score": 0.7010638336249574,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -521,7 +21,7 @@
     "importance": 0.75,
     "created_at": 1770987661.205823,
     "access_count": 0,
-    "score": 0.7254147614698411,
+    "score": 0.7010638346148756,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -536,7 +36,7 @@
     "importance": 0.75,
     "created_at": 1770987661.2091544,
     "access_count": 0,
-    "score": 0.7254147624020624,
+    "score": 0.7010638355158038,
     "metadata": {
       "urls": [],
       "commands": [
@@ -555,7 +55,7 @@
     "importance": 0.75,
     "created_at": 1770987661.261259,
     "access_count": 0,
-    "score": 0.7254147769843082,
+    "score": 0.7010638496084842,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -570,7 +70,7 @@
     "importance": 0.75,
     "created_at": 1770987661.269107,
     "access_count": 0,
-    "score": 0.7254147791805763,
+    "score": 0.7010638517310275,
     "metadata": {
       "urls": [],
       "commands": [
@@ -589,7 +89,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3031929,
     "access_count": 0,
-    "score": 0.7254147887199133,
+    "score": 0.7010638609501453,
     "metadata": {
       "urls": [],
       "commands": [
@@ -606,7 +106,7 @@
     "importance": 0.75,
     "created_at": 1770987661.307023,
     "access_count": 0,
-    "score": 0.7254147897917242,
+    "score": 0.7010638619859773,
     "metadata": {
       "urls": [],
       "commands": [
@@ -623,7 +123,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3108175,
     "access_count": 0,
-    "score": 0.7254147908535931,
+    "score": 0.7010638630121365,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -638,7 +138,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3150253,
     "access_count": 0,
-    "score": 0.725414792031097,
+    "score": 0.7010638641501138,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -653,7 +153,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3542347,
     "access_count": 0,
-    "score": 0.7254148030042974,
+    "score": 0.7010638747550271,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -668,7 +168,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3621044,
     "access_count": 0,
-    "score": 0.7254148052066376,
+    "score": 0.701063876883374,
     "metadata": {
       "urls": [],
       "commands": [
@@ -688,7 +188,7 @@
     "importance": 0.75,
     "created_at": 1770987661.3739398,
     "access_count": 0,
-    "score": 0.7254148085188222,
+    "score": 0.7010638800844388,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -703,7 +203,7 @@
     "importance": 0.75,
     "created_at": 1770987661.4180217,
     "access_count": 0,
-    "score": 0.7254148208558243,
+    "score": 0.7010638920072445,
     "metadata": {
       "urls": [],
       "commands": [
@@ -720,7 +220,7 @@
     "importance": 0.75,
     "created_at": 1770987661.4301832,
     "access_count": 0,
-    "score": 0.7254148242592894,
+    "score": 0.7010638952964612,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -735,7 +235,7 @@
     "importance": 0.75,
     "created_at": 1770987661.505556,
     "access_count": 0,
-    "score": 0.7254148453535405,
+    "score": 0.7010639156826144,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -750,7 +250,7 @@
     "importance": 0.75,
     "created_at": 1770987661.539123,
     "access_count": 0,
-    "score": 0.7254148547476837,
+    "score": 0.7010639247614125,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -765,7 +265,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5432181,
     "access_count": 0,
-    "score": 0.72541485589356,
+    "score": 0.7010639258688881,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -780,7 +280,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5477233,
     "access_count": 0,
-    "score": 0.7254148571543375,
+    "score": 0.7010639270872144,
     "metadata": {
       "urls": [],
       "commands": [
@@ -797,7 +297,7 @@
     "importance": 0.75,
     "created_at": 1770987661.601858,
     "access_count": 0,
-    "score": 0.7254148723046859,
+    "score": 0.7010639417289917,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -812,7 +312,7 @@
     "importance": 0.75,
     "created_at": 1770987661.681078,
     "access_count": 0,
-    "score": 0.7254148944756204,
+    "score": 0.701063963155686,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -827,7 +327,7 @@
     "importance": 0.75,
     "created_at": 1770987661.7431667,
     "access_count": 0,
-    "score": 0.7254149118520643,
+    "score": 0.7010639799488325,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -842,7 +342,7 @@
     "importance": 0.75,
     "created_at": 1770987661.7554824,
     "access_count": 0,
-    "score": 0.7254149152987012,
+    "score": 0.7010639832797718,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -857,7 +357,7 @@
     "importance": 0.75,
     "created_at": 1770987661.76779,
     "access_count": 0,
-    "score": 0.7254149187430694,
+    "score": 0.7010639866085187,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -872,7 +372,7 @@
     "importance": 0.75,
     "created_at": 1770987661.792633,
     "access_count": 0,
-    "score": 0.7254149256957291,
+    "score": 0.7010639933277248,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -887,7 +387,7 @@
     "importance": 0.75,
     "created_at": 1770987661.7967486,
     "access_count": 0,
-    "score": 0.7254149268473438,
+    "score": 0.7010639944406818,
     "metadata": {
       "urls": [],
       "commands": [
@@ -904,7 +404,7 @@
     "importance": 0.75,
     "created_at": 1770987661.8009956,
     "access_count": 0,
-    "score": 0.725414928035791,
+    "score": 0.7010639955892994,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -919,7 +419,7 @@
     "importance": 0.8,
     "created_at": 1770606835.0535045,
     "access_count": 1,
-    "score": 0.7348516242931339,
+    "score": 0.7101839181710539,
     "tier": "hot"
   },
   {
@@ -929,7 +429,7 @@
     "importance": 0.8,
     "created_at": 1770858030.8423762,
     "access_count": 0,
-    "score": 0.7360296350285543,
+    "score": 0.7113223851105985,
     "tier": "hot"
   },
   {
@@ -939,7 +439,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2403712,
     "access_count": 0,
-    "score": 0.7395405264963699,
+    "score": 0.7147154219856072,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -954,7 +454,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2448103,
     "access_count": 0,
-    "score": 0.7395405277627871,
+    "score": 0.7147154232095129,
     "metadata": {
       "urls": [],
       "commands": [
@@ -971,7 +471,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2491612,
     "access_count": 0,
-    "score": 0.739540529004035,
+    "score": 0.7147154244090943,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -986,7 +486,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2534513,
     "access_count": 0,
-    "score": 0.7395405302278686,
+    "score": 0.714715425591846,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1001,7 +501,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2577338,
     "access_count": 0,
-    "score": 0.7395405314495935,
+    "score": 0.7147154267725595,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1016,7 +516,7 @@
     "importance": 0.75,
     "created_at": 1771037649.261971,
     "access_count": 0,
-    "score": 0.7395405326584616,
+    "score": 0.7147154279407824,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1031,7 +531,7 @@
     "importance": 0.75,
     "created_at": 1771037649.27514,
     "access_count": 0,
-    "score": 0.7395405364156737,
+    "score": 0.7147154315718713,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1046,7 +546,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2793593,
     "access_count": 0,
-    "score": 0.7395405376193721,
+    "score": 0.7147154327351635,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1061,7 +561,7 @@
     "importance": 0.75,
     "created_at": 1771037649.283633,
     "access_count": 0,
-    "score": 0.7395405388385801,
+    "score": 0.7147154339134447,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1079,7 +579,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2882166,
     "access_count": 0,
-    "score": 0.7395405401462202,
+    "score": 0.7147154351771897,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1094,7 +594,7 @@
     "importance": 0.75,
     "created_at": 1771037649.4361045,
     "access_count": 0,
-    "score": 0.739540582340966,
+    "score": 0.7147154759554648,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1109,7 +609,7 @@
     "importance": 0.75,
     "created_at": 1771037649.440404,
     "access_count": 0,
-    "score": 0.7395405835675208,
+    "score": 0.7147154771408462,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1128,7 +628,7 @@
     "importance": 0.75,
     "created_at": 1771037649.45841,
     "access_count": 0,
-    "score": 0.7395405887048199,
+    "score": 0.7147154821056949,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1143,7 +643,7 @@
     "importance": 0.75,
     "created_at": 1771037649.480239,
     "access_count": 0,
-    "score": 0.7395405949328281,
+    "score": 0.7147154881247053,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1160,7 +660,7 @@
     "importance": 0.75,
     "created_at": 1771037649.4845905,
     "access_count": 0,
-    "score": 0.7395405961742803,
+    "score": 0.714715489324484,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1177,7 +677,7 @@
     "importance": 0.8,
     "created_at": 1770879637.418223,
     "access_count": 0,
-    "score": 0.7421907259606167,
+    "score": 0.7172766588083019,
     "tier": "hot"
   },
   {
@@ -1187,7 +687,7 @@
     "importance": 0.8,
     "created_at": 1770901224.240646,
     "access_count": 0,
-    "score": 0.7483976861023586,
+    "score": 0.7232752619652769,
     "tier": "hot"
   },
   {
@@ -1197,7 +697,7 @@
     "importance": 0.8,
     "created_at": 1770901224.2868898,
     "access_count": 0,
-    "score": 0.7483976994543939,
+    "score": 0.7232752748691075,
     "tier": "hot"
   },
   {
@@ -1207,7 +707,7 @@
     "importance": 0.8,
     "created_at": 1770901229.0416515,
     "access_count": 0,
-    "score": 0.7483990723152902,
+    "score": 0.7232766016454228,
     "tier": "hot"
   },
   {
@@ -1217,7 +717,7 @@
     "importance": 0.9,
     "created_at": 1770610454.8254375,
     "access_count": 0,
-    "score": 0.7526030869926585,
+    "score": 0.7273394947750302,
     "tier": "hot"
   },
   {
@@ -1227,7 +727,7 @@
     "importance": 0.9,
     "created_at": 1770618231.019124,
     "access_count": 0,
-    "score": 0.7548643427636723,
+    "score": 0.7295248440759724,
     "tier": "hot"
   },
   {
@@ -1237,7 +737,7 @@
     "importance": 0.7,
     "created_at": 1771037649.449347,
     "access_count": 1,
-    "score": 0.7592616684142434,
+    "score": 0.7337745590616339,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1252,7 +752,7 @@
     "importance": 0.8,
     "created_at": 1770944439.0948613,
     "access_count": 0,
-    "score": 0.7609798658800393,
+    "score": 0.7354350795913044,
     "tier": "hot"
   },
   {
@@ -1262,7 +762,7 @@
     "importance": 0.8,
     "created_at": 1770944439.3028843,
     "access_count": 0,
-    "score": 0.7609799269529607,
+    "score": 0.7354351386141128,
     "tier": "hot"
   },
   {
@@ -1272,7 +772,7 @@
     "importance": 0.8,
     "created_at": 1770970138.546251,
     "access_count": 0,
-    "score": 0.7685624423037022,
+    "score": 0.7427631219556614,
     "metadata": {
       "urls": [
         "https://docs.comfy.org/z-image"
@@ -1291,7 +791,7 @@
     "importance": 0.8,
     "created_at": 1771074043.3392706,
     "access_count": 0,
-    "score": 0.7999974479208993,
+    "score": 0.7731429084580981,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1306,7 +806,7 @@
     "importance": 0.8,
     "created_at": 1771074043.4960601,
     "access_count": 0,
-    "score": 0.7999974963124329,
+    "score": 0.773142955225211,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1321,7 +821,7 @@
     "importance": 0.8,
     "created_at": 1771074043.6508107,
     "access_count": 0,
-    "score": 0.7999975440747377,
+    "score": 0.7731430013841463,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1336,7 +836,7 @@
     "importance": 0.8,
     "created_at": 1771074043.887379,
     "access_count": 0,
-    "score": 0.7999976170892501,
+    "score": 0.773143071947687,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1351,7 +851,7 @@
     "importance": 0.8,
     "created_at": 1771074044.122165,
     "access_count": 0,
-    "score": 0.7999976895537156,
+    "score": 0.7731431419796448,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1366,7 +866,7 @@
     "importance": 0.8,
     "created_at": 1770603278.377375,
     "access_count": 2,
-    "score": 0.800557059462784,
+    "score": 0.773683734802262,
     "tier": "hot"
   },
   {
@@ -1376,7 +876,7 @@
     "importance": 0.8,
     "created_at": 1770603278.5667691,
     "access_count": 2,
-    "score": 0.8005571179583536,
+    "score": 0.7736837913342358,
     "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
@@ -1387,7 +887,52 @@
     "importance": 0.8,
     "created_at": 1770613764.1543171,
     "access_count": 2,
-    "score": 0.8038022235508816,
+    "score": 0.7768199643088706,
+    "tier": "hot"
+  },
+  {
+    "id": "23f5bd30ce00",
+    "text": "Tiered memory v2.2.0: ingest-daily auto-runs, argparse bug fixed, tree prune crash fixed",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1771095636.3898034,
+    "access_count": 0,
+    "score": 0.7796105957594279,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "1af0705e3813",
+    "text": "Intelligent-router v2.2.0: REASONING tier (R1 32B), 3x fallback chains, agentic detection, 15-dimension scoring",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1771095636.495916,
+    "access_count": 0,
+    "score": 0.7796106276753398,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "9f7f60a4f9b5",
+    "text": "1TB USB drive mounted at /data2 (870GB free) for InfiniteTalk and other AI models",
+    "category": "technical/gpu",
+    "importance": 0.8,
+    "created_at": 1771095636.6020772,
+    "access_count": 0,
+    "score": 0.7796106596059538,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
     "tier": "hot"
   },
   {
@@ -1397,7 +942,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7719114,
     "access_count": 2,
-    "score": 0.8124647102783096,
+    "score": 0.7851916662437192,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1412,7 +957,67 @@
     "importance": 0.7,
     "created_at": 1770987661.8755405,
     "access_count": 2,
-    "score": 0.8124647427607984,
+    "score": 0.7851916976358266,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "4d6c996042da",
+    "text": "EvoClaw CI fixes: MQTT race condition (PR#3), Windows build signals, errcheck warnings, homebrew workflow guard",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1771117238.8912566,
+    "access_count": 0,
+    "score": 0.7861352545591589,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "08f9ccd44722",
+    "text": "Tiered memory v2.2.0: ingest-daily auto-runs, argparse --cmd fix, tree prune crash fix, --llm-endpoint support",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1771117238.9972398,
+    "access_count": 0,
+    "score": 0.7861352867029868,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "1174ae838a90",
+    "text": "Intelligent-Router v2.2.0: Added REASONING tier, fallback chains, agentic detection, 15-dim weighted scoring",
+    "category": "technical/cron",
+    "importance": 0.8,
+    "created_at": 1771138829.1911116,
+    "access_count": 0,
+    "score": 0.792710787425903,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "73c6151d94f3",
+    "text": "GPU Server: RAM limitation 16GB - cannot mmap 27GB models, use GGUF quantized (12GB)",
+    "category": "technical/gpu",
+    "importance": 0.8,
+    "created_at": 1771138829.5050104,
+    "access_count": 0,
+    "score": 0.792710883425437,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1427,9 +1032,86 @@
     "importance": 0.9,
     "created_at": 1770603278.2508664,
     "access_count": 1,
-    "score": 0.8255744272761921,
+    "score": 0.797861312571555,
     "tier": "hot",
     "tree_relevance": 1.333308210833677
+  },
+  {
+    "id": "3a2e58694859",
+    "text": "EvoClaw Paper: Expanded 22\u219250 pages, added 6 sections (Tiered Memory, Intelligent Router, Model Health, Tool Loop, Self-Governance, ClawChain), emailed to nicholas68663@gmail.com",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1771160437.2831426,
+    "access_count": 0,
+    "score": 0.7993468074485193,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "b810ad2edbd8",
+    "text": "LTX-2 Video Model: Downloaded ltx-2-19b-distilled-fp8.safetensors (25GB) to /data/, 19B params, needs Gemma-3 text encoder",
+    "category": "technical/gpu",
+    "importance": 0.8,
+    "created_at": 1771160437.3352547,
+    "access_count": 0,
+    "score": 0.7993468235192221,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "756d18b5c0af",
+    "text": "Intelligent Router v2.2.0: Added REASONING tier (R1 32B, QwQ), 3-attempt fallback chains, agentic detection, 15-dimension weighted scoring, published to ClawHub",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1771160464.3298085,
+    "access_count": 0,
+    "score": 0.7993551484122846,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "c07eecda70fd",
+    "text": "Z-Image Model: 20GB photorealistic model, OOM at VAE decode without tiling, solution: enable vae.enable_tiling() + attention_slicing(1) for 24GB RTX 3090",
+    "category": "technical/gpu",
+    "importance": 0.8,
+    "created_at": 1771160464.5418885,
+    "access_count": 0,
+    "score": 0.799355213816095,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "550e822e70d6",
+    "text": "LTX-2 GGUF Solution: FP8 model (27GB) can't mmap with 16GB RAM, use Q4_K_M.gguf (12GB) instead, downloading to /data2/ai-models/",
+    "category": "technical/gpu",
+    "importance": 0.8,
+    "created_at": 1771160464.5951035,
+    "access_count": 0,
+    "score": 0.7993552302271013,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": [
+        "/data2/ai-models"
+      ]
+    },
+    "tier": "hot"
   },
   {
     "id": "42da29a5dd55",
@@ -1438,7 +1120,7 @@
     "importance": 0.9,
     "created_at": 1770858030.968056,
     "access_count": 0,
-    "score": 0.8280333795508731,
+    "score": 0.8002377220434815,
     "tier": "hot"
   },
   {
@@ -1448,7 +1130,7 @@
     "importance": 0.9,
     "created_at": 1770858052.078376,
     "access_count": 0,
-    "score": 0.8280401234245136,
+    "score": 0.800244239536874,
     "tier": "hot"
   },
   {
@@ -1458,7 +1140,7 @@
     "importance": 0.9,
     "created_at": 1770858052.1621907,
     "access_count": 0,
-    "score": 0.8280401501998503,
+    "score": 0.8002442654133349,
     "tier": "hot"
   },
   {
@@ -1468,7 +1150,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3307042,
     "access_count": 2,
-    "score": 0.8282854185364606,
+    "score": 0.8004813005133993,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1483,7 +1165,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3432972,
     "access_count": 2,
-    "score": 0.8282854225603926,
+    "score": 0.8004813044022547,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1498,7 +1180,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3982527,
     "access_count": 2,
-    "score": 0.8282854401215154,
+    "score": 0.8004813213738808,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1513,7 +1195,7 @@
     "importance": 0.7,
     "created_at": 1771037649.493801,
     "access_count": 2,
-    "score": 0.8282854706542885,
+    "score": 0.8004813508817948,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1528,7 +1210,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4981942,
     "access_count": 2,
-    "score": 0.8282854720579717,
+    "score": 0.8004813522382851,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1543,7 +1225,7 @@
     "importance": 0.85,
     "created_at": 1771041476.1792974,
     "access_count": 0,
-    "score": 0.8393843182634215,
+    "score": 0.8112076292509807,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1560,7 +1242,7 @@
     "importance": 0.85,
     "created_at": 1771049139.3538048,
     "access_count": 0,
-    "score": 0.8418696062321323,
+    "score": 0.8136094903736807,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1575,7 +1257,7 @@
     "importance": 0.9,
     "created_at": 1770901224.1941369,
     "access_count": 0,
-    "score": 0.8419473817532714,
+    "score": 0.8136846551042389,
     "tier": "hot"
   },
   {
@@ -1585,7 +1267,7 @@
     "importance": 0.9,
     "created_at": 1770944438.939319,
     "access_count": 0,
-    "score": 0.8561022977375777,
+    "score": 0.8273644148854254,
     "tier": "hot"
   },
   {
@@ -1595,7 +1277,7 @@
     "importance": 0.8,
     "created_at": 1770603278.2826345,
     "access_count": 3,
-    "score": 0.8672701160488205,
+    "score": 0.8381573487287061,
     "tier": "hot",
     "tree_relevance": 1.333308210833677
   },
@@ -1606,7 +1288,7 @@
     "importance": 0.7,
     "created_at": 1770603278.50327,
     "access_count": 5,
-    "score": 0.8756093263132383,
+    "score": 0.8462166260361721,
     "tier": "hot"
   },
   {
@@ -1616,7 +1298,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7097778,
     "access_count": 3,
-    "score": 0.8801700816999481,
+    "score": 0.8506242847025867,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1631,22 +1313,7 @@
     "importance": 0.7,
     "created_at": 1770987661.713866,
     "access_count": 3,
-    "score": 0.8801700830880922,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "ac1ea74453f7",
-    "text": "My interpretation: Be proactive, own decisions, ship fast.",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1770987661.7180986,
-    "access_count": 3,
-    "score": 0.8801700845252171,
+    "score": 0.8506242860440548,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1661,7 +1328,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7222998,
     "access_count": 3,
-    "score": 0.8801700859516552,
+    "score": 0.8506242888116494,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1676,7 +1343,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7264295,
     "access_count": 3,
-    "score": 0.8801700873538054,
+    "score": 0.8506242901667318,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1691,22 +1358,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7308817,
     "access_count": 3,
-    "score": 0.8801700888654137,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "997f9d9a8f14",
-    "text": "Waiting for approval to",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1770987661.73495,
-    "access_count": 3,
-    "score": 0.8801700902467571,
+    "score": 0.8506242916275981,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1721,7 +1373,7 @@
     "importance": 0.95,
     "created_at": 1770629133.8014925,
     "access_count": 1,
-    "score": 0.8801759019460746,
+    "score": 0.8506299095732878,
     "tier": "hot"
   },
   {
@@ -1731,7 +1383,7 @@
     "importance": 0.75,
     "created_at": 1770848917.960907,
     "access_count": 3,
-    "score": 0.8938878805469634,
+    "score": 0.8638816006176419,
     "tier": "hot"
   },
   {
@@ -1741,7 +1393,7 @@
     "importance": 0.75,
     "created_at": 1770848917.963316,
     "access_count": 3,
-    "score": 0.8938878813775704,
+    "score": 0.8638816014203667,
     "tier": "hot"
   },
   {
@@ -1751,7 +1403,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9673443,
     "access_count": 3,
-    "score": 0.8938878827666293,
+    "score": 0.8638816027627972,
     "tier": "hot"
   },
   {
@@ -1761,7 +1413,7 @@
     "importance": 0.75,
     "created_at": 1770848917.968247,
     "access_count": 3,
-    "score": 0.8938878830777572,
+    "score": 0.8638816030634813,
     "tier": "hot"
   },
   {
@@ -1771,7 +1423,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9691088,
     "access_count": 3,
-    "score": 0.8938878833747433,
+    "score": 0.8638816033505775,
     "tier": "hot"
   },
   {
@@ -1781,7 +1433,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9700267,
     "access_count": 3,
-    "score": 0.8938878836911336,
+    "score": 0.8638816036564265,
     "tier": "hot"
   },
   {
@@ -1791,7 +1443,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9754503,
     "access_count": 3,
-    "score": 0.8938878855614378,
+    "score": 0.8638816054637889,
     "tier": "hot"
   },
   {
@@ -1801,7 +1453,7 @@
     "importance": 0.75,
     "created_at": 1770848917.976349,
     "access_count": 3,
-    "score": 0.8938878858712506,
+    "score": 0.8638816057632017,
     "tier": "hot"
   },
   {
@@ -1811,7 +1463,7 @@
     "importance": 0.75,
     "created_at": 1770848917.977328,
     "access_count": 3,
-    "score": 0.8938878862086896,
+    "score": 0.8638816060893136,
     "tier": "hot"
   },
   {
@@ -1821,7 +1473,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9782953,
     "access_count": 3,
-    "score": 0.8938878865420999,
+    "score": 0.8638816064115319,
     "tier": "hot"
   },
   {
@@ -1831,7 +1483,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9793704,
     "access_count": 3,
-    "score": 0.8938878869126746,
+    "score": 0.863881606769667,
     "tier": "hot"
   },
   {
@@ -1841,7 +1493,7 @@
     "importance": 0.9,
     "created_at": 1771074043.419154,
     "access_count": 0,
-    "score": 0.8999971566409912,
+    "score": 0.869785798812572,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1856,7 +1508,7 @@
     "importance": 0.9,
     "created_at": 1771074043.966223,
     "access_count": 0,
-    "score": 0.8999973465947847,
+    "score": 0.8697859823899431,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1871,7 +1523,159 @@
     "importance": 0.9,
     "created_at": 1770621651.5485682,
     "access_count": 2,
-    "score": 0.907033387303594,
+    "score": 0.8765858353040986,
+    "tier": "hot"
+  },
+  {
+    "id": "1678af92070f",
+    "text": "GPU server has 3 GPUs: RTX 3090 (24GB) + RTX 3080 (10GB) + RTX 2070 SUPER (8GB) = 42GB VRAM",
+    "category": "technical/gpu",
+    "importance": 0.9,
+    "created_at": 1771095636.4439633,
+    "access_count": 0,
+    "score": 0.8770619385473499,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "4ee96e617888",
+    "text": "Use uv not python3 for running Python scripts (Bowen explicit directive Feb 15)",
+    "category": "lessons/cost",
+    "importance": 0.9,
+    "created_at": 1771095636.7073271,
+    "access_count": 0,
+    "score": 0.8770620276623161,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "adeaeef1831a",
+    "text": "GPU server has 3 GPUs: RTX 3090 (24GB) + RTX 3080 (10GB) + RTX 2070 SUPER (8GB) = 42GB total VRAM",
+    "category": "technical/gpu",
+    "importance": 0.9,
+    "created_at": 1771117238.729161,
+    "access_count": 0,
+    "score": 0.8844021060635913,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "9f0cf876ffc9",
+    "text": "GPU Server: 3 GPUs (RTX 3090 24GB + RTX 3080 10GB + RTX 2070 SUPER 8GB = 42GB total)",
+    "category": "technical/gpu",
+    "importance": 0.9,
+    "created_at": 1771138829.3475142,
+    "access_count": 0,
+    "score": 0.8917996896581536,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "7b0a557d57fa",
+    "text": "GPU Server Storage: /data 110GB SSD (18GB free), added /data2 916GB USB HDD (870GB free), fstab UUID eb82487e-089f-40e5-99ea-78c79b3836d3",
+    "category": "technical/gpu",
+    "importance": 0.9,
+    "created_at": 1771160437.4418483,
+    "access_count": 0,
+    "score": 0.8992652134333802,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "fe3c76c06538",
+    "text": "GPU Server Specs: 3 GPUs (RTX 3090 24GB + RTX 3080 10GB + RTX 2070 SUPER 8GB = 42GB total), 16GB RAM, 32GB swap on /data2",
+    "category": "technical/gpu",
+    "importance": 0.9,
+    "created_at": 1771160437.494436,
+    "access_count": 0,
+    "score": 0.8992652316779417,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "82c8a457a6f6",
+    "text": "LESSON: Use uv for Python (uv run script.py not python3 script.py), Bowen explicit directive Feb 15",
+    "category": "lessons/cost",
+    "importance": 0.9,
+    "created_at": 1771160464.7532754,
+    "access_count": 0,
+    "score": 0.8992746888749915,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "761314075b01",
+    "text": "LESSON: Routine tasks don't ask \u2014 publish skills, sanitize personal info, commit changes, update versions, Bowen directive Feb 15",
+    "category": "owner/preferences",
+    "importance": 0.9,
+    "created_at": 1771160464.8068938,
+    "access_count": 0,
+    "score": 0.8992747074773332,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "c0e538342b0c",
+    "text": "LESSON: Quality first, no shortcuts \u2014 Bowen chose 2+ hours proper LTX-2 setup over 10-minute AnimateDiff workaround, directive Feb 14",
+    "category": "owner/preferences",
+    "importance": 0.9,
+    "created_at": 1771160464.860456,
+    "access_count": 0,
+    "score": 0.8992747260601539,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "3d27d2785f14",
+    "text": "Tiered memory implementation vs design: 65% complete. Core working (hot/warm/cold, scoring, distillation). Critical gaps: LLM tree search not integrated, tree counting bug (2-3x inflated), no monthly rebuild, no auto-eviction on store. Missing: evolution tuning, 3-stage compression. Blockers: semantic search disabled (no API key), no search fallback. Fix priority: grep fallback \u2192 LLM tree integration \u2192 tree rebuild.",
+    "category": "projects/evoclaw/memory",
+    "importance": 0.9,
+    "created_at": 1771161856.934242,
+    "access_count": 0,
+    "score": 0.8997578252101859,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": [
+        "/warm/cold"
+      ]
+    },
     "tier": "hot"
   },
   {
@@ -1881,7 +1685,7 @@
     "importance": 0.8,
     "created_at": 1770603278.5991645,
     "access_count": 4,
-    "score": 0.9339833159509077,
+    "score": 0.9026311011606711,
     "tier": "hot"
   },
   {
@@ -1891,7 +1695,7 @@
     "importance": 0.75,
     "created_at": 1770987661.4968448,
     "access_count": 3,
-    "score": 0.9430392957752639,
+    "score": 0.9113830873057611,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1911,7 +1715,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5010297,
     "access_count": 3,
-    "score": 0.9430392972976919,
+    "score": 0.911383088777084,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1931,7 +1735,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5811749,
     "access_count": 3,
-    "score": 0.9430393264564688,
+    "score": 0.9113831169569669,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1948,7 +1752,7 @@
     "importance": 0.75,
     "created_at": 1770987661.585305,
     "access_count": 3,
-    "score": 0.9430393279588591,
+    "score": 0.9113831184090084,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1963,7 +1767,7 @@
     "importance": 0.8,
     "created_at": 1770858031.0936832,
     "access_count": 3,
-    "score": 0.9568386182936336,
+    "score": 0.9247191902821913,
     "tier": "hot"
   },
   {
@@ -1973,7 +1777,7 @@
     "importance": 0.8,
     "created_at": 1770858031.1349287,
     "access_count": 3,
-    "score": 0.9568386335193364,
+    "score": 0.9247192049967083,
     "tier": "hot"
   },
   {
@@ -1983,7 +1787,7 @@
     "importance": 0.8,
     "created_at": 1770858051.8253617,
     "access_count": 3,
-    "score": 0.956846271437632,
+    "score": 0.9247265865232133,
     "tier": "hot"
   },
   {
@@ -1993,7 +1797,7 @@
     "importance": 0.8,
     "created_at": 1770879637.2224507,
     "access_count": 3,
-    "score": 0.9648478708629821,
+    "score": 0.9324595860071647,
     "tier": "hot"
   },
   {
@@ -2003,7 +1807,7 @@
     "importance": 0.8,
     "created_at": 1770879637.515192,
     "access_count": 3,
-    "score": 0.964847979833034,
+    "score": 0.9324596913192793,
     "tier": "hot"
   },
   {
@@ -2013,7 +1817,7 @@
     "importance": 0.8,
     "created_at": 1770879637.6592467,
     "access_count": 3,
-    "score": 0.964848033455867,
+    "score": 0.9324597431420859,
     "tier": "hot"
   },
   {
@@ -2023,7 +1827,7 @@
     "importance": 0.8,
     "created_at": 1770879637.7071779,
     "access_count": 3,
-    "score": 0.9648480512977223,
+    "score": 0.9324597603849348,
     "tier": "hot"
   },
   {
@@ -2033,7 +1837,7 @@
     "importance": 0.8,
     "created_at": 1770879637.7547972,
     "access_count": 3,
-    "score": 0.9648480690233167,
+    "score": 0.9324597775155973,
     "tier": "hot"
   },
   {
@@ -2043,7 +1847,7 @@
     "importance": 0.8,
     "created_at": 1770879638.046249,
     "access_count": 3,
-    "score": 0.964848177513347,
+    "score": 0.9324598823638037,
     "tier": "hot"
   },
   {
@@ -2053,7 +1857,7 @@
     "importance": 0.8,
     "created_at": 1770879638.099425,
     "access_count": 3,
-    "score": 0.9648481973075083,
+    "score": 0.9324599014935089,
     "tier": "hot"
   },
   {
@@ -2063,7 +1867,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3265023,
     "access_count": 4,
-    "score": 0.9663329867174828,
+    "score": 0.9338948490746354,
     "metadata": {
       "urls": [
         "cs.AI"
@@ -2080,7 +1884,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4890444,
     "access_count": 4,
-    "score": 0.9663330473153116,
+    "score": 0.9338949076382133,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -2095,7 +1899,7 @@
     "importance": 0.8,
     "created_at": 1770901223.9106195,
     "access_count": 3,
-    "score": 0.9729168680435358,
+    "score": 0.940257720819245,
     "tier": "hot"
   },
   {
@@ -2105,7 +1909,7 @@
     "importance": 0.8,
     "created_at": 1770922835.0454159,
     "access_count": 3,
-    "score": 0.9810625989513286,
+    "score": 0.9481300135395574,
     "tier": "hot"
   },
   {
@@ -2115,7 +1919,7 @@
     "importance": 0.8,
     "created_at": 1770922837.8350434,
     "access_count": 3,
-    "score": 0.9810636548155367,
+    "score": 0.9481310339603058,
     "tier": "hot"
   },
   {
@@ -2125,7 +1929,7 @@
     "importance": 0.8,
     "created_at": 1770922857.5116065,
     "access_count": 3,
-    "score": 0.9810711023593788,
+    "score": 0.948138231502813,
     "tier": "hot"
   },
   {
@@ -2135,7 +1939,22 @@
     "importance": 0.8,
     "created_at": 1770922872.2013025,
     "access_count": 3,
-    "score": 0.98107666241983,
+    "score": 0.9481436049216776,
+    "tier": "hot"
+  },
+  {
+    "id": "526e26692898",
+    "text": "Tiered memory implementation completed 100% (pure EvoClaw design): LLM tree search with fallback, tree counting bug fixed, monthly LLM rebuild, 3-stage compression, agent wrapper. No embeddings, graceful degradation (LLM\u2192keyword\u2192grep). Search tested and working. Production ready.",
+    "category": "projects/evoclaw/memory",
+    "importance": 0.95,
+    "created_at": 1771162554.4913397,
+    "access_count": 0,
+    "score": 0.9499999999369092,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
     "tier": "hot"
   },
   {
@@ -2145,7 +1964,7 @@
     "importance": 0.8,
     "created_at": 1770944439.7650976,
     "access_count": 3,
-    "score": 0.9892740814364394,
+    "score": 0.9560658506697365,
     "tier": "hot"
   },
   {
@@ -2155,7 +1974,7 @@
     "importance": 0.9,
     "created_at": 1770858052.1201756,
     "access_count": 2,
-    "score": 0.9936481641229326,
+    "score": 0.960293102917657,
     "tier": "hot"
   },
   {
@@ -2165,7 +1984,37 @@
     "importance": 0.9,
     "created_at": 1770879637.8976207,
     "access_count": 2,
-    "score": 1.00195766534699,
+    "score": 0.9683236684661694,
+    "tier": "hot"
+  },
+  {
+    "id": "ac1ea74453f7",
+    "text": "My interpretation: Be proactive, own decisions, ship fast.",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770987661.7180986,
+    "access_count": 5,
+    "score": 0.9814895624163913,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "997f9d9a8f14",
+    "text": "Waiting for approval to",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770987661.73495,
+    "access_count": 5,
+    "score": 0.98148956879728,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
     "tier": "hot"
   },
   {
@@ -2175,7 +2024,25 @@
     "importance": 0.75,
     "created_at": 1770848917.9745195,
     "access_count": 5,
-    "score": 1.031409098348191,
+    "score": 0.9967864674761776,
+    "tier": "hot"
+  },
+  {
+    "id": "e93af2630e0f",
+    "text": "Analyzed ship-faster repo: artifact-first execution (runs/ with proposal/tasks/context), approval gates for side effects, progressive disclosure (SKILL.md + references/), skill evolution loop (failure logging \u2192 patch generation). Key adoptions for EvoClaw: runs system for multi-step tasks, approval gates for trades/transfers/deploys, failure logging for skill improvement. Skip: Next.js specifics, MCP layer, skills.sh packaging.",
+    "category": "projects/evoclaw/architecture",
+    "importance": 0.85,
+    "created_at": 1771161294.243141,
+    "access_count": 2,
+    "score": 1.0195041894752754,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": [
+        "/tasks/context",
+        "/transfers/deploys"
+      ]
+    },
     "tier": "hot"
   },
   {
@@ -2185,7 +2052,7 @@
     "importance": 0.9,
     "created_at": 1771037807.2176938,
     "access_count": 2,
-    "score": 1.0650032660206914,
+    "score": 1.0292529366741927,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -2202,7 +2069,7 @@
     "importance": 0.8,
     "created_at": 1770603278.2195358,
     "access_count": 6,
-    "score": 1.0674093476040214,
+    "score": 1.0315782502339104,
     "tier": "hot",
     "tree_relevance": 0.6666538966332228
   },
@@ -2213,7 +2080,7 @@
     "importance": 0.9,
     "created_at": 1770858030.757867,
     "access_count": 3,
-    "score": 1.076443306113379,
+    "score": 1.0403089542815027,
     "tier": "hot"
   },
   {
@@ -2223,7 +2090,7 @@
     "importance": 0.9,
     "created_at": 1770858030.926781,
     "access_count": 3,
-    "score": 1.07644337626217,
+    "score": 1.0403090220755193,
     "tier": "hot"
   },
   {
@@ -2233,7 +2100,7 @@
     "importance": 0.9,
     "created_at": 1770879637.1740577,
     "access_count": 3,
-    "score": 1.085453834450983,
+    "score": 1.0490170146681308,
     "tier": "hot"
   },
   {
@@ -2243,7 +2110,7 @@
     "importance": 0.9,
     "created_at": 1770879637.8497229,
     "access_count": 3,
-    "score": 1.0854541173996308,
+    "score": 1.0490172881186786,
     "tier": "hot"
   },
   {
@@ -2253,7 +2120,7 @@
     "importance": 0.9,
     "created_at": 1770901223.8614366,
     "access_count": 3,
-    "score": 1.094531455777353,
+    "score": 1.0577899158471962,
     "tier": "hot"
   },
   {
@@ -2263,7 +2130,7 @@
     "importance": 0.9,
     "created_at": 1770901223.957171,
     "access_count": 3,
-    "score": 1.0945314962032815,
+    "score": 1.0577899549159986,
     "tier": "hot"
   },
   {
@@ -2273,7 +2140,7 @@
     "importance": 0.9,
     "created_at": 1770901224.0043564,
     "access_count": 3,
-    "score": 1.0945315161282074,
+    "score": 1.0577899741720789,
     "tier": "hot"
   },
   {
@@ -2283,7 +2150,7 @@
     "importance": 0.95,
     "created_at": 1770630505.1354907,
     "access_count": 4,
-    "score": 1.1208167021738218,
+    "score": 1.0831928116954446,
     "tier": "hot"
   },
   {
@@ -2293,7 +2160,7 @@
     "importance": 0.9,
     "created_at": 1770606835.0856192,
     "access_count": 5,
-    "score": 1.127329210303833,
+    "score": 1.0894867061198,
     "tier": "hot"
   }
 ]

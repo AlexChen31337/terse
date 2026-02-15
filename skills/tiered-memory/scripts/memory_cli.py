@@ -1121,22 +1121,23 @@ def cold_init_tables(db_url, auth_token):
 
 # ─── Retrieval (Multi-tier with LLM) ───
 
-def retrieve(query, agent_id='default', limit=5, use_llm=False, 
+def retrieve(query, agent_id='default', limit=5, use_llm=True, 
              llm_endpoint=None, db_url=None, auth_token=None):
     """
-    Multi-tier retrieval: tree search → warm → cold.
+    Multi-tier retrieval: LLM tree search → keyword → grep fallback.
+    Pure EvoClaw design - no embeddings required.
     
     Args:
         query: Search query
         agent_id: Agent identifier
         limit: Max results
-        use_llm: Use LLM-powered tree search
-        llm_endpoint: HTTP endpoint for LLM
+        use_llm: Use LLM-powered tree search (default True)
+        llm_endpoint: HTTP endpoint for LLM (auto-detects if None)
         db_url: Turso URL for cold storage
         auth_token: Turso auth token
     
     Returns:
-        list: Retrieved memories with tier labels
+        list: Retrieved memories with tier labels + search method used
     """
     paths = get_agent_paths(agent_id)
     tree = MemoryTree(paths['tree_file'])
@@ -1144,17 +1145,32 @@ def retrieve(query, agent_id='default', limit=5, use_llm=False,
     
     results = []
     seen_ids = set()
+    search_method = None
     
-    # 1. Tree search to find relevant categories
+    # Auto-detect LLM endpoint if not provided
+    if use_llm and not llm_endpoint:
+        # Try common local endpoints
+        for endpoint in ['http://localhost:8080/v1/chat/completions', 
+                        'http://localhost:11434/v1/chat/completions',
+                        'http://localhost:1234/v1/chat/completions']:
+            try:
+                import urllib.request
+                urllib.request.urlopen(endpoint.replace('/chat/completions', '/models'), timeout=1)
+                llm_endpoint = endpoint
+                break
+            except:
+                continue
+    
+    # 1. Try LLM tree search (primary method)
+    relevant_paths = []
     if use_llm and llm_endpoint:
-        # Use LLM tree search
         import subprocess
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        tree_search = os.path.join(script_dir, 'tree_search.py')
+        tree_search_script = os.path.join(script_dir, 'tree_search.py')
         
         try:
             cmd = [
-                'python3', tree_search,
+                'python3', tree_search_script,
                 '--query', query,
                 '--tree-file', paths['tree_file'],
                 '--mode', 'llm',
@@ -1165,25 +1181,29 @@ def retrieve(query, agent_id='default', limit=5, use_llm=False,
             if result.returncode == 0:
                 tree_results = json.loads(result.stdout)
                 relevant_paths = [r['path'] for r in tree_results.get('results', [])]
-            else:
-                # Fallback to keyword
-                print("LLM tree search failed, using keyword", file=sys.stderr)
-                relevant_paths = [r['path'] for r in tree.nodes.keys() if r != 'root'][:3]
+                search_method = 'llm-tree'
         except Exception as e:
-            print(f"Tree search error: {e}", file=sys.stderr)
-            relevant_paths = []
-    else:
-        # Keyword-based tree search
-        from tree_search import search_keyword
-        tree_results = search_keyword(tree.nodes, query, top_k=3)
-        relevant_paths = [r['path'] for r in tree_results]
+            print(f"LLM tree search failed: {e}, falling back to keyword", file=sys.stderr)
     
-    # 2. Search warm memory (targeted by categories)
+    # 2. Fallback to keyword tree search
+    if not relevant_paths:
+        try:
+            from tree_search import search_keyword
+            tree_results = search_keyword(tree.nodes, query, top_k=3)
+            relevant_paths = [r['path'] for r in tree_results]
+            search_method = 'keyword-tree'
+        except Exception as e:
+            print(f"Keyword tree search failed: {e}, using all categories", file=sys.stderr)
+            relevant_paths = [path for path in tree.nodes.keys() if path != 'root'][:3]
+            search_method = 'fallback'
+    
+    # 3. Search warm memory (targeted by categories)
     for path in relevant_paths:
         cat_facts = warm.get_by_category(path, limit=limit)
         for fact in cat_facts:
             if fact['id'] not in seen_ids:
                 fact['tier'] = 'warm'
+                fact['search_method'] = search_method
                 results.append(fact)
                 seen_ids.add(fact['id'])
     
@@ -1191,20 +1211,55 @@ def retrieve(query, agent_id='default', limit=5, use_llm=False,
     warm_hits = warm.search(query, limit=limit)
     for fact in warm_hits:
         if fact['id'] not in seen_ids:
+            fact['search_method'] = search_method or 'keyword-warm'
             results.append(fact)
             seen_ids.add(fact['id'])
     
-    # 3. Cold search if needed
+    # 4. Cold search if needed
     if len(results) < limit and db_url and auth_token:
         cold_hits = cold_query(query, agent_id, limit - len(results), db_url, auth_token)
         for fact in cold_hits:
             if fact['id'] not in seen_ids:
+                fact['search_method'] = search_method or 'cold'
                 results.append(fact)
                 seen_ids.add(fact['id'])
     
+    # 5. Grep fallback if still no results
+    if not results:
+        try:
+            import subprocess
+            grep_results = []
+            workspace_memory = os.path.dirname(paths['warm_file'])
+            
+            # Search in warm memory JSON
+            cmd = ['grep', '-i', query, paths['warm_file']]
+            result = subprocess.run(cmd, capture_output=True, text=True)
+            if result.returncode == 0:
+                # Found matches, extract from warm memory
+                for fact in warm.facts:
+                    if query.lower() in fact.get('text', '').lower() or \
+                       query.lower() in fact.get('category', '').lower():
+                        if fact['id'] not in seen_ids:
+                            fact['search_method'] = 'grep'
+                            grep_results.append(fact)
+                            seen_ids.add(fact['id'])
+                            if len(grep_results) >= limit:
+                                break
+            
+            results.extend(grep_results[:limit])
+            search_method = search_method or 'grep'
+        except Exception as e:
+            print(f"Grep fallback failed: {e}", file=sys.stderr)
+    
     # Sort by relevance/score
     results.sort(key=lambda x: x.get('relevance', x.get('score', x.get('importance', 0))), reverse=True)
-    return results[:limit]
+    
+    # Add metadata about search
+    final_results = results[:limit]
+    if final_results and search_method:
+        print(f"Search method: {search_method}, found {len(final_results)} results", file=sys.stderr)
+    
+    return final_results
 
 # ─── Consolidation ───
 
@@ -1587,17 +1642,46 @@ def consolidate(mode='quick', agent_id='default', db_url=None, auth_token=None, 
         pruned = tree.prune_dead_nodes(max_age_days=60)
         stats['pruned_nodes'] = pruned
     
-    # Monthly: Tree rebuild (placeholder for LLM)
+    # Monthly: Tree rebuild with LLM
     if mode in ['monthly', 'full']:
-        # TODO: LLM-powered tree rebuild
-        # For now, just recalculate all counts
+        # Try LLM-powered rebuild if endpoint available
+        if llm_endpoint:
+            try:
+                import subprocess
+                script_dir = os.path.dirname(os.path.abspath(__file__))
+                rebuild_script = os.path.join(script_dir, 'tree_rebuild.py')
+                
+                cmd = [
+                    'python3', rebuild_script,
+                    '--tree-file', paths['tree_file'],
+                    '--warm-file', paths['warm_file'],
+                    '--llm-endpoint', llm_endpoint
+                ]
+                
+                result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+                if result.returncode == 0:
+                    # Reload updated tree
+                    tree.load()
+                    warm.load()
+                    stats['tree_rebuilt'] = 'llm'
+                else:
+                    print(f"LLM rebuild failed: {result.stderr}", file=sys.stderr)
+                    stats['tree_rebuilt'] = 'failed'
+            except Exception as e:
+                print(f"Tree rebuild error: {e}", file=sys.stderr)
+                stats['tree_rebuilt'] = 'error'
+        
+        # Recalculate counts (EXACT match only, not subcategories)
         for path in tree.nodes:
-            if path == 'root':
+            if path == 'root' or not isinstance(tree.nodes[path], dict):
                 continue
-            warm_facts = warm.get_by_category(path, limit=1000)
-            tree.nodes[path]['warm_count'] = len(warm_facts)
+            # Count only facts that EXACTLY match this category (not subcategories)
+            exact_facts = [f for f in warm.facts if f.get('category') == path]
+            tree.nodes[path]['warm_count'] = len(exact_facts)
         tree.save()
-        stats['tree_rebuilt'] = True
+        
+        if not stats.get('tree_rebuilt'):
+            stats['tree_rebuilt'] = 'counts-only'
     
     # Rebuild hot memory
     content = hot.generate_memory_md()

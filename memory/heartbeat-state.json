@@ -1,16 +1,22 @@
 {
-  "lastCryptoPriceCheck": "2026-02-11T08:52:00+11:00",
+  "lastCryptoPriceCheck": "2026-02-15T21:59:00+11:00",
   "lastPrices": {
-    "btc": 68553,
-    "eth": 2005.7,
-    "sol": 82.2
+    "btc": 70423,
+    "eth": 2062.18,
+    "sol": 89.53,
+    "doge": 0.113529,
+    "xrp": 1.59
   },
-  "lastKOLCheck": "2026-02-14T23:21:00+11:00",
-  "lastTwitterCheck": "2026-02-14T23:21:00+11:00",
+  "lastKOLCheck": "2026-02-15T21:59:00+11:00",
+  "lastTwitterCheck": "2026-02-15T21:54:34.479580+11:00",
   "lastMoltbookCheck": "2026-02-14T19:41:03+11:00",
-  "lastGitHubCheck": "2026-02-14T13:42:00+11:00",
-  "lastGitHubTrendingCheck": "2026-02-14T13:42:00+11:00",
+  "lastGitHubCheck": "2026-02-15T12:10:00+11:00",
+  "lastGitHubTrendingCheck": "2026-02-15T12:10:00+11:00",
   "notes": {
-    "twitterAuth": "EXPIRED - needs re-auth (2026-02-14T23:21)"
+    "twitterAuth": "ACTIVE - re-authed 2026-02-15 21:45",
+    "moltbookAuth": "FAILED - credentials not found/decryption issue",
+    "openclawIssue": "#16642 filed, awaiting maintainer response",
+    "piStatus": "UP - IP 192.168.99.188, agent alex-eye running with GLM-4.7",
+    "ltx2Upload": "FAILED - I/O error on GPU server USB HDD, needs retry"
   }
 }
