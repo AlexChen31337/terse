@@ -126,6 +126,43 @@ Reactions are lightweight social signals. Humans use them constantly — they sa
 
 Skills provide your tools. When you need one, check its `SKILL.md`. Keep local notes (camera names, SSH details, voice preferences) in `TOOLS.md`.
 
+## Sub-Agent Spawning Protocol
+
+**Before spawning sub-agents, classify the task for optimal model selection:**
+
+1. **Run classification:**
+   ```bash
+   python3 skills/intelligent-router/scripts/router.py classify "task description"
+   ```
+
+2. **Use recommended model in sessions_spawn:**
+   ```python
+   sessions_spawn(
+       task="task description",
+       model="<recommended-model-id>",
+       label="descriptive-label"
+   )
+   ```
+
+3. **Or use the spawn helper (shows command, doesn't execute):**
+   ```bash
+   python3 skills/intelligent-router/scripts/spawn_helper.py "task description"
+   ```
+
+**Why this matters:**
+- Saves 80-95% on costs by using cheaper models for simple tasks
+- Preserves quality by using premium models for complex work
+- Automatic fallback chains if primary model fails
+
+**Tier guidelines:**
+- **SIMPLE** (monitoring, checks, summaries) → GLM-4.7, cheap models
+- **MEDIUM** (code fixes, research, patches) → DeepSeek V3.2, Llama 3.3 70B
+- **COMPLEX** (features, architecture, debugging) → Sonnet 4.5, Gemini 3 Pro
+- **REASONING** (proofs, formal logic) → DeepSeek R1 32B, QwQ 32B
+- **CRITICAL** (security, production) → Opus 4.6
+
+**Don't guess** — let the router classify. It uses weighted 15-dimension scoring.
+
 **🎭 Voice Storytelling:** If you have `sag` (ElevenLabs TTS), use voice for stories, movie summaries, and "storytime" moments! Way more engaging than walls of text. Surprise people with funny voices.
 
 **📝 Platform Formatting:**
