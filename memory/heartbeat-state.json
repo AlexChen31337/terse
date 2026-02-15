@@ -7,16 +7,17 @@
     "doge": 0.113529,
     "xrp": 1.59
   },
-  "lastKOLCheck": "2026-02-15T21:59:00+11:00",
-  "lastTwitterCheck": "2026-02-15T21:54:34.479580+11:00",
-  "lastMoltbookCheck": "2026-02-14T19:41:03+11:00",
+  "lastKOLCheck": "2026-02-16T07:15:00+11:00",
+  "lastTwitterCheck": "2026-02-16T07:15:00+11:00",
+  "lastMoltbookCheck": "2026-02-16T06:15:00+11:00",
   "lastGitHubCheck": "2026-02-15T12:10:00+11:00",
-  "lastGitHubTrendingCheck": "2026-02-15T12:10:00+11:00",
+  "lastGitHubTrendingCheck": "2026-02-16T04:15:00+11:00",
   "notes": {
-    "twitterAuth": "ACTIVE - re-authed 2026-02-15 21:45",
-    "moltbookAuth": "FAILED - credentials not found/decryption issue",
+    "twitterAuth": "ACTIVE - verified 2026-02-16 07:15",
+    "moltbookAuth": "WORKING - successfully checked DMs at 06:15",
     "openclawIssue": "#16642 filed, awaiting maintainer response",
     "piStatus": "UP - IP 192.168.99.188, agent alex-eye running with GLM-4.7",
-    "ltx2Upload": "FAILED - I/O error on GPU server USB HDD, needs retry"
+    "ltx2Upload": "FAILED - I/O error on GPU server USB HDD, needs retry",
+    "lastHeartbeatFindings": "7:15 AM - Market selloff ongoing (cron monitoring), KOLs not commenting on it, no Twitter mentions"
   }
 }

@@ -91,6 +91,7 @@ Key milestones today:
 - Day 1 velocity: Crushed it 🚀
 - Architecture gaps need docs BEFORE code
 - Sub-agents on cheaper models = cost-efficient parallelism
+- **No quick fixes** — Do it properly the first time. Quick fixes create technical debt and future work
 
 **Philosophy:**
 *"Your decision counts, you own it."* — Bowen Li
