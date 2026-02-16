@@ -7,17 +7,18 @@
     "doge": 0.113529,
     "xrp": 1.59
   },
-  "lastKOLCheck": "2026-02-16T08:15:00+11:00",
-  "lastTwitterCheck": "2026-02-16T07:15:00+11:00",
-  "lastMoltbookCheck": "2026-02-16T06:15:00+11:00",
-  "lastGitHubCheck": "2026-02-15T12:10:00+11:00",
-  "lastGitHubTrendingCheck": "2026-02-16T04:15:00+11:00",
+  "lastKOLCheck": "2026-02-16T15:20:15+11:00",
+  "lastTwitterCheck": "2026-02-16T14:13:10.082599+11:00",
+  "lastMoltbookCheck": "2026-02-16T20:18:41.810425+11:00",
+  "lastGitHubCheck": "2026-02-16T12:16:44.550331+11:00",
+  "lastGitHubTrendingCheck": "2026-02-16T13:17:28.570999+11:00",
   "notes": {
-    "twitterAuth": "ACTIVE - verified 2026-02-16 08:15",
+    "twitterAuth": "NEEDS FIX - decrypt failing, credentials error",
     "moltbookAuth": "WORKING - successfully checked DMs at 06:15",
     "openclawIssue": "#16642 filed, awaiting maintainer response",
     "piStatus": "UP - IP 192.168.99.188, agent alex-eye running with GLM-4.7",
-    "ltx2Upload": "FAILED - I/O error on GPU server USB HDD, needs retry",
-    "lastHeartbeatFindings": "8:15 AM - KOLs tweeting non-market content, no Twitter mentions, markets (cron-monitored) showing recovery from overnight selloff"
+    "ltx2Download": "COMPLETE - All LTX-2 models ready (checkpoint 27GB, Gemma 3 23GB, VAE 2.4GB, embeddings 152MB, audio 208MB, LoRA 7.2GB)",
+    "evoclawCI": "FIXED - commit e30d492 pushed, build should succeed now",
+    "lastHeartbeatFindings": "15:20 PM - KOL check blocked (Twitter auth decrypt error). LTX-2 download killed at 6.9GB progress."
   }
 }

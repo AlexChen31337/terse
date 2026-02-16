@@ -5,71 +5,10 @@
     "cold_count": 0,
     "last_access": 0,
     "children": [
-      "owner",
-      "projects",
       "technical",
-      "social",
-      "lessons",
-      "general"
+      "general",
+      "projects"
     ]
-  },
-  "owner": {
-    "desc": "Owner profile and preferences",
-    "warm_count": 0,
-    "cold_count": 0,
-    "last_access": 0,
-    "children": [
-      "owner/preferences"
-    ]
-  },
-  "owner/preferences": {
-    "desc": "Communication style and work preferences",
-    "warm_count": 7,
-    "cold_count": 0,
-    "last_access": 1771160464.8640594,
-    "children": []
-  },
-  "projects": {
-    "desc": "Active projects",
-    "warm_count": 0,
-    "cold_count": 0,
-    "last_access": 0,
-    "children": [
-      "projects/clawchain",
-      "projects/evoclaw"
-    ]
-  },
-  "projects/clawchain": {
-    "desc": "ClawChain L1 blockchain",
-    "warm_count": 5,
-    "cold_count": 0,
-    "last_access": 1771160464.4932873,
-    "children": []
-  },
-  "projects/evoclaw": {
-    "desc": "EvoClaw self-evolving agent framework",
-    "warm_count": 60,
-    "cold_count": 0,
-    "last_access": 1771182017.883577,
-    "children": [
-      "projects/evoclaw/bsc",
-      "projects/evoclaw/memory",
-      "projects/evoclaw/architecture"
-    ]
-  },
-  "projects/evoclaw/bsc": {
-    "desc": "BSC/opBNB on-chain integration",
-    "warm_count": 2,
-    "cold_count": 0,
-    "last_access": 1770630505.136027,
-    "children": []
-  },
-  "projects/evoclaw/memory": {
-    "desc": "Tiered memory system",
-    "warm_count": 8,
-    "cold_count": 0,
-    "last_access": 1771162554.4955292,
-    "children": []
   },
   "technical": {
     "desc": "Technical setup and config",
@@ -89,81 +28,51 @@
     "last_access": 1771160437.392451,
     "children": []
   },
-  "social": {
-    "desc": "Social accounts and platforms",
-    "warm_count": 0,
-    "cold_count": 0,
-    "last_access": 0,
-    "children": [
-      "social/moltbook",
-      "social/twitter"
-    ]
-  },
-  "social/moltbook": {
-    "desc": "Moltbook agent platform",
-    "warm_count": 0,
-    "cold_count": 0,
-    "last_access": 1771117239.161342,
-    "children": []
-  },
-  "lessons": {
-    "desc": "Lessons learned",
-    "warm_count": 0,
-    "cold_count": 0,
-    "last_access": 0,
-    "children": [
-      "lessons/cost",
-      "lessons/community"
-    ]
-  },
   "technical/gpu": {
     "desc": "Gpu",
-    "warm_count": 52,
+    "warm_count": 67,
     "cold_count": 0,
-    "last_access": 1771182018.2616022,
-    "children": []
-  },
-  "lessons/cost": {
-    "desc": "Cost",
-    "warm_count": 10,
-    "cold_count": 0,
-    "last_access": 1771160464.75682,
+    "last_access": 1771246922.8885465,
     "children": []
   },
   "technical/cron": {
     "desc": "Cron",
-    "warm_count": 3,
+    "warm_count": 5,
     "cold_count": 0,
-    "last_access": 1771138830.0633254,
+    "last_access": 1771246922.9251776,
     "children": []
   },
   "_schema_version": "2.0",
-  "lessons/community": {
-    "desc": "Community",
-    "warm_count": 1,
-    "cold_count": 0,
-    "last_access": 1771160464.7043328,
-    "children": []
-  },
   "general": {
     "desc": "General",
-    "warm_count": 18,
+    "warm_count": 121,
     "cold_count": 0,
-    "last_access": 1771161477.0735097,
+    "last_access": 1771246922.7711804,
     "children": []
   },
-  "social/twitter": {
-    "desc": "Twitter",
-    "warm_count": 3,
+  "projects": {
+    "desc": "Projects",
+    "warm_count": 0,
     "cold_count": 0,
-    "last_access": 1771182018.0982165,
-    "children": []
+    "last_access": 0,
+    "children": [
+      "projects/evoclaw"
+    ]
   },
-  "projects/evoclaw/architecture": {
-    "desc": "Architecture",
-    "warm_count": 1,
+  "projects/evoclaw": {
+    "desc": "Evoclaw",
+    "warm_count": 24,
     "cold_count": 0,
-    "last_access": 1771161294.2477856,
+    "last_access": 1771246922.9175754,
+    "children": [
+      "projects/evoclaw/memory"
+    ]
+  },
+  "projects/evoclaw/memory": {
+    "desc": "Memory",
+    "warm_count": 15,
+    "cold_count": 0,
+    "last_access": 1771246922.8486254,
     "children": []
   }
 }
