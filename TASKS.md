@@ -75,3 +75,30 @@ EvoClaw becomes my substrate:
 ---
 
 *Last updated: 2026-02-15 14:35 AEDT*
+
+---
+
+## 🔄 Self-Governance Improvements (Added 2026-02-16)
+
+### Immediate Fixes
+- [ ] **Read all installed skill docs** — tiered-memory, intelligent-router, agent-self-governance
+- [ ] **Document skill architecture** — How does each skill work? When to use it?
+- [ ] **Create pre-session checklist** — Skills review, TASKS.md update, memory check
+- [ ] **Update TASKS.md daily** — Log work as it happens, not retrospectively
+
+### System Improvements
+- [ ] **Skill integration protocol** — When installing a skill, read docs + test + document
+- [ ] **Memory search wrapper** — Helper that routes to correct tool (tiered-memory vs OpenClaw)
+- [ ] **Self-audit cron job** — "Did I follow my principles today?"
+- [ ] **Decision log** — Append to memory/decisions.md when making architecture choices
+
+### Lessons from Memory Search Failure
+**Date:** 2026-02-16 19:46 AEDT
+**Mistake:** Used wrong memory search tool without reading docs
+**Root Cause:** 
+  1. Didn't document skill architecture after install
+  2. Violated "Be resourceful before asking"
+  3. TASKS.md not kept current
+  4. No skills integration routine
+**Fix:** This section + commit to daily TASKS.md updates
+
