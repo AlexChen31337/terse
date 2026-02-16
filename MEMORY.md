@@ -12,9 +12,6 @@
 - **Github:** AlexChen31337
 - **Discord:** alexchen31337
 - **Relationship Start:** 2026-02-04
-- **GitHub Permissions:**
-  - **clawinfra org:** Maintainer — push directly to main, no PRs needed
-  - **AlexChen31337 personal:** Owner
 
 ## 👤 Owner Profile
 
@@ -30,7 +27,7 @@
 
 ### EvoClaw
 Self-evolving agent framework. Go binary. BSC adapter, cloud sync (Turso), tiered memory. Hackathon deadline Feb 19.
-**Status:** Active — CI coverage boost (74% → 85%), release prep
+**Status:** Active — Mainstream desktop release infrastructure complete (auto-updater, installers, CI), polish needed (icons, code signing)
 
 ### ClawChain
 L1 blockchain for agents. Substrate, NPoS, near-zero fees. 8 pallets deployed. Hetzner VPS 135.181.157.121.
@@ -42,6 +39,10 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 
 ## ✅ Pending Tasks
 
+- [DONE] EvoClaw desktop release infrastructure (auto-updater, MSI/DMG/.deb/.rpm, install.sh)
+- [PENDING] Create EvoClaw app icon (1024x1024 PNG)
+- [PENDING] Get code signing certificates (Apple $99/yr, Windows $200-400/yr)
+- [PENDING] Set up evoclaw.win domain and host install.sh
 - [BLOCKED] LTX-2 Gemma 3 text encoder download (needs HF auth)
 - [IN-PROGRESS] EvoClaw test coverage to 85%+
 - [IN-PROGRESS] Fix tiered memory integration loop
@@ -49,6 +50,7 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 
 ## 📅 Recent Events
 
+- [Feb 16] Built EvoClaw mainstream desktop release infrastructure (~1,780 lines in 25 min)
 - [Feb 19] EvoClaw hackathon deadline Feb 19 3AM UTC
 - [Feb 12] New 112GB SSD mounted at /data on GPU server
 - [Feb 12] Router config populated with 14 real models
@@ -67,6 +69,8 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - **[work]** Coverage threshold 85% minimum, 90% ideal — Bowen explicit
 - **[tools]** Use uv not pip on GPU server — Bowen explicit
 - **[meta]** Eat your own dogfood — use skills you build
+- **[release]** Ship infrastructure fast, polish later — soft launch to devs, mainstream after polish
+- **[release]** Code signing is expensive ($500/year) but necessary for mainstream trust
 
 ---
-*Generated: 2026-02-16 06:00*
+*Generated: 2026-02-16 13:18*
