@@ -5,14 +5,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1770987661.505556,
-    "access_count": 0,
-    "score": 0.6673206651553291,
+    "access_count": 1,
+    "score": 0.7219215197117134,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "ab0ca775e6af",
@@ -20,14 +20,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1770987661.539123,
-    "access_count": 0,
-    "score": 0.6673206737963531,
+    "access_count": 1,
+    "score": 0.7219215290597547,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "54a68b7cee5a",
@@ -35,14 +35,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1770987661.5432181,
-    "access_count": 0,
-    "score": 0.6673206748501559,
+    "access_count": 1,
+    "score": 0.721921530199648,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "e4bae44f67c9",
@@ -50,8 +50,8 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1770987661.5477233,
-    "access_count": 0,
-    "score": 0.6673206760097197,
+    "access_count": 1,
+    "score": 0.7219215314540883,
     "metadata": {
       "urls": [],
       "commands": [
@@ -59,7 +59,7 @@
       ],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "2fac8f6ed7e3",
@@ -67,14 +67,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1770987661.601858,
-    "access_count": 0,
-    "score": 0.6673206899467049,
+    "access_count": 1,
+    "score": 0.7219215465313455,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "309d14ff7d10",
@@ -83,7 +83,7 @@
     "importance": 0.75,
     "created_at": 1770987661.681078,
     "access_count": 0,
-    "score": 0.6673207103420392,
+    "score": 0.65629233508683,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -97,14 +97,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1770987661.7431667,
-    "access_count": 0,
-    "score": 0.6673207263269065,
+    "access_count": 1,
+    "score": 0.7219215858882122,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "60b4310f2844",
@@ -112,14 +112,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1770987661.7554824,
-    "access_count": 0,
-    "score": 0.6673207294974614,
+    "access_count": 1,
+    "score": 0.7219215893182515,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "ff7f14b66806",
@@ -127,14 +127,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1770987661.76779,
-    "access_count": 0,
-    "score": 0.6673207326659907,
+    "access_count": 1,
+    "score": 0.721921592746033,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "782970bada96",
@@ -142,14 +142,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1770987661.792633,
-    "access_count": 0,
-    "score": 0.6673207390617915,
+    "access_count": 1,
+    "score": 0.7219215996651448,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "d4f3f8079061",
@@ -157,8 +157,8 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1770987661.7967486,
-    "access_count": 0,
-    "score": 0.6673207401212415,
+    "access_count": 1,
+    "score": 0.7219216008111473,
     "metadata": {
       "urls": [],
       "commands": [
@@ -166,7 +166,7 @@
       ],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "137a04ca2264",
@@ -174,14 +174,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1770987661.8009956,
-    "access_count": 0,
-    "score": 0.667320741214513,
+    "access_count": 1,
+    "score": 0.7219216019938715,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "2c23970db1b6",
@@ -190,7 +190,7 @@
     "importance": 0.7,
     "created_at": 1771182018.0942414,
     "access_count": 0,
-    "score": 0.6713301669628169,
+    "score": 0.6602355300262616,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -204,14 +204,14 @@
     "category": "technical/gpu",
     "importance": 0.7,
     "created_at": 1771182018.2576163,
-    "access_count": 0,
-    "score": 0.6713302092768689,
+    "access_count": 1,
+    "score": 0.7262591288051184,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "9e317964ddc2",
@@ -220,7 +220,7 @@
     "importance": 0.8,
     "created_at": 1770606835.0535045,
     "access_count": 1,
-    "score": 0.6760017083375526,
+    "score": 0.6648298678757613,
     "tier": "warm"
   },
   {
@@ -229,9 +229,9 @@
     "category": "technical/gpu",
     "importance": 0.8,
     "created_at": 1770858030.8423762,
-    "access_count": 0,
-    "score": 0.6770853791674353,
-    "tier": "warm"
+    "access_count": 1,
+    "score": 0.7324851925411009,
+    "tier": "hot"
   },
   {
     "id": "7511bf0da68c",
@@ -239,14 +239,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1771037649.2403712,
-    "access_count": 0,
-    "score": 0.6803151041235634,
+    "access_count": 1,
+    "score": 0.7359791768731235,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "f26cbc044844",
@@ -254,8 +254,8 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1771037649.2448103,
-    "access_count": 0,
-    "score": 0.6803151052884981,
+    "access_count": 1,
+    "score": 0.735979178133442,
     "metadata": {
       "urls": [],
       "commands": [
@@ -263,7 +263,7 @@
       ],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "f0bc2cc122ab",
@@ -271,14 +271,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1771037649.2491612,
-    "access_count": 0,
-    "score": 0.6803151064303419,
+    "access_count": 1,
+    "score": 0.7359791793687127,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "94e8918fdae1",
@@ -286,14 +286,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1771037649.2534513,
-    "access_count": 0,
-    "score": 0.680315107556166,
+    "access_count": 1,
+    "score": 0.7359791805867204,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "2e64bea38e6a",
@@ -301,14 +301,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1771037649.2577338,
-    "access_count": 0,
-    "score": 0.6803151086800501,
+    "access_count": 1,
+    "score": 0.7359791818025618,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "471ed28b3f8d",
@@ -316,14 +316,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1771037649.261971,
-    "access_count": 0,
-    "score": 0.6803151097920446,
+    "access_count": 1,
+    "score": 0.735979183005541,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "b07019dd7841",
@@ -332,7 +332,7 @@
     "importance": 0.75,
     "created_at": 1771037649.27514,
     "access_count": 0,
-    "score": 0.6803151132483638,
+    "score": 0.6690719879495675,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -347,7 +347,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2793593,
     "access_count": 0,
-    "score": 0.680315114355665,
+    "score": 0.6690719890385691,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -362,7 +362,7 @@
     "importance": 0.75,
     "created_at": 1771037649.2882166,
     "access_count": 0,
-    "score": 0.6803151166802781,
+    "score": 0.6690719913247647,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -376,14 +376,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1771037649.4361045,
-    "access_count": 0,
-    "score": 0.6803151554958965,
+    "access_count": 1,
+    "score": 0.7359792324487932,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "6f31a9a8ffba",
@@ -391,8 +391,8 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1771037649.440404,
-    "access_count": 0,
-    "score": 0.6803151566241612,
+    "access_count": 1,
+    "score": 0.7359792336693735,
     "metadata": {
       "urls": [],
       "commands": [
@@ -402,7 +402,7 @@
         "/data/ai-stack/comfyui/ComfyUI/models/text_encoders/gemma-3"
       ]
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "096ac4856a40",
@@ -410,14 +410,14 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1771037649.45841,
-    "access_count": 0,
-    "score": 0.6803151613500442,
+    "access_count": 1,
+    "score": 0.735979238781933,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "3e02c797297b",
@@ -425,8 +425,8 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1771037649.480239,
-    "access_count": 0,
-    "score": 0.6803151670792883,
+    "access_count": 1,
+    "score": 0.735979244979882,
     "metadata": {
       "urls": [],
       "commands": [
@@ -434,7 +434,7 @@
       ],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "6f29e03959e4",
@@ -442,8 +442,8 @@
     "category": "technical/gpu",
     "importance": 0.75,
     "created_at": 1771037649.4845905,
-    "access_count": 0,
-    "score": 0.6803151682213198,
+    "access_count": 1,
+    "score": 0.7359792462153558,
     "metadata": {
       "urls": [],
       "commands": [
@@ -451,7 +451,7 @@
       ],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "09b01e75a4fe",
@@ -460,7 +460,7 @@
     "importance": 0.8,
     "created_at": 1770879637.418223,
     "access_count": 0,
-    "score": 0.6827530648029005,
+    "score": 0.6714696490646441,
     "tier": "warm"
   },
   {
@@ -470,7 +470,7 @@
     "importance": 0.8,
     "created_at": 1770901224.240646,
     "access_count": 0,
-    "score": 0.6884629462547318,
+    "score": 0.6770851670202738,
     "tier": "warm"
   },
   {
@@ -480,7 +480,7 @@
     "importance": 0.8,
     "created_at": 1770901224.2868898,
     "access_count": 0,
-    "score": 0.6884629585374817,
+    "score": 0.6770851791000347,
     "tier": "warm"
   },
   {
@@ -489,9 +489,9 @@
     "category": "technical/gpu",
     "importance": 0.8,
     "created_at": 1770901229.0416515,
-    "access_count": 0,
-    "score": 0.6884642214540133,
-    "tier": "warm"
+    "access_count": 1,
+    "score": 0.744795063259683,
+    "tier": "hot"
   },
   {
     "id": "869e722bc09d",
@@ -500,7 +500,7 @@
     "importance": 0.9,
     "created_at": 1770610454.8254375,
     "access_count": 0,
-    "score": 0.6923315614854241,
+    "score": 0.680889848163769,
     "tier": "warm"
   },
   {
@@ -510,7 +510,7 @@
     "importance": 0.9,
     "created_at": 1770618231.019124,
     "access_count": 0,
-    "score": 0.6944117266693322,
+    "score": 0.6829356358109302,
     "tier": "warm"
   },
   {
@@ -519,14 +519,14 @@
     "category": "technical/gpu",
     "importance": 0.7,
     "created_at": 1771037649.449347,
-    "access_count": 1,
-    "score": 0.6984568965425851,
+    "access_count": 2,
+    "score": 0.7493606768653117,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "warm"
+    "tier": "hot"
   },
   {
     "id": "bd2f32c5f314",
@@ -535,8 +535,8 @@
     "importance": 0.8,
     "created_at": 1770944439.0948613,
     "access_count": 0,
-    "score": 0.7000374937457399,
-    "tier": "hot"
+    "score": 0.6884684294946353,
+    "tier": "warm"
   },
   {
     "id": "6f12b441b97d",
@@ -545,8 +545,8 @@
     "importance": 0.8,
     "created_at": 1770944439.3028843,
     "access_count": 0,
-    "score": 0.7000375499276927,
-    "tier": "hot"
+    "score": 0.6884684847481054,
+    "tier": "warm"
   },
   {
     "id": "e81ffde16f16",
@@ -555,7 +555,7 @@
     "importance": 0.8,
     "created_at": 1770970138.546251,
     "access_count": 0,
-    "score": 0.7070128265156398,
+    "score": 0.6953284854777001,
     "metadata": {
       "urls": [
         "https://docs.comfy.org/z-image"
@@ -565,7 +565,7 @@
       ],
       "paths": []
     },
-    "tier": "hot"
+    "tier": "warm"
   },
   {
     "id": "24a5d9a12e97",
@@ -573,8 +573,8 @@
     "category": "technical/gpu",
     "importance": 0.8,
     "created_at": 1771074043.887379,
-    "access_count": 0,
-    "score": 0.7359305442626036,
+    "access_count": 1,
+    "score": 0.7961451288072637,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -588,8 +588,8 @@
     "category": "technical/gpu",
     "importance": 0.8,
     "created_at": 1771074044.122165,
-    "access_count": 0,
-    "score": 0.735930610923819,
+    "access_count": 1,
+    "score": 0.7961452009227675,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -604,7 +604,7 @@
     "importance": 0.8,
     "created_at": 1770603278.377375,
     "access_count": 2,
-    "score": 0.7364451842085779,
+    "score": 0.7242744337420794,
     "tier": "hot"
   },
   {
@@ -614,9 +614,10 @@
     "importance": 0.8,
     "created_at": 1770603278.5667691,
     "access_count": 2,
-    "score": 0.7364452380195835,
+    "score": 0.7242744866637191,
     "tier": "hot",
-    "tree_relevance": 1.333308210833677
+    "tree_relevance": 1.333308210833677,
+    "search_method": "keyword-tree"
   },
   {
     "id": "c0ff46b5eb80",
@@ -625,7 +626,7 @@
     "importance": 0.8,
     "created_at": 1770613764.1543171,
     "access_count": 2,
-    "score": 0.7394304623175428,
+    "score": 0.7272103761017371,
     "tier": "hot"
   },
   {
@@ -634,8 +635,8 @@
     "category": "technical/gpu",
     "importance": 0.8,
     "created_at": 1771095636.6020772,
-    "access_count": 0,
-    "score": 0.7420868372933811,
+    "access_count": 1,
+    "score": 0.80280513598602,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -649,8 +650,8 @@
     "category": "technical/gpu",
     "importance": 0.7,
     "created_at": 1770987661.7719114,
-    "access_count": 2,
-    "score": 0.7473992217684373,
+    "access_count": 3,
+    "score": 0.796301394470017,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -665,7 +666,7 @@
     "importance": 0.75,
     "created_at": 1771037649.283633,
     "access_count": 1,
-    "score": 0.7483466270214467,
+    "score": 0.7359791891519041,
     "metadata": {
       "urls": [],
       "commands": [
@@ -683,7 +684,7 @@
     "importance": 0.8,
     "created_at": 1771138829.1911116,
     "access_count": 0,
-    "score": 0.7545564364483941,
+    "score": 0.74208637309823,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -697,8 +698,8 @@
     "category": "technical/gpu",
     "importance": 0.8,
     "created_at": 1771138829.5050104,
-    "access_count": 0,
-    "score": 0.7545565278272582,
+    "access_count": 1,
+    "score": 0.8162951092636286,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -713,9 +714,10 @@
     "importance": 0.9,
     "created_at": 1770603278.2508664,
     "access_count": 1,
-    "score": 0.7594590591467753,
+    "score": 0.7469079733406654,
     "tier": "hot",
-    "tree_relevance": 1.333308210833677
+    "tree_relevance": 1.333308210833677,
+    "search_method": "keyword-tree"
   },
   {
     "id": "b810ad2edbd8",
@@ -723,8 +725,8 @@
     "category": "technical/gpu",
     "importance": 0.8,
     "created_at": 1771160437.3352547,
-    "access_count": 0,
-    "score": 0.7608730702399349,
+    "access_count": 1,
+    "score": 0.8231284775916072,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -738,8 +740,8 @@
     "category": "technical/gpu",
     "importance": 0.8,
     "created_at": 1771160464.5418885,
-    "access_count": 0,
-    "score": 0.7608810566995315,
+    "access_count": 1,
+    "score": 0.8231371175112877,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -753,8 +755,8 @@
     "category": "technical/gpu",
     "importance": 0.8,
     "created_at": 1771160464.5951035,
-    "access_count": 0,
-    "score": 0.7608810723205817,
+    "access_count": 1,
+    "score": 0.8231371344105437,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -771,7 +773,7 @@
     "importance": 0.9,
     "created_at": 1770858030.968056,
     "access_count": 0,
-    "score": 0.761721088491328,
+    "score": 0.74913261959773,
     "tier": "hot"
   },
   {
@@ -780,8 +782,8 @@
     "category": "owner/preferences",
     "importance": 0.9,
     "created_at": 1770858052.078376,
-    "access_count": 0,
-    "score": 0.7617272922880554,
+    "access_count": 1,
+    "score": 0.8240525929551792,
     "tier": "hot"
   },
   {
@@ -791,7 +793,7 @@
     "importance": 0.9,
     "created_at": 1770858052.1621907,
     "access_count": 0,
-    "score": 0.7617273169190437,
+    "score": 0.7491387450922039,
     "tier": "hot"
   },
   {
@@ -800,8 +802,8 @@
     "category": "technical/gpu",
     "importance": 0.85,
     "created_at": 1771041476.1792974,
-    "access_count": 0,
-    "score": 0.7721629977254687,
+    "access_count": 1,
+    "score": 0.835342158409933,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -818,7 +820,7 @@
     "importance": 0.9,
     "created_at": 1770901224.1941369,
     "access_count": 0,
-    "score": 0.7745208006349125,
+    "score": 0.7617207992254006,
     "tier": "hot"
   },
   {
@@ -828,7 +830,7 @@
     "importance": 0.9,
     "created_at": 1770944438.939319,
     "access_count": 0,
-    "score": 0.787542133201153,
+    "score": 0.7745269366993855,
     "tier": "hot"
   },
   {
@@ -837,8 +839,8 @@
     "category": "technical/gpu",
     "importance": 0.7,
     "created_at": 1771182017.9329922,
-    "access_count": 2,
-    "score": 0.8055961502310522,
+    "access_count": 3,
+    "score": 0.8583061356293983,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -853,7 +855,7 @@
     "importance": 0.8,
     "created_at": 1771074043.3392706,
     "access_count": 1,
-    "score": 0.8095234275024158,
+    "score": 0.7961449604495366,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -868,7 +870,7 @@
     "importance": 0.8,
     "created_at": 1771074043.6508107,
     "access_count": 1,
-    "score": 0.8095235248012818,
+    "score": 0.7961450561404073,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -882,8 +884,8 @@
     "category": "technical/gpu",
     "importance": 0.7,
     "created_at": 1770987661.8755405,
-    "access_count": 3,
-    "score": 0.8096825226178636,
+    "access_count": 4,
+    "score": 0.8575553821730109,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -898,7 +900,7 @@
     "importance": 0.95,
     "created_at": 1770629133.8014925,
     "access_count": 1,
-    "score": 0.8096878249753023,
+    "score": 0.7963066410322639,
     "tier": "hot"
   },
   {
@@ -908,7 +910,7 @@
     "importance": 0.8,
     "created_at": 1771095636.3898034,
     "access_count": 1,
-    "score": 0.816295454168343,
+    "score": 0.8028050702361335,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -923,7 +925,7 @@
     "importance": 0.8,
     "created_at": 1771095636.495916,
     "access_count": 1,
-    "score": 0.8162954875859947,
+    "score": 0.8028051031015871,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -938,7 +940,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3982527,
     "access_count": 3,
-    "score": 0.8254490432737377,
+    "score": 0.8118073839293007,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -953,7 +955,7 @@
     "importance": 0.7,
     "created_at": 1771037649.493801,
     "access_count": 3,
-    "score": 0.8254490737019538,
+    "score": 0.8118074138546495,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -968,7 +970,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4981942,
     "access_count": 3,
-    "score": 0.8254490751008301,
+    "score": 0.8118074152303328,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -982,8 +984,8 @@
     "category": "technical/gpu",
     "importance": 0.9,
     "created_at": 1771074043.419154,
-    "access_count": 0,
-    "score": 0.8279217127328078,
+    "access_count": 1,
+    "score": 0.8956631081075259,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -998,7 +1000,7 @@
     "importance": 0.9,
     "created_at": 1771074043.966223,
     "access_count": 0,
-    "score": 0.8279218874743267,
+    "score": 0.8142393610423393,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1013,7 +1015,7 @@
     "importance": 0.85,
     "created_at": 1771241120.197766,
     "access_count": 0,
-    "score": 0.8339878383673172,
+    "score": 0.820205063911109,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1027,8 +1029,8 @@
     "category": "technical/gpu",
     "importance": 0.9,
     "created_at": 1771095636.4439633,
-    "access_count": 0,
-    "score": 0.8348476410240316,
+    "access_count": 1,
+    "score": 0.9031557228856072,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1043,7 +1045,7 @@
     "importance": 0.9,
     "created_at": 1771095636.7073271,
     "access_count": 0,
-    "score": 0.8348477258497616,
+    "score": 0.8210507405926041,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1058,7 +1060,7 @@
     "importance": 0.8,
     "created_at": 1771160437.2831426,
     "access_count": 1,
-    "score": 0.8369603604328555,
+    "score": 0.8231284610382362,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1073,7 +1075,7 @@
     "importance": 0.8,
     "created_at": 1771160464.3298085,
     "access_count": 1,
-    "score": 0.8369690938838402,
+    "score": 0.8231370501570823,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1087,8 +1089,8 @@
     "category": "technical/gpu",
     "importance": 0.9,
     "created_at": 1771117238.729161,
-    "access_count": 0,
-    "score": 0.8418345153439148,
+    "access_count": 1,
+    "score": 0.9107142703580597,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1103,7 +1105,7 @@
     "importance": 0.8,
     "created_at": 1771182017.6626358,
     "access_count": 1,
-    "score": 0.8439577836392753,
+    "score": 0.8300102423834779,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1117,8 +1119,8 @@
     "category": "technical/gpu",
     "importance": 0.9,
     "created_at": 1771138829.3475142,
-    "access_count": 0,
-    "score": 0.848876042220741,
+    "access_count": 1,
+    "score": 0.91833194211542,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1132,14 +1134,15 @@
     "category": "technical/gpu",
     "importance": 0.85,
     "created_at": 1771049139.3538048,
-    "access_count": 1,
-    "score": 0.8518941790602808,
+    "access_count": 2,
+    "score": 0.9139805216294841,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "hot"
+    "tier": "hot",
+    "search_method": "keyword-tree"
   },
   {
     "id": "7b0a557d57fa",
@@ -1147,14 +1150,15 @@
     "category": "technical/gpu",
     "importance": 0.9,
     "created_at": 1771160437.4418483,
-    "access_count": 0,
-    "score": 0.8559822392162094,
+    "access_count": 1,
+    "score": 0.9260195753661253,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "hot"
+    "tier": "hot",
+    "search_method": "keyword-tree"
   },
   {
     "id": "fe3c76c06538",
@@ -1162,14 +1166,15 @@
     "category": "technical/gpu",
     "importance": 0.9,
     "created_at": 1771160437.494436,
-    "access_count": 0,
-    "score": 0.855982256582633,
+    "access_count": 1,
+    "score": 0.9260195941534023,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "hot"
+    "tier": "hot",
+    "search_method": "keyword-tree"
   },
   {
     "id": "82c8a457a6f6",
@@ -1178,7 +1183,7 @@
     "importance": 0.9,
     "created_at": 1771160464.7532754,
     "access_count": 0,
-    "score": 0.8559912585907806,
+    "score": 0.8418448479227263,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1193,7 +1198,7 @@
     "importance": 0.9,
     "created_at": 1771160464.8068938,
     "access_count": 0,
-    "score": 0.855991276297764,
+    "score": 0.8418448653370003,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1208,7 +1213,7 @@
     "importance": 0.9,
     "created_at": 1771160464.860456,
     "access_count": 0,
-    "score": 0.8559912939861658,
+    "score": 0.8418448827330774,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1223,9 +1228,10 @@
     "importance": 0.8,
     "created_at": 1770603278.2826345,
     "access_count": 4,
-    "score": 0.8591860168315795,
+    "score": 0.8449868084724201,
     "tier": "hot",
-    "tree_relevance": 1.333308210833677
+    "tree_relevance": 1.333308210833677,
+    "search_method": "keyword-tree"
   },
   {
     "id": "eb48b7f97251",
@@ -1234,7 +1240,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7097778,
     "access_count": 4,
-    "score": 0.8719657378205726,
+    "score": 0.8575553273264394,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1249,7 +1255,7 @@
     "importance": 0.7,
     "created_at": 1770987661.713866,
     "access_count": 4,
-    "score": 0.8719657391956971,
+    "score": 0.857555328678759,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1264,7 +1270,7 @@
     "importance": 0.7,
     "created_at": 1771182017.7169092,
     "access_count": 3,
-    "score": 0.872729089989859,
+    "score": 0.8583060640709416,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1279,7 +1285,7 @@
     "importance": 0.9,
     "created_at": 1771239283.3715694,
     "access_count": 0,
-    "score": 0.8824203958298601,
+    "score": 0.8678372080038956,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1294,7 +1300,7 @@
     "importance": 0.8,
     "created_at": 1771074043.4960601,
     "access_count": 2,
-    "score": 0.8831165197805249,
+    "score": 0.868521827566889,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1309,7 +1315,7 @@
     "importance": 0.75,
     "created_at": 1770848917.960907,
     "access_count": 4,
-    "score": 0.8855556687236638,
+    "score": 0.8709206662822258,
     "tier": "hot"
   },
   {
@@ -1319,7 +1325,7 @@
     "importance": 0.75,
     "created_at": 1770848917.963316,
     "access_count": 4,
-    "score": 0.8855556695464469,
+    "score": 0.8709206670914913,
     "tier": "hot"
   },
   {
@@ -1329,7 +1335,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9673443,
     "access_count": 4,
-    "score": 0.8855556709225578,
+    "score": 0.8709206684447,
     "tier": "hot"
   },
   {
@@ -1339,7 +1345,7 @@
     "importance": 0.75,
     "created_at": 1770848917.968247,
     "access_count": 4,
-    "score": 0.8855556712307857,
+    "score": 0.8709206687478341,
     "tier": "hot"
   },
   {
@@ -1349,7 +1355,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9691088,
     "access_count": 4,
-    "score": 0.8855556715250849,
+    "score": 0.8709206690372695,
     "tier": "hot"
   },
   {
@@ -1359,7 +1365,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9700267,
     "access_count": 4,
-    "score": 0.885555671838526,
+    "score": 0.8709206693455307,
     "tier": "hot"
   },
   {
@@ -1369,7 +1375,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9754503,
     "access_count": 4,
-    "score": 0.8855556736913152,
+    "score": 0.8709206711676198,
     "tier": "hot"
   },
   {
@@ -1379,7 +1385,7 @@
     "importance": 0.75,
     "created_at": 1770848917.977328,
     "access_count": 4,
-    "score": 0.8855556743326151,
+    "score": 0.8709206717984015,
     "tier": "hot"
   },
   {
@@ -1389,7 +1395,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9782953,
     "access_count": 4,
-    "score": 0.8855556746629176,
+    "score": 0.8709206721231653,
     "tier": "hot"
   },
   {
@@ -1399,7 +1405,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9793704,
     "access_count": 4,
-    "score": 0.8855556750300381,
+    "score": 0.8709206724842184,
     "tier": "hot"
   },
   {
@@ -1409,7 +1415,7 @@
     "importance": 0.8,
     "created_at": 1771117238.9972398,
     "access_count": 2,
-    "score": 0.8979569092339056,
+    "score": 0.8831169595579816,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1424,7 +1430,7 @@
     "importance": 0.9,
     "created_at": 1770621651.5485682,
     "access_count": 3,
-    "score": 0.9039273244450711,
+    "score": 0.8889887056009049,
     "tier": "hot"
   },
   {
@@ -1434,7 +1440,7 @@
     "importance": 0.9,
     "created_at": 1770858052.1201756,
     "access_count": 2,
-    "score": 0.9140727654774276,
+    "score": 0.8989664795294029,
     "tier": "hot"
   },
   {
@@ -1444,7 +1450,7 @@
     "importance": 0.8,
     "created_at": 1770603278.5991645,
     "access_count": 5,
-    "score": 0.920556559018443,
+    "score": 0.9053431196325765,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -1455,7 +1461,7 @@
     "importance": 0.8,
     "created_at": 1771182017.825397,
     "access_count": 2,
-    "score": 0.9206812763233682,
+    "score": 0.9054657758158209,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1470,7 +1476,7 @@
     "importance": 0.8,
     "created_at": 1771182017.8797367,
     "access_count": 2,
-    "score": 0.920681295624702,
+    "score": 0.905465794798091,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1485,7 +1491,7 @@
     "importance": 0.9,
     "created_at": 1770879637.8976207,
     "access_count": 2,
-    "score": 0.9217168079436326,
+    "score": 0.9064841938784922,
     "tier": "hot"
   },
   {
@@ -1495,7 +1501,7 @@
     "importance": 0.95,
     "created_at": 1771242087.408154,
     "access_count": 0,
-    "score": 0.9324519361786755,
+    "score": 0.9170419096328959,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1510,7 +1516,7 @@
     "importance": 0.75,
     "created_at": 1770987661.4968448,
     "access_count": 4,
-    "score": 0.9342489280548981,
+    "score": 0.918809203793407,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1530,7 +1536,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5010297,
     "access_count": 4,
-    "score": 0.9342489295631349,
+    "score": 0.9188092052767183,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1550,7 +1556,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5811749,
     "access_count": 4,
-    "score": 0.9342489584501136,
+    "score": 0.9188092336863007,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1568,7 +1574,7 @@
     "importance": 0.75,
     "created_at": 1770987661.585305,
     "access_count": 4,
-    "score": 0.9342489599384999,
+    "score": 0.9188092351500048,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1584,7 +1590,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7264295,
     "access_count": 5,
-    "score": 0.9342490108046121,
+    "score": 0.9188092851754859,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1599,7 +1605,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7308817,
     "access_count": 5,
-    "score": 0.9342490124091819,
+    "score": 0.9188092867535379,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1614,7 +1620,7 @@
     "importance": 0.8,
     "created_at": 1770858031.0936832,
     "access_count": 4,
-    "score": 0.947919622720642,
+    "score": 0.9322539717817484,
     "tier": "hot"
   },
   {
@@ -1624,7 +1630,7 @@
     "importance": 0.8,
     "created_at": 1770858031.1349287,
     "access_count": 4,
-    "score": 0.9479196378043339,
+    "score": 0.9322539866160764,
     "tier": "hot"
   },
   {
@@ -1634,7 +1640,7 @@
     "importance": 0.75,
     "created_at": 1770848917.976349,
     "access_count": 5,
-    "score": 0.9488096507088217,
+    "score": 0.9331292908562865,
     "tier": "hot"
   },
   {
@@ -1644,7 +1650,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3265023,
     "access_count": 5,
-    "score": 0.9524411774025934,
+    "score": 0.9367008016707807,
     "metadata": {
       "urls": [
         "cs.AI"
@@ -1661,7 +1667,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3307042,
     "access_count": 5,
-    "score": 0.9524411789463322,
+    "score": 0.9367008031890931,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1676,7 +1682,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3432972,
     "access_count": 5,
-    "score": 0.9524411835734309,
+    "score": 0.9367008077397229,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1691,7 +1697,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4890444,
     "access_count": 5,
-    "score": 0.9524412371286666,
+    "score": 0.9367008604098861,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1706,7 +1712,7 @@
     "importance": 0.8,
     "created_at": 1770879637.2224507,
     "access_count": 4,
-    "score": 0.9558542185111266,
+    "score": 0.940057437669341,
     "tier": "hot"
   },
   {
@@ -1716,7 +1722,7 @@
     "importance": 0.8,
     "created_at": 1770879637.515192,
     "access_count": 4,
-    "score": 0.9558543264654341,
+    "score": 0.940057543839558,
     "tier": "hot"
   },
   {
@@ -1726,7 +1732,7 @@
     "importance": 0.8,
     "created_at": 1770879637.6592467,
     "access_count": 4,
-    "score": 0.9558543795884317,
+    "score": 0.94005759608454,
     "tier": "hot"
   },
   {
@@ -1736,7 +1742,7 @@
     "importance": 0.8,
     "created_at": 1770879638.046249,
     "access_count": 4,
-    "score": 0.9558545223033701,
+    "score": 0.9400577364409212,
     "tier": "hot"
   },
   {
@@ -1746,7 +1752,7 @@
     "importance": 0.8,
     "created_at": 1770879638.099425,
     "access_count": 4,
-    "score": 0.9558545419130237,
+    "score": 0.940057755726499,
     "tier": "hot"
   },
   {
@@ -1756,7 +1762,7 @@
     "importance": 0.8,
     "created_at": 1770901223.9106195,
     "access_count": 4,
-    "score": 0.9638480020158787,
+    "score": 0.9479191131143503,
     "tier": "hot"
   },
   {
@@ -1766,7 +1772,7 @@
     "importance": 0.8,
     "created_at": 1770922835.0454159,
     "access_count": 4,
-    "score": 0.9719178039879873,
+    "score": 0.9558555507190458,
     "tier": "hot"
   },
   {
@@ -1776,7 +1782,7 @@
     "importance": 0.8,
     "created_at": 1770922837.8350434,
     "access_count": 4,
-    "score": 0.9719188500102403,
+    "score": 0.9558565794543695,
     "tier": "hot"
   },
   {
@@ -1786,7 +1792,7 @@
     "importance": 0.8,
     "created_at": 1770922857.5116065,
     "access_count": 4,
-    "score": 0.971926228133169,
+    "score": 0.9558638356436846,
     "tier": "hot"
   },
   {
@@ -1796,7 +1802,7 @@
     "importance": 0.8,
     "created_at": 1770922872.2013025,
     "access_count": 4,
-    "score": 0.9719317363665374,
+    "score": 0.9558692528460635,
     "tier": "hot"
   },
   {
@@ -1806,7 +1812,7 @@
     "importance": 0.8,
     "created_at": 1771117238.8912566,
     "access_count": 3,
-    "score": 0.9727866118880939,
+    "score": 0.9567100003960992,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1821,7 +1827,7 @@
     "importance": 0.8,
     "created_at": 1770944439.7650976,
     "access_count": 4,
-    "score": 0.9800527446458821,
+    "score": 0.963856050504755,
     "tier": "hot"
   },
   {
@@ -1831,7 +1837,7 @@
     "importance": 0.95,
     "created_at": 1771162554.4913397,
     "access_count": 1,
-    "score": 0.9947025933591895,
+    "score": 0.9782637906987814,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1847,7 +1853,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7180986,
     "access_count": 6,
-    "score": 0.9965322749842802,
+    "score": 0.9800632343658567,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1862,7 +1868,7 @@
     "importance": 0.7,
     "created_at": 1770987661.73495,
     "access_count": 6,
-    "score": 0.9965322814628736,
+    "score": 0.9800632407372923,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1877,7 +1883,7 @@
     "importance": 0.8,
     "created_at": 1771182017.770818,
     "access_count": 3,
-    "score": 0.9974046950085799,
+    "score": 0.980921236471874,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1892,7 +1898,7 @@
     "importance": 0.8,
     "created_at": 1770858051.8253617,
     "access_count": 5,
-    "score": 1.015636290560534,
+    "score": 0.9988515303046339,
     "tier": "hot"
   },
   {
@@ -1902,7 +1908,7 @@
     "importance": 0.8,
     "created_at": 1770879637.7547972,
     "access_count": 5,
-    "score": 1.0241297301662105,
+    "score": 1.0072046043594134,
     "tier": "hot"
   },
   {
@@ -1912,7 +1918,7 @@
     "importance": 0.8,
     "created_at": 1770603278.2195358,
     "access_count": 7,
-    "score": 1.043297280743577,
+    "score": 1.0260553852976702,
     "tier": "hot",
     "tree_relevance": 0.6666538966332228
   },
@@ -1923,7 +1929,7 @@
     "importance": 0.85,
     "created_at": 1771161294.243141,
     "access_count": 3,
-    "score": 1.0513034287523901,
+    "score": 1.0339292209067097,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1942,7 +1948,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7222998,
     "access_count": 7,
-    "score": 1.0588155438854898,
+    "score": 1.0413171881998857,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1957,7 +1963,7 @@
     "importance": 0.9,
     "created_at": 1771037807.2176938,
     "access_count": 3,
-    "score": 1.0613562480185175,
+    "score": 1.0438159037685517,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1974,7 +1980,7 @@
     "importance": 0.9,
     "created_at": 1770858030.757867,
     "access_count": 4,
-    "score": 1.0664094373919153,
+    "score": 1.0487855823685073,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -1985,7 +1991,7 @@
     "importance": 0.9,
     "created_at": 1770858030.926781,
     "access_count": 4,
-    "score": 1.0664095068867292,
+    "score": 1.0487856507148257,
     "tier": "hot"
   },
   {
@@ -1994,8 +2000,8 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1770603278.50327,
-    "access_count": 10,
-    "score": 1.0739826124456426,
+    "access_count": 11,
+    "score": 1.1090452805090614,
     "tier": "hot"
   },
   {
@@ -2005,7 +2011,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9745195,
     "access_count": 7,
-    "score": 1.0753176033710985,
+    "score": 1.057546528883724,
     "tier": "hot"
   },
   {
@@ -2015,7 +2021,7 @@
     "importance": 0.9,
     "created_at": 1770879637.1740577,
     "access_count": 4,
-    "score": 1.0753359757428014,
+    "score": 1.057564597627192,
     "tier": "hot"
   },
   {
@@ -2025,7 +2031,7 @@
     "importance": 0.9,
     "created_at": 1770879637.8497229,
     "access_count": 4,
-    "score": 1.0753362560539954,
+    "score": 1.057564873305768,
     "tier": "hot"
   },
   {
@@ -2035,7 +2041,7 @@
     "importance": 0.9,
     "created_at": 1770901223.8614366,
     "access_count": 4,
-    "score": 1.0843289816879627,
+    "score": 1.066408982013265,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -2046,7 +2052,7 @@
     "importance": 0.9,
     "created_at": 1770901223.957171,
     "access_count": 4,
-    "score": 1.0843290217369685,
+    "score": 1.0664090214004074,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -2057,7 +2063,7 @@
     "importance": 0.9,
     "created_at": 1770901224.0043564,
     "access_count": 4,
-    "score": 1.0843290414760682,
+    "score": 1.0664090408133897,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -2068,7 +2074,7 @@
     "importance": 0.8,
     "created_at": 1770879637.7071779,
     "access_count": 6,
-    "score": 1.092405025438316,
+    "score": 1.0743515582424914,
     "tier": "hot"
   },
   {
@@ -2078,7 +2084,7 @@
     "importance": 0.95,
     "created_at": 1770630505.1354907,
     "access_count": 5,
-    "score": 1.1047040659278422,
+    "score": 1.0864473404909376,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -2089,7 +2095,7 @@
     "importance": 0.9,
     "created_at": 1770606835.0856192,
     "access_count": 6,
-    "score": 1.106184627317295,
+    "score": 1.0879034336053797,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -2100,7 +2106,7 @@
     "importance": 0.9,
     "created_at": 1771161856.934242,
     "access_count": 3,
-    "score": 1.113386483095091,
+    "score": 1.0949862689977727,
     "metadata": {
       "urls": [],
       "commands": [],

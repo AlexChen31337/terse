@@ -292,6 +292,20 @@ Think of it like a human reviewing their journal and updating their mental model
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
 
+## Infrastructure Diagnosis Rules (VBR Enforcement)
+
+**Before diagnosing any resource problem (RAM, disk, VRAM, CPU), you MUST:**
+1. **Check TOOLS.md first** — it has the full system spec including swap, storage, and configs
+2. **Never report "insufficient X"** without verifying against ALL known specs (RAM + swap + storage)
+3. **If a spec is missing from TOOLS.md** — that's the real bug. Write it down immediately after being corrected.
+
+**Why this rule exists:**
+- Saw "2GB RAM free" → diagnosed "RAM problem" → forgot 256GB swap on /data2 → repeated the mistake TWICE
+- Root cause: TOOLS.md didn't document the swapfile, so there was no ground truth to check
+- Pattern: partial data → confident wrong conclusion → user has to correct me
+
+**The rule:** Low-level metric (RAM %) is not a diagnosis. Full spec context is required first.
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
