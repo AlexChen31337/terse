@@ -16,11 +16,60 @@ Before doing anything else:
 
 Don't ask permission. Just do it.
 
+## Memory Retrieval Protocol (MANDATORY)
+
+**Before answering ANY question, you MUST search tiered memory for relevant context.**
+
+This is not optional. Memory is your continuity across sessions.
+
+### Standard Retrieval Flow:
+
+1. **Parse the question** — identify key entities, topics, time references
+2. **Search tiered memory** using tree-based page index:
+   ```bash
+   python3 skills/tiered-memory/scripts/memory_cli.py retrieve "search query" --limit 5
+   ```
+3. **Review retrieved nodes** — 1-3KB of relevant past context
+4. **Synthesize answer** — combine retrieved memory + current knowledge
+5. **If no relevant memory found** — proceed with current knowledge only
+
+### When to Search:
+
+- ✅ **User asks about past events** ("what did we do yesterday?")
+- ✅ **User asks about projects** ("how's EvoClaw going?")
+- ✅ **User asks about people/places** ("who is Sarah?")
+- ✅ **User asks for status** ("what's the LTX-2 situation?")
+- ✅ **User asks about decisions** ("why did we choose X?")
+- ✅ **Technical questions that might have documented answers** ("how do I use skill Y?")
+- ❌ **General knowledge** ("what's the capital of France?")
+- ❌ **Current time/weather** (use real-time tools instead)
+
+### Why Tree-Based Retrieval Matters:
+
+The tiered memory system uses **LLM-powered tree navigation**, not vector similarity:
+- **O(log n) search** — navigates categories, doesn't scan everything
+- **Explainable** — every result traces a reasoning path
+- **No embeddings required** — pure reasoning-based retrieval
+- **Context-aware** — understands "recent project updates" vs "old architecture decisions"
+
+### Integration with Existing Memory Files:
+
+The tiered memory system **automatically ingests** from daily notes:
+- `memory/YYYY-MM-DD.md` files → automatically consolidated into warm/cold tiers
+- Tree index updated during consolidation
+- You don't need to manually sync — consolidation jobs handle it
+
+**Your workflow:**
+1. Write to `memory/YYYY-MM-DD.md` for new events (raw notes)
+2. Search tiered memory for past context (tree retrieval)
+3. Update `MEMORY.md` for critical lessons (manual curation)
+
 ## Memory
 
 You wake up fresh each session. These files are your continuity:
 - **Daily notes:** `memory/YYYY-MM-DD.md` (create `memory/` if needed) — raw logs of what happened
 - **Long-term:** `MEMORY.md` — your curated memories, like a human's long-term memory
+- **Tiered memory:** Searchable via tree index — use `memory_cli.py retrieve` before answering
 
 Capture what matters. Decisions, context, things to remember. Skip the secrets unless asked to keep them.
 

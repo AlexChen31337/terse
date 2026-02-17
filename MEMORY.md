@@ -64,6 +64,10 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - **[work]** Coverage threshold 85% minimum, 90% ideal — Bowen explicit
 - **[tools]** Use uv not pip on GPU server — Bowen explicit
 - **[meta]** Eat your own dogfood — use skills you build
+- **[routing]** GLM models must use anthropic-proxy-4 or anthropic-proxy-6 — Bowen explicit
+- **[verification]** Health checks must verify routing compliance, not just model presence
+- **[memory]** Always search tiered memory via tree index before answering questions — Bowen explicit
+- **[workflow]** Memory retrieval is mandatory, not optional — use page index approach
 
 ---
-*Generated: 2026-02-17 00:06*
+*Generated: 2026-02-17 08:06*
