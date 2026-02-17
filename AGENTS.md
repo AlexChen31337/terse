@@ -204,11 +204,14 @@ Skills provide your tools. When you need one, check its `SKILL.md`. Keep local n
 - Automatic fallback chains if primary model fails
 
 **Tier guidelines:**
-- **SIMPLE** (monitoring, checks, summaries) → GLM-4.7, cheap models
+- **SIMPLE** (monitoring, checks, summaries) → `ollama/glm-4.7-flash` (FREE local), fallback: GLM-4.7 via proxy
 - **MEDIUM** (code fixes, research, patches) → DeepSeek V3.2, Llama 3.3 70B
 - **COMPLEX** (features, architecture, debugging) → Sonnet 4.5, Gemini 3 Pro
 - **REASONING** (proofs, formal logic) → DeepSeek R1 32B, QwQ 32B
 - **CRITICAL** (security, production) → Opus 4.6
+
+⚠️ **MANDATORY: Always set `model` in cron job payloads.** No model = Sonnet default = expensive waste.
+Sonnet must NEVER be used for monitoring or simple tasks.
 
 **Don't guess** — let the router classify. It uses weighted 15-dimension scoring.
 

@@ -1,5 +1,5 @@
 {
-  "_comment": "Intelligent Router - Auto-discovered from OpenClaw gateway config. Updated 2026-02-14 with REASONING tier, fallback chains, and agentic detection.",
+  "_comment": "Intelligent Router - Auto-discovered from OpenClaw gateway config. Updated 2026-02-18 with ollama/glm-4.7-flash local model (free, zero cost).",
   "models": [
     {
       "id": "nvidia-nim/deepseek-ai/deepseek-r1-distill-qwen-32b",
@@ -36,6 +36,19 @@
       "capabilities": ["text", "reasoning", "chain-of-thought"],
       "agentic": false,
       "notes": "Secondary reasoning fallback. Full DeepSeek Reasoner model."
+    },
+    {
+      "id": "ollama/glm-4.7-flash",
+      "alias": "LocalGLM47Flash",
+      "tier": "SIMPLE",
+      "provider": "ollama-gpu-server",
+      "host": "http://10.0.0.44:11434",
+      "input_cost_per_m": 0.00,
+      "output_cost_per_m": 0.00,
+      "context_window": 32768,
+      "capabilities": ["text", "reasoning", "thinking"],
+      "agentic": false,
+      "notes": "Free local GLM-4.7-flash (29.9B Q4_K_M) on GPU server. Zero cost. Best for monitoring, checks, summaries. Needs think:false for simple tasks."
     },
     {
       "id": "anthropic-proxy-4/glm-4.7",
@@ -208,11 +221,11 @@
   ],
   "routing_rules": {
     "SIMPLE": {
-      "primary": "anthropic-proxy-4/glm-4.7",
+      "primary": "ollama/glm-4.7-flash",
       "fallback_chain": [
+        "anthropic-proxy-4/glm-4.7",
         "anthropic-proxy-6/glm-4.7",
-        "anthropic-proxy-6/glm-4.5-air",
-        "ollama/qwen2.5:32b"
+        "anthropic-proxy-6/glm-4.5-air"
       ],
       "use_for": ["monitoring", "status checks", "summarization", "simple API calls", "memory consolidation", "tweet monitoring", "price alerts"]
     },
