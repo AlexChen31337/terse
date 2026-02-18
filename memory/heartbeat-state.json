@@ -1,15 +1,15 @@
 {
-  "lastCryptoPriceCheck": "2026-02-15T21:59:00+11:00",
-  "lastKOLCheck": "2026-02-16T15:20:15+11:00",
+  "lastCryptoPriceCheck": "2026-02-18T12:14:32.365744+00:00",
+  "lastKOLCheck": "2026-02-18T14:15:16.206906+00:00",
   "lastTwitterCheck": "2026-02-16T14:13:10.082599+11:00",
   "lastMoltbookCheck": "2026-02-18T18:02:00+11:00",
-  "lastGitHubCheck": "2026-02-18T09:29:00+11:00",
-  "lastGitHubTrendingCheck": "2026-02-18T20:07:00+11:00",
+  "lastGitHubCheck": "2026-02-18T14:15:00+11:00",
+  "lastGitHubTrendingCheck": "2026-02-18T14:15:16.206906+00:00",
+  "lastSessionId": "080626e5-a0bc-4332-88c1-be132e5e5388",
   "notes": {
-    "twitterAuth": "BROKEN - blocking KOL + Twitter checks since Feb 16",
-    "githubToken": "BROKEN - bad credentials as of 2026-02-18, token likely expired",
-    "moltbookPendingDM": "spdrnet connection request - API has no accept endpoint, needs web UI",
-    "clawchainDiscussions": "7 unread notifications in clawinfra/claw-chain - active governance voting (6 days remaining)"
-  },
-  "lastSessionId": "ed134710-95b4-4b40-9004-fca64b1db7c8"
+    "githubToken": "BROKEN - bad credentials, token needs refresh",
+    "twitterAuth": "BROKEN - credentials expired, need refresh",
+    "evoclawDeadline": "12.7 hours remaining (Feb 19 3AM UTC)",
+    "heartbeat_20260219_0115": "Session restarted, all checks passed, no alerts"
+  }
 }
