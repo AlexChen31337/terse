@@ -1,25 +1,15 @@
 {
   "lastCryptoPriceCheck": "2026-02-15T21:59:00+11:00",
-  "lastPrices": {
-    "btc": 70423,
-    "eth": 2062.18,
-    "sol": 89.53,
-    "doge": 0.113529,
-    "xrp": 1.59
-  },
   "lastKOLCheck": "2026-02-16T15:20:15+11:00",
   "lastTwitterCheck": "2026-02-16T14:13:10.082599+11:00",
-  "lastMoltbookCheck": "2026-02-17T22:30:00+11:00",
-  "lastGitHubCheck": "2026-02-17T09:50:00+11:00",
-  "lastGitHubTrendingCheck": "2026-02-16T13:17:28.570999+11:00",
+  "lastMoltbookCheck": "2026-02-18T18:02:00+11:00",
+  "lastGitHubCheck": "2026-02-18T09:29:00+11:00",
+  "lastGitHubTrendingCheck": "2026-02-18T20:07:00+11:00",
   "notes": {
-    "twitterAuth": "BROKEN - blocking KOL + Twitter checks (18h overdue)",
-    "moltbookAuth": "WORKING - checked at 08:50 AM, no new DMs",
-    "githubToken": "MISSING - memory/github-token.txt not found",
-    "evoclawConfigFix": "PENDING - Bowen requested GLM-4.7 routing fix (proxy-4/6)",
-    "ltx2Download": "IN-PROGRESS - temporal upscaler 25% at 09:30 (~10 min remaining)",
-    "lastHeartbeatFindings": "22:30 - Moltbook OK (no DMs, feed quiet). LTX-2 job 87c9f660 still running. Twitter/KOL blocked by auth.",
-    "ltx2Status": "job 87c9f660 running - Gemma loading at 200-400it/s (fresh restart, smart memory). Should complete ~21:55 AEDT",
-    "comfyuiPID": "52093 - default smart memory (no --disable-smart-memory)"
-  }
+    "twitterAuth": "BROKEN - blocking KOL + Twitter checks since Feb 16",
+    "githubToken": "BROKEN - bad credentials as of 2026-02-18, token likely expired",
+    "moltbookPendingDM": "spdrnet connection request - API has no accept endpoint, needs web UI",
+    "clawchainDiscussions": "7 unread notifications in clawinfra/claw-chain - active governance voting (6 days remaining)"
+  },
+  "lastSessionId": "ed134710-95b4-4b40-9004-fca64b1db7c8"
 }
