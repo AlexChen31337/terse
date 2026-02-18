@@ -1,5 +1,5 @@
 {
-  "_comment": "Intelligent Router - Auto-discovered from OpenClaw gateway config. Updated 2026-02-18 with ollama/glm-4.7-flash local model (free, zero cost).",
+  "_comment": "Intelligent Router - Updated 2026-02-18. GLM-4.7-flash: SIMPLE primary + MEDIUM fallback (free local MoE, 29.9B, agentic, bilingual, tool-calling). Evaluated 2026-02-18.",
   "models": [
     {
       "id": "nvidia-nim/deepseek-ai/deepseek-r1-distill-qwen-32b",
@@ -46,9 +46,9 @@
       "input_cost_per_m": 0.00,
       "output_cost_per_m": 0.00,
       "context_window": 32768,
-      "capabilities": ["text", "reasoning", "thinking"],
-      "agentic": false,
-      "notes": "Free local GLM-4.7-flash (29.9B Q4_K_M) on GPU server. Zero cost. Best for monitoring, checks, summaries. Needs think:false for simple tasks."
+      "capabilities": ["text", "code", "reasoning", "thinking", "function-calling", "bilingual"],
+      "agentic": true,
+      "notes": "Free local GLM-4.7-flash (29.9B Q4_K_M MoE) on GPU server. Zero cost. Primary SIMPLE tier + MEDIUM fallback. MoE = fast for size. Strong ZH/EN bilingual, tool calling, code gen (≈ Llama 3.3 70B quality). ALWAYS pass think:false for SIMPLE tasks to avoid endless CoT. 21GB VRAM on RTX 3090."
     },
     {
       "id": "anthropic-proxy-4/glm-4.7",
@@ -233,7 +233,8 @@
       "primary": "nvidia-nim/deepseek-ai/deepseek-v3.2",
       "fallback_chain": [
         "nvidia-nim/meta/llama-3.3-70b-instruct",
-        "ollama/llama3.3"
+        "ollama/llama3.3",
+        "ollama/glm-4.7-flash"
       ],
       "use_for": ["code fixes", "lint patches", "research", "documentation", "single-file changes", "test writing"]
     },
