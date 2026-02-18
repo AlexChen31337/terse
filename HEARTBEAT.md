@@ -1,5 +1,21 @@
 # HEARTBEAT.md
 
+## 🔁 Session Wake Detection (ALWAYS RUN FIRST — every heartbeat)
+Detect if this is a new session (reset/restart) and hydrate if so:
+1. Run: `bash memory/scripts/check_new_session.sh`
+   - Output format: `CURRENT_ID|STORED_ID`
+   - Exit 0 = same session, Exit 1 = new session
+2. If NEW session (exit 1):
+   a. **Run hydration immediately:**
+      - Read `memory/$(date +%Y-%m-%d).md` (today's daily notes)
+      - Read `memory/$(date -d 'yesterday' +%Y-%m-%d 2>/dev/null || date -v-1d +%Y-%m-%d).md` (yesterday)
+      - Search tiered memory: `python3 skills/tiered-memory/scripts/memory_cli.py retrieve --query "recent projects decisions events" --limit 5`
+      - Synthesize key context from MEMORY.md + retrieved results
+   b. Update session ID: `python3 memory/scripts/update_session_id.py <CURRENT_ID>`
+   c. Write a brief "Session restarted, context reloaded" note to today's daily file
+   d. Notify Bowen: "🔄 Session reset detected — I've reloaded context. Here's what I remember: [brief summary]"
+3. If SAME session: continue to other checks below.
+
 ## GitHub Trending - Coding/Technical Models (every 12 hours)
 Watch for:
 - Open-source models good at technical data analysis
