@@ -13,6 +13,35 @@ OpenClaw's built-in `heartbeat` runs exclusively in the main session. Every hear
 
 **Secondary bug**: When heartbeat returns `HEARTBEAT_OK`, OpenClaw strips it but still tries to forward an empty string to messaging platforms → `sendMessage error: message text is empty` spam. Unfixable from agent side.
 
+## One-Shot Install (recommended)
+
+Applies all protections automatically in a single command:
+
+```bash
+python3 skills/session-guard/scripts/install.py
+```
+
+This runs all 5 steps:
+1. **Config patch** — disables built-in heartbeat (`every: 0m`), sets `compaction: default`
+2. **Isolated heartbeat cron** — 1h interval, reads HEARTBEAT.md in isolated session
+3. **Session wake monitor cron** — 5min interval, detects resets and triggers hydration
+4. **Session size watcher cron** — 15min interval, restarts gateway if session exceeds 8MB + idle
+5. **Init session ID** — stores current session ID for wake detection baseline
+
+Options:
+```bash
+python3 install.py --dry-run                        # preview all changes, no writes
+python3 install.py --heartbeat-model anthropic-proxy-4/glm-4.7  # model for heartbeat cron
+python3 install.py --monitor-model nvidia-nim/qwen/qwen2.5-7b-instruct  # model for monitors
+python3 install.py --crit-mb 6                      # lower size threshold
+python3 install.py --skip-crons                     # config patch only
+python3 install.py --workspace /custom/path
+```
+
+Auto-detects gateway URL and token from `~/.openclaw/openclaw.json`. Skips any crons that already exist (idempotent).
+
+---
+
 ## Quick Audit
 
 Run to detect issues:
@@ -157,6 +186,7 @@ python3 hydrate.py --workspace /path    # explicit workspace (default: auto-dete
 | `scripts/update_session_id.py` | Store new session ID. Args: `<id>` [state_file] |
 | `scripts/hydrate.py` | Load recent daily notes + tiered memory + MEMORY.md into a summary. Args: `--days`, `--memory-limit`, `--workspace` |
 | `scripts/size_watcher.py` | Monitor session size, restart gateway if over threshold + idle. Args: `--warn-mb`, `--crit-mb`, `--idle-minutes`, `--dry-run` |
+| `scripts/install.py` | **One-shot installer** — applies all 5 protections automatically. Args: `--dry-run`, `--skip-crons`, `--crit-mb`, `--heartbeat-model`, `--monitor-model`, `--workspace` |
 
 State file default: `~/clawd/memory/heartbeat-state.json` (key: `lastSessionId`).
 Override via `GUARD_STATE_FILE` env var or script argument.
