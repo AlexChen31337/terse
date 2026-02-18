@@ -110,6 +110,44 @@ python3 skills/session-guard/scripts/audit.py --warn-mb 3
 
 Thresholds: warn at 5MB, critical at 10MB. A healthy active session stays under 2MB with `compaction: "default"`.
 
+## Hydration: Re-inject Context After Session Reset
+
+When a session reset is detected, run hydration to rebuild context:
+
+```bash
+python3 skills/session-guard/scripts/hydrate.py
+```
+
+This loads and concatenates:
+1. **Daily notes** — last 2 days from `memory/YYYY-MM-DD.md`
+2. **Tiered memory** — top-3 relevant nodes via tree search
+3. **MEMORY.md** — first 2000 chars of long-term memory
+
+Output is a structured markdown summary. Read it, synthesize the key context, then notify the user that the session was reset and you've reloaded context.
+
+**Options:**
+```bash
+python3 hydrate.py --days 3              # load 3 days of notes (default: 2)
+python3 hydrate.py --memory-limit 5     # fetch 5 tiered memory results (default: 3)
+python3 hydrate.py --workspace /path    # explicit workspace (default: auto-detect ~/clawd)
+```
+
+**Full wake detection + hydration flow (used in Session Wake Monitor cron):**
+
+```
+1. bash skills/session-guard/scripts/check_session.sh
+   → exit 0: same session, skip
+   → exit 1: NEW SESSION — proceed with hydration
+
+2. python3 skills/session-guard/scripts/hydrate.py > /tmp/hydration.txt
+   cat /tmp/hydration.txt  # read and synthesize
+
+3. python3 skills/session-guard/scripts/update_session_id.py <CURRENT_ID>
+
+4. Notify user (via message tool in isolated sessions):
+   "🔄 Session reset detected — context reloaded. [brief summary of key projects/state]"
+```
+
 ## Scripts
 
 | Script | Purpose |
@@ -117,6 +155,7 @@ Thresholds: warn at 5MB, critical at 10MB. A healthy active session stays under 
 | `scripts/audit.py` | Audit config + session sizes. Args: `--config`, `--sessions-dir`, `--warn-mb`, `--json` |
 | `scripts/check_session.sh` | Detect session ID change. Exit 0=same, 1=new, 2=error. Args: [state_file] [sessions_dir] |
 | `scripts/update_session_id.py` | Store new session ID. Args: `<id>` [state_file] |
+| `scripts/hydrate.py` | Load recent daily notes + tiered memory + MEMORY.md into a summary. Args: `--days`, `--memory-limit`, `--workspace` |
 
 State file default: `~/clawd/memory/heartbeat-state.json` (key: `lastSessionId`).
 Override via `GUARD_STATE_FILE` env var or script argument.
