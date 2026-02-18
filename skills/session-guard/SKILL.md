@@ -156,9 +156,50 @@ python3 hydrate.py --workspace /path    # explicit workspace (default: auto-dete
 | `scripts/check_session.sh` | Detect session ID change. Exit 0=same, 1=new, 2=error. Args: [state_file] [sessions_dir] |
 | `scripts/update_session_id.py` | Store new session ID. Args: `<id>` [state_file] |
 | `scripts/hydrate.py` | Load recent daily notes + tiered memory + MEMORY.md into a summary. Args: `--days`, `--memory-limit`, `--workspace` |
+| `scripts/size_watcher.py` | Monitor session size, restart gateway if over threshold + idle. Args: `--warn-mb`, `--crit-mb`, `--idle-minutes`, `--dry-run` |
 
 State file default: `~/clawd/memory/heartbeat-state.json` (key: `lastSessionId`).
 Override via `GUARD_STATE_FILE` env var or script argument.
+
+## Active Size Enforcement (size_watcher.py)
+
+Proactively restarts the gateway before the session corrupts.
+
+```bash
+python3 skills/session-guard/scripts/size_watcher.py
+python3 skills/session-guard/scripts/size_watcher.py --crit-mb 8 --idle-minutes 5
+python3 skills/session-guard/scripts/size_watcher.py --dry-run  # check only
+```
+
+**How it works:**
+1. Finds the most-recently-modified active session file (= current main session)
+2. If size < `--warn-mb` (default 5MB): exits `OK`
+3. If size between warn and `--crit-mb` (default 8MB): logs `WARN`, no action
+4. If size ≥ crit AND session idle ≥ `--idle-minutes` (default 5min): runs `openclaw gateway restart`
+5. After restart: Session Wake Monitor detects new session → runs `hydrate.py` → notifies user
+
+**Idle check**: Only restarts if the session file hasn't been written to in `--idle-minutes`, avoiding mid-conversation interruption.
+
+**Add as a cron job (every 15 min, cheap model):**
+
+```python
+cron(action="add", job={
+    "name": "Session Size Watcher",
+    "schedule": {"kind": "every", "everyMs": 900000},
+    "payload": {
+        "kind": "agentTurn",
+        "model": "nvidia-nim/qwen/qwen2.5-7b-instruct",
+        "message": """Run: python3 skills/session-guard/scripts/size_watcher.py --crit-mb 8 --idle-minutes 5
+If RESTARTED: send Telegram alert via message tool: '🔄 Session size limit hit — gateway restarted. Hydration will follow.'
+If RESTART_FAILED: send Telegram alert: '⚠️ Session bloat critical but restart failed. Check session-guard.log.'
+If OK/WARN/SKIPPED: reply DONE.""",
+        "timeoutSeconds": 60
+    },
+    "sessionTarget": "isolated"
+})
+```
+
+Logs to `~/clawd/memory/session-guard.log` for audit trail.
 
 ## Known OpenClaw Bugs (cannot fix from agent side)
 
