@@ -56,55 +56,58 @@ def load_router_config() -> Dict[str, Any]:
 
 def test_model_via_openclaw(provider: str, model: str) -> Dict[str, Any]:
     """
-    Test a model by running it through openclaw CLI.
+    Test a model by checking if it exists in the OpenClaw config.
     Returns: {available: bool, latency: float, error: str | None}
     """
-    test_prompt = "echo: hello"
-
     start = time.time()
     try:
-        # Run model test via openclaw
-        result = subprocess.run(
-            [
-                "openclaw", "models", "test",
-                "--provider", provider,
-                "--model", model,
-                "--prompt", test_prompt
-            ],
-            capture_output=True,
-            text=True,
-            timeout=30
-        )
+        # Check if model exists in config
+        config = load_openclaw_config()
+        providers = config.get("models", {}).get("providers", {})
+
+        if provider not in providers:
+            return {
+                "available": False,
+                "latency": round(time.time() - start, 3),
+                "error": f"Provider not found: {provider}",
+                "timestamp": datetime.now().isoformat()
+            }
+
+        provider_config = providers[provider]
+        models = provider_config.get("models", [])
+
+        # Find the model in provider's model list by exact ID match
+        model_config = None
+        for m in models:
+            m_id = m.get("id")
+            if m_id == model:
+                model_config = m
+                break
+
+        if not model_config:
+            return {
+                "available": False,
+                "latency": round(time.time() - start, 3),
+                "error": f"Model not found: {model}",
+                "timestamp": datetime.now().isoformat()
+            }
 
         latency = time.time() - start
 
-        if result.returncode == 0 and result.stdout:
-            return {
-                "available": True,
-                "latency": round(latency, 3),
-                "error": None,
-                "timestamp": datetime.now().isoformat()
-            }
-        else:
-            error_msg = result.stderr.strip() if result.stderr else "Unknown error"
-            return {
-                "available": False,
-                "latency": round(latency, 3),
-                "error": error_msg[:200],  # Truncate long errors
-                "timestamp": datetime.now().isoformat()
-            }
-
-    except subprocess.TimeoutExpired:
+        # Model exists in config - mark as available
+        # Note: We're doing config validation, not live inference tests
+        # to avoid API costs. Models that exist in config are assumed available.
         return {
-            "available": False,
-            "latency": 30.0,
-            "error": "Timeout after 30s",
+            "available": True,
+            "latency": round(latency, 3),
+            "error": None,
             "timestamp": datetime.now().isoformat()
         }
+
     except Exception as e:
         return {
             "available": False,
-            "latency": 0.0,
+            "latency": round(time.time() - start, 3),
             "error": str(e)[:200],
             "timestamp": datetime.now().isoformat()
         }
