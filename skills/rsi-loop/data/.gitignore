@@ -1,0 +1,4 @@
+# RSI data is personal - don't commit outcomes or proposals
+outcomes.jsonl
+patterns.json
+proposals/
