@@ -157,6 +157,26 @@ class IntelligentRouter:
         except json.JSONDecodeError as e:
             raise ValueError(f"Invalid JSON in config file: {e}")
 
+    @staticmethod
+    def _full_id(model: dict) -> str:
+        """Return provider/id string for a model record."""
+        p = model.get("provider", "")
+        i = model.get("id", "")
+        return f"{p}/{i}" if p else i
+
+    @staticmethod
+    def _model_matches(model: dict, lookup_id: str) -> bool:
+        """Match a model record by bare id OR full provider/id."""
+        if model.get("id") == lookup_id:
+            return True
+        p = model.get("provider", "")
+        i = model.get("id", "")
+        return (f"{p}/{i}" == lookup_id) if p else False
+
+    def _find_model(self, models: list, lookup_id: str, default=None):
+        """Find a model by bare id or provider/id, return default if not found."""
+        return next((m for m in models if self._model_matches(m, lookup_id)), default)
+
     def _count_matches(self, text, patterns, use_regex=False):
         """Count pattern matches in text (case-insensitive).
         
@@ -431,7 +451,7 @@ class IntelligentRouter:
         # Find primary model
         primary = None
         if primary_id:
-            primary = next((m for m in models if m['id'] == primary_id), models[0])
+            primary = self._find_model(models, primary_id, models[0] if models else None)
         else:
             primary = models[0]
         
@@ -439,7 +459,7 @@ class IntelligentRouter:
         if use_fallback and fallback_chain:
             if fallback_index < len(fallback_chain):
                 fallback_id = fallback_chain[fallback_index]
-                recommended = next((m for m in self.config['models'] if m['id'] == fallback_id), primary)
+                recommended = self._find_model(self.config['models'], fallback_id, primary)
             else:
                 recommended = primary  # Exhausted fallbacks
         else:
@@ -556,7 +576,7 @@ class IntelligentRouter:
         for tier, rules in routing_rules.items():
             if 'fallback_chain' in rules:
                 for fallback_id in rules['fallback_chain']:
-                    if not any(m['id'] == fallback_id for m in self.config.get('models', [])):
+                    if not any(self._model_matches(m, fallback_id) for m in self.config.get('models', [])):
                         issues.append(f"Tier {tier}: fallback model '{fallback_id}' not found in models")
         
         return {
