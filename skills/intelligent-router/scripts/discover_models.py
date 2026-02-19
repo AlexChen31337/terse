@@ -23,6 +23,14 @@ from datetime import datetime
 from typing import Dict, List, Any, Optional
 import subprocess
 
+# Capability-based tier classifier (no hard-coded name patterns)
+sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from tier_classifier import classify_from_openclaw_config, build_tier_config
+    _CLASSIFIER_AVAILABLE = True
+except ImportError:
+    _CLASSIFIER_AVAILABLE = False
+
 # ANSI colors
 GREEN = "\033[92m"
 RED = "\033[91m"
@@ -131,6 +139,16 @@ def discover_models(config: Dict[str, Any], tier_filter: Optional[str] = None) -
     # Get existing router config for tier info
     existing_models = {m["id"]: m for m in router_cfg.get("models", [])}
 
+    # Build tier lookup from real OpenClaw config metadata (no hard-coded name patterns)
+    _tier_lookup = {}
+    if _CLASSIFIER_AVAILABLE:
+        try:
+            classified = classify_from_openclaw_config()
+            for m in classified:
+                _tier_lookup[(m["provider"], m["id"])] = m["tier"]
+        except Exception as e:
+            print(f"{YELLOW}Warning: tier classifier failed ({e}), falling back to existing tiers{RESET}")
+
     for provider_name, provider_config in providers.items():
         print(f"\n{BLUE}Scanning provider: {provider_name}{RESET}")
         print("-" * 60)
@@ -159,11 +177,16 @@ def discover_models(config: Dict[str, Any], tier_filter: Optional[str] = None) -
 
             result = test_model_via_openclaw(provider_name, model_id)
 
+            # Tier from capability classifier (uses real metadata, no name heuristics)
+            classified_tier = _tier_lookup.get(
+                (provider_name, model_id),
+                existing_models.get(model_id, {}).get("tier", "MEDIUM")
+            )
             model_result = {
                 "id": model_id,
                 "name": model_name,
                 "provider": provider_name,
-                "tier": existing_models.get(model_id, {}).get("tier", "UNKNOWN"),
+                "tier": classified_tier,
                 "capabilities": model.get("capabilities", []),
                 "cost": model.get("cost", {}),
                 "context_window": model.get("contextWindow", 0),
@@ -247,6 +270,44 @@ def update_router_config(discovered: Dict[str, Any]):
         if existing.get("pinned"):
             # Keep pinned models even if unavailable
             new_models.append(existing)
+
+    # Rebuild tiers and routing_rules from capability classifier (no hard-coded names)
+    if _CLASSIFIER_AVAILABLE:
+        try:
+            classified = classify_from_openclaw_config()
+            # Filter to only available models
+            available_ids = {(m["provider"], m["id"]) for m in new_models}
+            available_classified = [
+                m for m in classified
+                if (m["provider"], m["id"]) in available_ids
+            ]
+            tier_cfg = build_tier_config(available_classified)
+            router_cfg["tiers"] = tier_cfg
+
+            # Sync routing_rules from tiers
+            use_for = {
+                "SIMPLE":    ["monitoring", "status checks", "summarization", "simple API calls",
+                              "memory consolidation", "tweet monitoring", "price alerts", "heartbeat"],
+                "MEDIUM":    ["code fixes", "research", "data analysis", "API integration",
+                              "documentation", "general QA", "moderate complexity"],
+                "COMPLEX":   ["feature development", "architecture", "debugging", "code review",
+                              "multi-step reasoning", "trading strategy"],
+                "REASONING": ["formal logic", "mathematical proofs", "deep analysis",
+                              "long-horizon planning", "algorithmic design"],
+                "CRITICAL":  ["security review", "production decisions", "financial operations",
+                              "high-stakes analysis"],
+            }
+            for tier_name, cfg in tier_cfg.items():
+                router_cfg["routing_rules"][tier_name] = {
+                    "primary": cfg["primary"],
+                    "fallback_chain": cfg["fallbacks"][:5],
+                    "use_for": use_for.get(tier_name, []),
+                }
+            print(f"{GREEN}✓ Tiers and routing_rules rebuilt from capability metadata{RESET}")
+            for tier, cfg in tier_cfg.items():
+                print(f"  {tier}: {cfg['primary']}")
+        except Exception as e:
+            print(f"{YELLOW}Warning: tier rebuild failed ({e}){RESET}")
 
     # Update config
     router_cfg["models"] = new_models
