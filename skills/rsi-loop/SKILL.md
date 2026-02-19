@@ -139,6 +139,35 @@ For fleet-wide RSI across all hub/edge agents, see:
 - `references/evoclaw-integration.md` — MQTT topics, Go integration, ClawChain pallet spec
 - Phase roadmap: heuristic (now) → LLM synthesis → MQTT aggregation → ClawChain governance
 
+## QA Subagent (MANDATORY after coding)
+
+**Hard rule:** After writing or significantly modifying any code, spawn a QA subagent before declaring done.
+
+```bash
+# Generate QA prompt + spawn config
+uv run python skills/rsi-loop/scripts/qa_agent.py spawn "what was built" \
+  --files path/to/file1.py path/to/file2.py
+
+# Then use sessions_spawn tool with the printed config
+```
+
+The QA agent checks:
+1. **Correctness** — does it do what was described?
+2. **Tests** — runs existing tests, flags missing coverage
+3. **Edge cases** — empty inputs, errors, boundaries, race conditions
+4. **Personal info scan** — blocks personal data from public commits
+5. **Spec compliance** — does it match what was requested?
+6. **Code quality** — readability, performance, dead code
+
+**When to spawn QA:**
+- New scripts or skills (always)
+- Bug fixes that touch >10 lines (always)
+- Architecture changes (always)
+- Config changes that affect routing/behavior (always)
+- Trivial 1-2 line typo fixes (skip, use judgment)
+
+**QA must PASS before:** git commit, clawhub publish, PR merge, or reporting "done" to Bowen.
+
 ## Proactive Logging Protocol
 
 Log outcomes for every significant task. Rule of thumb:

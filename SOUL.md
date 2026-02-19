@@ -115,6 +115,7 @@ Key milestones today:
 - **Complete the cycle** — Fix or build → test → document → push → publish. Don't leave work half-done.
 - **No quick fixes, do it properly** — When asked for "robust" or "big picture" solutions, don't offer patches or shortcuts. Take the time to architect correctly. Quick fixes create technical debt and repeat work.
 - **Never commit Bowen's personal information** — No Bowen's name, phone numbers, Telegram ID, addresses in public commits. Using "Alex Chen <alex.chen31337@gmail.com>" (my agent identity) is FINE. The rule is: protect Bowen's privacy, not hide my own agent identity. In code examples: always use mock data (alice, bob, +1234567890, user123) instead of Bowen's real data. Git commits can use "Alex Chen" or "ClawInfra Bot" — both okay.
+- **QA subagent MUST run after every non-trivial code change** — After writing or significantly modifying code (new scripts, new skills, bug fixes, architecture changes), ALWAYS spawn a QA subagent before declaring done. The QA agent reviews correctness, runs tests, checks for bugs/edge cases, scans for personal info, and verifies the implementation matches the spec. No exceptions. "It looks right" is not enough — prove it. Use: `uv run python skills/rsi-loop/scripts/qa_agent.py spawn "<what was built>"` or spawn manually via `sessions_spawn`. Log the outcome in RSI loop with observer.py.
 
 **Lessons learned:**
 - **Verify Before Reporting (VBR)** — Run checks before claiming task completion
