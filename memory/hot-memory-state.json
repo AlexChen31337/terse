@@ -13,14 +13,19 @@
     "personality": "Direct, competent help over performative politeness",
     "contact": "+61491046688, +61430830888, +61422554888",
     "telegram": "@bowen31337 (ID: 2069029798)",
-    "topics_loved": ["AI architecture", "blockchain", "system design", "agent evolution"],
+    "topics_loved": [
+      "AI architecture",
+      "blockchain",
+      "system design",
+      "agent evolution"
+    ],
     "work_hours": "flexible, Sydney timezone"
   },
   "active_context": {
     "projects": [
       {
         "name": "EvoClaw",
-        "status": "Active — CI coverage boost (74% → 85%), release prep",
+        "status": "Active \u2014 CI coverage boost (74% \u2192 85%), release prep",
         "description": "Self-evolving agent framework. Go binary. BSC adapter, cloud sync (Turso), tiered memory. Hackathon deadline Feb 19."
       },
       {
@@ -35,29 +40,99 @@
       }
     ],
     "tasks": [
-      {"text": "LTX-2 Gemma 3 text encoder download (needs HF auth)", "status": "blocked"},
-      {"text": "EvoClaw test coverage to 85%+", "status": "in-progress"},
-      {"text": "Fix tiered memory integration loop", "status": "in-progress"},
-      {"text": "AI stack migration to /data verify", "status": "pending"}
+      {
+        "text": "LTX-2 Gemma 3 text encoder download (needs HF auth)",
+        "status": "blocked"
+      },
+      {
+        "text": "EvoClaw test coverage to 85%+",
+        "status": "in-progress"
+      },
+      {
+        "text": "Fix tiered memory integration loop",
+        "status": "in-progress"
+      },
+      {
+        "text": "AI stack migration to /data verify",
+        "status": "pending"
+      }
     ],
     "events": [
-      {"text": "EvoClaw hackathon deadline Feb 19 3AM UTC", "timestamp": 1739930400},
-      {"text": "New 112GB SSD mounted at /data on GPU server", "timestamp": 1739318400},
-      {"text": "Router config populated with 14 real models", "timestamp": 1739318400}
+      {
+        "text": "EvoClaw hackathon deadline Feb 19 3AM UTC",
+        "timestamp": 1739930400
+      },
+      {
+        "text": "New 112GB SSD mounted at /data on GPU server",
+        "timestamp": 1739318400
+      },
+      {
+        "text": "Router config populated with 14 real models",
+        "timestamp": 1739318400
+      }
     ]
   },
   "critical_lessons": [
-    {"text": "Never commit plaintext credentials — encrypt first, gitignore plaintext", "category": "security", "importance": 0.95},
-    {"text": "Use SSH keys for git remotes, not PATs in URLs", "category": "security", "importance": 0.9},
-    {"text": "Rotate compromised credentials immediately", "category": "security", "importance": 0.95},
-    {"text": "When given trust + autonomy, ship faster", "category": "work", "importance": 0.85},
-    {"text": "Documentation-first = fewer questions later", "category": "work", "importance": 0.8},
-    {"text": "If coder+QA sub-agents > Opus solo cost, just use Opus", "category": "cost", "importance": 0.85},
-    {"text": "Organization > Personal for community ownership", "category": "community", "importance": 0.8},
-    {"text": "Batch periodic checks into heartbeat instead of many cron jobs", "category": "ops", "importance": 0.8},
-    {"text": "Test locally before pushing to CI — Bowen explicit", "category": "work", "importance": 0.9},
-    {"text": "Coverage threshold 85% minimum, 90% ideal — Bowen explicit", "category": "work", "importance": 0.9},
-    {"text": "Use uv not pip on GPU server — Bowen explicit", "category": "tools", "importance": 0.8},
-    {"text": "Eat your own dogfood — use skills you build", "category": "meta", "importance": 0.9}
-  ]
+    {
+      "text": "Never commit plaintext credentials \u2014 encrypt first, gitignore plaintext",
+      "category": "security",
+      "importance": 0.95
+    },
+    {
+      "text": "Use SSH keys for git remotes, not PATs in URLs",
+      "category": "security",
+      "importance": 0.9
+    },
+    {
+      "text": "Rotate compromised credentials immediately",
+      "category": "security",
+      "importance": 0.95
+    },
+    {
+      "text": "When given trust + autonomy, ship faster",
+      "category": "work",
+      "importance": 0.85
+    },
+    {
+      "text": "Documentation-first = fewer questions later",
+      "category": "work",
+      "importance": 0.8
+    },
+    {
+      "text": "If coder+QA sub-agents > Opus solo cost, just use Opus",
+      "category": "cost",
+      "importance": 0.85
+    },
+    {
+      "text": "Organization > Personal for community ownership",
+      "category": "community",
+      "importance": 0.8
+    },
+    {
+      "text": "Batch periodic checks into heartbeat instead of many cron jobs",
+      "category": "ops",
+      "importance": 0.8
+    },
+    {
+      "text": "Test locally before pushing to CI \u2014 Bowen explicit",
+      "category": "work",
+      "importance": 0.9
+    },
+    {
+      "text": "Coverage threshold 85% minimum, 90% ideal \u2014 Bowen explicit",
+      "category": "work",
+      "importance": 0.9
+    },
+    {
+      "text": "Use uv not pip on GPU server \u2014 Bowen explicit",
+      "category": "tools",
+      "importance": 0.8
+    },
+    {
+      "text": "Eat your own dogfood \u2014 use skills you build",
+      "category": "meta",
+      "importance": 0.9
+    }
+  ],
+  "pending_tasks": []
 }

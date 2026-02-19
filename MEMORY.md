@@ -34,8 +34,8 @@ L1 blockchain for agents. Substrate, NPoS, near-zero fees. 8 pallets deployed. H
 **Status:** Testnet live at testnet.clawchain.win
 
 ### GPU Media Pipeline
-AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@10.0.0.44.
-**Status:** LTX-2 setup in progress, blocked on Gemma 3 download
+~~AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images.~~
+**Status:** ARCHIVED — not proceeding (was blocked on Gemma 3 HF auth; decided to deprioritize)
 
 ## ✅ Pending Tasks
 
@@ -66,4 +66,4 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - **[meta]** Eat your own dogfood — use skills you build
 
 ---
-*Generated: 2026-02-20 07:45*
+*Generated: 2026-02-20 07:47*
