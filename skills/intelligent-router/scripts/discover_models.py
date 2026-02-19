@@ -1,0 +1,298 @@
+#!/usr/bin/env python3
+"""
+Intelligent Router - Model Auto-Discovery
+
+Auto-discovers working models from all configured providers.
+Tests each model with a minimal inference call to verify:
+- Model is accessible
+- Auth is working
+- Returns valid responses
+
+Usage:
+    python3 discover_models.py                    # Scan and display
+    python3 discover_models.py --auto-update       # Scan and update config.json
+    python3 discover_models.py --tier COMPLEX      # Test specific tier models
+"""
+
+import json
+import sys
+import time
+import asyncio
+from pathlib import Path
+from datetime import datetime
+from typing import Dict, List, Any, Optional
+import subprocess
+
+# ANSI colors
+GREEN = "\033[92m"
+RED = "\033[91m"
+YELLOW = "\033[93m"
+BLUE = "\033[94m"
+RESET = "\033[0m"
+
+CONFIG_PATH = Path.home() / ".openclaw" / "openclaw.json"
+ROUTER_CONFIG = Path(__file__).parent.parent / "config.json"
+DISCOVERY_OUTPUT = Path(__file__).parent.parent / "discovered-models.json"
+
+
+def load_openclaw_config() -> Dict[str, Any]:
+    """Load main OpenClaw config."""
+    if not CONFIG_PATH.exists():
+        print(f"{RED}Error: Config not found at {CONFIG_PATH}{RESET}")
+        sys.exit(1)
+
+    with open(CONFIG_PATH) as f:
+        return json.load(f)
+
+
+def load_router_config() -> Dict[str, Any]:
+    """Load intelligent-router config."""
+    if not ROUTER_CONFIG.exists():
+        return {"models": [], "routing_rules": {}}
+
+    with open(ROUTER_CONFIG) as f:
+        return json.load(f)
+
+
+def test_model_via_openclaw(provider: str, model: str) -> Dict[str, Any]:
+    """
+    Test a model by running it through openclaw CLI.
+    Returns: {available: bool, latency: float, error: str | None}
+    """
+    test_prompt = "echo: hello"
+
+    start = time.time()
+    try:
+        # Run model test via openclaw
+        result = subprocess.run(
+            [
+                "openclaw", "models", "test",
+                "--provider", provider,
+                "--model", model,
+                "--prompt", test_prompt
+            ],
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+
+        latency = time.time() - start
+
+        if result.returncode == 0 and result.stdout:
+            return {
+                "available": True,
+                "latency": round(latency, 3),
+                "error": None,
+                "timestamp": datetime.now().isoformat()
+            }
+        else:
+            error_msg = result.stderr.strip() if result.stderr else "Unknown error"
+            return {
+                "available": False,
+                "latency": round(latency, 3),
+                "error": error_msg[:200],  # Truncate long errors
+                "timestamp": datetime.now().isoformat()
+            }
+
+    except subprocess.TimeoutExpired:
+        return {
+            "available": False,
+            "latency": 30.0,
+            "error": "Timeout after 30s",
+            "timestamp": datetime.now().isoformat()
+        }
+    except Exception as e:
+        return {
+            "available": False,
+            "latency": 0.0,
+            "error": str(e)[:200],
+            "timestamp": datetime.now().isoformat()
+        }
+
+
+def discover_models(config: Dict[str, Any], tier_filter: Optional[str] = None) -> Dict[str, Any]:
+    """
+    Discover all models from OpenClaw providers and test availability.
+    """
+    providers = config.get("models", {}).get("providers", {})
+    router_cfg = load_router_config()
+
+    discovered = {
+        "scan_timestamp": datetime.now().isoformat(),
+        "total_models": 0,
+        "available_models": 0,
+        "unavailable_models": 0,
+        "providers": {}
+    }
+
+    # Get existing router config for tier info
+    existing_models = {m["id"]: m for m in router_cfg.get("models", [])}
+
+    for provider_name, provider_config in providers.items():
+        print(f"\n{BLUE}Scanning provider: {provider_name}{RESET}")
+        print("-" * 60)
+
+        models = provider_config.get("models", [])
+        provider_result = {
+            "name": provider_name,
+            "models": [],
+            "available": 0,
+            "unavailable": 0
+        }
+
+        for model in models:
+            model_id = model.get("id")
+            model_name = model.get("name", model_id)
+
+            # Skip if tier filter is set and model doesn't match
+            if tier_filter:
+                model_tier = existing_models.get(model_id, {}).get("tier")
+                if model_tier != tier_filter:
+                    continue
+
+            discovered["total_models"] += 1
+
+            print(f"  Testing: {model_name}... ", end="", flush=True)
+
+            result = test_model_via_openclaw(provider_name, model_id)
+
+            model_result = {
+                "id": model_id,
+                "name": model_name,
+                "provider": provider_name,
+                "tier": existing_models.get(model_id, {}).get("tier", "UNKNOWN"),
+                "capabilities": model.get("capabilities", []),
+                "cost": model.get("cost", {}),
+                "context_window": model.get("contextWindow", 0),
+                "agentic": model.get("agentic", False),
+                **result
+            }
+
+            provider_result["models"].append(model_result)
+
+            if result["available"]:
+                print(f"{GREEN}✓{RESET} ({result['latency']}s)")
+                provider_result["available"] += 1
+                discovered["available_models"] += 1
+            else:
+                print(f"{RED}✗{RESET} ({result['error'][:50]})")
+                provider_result["unavailable"] += 1
+                discovered["unavailable_models"] += 1
+
+        discovered["providers"][provider_name] = provider_result
+
+    return discovered
+
+
+def print_summary(discovered: Dict[str, Any]):
+    """Print discovery summary."""
+    print("\n" + "=" * 60)
+    print(f"{BLUE}DISCOVERY SUMMARY{RESET}")
+    print("=" * 60)
+    print(f"Total models scanned: {discovered['total_models']}")
+    print(f"{GREEN}Available: {discovered['available_models']}{RESET}")
+    print(f"{RED}Unavailable: {discovered['unavailable_models']}{RESET}")
+    print(f"Scan time: {discovered['scan_timestamp']}")
+
+    print("\n" + "=" * 60)
+    print(f"{BLUE}UNAVAILABLE MODELS{RESET}")
+    print("=" * 60)
+
+    unavailable = []
+    for provider, data in discovered["providers"].items():
+        for model in data["models"]:
+            if not model["available"]:
+                unavailable.append(f"  - {model['name']} ({provider}): {model['error']}")
+
+    if unavailable:
+        for item in unavailable:
+            print(f"{RED}{item}{RESET}")
+    else:
+        print(f"{GREEN}All models available!{RESET}")
+
+
+def update_router_config(discovered: Dict[str, Any]):
+    """
+    Update router config.json with discovered models.
+    Preserves tier rules, removes unavailable models.
+    """
+    router_cfg = load_router_config()
+
+    # Build new models list (only available ones)
+    new_models = []
+    for provider, data in discovered["providers"].items():
+        for model in data["models"]:
+            if model["available"]:
+                # Convert discovery format back to router config format
+                router_model = {
+                    "id": model["id"],
+                    "alias": model["name"].replace(" ", "-"),
+                    "tier": model["tier"],
+                    "provider": provider,
+                    "input_cost_per_m": model["cost"].get("input", 0),
+                    "output_cost_per_m": model["cost"].get("output", 0),
+                    "context_window": model["context_window"],
+                    "capabilities": model["capabilities"],
+                    "agentic": model["agentic"],
+                    "notes": f"Auto-discovered {model['timestamp']}"
+                }
+                new_models.append(router_model)
+
+    # Preserve pinned models (manual overrides)
+    existing_models = router_cfg.get("models", [])
+    for existing in existing_models:
+        if existing.get("pinned"):
+            # Keep pinned models even if unavailable
+            new_models.append(existing)
+
+    # Update config
+    router_cfg["models"] = new_models
+    router_cfg["last_discovery"] = discovered["scan_timestamp"]
+
+    # Write updated config
+    with open(ROUTER_CONFIG, "w") as f:
+        json.dump(router_cfg, f, indent=2)
+
+    print(f"\n{GREEN}✓ Updated {ROUTER_CONFIG}{RESET}")
+    print(f"  Models: {len(new_models)} (available)")
+    print(f"  Last discovery: {discovered['scan_timestamp']}")
+
+
+def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Auto-discover working models")
+    parser.add_argument("--auto-update", action="store_true", help="Update config.json with discovered models")
+    parser.add_argument("--tier", help="Only test models from specific tier (SIMPLE/MEDIUM/COMPLEX/REASONING/CRITICAL)")
+    parser.add_argument("--output", help="Output JSON file path", default=str(DISCOVERY_OUTPUT))
+    args = parser.parse_args()
+
+    print(f"{BLUE}Intelligent Router - Model Auto-Discovery{RESET}")
+    print(f"Scan time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+
+    # Load configs
+    config = load_openclaw_config()
+
+    # Discover models
+    discovered = discover_models(config, tier_filter=args.tier)
+
+    # Print summary
+    print_summary(discovered)
+
+    # Save discovery results
+    with open(args.output, "w") as f:
+        json.dump(discovered, f, indent=2)
+    print(f"\n{GREEN}✓ Saved discovery results to {args.output}{RESET}")
+
+    # Auto-update if requested
+    if args.auto_update:
+        update_router_config(discovered)
+
+        # Suggest next steps
+        print(f"\n{YELLOW}Next steps:{RESET}")
+        print(f"  1. Review updated config: cat {ROUTER_CONFIG}")
+        print(f"  2. Test router: python3 skills/intelligent-router/scripts/router.py health")
+        print(f"  3. Commit changes: git add {ROUTER_CONFIG} && git commit -m 'Auto-update model list'")
+
+
+if __name__ == "__main__":
+    main()

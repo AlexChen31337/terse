@@ -1,0 +1,25 @@
+{
+  "identities": {
+    "alice": {
+      "canonical_id": "alice",
+      "channels": [
+        "discord:alice#1234"
+      ],
+      "created_at": "2026-02-19T03:34:41.892875+00:00Z",
+      "display_name": "Alice",
+      "is_owner": false,
+      "updated_at": "2026-02-19T03:34:41.892888+00:00Z"
+    },
+    "bowen": {
+      "canonical_id": "bowen",
+      "channels": [
+        "telegram:2069029798"
+      ],
+      "created_at": "2026-02-19T03:34:41.859321+00:00Z",
+      "display_name": "Bowen",
+      "is_owner": true,
+      "updated_at": "2026-02-19T03:34:41.859337+00:00Z"
+    }
+  },
+  "version": "1.0"
+}

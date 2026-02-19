@@ -58,7 +58,7 @@ python3 skills/intelligent-router/scripts/spawn_helper.py --validate '{"kind":"a
 |------|---------|---------------|------|
 | 🟢 SIMPLE | Monitoring, checks, summaries | `ollama/glm-4.7-flash` | FREE |
 | 🟡 MEDIUM | Code fixes, patches, research | DeepSeek V3.2 | $0.40/M |
-| 🟠 COMPLEX | Features, architecture, debug | Sonnet 4.5 | $3/M |
+| 🟠 COMPLEX | Features, architecture, debug | Sonnet 4.6 | $3/M |
 | 🔵 REASONING | Proofs, formal logic | DeepSeek R1 32B | $0.20/M |
 | 🔴 CRITICAL | Security, production | Opus 4.6 | $5/M |
 
@@ -100,6 +100,15 @@ python3 skills/intelligent-router/scripts/router.py score "task"
 
 # Config health check
 python3 skills/intelligent-router/scripts/router.py health
+
+# Auto-discover working models (NEW)
+python3 skills/intelligent-router/scripts/discover_models.py
+
+# Auto-discover + update config
+python3 skills/intelligent-router/scripts/discover_models.py --auto-update
+
+# Test specific tier only
+python3 skills/intelligent-router/scripts/discover_models.py --tier COMPLEX
 ```
 
 ---
@@ -132,3 +141,77 @@ Confidence: `1 / (1 + exp(-8 × (score - 0.5)))`
 
 Models defined in `config.json`. Add new models there, router picks them up automatically.
 Local Ollama models have zero cost — always prefer them for SIMPLE tasks.
+
+---
+
+## Auto-Discovery (Self-Healing)
+
+The intelligent-router can **automatically discover working models** from all configured providers:
+
+### How It Works
+
+1. **Provider Scanning:** Reads `~/.openclaw/openclaw.json` → tests each model
+2. **Health Check:** Sends minimal test prompt to verify auth + connectivity
+3. **Auto-Classification:** Assigns tiers based on cost, capabilities, provider
+4. **Config Update:** Replaces unavailable models (like broken OAuth tokens)
+5. **Cron Integration:** Hourly refresh keeps model list current
+
+### Usage
+
+```bash
+# One-time discovery
+python3 skills/intelligent-router/scripts/discover_models.py
+
+# Auto-update config with working models only
+python3 skills/intelligent-router/scripts/discover_models.py --auto-update
+
+# Set up hourly refresh cron
+openclaw cron add --job '{
+  "name": "Model Discovery Refresh",
+  "schedule": {"kind": "every", "everyMs": 3600000},
+  "payload": {
+    "kind": "systemEvent",
+    "text": "Run: bash skills/intelligent-router/scripts/auto_refresh_models.sh",
+    "model": "ollama/glm-4.7-flash"
+  }
+}'
+```
+
+### Benefits
+
+✅ **Self-healing:** Automatically removes broken models (e.g., expired OAuth)
+✅ **Zero maintenance:** No manual model list updates
+✅ **New models:** Auto-adds newly released models
+✅ **Cost optimization:** Always uses cheapest working model per tier
+
+### Discovery Output
+
+Results saved to `skills/intelligent-router/discovered-models.json`:
+
+```json
+{
+  "scan_timestamp": "2026-02-19T21:00:00",
+  "total_models": 25,
+  "available_models": 23,
+  "unavailable_models": 2,
+  "providers": {
+    "anthropic": {
+      "available": 2,
+      "unavailable": 0,
+      "models": [...]
+    }
+  }
+}
+```
+
+### Pinning Models
+
+To preserve a model even if it fails discovery:
+
+```json
+{
+  "id": "special-model",
+  "tier": "COMPLEX",
+  "pinned": true  // Never remove during auto-update
+}
+```

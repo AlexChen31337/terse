@@ -3,7 +3,9 @@
 - **Name:** Bowen Li
 - **What to call them:** Bowen
 - **Timezone:** Australia/Sydney (AEDT, GMT+11)
-- **Contact Numbers:** +61491046688, +61430830888, +61422554888
+- **Contact Numbers:** 
+  - **WhatsApp:** +61430830888 (primary mobile)
+  - **Other:** +61491046688, +61422554888
 - **Telegram ID:** 2069029798 (@bowen31337)
 
 ## Context

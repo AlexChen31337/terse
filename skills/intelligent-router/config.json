@@ -135,20 +135,8 @@
       "notes": "253B parameter model. Upper MEDIUM tier, good for complex coding that doesn't need Sonnet/Opus."
     },
     {
-      "id": "anthropic-proxy-2/claude-sonnet-4-5",
-      "alias": "Sonnet-Proxy2",
-      "tier": "COMPLEX",
-      "provider": "anthropic",
-      "input_cost_per_m": 3.00,
-      "output_cost_per_m": 15.00,
-      "context_window": 200000,
-      "capabilities": ["text", "code", "reasoning"],
-      "agentic": true,
-      "notes": "Claude Sonnet via proxy. Excellent for multi-file development, architecture, debugging."
-    },
-    {
-      "id": "anthropic/claude-sonnet-4-5",
-      "alias": "Sonnet-OAuth",
+      "id": "anthropic/claude-sonnet-4-6",
+      "alias": "Sonnet46-OAuth",
       "tier": "COMPLEX",
       "provider": "anthropic",
       "input_cost_per_m": 3.00,
@@ -156,7 +144,43 @@
       "context_window": 200000,
       "capabilities": ["text", "code", "reasoning", "vision"],
       "agentic": true,
-      "notes": "Claude Sonnet via OAuth. Same capability, different auth path."
+      "notes": "Claude Sonnet 4.6 via OAuth. Latest Sonnet with reasoning capabilities. Primary COMPLEX tier model."
+    },
+    {
+      "id": "anthropic-proxy-1/claude-sonnet-4-6",
+      "alias": "Sonnet46-Proxy1",
+      "tier": "COMPLEX",
+      "provider": "anthropic",
+      "input_cost_per_m": 3.00,
+      "output_cost_per_m": 15.00,
+      "context_window": 200000,
+      "capabilities": ["text", "code", "reasoning", "vision"],
+      "agentic": true,
+      "notes": "Claude Sonnet 4.6 via proxy. Same as OAuth, different auth path."
+    },
+    {
+      "id": "anthropic-proxy-2/claude-sonnet-4-5",
+      "alias": "Sonnet45-Proxy2",
+      "tier": "COMPLEX",
+      "provider": "anthropic",
+      "input_cost_per_m": 3.00,
+      "output_cost_per_m": 15.00,
+      "context_window": 200000,
+      "capabilities": ["text", "code", "reasoning"],
+      "agentic": true,
+      "notes": "Claude Sonnet 4.5 via proxy. Fallback for COMPLEX tier."
+    },
+    {
+      "id": "anthropic/claude-sonnet-4-5",
+      "alias": "Sonnet45-OAuth",
+      "tier": "COMPLEX",
+      "provider": "anthropic",
+      "input_cost_per_m": 3.00,
+      "output_cost_per_m": 15.00,
+      "context_window": 200000,
+      "capabilities": ["text", "code", "reasoning", "vision"],
+      "agentic": true,
+      "notes": "Claude Sonnet 4.5 via OAuth. Legacy fallback."
     },
     {
       "id": "anthropic-proxy-1/claude-opus-4-6",
@@ -205,18 +229,6 @@
       "capabilities": ["text", "code"],
       "agentic": true,
       "notes": "Free local fallback. Large context window."
-    },
-    {
-      "id": "google-gemini-cli/gemini-3-pro-preview",
-      "alias": "Gemini3-Pro",
-      "tier": "COMPLEX",
-      "provider": "google",
-      "input_cost_per_m": 2.00,
-      "output_cost_per_m": 12.00,
-      "context_window": 1000000,
-      "capabilities": ["text", "code", "reasoning", "vision"],
-      "agentic": true,
-      "notes": "Gemini 3 Pro. Massive context window. Good alternative to Sonnet for complex tasks."
     }
   ],
   "routing_rules": {
@@ -239,9 +251,10 @@
       "use_for": ["code fixes", "lint patches", "research", "documentation", "single-file changes", "test writing"]
     },
     "COMPLEX": {
-      "primary": "anthropic-proxy-2/claude-sonnet-4-5",
+      "primary": "anthropic/claude-sonnet-4-6",
       "fallback_chain": [
-        "google-gemini-cli/gemini-3-pro-preview",
+        "anthropic-proxy-1/claude-sonnet-4-6",
+        "anthropic-proxy-2/claude-sonnet-4-5",
         "nvidia-nim/nvidia/llama-3.1-nemotron-ultra-253b-v1"
       ],
       "use_for": ["multi-file features", "architecture design", "complex debugging", "coverage boost", "CI fixes"]

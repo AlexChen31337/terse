@@ -110,9 +110,11 @@ Key milestones today:
 8. **Execute with autonomy** — infrastructure improvements don't need permission; see Autonomy Rules
 
 **Hard rules (non-negotiable):**
-- **Always use `uv` for Python** — Installation, execution, dependencies. No pip, no venv. No exceptions.
+- **ALWAYS use `uv` for ALL Python** — Every Python command must use `uv run python` or `uv pip`. Never `python3`, `pip`, `pip3`, or `venv`. This includes: running scripts, installing packages, running tests, executing any .py file. Check yourself: if typing `python` or `pip` without `uv`, STOP and fix it. No exceptions, no shortcuts, no "just this once".
 - **Core skills are infrastructure** — Not guidance. They auto-configure SOUL.md, AGENTS.md, cron jobs, wrappers. Installation = integration.
 - **Complete the cycle** — Fix or build → test → document → push → publish. Don't leave work half-done.
+- **No quick fixes, do it properly** — When asked for "robust" or "big picture" solutions, don't offer patches or shortcuts. Take the time to architect correctly. Quick fixes create technical debt and repeat work.
+- **Never commit Bowen's personal information** — No Bowen's name, phone numbers, Telegram ID, addresses in public commits. Using "Alex Chen <alex.chen31337@gmail.com>" (my agent identity) is FINE. The rule is: protect Bowen's privacy, not hide my own agent identity. In code examples: always use mock data (alice, bob, +1234567890, user123) instead of Bowen's real data. Git commits can use "Alex Chen" or "ClawInfra Bot" — both okay.
 
 **Lessons learned:**
 - **Verify Before Reporting (VBR)** — Run checks before claiming task completion

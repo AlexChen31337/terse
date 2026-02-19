@@ -1,15 +1,27 @@
 {
-  "lastCryptoPriceCheck": "2026-02-18T12:14:32.365744+00:00",
-  "lastKOLCheck": "2026-02-18T14:15:16.206906+00:00",
-  "lastTwitterCheck": "2026-02-16T14:13:10.082599+11:00",
-  "lastMoltbookCheck": "2026-02-18T18:02:00+11:00",
-  "lastGitHubCheck": "2026-02-18T14:15:00+11:00",
-  "lastGitHubTrendingCheck": "2026-02-18T14:15:16.206906+00:00",
-  "lastSessionId": "080626e5-a0bc-4332-88c1-be132e5e5388",
+  "lastCryptoPriceCheck": "2026-02-19T10:14:27.761474+00:00",
+  "lastKOLCheck": "2026-02-19T10:14:27.761474+00:00",
+  "lastTwitterCheck": "2026-02-19T10:14:27.761474+00:00",
+  "lastMoltbookCheck": "2026-02-19T10:14:27.761474+00:00",
+  "lastGitHubCheck": "2026-02-19T10:14:27.761474+00:00",
+  "lastGitHubTrendingCheck": "2026-02-19T10:14:27.761474+00:00",
+  "lastSessionId": "f837a12b-d63a-4986-b6c0-ef362ec233aa",
   "notes": {
-    "githubToken": "BROKEN - bad credentials, token needs refresh",
-    "twitterAuth": "BROKEN - credentials expired, need refresh",
-    "evoclawDeadline": "12.7 hours remaining (Feb 19 3AM UTC)",
-    "heartbeat_20260219_0115": "Session restarted, all checks passed, no alerts"
+    "githubToken": "WORKING - 50 notifications found",
+    "twitterAuth": "BROKEN - encrypted credentials not found",
+    "evoclawDeadline": "3.8 hours remaining (Feb 19 3AM UTC)",
+    "lastGitHubNotifications": [
+      "CI workflow run cancelled for fix/orchestrator-toolloop-routing-bugs branch",
+      "CI workflow run, Attempt #2 cancelled for fix/orchestrator-toolloop-routing-bugs branch",
+      "CI workflow run failed for fix/orchestrator-toolloop-routing-bugs branch",
+      "CI workflow run cancelled for main branch",
+      "CI workflow run, Attempt #3 cancelled for main branch"
+    ],
+    "heartbeat_20260219_1013": "Session restarted, GitHub checked, auth issues noted",
+    "heartbeat_20260219_1213": "All checks updated, CI cancellations noted, Twitter auth intermittent",
+    "heartbeat_20260219_1313": "Sent deadline alert to Telegram - awaiting repo location",
+    "heartbeat_20260219_1813": "Session restarted. EvoClaw v0.2.0 released successfully. Twitter/Moltbook auth issues persist. All checks skipped due to auth problems.",
+    "heartbeat_20260219_2013": "All checks completed. BTC $67,027 (-1.7%), Twitter auth intermittent, GitHub trending: programming books/Python",
+    "heartbeat_20260219_2113": "Session restarted. BTC $66,871 (-1.9%). Twitter/GitHub auth issues persist. All checks skipped due to auth."
   }
 }
