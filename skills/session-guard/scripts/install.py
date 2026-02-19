@@ -55,7 +55,11 @@ def parse_args():
     p.add_argument("--heartbeat-interval-ms", type=int, default=3600000,
                    help="Isolated heartbeat interval ms (default: 3600000 = 1h)")
     p.add_argument("--crit-mb", type=float, default=8.0,
-                   help="Session size threshold for restart (default: 8MB)")
+                   help="Session size threshold for idle-gated restart (default: 8MB)")
+    p.add_argument("--hard-mb", type=float, default=10.0,
+                   help="Hard ceiling — always restart, no idle check (default: 10MB)")
+    p.add_argument("--warn-mb", type=float, default=6.0,
+                   help="Warn-only threshold — alert user (default: 6MB)")
     p.add_argument("--skip-crons", action="store_true", help="Only patch config, skip cron setup")
     p.add_argument("--state-file", default=DEFAULT_STATE)
     p.add_argument("--sessions-dir", default=DEFAULT_SESSIONS_DIR)
@@ -295,21 +299,22 @@ def main():
                     "kind": "agentTurn",
                     "model": args.monitor_model,
                     "message": (
-                        f"Run the session size watcher:\n"
-                        f"1. python3 {workspace_str}/skills/session-guard/scripts/size_watcher.py "
-                        f"--crit-mb {args.crit_mb} --idle-minutes 5\n"
-                        f"2. If output starts with RESTARTED: send Telegram alert via message tool:\n"
-                        f"   '🔄 Session size limit hit — gateway restarted. Hydration will follow shortly.'\n"
-                        f"3. If output starts with RESTART_FAILED: send Telegram alert:\n"
-                        f"   '⚠️ Session bloat critical but restart failed. Check session-guard.log.'\n"
-                        f"4. If OK/WARN/SKIPPED: reply DONE."
+                        f"Run: uv run python {workspace_str}/skills/session-guard/scripts/size_watcher.py "
+                        f"--warn-mb {args.warn_mb} --crit-mb {args.crit_mb} --hard-mb {args.hard_mb} --crit-idle-minutes 1\n\n"
+                        f"Handle output based on FIRST word:\n"
+                        f"- 'OK': reply DONE\n"
+                        f"- 'WARN': send Telegram to target=2069029798: '⚠️ Session growing large. Consider /new soon to avoid overflow.' Reply DONE.\n"
+                        f"- 'SKIPPED_ACTIVE': reply DONE (will retry next cycle)\n"
+                        f"- 'RESTARTED': send Telegram to target=2069029798: '🔄 Session size limit hit — gateway restarted to prevent context overflow.' Reply DONE.\n"
+                        f"- 'RESTART_FAILED': send Telegram to target=2069029798: '⚠️ Session bloat critical but restart failed. Please run /reset manually.' Reply DONE.\n"
+                        f"- 'ERROR': reply DONE"
                     ),
                     "timeoutSeconds": 60
                 },
                 "sessionTarget": "isolated"
             }, gw, token, dry)
             if result.get("ok") or result.get("dry_run"):
-                print(f"  ✓ '{name4}' created (crit: {args.crit_mb}MB)")
+                print(f"  ✓ '{name4}' created (warn:{args.warn_mb}MB crit:{args.crit_mb}MB hard:{args.hard_mb}MB)")
             else:
                 print(f"  ⚠️  {result}")
         except Exception as e:
