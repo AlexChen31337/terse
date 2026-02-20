@@ -53,3 +53,17 @@ If 1+ hour since last KOL check:
 4. Alert keywords: Bitcoin, ETH, SEC, regulation, crash, Fed, interest rates
 5. **ALERT IMMEDIATELY if market-moving content found**
 6. Update lastKOLCheck timestamp in memory/heartbeat-state.json
+
+## Simmer Prediction Markets (every 4+ hours)
+If 4+ hours since last Simmer check:
+1. Health check: `curl -s https://api.simmer.markets/api/sdk/health`
+2. Load key: `SIMMER_API_KEY=$(python3 -c "import json; print(json.load(open('$HOME/.config/simmer/credentials.json'))['api_key'])")`
+3. Get briefing: `curl -s "https://api.simmer.markets/api/sdk/briefing?since=<last_check_iso>" -H "Authorization: Bearer $SIMMER_API_KEY"`
+4. Check `risk_alerts` — act on any urgent warnings immediately
+5. Check `positions.expiring_soon` — exit or hold before resolution?
+6. Check `positions.significant_moves` — reassess thesis on >15% movers
+7. Check `opportunities.high_divergence` — AI price vs market price gaps
+8. Check `opportunities.new_markets` — anything worth trading?
+9. Note `performance.rank` — climbing or falling?
+10. Update lastSimmerCheck timestamp in memory/heartbeat-state.json
+11. If anything notable (big move, expiring position, good opportunity) → alert Bowen
