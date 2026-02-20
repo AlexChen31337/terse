@@ -64,7 +64,6 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - **[work]** Coverage threshold 85% minimum, 90% ideal — Bowen explicit
 - **[tools]** Use uv not pip on GPU server — Bowen explicit
 - **[meta]** Eat your own dogfood — use skills you build
-- **[behavior]** ALWAYS search tiered memory + grep memory/*.md BEFORE asking Bowen for any credential, password, or stored value. Asking without searching first = protocol violation
 
 ---
-*Generated: 2026-02-20 16:06*
+*Generated: 2026-02-21 00:06*

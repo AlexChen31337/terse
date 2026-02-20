@@ -1,5 +1,5 @@
 {
-  "scan_timestamp": "2026-02-20T14:32:48.032523",
+  "scan_timestamp": "2026-02-21T02:33:07.145312",
   "total_models": 37,
   "available_models": 37,
   "unavailable_models": 0,
@@ -24,7 +24,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.033034"
+          "timestamp": "2026-02-21T02:33:07.145779"
         },
         {
           "id": "llama3.2:3b",
@@ -43,7 +43,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.033174"
+          "timestamp": "2026-02-21T02:33:07.145914"
         },
         {
           "id": "qwen2.5:1.5b",
@@ -62,7 +62,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.033307"
+          "timestamp": "2026-02-21T02:33:07.146094"
         },
         {
           "id": "qwen2.5:32b",
@@ -81,7 +81,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.033439"
+          "timestamp": "2026-02-21T02:33:07.146253"
         },
         {
           "id": "llama3.3",
@@ -100,7 +100,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.033572"
+          "timestamp": "2026-02-21T02:33:07.146411"
         },
         {
           "id": "qwen2-vl:7b",
@@ -119,7 +119,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.033700"
+          "timestamp": "2026-02-21T02:33:07.146567"
         }
       ],
       "available": 6,
@@ -145,7 +145,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.033829"
+          "timestamp": "2026-02-21T02:33:07.146709"
         },
         {
           "id": "qwen/qwen2.5-7b-instruct",
@@ -164,7 +164,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.033978"
+          "timestamp": "2026-02-21T02:33:07.146831"
         },
         {
           "id": "meta/llama-3.1-70b-instruct",
@@ -183,7 +183,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.034120"
+          "timestamp": "2026-02-21T02:33:07.146958"
         },
         {
           "id": "meta/llama-3.3-70b-instruct",
@@ -202,7 +202,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.034244"
+          "timestamp": "2026-02-21T02:33:07.147080"
         },
         {
           "id": "deepseek-ai/deepseek-v3.2",
@@ -221,7 +221,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.034373"
+          "timestamp": "2026-02-21T02:33:07.147204"
         },
         {
           "id": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
@@ -240,7 +240,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.034498"
+          "timestamp": "2026-02-21T02:33:07.147325"
         },
         {
           "id": "deepseek-ai/deepseek-r1-distill-qwen-32b",
@@ -259,7 +259,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.034625"
+          "timestamp": "2026-02-21T02:33:07.147445"
         },
         {
           "id": "deepseek-ai/deepseek-r1-distill-qwen-14b",
@@ -278,7 +278,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.034749"
+          "timestamp": "2026-02-21T02:33:07.147564"
         },
         {
           "id": "qwen/qwq-32b",
@@ -297,7 +297,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.034872"
+          "timestamp": "2026-02-21T02:33:07.147684"
         },
         {
           "id": "qwen/qwen3-next-80b-a3b-thinking",
@@ -316,7 +316,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.035070"
+          "timestamp": "2026-02-21T02:33:07.147805"
         },
         {
           "id": "moonshotai/kimi-k2-thinking",
@@ -335,7 +335,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.035195"
+          "timestamp": "2026-02-21T02:33:07.147966"
         },
         {
           "id": "microsoft/phi-4-mini-flash-reasoning",
@@ -354,7 +354,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.035320"
+          "timestamp": "2026-02-21T02:33:07.148119"
         },
         {
           "id": "meta/llama-4-maverick-17b-128e-instruct",
@@ -373,7 +373,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.035444"
+          "timestamp": "2026-02-21T02:33:07.148243"
         },
         {
           "id": "meta/llama-4-scout-17b-16e-instruct",
@@ -392,7 +392,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.035571"
+          "timestamp": "2026-02-21T02:33:07.148365"
         },
         {
           "id": "mistralai/mistral-large-3-675b-instruct-2512",
@@ -411,7 +411,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.035717"
+          "timestamp": "2026-02-21T02:33:07.148489"
         },
         {
           "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
@@ -430,7 +430,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.035845"
+          "timestamp": "2026-02-21T02:33:07.148610"
         },
         {
           "id": "nvidia/llama-3.1-nemotron-51b-instruct",
@@ -449,7 +449,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.035990"
+          "timestamp": "2026-02-21T02:33:07.148731"
         },
         {
           "id": "meta/llama-3.2-11b-vision-instruct",
@@ -468,7 +468,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.036115"
+          "timestamp": "2026-02-21T02:33:07.148850"
         },
         {
           "id": "microsoft/phi-3.5-vision-instruct",
@@ -487,7 +487,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.036239"
+          "timestamp": "2026-02-21T02:33:07.148973"
         }
       ],
       "available": 19,
@@ -513,7 +513,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.036364"
+          "timestamp": "2026-02-21T02:33:07.149095"
         },
         {
           "id": "claude-sonnet-4-6",
@@ -532,7 +532,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.036490"
+          "timestamp": "2026-02-21T02:33:07.149213"
         }
       ],
       "available": 2,
@@ -558,7 +558,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.036615"
+          "timestamp": "2026-02-21T02:33:07.149333"
         },
         {
           "id": "claude-opus-4-5",
@@ -577,7 +577,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.036738"
+          "timestamp": "2026-02-21T02:33:07.149453"
         }
       ],
       "available": 2,
@@ -603,7 +603,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.036863"
+          "timestamp": "2026-02-21T02:33:07.149573"
         }
       ],
       "available": 1,
@@ -629,7 +629,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.037028"
+          "timestamp": "2026-02-21T02:33:07.149697"
         }
       ],
       "available": 1,
@@ -655,7 +655,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.037154"
+          "timestamp": "2026-02-21T02:33:07.149819"
         },
         {
           "id": "claude-sonnet-4-5",
@@ -674,7 +674,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.037278"
+          "timestamp": "2026-02-21T02:33:07.149973"
         },
         {
           "id": "claude-opus-4-5",
@@ -693,7 +693,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.037401"
+          "timestamp": "2026-02-21T02:33:07.150102"
         },
         {
           "id": "claude-sonnet-4-6",
@@ -712,7 +712,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.037523"
+          "timestamp": "2026-02-21T02:33:07.150228"
         }
       ],
       "available": 4,
@@ -738,7 +738,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.037647"
+          "timestamp": "2026-02-21T02:33:07.150354"
         }
       ],
       "available": 1,
@@ -764,7 +764,7 @@
           "available": true,
           "latency": 0.0,
           "error": null,
-          "timestamp": "2026-02-20T14:32:48.037771"
+          "timestamp": "2026-02-21T02:33:07.150478"
         }
       ],
       "available": 1,

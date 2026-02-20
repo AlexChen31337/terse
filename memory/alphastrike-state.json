@@ -1,10 +1,9 @@
 {
   "last_trades": 0,
   "last_balance": 10000.0,
-  "last_cycle": 38,
+  "last_cycle": 9,
   "last_positions": 0,
-  "alerts_sent": [
-    "no_models_warned"
-  ],
-  "last_check": "2026-02-20 14:58"
+  "alerts_sent": [],
+  "seen_errors": [],
+  "last_check": "2026-02-21 02:58"
 }

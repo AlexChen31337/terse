@@ -1,75 +1,12 @@
 [
   {
-    "id": "d8ab1bf7eff0",
-    "text": "Spawned sub-agent: `memory-isolation-architect` (session: `46bfe71f-5036-419c-b526-6a8abd8512c5`)",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771533768.6710474,
-    "access_count": 0,
-    "score": 0.6957362108036038,
-    "metadata": {
-      "urls": [],
-      "commands": [
-        "memory-isolation-architect",
-        "46bfe71f-5036-419c-b526-6a8abd8512c5"
-      ],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "82f4d3112b20",
-    "text": "Architecture approach (Hybrid)",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771533769.2285593,
-    "access_count": 0,
-    "score": 0.6957363604479101,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "1b45e0db010b",
-    "text": "Status: In progress, waiting for sub-agent completion",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771533769.780049,
-    "access_count": 0,
-    "score": 0.6957365084764244,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
-    "id": "c17d65151699",
-    "text": "Context: After sub-agent delivered multi-user memory isolation, I identified a flaw (channel:user_id doesn't handle Bowen using multiple channels) and immediately offered \"Quick Fix Options A/B/C\"",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771533770.3375487,
-    "access_count": 0,
-    "score": 0.6957366581182989,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "warm"
-  },
-  {
     "id": "aadbf3d57635",
     "text": "Bowen's response: \"Don't seek for any quick fix, make a robust fix, don't hurry up, plz make it in your behaviour rules\"",
     "category": "general",
     "importance": 0.7,
     "created_at": 1771533770.894441,
     "access_count": 0,
-    "score": 0.6957368075974008,
+    "score": 0.6842373062961137,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -84,7 +21,7 @@
     "importance": 0.7,
     "created_at": 1771533771.4744997,
     "access_count": 0,
-    "score": 0.695736963294924,
+    "score": 0.6842374594193688,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -99,7 +36,7 @@
     "importance": 0.7,
     "created_at": 1771533772.0500326,
     "access_count": 0,
-    "score": 0.6957371177776531,
+    "score": 0.6842376113482233,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -114,7 +51,7 @@
     "importance": 0.7,
     "created_at": 1771533772.654951,
     "access_count": 0,
-    "score": 0.695737280148007,
+    "score": 0.6842377710347092,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -129,7 +66,7 @@
     "importance": 0.7,
     "created_at": 1771533773.2137918,
     "access_count": 0,
-    "score": 0.6957374301502789,
+    "score": 0.6842379185576023,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -144,7 +81,7 @@
     "importance": 0.7,
     "created_at": 1771533773.7885537,
     "access_count": 0,
-    "score": 0.6957375844261497,
+    "score": 0.6842380702834581,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -159,7 +96,7 @@
     "importance": 0.7,
     "created_at": 1771533774.3492866,
     "access_count": 0,
-    "score": 0.695737734936357,
+    "score": 0.6842382183060169,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -174,7 +111,7 @@
     "importance": 0.7,
     "created_at": 1771533774.8990283,
     "access_count": 0,
-    "score": 0.6957378824964594,
+    "score": 0.6842383634271688,
     "metadata": {
       "urls": [],
       "commands": [
@@ -192,7 +129,7 @@
     "importance": 0.7,
     "created_at": 1771533775.517146,
     "access_count": 0,
-    "score": 0.695738048409922,
+    "score": 0.6842385265983271,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -207,7 +144,7 @@
     "importance": 0.7,
     "created_at": 1771533776.0680125,
     "access_count": 0,
-    "score": 0.6957381962719588,
+    "score": 0.6842386720164229,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -216,28 +153,13 @@
     "tier": "warm"
   },
   {
-    "id": "9abc97cd2a7b",
-    "text": "Real-world test with Bowen's USER.md",
-    "category": "general",
-    "importance": 0.7,
-    "created_at": 1771533776.6394746,
-    "access_count": 1,
-    "score": 0.765312184628458,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
     "id": "91c05981cf3c",
     "text": "All 4 channels correctly unified under canonical ID \"bowen\"",
     "category": "general",
     "importance": 0.7,
     "created_at": 1771533777.2007518,
     "access_count": 0,
-    "score": 0.6957385003187736,
+    "score": 0.684238971037919,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -252,7 +174,7 @@
     "importance": 0.7,
     "created_at": 1771533777.7604384,
     "access_count": 0,
-    "score": 0.6957386505484295,
+    "score": 0.6842391187845007,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -267,7 +189,7 @@
     "importance": 0.7,
     "created_at": 1771533778.385088,
     "access_count": 0,
-    "score": 0.6957388182153038,
+    "score": 0.6842392836799635,
     "metadata": {
       "urls": [],
       "commands": [
@@ -284,7 +206,7 @@
     "importance": 0.7,
     "created_at": 1771533778.9456394,
     "access_count": 0,
-    "score": 0.6957389686770771,
+    "score": 0.684239431654889,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -299,7 +221,7 @@
     "importance": 0.7,
     "created_at": 1771533779.52829,
     "access_count": 0,
-    "score": 0.6957391250707824,
+    "score": 0.6842395854636374,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -314,7 +236,7 @@
     "importance": 0.7,
     "created_at": 1771533780.0876179,
     "access_count": 0,
-    "score": 0.6957392752042596,
+    "score": 0.6842397331156301,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -329,7 +251,7 @@
     "importance": 0.7,
     "created_at": 1771533780.6430047,
     "access_count": 0,
-    "score": 0.695739424279918,
+    "score": 0.6842398797271623,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -344,7 +266,7 @@
     "importance": 0.7,
     "created_at": 1771533781.2022128,
     "access_count": 0,
-    "score": 0.6957395743812698,
+    "score": 0.6842400273476236,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -359,7 +281,7 @@
     "importance": 0.7,
     "created_at": 1771533781.7749128,
     "access_count": 0,
-    "score": 0.6957397281041799,
+    "score": 0.6842401785297211,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -374,7 +296,7 @@
     "importance": 0.7,
     "created_at": 1771533782.3321376,
     "access_count": 0,
-    "score": 0.6957398776732796,
+    "score": 0.6842403256266646,
     "metadata": {
       "urls": [
         "https://github.com/clawinfra/identity-resolver"
@@ -391,7 +313,7 @@
     "importance": 0.7,
     "created_at": 1771533782.910496,
     "access_count": 0,
-    "score": 0.6957400329150711,
+    "score": 0.6842404783025388,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -406,7 +328,7 @@
     "importance": 0.7,
     "created_at": 1771533784.070109,
     "access_count": 0,
-    "score": 0.6957403441762446,
+    "score": 0.684240784419025,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -421,7 +343,7 @@
     "importance": 0.7,
     "created_at": 1771533784.6532218,
     "access_count": 0,
-    "score": 0.6957405006942833,
+    "score": 0.6842409383500517,
     "metadata": {
       "urls": [],
       "commands": [
@@ -438,7 +360,7 @@
     "importance": 0.7,
     "created_at": 1771533785.2190263,
     "access_count": 0,
-    "score": 0.6957406525665073,
+    "score": 0.6842410877119893,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -453,7 +375,7 @@
     "importance": 0.7,
     "created_at": 1771533785.7861786,
     "access_count": 0,
-    "score": 0.6957408048004695,
+    "score": 0.6842412374298121,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -468,7 +390,7 @@
     "importance": 0.7,
     "created_at": 1771533786.3468318,
     "access_count": 0,
-    "score": 0.6957409552900627,
+    "score": 0.6842413854320348,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -483,7 +405,7 @@
     "importance": 0.7,
     "created_at": 1771533786.9122772,
     "access_count": 0,
-    "score": 0.695741107066008,
+    "score": 0.684241534699348,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -498,7 +420,7 @@
     "importance": 0.7,
     "created_at": 1771533787.4871464,
     "access_count": 0,
-    "score": 0.6957412613714924,
+    "score": 0.6842416864543907,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -513,7 +435,7 @@
     "importance": 0.7,
     "created_at": 1771533788.925523,
     "access_count": 0,
-    "score": 0.6957416474586611,
+    "score": 0.6842420661599832,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -528,7 +450,7 @@
     "importance": 0.7,
     "created_at": 1771533789.4981863,
     "access_count": 0,
-    "score": 0.6957418011721098,
+    "score": 0.6842422173328386,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -543,7 +465,7 @@
     "importance": 0.7,
     "created_at": 1771533790.0888143,
     "access_count": 0,
-    "score": 0.6957419597076964,
+    "score": 0.6842423732480661,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -558,8 +480,8 @@
     "importance": 0.9,
     "created_at": 1770901224.1941369,
     "access_count": 0,
-    "score": 0.7008176944738269,
-    "tier": "hot"
+    "score": 0.6892342136191918,
+    "tier": "warm"
   },
   {
     "id": "0b2d277b6aab",
@@ -568,7 +490,7 @@
     "importance": 0.8,
     "created_at": 1770603278.377375,
     "access_count": 3,
-    "score": 0.7218957842300023,
+    "score": 0.7099639136998951,
     "tier": "hot"
   },
   {
@@ -578,7 +500,7 @@
     "importance": 0.8,
     "created_at": 1771074043.6508107,
     "access_count": 1,
-    "score": 0.7324895726605433,
+    "score": 0.720382602462675,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -593,7 +515,7 @@
     "importance": 0.8,
     "created_at": 1771074043.887379,
     "access_count": 1,
-    "score": 0.7324896395137098,
+    "score": 0.720382668210725,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -608,7 +530,7 @@
     "importance": 0.8,
     "created_at": 1771074044.122165,
     "access_count": 1,
-    "score": 0.7324897058631777,
+    "score": 0.7203827334636007,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -623,7 +545,7 @@
     "importance": 0.8,
     "created_at": 1771095636.6020772,
     "access_count": 1,
-    "score": 0.738617148282385,
+    "score": 0.7264088983144604,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -638,7 +560,7 @@
     "importance": 0.75,
     "created_at": 1771533763.5591288,
     "access_count": 0,
-    "score": 0.7454301842918222,
+    "score": 0.7331093249066412,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -653,7 +575,7 @@
     "importance": 0.75,
     "created_at": 1771533764.118573,
     "access_count": 0,
-    "score": 0.7454303451815885,
+    "score": 0.7331094831371375,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -668,7 +590,7 @@
     "importance": 0.75,
     "created_at": 1771533764.6763897,
     "access_count": 0,
-    "score": 0.7454305056033544,
+    "score": 0.7331096409073687,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -682,8 +604,8 @@
     "category": "general",
     "importance": 0.75,
     "created_at": 1771533765.248862,
-    "access_count": 0,
-    "score": 0.7454306702398726,
+    "access_count": 1,
+    "score": 0.8064207831049575,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -698,22 +620,7 @@
     "importance": 0.75,
     "created_at": 1771533783.4889903,
     "access_count": 0,
-    "score": 0.7454359159182506,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "4b43eff15895",
-    "text": "USE UV NOT PYTHON3: Bowen directive for all Python commands (uv run)",
-    "category": "owner/preferences",
-    "importance": 0.9,
-    "created_at": 1771074043.966223,
-    "access_count": 0,
-    "score": 0.7491371541069614,
+    "score": 0.7331149617978222,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -728,7 +635,7 @@
     "importance": 0.8,
     "created_at": 1771138829.5050104,
     "access_count": 1,
-    "score": 0.7510285357358131,
+    "score": 0.7386151438743757,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -743,7 +650,7 @@
     "importance": 0.9,
     "created_at": 1771095636.7073271,
     "access_count": 0,
-    "score": 0.7554039323248661,
+    "score": 0.7429182216235646,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -758,7 +665,7 @@
     "importance": 0.8,
     "created_at": 1771160437.3352547,
     "access_count": 1,
-    "score": 0.7573155446266723,
+    "score": 0.7447982377989119,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -773,7 +680,7 @@
     "importance": 0.8,
     "created_at": 1771160464.5418885,
     "access_count": 1,
-    "score": 0.7573234937449097,
+    "score": 0.7448060555299716,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -788,7 +695,7 @@
     "importance": 0.8,
     "created_at": 1771160464.5951035,
     "access_count": 1,
-    "score": 0.7573235092929224,
+    "score": 0.7448060708210671,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -799,13 +706,18 @@
     "tier": "hot"
   },
   {
-    "id": "e197eef4db97",
-    "text": "Use uv not pip for Python on GPU server \u2014 Bowen explicit preference",
-    "category": "owner/preferences",
-    "importance": 0.9,
-    "created_at": 1770858052.078376,
-    "access_count": 1,
-    "score": 0.7581657726883034,
+    "id": "9abc97cd2a7b",
+    "text": "Real-world test with Bowen's USER.md",
+    "category": "general",
+    "importance": 0.7,
+    "created_at": 1771533776.6394746,
+    "access_count": 2,
+    "score": 0.8210865874390145,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
     "tier": "hot"
   },
   {
@@ -815,7 +727,7 @@
     "importance": 0.85,
     "created_at": 1771041476.1792974,
     "access_count": 1,
-    "score": 0.7685526851131502,
+    "score": 0.7558496449589299,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -826,43 +738,13 @@
     "tier": "hot"
   },
   {
-    "id": "82c8a457a6f6",
-    "text": "LESSON: Use uv for Python (uv run script.py not python3 script.py), Bowen explicit directive Feb 15",
-    "category": "lessons/cost",
-    "importance": 0.9,
-    "created_at": 1771160464.7532754,
-    "access_count": 0,
-    "score": 0.7745354544954571,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "c0e538342b0c",
-    "text": "LESSON: Quality first, no shortcuts \u2014 Bowen chose 2+ hours proper LTX-2 setup over 10-minute AnimateDiff workaround, directive Feb 14",
-    "category": "owner/preferences",
-    "importance": 0.9,
-    "created_at": 1771160464.860456,
-    "access_count": 0,
-    "score": 0.7745354865227734,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
     "id": "2428387b2b0f",
     "text": "SSH key for AlexChen31337: ~/.ssh/id_ed25519_alexchen (alias: github-alexchen)",
     "category": "technical/security",
     "importance": 0.8,
     "created_at": 1770603278.2826345,
     "access_count": 4,
-    "score": 0.7774262007517886,
+    "score": 0.7645764944972033,
     "tier": "hot",
     "tree_relevance": 1.333308210833677,
     "search_method": "keyword-tree"
@@ -874,7 +756,7 @@
     "importance": 0.7,
     "created_at": 1771182017.9329922,
     "access_count": 3,
-    "score": 0.7896805860279458,
+    "score": 0.7766283328936994,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -889,22 +771,7 @@
     "importance": 0.9,
     "created_at": 1771239283.3715694,
     "access_count": 0,
-    "score": 0.798449605041189,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "a8b7c02f5951",
-    "text": "Status: Ready to test LTX-2 video generation with proper Gemma-3 encoder!",
-    "category": "technical/gpu",
-    "importance": 0.7,
-    "created_at": 1771037649.449347,
-    "access_count": 5,
-    "score": 0.8618072763978502,
+    "score": 0.785252412981097,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -919,7 +786,7 @@
     "importance": 0.9,
     "created_at": 1771074043.419154,
     "access_count": 1,
-    "score": 0.8240506955905802,
+    "score": 0.8104303553360169,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -934,7 +801,22 @@
     "importance": 0.9,
     "created_at": 1771095636.4439633,
     "access_count": 1,
-    "score": 0.8309442411257868,
+    "score": 0.8172099607504104,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "c17d65151699",
+    "text": "Context: After sub-agent delivered multi-user memory isolation, I identified a flaw (channel:user_id doesn't handle Bowen using multiple channels) and immediately offered \"Quick Fix Options A/B/C\"",
+    "category": "general",
+    "importance": 0.7,
+    "created_at": 1771533770.3375487,
+    "access_count": 2,
+    "score": 0.8210845911335857,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -949,7 +831,7 @@
     "importance": 0.9,
     "created_at": 1771117238.729161,
     "access_count": 1,
-    "score": 0.8378984477314871,
+    "score": 0.8240492245973674,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -964,7 +846,7 @@
     "importance": 0.85,
     "created_at": 1771049139.3538048,
     "access_count": 2,
-    "score": 0.8409035470910301,
+    "score": 0.8270046541052914,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -980,22 +862,7 @@
     "importance": 0.9,
     "created_at": 1771138829.3475142,
     "access_count": 1,
-    "score": 0.844907051361231,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "c045bb9b46ed",
-    "text": "Status: Ready to test once custom nodes installed",
-    "category": "technical/gpu",
-    "importance": 0.7,
-    "created_at": 1770987661.7719114,
-    "access_count": 6,
-    "score": 0.9017026597045696,
+    "score": 0.830941986366096,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1010,7 +877,7 @@
     "importance": 0.9,
     "created_at": 1771160437.4418483,
     "access_count": 1,
-    "score": 0.8519800227388417,
+    "score": 0.8378980519790931,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1026,7 +893,7 @@
     "importance": 0.9,
     "created_at": 1771160437.494436,
     "access_count": 1,
-    "score": 0.8519800400240672,
+    "score": 0.8378980689785422,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1036,13 +903,13 @@
     "search_method": "keyword-tree"
   },
   {
-    "id": "761314075b01",
-    "text": "LESSON: Routine tasks don't ask \u2014 publish skills, sanitize personal info, commit changes, update versions, Bowen directive Feb 15",
-    "category": "owner/preferences",
-    "importance": 0.9,
-    "created_at": 1771160464.8068938,
-    "access_count": 1,
-    "score": 0.851989017566923,
+    "id": "a8b7c02f5951",
+    "text": "Status: Ready to test LTX-2 video generation with proper Gemma-3 encoder!",
+    "category": "technical/gpu",
+    "importance": 0.7,
+    "created_at": 1771037649.449347,
+    "access_count": 6,
+    "score": 0.904067067366201,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1051,13 +918,38 @@
     "tier": "hot"
   },
   {
-    "id": "502bc23f7714",
-    "text": "Next: Test LTX-2 video generation via ComfyUI API",
+    "id": "e197eef4db97",
+    "text": "Use uv not pip for Python on GPU server \u2014 Bowen explicit preference",
+    "category": "owner/preferences",
+    "importance": 0.9,
+    "created_at": 1770858052.078376,
+    "access_count": 3,
+    "score": 0.8812043060895273,
+    "tier": "hot"
+  },
+  {
+    "id": "4b43eff15895",
+    "text": "USE UV NOT PYTHON3: Bowen directive for all Python commands (uv run)",
+    "category": "owner/preferences",
+    "importance": 0.9,
+    "created_at": 1771074043.966223,
+    "access_count": 2,
+    "score": 0.8841060287827223,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "c045bb9b46ed",
+    "text": "Status: Ready to test once custom nodes installed",
     "category": "technical/gpu",
     "importance": 0.7,
-    "created_at": 1770987661.8755405,
+    "created_at": 1770987661.7719114,
     "access_count": 7,
-    "score": 0.9580591142388668,
+    "score": 0.9422237751844428,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1072,7 +964,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3982527,
     "access_count": 6,
-    "score": 0.9192610767015896,
+    "score": 0.9040670495442074,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1081,23 +973,81 @@
     "tier": "hot"
   },
   {
-    "id": "bd87731e5bff",
-    "text": "Test locally before pushing to CI \u2014 Bowen explicit preference",
-    "category": "owner/preferences",
+    "id": "82c8a457a6f6",
+    "text": "LESSON: Use uv for Python (uv run script.py not python3 script.py), Bowen explicit directive Feb 15",
+    "category": "lessons/cost",
     "importance": 0.9,
-    "created_at": 1770858052.1201756,
-    "access_count": 5,
-    "score": 1.0338624339705884,
+    "created_at": 1771160464.7532754,
+    "access_count": 2,
+    "score": 0.9140802336020851,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
     "tier": "hot"
   },
   {
-    "id": "c1c01dad8e92",
-    "text": "Lesson: test locally before pushing to CI - Bowen explicit after repeated failures",
-    "category": "lessons/cost",
+    "id": "c0e538342b0c",
+    "text": "LESSON: Quality first, no shortcuts \u2014 Bowen chose 2+ hours proper LTX-2 setup over 10-minute AnimateDiff workaround, directive Feb 14",
+    "category": "owner/preferences",
     "importance": 0.9,
-    "created_at": 1770879637.8976207,
-    "access_count": 5,
-    "score": 1.0425082318201406,
+    "created_at": 1771160464.860456,
+    "access_count": 2,
+    "score": 0.9140802713996274,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "40c704ddc882",
+    "text": "Local machine (bowen-XPS-8940) sudo password: bowen@2025. User: bowen. Also Pi SSH: admin@192.168.99.188, password 123456 (also has SSH key ~/.ssh/id_ed25519_alexchen).",
+    "category": "infrastructure/credentials",
+    "importance": 0.95,
+    "created_at": 1771566283.8878691,
+    "access_count": 0,
+    "score": 0.9403292116984832,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": [
+        "/.ssh/id_ed25519_alexchen",
+        "~/.ssh/id_ed25519_alexchen"
+      ]
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "770b94e2eafa",
+    "text": "LESSON: Before asking Bowen for any credential, password, key, or stored value \u2014 ALWAYS run memory_cli.py retrieve AND grep memory/*.md first. Never ask without exhausting memory search. Asking without searching is a protocol violation per AGENTS.md mandatory retrieval rules.",
+    "category": "lessons/behavior",
+    "importance": 0.95,
+    "created_at": 1771566329.030747,
+    "access_count": 0,
+    "score": 0.9403455888342539,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "502bc23f7714",
+    "text": "Next: Test LTX-2 video generation via ComfyUI API",
+    "category": "technical/gpu",
+    "importance": 0.7,
+    "created_at": 1770987661.8755405,
+    "access_count": 8,
+    "score": 0.9976487430216383,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
     "tier": "hot"
   },
   {
@@ -1106,8 +1056,23 @@
     "category": "technical",
     "importance": 0.9,
     "created_at": 1770621651.5485682,
-    "access_count": 6,
-    "score": 1.0066583907339142,
+    "access_count": 7,
+    "score": 1.0518960535720594,
+    "tier": "hot"
+  },
+  {
+    "id": "761314075b01",
+    "text": "LESSON: Routine tasks don't ask \u2014 publish skills, sanitize personal info, commit changes, update versions, Bowen directive Feb 15",
+    "category": "owner/preferences",
+    "importance": 0.9,
+    "created_at": 1771160464.8068938,
+    "access_count": 3,
+    "score": 0.9902536068856737,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
     "tier": "hot"
   },
   {
@@ -1117,7 +1082,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3307042,
     "access_count": 8,
-    "score": 1.0341686843375997,
+    "score": 1.017075404230081,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1132,12 +1097,22 @@
     "importance": 0.7,
     "created_at": 1771037649.3432972,
     "access_count": 8,
-    "score": 1.0341686893618378,
+    "score": 1.0170754091712755,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
+    "tier": "hot"
+  },
+  {
+    "id": "bd87731e5bff",
+    "text": "Test locally before pushing to CI \u2014 Bowen explicit preference",
+    "category": "owner/preferences",
+    "importance": 0.9,
+    "created_at": 1770858052.1201756,
+    "access_count": 8,
+    "score": 1.2201290588737668,
     "tier": "hot"
   },
   {
@@ -1147,7 +1122,17 @@
     "importance": 0.9,
     "created_at": 1770879637.8497229,
     "access_count": 7,
-    "score": 1.1815093075620664,
+    "score": 1.161980704685297,
+    "tier": "hot"
+  },
+  {
+    "id": "c1c01dad8e92",
+    "text": "Lesson: test locally before pushing to CI - Bowen explicit after repeated failures",
+    "category": "lessons/cost",
+    "importance": 0.9,
+    "created_at": 1770879637.8976207,
+    "access_count": 8,
+    "score": 1.2303325335784616,
     "tier": "hot"
   },
   {
@@ -1156,8 +1141,8 @@
     "category": "projects/clawchain",
     "importance": 0.8,
     "created_at": 1770613764.1543171,
-    "access_count": 31,
-    "score": 2.285977343148597,
+    "access_count": 32,
+    "score": 2.3030275039621144,
     "tier": "hot"
   },
   {
@@ -1167,47 +1152,12 @@
     "importance": 0.7,
     "created_at": 1771037649.493801,
     "access_count": 32,
-    "score": 2.413060415289852,
+    "score": 2.373176092528486,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "hot"
-  },
-  {
-    "id": "843bf750c3cb",
-    "text": "Bowen feedback: \"please do reflection on why you failed to find it at the first place, anything wrong with tired memory system?\"",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1771037649.4981942,
-    "access_count": 32,
-    "score": 2.4130604193792298,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "869e722bc09d",
-    "text": "ClawChain dev testnet running on Dell: ws://localhost:9944, PID at /tmp/clawchain-node.pid, producing blocks every 6s, 6 pre-funded accounts with ~55.5M CLAW each",
-    "category": "projects/clawchain",
-    "importance": 0.9,
-    "created_at": 1770610454.8254375,
-    "access_count": 29,
-    "score": 2.4431532535673113,
-    "tier": "hot"
-  },
-  {
-    "id": "bab5af04a47f",
-    "text": "ClawChain staking resolved: sp-staking v42.1 fixes version conflicts. Added pallet-staking, pallet-session, pallet-treasury, pallet-sudo, pallet-task-market, pallet-reputation. 54 tests pass. Building release binary.",
-    "category": "projects/clawchain",
-    "importance": 0.9,
-    "created_at": 1770618231.019124,
-    "access_count": 29,
-    "score": 2.4504939016321186,
     "tier": "hot"
   },
   {
@@ -1217,7 +1167,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7097778,
     "access_count": 33,
-    "score": 2.4233258398573443,
+    "score": 2.3832718447991574,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1232,12 +1182,22 @@
     "importance": 0.7,
     "created_at": 1770987661.713866,
     "access_count": 33,
-    "score": 2.423325843679025,
+    "score": 2.3832718485576714,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
+    "tier": "hot"
+  },
+  {
+    "id": "869e722bc09d",
+    "text": "ClawChain dev testnet running on Dell: ws://localhost:9944, PID at /tmp/clawchain-node.pid, producing blocks every 6s, 6 pre-funded accounts with ~55.5M CLAW each",
+    "category": "projects/clawchain",
+    "importance": 0.9,
+    "created_at": 1770610454.8254375,
+    "access_count": 30,
+    "score": 2.4643810673420616,
     "tier": "hot"
   },
   {
@@ -1247,9 +1207,19 @@
     "importance": 0.8,
     "created_at": 1770603278.5991645,
     "access_count": 34,
-    "score": 2.443339786438542,
+    "score": 2.402954990418576,
     "tier": "hot",
     "search_method": "keyword-tree"
+  },
+  {
+    "id": "bab5af04a47f",
+    "text": "ClawChain staking resolved: sp-staking v42.1 fixes version conflicts. Added pallet-staking, pallet-session, pallet-treasury, pallet-sudo, pallet-task-market, pallet-reputation. 54 tests pass. Building release binary.",
+    "category": "projects/clawchain",
+    "importance": 0.9,
+    "created_at": 1770618231.019124,
+    "access_count": 30,
+    "score": 2.471785496059501,
+    "tier": "hot"
   },
   {
     "id": "83ae83844ea3",
@@ -1258,7 +1228,7 @@
     "importance": 0.75,
     "created_at": 1770848917.960907,
     "access_count": 33,
-    "score": 2.461094331544005,
+    "score": 2.420416079129812,
     "tier": "hot"
   },
   {
@@ -1268,7 +1238,7 @@
     "importance": 0.75,
     "created_at": 1770848917.963316,
     "access_count": 33,
-    "score": 2.461094333830644,
+    "score": 2.420416081378656,
     "tier": "hot"
   },
   {
@@ -1278,7 +1248,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9673443,
     "access_count": 33,
-    "score": 2.4610943376550667,
+    "score": 2.4204160851398666,
     "tier": "hot"
   },
   {
@@ -1288,7 +1258,7 @@
     "importance": 0.75,
     "created_at": 1770848917.968247,
     "access_count": 33,
-    "score": 2.4610943385116797,
+    "score": 2.420416085982321,
     "tier": "hot"
   },
   {
@@ -1298,7 +1268,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9691088,
     "access_count": 33,
-    "score": 2.4610943393295814,
+    "score": 2.4204160867864815,
     "tier": "hot"
   },
   {
@@ -1308,7 +1278,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9700267,
     "access_count": 33,
-    "score": 2.461094340200456,
+    "score": 2.420416087643184,
     "tier": "hot"
   },
   {
@@ -1318,7 +1288,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9754503,
     "access_count": 33,
-    "score": 2.4610943453496397,
+    "score": 2.4204160927072595,
     "tier": "hot"
   },
   {
@@ -1328,17 +1298,7 @@
     "importance": 0.75,
     "created_at": 1770848917.977328,
     "access_count": 33,
-    "score": 2.461094347132136,
-    "tier": "hot"
-  },
-  {
-    "id": "0be23f0002a3",
-    "text": "Fixed: broker placement (runs on hub machine with orchestrator, not on edge)",
-    "category": "projects/evoclaw",
-    "importance": 0.75,
-    "created_at": 1770848917.9782953,
-    "access_count": 33,
-    "score": 2.4610943480500973,
+    "score": 2.420416094460072,
     "tier": "hot"
   },
   {
@@ -1348,17 +1308,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9793704,
     "access_count": 33,
-    "score": 2.461094349070381,
-    "tier": "hot"
-  },
-  {
-    "id": "694a5f66c032",
-    "text": "EvoClaw Pi agent: admin@192.168.99.25, password 8JJ3yKNrmCoHo90F. MQTT container: evoclaw-mqtt.",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1770603278.50327,
-    "access_count": 40,
-    "score": 2.4294570841291523,
+    "score": 2.4204160963667256,
     "tier": "hot"
   },
   {
@@ -1368,22 +1318,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7264295,
     "access_count": 34,
-    "score": 2.479682270660751,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "894827eaa9d5",
-    "text": "Status: Identified issue, sent fix proposal to Bowen (rebuild + deploy with systemd service)",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1770987661.7308817,
-    "access_count": 34,
-    "score": 2.4796822749193694,
+    "score": 2.4386967870819887,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1398,7 +1333,27 @@
     "importance": 0.75,
     "created_at": 1770848917.976349,
     "access_count": 34,
-    "score": 2.5183290984368893,
+    "score": 2.476704839906095,
+    "tier": "hot"
+  },
+  {
+    "id": "0be23f0002a3",
+    "text": "Fixed: broker placement (runs on hub machine with orchestrator, not on edge)",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9782953,
+    "access_count": 34,
+    "score": 2.476704841765281,
+    "tier": "hot"
+  },
+  {
+    "id": "694a5f66c032",
+    "text": "EvoClaw Pi agent: admin@192.168.99.25, password 8JJ3yKNrmCoHo90F. MQTT container: evoclaw-mqtt.",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770603278.50327,
+    "access_count": 42,
+    "score": 2.4848738186080985,
     "tier": "hot"
   },
   {
@@ -1407,8 +1362,8 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1771037649.3265023,
-    "access_count": 34,
-    "score": 2.5279678909363574,
+    "access_count": 35,
+    "score": 2.542688506440388,
     "metadata": {
       "urls": [
         "cs.AI"
@@ -1419,28 +1374,13 @@
     "tier": "hot"
   },
   {
-    "id": "96a4dbea777e",
-    "text": "What happened: Failed to find EvoClaw paper on first attempt, asked Bowen if he wanted me to write one.",
+    "id": "843bf750c3cb",
+    "text": "Bowen feedback: \"please do reflection on why you failed to find it at the first place, anything wrong with tired memory system?\"",
     "category": "projects/evoclaw",
     "importance": 0.7,
-    "created_at": 1771037649.4890444,
+    "created_at": 1771037649.4981942,
     "access_count": 34,
-    "score": 2.5279680494626033,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "0c1e4e49d841",
-    "text": "EvoClaw orchestrator model ID bug fixed - API now receives correct model ID (glm-4.7 not anthropic-glm-2/glm-4.7)",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1771182017.7169092,
-    "access_count": 32,
-    "score": 2.551275526763622,
+    "score": 2.486184482090223,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1455,7 +1395,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7180986,
     "access_count": 35,
-    "score": 2.5360386777490485,
+    "score": 2.494121706041677,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1470,7 +1410,22 @@
     "importance": 0.7,
     "created_at": 1770987661.73495,
     "access_count": 35,
-    "score": 2.5360386942357187,
+    "score": 2.4941217222563052,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "0c1e4e49d841",
+    "text": "EvoClaw orchestrator model ID bug fixed - API now receives correct model ID (glm-4.7 not anthropic-glm-2/glm-4.7)",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1771182017.7169092,
+    "access_count": 32,
+    "score": 2.5091067124569357,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1484,10 +1439,40 @@
     "category": "projects/evoclaw/bsc",
     "importance": 0.8,
     "created_at": 1770603278.2195358,
-    "access_count": 36,
-    "score": 2.5544003116897662,
+    "access_count": 37,
+    "score": 2.566792454727017,
     "tier": "hot",
     "tree_relevance": 0.6666538966332228
+  },
+  {
+    "id": "4308fc2721e1",
+    "text": "Problem: Edge agent on Raspberry Pi is DOWN (crashed 11+ hours ago at 10:33 AM)",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770987661.7222998,
+    "access_count": 36,
+    "score": 2.549546636973091,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "894827eaa9d5",
+    "text": "Status: Identified issue, sent fix proposal to Bowen (rebuild + deploy with systemd service)",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1770987661.7308817,
+    "access_count": 36,
+    "score": 2.549546645413705,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
   },
   {
     "id": "7e748482724e",
@@ -1496,7 +1481,7 @@
     "importance": 0.75,
     "created_at": 1770987661.4968448,
     "access_count": 33,
-    "score": 2.5964203293956762,
+    "score": 2.553505338214508,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1516,7 +1501,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5010297,
     "access_count": 33,
-    "score": 2.5964203335872966,
+    "score": 2.5535053423366123,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1536,7 +1521,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5811749,
     "access_count": 33,
-    "score": 2.596420413868618,
+    "score": 2.5535054212910024,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1554,7 +1539,7 @@
     "importance": 0.75,
     "created_at": 1770987661.585305,
     "access_count": 33,
-    "score": 2.596420418005309,
+    "score": 2.55350542535932,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1564,28 +1549,13 @@
     "search_method": "keyword-tree"
   },
   {
-    "id": "4308fc2721e1",
-    "text": "Problem: Edge agent on Raspberry Pi is DOWN (crashed 11+ hours ago at 10:33 AM)",
-    "category": "projects/evoclaw",
-    "importance": 0.7,
-    "created_at": 1770987661.7222998,
-    "access_count": 36,
-    "score": 2.5923950970078993,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
     "id": "43b0af820297",
     "text": "Genome layers 2-3 implemented \u2014 skill selection weights, behavioral evolution with mutation",
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770858031.0936832,
     "access_count": 33,
-    "score": 2.634413275902155,
+    "score": 2.590870317460079,
     "tier": "hot"
   },
   {
@@ -1595,7 +1565,72 @@
     "importance": 0.8,
     "created_at": 1770858031.1349287,
     "access_count": 33,
-    "score": 2.634413317822036,
+    "score": 2.5908703586868485,
+    "tier": "hot"
+  },
+  {
+    "id": "96a4dbea777e",
+    "text": "What happened: Failed to find EvoClaw paper on first attempt, asked Bowen if he wanted me to write one.",
+    "category": "projects/evoclaw",
+    "importance": 0.7,
+    "created_at": 1771037649.4890444,
+    "access_count": 36,
+    "score": 2.5991928584576645,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "a2072493215d",
+    "text": "Intelligent router working: 14 models across 4 tiers, delivering 40-83% cost savings",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879637.2224507,
+    "access_count": 33,
+    "score": 2.6125572919924323,
+    "tier": "hot"
+  },
+  {
+    "id": "59e8ccbe2615",
+    "text": "Skills robustness fixes: atomic writes, schema v2.0, sanitization, pooling, retry logic all implemented",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879637.515192,
+    "access_count": 33,
+    "score": 2.612557587055014,
+    "tier": "hot"
+  },
+  {
+    "id": "81a5b283e044",
+    "text": "Config backup system implemented: automated Turso backups on startup, restore by ID",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879637.6592467,
+    "access_count": 33,
+    "score": 2.6125577322514704,
+    "tier": "hot"
+  },
+  {
+    "id": "df6a370aceb9",
+    "text": "EvoClaw security layers implemented: signed constraints, JWT auth, evolution firewall",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879638.046249,
+    "access_count": 33,
+    "score": 2.6125581223226497,
+    "tier": "hot"
+  },
+  {
+    "id": "e5802d060a78",
+    "text": "Agent self-governance skill published to ClawHub: WAL+VBR+ADL+VFM protocols",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770879638.099425,
+    "access_count": 33,
+    "score": 2.612558175920094,
     "tier": "hot"
   },
   {
@@ -1605,7 +1640,7 @@
     "importance": 0.8,
     "created_at": 1771074043.3392706,
     "access_count": 30,
-    "score": 2.6635981258509522,
+    "score": 2.6195727849635686,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1619,58 +1654,18 @@
     "category": "projects/clawchain",
     "importance": 0.95,
     "created_at": 1770629133.8014925,
-    "access_count": 30,
-    "score": 2.664139047566856,
+    "access_count": 31,
+    "score": 2.685607385193927,
     "tier": "hot"
   },
   {
-    "id": "a2072493215d",
-    "text": "Intelligent router working: 14 models across 4 tiers, delivering 40-83% cost savings",
+    "id": "50c59a212ca6",
+    "text": "EvoClaw agent editor modal UI complete with edit button, model dropdown, save functionality",
     "category": "projects/evoclaw",
     "importance": 0.8,
-    "created_at": 1770879637.2224507,
+    "created_at": 1770901223.9106195,
     "access_count": 33,
-    "score": 2.6564647283567724,
-    "tier": "hot"
-  },
-  {
-    "id": "59e8ccbe2615",
-    "text": "Skills robustness fixes: atomic writes, schema v2.0, sanitization, pooling, retry logic all implemented",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770879637.515192,
-    "access_count": 33,
-    "score": 2.656465028378266,
-    "tier": "hot"
-  },
-  {
-    "id": "81a5b283e044",
-    "text": "Config backup system implemented: automated Turso backups on startup, restore by ID",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770879637.6592467,
-    "access_count": 33,
-    "score": 2.656465176014938,
-    "tier": "hot"
-  },
-  {
-    "id": "df6a370aceb9",
-    "text": "EvoClaw security layers implemented: signed constraints, JWT auth, evolution firewall",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770879638.046249,
-    "access_count": 33,
-    "score": 2.656465572641773,
-    "tier": "hot"
-  },
-  {
-    "id": "e5802d060a78",
-    "text": "Agent self-governance skill published to ClawHub: WAL+VBR+ADL+VFM protocols",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770879638.099425,
-    "access_count": 33,
-    "score": 2.6564656271399922,
+    "score": 2.6344060394063638,
     "tier": "hot"
   },
   {
@@ -1680,7 +1675,7 @@
     "importance": 0.8,
     "created_at": 1771095636.3898034,
     "access_count": 30,
-    "score": 2.6858803192024503,
+    "score": 2.6414866865886713,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1695,62 +1690,12 @@
     "importance": 0.8,
     "created_at": 1771095636.495916,
     "access_count": 30,
-    "score": 2.685880429157754,
+    "score": 2.641486794726333,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "hot"
-  },
-  {
-    "id": "50c59a212ca6",
-    "text": "EvoClaw agent editor modal UI complete with edit button, model dropdown, save functionality",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770901223.9106195,
-    "access_count": 33,
-    "score": 2.67868067249795,
-    "tier": "hot"
-  },
-  {
-    "id": "6999ffc3727a",
-    "text": "Tiered memory fixed: hot-memory-state.json key mismatch corrected, MEMORY.md renders properly at 2.5KB",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770922835.0454159,
-    "access_count": 33,
-    "score": 2.701107883560402,
-    "tier": "hot"
-  },
-  {
-    "id": "a39fd46e1a54",
-    "text": "Intelligent router populated with 14 real models across 4 tiers delivering 83% savings on cron jobs",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770922837.8350434,
-    "access_count": 33,
-    "score": 2.7011107906156093,
-    "tier": "hot"
-  },
-  {
-    "id": "e97ac4e337ac",
-    "text": "EvoClaw CI red at 54.9% coverage, sub-agent boosted to 74% then stuck at 76.2% due to cold.go mock limitation",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770922857.5116065,
-    "access_count": 33,
-    "score": 2.7011312955450664,
-    "tier": "hot"
-  },
-  {
-    "id": "8a0e310c12a4",
-    "text": "Gateway daemon mode implemented with systemd/launchd integration, production ready",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770922872.2013025,
-    "access_count": 33,
-    "score": 2.701146603766106,
     "tier": "hot"
   },
   {
@@ -1760,32 +1705,47 @@
     "importance": 0.8,
     "created_at": 1770858051.8253617,
     "access_count": 34,
-    "score": 2.6957002619359174,
+    "score": 2.6511443201828673,
     "tier": "hot"
   },
   {
-    "id": "982a1aa36f01",
-    "text": "Tiered memory v2.2.0: auto-ingest daily files, argparse bug fix, tree prune crash fix",
+    "id": "6999ffc3727a",
+    "text": "Tiered memory fixed: hot-memory-state.json key mismatch corrected, MEMORY.md renders properly at 2.5KB",
     "category": "projects/evoclaw",
     "importance": 0.8,
-    "created_at": 1771074043.4960601,
-    "access_count": 31,
-    "score": 2.730188244137453,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "ffe9b3b04d26",
-    "text": "Gateway/daemon mode implemented with systemd/launchd integration - evoclaw gateway install/start/stop/status/restart/uninstall commands",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1770944439.7650976,
+    "created_at": 1770922835.0454159,
     "access_count": 33,
-    "score": 2.723716124970003,
+    "score": 2.656462561810092,
+    "tier": "hot"
+  },
+  {
+    "id": "a39fd46e1a54",
+    "text": "Intelligent router populated with 14 real models across 4 tiers delivering 83% savings on cron jobs",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770922837.8350434,
+    "access_count": 33,
+    "score": 2.656465420816217,
+    "tier": "hot"
+  },
+  {
+    "id": "e97ac4e337ac",
+    "text": "EvoClaw CI red at 54.9% coverage, sub-agent boosted to 74% then stuck at 76.2% due to cold.go mock limitation",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770922857.5116065,
+    "access_count": 33,
+    "score": 2.656485586829491,
+    "tier": "hot"
+  },
+  {
+    "id": "8a0e310c12a4",
+    "text": "Gateway daemon mode implemented with systemd/launchd integration, production ready",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770922872.2013025,
+    "access_count": 33,
+    "score": 2.6565006420282584,
     "tier": "hot"
   },
   {
@@ -1795,7 +1755,32 @@
     "importance": 0.8,
     "created_at": 1770879637.7547972,
     "access_count": 34,
-    "score": 2.7182435361193416,
+    "score": 2.6733149873564277,
+    "tier": "hot"
+  },
+  {
+    "id": "ffe9b3b04d26",
+    "text": "Gateway/daemon mode implemented with systemd/launchd integration - evoclaw gateway install/start/stop/status/restart/uninstall commands",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1770944439.7650976,
+    "access_count": 33,
+    "score": 2.6786971223992833,
+    "tier": "hot"
+  },
+  {
+    "id": "982a1aa36f01",
+    "text": "Tiered memory v2.2.0: auto-ingest daily files, argparse bug fix, tree prune crash fix",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1771074043.4960601,
+    "access_count": 31,
+    "score": 2.6850622669995956,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
     "tier": "hot"
   },
   {
@@ -1805,7 +1790,7 @@
     "importance": 0.8,
     "created_at": 1771160437.2831426,
     "access_count": 30,
-    "score": 2.753874652320409,
+    "score": 2.7083571738591403,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1820,32 +1805,7 @@
     "importance": 0.8,
     "created_at": 1771160464.3298085,
     "access_count": 30,
-    "score": 2.753903388244391,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "b6aa7bb7efa5",
-    "text": "ClawChain arXiv submission ready - complete package (clawchain.tex + figures + style) uploaded, cs.AI category endorsed, awaiting Bowen's final submit click",
-    "category": "projects/clawchain",
-    "importance": 0.9,
-    "created_at": 1770944438.939319,
-    "access_count": 29,
-    "score": 2.7791396955995866,
-    "tier": "hot"
-  },
-  {
-    "id": "57fa7c4f50a8",
-    "text": "EvoClaw paper expanded 22\u219250 pages with 6 new sections (Tiered Memory, Intelligent Router, Model Health, Tool Loop, Self-Governance, ClawChain) and case studies",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1771182017.6626358,
-    "access_count": 30,
-    "score": 2.776898474368268,
+    "score": 2.708385434820764,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1860,7 +1820,7 @@
     "importance": 0.8,
     "created_at": 1771117238.9972398,
     "access_count": 31,
-    "score": 2.7760678714780385,
+    "score": 2.7301835719014065,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1869,13 +1829,28 @@
     "tier": "hot"
   },
   {
-    "id": "00fd1be12828",
-    "text": "First fix (sub-agent): Go lint, Go test races, Rust clippy \u2014 all fixed \u2705",
+    "id": "57fa7c4f50a8",
+    "text": "EvoClaw paper expanded 22\u219250 pages with 6 new sections (Tiered Memory, Intelligent Router, Model Health, Tool Loop, Self-Governance, ClawChain) and case studies",
     "category": "projects/evoclaw",
-    "importance": 0.75,
-    "created_at": 1770848917.9745195,
-    "access_count": 39,
-    "score": 2.804502857621864,
+    "importance": 0.8,
+    "created_at": 1771182017.6626358,
+    "access_count": 30,
+    "score": 2.7310004461522803,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "b6aa7bb7efa5",
+    "text": "ClawChain arXiv submission ready - complete package (clawchain.tex + figures + style) uploaded, cs.AI category endorsed, awaiting Bowen's final submit click",
+    "category": "projects/clawchain",
+    "importance": 0.9,
+    "created_at": 1770944438.939319,
+    "access_count": 30,
+    "score": 2.803286793136008,
     "tier": "hot"
   },
   {
@@ -1885,7 +1860,43 @@
     "importance": 0.8,
     "created_at": 1770879637.7071779,
     "access_count": 35,
-    "score": 2.780021747226166,
+    "score": 2.7340720959260123,
+    "tier": "hot"
+  },
+  {
+    "id": "00fd1be12828",
+    "text": "First fix (sub-agent): Go lint, Go test races, Rust clippy \u2014 all fixed \u2705",
+    "category": "projects/evoclaw",
+    "importance": 0.75,
+    "created_at": 1770848917.9745195,
+    "access_count": 40,
+    "score": 2.8144373160636187,
+    "tier": "hot"
+  },
+  {
+    "id": "38258ed7987e",
+    "text": "EvoClaw hackathon deadline is Feb 19 3AM UTC, Good Vibes Only OpenClaw Edition on BNBChain",
+    "category": "projects/evoclaw",
+    "importance": 0.9,
+    "created_at": 1770606835.0856192,
+    "access_count": 35,
+    "score": 2.768559693577709,
+    "tier": "hot",
+    "search_method": "keyword-tree"
+  },
+  {
+    "id": "4d6c996042da",
+    "text": "EvoClaw CI fixes: MQTT race condition (PR#3), Windows build signals, errcheck warnings, homebrew workflow guard",
+    "category": "projects/evoclaw",
+    "importance": 0.8,
+    "created_at": 1771117238.8912566,
+    "access_count": 32,
+    "score": 2.7967733007590163,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
     "tier": "hot"
   },
   {
@@ -1895,7 +1906,7 @@
     "importance": 0.8,
     "created_at": 1771182017.825397,
     "access_count": 31,
-    "score": 2.846321114956081,
+    "score": 2.799275633079288,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1910,48 +1921,7 @@
     "importance": 0.8,
     "created_at": 1771182017.8797367,
     "access_count": 31,
-    "score": 2.8463211746268877,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "38258ed7987e",
-    "text": "EvoClaw hackathon deadline is Feb 19 3AM UTC, Good Vibes Only OpenClaw Edition on BNBChain",
-    "category": "projects/evoclaw",
-    "importance": 0.9,
-    "created_at": 1770606835.0856192,
-    "access_count": 35,
-    "score": 2.8150889539844473,
-    "tier": "hot",
-    "search_method": "keyword-tree"
-  },
-  {
-    "id": "4d6c996042da",
-    "text": "EvoClaw CI fixes: MQTT race condition (PR#3), Windows build signals, errcheck warnings, homebrew workflow guard",
-    "category": "projects/evoclaw",
-    "importance": 0.8,
-    "created_at": 1771117238.8912566,
-    "access_count": 32,
-    "score": 2.843776727671393,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": []
-    },
-    "tier": "hot"
-  },
-  {
-    "id": "1e482c4204c6",
-    "text": "Fixed EvoClaw web terminal MQTT bug (commit 1a16b47): orchestrator now handles AgentReport result messages from edge agents, completing HTTP API \u2192 edge agent \u2192 HTTP response flow",
-    "category": "projects/evoclaw",
-    "importance": 0.85,
-    "created_at": 1771241120.197766,
-    "access_count": 29,
-    "score": 2.943040898439645,
+    "score": 2.7992756917638237,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1966,7 +1936,7 @@
     "importance": 0.8,
     "created_at": 1771182017.770818,
     "access_count": 32,
-    "score": 2.915743519775307,
+    "score": 2.8675505881379793,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1981,9 +1951,24 @@
     "importance": 0.95,
     "created_at": 1770630505.1354907,
     "access_count": 34,
-    "score": 2.932103812713031,
+    "score": 2.8836404696096247,
     "tier": "hot",
     "search_method": "keyword-tree"
+  },
+  {
+    "id": "1e482c4204c6",
+    "text": "Fixed EvoClaw web terminal MQTT bug (commit 1a16b47): orchestrator now handles AgentReport result messages from edge agents, completing HTTP API \u2192 edge agent \u2192 HTTP response flow",
+    "category": "projects/evoclaw",
+    "importance": 0.85,
+    "created_at": 1771241120.197766,
+    "access_count": 29,
+    "score": 2.894396781469609,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": []
+    },
+    "tier": "hot"
   },
   {
     "id": "b181e164c127",
@@ -1992,7 +1977,7 @@
     "importance": 0.9,
     "created_at": 1770858030.757867,
     "access_count": 33,
-    "score": 2.9637145513941827,
+    "score": 2.9147287294926563,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -2003,7 +1988,7 @@
     "importance": 0.9,
     "created_at": 1770858030.926781,
     "access_count": 33,
-    "score": 2.9637147445311474,
+    "score": 2.9147289194373527,
     "tier": "hot"
   },
   {
@@ -2013,7 +1998,7 @@
     "importance": 0.9,
     "created_at": 1770879637.1740577,
     "access_count": 33,
-    "score": 2.9885227635854283,
+    "score": 2.939126898596749,
     "tier": "hot"
   },
   {
@@ -2023,7 +2008,7 @@
     "importance": 0.9,
     "created_at": 1770901223.8614366,
     "access_count": 33,
-    "score": 3.013515699362737,
+    "score": 2.9637067380790016,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -2034,7 +2019,7 @@
     "importance": 0.9,
     "created_at": 1770901223.957171,
     "access_count": 33,
-    "score": 3.013515810665036,
+    "score": 2.963706847541638,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -2045,7 +2030,7 @@
     "importance": 0.9,
     "created_at": 1770901224.0043564,
     "access_count": 33,
-    "score": 3.0135158655230057,
+    "score": 2.963706901492614,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -2056,7 +2041,7 @@
     "importance": 0.85,
     "created_at": 1771161294.243141,
     "access_count": 32,
-    "score": 3.073307329552644,
+    "score": 3.0225101009787507,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -2075,12 +2060,29 @@
     "importance": 0.9,
     "created_at": 1771037807.2176938,
     "access_count": 32,
-    "score": 3.102695042261354,
+    "score": 3.051412078224114,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": [
         "/media/DATA/clawd/papers/evoclang-paper-final.pdf"
+      ]
+    },
+    "tier": "hot"
+  },
+  {
+    "id": "3d27d2785f14",
+    "text": "Tiered memory implementation vs design: 65% complete. Core working (hot/warm/cold, scoring, distillation). Critical gaps: LLM tree search not integrated, tree counting bug (2-3x inflated), no monthly rebuild, no auto-eviction on store. Missing: evolution tuning, 3-stage compression. Blockers: semantic search disabled (no API key), no search fallback. Fix priority: grep fallback \u2192 LLM tree integration \u2192 tree rebuild.",
+    "category": "projects/evoclaw/memory",
+    "importance": 0.9,
+    "created_at": 1771161856.934242,
+    "access_count": 32,
+    "score": 3.2009996347585266,
+    "metadata": {
+      "urls": [],
+      "commands": [],
+      "paths": [
+        "/warm/cold"
       ]
     },
     "tier": "hot"
@@ -2092,7 +2094,7 @@
     "importance": 0.95,
     "created_at": 1771162554.4913397,
     "access_count": 30,
-    "score": 3.2728984405584223,
+    "score": 3.2188022658650164,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -2102,30 +2104,13 @@
     "search_method": "keyword-tree"
   },
   {
-    "id": "3d27d2785f14",
-    "text": "Tiered memory implementation vs design: 65% complete. Core working (hot/warm/cold, scoring, distillation). Critical gaps: LLM tree search not integrated, tree counting bug (2-3x inflated), no monthly rebuild, no auto-eviction on store. Missing: evolution tuning, 3-stage compression. Blockers: semantic search disabled (no API key), no search fallback. Fix priority: grep fallback \u2192 LLM tree integration \u2192 tree rebuild.",
-    "category": "projects/evoclaw/memory",
-    "importance": 0.9,
-    "created_at": 1771161856.934242,
-    "access_count": 32,
-    "score": 3.2547966129907606,
-    "metadata": {
-      "urls": [],
-      "commands": [],
-      "paths": [
-        "/warm/cold"
-      ]
-    },
-    "tier": "hot"
-  },
-  {
     "id": "e37041447101",
     "text": "Web terminal edge agent bug FULLY FIXED (commits 1a16b47, d9ada22, 32ee22c): HTTP Chat API now successfully routes to MQTT edge agents, verified with alex-eye returning CPU temp 51.92\u00b0C via read_temperature tool",
     "category": "projects/evoclaw",
     "importance": 0.95,
     "created_at": 1771242087.408154,
     "access_count": 29,
-    "score": 3.2905086354599105,
+    "score": 3.23612139026916,
     "metadata": {
       "urls": [],
       "commands": [],
