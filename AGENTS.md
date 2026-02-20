@@ -309,6 +309,28 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 
 **The rule:** Low-level metric (RAM %) is not a diagnosis. Full spec context is required first.
 
+## ClawInfra Repo Standards (NON-NEGOTIABLE)
+
+All repos under the `clawinfra` GitHub org are **production-grade**. No exceptions.
+
+**Rules:**
+- **Documentation first** — README, architecture docs, and API docs before writing code
+- **Test-driven development** — write tests before or alongside implementation
+- **Code coverage ≥ 90%** — enforce in CI; PRs that drop below 90% are blocked
+- **No shortcuts, no quick fixes** — if it's in clawinfra, it's built properly or not at all
+- **CI must be green** — every commit must pass all tests and linting before merge
+- **Type-safe** — full type annotations in Python, strict types in Go/Rust/TypeScript
+- **Changelog** — every release gets a CHANGELOG.md entry
+- **Semantic versioning** — major.minor.patch, no ambiguity
+
+This applies to: shield-agent, evoclaw, claw-chain, clawchain-sdk, and any future repos.
+
+When scaffolding or extending a clawinfra repo, ALWAYS:
+1. Write/update docs first
+2. Write tests for all new functionality
+3. Check coverage before declaring done
+4. Run full CI locally before pushing
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
