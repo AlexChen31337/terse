@@ -59,7 +59,15 @@ def parse_log():
               "errors": [], "warnings": [], "no_models": no_models, "regime": None}
 
     for line in lines:
-        # Cycle summary: [Cycle N] Balance: $X | Positions: Y | Trades: Z
+        # New format: [Cycle N] Balance: $X | Positions: Y | Entries: Z | Skips: W
+        m = re.search(r'\[Cycle (\d+)\] Balance: \$([0-9,.]+) \| Positions: (\d+) \| Entries: (\d+) \| Skips: (\d+)', line)
+        if m:
+            c, bal, pos, entries, skips = int(m.group(1)), float(m.group(2).replace(',','')), int(m.group(3)), int(m.group(4)), int(m.group(5))
+            if c > latest["cycle"]:
+                latest.update({"cycle": c, "balance": bal, "positions": pos,
+                                "trades": entries, "skips": skips})
+            continue
+        # Legacy format fallback: [Cycle N] Balance: $X | Positions: Y | Trades: Z
         m = re.search(r'\[Cycle (\d+)\] Balance: \$([0-9,.]+) \| Positions: (\d+) \| Trades: (\d+)', line)
         if m:
             c, bal, pos, trades = int(m.group(1)), float(m.group(2).replace(',','')), int(m.group(3)), int(m.group(4))
@@ -110,12 +118,13 @@ def main():
         trades = data["trades"]
         positions = data["positions"]
 
-        # ── 3. New trade fired ─────────────────────────────────────────────
+        # ── 3. New ENTRY fired (not skips) ────────────────────────────────
         if trades > state["last_trades"]:
             new = trades - state["last_trades"]
+            skips = data.get("skips", 0)
             alerts.append(
-                f"💰 TRADE FIRED: {new} new trade(s)! "
-                f"Balance: ${balance:,.2f} | Total trades: {trades} | Positions open: {positions}"
+                f"💰 ENTRY FIRED: {new} new position(s) opened! "
+                f"Balance: ${balance:,.2f} | Total entries: {trades} | Positions open: {positions}"
             )
             if data.get("trade_lines"):
                 for tl in data["trade_lines"][-3:]:
@@ -165,8 +174,8 @@ def main():
         if data:
             regime = data.get("regime") or "unknown"
             print(f"OK | Cycle {data['cycle']} | Balance ${data['balance']:,.2f} | "
-                  f"Trades {data['trades']} | Positions {data['positions']} | "
-                  f"Session {'✅' if alive else '❌'}")
+                  f"Entries {data['trades']} | Skips {data.get('skips',0)} | "
+                  f"Positions {data['positions']} | Session {'✅' if alive else '❌'}")
         else:
             print("OK | no data")
 
