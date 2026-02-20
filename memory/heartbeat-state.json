@@ -1,29 +1,20 @@
 {
   "lastCryptoPriceCheck": "2026-02-19T12:14:24.453071+00:00",
-  "lastKOLCheck": "2026-02-20T15:15:52.766257+00:00",
-  "lastTwitterCheck": "2026-02-20T13:15:36.153980+00:00",
-  "lastMoltbookCheck": "2026-02-20T15:15:52.766257+00:00",
-  "lastGitHubCheck": "2026-02-20T11:14:45.455320+00:00",
-  "lastGitHubTrendingCheck": "2026-02-20T12:14:39.661980+00:00",
-  "lastSessionId": "339f3330-e0f1-455f-99d2-48aa288a3d79",
+  "lastKOLCheck": "2026-02-21T07:14:00+00:00",
+  "lastTwitterCheck": "2026-02-20T16:14:47.598000+00:00",
+  "lastMoltbookCheck": "2026-02-21T04:13:00+00:00",
+  "lastGitHubCheck": "2026-02-21T04:13:00+00:00",
+  "lastGitHubTrendingCheck": "2026-02-21T04:13:00+00:00",
+  "lastSimmerCheck": "2026-02-21T04:13:00+00:00",
+  "lastSessionId": "ee761b1b-ffe0-4699-88d2-5b7b1b1cf060",
   "notes": {
-    "githubToken": "WORKING - 50 notifications found",
-    "twitterAuth": "BROKEN - encrypted credentials not found",
-    "evoclawDeadline": "3.8 hours remaining (Feb 19 3AM UTC)",
-    "lastGitHubNotifications": [
-      "CI workflow run cancelled for fix/orchestrator-toolloop-routing-bugs branch",
-      "CI workflow run, Attempt #2 cancelled for fix/orchestrator-toolloop-routing-bugs branch",
-      "CI workflow run failed for fix/orchestrator-toolloop-routing-bugs branch",
-      "CI workflow run cancelled for main branch",
-      "CI workflow run, Attempt #3 cancelled for main branch"
-    ],
-    "heartbeat_20260219_1013": "Session restarted, GitHub checked, auth issues noted",
-    "heartbeat_20260219_1213": "All checks updated, CI cancellations noted, Twitter auth intermittent",
-    "heartbeat_20260219_1313": "Sent deadline alert to Telegram - awaiting repo location",
-    "heartbeat_20260219_1813": "Session restarted. EvoClaw v0.2.0 released successfully. Twitter/Moltbook auth issues persist. All checks skipped due to auth problems.",
-    "heartbeat_20260219_2013": "All checks completed. BTC $67,027 (-1.7%), Twitter auth intermittent, GitHub trending: programming books/Python",
-    "heartbeat_20260219_2113": "Session restarted. BTC $66,871 (-1.9%). Twitter/GitHub auth issues persist. All checks skipped due to auth.",
-    "heartbeat_20260219_2213": "BTC stabilizing at $66,920 (-0.7%). Twitter auth still broken. Moltbook OK. All checks completed.",
-    "heartbeat_20260219_2313": "BTC dropped to $66,534 (-1.5%). Monitoring for further drops. Twitter auth broken."
+    "heartbeat_20260221_0413": "Session restarted. Simmer: position expiring in ~22h (Claude Opus 4.6 top model). GitHub trending found coding/LLM projects. Twitter auth broken, skipped KOL/Twitter/Moltbook checks.",
+    "simmerExpiringPosition": "2026-02-21 15:00 UTC - 'What will be the top AI model this month - claude-opus-4-6?' - YES side, 5.92 shares, entry $0.8451, current $0.975, PnL $0.77",
+    "githubTrendingInteresting": [
+      "PocketFlow (12k stars) - Codebase to Tutorial knowledge",
+      "simulatedev (45 stars) - Run AI coding agents via code to PR",
+      "healing-agent (23 stars) - AI automatic software healing",
+      "remind (6 stars) - A memory layer for AI Agents"
+    ]
   }
 }
