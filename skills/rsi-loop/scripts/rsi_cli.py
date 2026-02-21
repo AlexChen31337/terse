@@ -109,7 +109,7 @@ def cmd_gene(args):
 def cmd_status(args):
     """Show overall RSI loop status."""
     from observer import stats_summary, load_outcomes
-    from analyzer import load_patterns
+    from analyzer import load_patterns, compute_repair_ratio, should_force_innovate
     from synthesizer import load_all_proposals
 
     print("\n=== RSI Loop Status ===\n")
@@ -153,9 +153,95 @@ def cmd_status(args):
             print(f"  - {p['id']}: {p['title'][:60]}")
             print(f"    Deploy: uv run python skills/rsi-loop/scripts/rsi_cli.py deploy {p['id']}")
 
+    # Repair ratio (Phase 3 — only if --repair-ratio flag)
+    if getattr(args, "repair_ratio", False):
+        try:
+            from event_logger import load_events
+            events = load_events()
+            ratio = compute_repair_ratio(events)
+            force_innovate = should_force_innovate()
+            total_events = len(events)
+            print(f"\nRepair Ratio (last 8 cycles): {ratio:.0%} "
+                  f"[{total_events} total events]")
+            if force_innovate:
+                print("  ⚠️  Stagnation detected — next cycle will force INNOVATE")
+            else:
+                print("  ✓ No stagnation detected")
+        except Exception as e:
+            print(f"\nRepair Ratio: unavailable ({e})")
+
     print("\nQuick actions:")
     print("  uv run python skills/rsi-loop/scripts/rsi_cli.py cycle   # Run full RSI cycle")
     print("  uv run python skills/rsi-loop/scripts/rsi_cli.py log     # Log a turn outcome")
+
+
+def cmd_events(args):
+    """Show last N EvolutionEvents."""
+    from event_logger import load_events
+
+    last_n = getattr(args, "last", 10)
+    events = load_events(last_n=last_n)
+
+    if not events:
+        print("No EvolutionEvents logged yet.")
+        print("Events are written to data/events.jsonl during synthesis and deploy cycles.")
+        return
+
+    print(f"\n=== Last {len(events)} EvolutionEvent(s) ===\n")
+    print(f"{'EVENT ID':<25} {'TYPE':<10} {'STATUS':<10} {'GENE':<40} {'TIMESTAMP'}")
+    print("─" * 110)
+    for e in events:
+        event_id = e.get("event_id", "?")
+        mtype = e.get("mutation_type", "?")
+        status = e.get("outcome", {}).get("status", "?")
+        gene = e.get("gene_id") or "-"
+        ts = e.get("timestamp", "")[:19]
+        print(f"{event_id:<25} {mtype:<10} {status:<10} {gene:<40} {ts}")
+
+    print(f"\n{len(events)} event(s) shown.")
+    if events:
+        last = events[-1]
+        signals = last.get("signals", {})
+        print(f"\nLatest signals:")
+        print(f"  Top pattern:       {signals.get('top_pattern', '-')}")
+        print(f"  Repair ratio (8):  {signals.get('repair_ratio_last8', 0):.0%}")
+        print(f"  Forced innovate:   {signals.get('forced_innovate', False)}")
+        notes = last.get("outcome", {}).get("notes", "")
+        if notes:
+            print(f"  Notes:             {notes[:80]}")
+
+
+def cmd_personality(args):
+    """Show current PersonalityState with bias."""
+    from personality import load_personality
+
+    p = load_personality()
+    stats = p.get("stats", {})
+    ns = p.get("natural_selection", {})
+    traits = p.get("trait_scores", {})
+
+    print("\n=== PersonalityState ===\n")
+    print(f"Current bias:     {p.get('current_bias', 'balanced').upper()}")
+    print(f"Updated:          {p.get('updated_at', '?')[:19]}")
+    print()
+    print("Mutation Stats:")
+    for mtype in ("repair", "optimize", "innovate"):
+        total = stats.get(f"{mtype}_total", 0)
+        rate = stats.get(f"{mtype}_success_rate", 0.0)
+        bar = "█" * int(rate * 10) + "░" * (10 - int(rate * 10))
+        print(f"  {mtype:<10}  {bar}  {rate:.0%}  ({total} total)")
+
+    print()
+    print("Trait Scores:")
+    for trait, score in traits.items():
+        bar = "█" * int(score * 10) + "░" * (10 - int(score * 10))
+        print(f"  {trait:<12}  {bar}  {score:.2f}")
+
+    print()
+    print("Natural Selection:")
+    print(f"  Total cycles:          {ns.get('total_cycles', 0)}")
+    print(f"  Successful repairs:    {ns.get('successful_repairs', 0)}")
+    print(f"  Successful innovations:{ns.get('successful_innovations', 0)}")
 
 def main():
     parser = argparse.ArgumentParser(
@@ -191,7 +277,9 @@ Examples:
     sub = parser.add_subparsers(dest="cmd")
 
     # status
-    sub.add_parser("status", help="Show RSI loop status")
+    status_p = sub.add_parser("status", help="Show RSI loop status")
+    status_p.add_argument("--repair-ratio", action="store_true",
+                          help="Include stagnation repair ratio in output")
 
     # log
     log_p = sub.add_parser("log", help="Log a turn outcome")
@@ -242,6 +330,14 @@ Examples:
     gene_val = gene_sub.add_parser("validate", help="Run validation commands for a gene")
     gene_val.add_argument("gene_id")
     gene_sub.add_parser("stats", help="Success rate per mutation type")
+
+    # events (Phase 2 — EvolutionEvent audit log)
+    events_p = sub.add_parser("events", help="Show EvolutionEvent audit log")
+    events_p.add_argument("--last", type=int, default=10,
+                          help="Show last N events (default: 10)")
+
+    # personality (Phase 3 — PersonalityState)
+    sub.add_parser("personality", help="Show current PersonalityState with bias")
 
     args = parser.parse_args()
 
@@ -301,6 +397,14 @@ Examples:
             gene_p.print_help()
         else:
             cmd_gene(args)
+
+    elif args.cmd == "events":
+        sys.path.insert(0, str(SCRIPTS_DIR))
+        cmd_events(args)
+
+    elif args.cmd == "personality":
+        sys.path.insert(0, str(SCRIPTS_DIR))
+        cmd_personality(args)
 
     else:
         parser.print_help()

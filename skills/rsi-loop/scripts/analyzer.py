@@ -159,6 +159,43 @@ def load_patterns() -> dict:
     with open(PATTERNS_FILE) as f:
         return json.load(f)
 
+
+# ---------------------------------------------------------------------------
+# Stagnation Detection (Phase 3)
+# ---------------------------------------------------------------------------
+
+EVENTS_FILE_PATH = DATA_DIR / "events.jsonl"
+
+
+def compute_repair_ratio(events: list, last_n: int = 8) -> float:
+    """Fraction of last N events that were 'repair' mutations."""
+    recent = events[-last_n:] if len(events) > last_n else events
+    if not recent:
+        return 0.0
+    repairs = sum(1 for e in recent if e.get("mutation_type") == "repair")
+    return repairs / len(recent)
+
+
+def should_force_innovate(events_path: Path = None, threshold: float = 0.5) -> bool:
+    """
+    Return True if repair_ratio of last 8 events >= threshold (stagnation escape).
+    Loads events from data/events.jsonl by default.
+    """
+    path = events_path or EVENTS_FILE_PATH
+    if not path.exists():
+        return False
+    events = []
+    with open(path) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                events.append(json.loads(line))
+            except Exception:
+                pass
+    return compute_repair_ratio(events) >= threshold
+
 def main():
     parser = argparse.ArgumentParser(description="RSI Analyzer - Detect improvement patterns")
     parser.add_argument("--days", type=int, default=7, help="Analysis window in days")

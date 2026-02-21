@@ -2,3 +2,7 @@
 outcomes.jsonl
 patterns.json
 proposals/
+
+# Phase 2+3 runtime data (Gene Registry, EvolutionEvents, PersonalityState)
+events.jsonl
+personality.json

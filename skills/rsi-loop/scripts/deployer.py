@@ -21,10 +21,97 @@ try:
 except ImportError:
     _GENE_REGISTRY_AVAILABLE = False
 
+# EvolutionEvent logging (Phase 2)
+try:
+    from event_logger import log_event
+    _EVENT_LOGGER_AVAILABLE = True
+except ImportError:
+    _EVENT_LOGGER_AVAILABLE = False
+
 SKILL_DIR = Path(__file__).parent.parent
 DATA_DIR = SKILL_DIR / "data"
 PROPOSALS_DIR = DATA_DIR / "proposals"
 WORKSPACE = Path.home() / "clawd"
+
+# ---------------------------------------------------------------------------
+# IMMUTABLE_CORE — files that block auto-deploy and require --force-core
+# ---------------------------------------------------------------------------
+IMMUTABLE_CORE = [
+    "SOUL.md",
+    "AGENTS.md",
+    "TOOLS.md",
+    "USER.md",
+    "skills/rsi-loop/scripts/deployer.py",
+    "skills/rsi-loop/scripts/observer.py",
+    "skills/rsi-loop/data/genes.json",
+    "skills/rsi-loop/data/events.jsonl",
+]
+
+# Default max_files per mutation type (when no gene blast_radius present)
+_BLAST_DEFAULTS = {"repair": 5, "optimize": 10, "innovate": 20}
+
+
+def check_blast_radius(proposal: dict, gene: dict = None) -> tuple:
+    """
+    Validate that a proposal's blast radius is within acceptable limits.
+
+    Returns (ok: bool, reason: str).
+      ok=False means deployment should be aborted.
+    """
+    mutation_type = proposal.get("mutation_type", "optimize")
+
+    # Determine max_files: gene takes precedence, else defaults
+    if gene is not None:
+        max_files = gene.get("blast_radius", {}).get(
+            "max_files", _BLAST_DEFAULTS.get(mutation_type, 10)
+        )
+        allowed_paths = gene.get("blast_radius", {}).get("allowed_paths", [])
+    else:
+        max_files = _BLAST_DEFAULTS.get(mutation_type, 10)
+        allowed_paths = []
+
+    # Collect file count from implementation.changes (if list) or allowed_paths
+    impl = proposal.get("implementation", {})
+    changes = impl.get("changes", "")
+
+    # Count from allowed_paths if present, otherwise use 1 (single target_file)
+    if allowed_paths:
+        file_count = len(allowed_paths)
+        paths_to_check = allowed_paths
+    elif isinstance(changes, list):
+        file_count = len(changes)
+        paths_to_check = changes
+    else:
+        target = impl.get("target_file", "")
+        file_count = 1 if target else 0
+        paths_to_check = [target] if target else []
+
+    # Check IMMUTABLE_CORE presence in allowed paths
+    for p in paths_to_check:
+        # Normalise path for comparison
+        p_norm = p.lstrip("/").lstrip("./")
+        for core in IMMUTABLE_CORE:
+            core_norm = core.lstrip("/").lstrip("./")
+            if p_norm == core_norm or p_norm.endswith(core_norm):
+                return False, f"blocked: immutable core path '{p}'"
+
+    if file_count > max_files:
+        return (
+            False,
+            f"blast radius exceeded: {file_count} files > max {max_files} for '{mutation_type}'",
+        )
+
+    return True, ""
+
+
+def _is_immutable(target_file: str) -> bool:
+    """Return True if target_file matches any IMMUTABLE_CORE entry."""
+    t = target_file.lstrip("/").lstrip("./")
+    for core in IMMUTABLE_CORE:
+        c = core.lstrip("/").lstrip("./")
+        if t == c or t.endswith(c):
+            return True
+    return False
 
 def load_proposal(proposal_id: str) -> dict:
     path = PROPOSALS_DIR / f"{proposal_id}.json"
@@ -77,8 +164,20 @@ def deploy_create_skill(p: dict, dry_run: bool = False) -> str:
     else:
         return f"ERROR: {result.stderr}"
 
-def deploy_update_soul(p: dict, dry_run: bool = False) -> str:
+def deploy_update_soul(p: dict, dry_run: bool = False, force_core: bool = False) -> str:
     """Append lesson learned to SOUL.md."""
+    target = p["implementation"].get("target_file", "SOUL.md")
+
+    # IMMUTABLE_CORE guard
+    for check in [target, "SOUL.md", "AGENTS.md"]:
+        if _is_immutable(check):
+            if not force_core:
+                print(f"\n⛔  IMMUTABLE_CORE WARNING: '{check}' requires human review.")
+                print("    Re-run with --force-core to override (use with caution).")
+                return f"BLOCKED: '{check}' is immutable core. Use --force-core to proceed."
+            print(f"\n⚠️  --force-core override active for immutable path: '{check}'")
+            break
+
     soul_path = WORKSPACE / "SOUL.md"
     if not soul_path.exists():
         return "ERROR: SOUL.md not found"
@@ -132,14 +231,15 @@ def deploy_update_memory(p: dict, dry_run: bool = False) -> str:
         f"Suggested: Add '{task}' context retrieval to HEARTBEAT.md hydration section"
     )
 
-def deploy_apply_gene(p: dict, dry_run: bool = False) -> str:
+def deploy_apply_gene(p: dict, dry_run: bool = False, force_core: bool = False) -> str:
     """
     Deploy an apply_gene proposal by:
     1. Loading the referenced Gene from the registry
-    2. Printing its implementation template
-    3. Running each validation command and reporting pass/fail
-    4. Updating gene stats (success_rate, times_applied, last_applied)
-    5. Printing blast radius info
+    2. Checking blast radius and IMMUTABLE_CORE
+    3. Printing its implementation template
+    4. Running each validation command and reporting pass/fail
+    5. Updating gene stats (success_rate, times_applied, last_applied)
+    6. Logging an EvolutionEvent
     """
     if not _GENE_REGISTRY_AVAILABLE:
         return "ERROR: gene_registry module not available — cannot apply gene proposal"
@@ -152,6 +252,42 @@ def deploy_apply_gene(p: dict, dry_run: bool = False) -> str:
     if gene is None:
         return f"ERROR: Gene '{gene_id}' not found in registry"
 
+    # ── Blast Radius check ──────────────────────────────────────────────────
+    br_ok, br_reason = check_blast_radius(p, gene)
+    if not br_ok:
+        if "immutable core" in br_reason and force_core:
+            print(f"\n⚠️  --force-core override active: {br_reason}")
+        else:
+            msg = f"BLOCKED: {br_reason}"
+            if "immutable core" in br_reason:
+                print(f"\n⛔  IMMUTABLE_CORE WARNING: {br_reason}")
+                print("    Re-run with --force-core to override (use with caution).")
+            if _EVENT_LOGGER_AVAILABLE:
+                log_event(
+                    mutation_type=gene.get("mutation_type", "optimize"),
+                    gene_id=gene_id,
+                    outcome={"status": "skipped", "validation_passed": False,
+                             "quality": None, "notes": msg},
+                )
+            return msg
+
+    # ── IMMUTABLE_CORE check on allowed_paths ───────────────────────────────
+    allowed = gene.get("blast_radius", {}).get("allowed_paths", [])
+    for path in allowed:
+        if _is_immutable(path):
+            if not force_core:
+                print(f"\n⛔  IMMUTABLE_CORE WARNING: Gene targets protected path '{path}'")
+                print("    Re-run with --force-core to override (use with caution).")
+                if _EVENT_LOGGER_AVAILABLE:
+                    log_event(
+                        mutation_type=gene.get("mutation_type", "optimize"),
+                        gene_id=gene_id,
+                        outcome={"status": "skipped", "validation_passed": False,
+                                 "quality": None, "notes": f"blocked: immutable path '{path}'"},
+                    )
+                return f"BLOCKED: gene targets immutable core path '{path}'. Use --force-core."
+            print(f"\n⚠️  --force-core override for immutable path: '{path}'")
+
     print(f"\n{'='*60}")
     print(f"Gene: {gene['gene_id']}")
     print(f"Title: {gene['meta']['title']}")
@@ -162,18 +298,17 @@ def deploy_apply_gene(p: dict, dry_run: bool = False) -> str:
     print(gene["implementation"].get("template", "(no template)"))
     print(f"{'─'*60}")
 
-    # Blast radius
+    # Blast radius summary
     blast = gene.get("blast_radius", {})
     print(f"\nBlast Radius: max {blast.get('max_files', '?')} files")
-    allowed = blast.get("allowed_paths", [])
     if allowed:
         print("  Allowed paths:")
         for path in allowed:
             print(f"    • {path}")
-    immutable = blast.get("immutable_paths", [])
-    if immutable:
+    immutable_gene = blast.get("immutable_paths", [])
+    if immutable_gene:
         print("  Immutable paths (require Bowen approval):")
-        for path in immutable:
+        for path in immutable_gene:
             print(f"    ⛔ {path}")
 
     if dry_run:
@@ -214,10 +349,24 @@ def deploy_apply_gene(p: dict, dry_run: bool = False) -> str:
     print(f"Gene deployment: {status_str}")
     print(f"Stats updated: times_applied +1, success recorded: {all_passed}")
 
+    # Log EvolutionEvent
+    if _EVENT_LOGGER_AVAILABLE:
+        log_event(
+            mutation_type=gene.get("mutation_type", "optimize"),
+            gene_id=gene_id,
+            outcome={
+                "status": "success" if all_passed else "failure",
+                "validation_passed": all_passed,
+                "quality": None,
+                "notes": f"Gene deployment: {status_str}",
+            },
+            files_changed=allowed,
+        )
+
     return f"Gene '{gene_id}' applied — validation: {status_str}"
 
 
-def deploy_proposal(proposal_id: str, dry_run: bool = False) -> str:
+def deploy_proposal(proposal_id: str, dry_run: bool = False, force_core: bool = False) -> str:
     p = load_proposal(proposal_id)
 
     if p["status"] not in ("approved", "draft"):
@@ -228,15 +377,48 @@ def deploy_proposal(proposal_id: str, dry_run: bool = False) -> str:
     print(f"Action: {action_type}")
     print(f"Dry run: {dry_run}\n")
 
+    # ── Blast Radius check (non-gene proposals) ─────────────────────────────
+    if action_type != "apply_gene":
+        br_ok, br_reason = check_blast_radius(p)
+        if not br_ok:
+            if "immutable core" in br_reason and force_core:
+                print(f"\n⚠️  --force-core override: {br_reason}")
+            else:
+                if "immutable core" in br_reason:
+                    print(f"\n⛔  IMMUTABLE_CORE WARNING: {br_reason}")
+                    print("    Re-run with --force-core to override (use with caution).")
+                if _EVENT_LOGGER_AVAILABLE:
+                    log_event(
+                        mutation_type=p.get("mutation_type", "optimize"),
+                        outcome={"status": "skipped", "validation_passed": False,
+                                 "quality": None, "notes": f"blocked: {br_reason}"},
+                    )
+                return f"BLOCKED: {br_reason}"
+
+    # ── IMMUTABLE_CORE check on target_file (skip for apply_gene — handled in handler) ──
+    target_file = p.get("implementation", {}).get("target_file", "")
+    if action_type != "apply_gene" and target_file and _is_immutable(target_file):
+        if not force_core:
+            print(f"\n⛔  IMMUTABLE_CORE WARNING: proposal targets '{target_file}'")
+            print("    Re-run with --force-core to override (use with caution).")
+            if _EVENT_LOGGER_AVAILABLE:
+                log_event(
+                    mutation_type=p.get("mutation_type", "optimize"),
+                    outcome={"status": "skipped", "validation_passed": False,
+                             "quality": None, "notes": f"blocked: immutable core '{target_file}'"},
+                )
+            return f"BLOCKED: '{target_file}' is immutable core. Use --force-core."
+        print(f"\n⚠️  --force-core override active for immutable path: '{target_file}'")
+
     handlers = {
-        "create_skill": deploy_create_skill,
-        "update_skill": deploy_create_skill,  # same handler, skill exists check skips it
-        "update_soul": deploy_update_soul,
-        "update_agents": deploy_update_soul,  # similar append pattern
-        "fix_routing": deploy_fix_routing,
-        "update_memory": deploy_update_memory,
+        "create_skill": lambda p, dr: deploy_create_skill(p, dr),
+        "update_skill": lambda p, dr: deploy_create_skill(p, dr),
+        "update_soul": lambda p, dr: deploy_update_soul(p, dr, force_core),
+        "update_agents": lambda p, dr: deploy_update_soul(p, dr, force_core),
+        "fix_routing": lambda p, dr: deploy_fix_routing(p, dr),
+        "update_memory": lambda p, dr: deploy_update_memory(p, dr),
         "add_cron": lambda p, dr: "add_cron: Use cron tool to implement: " + p["implementation"]["changes"],
-        "apply_gene": deploy_apply_gene,
+        "apply_gene": lambda p, dr: deploy_apply_gene(p, dr, force_core),
     }
 
     handler = handlers.get(action_type)
@@ -245,8 +427,20 @@ def deploy_proposal(proposal_id: str, dry_run: bool = False) -> str:
 
     result = handler(p, dry_run)
 
-    if not dry_run and "ERROR" not in result and "MANUAL" not in result:
+    if not dry_run and "ERROR" not in result and "MANUAL" not in result and "BLOCKED" not in result:
         mark_deployed(p, notes=result[:200])
+        # Log EvolutionEvent for non-gene deploys
+        if _EVENT_LOGGER_AVAILABLE and action_type != "apply_gene":
+            log_event(
+                mutation_type=p.get("mutation_type", "optimize"),
+                outcome={
+                    "status": "success",
+                    "validation_passed": True,
+                    "quality": None,
+                    "notes": result[:200],
+                },
+                files_changed=[target_file] if target_file else [],
+            )
 
     return result
 
@@ -258,10 +452,14 @@ def main():
     dep = sub.add_parser("deploy", help="Deploy a specific proposal")
     dep.add_argument("proposal_id", help="Proposal ID or prefix")
     dep.add_argument("--dry-run", action="store_true", help="Show what would happen without doing it")
+    dep.add_argument("--force-core", action="store_true",
+                     help="Override IMMUTABLE_CORE protection (requires human approval)")
 
     # deploy-all command
     dep_all = sub.add_parser("deploy-all", help="Deploy all approved proposals")
     dep_all.add_argument("--dry-run", action="store_true")
+    dep_all.add_argument("--force-core", action="store_true",
+                         help="Override IMMUTABLE_CORE protection")
 
     # full-cycle command
     cycle = sub.add_parser("full-cycle", help="Run full RSI cycle: analyze -> synthesize -> auto-deploy low-effort items")
@@ -273,10 +471,12 @@ def main():
     args = parser.parse_args()
 
     if args.cmd == "deploy":
-        result = deploy_proposal(args.proposal_id, dry_run=args.dry_run)
+        force_core = getattr(args, "force_core", False)
+        result = deploy_proposal(args.proposal_id, dry_run=args.dry_run, force_core=force_core)
         print(result)
 
     elif args.cmd == "deploy-all":
+        force_core = getattr(args, "force_core", False)
         from synthesizer import load_all_proposals
         approved = load_all_proposals("approved")
         if not approved:
@@ -284,7 +484,7 @@ def main():
             return
         for p in approved:
             print(f"\n--- {p['id']} ---")
-            result = deploy_proposal(p["id"], dry_run=args.dry_run)
+            result = deploy_proposal(p["id"], dry_run=args.dry_run, force_core=force_core)
             print(result)
 
     elif args.cmd == "full-cycle":

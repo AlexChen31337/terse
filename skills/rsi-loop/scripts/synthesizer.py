@@ -22,6 +22,14 @@ try:
 except ImportError:
     _GENE_REGISTRY_AVAILABLE = False
 
+# Event logger + stagnation detection (Phase 2 & 3)
+try:
+    from event_logger import log_event, load_events, get_recent_innovation_targets
+    from analyzer import should_force_innovate
+    _EVOLUTION_AVAILABLE = True
+except ImportError:
+    _EVOLUTION_AVAILABLE = False
+
 SKILL_DIR = Path(__file__).parent.parent
 DATA_DIR = SKILL_DIR / "data"
 PATTERNS_FILE = DATA_DIR / "patterns.json"
@@ -54,12 +62,76 @@ def load_patterns() -> dict:
     with open(PATTERNS_FILE) as f:
         return json.load(f)
 
+def _determine_mutation_type(patterns: list) -> str:
+    """
+    Determine mutation type for this synthesis run.
+    Evaluation order (from spec):
+      1. Any pattern with failure_rate > 0.5 → repair
+      2. should_force_innovate() → innovate (stagnation escape)
+      3. EVOLVE_STRATEGY env var → use that value
+      4. Default → optimize
+    """
+    # 1. Repair if any pattern is badly failing
+    for p in patterns:
+        if p.get("failure_rate", 0) > 0.5:
+            return "repair"
+
+    # 2. Stagnation escape
+    if _EVOLUTION_AVAILABLE:
+        try:
+            events_path = DATA_DIR / "events.jsonl"
+            if should_force_innovate(events_path):
+                return "innovate"
+        except Exception:
+            pass
+
+    # 3. Environment override
+    strategy = os.environ.get("EVOLVE_STRATEGY", "")
+    if strategy in ("repair", "optimize", "innovate"):
+        return strategy
+    if strategy == "repair-only":
+        return "repair"
+
+    # 4. Default
+    return "optimize"
+
+
 def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list:
     """
     Generate improvement proposals using heuristic rules (no LLM needed).
     For LLM-powered synthesis, use synthesize_with_llm().
     """
     proposals = []
+
+    # ── Mutation Type Declaration (Phase 2) ─────────────────────────────────
+    mutation_type = _determine_mutation_type(patterns)
+    print(f"[MUTATION] Declared type: {mutation_type}")
+
+    # Log mutation type decision event at cycle start
+    if _EVOLUTION_AVAILABLE:
+        try:
+            top_pattern = patterns[0]["description"] if patterns else ""
+            log_event(
+                mutation_type=mutation_type,
+                signals={
+                    "top_pattern": top_pattern,
+                    "repair_ratio_last8": 0.0,  # will be filled by stagnation check
+                    "forced_innovate": (mutation_type == "innovate"),
+                },
+                outcome={"status": "skipped", "validation_passed": True,
+                         "quality": None, "notes": "cycle start — mutation type declared"},
+            )
+        except Exception:
+            pass
+
+    # ── Innovation Cooldown (Phase 3) ────────────────────────────────────────
+    _cooldown_paths: dict = {}
+    if _EVOLUTION_AVAILABLE and mutation_type == "innovate":
+        try:
+            all_events = load_events()
+            _cooldown_paths = get_recent_innovation_targets(all_events, last_n=10)
+        except Exception:
+            _cooldown_paths = {}
 
     # Load genes once for the full batch (gene registry integration)
     _genes = []
@@ -89,6 +161,7 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
                     "created_at": datetime.now(timezone.utc).isoformat(),
                     "status": "draft",
                     "priority": "high",
+                    "mutation_type": matched_gene.get("mutation_type", mutation_type),
                     "pattern": {"category": category, "task_type": task_type, "issue": issue},
                     "title": f"[Gene] {matched_gene['meta']['title']}",
                     "description": (
@@ -112,6 +185,14 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
                 continue  # skip heuristic generation for this pattern
         # ── End Gene Registry check ──
 
+        # ── Innovation Cooldown check ─────────────────────────────────────────
+        if mutation_type == "innovate" and _cooldown_paths:
+            target_file = f"skills/{task_type.replace('_', '-')}/"
+            cooldown_count = _cooldown_paths.get(target_file, 0)
+            if cooldown_count >= 3:
+                print(f"[COOLDOWN] Skipping {target_file} — innovated {cooldown_count}x recently")
+                continue
+
         # Determine priority
         if p["impact_score"] > 0.3 or p["failure_rate"] > 0.7:
             priority = "critical"
@@ -129,6 +210,7 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
                 "created_at": datetime.now(timezone.utc).isoformat(),
                 "status": "draft",
                 "priority": priority,
+                "mutation_type": mutation_type,
                 "pattern": {"category": category, "task_type": task_type, "issue": issue},
                 "title": f"Create skill for '{task_type}' tasks",
                 "description": (
@@ -164,6 +246,7 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
                 "created_at": datetime.now(timezone.utc).isoformat(),
                 "status": "draft",
                 "priority": priority,
+                "mutation_type": mutation_type,
                 "pattern": {"category": category, "task_type": task_type, "issue": issue},
                 "title": f"Fix model routing for '{task_type}' tasks",
                 "description": (
@@ -196,6 +279,7 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
                 "created_at": datetime.now(timezone.utc).isoformat(),
                 "status": "draft",
                 "priority": priority,
+                "mutation_type": mutation_type,
                 "pattern": {"category": category, "task_type": task_type, "issue": issue},
                 "title": f"Improve memory continuity for '{task_type}'",
                 "description": (
@@ -227,6 +311,7 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
                 "created_at": datetime.now(timezone.utc).isoformat(),
                 "status": "draft",
                 "priority": priority,
+                "mutation_type": mutation_type,
                 "pattern": {"category": category, "task_type": task_type, "issue": issue},
                 "title": f"Update behavioral rules for '{issue}' pattern",
                 "description": (
@@ -258,6 +343,7 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
                 "created_at": datetime.now(timezone.utc).isoformat(),
                 "status": "draft",
                 "priority": priority,
+                "mutation_type": mutation_type,
                 "pattern": {"category": category, "task_type": task_type, "issue": issue},
                 "title": f"Address '{issue}' in '{task_type}' tasks",
                 "description": p["description"],
