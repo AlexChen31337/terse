@@ -6,7 +6,7 @@
     "importance": 0.7,
     "created_at": 1771533772.0500326,
     "access_count": 1,
-    "score": 0.7320415589372911,
+    "score": 0.7294130424568763,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -21,7 +21,7 @@
     "importance": 0.7,
     "created_at": 1771533772.654951,
     "access_count": 1,
-    "score": 0.7320417297794596,
+    "score": 0.7294132126856747,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -36,7 +36,7 @@
     "importance": 0.7,
     "created_at": 1771533773.2137918,
     "access_count": 1,
-    "score": 0.7320418876087027,
+    "score": 0.7294133699484072,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -51,7 +51,7 @@
     "importance": 0.7,
     "created_at": 1771533773.7885537,
     "access_count": 0,
-    "score": 0.6654927726678308,
+    "score": 0.6631032106288443,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -66,7 +66,7 @@
     "importance": 0.7,
     "created_at": 1771533774.3492866,
     "access_count": 0,
-    "score": 0.6654929166351828,
+    "score": 0.6631033540791357,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -81,7 +81,7 @@
     "importance": 0.7,
     "created_at": 1771533774.8990283,
     "access_count": 1,
-    "score": 0.7320423635586086,
+    "score": 0.7294138441894703,
     "metadata": {
       "urls": [],
       "commands": [
@@ -99,7 +99,7 @@
     "importance": 0.7,
     "created_at": 1771533775.517146,
     "access_count": 0,
-    "score": 0.6654932164814956,
+    "score": 0.6631036528488007,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -114,7 +114,7 @@
     "importance": 0.7,
     "created_at": 1771533776.0680125,
     "access_count": 0,
-    "score": 0.6654933579157359,
+    "score": 0.663103793774771,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -129,7 +129,7 @@
     "importance": 0.7,
     "created_at": 1771533777.2007518,
     "access_count": 0,
-    "score": 0.6654936487453391,
+    "score": 0.6631040835596143,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -144,7 +144,7 @@
     "importance": 0.7,
     "created_at": 1771533777.7604384,
     "access_count": 0,
-    "score": 0.6654937924442748,
+    "score": 0.663104226742392,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -159,7 +159,7 @@
     "importance": 0.7,
     "created_at": 1771533778.385088,
     "access_count": 0,
-    "score": 0.6654939528223438,
+    "score": 0.6631043865445971,
     "metadata": {
       "urls": [],
       "commands": [
@@ -176,7 +176,7 @@
     "importance": 0.7,
     "created_at": 1771533778.9456394,
     "access_count": 0,
-    "score": 0.6654940967433676,
+    "score": 0.6631045299488485,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -191,7 +191,7 @@
     "importance": 0.7,
     "created_at": 1771533779.52829,
     "access_count": 0,
-    "score": 0.6654942463383914,
+    "score": 0.6631046790067266,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -206,7 +206,7 @@
     "importance": 0.7,
     "created_at": 1771533780.0876179,
     "access_count": 0,
-    "score": 0.6654943899453292,
+    "score": 0.66310482209802,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -221,7 +221,7 @@
     "importance": 0.7,
     "created_at": 1771533780.6430047,
     "access_count": 0,
-    "score": 0.6654945325404332,
+    "score": 0.6631049641811126,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -236,7 +236,7 @@
     "importance": 0.7,
     "created_at": 1771533781.2022128,
     "access_count": 0,
-    "score": 0.6654946761167034,
+    "score": 0.6631051072417874,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -251,7 +251,7 @@
     "importance": 0.7,
     "created_at": 1771533781.7749128,
     "access_count": 0,
-    "score": 0.6654948231569746,
+    "score": 0.6631052537541472,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -266,7 +266,7 @@
     "importance": 0.7,
     "created_at": 1771533782.3321376,
     "access_count": 1,
-    "score": 0.7320444628464762,
+    "score": 0.7294159359382894,
     "metadata": {
       "urls": [
         "https://github.com/clawinfra/identity-resolver"
@@ -283,7 +283,7 @@
     "importance": 0.7,
     "created_at": 1771533782.910496,
     "access_count": 0,
-    "score": 0.665495114717255,
+    "score": 0.663105544267532,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -298,7 +298,7 @@
     "importance": 0.7,
     "created_at": 1771533784.070109,
     "access_count": 0,
-    "score": 0.6654954124474136,
+    "score": 0.6631058409286412,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -313,7 +313,7 @@
     "importance": 0.7,
     "created_at": 1771533784.6532218,
     "access_count": 0,
-    "score": 0.665495562161427,
+    "score": 0.6631059901050818,
     "metadata": {
       "urls": [],
       "commands": [
@@ -330,7 +330,7 @@
     "importance": 0.7,
     "created_at": 1771533785.2190263,
     "access_count": 0,
-    "score": 0.6654957074315255,
+    "score": 0.6631061348536249,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -345,7 +345,7 @@
     "importance": 0.7,
     "created_at": 1771533785.7861786,
     "access_count": 1,
-    "score": 0.732045438352468,
+    "score": 0.7294169079415653,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -360,7 +360,7 @@
     "importance": 0.7,
     "created_at": 1771533786.3468318,
     "access_count": 0,
-    "score": 0.6654959969952099,
+    "score": 0.6631064233775829,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -375,7 +375,7 @@
     "importance": 0.7,
     "created_at": 1771533786.9122772,
     "access_count": 0,
-    "score": 0.6654961421732151,
+    "score": 0.6631065680343023,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -390,7 +390,7 @@
     "importance": 0.7,
     "created_at": 1771533787.4871464,
     "access_count": 0,
-    "score": 0.6654962897707352,
+    "score": 0.6631067151019101,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -405,7 +405,7 @@
     "importance": 0.7,
     "created_at": 1771533788.925523,
     "access_count": 0,
-    "score": 0.6654966590740847,
+    "score": 0.6631070830792148,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -420,7 +420,7 @@
     "importance": 0.7,
     "created_at": 1771533789.4981863,
     "access_count": 0,
-    "score": 0.6654968061054283,
+    "score": 0.6631072295826179,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -435,7 +435,7 @@
     "importance": 0.7,
     "created_at": 1771533790.0888143,
     "access_count": 0,
-    "score": 0.6654969577492224,
+    "score": 0.6631073806819708,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -450,7 +450,7 @@
     "importance": 0.9,
     "created_at": 1770901224.1941369,
     "access_count": 1,
-    "score": 0.7373872465383076,
+    "score": 0.7347395354805049,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -461,7 +461,7 @@
     "importance": 0.8,
     "created_at": 1770603278.377375,
     "access_count": 3,
-    "score": 0.6905138342078656,
+    "score": 0.6880344299015472,
     "tier": "warm"
   },
   {
@@ -471,13 +471,13 @@
     "importance": 0.8,
     "created_at": 1771074043.6508107,
     "access_count": 1,
-    "score": 0.7006470939216838,
+    "score": 0.6981313044678386,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "hot"
+    "tier": "warm"
   },
   {
     "id": "24a5d9a12e97",
@@ -486,13 +486,13 @@
     "importance": 0.8,
     "created_at": 1771074043.887379,
     "access_count": 1,
-    "score": 0.7006471578686375,
+    "score": 0.6981313681851802,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "hot"
+    "tier": "warm"
   },
   {
     "id": "a398b79d2354",
@@ -501,7 +501,7 @@
     "importance": 0.8,
     "created_at": 1771074044.122165,
     "access_count": 2,
-    "score": 0.7643424232732949,
+    "score": 0.761597925188197,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -516,7 +516,7 @@
     "importance": 0.8,
     "created_at": 1771095636.6020772,
     "access_count": 1,
-    "score": 0.7065082941524016,
+    "score": 0.7039714590882123,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -531,7 +531,7 @@
     "importance": 0.75,
     "created_at": 1771533763.5591288,
     "access_count": 0,
-    "score": 0.7130251567248721,
+    "score": 0.7104649217860894,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -546,7 +546,7 @@
     "importance": 0.75,
     "created_at": 1771533764.118573,
     "access_count": 0,
-    "score": 0.7130253106204406,
+    "score": 0.7104650751290704,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -561,7 +561,7 @@
     "importance": 0.75,
     "created_at": 1771533764.6763897,
     "access_count": 0,
-    "score": 0.7130254640684189,
+    "score": 0.7104652280260684,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -576,7 +576,7 @@
     "importance": 0.75,
     "created_at": 1771533783.4889903,
     "access_count": 0,
-    "score": 0.7130306391886431,
+    "score": 0.7104703845642314,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -591,7 +591,7 @@
     "importance": 0.8,
     "created_at": 1771138829.5050104,
     "access_count": 1,
-    "score": 0.7183801389889606,
+    "score": 0.7158006760993646,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -606,7 +606,7 @@
     "importance": 0.9,
     "created_at": 1771095636.7073271,
     "access_count": 2,
-    "score": 0.8670783962124765,
+    "score": 0.86396500759827,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -621,7 +621,7 @@
     "importance": 0.8,
     "created_at": 1771160437.3352547,
     "access_count": 1,
-    "score": 0.7243938416725946,
+    "score": 0.7217927855873358,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -636,7 +636,7 @@
     "importance": 0.8,
     "created_at": 1771160464.5418885,
     "access_count": 1,
-    "score": 0.7244014452300395,
+    "score": 0.7218003618430144,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -651,7 +651,7 @@
     "importance": 0.8,
     "created_at": 1771160464.5951035,
     "access_count": 2,
-    "score": 0.790256138293333,
+    "score": 0.7874185927218867,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -668,7 +668,7 @@
     "importance": 0.85,
     "created_at": 1771041476.1792974,
     "access_count": 2,
-    "score": 0.8019736209954915,
+    "score": 0.7990940018614613,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -685,7 +685,7 @@
     "importance": 0.8,
     "created_at": 1770603278.2826345,
     "access_count": 6,
-    "score": 0.8498631494975334,
+    "score": 0.8468115750784615,
     "tier": "hot",
     "tree_relevance": 1.333308210833677,
     "search_method": "keyword-tree"
@@ -697,7 +697,7 @@
     "importance": 0.7,
     "created_at": 1771182017.9329922,
     "access_count": 3,
-    "score": 0.7553519236019534,
+    "score": 0.752639707395352,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -712,7 +712,7 @@
     "importance": 0.9,
     "created_at": 1771239283.3715694,
     "access_count": 0,
-    "score": 0.7637397395074604,
+    "score": 0.760997405458399,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -727,7 +727,7 @@
     "importance": 0.75,
     "created_at": 1771533765.248862,
     "access_count": 1,
-    "score": 0.7843281837012777,
+    "score": 0.781511923432839,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -742,7 +742,7 @@
     "importance": 0.9,
     "created_at": 1771074043.419154,
     "access_count": 2,
-    "score": 0.8598849929587311,
+    "score": 0.8567974334506606,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -757,7 +757,7 @@
     "importance": 0.9,
     "created_at": 1771095636.4439633,
     "access_count": 2,
-    "score": 0.8670783081099956,
+    "score": 0.8639649198122944,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -772,7 +772,7 @@
     "importance": 0.7,
     "created_at": 1771533770.3375487,
     "access_count": 2,
-    "score": 0.7985902639448398,
+    "score": 0.7957227933147567,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -787,7 +787,7 @@
     "importance": 0.7,
     "created_at": 1771533776.6394746,
     "access_count": 3,
-    "score": 0.8651415560216231,
+    "score": 0.8620351219530408,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -802,7 +802,7 @@
     "importance": 0.9,
     "created_at": 1771117238.729161,
     "access_count": 2,
-    "score": 0.8743349222114202,
+    "score": 0.8711954778387219,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -817,7 +817,7 @@
     "importance": 0.85,
     "created_at": 1771049139.3538048,
     "access_count": 3,
-    "score": 0.8713771534405562,
+    "score": 0.8682483294265875,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -833,7 +833,7 @@
     "importance": 0.9,
     "created_at": 1771138829.3475142,
     "access_count": 2,
-    "score": 0.8816482988216919,
+    "score": 0.8784825945588063,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -848,7 +848,7 @@
     "importance": 0.9,
     "created_at": 1771160437.4418483,
     "access_count": 1,
-    "score": 0.814943105392978,
+    "score": 0.8120169171769579,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -864,7 +864,7 @@
     "importance": 0.9,
     "created_at": 1771160437.494436,
     "access_count": 2,
-    "score": 0.8890288602837678,
+    "score": 0.8858366548924362,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -880,7 +880,7 @@
     "importance": 0.9,
     "created_at": 1770858052.078376,
     "access_count": 3,
-    "score": 0.857062946971,
+    "score": 0.8539855204866021,
     "tier": "hot"
   },
   {
@@ -890,7 +890,7 @@
     "importance": 0.9,
     "created_at": 1771074043.966223,
     "access_count": 2,
-    "score": 0.8598851744448519,
+    "score": 0.8567976142852832,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -905,7 +905,7 @@
     "importance": 0.7,
     "created_at": 1771037649.449347,
     "access_count": 8,
-    "score": 0.9892117833730851,
+    "score": 0.985659854601004,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -920,7 +920,7 @@
     "importance": 0.9,
     "created_at": 1771160464.7532754,
     "access_count": 4,
-    "score": 1.0372112448001292,
+    "score": 1.0334869660107326,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -935,7 +935,7 @@
     "importance": 0.9,
     "created_at": 1771160464.860456,
     "access_count": 4,
-    "score": 1.037211287689087,
+    "score": 1.0334870087457857,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -950,7 +950,7 @@
     "importance": 0.9,
     "created_at": 1771647205.4337666,
     "access_count": 2,
-    "score": 1.0726912661480361,
+    "score": 1.0688395904647918,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -967,7 +967,7 @@
     "importance": 0.95,
     "created_at": 1771566283.8878691,
     "access_count": 0,
-    "score": 0.9145680743183008,
+    "score": 0.9112841661484667,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -985,7 +985,7 @@
     "importance": 0.95,
     "created_at": 1771566329.030747,
     "access_count": 0,
-    "score": 0.9145840027881796,
+    "score": 0.911300037424452,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1000,7 +1000,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7719114,
     "access_count": 8,
-    "score": 0.9703172483862627,
+    "score": 0.9668331635720383,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1015,7 +1015,7 @@
     "importance": 0.9,
     "created_at": 1771160464.8068938,
     "access_count": 5,
-    "score": 1.1112977852729664,
+    "score": 1.1073074864876042,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1030,7 +1030,7 @@
     "importance": 0.7,
     "created_at": 1770987661.8755405,
     "access_count": 10,
-    "score": 1.0781303190883846,
+    "score": 1.074259113584575,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1045,7 +1045,7 @@
     "importance": 0.9,
     "created_at": 1770621651.5485682,
     "access_count": 7,
-    "score": 1.0230784454310486,
+    "score": 1.0194049127990845,
     "tier": "hot"
   },
   {
@@ -1055,7 +1055,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3982527,
     "access_count": 9,
-    "score": 1.044167972975312,
+    "score": 1.0404187149012059,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1070,7 +1070,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3307042,
     "access_count": 11,
-    "score": 1.1540803611072505,
+    "score": 1.1499364443964943,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1085,7 +1085,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3432972,
     "access_count": 11,
-    "score": 1.1540803667140482,
+    "score": 1.149936449983054,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1100,7 +1100,7 @@
     "importance": 0.9,
     "created_at": 1770858052.1201756,
     "access_count": 9,
-    "score": 1.252630481154193,
+    "score": 1.2481327039125134,
     "tier": "hot"
   },
   {
@@ -1110,7 +1110,7 @@
     "importance": 0.9,
     "created_at": 1770879637.8976207,
     "access_count": 9,
-    "score": 1.2631057528773886,
+    "score": 1.258570362437351,
     "tier": "hot"
   },
   {
@@ -1120,7 +1120,7 @@
     "importance": 0.9,
     "created_at": 1770879637.8497229,
     "access_count": 10,
-    "score": 1.3295849784590574,
+    "score": 1.3248108833472398,
     "tier": "hot"
   },
   {
@@ -1130,7 +1130,7 @@
     "importance": 0.8,
     "created_at": 1770613764.1543171,
     "access_count": 34,
-    "score": 2.3465975872274614,
+    "score": 2.3381717398752424,
     "tier": "hot"
   },
   {
@@ -1140,7 +1140,7 @@
     "importance": 0.9,
     "created_at": 1770610454.8254375,
     "access_count": 32,
-    "score": 2.5167105627069124,
+    "score": 2.5076738965369185,
     "tier": "hot"
   },
   {
@@ -1150,7 +1150,7 @@
     "importance": 0.9,
     "created_at": 1770618231.019124,
     "access_count": 32,
-    "score": 2.524272219551336,
+    "score": 2.5152084019998497,
     "tier": "hot"
   },
   {
@@ -1160,7 +1160,7 @@
     "importance": 0.7,
     "created_at": 1771037649.493801,
     "access_count": 37,
-    "score": 2.5829419230962682,
+    "score": 2.5736674422555326,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1175,7 +1175,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7097778,
     "access_count": 38,
-    "score": 2.587512600330244,
+    "score": 2.5782217077157648,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1190,7 +1190,7 @@
     "importance": 0.7,
     "created_at": 1770987661.713866,
     "access_count": 38,
-    "score": 2.5875126044108536,
+    "score": 2.5782217117817225,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1205,7 +1205,7 @@
     "importance": 0.8,
     "created_at": 1770603278.5991645,
     "access_count": 39,
-    "score": 2.602706213154436,
+    "score": 2.5933607653562802,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -1216,7 +1216,7 @@
     "importance": 0.75,
     "created_at": 1770848917.960907,
     "access_count": 38,
-    "score": 2.6278400076179307,
+    "score": 2.6184043127675665,
     "tier": "hot"
   },
   {
@@ -1226,7 +1226,7 @@
     "importance": 0.75,
     "created_at": 1770848917.963316,
     "access_count": 38,
-    "score": 2.6278400100597374,
+    "score": 2.618404315200606,
     "tier": "hot"
   },
   {
@@ -1236,7 +1236,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9673443,
     "access_count": 38,
-    "score": 2.6278400141432745,
+    "score": 2.6184043192694806,
     "tier": "hot"
   },
   {
@@ -1246,7 +1246,7 @@
     "importance": 0.75,
     "created_at": 1770848917.968247,
     "access_count": 40,
-    "score": 2.7373333490186713,
+    "score": 2.7275045001886324,
     "tier": "hot"
   },
   {
@@ -1256,7 +1256,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9691088,
     "access_count": 38,
-    "score": 2.627840015931242,
+    "score": 2.6184043210510284,
     "tier": "hot"
   },
   {
@@ -1266,7 +1266,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9700267,
     "access_count": 38,
-    "score": 2.627840016861362,
+    "score": 2.6184043219778084,
     "tier": "hot"
   },
   {
@@ -1276,7 +1276,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9754503,
     "access_count": 38,
-    "score": 2.627840022359176,
+    "score": 2.6184043274561217,
     "tier": "hot"
   },
   {
@@ -1286,7 +1286,7 @@
     "importance": 0.75,
     "created_at": 1770848917.977328,
     "access_count": 38,
-    "score": 2.6278400242624413,
+    "score": 2.6184043293525536,
     "tier": "hot"
   },
   {
@@ -1296,7 +1296,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9793704,
     "access_count": 38,
-    "score": 2.627840026332491,
+    "score": 2.6184043314154106,
     "tier": "hot"
   },
   {
@@ -1306,7 +1306,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7264295,
     "access_count": 40,
-    "score": 2.695325642652977,
+    "score": 2.6856476294514846,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1321,7 +1321,7 @@
     "importance": 0.7,
     "created_at": 1770603278.50327,
     "access_count": 47,
-    "score": 2.649183011801919,
+    "score": 2.6396706813600384,
     "tier": "hot"
   },
   {
@@ -1331,7 +1331,7 @@
     "importance": 0.75,
     "created_at": 1770848917.976349,
     "access_count": 40,
-    "score": 2.7373333575708587,
+    "score": 2.7275045087103624,
     "tier": "hot"
   },
   {
@@ -1341,7 +1341,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9782953,
     "access_count": 39,
-    "score": 2.6825866924331763,
+    "score": 2.6729544205424136,
     "tier": "hot"
   },
   {
@@ -1351,7 +1351,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4981942,
     "access_count": 39,
-    "score": 2.6928543499105544,
+    "score": 2.6831852102952714,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1366,7 +1366,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7180986,
     "access_count": 40,
-    "score": 2.6953256339873337,
+    "score": 2.6856476208172038,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1381,7 +1381,7 @@
     "importance": 0.7,
     "created_at": 1770987661.73495,
     "access_count": 40,
-    "score": 2.6953256515100166,
+    "score": 2.6856476382769685,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1396,7 +1396,7 @@
     "importance": 0.7,
     "created_at": 1771182017.7169092,
     "access_count": 38,
-    "score": 2.7889914853800746,
+    "score": 2.7789771494547493,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1411,7 +1411,7 @@
     "importance": 0.95,
     "created_at": 1770629133.8014925,
     "access_count": 33,
-    "score": 2.739449068616633,
+    "score": 2.72961262294541,
     "tier": "hot"
   },
   {
@@ -1421,7 +1421,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7222998,
     "access_count": 42,
-    "score": 2.803138663888157,
+    "score": 2.793073530174915,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1436,7 +1436,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7308817,
     "access_count": 43,
-    "score": 2.857045186114128,
+    "score": 2.846786492102945,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1451,7 +1451,7 @@
     "importance": 0.8,
     "created_at": 1770603278.2195358,
     "access_count": 42,
-    "score": 2.762055168596543,
+    "score": 2.7521375519788895,
     "tier": "hot",
     "tree_relevance": 0.6666538966332228
   },
@@ -1462,7 +1462,7 @@
     "importance": 0.75,
     "created_at": 1770987661.4968448,
     "access_count": 38,
-    "score": 2.7723347011644144,
+    "score": 2.76238017418227,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1482,7 +1482,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5010297,
     "access_count": 38,
-    "score": 2.772334705640029,
+    "score": 2.7623801786418136,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1502,7 +1502,7 @@
     "importance": 0.75,
     "created_at": 1770987661.5811749,
     "access_count": 38,
-    "score": 2.7723347913606227,
+    "score": 2.7623802640546145,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1520,7 +1520,7 @@
     "importance": 0.75,
     "created_at": 1770987661.585305,
     "access_count": 38,
-    "score": 2.7723347957775855,
+    "score": 2.762380268455717,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1536,7 +1536,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3265023,
     "access_count": 41,
-    "score": 2.8027665866965363,
+    "score": 2.7927027889883433,
     "metadata": {
       "urls": [
         "cs.AI"
@@ -1553,7 +1553,7 @@
     "importance": 0.8,
     "created_at": 1770858031.0936832,
     "access_count": 38,
-    "score": 2.8129017706824895,
+    "score": 2.8028015809175577,
     "tier": "hot"
   },
   {
@@ -1563,7 +1563,7 @@
     "importance": 0.8,
     "created_at": 1770858031.1349287,
     "access_count": 39,
-    "score": 2.871503936597343,
+    "score": 2.861193326048243,
     "tier": "hot"
   },
   {
@@ -1573,7 +1573,7 @@
     "importance": 0.8,
     "created_at": 1770879637.2224507,
     "access_count": 38,
-    "score": 2.8364472675964216,
+    "score": 2.826262533824508,
     "tier": "hot"
   },
   {
@@ -1583,7 +1583,7 @@
     "importance": 0.8,
     "created_at": 1770879637.515192,
     "access_count": 38,
-    "score": 2.8364475879451683,
+    "score": 2.8262628530229894,
     "tier": "hot"
   },
   {
@@ -1593,7 +1593,7 @@
     "importance": 0.8,
     "created_at": 1770879637.6592467,
     "access_count": 38,
-    "score": 2.8364477455848776,
+    "score": 2.8262630100966675,
     "tier": "hot"
   },
   {
@@ -1603,7 +1603,7 @@
     "importance": 0.8,
     "created_at": 1770879638.046249,
     "access_count": 40,
-    "score": 2.9546335094627434,
+    "score": 2.9440244084118525,
     "tier": "hot"
   },
   {
@@ -1613,7 +1613,7 @@
     "importance": 0.8,
     "created_at": 1770879638.099425,
     "access_count": 39,
-    "score": 2.8955408986764115,
+    "score": 2.8851439794335083,
     "tier": "hot"
   },
   {
@@ -1623,7 +1623,7 @@
     "importance": 0.7,
     "created_at": 1771037649.4890444,
     "access_count": 42,
-    "score": 2.8577229734797123,
+    "score": 2.847461845761765,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1638,7 +1638,7 @@
     "importance": 0.8,
     "created_at": 1770901223.9106195,
     "access_count": 40,
-    "score": 2.9793420843179312,
+    "score": 2.9686442630363197,
     "tier": "hot"
   },
   {
@@ -1648,7 +1648,7 @@
     "importance": 0.9,
     "created_at": 1770944438.939319,
     "access_count": 32,
-    "score": 2.8628127265285817,
+    "score": 2.852533323209195,
     "tier": "hot"
   },
   {
@@ -1658,7 +1658,7 @@
     "importance": 0.8,
     "created_at": 1771074043.3392706,
     "access_count": 35,
-    "score": 2.8662832214861016,
+    "score": 2.8559913567796826,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1673,7 +1673,7 @@
     "importance": 0.8,
     "created_at": 1770858051.8253617,
     "access_count": 41,
-    "score": 2.988732036121271,
+    "score": 2.978000498662264,
     "tier": "hot"
   },
   {
@@ -1683,7 +1683,7 @@
     "importance": 0.8,
     "created_at": 1770922835.0454159,
     "access_count": 38,
-    "score": 2.884115115108342,
+    "score": 2.8737592220342845,
     "tier": "hot"
   },
   {
@@ -1693,7 +1693,7 @@
     "importance": 0.8,
     "created_at": 1770922837.8350434,
     "access_count": 39,
-    "score": 2.9442040153562843,
+    "score": 2.9336323631321686,
     "tier": "hot"
   },
   {
@@ -1703,7 +1703,7 @@
     "importance": 0.8,
     "created_at": 1770922857.5116065,
     "access_count": 38,
-    "score": 2.8841401133171343,
+    "score": 2.873784130483131,
     "tier": "hot"
   },
   {
@@ -1713,7 +1713,7 @@
     "importance": 0.8,
     "created_at": 1770922872.2013025,
     "access_count": 38,
-    "score": 2.884156458710798,
+    "score": 2.873800417185688,
     "tier": "hot"
   },
   {
@@ -1723,7 +1723,7 @@
     "importance": 0.8,
     "created_at": 1771095636.3898034,
     "access_count": 35,
-    "score": 2.8902609665982033,
+    "score": 2.8798830058263114,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1738,7 +1738,7 @@
     "importance": 0.8,
     "created_at": 1771095636.495916,
     "access_count": 35,
-    "score": 2.890261084920497,
+    "score": 2.8798831237240154,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1753,7 +1753,7 @@
     "importance": 0.8,
     "created_at": 1770879637.7547972,
     "access_count": 40,
-    "score": 2.9546331772279384,
+    "score": 2.9440240773708046,
     "tier": "hot"
   },
   {
@@ -1763,7 +1763,7 @@
     "importance": 0.8,
     "created_at": 1770944439.7650976,
     "access_count": 38,
-    "score": 2.9082551249061193,
+    "score": 2.8978125531283605,
     "tier": "hot"
   },
   {
@@ -1773,7 +1773,7 @@
     "importance": 0.8,
     "created_at": 1771074043.4960601,
     "access_count": 36,
-    "score": 2.929978581413923,
+    "score": 2.9194580079670867,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1788,7 +1788,7 @@
     "importance": 0.8,
     "created_at": 1770879637.7071779,
     "access_count": 40,
-    "score": 2.9546331229445206,
+    "score": 2.944024023282571,
     "tier": "hot"
   },
   {
@@ -1798,7 +1798,7 @@
     "importance": 0.8,
     "created_at": 1771160437.2831426,
     "access_count": 36,
-    "score": 3.0292832769455678,
+    "score": 3.018406133539904,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1813,7 +1813,7 @@
     "importance": 0.8,
     "created_at": 1771160464.3298085,
     "access_count": 35,
-    "score": 2.9634602152331166,
+    "score": 2.952819420433828,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1828,7 +1828,7 @@
     "importance": 0.8,
     "created_at": 1771117238.9972398,
     "access_count": 36,
-    "score": 2.9792155985775053,
+    "score": 2.968518231464443,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1843,7 +1843,7 @@
     "importance": 0.9,
     "created_at": 1770606835.0856192,
     "access_count": 42,
-    "score": 3.1115789935121945,
+    "score": 3.100406353703938,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -1854,7 +1854,7 @@
     "importance": 0.75,
     "created_at": 1770848917.9745195,
     "access_count": 46,
-    "score": 3.065813358290469,
+    "score": 3.0548050475765405,
     "tier": "hot"
   },
   {
@@ -1864,7 +1864,7 @@
     "importance": 0.8,
     "created_at": 1771117238.8912566,
     "access_count": 37,
-    "score": 3.0439810306025086,
+    "score": 3.0330511124776605,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1879,7 +1879,7 @@
     "importance": 0.8,
     "created_at": 1771182017.6626358,
     "access_count": 38,
-    "score": 3.1874187736696085,
+    "score": 3.175973818568155,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1894,7 +1894,7 @@
     "importance": 0.8,
     "created_at": 1771182017.825397,
     "access_count": 37,
-    "score": 3.121014411864216,
+    "score": 3.10980789262368,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1909,7 +1909,7 @@
     "importance": 0.8,
     "created_at": 1771182017.8797367,
     "access_count": 37,
-    "score": 3.121014477293744,
+    "score": 3.109807957817986,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1924,7 +1924,7 @@
     "importance": 0.8,
     "created_at": 1771182017.770818,
     "access_count": 38,
-    "score": 3.1874189067010117,
+    "score": 3.1759739511215943,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1939,7 +1939,7 @@
     "importance": 0.95,
     "created_at": 1770630505.1354907,
     "access_count": 40,
-    "score": 3.187091623323811,
+    "score": 3.1756478429095747,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -1950,7 +1950,7 @@
     "importance": 0.9,
     "created_at": 1770858030.757867,
     "access_count": 39,
-    "score": 3.2304414587152577,
+    "score": 3.218842023536458,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -1961,7 +1961,7 @@
     "importance": 0.9,
     "created_at": 1770858030.926781,
     "access_count": 38,
-    "score": 3.16451428822929,
+    "score": 3.153151575476928,
     "tier": "hot"
   },
   {
@@ -1971,7 +1971,7 @@
     "importance": 0.85,
     "created_at": 1771241120.197766,
     "access_count": 35,
-    "score": 3.2481949175262503,
+    "score": 3.236531735613034,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1986,7 +1986,7 @@
     "importance": 0.9,
     "created_at": 1770879637.1740577,
     "access_count": 38,
-    "score": 3.191003116448062,
+    "score": 3.17954529117041,
     "tier": "hot"
   },
   {
@@ -1996,7 +1996,7 @@
     "importance": 0.9,
     "created_at": 1770901223.8614366,
     "access_count": 38,
-    "score": 3.217689389989742,
+    "score": 3.2061357432260755,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -2007,7 +2007,7 @@
     "importance": 0.9,
     "created_at": 1770901223.957171,
     "access_count": 38,
-    "score": 3.217689508832771,
+    "score": 3.2061358616426747,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -2018,7 +2018,7 @@
     "importance": 0.9,
     "created_at": 1770901224.0043564,
     "access_count": 38,
-    "score": 3.21768956740781,
+    "score": 3.20613592000739,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -2029,7 +2029,7 @@
     "importance": 0.85,
     "created_at": 1771161294.243141,
     "access_count": 37,
-    "score": 3.2896707822854387,
+    "score": 3.2778586744096505,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -2048,7 +2048,7 @@
     "importance": 0.9,
     "created_at": 1771037807.2176938,
     "access_count": 40,
-    "score": 3.5331142712666734,
+    "score": 3.52042803921743,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -2065,7 +2065,7 @@
     "importance": 0.9,
     "created_at": 1771161856.934242,
     "access_count": 37,
-    "score": 3.4839370658052093,
+    "score": 3.4714274126586693,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -2082,7 +2082,7 @@
     "importance": 0.95,
     "created_at": 1771162554.4913397,
     "access_count": 36,
-    "score": 3.6002134319271306,
+    "score": 3.5872862692269303,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -2098,7 +2098,7 @@
     "importance": 0.95,
     "created_at": 1771242087.408154,
     "access_count": 35,
-    "score": 3.63169041634885,
+    "score": 3.6186502303219426,
     "metadata": {
       "urls": [],
       "commands": [],

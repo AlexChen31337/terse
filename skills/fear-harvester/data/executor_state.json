@@ -1,0 +1,18 @@
+{
+  "positions": [
+    {
+      "timestamp": "2026-02-21T23:01:13.316209",
+      "entry_price": 68117.56,
+      "btc_qty": 0.00734,
+      "usd_amount": 500.0,
+      "fg_at_entry": 8,
+      "status": "open",
+      "mode": "paper",
+      "hl_order_id": null
+    }
+  ],
+  "total_invested": 500.0,
+  "mode": "paper",
+  "last_action": "DCA_BUY $500 @ $68,118 (F&G=8) [paper]",
+  "version": 2
+}
