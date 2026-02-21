@@ -11,13 +11,21 @@ When F&G recovers (≥ 60 Greed), we look to close/take profit on open positions
 
 Uses virtual $SIM by default (safe). Real money (Polymarket/Kalshi) requires
 Bowen to claim the agent at https://simmer.markets/claim/leaf-7IPH.
+
+v2 changes:
+  - Fixed volume filter: volume=0 → skip (don't default to 100)
+  - Added market duration filter: skip <1h and 5/15-min candle markets
+  - Added position deduplication: state file tracks open market IDs
+  - Added max total open positions cap (default 5)
+  - Smarter title scoring: prefer weekly/monthly resolution markets
 """
 from __future__ import annotations
 
 import json
 import logging
+import re
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Optional
 
@@ -27,6 +35,7 @@ if str(SIMMER_VENV) not in sys.path:
     sys.path.insert(0, str(SIMMER_VENV))
 
 SIMMER_CREDS_PATH = Path.home() / ".config/simmer/credentials.json"
+SIMMER_STATE_PATH = Path(__file__).parent.parent / "data" / "simmer_state.json"
 
 logger = logging.getLogger("fear-harvester.simmer")
 
@@ -34,10 +43,18 @@ logger = logging.getLogger("fear-harvester.simmer")
 # Config
 # ---------------------------------------------------------------------------
 BET_PER_MARKET = 15.0       # $SIM per bet
-MAX_BETS_PER_RUN = 3        # Max markets to bet on per F&G check
-MIN_MARKET_VOLUME = 50.0    # Skip thin markets
+MAX_BETS_PER_RUN = 3        # Max new bets per F&G check
+MAX_TOTAL_POSITIONS = 5     # Hard cap: don't open if already ≥ this many open
+MIN_MARKET_VOLUME = 100.0   # Skip thin markets (must have real volume)
 MIN_YES_PROB = 0.25         # Don't bet YES if probability already > 75% (low edge)
 MAX_YES_PROB = 0.75
+
+# Patterns for short-term candle markets to EXCLUDE (these are coin flips)
+SHORT_TERM_CANDLE_PATTERNS = [
+    r"\d+:\d+\s*(AM|PM)\s*[-–]\s*\d+:\d+\s*(AM|PM)",  # "8:00AM-8:15AM" style
+    r"(Up or Down|up or down).*(ET|UTC|GMT)",            # directional with timezone
+    r"\d+\s*min(ute)?",                                  # "15 minute" markets
+]
 
 # Keywords for finding relevant markets
 RECOVERY_KEYWORDS = [
@@ -45,6 +62,58 @@ RECOVERY_KEYWORDS = [
     "ethereum", "eth", "bull", "recovery",
 ]
 CRASH_KEYWORDS = ["crash", "bear", "below", "collapse", "dump"]
+
+# Preferred resolution horizon keywords (score boost)
+LONG_HORIZON_KEYWORDS = [
+    "end of", "by end", "week", "month", "march", "april", "may",
+    "q1", "q2", "2026", "year",
+]
+
+
+# ---------------------------------------------------------------------------
+# State management (deduplication)
+# ---------------------------------------------------------------------------
+
+def _load_simmer_state() -> dict[str, Any]:
+    """Load open position tracking state."""
+    try:
+        if SIMMER_STATE_PATH.exists():
+            return json.loads(SIMMER_STATE_PATH.read_text())
+    except Exception:
+        pass
+    return {"open_market_ids": [], "last_updated": None}
+
+
+def _save_simmer_state(state: dict[str, Any]) -> None:
+    """Persist open position tracking state."""
+    SIMMER_STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    state["last_updated"] = datetime.now(timezone.utc).isoformat()
+    SIMMER_STATE_PATH.write_text(json.dumps(state, indent=2))
+
+
+def _sync_open_positions(client: Any, state: dict[str, Any]) -> dict[str, Any]:
+    """
+    Refresh open_market_ids from live Simmer positions.
+    Removes markets we've exited (resolved/closed).
+    """
+    try:
+        live_positions = client.get_positions() or []
+        live_ids = set()
+        for pos in live_positions:
+            mid = _market_attr(pos, "market_id", "id")
+            if mid:
+                # Only keep if position has nonzero shares
+                shares_yes = float(_market_attr(pos, "shares_yes") or 0)
+                shares_no = float(_market_attr(pos, "shares_no") or 0)
+                if shares_yes > 0 or shares_no > 0:
+                    live_ids.add(str(mid))
+
+        state["open_market_ids"] = list(live_ids)
+        logger.info("Simmer: %d open positions synced from API", len(live_ids))
+    except Exception as e:
+        logger.warning("Simmer: failed to sync positions: %s — using cached state", e)
+
+    return state
 
 
 # ---------------------------------------------------------------------------
@@ -64,31 +133,8 @@ def _load_client():
 
 
 # ---------------------------------------------------------------------------
-# Market discovery
+# Market filtering
 # ---------------------------------------------------------------------------
-
-def find_fear_markets(client: Any) -> list[Any]:
-    """
-    Find crypto markets relevant to a fear-based contrarian trade.
-
-    Returns markets sorted by volume (descending).
-    """
-    candidates = []
-    seen_ids: set[str] = set()
-
-    for keyword in ["bitcoin", "crypto", "btc", "fear"]:
-        try:
-            markets = client.find_markets(keyword)
-            for m in (markets or []):
-                mid = str(getattr(m, "market_id", None) or getattr(m, "id", id(m)))
-                if mid not in seen_ids:
-                    seen_ids.add(mid)
-                    candidates.append(m)
-        except Exception as e:
-            logger.warning("Simmer market search failed for '%s': %s", keyword, e)
-
-    return candidates
-
 
 def _market_attr(market: Any, *keys: str, default: Any = None) -> Any:
     """Get attribute from a Market/Position object or dict."""
@@ -104,7 +150,6 @@ def _market_attr(market: Any, *keys: str, default: Any = None) -> Any:
 
 def _get_yes_prob(market: Any) -> Optional[float]:
     """Extract YES probability from a Market object or dict."""
-    # SDK Market object uses current_probability
     for key in ("current_probability", "yes_price", "yes_prob", "probability", "external_price_yes"):
         val = _market_attr(market, key)
         if val is not None:
@@ -114,6 +159,84 @@ def _get_yes_prob(market: Any) -> Optional[float]:
             except (TypeError, ValueError):
                 continue
     return None
+
+
+def _is_short_term_candle(title: str) -> bool:
+    """
+    Return True if this is a short-term (5-60min) directional candle market.
+    These are coin flips — no edge from fear/greed signals at 5-min resolution.
+    """
+    for pattern in SHORT_TERM_CANDLE_PATTERNS:
+        if re.search(pattern, title, re.IGNORECASE):
+            return True
+    return False
+
+
+def _has_real_volume(market: Any) -> bool:
+    """
+    Return True only if market has explicitly nonzero volume.
+    volume=0 or volume=None → thin/inactive → skip.
+    """
+    vol_raw = _market_attr(market, "volume", "total_volume")
+    if vol_raw is None:
+        return False  # Unknown volume → skip conservatively
+    try:
+        return float(vol_raw) >= MIN_MARKET_VOLUME
+    except (TypeError, ValueError):
+        return False
+
+
+def _long_horizon_score(title: str) -> int:
+    """Score [0–3] boost for markets resolving over longer horizons."""
+    title_lower = title.lower()
+    return sum(1 for kw in LONG_HORIZON_KEYWORDS if kw in title_lower)
+
+
+def find_fear_markets(client: Any) -> list[Any]:
+    """
+    Find crypto markets relevant to a fear-based contrarian trade.
+    Filters out candle markets and low-volume markets.
+    Returns markets sorted by long-horizon score + volume desc.
+    """
+    candidates = []
+    seen_ids: set[str] = set()
+
+    for keyword in ["bitcoin", "crypto", "btc", "fear", "cryptocurrency"]:
+        try:
+            markets = client.find_markets(keyword)
+            for m in (markets or []):
+                mid = str(_market_attr(m, "market_id", "id") or id(m))
+                if mid in seen_ids:
+                    continue
+                seen_ids.add(mid)
+
+                title = (_market_attr(m, "question", "title") or "").strip()
+
+                # Hard filter: skip 5-60min candle markets
+                if _is_short_term_candle(title):
+                    logger.debug("Simmer: skipping candle market — %s", title[:60])
+                    continue
+
+                # Hard filter: must have real volume
+                if not _has_real_volume(m):
+                    logger.debug("Simmer: skipping zero-volume market — %s", title[:60])
+                    continue
+
+                candidates.append(m)
+        except Exception as e:
+            logger.warning("Simmer market search failed for '%s': %s", keyword, e)
+
+    # Sort: long-horizon score (desc), then volume (desc)
+    candidates.sort(
+        key=lambda m: (
+            _long_horizon_score(_market_attr(m, "question", "title") or ""),
+            float(_market_attr(m, "volume", "total_volume") or 0),
+        ),
+        reverse=True,
+    )
+
+    logger.info("Simmer: %d qualifying markets after filtering", len(candidates))
+    return candidates
 
 
 def classify_market(market: Any) -> Optional[str]:
@@ -126,11 +249,8 @@ def classify_market(market: Any) -> Optional[str]:
         None       — skip
     """
     title = (_market_attr(market, "question", "title") or "").lower()
-    volume = float(_market_attr(market, "volume", "total_volume") or 100)  # default 100 if missing
     status = _market_attr(market, "status") or "open"
 
-    if volume < MIN_MARKET_VOLUME:
-        return None
     if status not in (None, "open", "active"):
         return None
 
@@ -140,17 +260,12 @@ def classify_market(market: Any) -> Optional[str]:
 
     is_crypto = any(kw in title for kw in ["bitcoin", "btc", "crypto", "ethereum", "eth", "sol"])
 
-    # "Up or Down" style directional market — during extreme fear, YES = bullish = contrarian play
-    if is_crypto and "up" in title and "down" in title:
-        if MIN_YES_PROB <= yes_prob <= 0.60:
-            return "BET_YES"
-
     # Recovery / bullish markets — bet YES
     recovery_signals = any(kw in title for kw in [
         "recover", "above", "exceed", "reach", "bullish",
         "higher", "rise", "hit", "surpass", "outperform",
     ])
-    # Crash continuation — bet NO (we're contrarian)
+    # Crash continuation — bet NO (contrarian)
     crash_signals = any(kw in title for kw in CRASH_KEYWORDS)
 
     if recovery_signals and not crash_signals:
@@ -178,46 +293,55 @@ def execute_fear_trades(
     dry_run: bool = True,
     bet_amount: float = BET_PER_MARKET,
     max_bets: int = MAX_BETS_PER_RUN,
+    max_total_positions: int = MAX_TOTAL_POSITIONS,
 ) -> list[dict[str, Any]]:
     """
     Find and execute contrarian Simmer bets during extreme fear.
 
-    Args:
-        fg_value: Current Fear & Greed index value
-        client:   Simmer SDK client
-        dry_run:  If True, log but don't submit trades
-        bet_amount: $SIM per bet
-        max_bets:   Max number of markets to bet on
-
-    Returns:
-        List of executed (or simulated) trade records
+    v2: deduplication (no re-betting same market), total position cap,
+    no short-term candle markets, real volume filter.
     """
+    # Sync open positions from API
+    state = _load_simmer_state()
+    state = _sync_open_positions(client, state)
+    open_ids: set[str] = set(state.get("open_market_ids", []))
+
+    # Cap: don't open more if already at limit
+    if len(open_ids) >= max_total_positions:
+        logger.info(
+            "Simmer: already at max positions (%d/%d) — skipping this run",
+            len(open_ids), max_total_positions,
+        )
+        _save_simmer_state(state)
+        return []
+
     markets = find_fear_markets(client)
-    logger.info("Simmer: %d candidate markets found", len(markets))
+    remaining_slots = max_total_positions - len(open_ids)
+    effective_max = min(max_bets, remaining_slots)
 
     trades = []
     bets_placed = 0
 
-    # Sort by divergence desc (highest edge first), fallback to order received
-    markets.sort(
-        key=lambda m: float(_market_attr(m, "divergence") or 0),
-        reverse=True,
-    )
-
     for market in markets:
-        if bets_placed >= max_bets:
+        if bets_placed >= effective_max:
             break
 
         action = classify_market(market)
         if action is None:
             continue
 
-        market_id = _market_attr(market, "market_id", "id")
+        market_id = str(_market_attr(market, "market_id", "id") or "")
         title = _market_attr(market, "question", "title") or "Unknown"
+
+        # Deduplication: skip if we already have a position here
+        if market_id in open_ids:
+            logger.debug("Simmer: already have position in %s — skipping", title[:50])
+            continue
+
         yes_prob = _get_yes_prob(market) or 0.0
         volume = float(_market_attr(market, "volume", "total_volume") or 0)
-
         side = "yes" if action == "BET_YES" else "no"
+
         reasoning = (
             f"Contrarian fear trade: F&G={fg_value} (Extreme Fear). "
             f"{'Recovery expected — betting YES on upside.' if side == 'yes' else 'Crash continuation unlikely — betting NO.'} "
@@ -232,7 +356,7 @@ def execute_fear_trades(
             "yes_prob_at_entry": yes_prob,
             "volume": volume,
             "fg_at_entry": fg_value,
-            "timestamp": datetime.now().isoformat(),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
             "dry_run": dry_run,
             "result": None,
         }
@@ -243,6 +367,7 @@ def execute_fear_trades(
                 bet_amount, side.upper(), title[:60], yes_prob, volume,
             )
             trade_record["result"] = "DRY_RUN"
+            open_ids.add(market_id)
         else:
             try:
                 result = client.trade(
@@ -257,6 +382,10 @@ def execute_fear_trades(
                     "✅ Simmer trade: $%.0f %s on '%s' — %s",
                     bet_amount, side.upper(), title[:60], result,
                 )
+                # Track as open position only if trade succeeded
+                result_str = str(result)
+                if "success=True" in result_str or "trade_id" in result_str.lower():
+                    open_ids.add(market_id)
             except Exception as e:
                 logger.error("Simmer trade failed for %s: %s", market_id, e)
                 trade_record["result"] = f"ERROR: {e}"
@@ -264,6 +393,10 @@ def execute_fear_trades(
 
         trades.append(trade_record)
         bets_placed += 1
+
+    # Persist updated state
+    state["open_market_ids"] = list(open_ids)
+    _save_simmer_state(state)
 
     return trades
 
@@ -275,7 +408,6 @@ def execute_fear_trades(
 def get_briefing(client: Any, since_hours: int = 4) -> dict[str, Any]:
     """
     Build a briefing dict from available Simmer SDK methods.
-
     Returns normalised dict with portfolio, positions, pnl.
     """
     try:
@@ -316,8 +448,8 @@ def format_briefing_summary(briefing: dict[str, Any]) -> str:
             shares_yes = float(_market_attr(pos, "shares_yes") or 0)
             shares_no = float(_market_attr(pos, "shares_no") or 0)
             side = "YES" if shares_yes > shares_no else "NO"
-            pnl = float(_market_attr(pos, "pnl") or 0)
-            lines.append(f"  • {side} {str(title)[:50]} (P&L ${pnl:+.2f})")
+            pos_pnl = float(_market_attr(pos, "pnl") or 0)
+            lines.append(f"  • {side} {str(title)[:50]} (P&L ${pos_pnl:+.2f})")
 
     return "\n".join(lines)
 
