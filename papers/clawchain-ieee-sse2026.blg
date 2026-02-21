@@ -1,0 +1,96 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: clawchain-ieee-sse2026.aux
+The style file: plainnat.bst
+I found no \bibdata command---while reading file clawchain-ieee-sse2026.aux
+Warning--I didn't find a database entry for "chen2021codex"
+Warning--I didn't find a database entry for "wu2023autogen"
+Warning--I didn't find a database entry for "hong2024metagpt"
+Warning--I didn't find a database entry for "w3c_did_2022"
+Warning--I didn't find a database entry for "ethgasstation"
+Warning--I didn't find a database entry for "buterin2019quadratic"
+Warning--I didn't find a database entry for "nakamoto2008bitcoin"
+Warning--I didn't find a database entry for "buterin2014ethereum"
+Warning--I didn't find a database entry for "roughgarden2021eip1559"
+Warning--I didn't find a database entry for "yakovenko2018solana"
+Warning--I didn't find a database entry for "wood2016polkadot"
+Warning--I didn't find a database entry for "parity_substrate"
+Warning--I didn't find a database entry for "cosmos_sdk"
+Warning--I didn't find a database entry for "thibault2022rollups"
+Warning--I didn't find a database entry for "rocket2019avalanche"
+Warning--I didn't find a database entry for "skidanov2019near"
+Warning--I didn't find a database entry for "kiayias2017ouroboros"
+Warning--I didn't find a database entry for "did_ethr"
+Warning--I didn't find a database entry for "sidetree"
+Warning--I didn't find a database entry for "w3c_vc_2022"
+Warning--I didn't find a database entry for "sporny2024vc"
+Warning--I didn't find a database entry for "weyl2022soulbound"
+Warning--I didn't find a database entry for "richards2023autogpt"
+Warning--I didn't find a database entry for "nakajima2023babyagi"
+Warning--I didn't find a database entry for "langchain2023"
+Warning--I didn't find a database entry for "crewai2024"
+Warning--I didn't find a database entry for "fetchai2019"
+Warning--I didn't find a database entry for "singularitynet2019"
+Warning--I didn't find a database entry for "autonolas2023"
+Warning--I didn't find a database entry for "ouyang2022rlhf"
+Warning--I didn't find a database entry for "voshmgir2020token"
+Warning--I didn't find a database entry for "douceur2002sybil"
+Warning--I didn't find a database entry for "goldin2017tcr"
+Warning--I didn't find a database entry for "zargham2020bonding"
+Warning--I didn't find a database entry for "buterin2021retro"
+Warning--I didn't find a database entry for "conviction_voting"
+Warning--I didn't find a database entry for "poon2016lightning"
+Warning--I didn't find a database entry for "molochdao"
+Warning--I didn't find a database entry for "compound_gov"
+Warning--I didn't find a database entry for "optimism2024"
+Warning--I didn't find a database entry for "1hive2021"
+Warning--I didn't find a database entry for "barbereau2023dao_governance"
+Warning--I didn't find a database entry for "hanson2013futarchy"
+Warning--I didn't find a database entry for "bittensor2021"
+Warning--I didn't find a database entry for "erc8004"
+Warning--I didn't find a database entry for "brill2017phragmen"
+Warning--I didn't find a database entry for "fisher1911equation"
+Warning--I didn't find a database entry for "de2022revisiting"
+Warning--I didn't find a database entry for "chen2025evoclaw"
+You've used 0 entries,
+            2773 wiz_defined-function locations,
+            640 strings with 5597 characters,
+and the built_in function-call counts, 33 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 10
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 0
+newline$ -- 8
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 7
+(There was 1 error message)

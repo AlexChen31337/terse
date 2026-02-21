@@ -11,7 +11,7 @@
       "context_window": 128000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.476120"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.120239"
     },
     {
       "id": "llama3.2:3b",
@@ -23,7 +23,7 @@
       "context_window": 128000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.476262"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.120383"
     },
     {
       "id": "qwen2.5:1.5b",
@@ -35,7 +35,7 @@
       "context_window": 32768,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.476397"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.120518"
     },
     {
       "id": "qwen2.5:32b",
@@ -47,7 +47,7 @@
       "context_window": 32768,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.476531"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.120656"
     },
     {
       "id": "llama3.3",
@@ -59,7 +59,7 @@
       "context_window": 128000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.476666"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.120793"
     },
     {
       "id": "qwen2-vl:7b",
@@ -71,7 +71,7 @@
       "context_window": 32768,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.476795"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.120932"
     },
     {
       "id": "z-ai/glm4.7",
@@ -83,7 +83,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.476932"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.121069"
     },
     {
       "id": "qwen/qwen2.5-7b-instruct",
@@ -95,7 +95,7 @@
       "context_window": 32768,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.477099"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.121200"
     },
     {
       "id": "meta/llama-3.1-70b-instruct",
@@ -107,7 +107,7 @@
       "context_window": 128000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.477225"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.121331"
     },
     {
       "id": "meta/llama-3.3-70b-instruct",
@@ -119,7 +119,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.477351"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.121459"
     },
     {
       "id": "deepseek-ai/deepseek-v3.2",
@@ -131,7 +131,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.477480"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.121589"
     },
     {
       "id": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
@@ -143,7 +143,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.477606"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.121720"
     },
     {
       "id": "deepseek-ai/deepseek-r1-distill-qwen-32b",
@@ -155,7 +155,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.477732"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.121850"
     },
     {
       "id": "deepseek-ai/deepseek-r1-distill-qwen-14b",
@@ -167,7 +167,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.477857"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.121986"
     },
     {
       "id": "qwen/qwq-32b",
@@ -179,7 +179,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.478023"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.122119"
     },
     {
       "id": "qwen/qwen3-next-80b-a3b-thinking",
@@ -191,7 +191,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.478169"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.122249"
     },
     {
       "id": "moonshotai/kimi-k2-thinking",
@@ -203,7 +203,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.478309"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.122378"
     },
     {
       "id": "microsoft/phi-4-mini-flash-reasoning",
@@ -215,7 +215,7 @@
       "context_window": 128000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.478433"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.122507"
     },
     {
       "id": "meta/llama-4-maverick-17b-128e-instruct",
@@ -227,7 +227,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.478558"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.122637"
     },
     {
       "id": "meta/llama-4-scout-17b-16e-instruct",
@@ -239,7 +239,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.478684"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.122769"
     },
     {
       "id": "mistralai/mistral-large-3-675b-instruct-2512",
@@ -251,7 +251,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.478813"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.122899"
     },
     {
       "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
@@ -263,7 +263,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.478966"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.123033"
     },
     {
       "id": "nvidia/llama-3.1-nemotron-51b-instruct",
@@ -275,7 +275,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.479109"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.123161"
     },
     {
       "id": "meta/llama-3.2-11b-vision-instruct",
@@ -287,7 +287,7 @@
       "context_window": 128000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.479234"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.123293"
     },
     {
       "id": "microsoft/phi-3.5-vision-instruct",
@@ -299,7 +299,7 @@
       "context_window": 128000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.479358"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.123423"
     },
     {
       "id": "claude-opus-4-6",
@@ -311,7 +311,7 @@
       "context_window": 1000000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.479483"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.123552"
     },
     {
       "id": "claude-sonnet-4-6",
@@ -323,7 +323,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.479609"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.123681"
     },
     {
       "id": "claude-sonnet-4-5",
@@ -335,7 +335,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.479736"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.123875"
     },
     {
       "id": "claude-opus-4-5",
@@ -347,7 +347,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.479860"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.124025"
     },
     {
       "id": "glm-4.7",
@@ -359,7 +359,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.480025"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.124156"
     },
     {
       "id": "deepseek-chat",
@@ -371,7 +371,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.480157"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.124287"
     },
     {
       "id": "claude-opus-4-6",
@@ -383,7 +383,7 @@
       "context_window": 1000000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.480285"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.124417"
     },
     {
       "id": "claude-sonnet-4-5",
@@ -395,7 +395,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.480411"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.124544"
     },
     {
       "id": "claude-opus-4-5",
@@ -407,7 +407,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.480536"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.124675"
     },
     {
       "id": "claude-sonnet-4-6",
@@ -419,7 +419,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.480660"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.124803"
     },
     {
       "id": "glm-4.7",
@@ -431,7 +431,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.480786"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.124937"
     },
     {
       "id": "glm-4.7-flash",
@@ -443,7 +443,7 @@
       "context_window": 32768,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-21T06:32:48.480915"
+      "notes": "Auto-discovered 2026-02-21T14:32:49.125070"
     }
   ],
   "routing_rules": {
@@ -534,7 +534,7 @@
     }
   },
   "max_fallback_attempts": 3,
-  "last_discovery": "2026-02-21T06:32:48.475594",
+  "last_discovery": "2026-02-21T14:32:49.119809",
   "tiers": {
     "SIMPLE": {
       "description": "Monitoring, summaries, heartbeat \u2014 free/cheap/fast models",

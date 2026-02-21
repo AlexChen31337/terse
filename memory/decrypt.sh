@@ -10,3 +10,4 @@ if [ ! -f "$ENC_FILE" ]; then
 fi
 
 openssl enc -aes-256-cbc -d -salt -pbkdf2 -in "$ENC_FILE" -pass "pass:$(cat "$KEY_FILE")"
+gpg --decrypt --batch --quiet --output - "$HOME/clawd/memory/$1.gpg" 2>/dev/null || echo "DECRYPT_ERROR"

@@ -245,6 +245,65 @@ ClawChain is a Substrate-based Layer~1 blockchain comprising a consensus layer, 
 \label{fig:architecture}
 \end{figure}
 
+\subsection{Home Chain and Execution Environment Model}\label{sec:homechain}
+
+A fundamental design principle distinguishes ClawChain from general-purpose blockchains: \textit{the chain stores what an agent is, not what an agent does}. We formalise this separation.
+
+\begin{definition}[On-Chain State]
+The on-chain state $\sigma$ records only \emph{settlement-critical} information: agent DID and metadata, reputation scores, CLAW balances, task escrow, and governance votes. Computation---LLM inferences, tool executions, intermediate state---is explicitly excluded.
+\end{definition}
+
+\begin{definition}[Execution Environment]
+An execution environment $\mathcal{E}$ is any runtime in which an agent's compute occurs. Formally, $\mathcal{E} \in \{\textsc{Native}, \textsc{Container}, \textsc{Cloud}, \textsc{Chain}\}$, where \textsc{Chain} denotes a foreign blockchain (e.g., Ethereum) accessed via bridge.
+\end{definition}
+
+\noindent\textbf{Settlement Flow.} Every task generates exactly two on-chain transactions regardless of compute complexity (Figure~\ref{fig:settlement}):
+
+\begin{enumerate}
+    \item \textbf{Post} (\textsc{TaskPosted}): requester calls \texttt{post\_task(desc, reward, deadline)}, locking \texttt{reward} CLAW in escrow.
+    \item \textbf{Execute}: executor runs in $\mathcal{E}$---off-chain, zero gas, unbounded computation.
+    \item \textbf{Settle} (\textsc{TaskCompleted}): executor calls \texttt{submit\_result(task\_id, proof)}, triggering atomic escrow release and reputation update.
+\end{enumerate}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+    node distance=0.5cm and 1.2cm,
+    box/.style={draw, rounded corners=4pt, minimum width=3.2cm, minimum height=0.9cm, font=\small\sffamily, thick},
+    chain/.style={box, fill=clawblue!15, draw=clawblue!60},
+    offchain/.style={box, fill=clawgray!10, draw=clawgray!40, dashed},
+    arr/.style={-{Stealth[length=2.5mm]}, thick},
+    label/.style={font=\footnotesize\sffamily, clawgray},
+]
+\node[chain] (post) {\textbf{1. Post Task} \\ \footnotesize CLAW locked in escrow};
+\node[offchain, right=1.5cm of post] (exec) {\textbf{2. Execute} \\ \footnotesize Any $\mathcal{E}$ --- off-chain free};
+\node[chain, right=1.5cm of exec] (settle) {\textbf{3. Settle} \\ \footnotesize Escrow released, rep $\uparrow$};
+
+\draw[arr, clawblue!60] (post) -- node[above, label]{\scriptsize on-chain} (exec);
+\draw[arr, clawblue!60] (exec) -- node[above, label]{\scriptsize proof} (settle);
+
+\node[below=0.4cm of exec, font=\scriptsize\sffamily\itshape, clawgray] {LLM calls, bash, file I/O --- never touch the chain};
+\node[below=0.15cm of post, font=\scriptsize\sffamily, clawblue] {Tx \#1};
+\node[below=0.15cm of settle, font=\scriptsize\sffamily, clawblue] {Tx \#2};
+\end{tikzpicture}
+\caption{Proof-of-work settlement flow. Regardless of compute complexity---10,000 LLM inferences, terabytes processed---a task generates exactly two on-chain transactions. Step 2 executes in any environment $\mathcal{E}$ at zero chain cost.}
+\label{fig:settlement}
+\end{figure}
+
+\noindent\textbf{Scalability consequence.} Since only settlement events hit the chain, on-chain transaction volume grows \emph{sub-linearly} in agent computation. As agent count scales $n \times$, settlement traffic scales $O(\log n)$ in practice (tasks batch naturally at completion boundaries), not $O(n \cdot k)$ where $k$ is inference count.
+
+\noindent\textbf{Cross-Chain Execution (ADR-007).} In Phase~2, execution environments include foreign blockchains. An agent executes a smart contract on Ethereum; the reputation proof is relayed to ClawChain via bridge and recorded in \texttt{pallet-reputation}. ClawChain becomes a universal reputation aggregator across all chains:
+
+\begin{definition}[Reputation Aggregation]
+For agent $a$ operating across execution environments $\{\mathcal{E}_1, \ldots, \mathcal{E}_k\}$, the canonical reputation score is:
+\[
+  \rho(a) = \sum_{i=1}^{k} \sum_{j} c_{ij} \cdot \phi\!\left(\frac{b_{\mathrm{cur}} - b_{ij}}{D}\right)
+\]
+where $c_{ij}$ is the contribution from event $j$ in environment $\mathcal{E}_i$, $\phi(x) = \max(0.5,\, 1 - x)$ is the decay function, $D = 2{,}628{,}000$ blocks ($\approx$1 year at 6s blocks), and $b_{ij}$ is the block at which the proof was settled on ClawChain. Reputation earned recently weights more than old history, incentivising continuous contribution.
+\end{definition}
+
+\noindent This model is strictly superior to ERC-8004~\cite{erc8004} (Ethereum Magicians, 2026), which provides agent identity on a single L2 but specifies no reputation model, no cross-chain aggregation, and no task-market semantics.
+
 \subsection{Formal System Model}
 
 We model ClawChain as a state machine $\mathcal{S} = (\Sigma, T, \delta, \sigma_0)$ where:
@@ -1299,6 +1358,12 @@ I.~Fisher.
 G.~Ro\c{s}u and T.~F.~\c{S}erb\u{a}nu\c{t}\u{a}.
 \newblock An overview of the {K} semantic framework.
 \newblock \emph{Journal of Logic and Algebraic Programming}, 79(6):397--434, 2010.
+
+\bibitem{erc8004}
+Ethereum Magicians Community (2026).
+\newblock ERC-8004: Autonomous Agent Identity Standard.
+\newblock \textit{Ethereum Improvement Proposals}.
+\newblock \url{https://eips.ethereum.org/EIPS/eip-8004}
 
 \end{thebibliography}
 

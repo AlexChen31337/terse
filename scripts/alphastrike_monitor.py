@@ -14,7 +14,7 @@ from pathlib import Path
 
 LOG_PATH = "/media/DATA/tmp/alphastrike-live.log"
 STATE_FILE = Path.home() / "clawd/memory/alphastrike-state.json"
-TMUX_SESSION = "alphastrike"
+SYSTEMD_SERVICE = "alphastrike.service"
 
 
 def load_state():
@@ -31,11 +31,16 @@ def save_state(state):
     STATE_FILE.write_text(json.dumps(state, indent=2))
 
 
-def tmux_alive():
+def service_alive():
+    """Check if alphastrike systemd user service is active."""
     try:
-        r = subprocess.run(["tmux", "has-session", "-t", TMUX_SESSION],
-                           capture_output=True, timeout=5)
-        return r.returncode == 0
+        uid = os.getuid()
+        env = {**os.environ, "XDG_RUNTIME_DIR": f"/run/user/{uid}"}
+        r = subprocess.run(
+            ["systemctl", "--user", "is-active", SYSTEMD_SERVICE],
+            capture_output=True, text=True, timeout=5, env=env
+        )
+        return r.stdout.strip() == "active"
     except Exception:
         return False
 
@@ -94,15 +99,15 @@ def parse_log():
 
 def main():
     state = load_state()
-    alive = tmux_alive()
+    alive = service_alive()
     data = parse_log()
     alerts = []
 
     ts = datetime.now().strftime("%Y-%m-%d %H:%M")
 
-    # ── 1. Session crash ───────────────────────────────────────────────────
+    # ── 1. Service down ────────────────────────────────────────────────────
     if not alive:
-        alerts.append(f"🚨 CRASH: AlphaStrike tmux session '{TMUX_SESSION}' is DEAD. Bot stopped.")
+        alerts.append(f"🚨 CRASH: AlphaStrike systemd service '{SYSTEMD_SERVICE}' is DOWN. Check: journalctl --user -u alphastrike -n 20")
 
     # ── 2. No models warning (once per session) ────────────────────────────
     if data and data["no_models"] and "no_models_warned" not in state.get("alerts_sent", []):
