@@ -177,11 +177,13 @@ Skills provide your tools. When you need one, check its `SKILL.md`. Keep local n
 
 ## Sub-Agent Spawning Protocol
 
+⛔ **NEVER skip this protocol. ALWAYS classify before spawning. No exceptions.**
+
 **Before spawning sub-agents, classify the task for optimal model selection:**
 
 1. **Run classification:**
    ```bash
-   python3 skills/intelligent-router/scripts/router.py classify "task description"
+   uv run python skills/intelligent-router/scripts/router.py classify "task description"
    ```
 
 2. **Use recommended model in sessions_spawn:**
@@ -203,12 +205,12 @@ Skills provide your tools. When you need one, check its `SKILL.md`. Keep local n
 - Preserves quality by using premium models for complex work
 - Automatic fallback chains if primary model fails
 
-**Tier guidelines:**
-- **SIMPLE** (monitoring, checks, summaries) → `ollama/glm-4.7-flash` (FREE local), fallback: GLM-4.7 via proxy
+**Tier guidelines (IGNORE router's model suggestion — use these mappings):**
+- **SIMPLE** (monitoring, checks, summaries, docs) → `anthropic-proxy-4/glm-4.7` (cheap), or `ollama-gpu-server/glm-4.7-flash` (FREE)
 - **MEDIUM** (code fixes, research, patches, docs) → `anthropic-proxy-1/claude-sonnet-4-6` (DEFAULT)
 - **COMPLEX** (features, architecture, debugging) → `anthropic-proxy-1/claude-sonnet-4-6` (still Sonnet)
-- **REASONING** (proofs, formal logic) → DeepSeek R1 32B, QwQ 32B
-- **CRITICAL** (security, production, strategic planning) → Opus 4.6 ONLY
+- **REASONING** (proofs, formal logic) → `nvidia-nim/deepseek-ai/deepseek-r1-distill-qwen-32b`
+- **CRITICAL** (security, production, strategic planning) → `anthropic-proxy-1/claude-opus-4-6` ONLY
 
 ⚠️ **Bowen's rule:** Opus is reserved for critical thinking and planning ONLY. Never use Opus for routine coding, docs, or monitoring tasks — use Sonnet 4.6 as the default sub-agent model.
 
@@ -216,6 +218,9 @@ Skills provide your tools. When you need one, check its `SKILL.md`. Keep local n
 Sonnet must NEVER be used for monitoring or simple tasks.
 
 **Don't guess** — let the router classify. It uses weighted 15-dimension scoring.
+
+⚠️ **MANDATORY: Always set `model` in cron job payloads.** No model = Sonnet default = expensive waste.
+Sonnet must NEVER be used for monitoring or simple tasks.
 
 **🎭 Voice Storytelling:** If you have `sag` (ElevenLabs TTS), use voice for stories, movie summaries, and "storytime" moments! Way more engaging than walls of text. Surprise people with funny voices.
 
