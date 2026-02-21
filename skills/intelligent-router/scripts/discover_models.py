@@ -62,7 +62,7 @@ def load_router_config() -> Dict[str, Any]:
         return json.load(f)
 
 
-def test_model_live(provider_cfg: dict, provider_name: str, model_id: str, timeout: int = 20) -> Dict[str, Any]:
+def test_model_live(provider_cfg: dict, provider_name: str, model_id: str, timeout: int = 30) -> Dict[str, Any]:
     """
     Real inference test: send "hi" to the model and verify it responds.
     Supports both OpenAI-compatible and Anthropic-messages APIs.
@@ -128,12 +128,22 @@ def test_model_live(provider_cfg: dict, provider_name: str, model_id: str, timeo
             raw = resp.read().decode()
             data = json.loads(raw)
 
-            # Extract response text — handle thinking models (content=None, reasoning_content=...)
+            # Extract response text — handle thinking models:
+            # - GLM-5 style: content=None, reasoning_content="..."
+            # - MiniMax/QwQ style: content="<think>...</think>actual answer"
             preview = None
             if api_type == "openai-completions":
                 msg = data.get("choices", [{}])[0].get("message", {})
                 text = msg.get("content") or msg.get("reasoning_content") or ""
-                preview = str(text)[:40] if text else None
+                # Strip <think>...</think> blocks (MiniMax, QwQ, DeepSeek style).
+                # Also strip partial <think> (when max_tokens cuts off inside thinking block).
+                import re as _re
+                text = _re.sub(r"<think>.*?(?:</think>|$)", "", str(text), flags=_re.DOTALL).strip()
+                # For thinking models: even if all output was <think>, the model IS responding
+                if not text:
+                    finish = data.get("choices", [{}])[0].get("finish_reason", "")
+                    text = "(thinking model)" if finish in ("length", "stop") else ""
+                preview = text[:40] if text else None
             elif api_type == "anthropic-messages":
                 content = data.get("content", [{}])
                 if content:
