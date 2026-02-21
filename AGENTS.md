@@ -205,10 +205,12 @@ Skills provide your tools. When you need one, check its `SKILL.md`. Keep local n
 
 **Tier guidelines:**
 - **SIMPLE** (monitoring, checks, summaries) → `ollama/glm-4.7-flash` (FREE local), fallback: GLM-4.7 via proxy
-- **MEDIUM** (code fixes, research, patches) → DeepSeek V3.2, Llama 3.3 70B
-- **COMPLEX** (features, architecture, debugging) → Sonnet 4.5, Gemini 3 Pro
+- **MEDIUM** (code fixes, research, patches, docs) → `anthropic-proxy-1/claude-sonnet-4-6` (DEFAULT)
+- **COMPLEX** (features, architecture, debugging) → `anthropic-proxy-1/claude-sonnet-4-6` (still Sonnet)
 - **REASONING** (proofs, formal logic) → DeepSeek R1 32B, QwQ 32B
-- **CRITICAL** (security, production) → Opus 4.6
+- **CRITICAL** (security, production, strategic planning) → Opus 4.6 ONLY
+
+⚠️ **Bowen's rule:** Opus is reserved for critical thinking and planning ONLY. Never use Opus for routine coding, docs, or monitoring tasks — use Sonnet 4.6 as the default sub-agent model.
 
 ⚠️ **MANDATORY: Always set `model` in cron job payloads.** No model = Sonnet default = expensive waste.
 Sonnet must NEVER be used for monitoring or simple tasks.

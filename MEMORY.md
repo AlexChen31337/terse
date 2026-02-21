@@ -58,6 +58,7 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - **[work]** When given trust + autonomy, ship faster
 - **[work]** Documentation-first = fewer questions later
 - **[cost]** If coder+QA sub-agents > Opus solo cost, just use Opus
+- **[cost]** Sub-agent default model = Sonnet 4.6 (`anthropic-proxy-1/claude-sonnet-4-6`). Opus reserved for critical thinking, planning, and architecture only — never routine coding/docs/monitoring tasks
 - **[community]** Organization > Personal for community ownership
 - **[ops]** Batch periodic checks into heartbeat instead of many cron jobs
 - **[work]** Test locally before pushing to CI — Bowen explicit
