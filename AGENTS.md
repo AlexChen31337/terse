@@ -185,7 +185,7 @@ Skills provide your tools. When you need one, check its `SKILL.md`. Keep local n
    ```bash
    uv run python skills/intelligent-router/scripts/spawn_helper.py --model-only "task description"
    ```
-   Output: e.g. `glm-4.7-flash` or `nvidia/llama-3.3-nemotron-super-49b-v1.5`
+   Output: e.g. `ollama-gpu-server/glm-4.7-flash` or `nvidia-nim/meta/llama-3.3-70b-instruct`
 
 2. **Use that model ID directly in sessions_spawn — no manual override:**
    ```python
@@ -204,14 +204,16 @@ That's it. The router decides. You execute. No guessing, no overriding.
 - Preserves quality by using premium models for complex work
 - Automatic fallback chains if primary model fails
 
-**Tier guidelines (IGNORE router's model suggestion — use these mappings):**
-- **SIMPLE** (monitoring, checks, summaries, docs) → `anthropic-proxy-4/glm-4.7` (cheap), or `ollama-gpu-server/glm-4.7-flash` (FREE)
-- **MEDIUM** (code fixes, research, patches, docs) → `anthropic-proxy-1/claude-sonnet-4-6` (DEFAULT)
-- **COMPLEX** (features, architecture, debugging) → `anthropic-proxy-1/claude-sonnet-4-6` (still Sonnet)
-- **REASONING** (proofs, formal logic) → `nvidia-nim/deepseek-ai/deepseek-r1-distill-qwen-32b`
-- **CRITICAL** (security, production, strategic planning) → `anthropic-proxy-1/claude-opus-4-6` ONLY
+**Tier→Model mapping (auto-selected by intelligent-router — trust the output):**
+- **SIMPLE** (monitoring, heartbeat, checks, summaries) → `ollama-gpu-server/glm-4.7-flash` (FREE, 8B local GPU) or `nvidia-nim/qwen/qwen2.5-7b-instruct` ($0.15/M when GPU server offline)
+- **MEDIUM** (code fixes, research, patches, data analysis) → `nvidia-nim/meta/llama-3.3-70b-instruct` ($0.40/M, 70B capable)
+- **COMPLEX** (features, architecture, multi-file changes) → `anthropic/claude-sonnet-4-6` ($3/M, OAuth)
+- **REASONING** (proofs, formal logic, deep analysis) → `nvidia-nim/moonshotai/kimi-k2-thinking` ($1/M, 1T MoE specialist)
+- **CRITICAL** (security, production, strategic planning) → `anthropic/claude-opus-4-6` ($5/M) ONLY
 
-⚠️ **Bowen's rule:** Opus is reserved for critical thinking and planning ONLY. Never use Opus for routine coding, docs, or monitoring tasks — use Sonnet 4.6 as the default sub-agent model.
+⚠️ **Bowen's rule:** Opus is reserved for critical thinking and planning ONLY. Never use Opus for routine coding, docs, or monitoring tasks.
+
+ℹ️ **Why no "IGNORE router" anymore:** The router was fixed (v2.0) to use real capability signals (parameter count, context window, reasoning flag) instead of cost-only. DeepSeek V3.2 ($0.40/M, 274B) now correctly routes to COMPLEX. The router output is now trustworthy — use spawn_helper directly without manual overrides.
 
 ⚠️ **MANDATORY: Always set `model` in cron job payloads.** No model = Sonnet default = expensive waste.
 Sonnet must NEVER be used for monitoring or simple tasks.

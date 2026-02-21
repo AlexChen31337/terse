@@ -40,23 +40,36 @@ def load_config():
 
 
 def classify_task(task_description):
-    """Run router.py classify and return (tier, model_id, confidence)."""
+    """Run router.py classify and return (tier, full_model_id, confidence).
+    
+    full_model_id is always provider/id (e.g. 'ollama-gpu-server/glm-4.7-flash'),
+    which is the format required by sessions_spawn(model=...) and cron payloads.
+    """
     result = subprocess.run(
         [sys.executable, str(SCRIPT_DIR / "router.py"), "classify", task_description],
         capture_output=True, text=True, check=True
     )
     lines = result.stdout.strip().split('\n')
     tier = None
-    model_id = None
+    bare_id = None
+    provider = None
     confidence = None
 
     for line in lines:
         if line.startswith("Classification:"):
             tier = line.split(":", 1)[1].strip()
         elif "  ID:" in line:
-            model_id = line.split(":", 1)[1].strip()
+            bare_id = line.split(":", 1)[1].strip()
+        elif "  Provider:" in line:
+            provider = line.split(":", 1)[1].strip()
         elif line.startswith("Confidence:"):
             confidence = line.split(":", 1)[1].strip()
+
+    # Combine provider + id for the full model identifier
+    if bare_id and provider:
+        model_id = f"{provider}/{bare_id}"
+    else:
+        model_id = bare_id
 
     return tier, model_id, confidence
 
