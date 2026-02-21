@@ -23,6 +23,12 @@
 - **Topics Loved:** AI architecture, blockchain, system design, agent evolution
 - **Work Hours:** flexible, Sydney timezone
 
+## 🔑 Critical Infrastructure Notes
+- **HL Wallet:** `0x64e830dd7aF93431C898eA9e4C375C6706bd0Fc5` | key at `memory/encrypted/hl-private-key.txt.enc`
+- **HL Spot:** currently empty (~$0 USDC); Perp: ~$106 | FearHarvester in PAPER mode until funded
+- **Sub-agent Opus:** NOT available for sessions_spawn — only proxy-1 crons; use Sonnet 4.6 for all coding sub-agents
+- **config.apply is banned for sub-agents** — always `config.patch`; see AGENTS.md Gateway Config Rules
+
 ## 💼 Active Projects
 
 ### EvoClaw
@@ -37,12 +43,24 @@ L1 blockchain for agents. Substrate, NPoS, near-zero fees. 8 pallets deployed. H
 AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@10.0.0.44.
 **Status:** LTX-2 setup in progress, blocked on Gemma 3 download
 
+### WhaleWatch CLI
+Agent-native whale wallet tracker. CLI + OpenClaw skill. ETH+BTC flows, JSONL streaming, Simmer auto-bet integration.
+**Repo:** `github.com/clawinfra/whalecli` | **Status:** Planner running (Sonnet 4.6 fallback)
+
+### Guardrail Skill
+3rd-party asset vetting pipeline. Intake→scan→Telegram review→merge. 38 tests, 93% coverage.
+**Status:** Phase 1 done ✅ | Phase 2 (Docker sandbox) next → EvoMap registration unlocks after
+
 ## ✅ Pending Tasks
 
-- [BLOCKED] LTX-2 Gemma 3 text encoder download (needs HF auth)
-- [IN-PROGRESS] EvoClaw test coverage to 85%+
-- [IN-PROGRESS] Fix tiered memory integration loop
-- [PENDING] AI stack migration to /data verify
+- [PENDING] Bowen fund HL spot account → switch FearHarvester to --live (reminder set 10am Feb 22)
+- [PENDING] Guardrail Phase 2: Docker sandbox runner
+- [IN-PROGRESS] WhaleWatch CLI: Planner → Builder → Reviewer pipeline running
+- [PENDING] RSI 3 proposals awaiting review: `uv run python skills/rsi-loop/scripts/synthesizer.py list`
+- [PENDING] Quant SOUL.md update (still points to old signals.py, needs run_harvester.py)
+- [PENDING] Bird CLI reinstall for KOL monitoring
+- [BLOCKED] LTX-2 Gemma 3 text encoder (needs HF auth)
+- [PENDING] EvoMap Hub registration (blocked on Guardrail Phase 2)
 
 ## 📅 Recent Events
 
@@ -64,6 +82,11 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - **[work]** Coverage threshold 85% minimum, 90% ideal — Bowen explicit
 - **[tools]** Use uv not pip on GPU server — Bowen explicit
 - **[meta]** Eat your own dogfood — use skills you build
+- **[ops]** `config.apply` from sub-agents destroys model definitions — always `config.patch`
+- **[ops]** `openclaw doctor` is a safeguard, not a threat — it fixed the proxy-4/6 outage
+- **[security]** 3rd-party skills need guardrail vetting before install — never auto-apply external code
+- **[arch]** Agent identity (Alex) ≠ marketplace identity (EvoClaw Hub) — keep them separate
+- **[cost]** Opus 4.6 not available for sessions_spawn — use Sonnet 4.6 for all coding sub-agents
 
 ---
-*Generated: 2026-02-22 00:06*
+*Updated: 2026-02-22 09:47*
