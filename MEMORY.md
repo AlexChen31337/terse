@@ -62,8 +62,10 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - **[ops]** Batch periodic checks into heartbeat instead of many cron jobs
 - **[work]** Test locally before pushing to CI — Bowen explicit
 - **[work]** Coverage threshold 85% minimum, 90% ideal — Bowen explicit
+- **[ops]** AlphaStrike runs as systemd USER service (NOT tmux). `systemctl --user status/start/stop/restart alphastrike`. Logs: `journalctl --user -u alphastrike -f`. WorkDir: `/media/DATA/tmp/alphastrike-v2`. Weekly retrain must use `systemctl --user restart alphastrike` not tmux.
+- **[clawinfra]** All clawinfra repos = production-grade: docs first, TDD, coverage ≥ 90%, no shortcuts — non-negotiable
 - **[tools]** Use uv not pip on GPU server — Bowen explicit
 - **[meta]** Eat your own dogfood — use skills you build
 
 ---
-*Generated: 2026-02-21 12:06*
+*Generated: 2026-02-21 16:06*
