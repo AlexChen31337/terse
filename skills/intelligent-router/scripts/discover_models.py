@@ -423,6 +423,23 @@ def update_router_config(discovered: Dict[str, Any]):
                     "fallback_chain": cfg["fallbacks"][:5],
                     "use_for": use_for.get(tier_name, []),
                 }
+            # Apply manual tier_overrides (survive auto-updates)
+            # Set tier_overrides in config.json to lock a primary regardless of scorer.
+            overrides = router_cfg.get("tier_overrides", {})
+            for tier_name, override in overrides.items():
+                forced = override.get("forced_primary")
+                if not forced or tier_name not in router_cfg["routing_rules"]:
+                    continue
+                rule = router_cfg["routing_rules"][tier_name]
+                if rule["primary"] != forced:
+                    old_primary = rule["primary"]
+                    new_fallback = [old_primary] + [
+                        m for m in rule["fallback_chain"] if m != forced and m != old_primary
+                    ]
+                    rule["primary"] = forced
+                    rule["fallback_chain"] = new_fallback[:5]
+                    print(f"  Override: {tier_name} primary locked to {forced} (was {old_primary})")
+
             print(f"{GREEN}✓ Tiers and routing_rules rebuilt from capability metadata{RESET}")
             for tier, cfg in tier_cfg.items():
                 print(f"  {tier}: {cfg['primary']}")

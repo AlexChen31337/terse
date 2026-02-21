@@ -39,11 +39,42 @@ def load_config():
         return json.load(f)
 
 
+_CODING_PATTERNS = [
+    r"\bimplement\b", r"\bwrite\s+\w+\s+(code|script|function|class|module|test)",
+    r"\bcode\b", r"\bfix\s+\w*(bug|error|issue|crash)", r"\brefactor\b",
+    r"\bdebug\b", r"\bunit\s+test", r"\bintegration\s+test", r"\btdd\b",
+    r"\bgo\s+module", r"\brust\b", r"\bpython\s+script", r"\btypescript\b",
+    r"\bapi\s+(client|server|endpoint)", r"\bmicroservice", r"\bwire\s+(up|into)",
+    r"\bpallet\b", r"\bsmart\s+contract", r"\bsolidity\b",
+]
+
+def _is_coding_task(task_description: str) -> bool:
+    """Return True if task description has clear coding intent."""
+    import re
+    text = task_description.lower()
+    return any(re.search(p, text) for p in _CODING_PATTERNS)
+
+
+def _get_complex_primary() -> str:
+    """Return the forced COMPLEX primary from tier_overrides, or config primary."""
+    try:
+        with open(CONFIG_FILE) as f:
+            cfg = json.load(f)
+        override = cfg.get("tier_overrides", {}).get("COMPLEX", {})
+        if override.get("forced_primary"):
+            return override["forced_primary"]
+        return cfg.get("routing_rules", {}).get("COMPLEX", {}).get("primary", "")
+    except Exception:
+        return ""
+
+
 def classify_task(task_description):
     """Run router.py classify and return (tier, full_model_id, confidence).
     
     full_model_id is always provider/id (e.g. 'ollama-gpu-server/glm-4.7-flash'),
     which is the format required by sessions_spawn(model=...) and cron payloads.
+
+    User override: coding tasks always route to COMPLEX (Sonnet 4.6 per tier_overrides).
     """
     result = subprocess.run(
         [sys.executable, str(SCRIPT_DIR / "router.py"), "classify", task_description],
@@ -70,6 +101,14 @@ def classify_task(task_description):
         model_id = f"{provider}/{bare_id}"
     else:
         model_id = bare_id
+
+    # User rule: ALL coding tasks → COMPLEX (Sonnet 4.6 via tier_overrides)
+    if tier in ("SIMPLE", "MEDIUM") and _is_coding_task(task_description):
+        complex_primary = _get_complex_primary()
+        if complex_primary:
+            tier = "COMPLEX"
+            model_id = complex_primary
+            confidence = "OVERRIDE (coding task → COMPLEX)"
 
     return tier, model_id, confidence
 

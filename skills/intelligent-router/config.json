@@ -386,10 +386,10 @@
       ]
     },
     "COMPLEX": {
-      "primary": "nvidia-nim/minimaxai/minimax-m2.1",
+      "primary": "anthropic/claude-sonnet-4-6",
       "fallback_chain": [
+        "nvidia-nim/minimaxai/minimax-m2.1",
         "nvidia-nim/minimaxai/minimax-m2",
-        "anthropic/claude-sonnet-4-6",
         "anthropic/claude-sonnet-4-5",
         "anthropic-proxy-1/claude-sonnet-4-6",
         "nvidia-nim/mistralai/mistral-large-3-675b-instruct-2512"
@@ -531,6 +531,12 @@
         "high-stakes analysis",
         "strategic planning"
       ]
+    }
+  },
+  "tier_overrides": {
+    "COMPLEX": {
+      "forced_primary": "anthropic/claude-sonnet-4-6",
+      "reason": "Bowen: always use Sonnet 4.6 for coding/complex tasks (2026-02-21)"
     }
   }
 }
