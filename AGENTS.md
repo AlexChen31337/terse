@@ -304,6 +304,37 @@ Think of it like a human reviewing their journal and updating their mental model
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
 
+## Gateway Config Rules (NON-NEGOTIABLE)
+
+**`config.patch` = safe. `config.apply` = dangerous. Know the difference.**
+
+### The Incident (2026-02-21)
+A sub-agent used `gateway.config.apply` with a full config snapshot that was missing or altered `anthropic-proxy-4/glm-4.7` and `anthropic-proxy-6/glm-4.7` model definitions. After gateway restart, 8+ crons failed with `Error: Unknown model`. Doctor had to clean it up.
+
+### Rules
+
+1. **ALWAYS use `config.patch` for partial updates** — only patch the specific keys you're changing:
+   ```python
+   gateway(action="config.patch", raw='{"models": {"providers": {"my-provider": {...}}}}')
+   ```
+
+2. **NEVER use `config.apply` with a stale or partial config** — `config.apply` is a full replace. If your snapshot is 5 minutes old, it will clobber any changes made since.
+
+3. **`config.apply` is only allowed when:**
+   - You have a fresh `config.get` immediately before
+   - You're doing a deliberate full config reset
+   - Bowen explicitly asks for it
+
+4. **After any `config.apply` or `config.patch` that touches `models.providers`:** verify the critical models are still registered:
+   ```bash
+   # Sanity check
+   openclaw doctor 2>&1 | grep -E "error|warning|unknown" | head -5
+   ```
+
+5. **Sub-agents must not call `config.apply`** — only the main agent (Alex) can do full config replacements, and only with explicit justification.
+
+---
+
 ## Infrastructure Diagnosis Rules (VBR Enforcement)
 
 **Before diagnosing any resource problem (RAM, disk, VRAM, CPU), you MUST:**
