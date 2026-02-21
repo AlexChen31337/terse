@@ -208,6 +208,7 @@ That's it. The router decides. You execute. No guessing, no overriding.
 - **SIMPLE** (monitoring, heartbeat, checks, summaries) → `ollama-gpu-server/glm-4.7-flash` (FREE, 8B local GPU) or `nvidia-nim/qwen/qwen2.5-7b-instruct` ($0.15/M when GPU server offline)
 - **MEDIUM** (code fixes, research, patches, data analysis) → `nvidia-nim/meta/llama-3.3-70b-instruct` ($0.40/M, 70B capable)
 - **COMPLEX** (features, architecture, multi-file changes) → `nvidia-nim/minimaxai/minimax-m2.1` ($0.3/M, 456B, 1M ctx) [fallback: `anthropic/claude-sonnet-4-6`] ($3/M, OAuth)
+- **GLM-5** (large-scale reasoning, agentic tasks) → `nvidia-nim/z-ai/glm5` ($0.5/M, 744B MoE, reasoning toggle)
 - **REASONING** (proofs, formal logic, deep analysis) → `nvidia-nim/moonshotai/kimi-k2-thinking` ($1/M, 1T MoE specialist)
 - **CRITICAL** (security, production, strategic planning) → `anthropic/claude-opus-4-6` ($5/M) ONLY
 
