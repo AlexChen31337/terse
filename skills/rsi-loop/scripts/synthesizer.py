@@ -14,6 +14,14 @@ import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Gene Registry integration (Phase 2 of RSI loop)
+try:
+    from gene_registry import load_genes
+    from selector import select_gene
+    _GENE_REGISTRY_AVAILABLE = True
+except ImportError:
+    _GENE_REGISTRY_AVAILABLE = False
+
 SKILL_DIR = Path(__file__).parent.parent
 DATA_DIR = SKILL_DIR / "data"
 PATTERNS_FILE = DATA_DIR / "patterns.json"
@@ -53,11 +61,56 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
     """
     proposals = []
 
+    # Load genes once for the full batch (gene registry integration)
+    _genes = []
+    if _GENE_REGISTRY_AVAILABLE:
+        try:
+            _genes = load_genes()
+        except Exception:
+            _genes = []
+
     for p in patterns[:max_proposals]:
         proposal_id = str(uuid.uuid4())[:8]
         category = p["category"]
         task_type = p["task_type"]
         issue = p["issue"]
+
+        # ── Gene Registry: check for a reusable fix pattern before generating ──
+        if _genes:
+            pattern_ctx = {
+                "category": category,
+                "issue": issue,
+                "task_type": task_type,
+            }
+            matched_gene = select_gene(pattern_ctx, _genes)
+            if matched_gene is not None:
+                gene_proposal = {
+                    "id": proposal_id,
+                    "created_at": datetime.now(timezone.utc).isoformat(),
+                    "status": "draft",
+                    "priority": "high",
+                    "pattern": {"category": category, "task_type": task_type, "issue": issue},
+                    "title": f"[Gene] {matched_gene['meta']['title']}",
+                    "description": (
+                        f"Gene registry match: applying '{matched_gene['gene_id']}' "
+                        f"(success_rate={matched_gene['meta']['success_rate']:.0%}) "
+                        f"to address '{issue}' in '{task_type}' tasks."
+                    ),
+                    "action_type": "apply_gene",
+                    "implementation": {
+                        "gene_id": matched_gene["gene_id"],
+                        "target_file": ", ".join(
+                            matched_gene.get("blast_radius", {}).get("allowed_paths", ["(see gene)"])
+                        ),
+                        "changes": matched_gene["implementation"].get("template", ""),
+                        "estimated_effort": matched_gene["implementation"].get("effort_minutes", 0),
+                    },
+                    "validation_criteria": matched_gene.get("validation", {}).get("success_criteria", []),
+                    "expected_improvement": matched_gene.get("expected_improvement", ""),
+                }
+                proposals.append(gene_proposal)
+                continue  # skip heuristic generation for this pattern
+        # ── End Gene Registry check ──
 
         # Determine priority
         if p["impact_score"] > 0.3 or p["failure_rate"] > 0.7:

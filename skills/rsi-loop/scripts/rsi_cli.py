@@ -18,6 +18,94 @@ def run_script(script: str, args: list) -> int:
     result = subprocess.run(cmd)
     return result.returncode
 
+def cmd_gene(args):
+    """Handle `gene` subcommands: list, show, validate, stats."""
+    import subprocess as _sp
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    from gene_registry import load_genes, get_gene
+    from selector import select_gene
+
+    sub = args.gene_cmd
+
+    if sub == "list":
+        genes = load_genes()
+        if not genes:
+            print("No genes in registry. Run: gene_registry.py")
+            return
+        print(f"\n{'GENE ID':<45} {'TYPE':<10} {'APPLIED':>7} {'SUCCESS':>8}")
+        print("─" * 75)
+        for g in genes:
+            meta = g.get("meta", {})
+            print(
+                f"{g['gene_id']:<45} "
+                f"{g.get('mutation_type', '?'):<10} "
+                f"{meta.get('times_applied', 0):>7} "
+                f"{meta.get('success_rate', 0.0):>7.0%}"
+            )
+        print(f"\n{len(genes)} gene(s) in registry.")
+
+    elif sub == "show":
+        gene = get_gene(args.gene_id)
+        if gene is None:
+            print(f"Gene '{args.gene_id}' not found.")
+            sys.exit(1)
+        print(json.dumps(gene, indent=2))
+
+    elif sub == "validate":
+        gene = get_gene(args.gene_id)
+        if gene is None:
+            print(f"Gene '{args.gene_id}' not found.")
+            sys.exit(1)
+        commands = gene.get("validation", {}).get("commands", [])
+        if not commands:
+            print("No validation commands defined for this gene.")
+            return
+        print(f"\nValidating gene: {gene['gene_id']}")
+        print(f"Running {len(commands)} command(s)...\n")
+        all_passed = True
+        for i, cmd in enumerate(commands, 1):
+            print(f"[{i}/{len(commands)}] $ {cmd}")
+            result = _sp.run(cmd, shell=True, capture_output=True, text=True, timeout=60)
+            if result.returncode == 0:
+                print(f"  ✓ PASSED")
+                if result.stdout.strip():
+                    print(f"    {result.stdout.strip()[:200]}")
+            else:
+                all_passed = False
+                print(f"  ✗ FAILED (exit {result.returncode})")
+                if result.stderr.strip():
+                    print(f"    {result.stderr.strip()[:200]}")
+        print(f"\nResult: {'ALL PASSED ✓' if all_passed else 'SOME FAILED ✗'}")
+
+    elif sub == "stats":
+        genes = load_genes()
+        if not genes:
+            print("No genes in registry.")
+            return
+        # Group by mutation_type
+        from collections import defaultdict
+        groups = defaultdict(list)
+        for g in genes:
+            groups[g.get("mutation_type", "unknown")].append(g)
+        print(f"\n{'MUTATION TYPE':<15} {'GENES':>6} {'TOTAL APPLIED':>14} {'AVG SUCCESS':>12}")
+        print("─" * 52)
+        for mtype, glist in sorted(groups.items()):
+            total_applied = sum(g["meta"].get("times_applied", 0) for g in glist)
+            applied_genes = [g for g in glist if g["meta"].get("times_applied", 0) > 0]
+            if applied_genes:
+                avg_success = sum(g["meta"].get("success_rate", 0) for g in applied_genes) / len(applied_genes)
+            else:
+                avg_success = 0.0
+            print(
+                f"{mtype:<15} {len(glist):>6} {total_applied:>14} {avg_success:>11.0%}"
+            )
+
+    else:
+        print(f"Unknown gene subcommand: '{sub}'")
+        print("Available: list, show <gene_id>, validate <gene_id>, stats")
+        sys.exit(1)
+
+
 def cmd_status(args):
     """Show overall RSI loop status."""
     from observer import stats_summary, load_outcomes
@@ -145,6 +233,16 @@ Examples:
     cycle_p.add_argument("--auto-approve-below-mins", type=int, default=20)
     cycle_p.add_argument("--dry-run", action="store_true")
 
+    # gene
+    gene_p = sub.add_parser("gene", help="Manage the Gene registry")
+    gene_sub = gene_p.add_subparsers(dest="gene_cmd")
+    gene_sub.add_parser("list", help="List all genes")
+    gene_show = gene_sub.add_parser("show", help="Show full gene JSON")
+    gene_show.add_argument("gene_id")
+    gene_val = gene_sub.add_parser("validate", help="Run validation commands for a gene")
+    gene_val.add_argument("gene_id")
+    gene_sub.add_parser("stats", help="Success rate per mutation type")
+
     args = parser.parse_args()
 
     if args.cmd == "status":
@@ -196,6 +294,13 @@ Examples:
             "--days", str(args.days),
             "--auto-approve-below-mins", str(args.auto_approve_below_mins),
         ] + extra)
+
+    elif args.cmd == "gene":
+        sys.path.insert(0, str(SCRIPTS_DIR))
+        if not args.gene_cmd:
+            gene_p.print_help()
+        else:
+            cmd_gene(args)
 
     else:
         parser.print_help()

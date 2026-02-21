@@ -12,6 +12,15 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Gene Registry integration (Phase 2 of RSI loop)
+try:
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).parent))
+    from gene_registry import get_gene, update_gene_stats
+    _GENE_REGISTRY_AVAILABLE = True
+except ImportError:
+    _GENE_REGISTRY_AVAILABLE = False
+
 SKILL_DIR = Path(__file__).parent.parent
 DATA_DIR = SKILL_DIR / "data"
 PROPOSALS_DIR = DATA_DIR / "proposals"
@@ -123,6 +132,91 @@ def deploy_update_memory(p: dict, dry_run: bool = False) -> str:
         f"Suggested: Add '{task}' context retrieval to HEARTBEAT.md hydration section"
     )
 
+def deploy_apply_gene(p: dict, dry_run: bool = False) -> str:
+    """
+    Deploy an apply_gene proposal by:
+    1. Loading the referenced Gene from the registry
+    2. Printing its implementation template
+    3. Running each validation command and reporting pass/fail
+    4. Updating gene stats (success_rate, times_applied, last_applied)
+    5. Printing blast radius info
+    """
+    if not _GENE_REGISTRY_AVAILABLE:
+        return "ERROR: gene_registry module not available — cannot apply gene proposal"
+
+    gene_id = p.get("implementation", {}).get("gene_id")
+    if not gene_id:
+        return "ERROR: proposal.implementation.gene_id is missing"
+
+    gene = get_gene(gene_id)
+    if gene is None:
+        return f"ERROR: Gene '{gene_id}' not found in registry"
+
+    print(f"\n{'='*60}")
+    print(f"Gene: {gene['gene_id']}")
+    print(f"Title: {gene['meta']['title']}")
+    print(f"Mutation type: {gene['mutation_type']}")
+    print(f"Success rate: {gene['meta']['success_rate']:.0%} ({gene['meta']['times_applied']}x applied)")
+    print(f"\nImplementation Template:")
+    print(f"{'─'*60}")
+    print(gene["implementation"].get("template", "(no template)"))
+    print(f"{'─'*60}")
+
+    # Blast radius
+    blast = gene.get("blast_radius", {})
+    print(f"\nBlast Radius: max {blast.get('max_files', '?')} files")
+    allowed = blast.get("allowed_paths", [])
+    if allowed:
+        print("  Allowed paths:")
+        for path in allowed:
+            print(f"    • {path}")
+    immutable = blast.get("immutable_paths", [])
+    if immutable:
+        print("  Immutable paths (require Bowen approval):")
+        for path in immutable:
+            print(f"    ⛔ {path}")
+
+    if dry_run:
+        print(f"\n[DRY RUN] Would run {len(gene['validation']['commands'])} validation command(s)")
+        return f"DRY RUN: Gene '{gene_id}' template printed. Validation skipped."
+
+    # Run validation commands
+    print(f"\nValidation Commands:")
+    validation = gene.get("validation", {})
+    commands = validation.get("commands", [])
+    all_passed = True
+    for i, cmd in enumerate(commands, 1):
+        print(f"\n  [{i}/{len(commands)}] $ {cmd}")
+        try:
+            result = subprocess.run(
+                cmd, shell=True, capture_output=True, text=True, timeout=60
+            )
+            if result.returncode == 0:
+                print(f"  ✓ PASSED (exit 0)")
+                if result.stdout.strip():
+                    print(f"    stdout: {result.stdout.strip()[:300]}")
+            else:
+                all_passed = False
+                print(f"  ✗ FAILED (exit {result.returncode})")
+                if result.stderr.strip():
+                    print(f"    stderr: {result.stderr.strip()[:300]}")
+        except subprocess.TimeoutExpired:
+            all_passed = False
+            print(f"  ✗ TIMEOUT (>60s)")
+        except Exception as e:
+            all_passed = False
+            print(f"  ✗ ERROR: {e}")
+
+    # Update gene stats
+    update_gene_stats(gene_id, success=all_passed)
+    status_str = "SUCCESS" if all_passed else "FAILED"
+    print(f"\n{'='*60}")
+    print(f"Gene deployment: {status_str}")
+    print(f"Stats updated: times_applied +1, success recorded: {all_passed}")
+
+    return f"Gene '{gene_id}' applied — validation: {status_str}"
+
+
 def deploy_proposal(proposal_id: str, dry_run: bool = False) -> str:
     p = load_proposal(proposal_id)
 
@@ -142,6 +236,7 @@ def deploy_proposal(proposal_id: str, dry_run: bool = False) -> str:
         "fix_routing": deploy_fix_routing,
         "update_memory": deploy_update_memory,
         "add_cron": lambda p, dr: "add_cron: Use cron tool to implement: " + p["implementation"]["changes"],
+        "apply_gene": deploy_apply_gene,
     }
 
     handler = handlers.get(action_type)
