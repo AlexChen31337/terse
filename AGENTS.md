@@ -179,26 +179,25 @@ Skills provide your tools. When you need one, check its `SKILL.md`. Keep local n
 
 ⛔ **NEVER skip this protocol. ALWAYS classify before spawning. No exceptions.**
 
-**Before spawning sub-agents, classify the task for optimal model selection:**
+**The workflow is mechanical — two steps:**
 
-1. **Run classification:**
+1. **Get model ID from spawn_helper:**
    ```bash
-   uv run python skills/intelligent-router/scripts/router.py classify "task description"
+   uv run python skills/intelligent-router/scripts/spawn_helper.py --model-only "task description"
    ```
+   Output: e.g. `glm-4.7-flash` or `nvidia/llama-3.3-nemotron-super-49b-v1.5`
 
-2. **Use recommended model in sessions_spawn:**
+2. **Use that model ID directly in sessions_spawn — no manual override:**
    ```python
+   model_id = "<output from spawn_helper>"
    sessions_spawn(
        task="task description",
-       model="<recommended-model-id>",
+       model=model_id,
        label="descriptive-label"
    )
    ```
 
-3. **Or use the spawn helper (shows command, doesn't execute):**
-   ```bash
-   python3 skills/intelligent-router/scripts/spawn_helper.py "task description"
-   ```
+That's it. The router decides. You execute. No guessing, no overriding.
 
 **Why this matters:**
 - Saves 80-95% on costs by using cheaper models for simple tasks
