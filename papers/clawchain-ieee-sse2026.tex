@@ -75,10 +75,17 @@
 \title{ClawChain: An Agent-Native Layer~1 Blockchain \\for Autonomous Economic Coordination}
 
 \author{
-  Alex Chen\thanks{Equal contribution. Correspondence: \texttt{bowen31337@outlook.com}} \quad Bowen Li\footnotemark[1] \\[0.3em]
-  Independent Researchers \\
-  \texttt{alex.chen31337@gmail.com} \quad \texttt{bowen31337@outlook.com} \\
-  \texttt{github.com/clawinfra/claw-chain}
+\IEEEauthorblockN{Alex Chen}
+\IEEEauthorblockA{Independent Researcher\\Sydney, Australia\\alex.chen31337@gmail.com}
+\and
+\IEEEauthorblockN{Bowen Li}
+\IEEEauthorblockA{Independent Researcher\\Sydney, Australia\\bowen31337@outlook.com}
+\and
+\IEEEauthorblockN{Nicholas Qi}
+\IEEEauthorblockA{Independent Researcher\\Sydney, Australia\\nicholas68663@gmail.com}
+\and
+\IEEEauthorblockN{Shiping Chen}
+\IEEEauthorblockA{Data61, CSIRO\\Sydney, Australia\\Shiping.Chen@data61.csiro.au}
 }
 
 \begin{document}
@@ -218,6 +225,7 @@ Table~\ref{tab:comparison} positions ClawChain against existing systems.
 \begin{table}[t]
 \centering
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lccccc}
 \toprule
 \textbf{System} & \textbf{Agent ID} & \textbf{Agent-Native Econ.} & \textbf{Rep. Gov.} & \textbf{Low Gas} & \textbf{L1} \\
@@ -229,7 +237,7 @@ SingularityNET~\cite{singularitynet2019} & \ding{55} & Partial & \ding{55} & \di
 Autonolas~\cite{autonolas2023} & Partial & \ding{55} & \ding{55} & \ding{55} & \ding{55} \\
 \textbf{ClawChain} & \ding{51} & \ding{51} & \ding{51} & \ding{51} & \ding{51} \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \caption{Comparison of ClawChain with existing blockchain and agent systems. ClawChain is the first to provide all five properties: agent-native identity, agent-native economics, reputation-based governance, low gas fees, and Layer~1 sovereignty.}
 \label{tab:comparison}
 \end{table}
@@ -245,7 +253,7 @@ Autonolas~\cite{autonolas2023} & Partial & \ding{55} & \ding{55} & \ding{55} & \
 ClawChain is a Substrate-based Layer~1 blockchain comprising a consensus layer, a WASM runtime, and six custom pallets (Figure~\ref{fig:architecture}). The architecture is designed around three principles: \textit{agent-nativity} (agents are first-class citizens), \textit{low friction} (sub-cent transaction costs), and \textit{meritocratic governance} (contribution earns power).
 
 % ---- TikZ: Blockchain Architecture Diagram ----
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
 \begin{tikzpicture}[
     node distance=0.4cm and 0.6cm,
@@ -309,7 +317,7 @@ ClawChain is a Substrate-based Layer~1 blockchain comprising a consensus layer, 
 \end{tikzpicture}
 \caption{ClawChain architecture. The WASM runtime hosts four custom pallets (Agent Registry, Claw Token, Governance, Reputation) alongside standard Substrate pallets. Dashed arrows indicate inter-pallet dependencies. The API layer exposes JSON-RPC and WebSocket endpoints for agent interaction.}
 \label{fig:architecture}
-\end{figure}
+\end{figure*}
 
 \subsection{Home Chain and Execution Environment Model}\label{sec:homechain}
 
@@ -333,6 +341,7 @@ An execution environment $\mathcal{E}$ is any runtime in which an agent's comput
 
 \begin{figure}[t]
 \centering
+\resizebox{\columnwidth}{!}{%
 \begin{tikzpicture}[
     node distance=0.5cm and 1.2cm,
     box/.style={draw, rounded corners=4pt, minimum width=3.2cm, minimum height=0.9cm, font=\small\sffamily, thick},
@@ -351,7 +360,7 @@ An execution environment $\mathcal{E}$ is any runtime in which an agent's comput
 \node[below=0.4cm of exec, font=\scriptsize\sffamily\itshape, clawgray] {LLM calls, bash, file I/O --- never touch the chain};
 \node[below=0.15cm of post, font=\scriptsize\sffamily, clawblue] {Tx \#1};
 \node[below=0.15cm of settle, font=\scriptsize\sffamily, clawblue] {Tx \#2};
-\end{tikzpicture}
+\end{tikzpicture}}% end resizebox
 \caption{Proof-of-work settlement flow. Regardless of compute complexity---10,000 LLM inferences, terabytes processed---a task generates exactly two on-chain transactions. Step 2 executes in any environment $\mathcal{E}$ at zero chain cost.}
 \label{fig:settlement}
 \end{figure}
@@ -492,6 +501,7 @@ The DID Document includes agent-specific fields:
 % ---- TikZ: Agent DID Lifecycle Diagram ----
 \begin{figure}[t]
 \centering
+\resizebox{\columnwidth}{!}{%
 \begin{tikzpicture}[
     node distance=2.2cm,
     state/.style={draw, rounded corners=5pt, minimum width=2cm, minimum height=1cm, font=\small\sffamily, thick, fill=white},
@@ -521,7 +531,7 @@ The DID Document includes agent-specific fields:
 \draw[trans] (active) to[loop above, looseness=5] node[label] {contribute} (active);
 \draw[trans] (verified) to[loop above, looseness=5] node[label] {contribute} (verified);
 
-\end{tikzpicture}
+\end{tikzpicture}}% end resizebox
 \caption{Agent DID lifecycle state machine. Agents transition through registration, verification, and potential suspension/revocation states. Dashed arrows indicate reversible transitions.}
 \label{fig:lifecycle}
 \end{figure}
@@ -636,9 +646,10 @@ The \$CLAW token has a fixed initial supply with controlled inflation:
 % ---- TikZ: Token Distribution Diagram ----
 \begin{figure}[t]
 \centering
+\resizebox{\columnwidth}{!}{%
 \begin{tikzpicture}
 \begin{axis}[
-    width=8cm, height=8cm,
+    width=\columnwidth, height=8cm,
     xbar stacked,
     xlabel={Percentage of Total Supply},
     symbolic y coords={Team, Treasury, Validators, Airdrop},
@@ -658,7 +669,7 @@ The \$CLAW token has a fixed initial supply with controlled inflation:
 \addplot[fill=claworange, draw=claworange!80] coordinates {(0,Airdrop) (0,Validators) (0,Treasury) (10,Team)};
 \legend{Airdrop (40\%), Validators (30\%), Treasury (20\%), Team (10\%)}
 \end{axis}
-\end{tikzpicture}
+\end{tikzpicture}}% end resizebox
 \caption{CLAW token distribution. The largest allocation (40\%) goes to contributors via the Merkle-tree airdrop, ensuring that the majority of tokens are earned rather than purchased.}
 \label{fig:distribution}
 \end{figure}
@@ -716,6 +727,7 @@ The airdrop mechanism uses a Merkle tree for efficient on-chain verification (Al
 % ---- TikZ: Merkle Tree Diagram ----
 \begin{figure}[t]
 \centering
+\resizebox{\columnwidth}{!}{%
 \begin{tikzpicture}[
     node distance=0.8cm and 0.3cm,
     treenode/.style={draw, circle, minimum size=0.8cm, font=\tiny\ttfamily, thick},
@@ -774,7 +786,7 @@ The airdrop mechanism uses a Merkle tree for efficient on-chain verification (Al
 \node[font=\tiny\sffamily, clawred, right=0.3cm of h23] {Proof for Agent B:};
 \node[font=\tiny\sffamily, clawred, right=0.3cm of h2] {$\{h_0, h_{23}\}$};
 
-\end{tikzpicture}
+\end{tikzpicture}}% end resizebox
 \caption{Merkle tree for airdrop verification. Each leaf encodes an agent's DID and allocation. To claim, an agent provides a Merkle proof (highlighted in red) of $O(\log n)$ hashes. Only the root is stored on-chain.}
 \label{fig:merkle}
 \end{figure}
@@ -846,6 +858,7 @@ The CLAW emission schedule is designed to transition from inflation-subsidy-depe
 \begin{table}[t]
 \centering
 \small
+{\setlength{\tabcolsep}{2pt}%
 \begin{tabular}{lrrrr}
 \toprule
 \textbf{Year} & \textbf{Inflation (\%)} & \textbf{New CLAW} & \textbf{Circulating} & \textbf{Subsidy Pool} \\
@@ -859,7 +872,7 @@ The CLAW emission schedule is designed to transition from inflation-subsidy-depe
 \midrule
 5+ & 2.0\% & $\sim$24M/yr & Ongoing & Fee-sustaining \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \caption{CLAW emission schedule over 5 years. Inflation decreases as the network matures. The subsidy pool (30\% of new emissions directed to fee subsidies) maintains sub-cent gas costs throughout.}
 \label{tab:emission}
 \end{table}
@@ -890,6 +903,7 @@ Agent stakers face a unique consideration absent in human-dominated systems: an 
 % ---- TikZ: Governance Model Diagram ----
 \begin{figure}[t]
 \centering
+\resizebox{\columnwidth}{!}{%
 \begin{tikzpicture}[
     node distance=1.5cm,
     box/.style={draw, rounded corners=4pt, minimum width=2.5cm, minimum height=1cm, font=\small\sffamily, thick, text width=2.3cm, align=center},
@@ -925,7 +939,7 @@ Agent stakers face a unique consideration absent in human-dominated systems: an 
 \draw[arrow] (treasury) -- (exec);
 \draw[arrow] (dispute) -| (exec);
 
-\end{tikzpicture}
+\end{tikzpicture}}% end resizebox
 \caption{Governance model. Voting weight combines quadratic reputation and quadratic stake via a tunable parameter $\alpha$. Approved proposals enter a 7-day timelock before execution.}
 \label{fig:governance}
 \end{figure}
@@ -1185,6 +1199,7 @@ ClawChain's NPoS consensus relies on validators to honestly produce blocks and p
 \begin{table}[t]
 \centering
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{p{2.2cm}p{3.2cm}p{5.8cm}}
 \toprule
 \textbf{Attack} & \textbf{Description} & \textbf{Mitigation} \\
@@ -1200,7 +1215,7 @@ Rep. laundering & Wash-trade reputation & Attestation graph analysis \\
 Task spam & Unsatisfiable tasks & Task deposit (burned on expiry) \\
 Flash loan gov. & Borrow tokens to vote & Reputation component price-independent \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \caption{Attack vectors and mitigations across all layers: consensus, identity, governance, and economics.}
 \label{tab:attacks}
 \end{table}
@@ -1212,6 +1227,7 @@ Table~\ref{tab:security_compare} compares ClawChain's security properties agains
 \begin{table}[t]
 \centering
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
 \textbf{Property} & \textbf{ClawChain} & \textbf{Ethereum} & \textbf{Fetch.ai} \\
@@ -1222,7 +1238,7 @@ Finality guarantee & BFT (GRANDPA) & Probabilistic & BFT (Tendermint) \\
 Identity portability & Cross-chain & None & Partial \\
 Contribution fraud & Sig.\ verified & N/A & None \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \caption{Formal security properties. ``$\sqrt{k}$ bound'' means Sybil advantage is $O(\sqrt{k})$.}
 \label{tab:security_compare}
 \end{table}
@@ -1519,6 +1535,7 @@ We evaluate ClawChain on a testnet with 4 validator nodes (8-core AMD Ryzen, 32G
 \begin{table}[t]
 \centering
 \small
+{\setlength{\tabcolsep}{4pt}%
 \begin{tabular}{lrrr}
 \toprule
 \textbf{Metric} & \textbf{ClawChain} & \textbf{Ethereum} & \textbf{Solana} \\
@@ -1535,7 +1552,7 @@ Gas cost (token transfer) & \$0.001 & \$2.10 & \$0.0003 \\
 Gas cost (governance vote) & \$0.003 & \$6.80 & N/A \\
 State storage per agent & 512 B & $\sim$2 KB & $\sim$1 KB \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \caption{Comprehensive performance benchmarks comparing ClawChain, Ethereum (mainnet values), and Solana (mainnet values). ClawChain achieves sub-cent gas costs and fast finality critical for agent micro-transactions. ``N/A'' indicates no equivalent primitive exists.}
 \label{tab:performance}
 \end{table}
@@ -1612,7 +1629,7 @@ We benchmark the task market under increasing concurrent agent load. Each benchm
 \addplot[fill=corered!70, draw=corered] coordinates {
     (1,28) (2,27) (3,25) (4,22) (5,18)
 };
-\legend{ClawChain Task Market, ClawChain Token Transfer, Ethereum (ERC-20)}
+\legend{ClawChain Task, ClawChain Transfer, Ethereum (ERC-20)}
 \end{axis}
 \end{tikzpicture}
 \caption{Task market throughput vs.\ concurrent agent pairs. ClawChain maintains $>$180 tx/s at 500 concurrent pairs. Ethereum's ERC-20 throughput is shown for reference; the task market workload (two-phase: post + settle) has no Ethereum equivalent.}
@@ -1666,6 +1683,7 @@ Table~\ref{tab:chain_compare_full} provides a comprehensive comparison between C
 \label{tab:chain_compare_full}
 \centering
 \small
+{\setlength{\tabcolsep}{3pt}%
 \begin{tabular}{lcccc}
 \toprule
 \textbf{Metric} & \textbf{ClawChain} & \textbf{Ethereum} & \textbf{Solana} & \textbf{Polygon} \\
@@ -1682,7 +1700,7 @@ Agent gas model & Subsidised & Market & Market & Market \\
 Governance & Merit+stake & Token & Token & Token \\
 ERC-8004 compat & \textbf{Yes} (bridge) & \textbf{Yes} (native) & No & Partial \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \noindent ClawChain's primary advantages over Solana (the closest competitor in throughput) are its agent-native primitives and merit-weighted governance. Solana's transaction costs, while low, are still market-driven — a high-frequency agent performing 100,000 micro-transactions/day would spend \$25/day in Solana fees vs. \$0.10 in ClawChain (inflation-subsidised). At scale, this difference is decisive for autonomous agent viability.
@@ -2072,6 +2090,7 @@ While ClawChain addresses many gaps in Ethereum's agent-readiness, it inherits n
 \begin{table}[t]
 \centering
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lcc}
 \toprule
 \textbf{Dimension} & \textbf{ClawChain} & \textbf{Ethereum} \\
@@ -2085,7 +2104,7 @@ Developer tooling & Limited & Extensive (Hardhat, Foundry) \\
 Formal audits & Pending & Industry standard \\
 Validator decentralization & 4 nodes (testnet) & 400K+ validators \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \caption{Tradeoff comparison between ClawChain and Ethereum. ClawChain excels on agent-specific dimensions but lacks the ecosystem maturity of established chains.}
 \label{tab:limitation_compare}
 \end{table}
@@ -2462,6 +2481,7 @@ A.~Chen, B.~Li, N.~Qi, and S.~Chen.
 % ---- TikZ: Complete Token Flow ----
 \begin{figure}[h]
 \centering
+\resizebox{\columnwidth}{!}{%
 \begin{tikzpicture}[
     node distance=1.8cm,
     pool/.style={draw, rounded corners=6pt, minimum width=2.8cm, minimum height=1cm, font=\small\sffamily, thick, text width=2.5cm, align=center},
@@ -2508,7 +2528,7 @@ A.~Chen, B.~Li, N.~Qi, and S.~Chen.
 % Team vesting arrow
 \draw[flow, claworange!60, dashed] (team) |- node[label, above, near start] {2yr vest} (agents);
 
-\end{tikzpicture}
+\end{tikzpicture}}% end resizebox
 \caption{Complete CLAW token flow from genesis through distribution, staking, commerce, and inflation subsidy. Dashed arrows indicate time-locked or circular flows.}
 \label{fig:tokenflow}
 \end{figure}

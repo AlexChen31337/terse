@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  21 FEB 2026 14:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  21 FEB 2026 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1002,24 +1002,24 @@ LaTeX Warning: Label `brill2017phragmen' multiply defined.
 )
 \openout1 = `clawchain-ieee-sse2026.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
 
 -- Lines per column: 56 (exact).
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -1044,7 +1044,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 84.
+Package hyperref Info: Link coloring OFF on input line 91.
 
 (./clawchain-ieee-sse2026.out) (./clawchain-ieee-sse2026.out)
 \@outlinefile=\write4
@@ -1058,29 +1058,29 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count357
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 87
-.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-** WARNING: \thanks is locked out when in conference mode (line 87).
 
-Underfull \hbox (badness 1552) in paragraph at lines 107--108
+Underfull \hbox (badness 1552) in paragraph at lines 114--115
 \T1/ptm/m/n/10 iden-ti-ties (pri-vate keys, ECDSA sig-na-tures). While
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 121
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 12
+6.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 128
 .
+
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 121
+LaTeX Font Info:    Trying to load font information for U+msb on input line 128
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 4013) in paragraph at lines 132--133
+Underfull \hbox (badness 4013) in paragraph at lines 139--140
 []\T1/ptm/m/n/10 Section []II[] re-views re-lated work across blockchains,
  []
 
@@ -1089,434 +1089,373 @@ dist/fonts/enc/dvips/base/8r.enc}
 
 
 ]
-Underfull \hbox (badness 1796) in paragraph at lines 146--147
+Underfull \hbox (badness 1796) in paragraph at lines 153--154
 []\T1/ptm/m/n/10 Recent work on application-specific blockchains (``ap-
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
 \T1/ptm/m/n/10 frame-works in-clud-ing Au-to-GPT [[]], BabyAGI [[]],
  []
 
 [3]
-Underfull \hbox (badness 5862) in paragraph at lines 208--209
+Underfull \hbox (badness 5862) in paragraph at lines 215--216
 []\T1/ptm/m/n/10 Several re-cent projects specif-i-cally tar-get AI agent
  []
 
-
-Overfull \hbox (92.39197pt too wide) in paragraph at lines 221--233
- [][] 
- []
-
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 26
-0.
+8.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
-Overfull \hbox (218.6377pt too wide) in paragraph at lines 309--310
- [][] 
- []
+
+LaTeX Font Warning: Font shape `T1/ptm/m/scit' undefined
+(Font)              using `T1/ptm/m/sc' instead on input line 331.
 
 
 LaTeX Font Warning: Font shape `T1/ptm/m/scit' undefined
-(Font)              using `T1/ptm/m/sc' instead on input line 323.
+(Font)              using `T1/ptm/m/sc' instead on input line 331.
 
 
 LaTeX Font Warning: Font shape `T1/ptm/m/scit' undefined
-(Font)              using `T1/ptm/m/sc' instead on input line 323.
+(Font)              using `T1/ptm/m/sc' instead on input line 331.
 
 
 LaTeX Font Warning: Font shape `T1/ptm/m/scit' undefined
-(Font)              using `T1/ptm/m/sc' instead on input line 323.
+(Font)              using `T1/ptm/m/sc' instead on input line 331.
 
 
 LaTeX Font Warning: Font shape `T1/ptm/m/scit' undefined
-(Font)              using `T1/ptm/m/sc' instead on input line 323.
+(Font)              using `T1/ptm/m/sc' instead on input line 331.
 
 
-LaTeX Font Warning: Font shape `T1/ptm/m/scit' undefined
-(Font)              using `T1/ptm/m/sc' instead on input line 323.
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 329--330
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
 []\T1/ptm/b/n/10 Post \T1/ptm/m/n/10 (\T1/ptm/m/sc/10 TaskPosted\T1/ptm/m/n/10 
 ): re-quester calls
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 329--330
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
 \T1/pcr/m/n/10 post_task(desc, reward, deadline)\T1/ptm/m/n/10 ,
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 331--332
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
 []\T1/ptm/b/n/10 Settle \T1/ptm/m/n/10 (\T1/ptm/m/sc/10 TaskCompleted\T1/ptm/m/
 n/10 ): ex-ecu-tor calls
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--332
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
 \T1/pcr/m/n/10 submit_result(task_id, proof)\T1/ptm/m/n/10 , trig-ger-ing
  []
 
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 351.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 363.
 
-Overfull \hbox (108.90433pt too wide) in paragraph at lines 354--355
- [][] 
- []
-
-
-Underfull \hbox (badness 2343) in paragraph at lines 361--362
+Underfull \hbox (badness 2343) in paragraph at lines 370--371
 \T1/ptm/m/n/10 ex-e-cutes a smart con-tract on Ethereum; the rep-u-ta-tion
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 423--424
+Underfull \hbox (badness 10000) in paragraph at lines 432--433
 []\T1/pcr/m/n/10 Reputation::Contributions: \T1/ptm/m/n/10 DID $\OMS/cmsy/m/n/1
 0 !$
  []
 
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 454.
-
-Overfull \hbox (203.44046pt too wide) in paragraph at lines 524--525
- [][] 
- []
-
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 463.
+[6]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 532.
+put line 542.
 
-Overfull \hbox (3.68987pt too wide) in paragraph at lines 545--546
+Overfull \hbox (3.68987pt too wide) in paragraph at lines 555--556
 [] []$[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 d\OT1/cmr/m/n/10 ] \OMS/cmsy/m/n/10  
  hA\OML/cmm/m/it/10 ;  [];  [];  []\OMS/cmsy/m/n/10 i$
  []
 
-[6] [7]
-Package pgfplots info on input line 654: Using 'lua backend=false' for axis: st
+[7]
+Package pgfplots info on input line 672: Using 'lua backend=false' for axis: st
 acked plots unsupported (yet).
-Package pgfplots info on input line 654: Using 'lua backend=false' for axis: x 
+Package pgfplots info on input line 672: Using 'lua backend=false' for axis: x 
 coord trafo unsupported.
 
-Overfull \hbox (47.4284pt too wide) in paragraph at lines 661--662
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 709--710
+Underfull \hbox (badness 10000) in paragraph at lines 720--721
 \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 w[]^^M[]$\T1/ptm/m/n/10 . Sum-ming the ge-o-m
 et-ric se-ries:
  []
 
-
-Overfull \hbox (23.42262pt too wide) in paragraph at lines 777--778
- [][] 
- []
-
 [8]
-Overfull \hbox (45.04865pt too wide) in paragraph at lines 849--863
- [][] 
- []
-
-
-Overfull \hbox (202.34499pt too wide) in paragraph at lines 928--929
+Overfull \hbox (5.04865pt too wide) in paragraph at lines 862--876
  [][] 
  []
 
 [9] [10]
-Underfull \hbox (badness 1571) in paragraph at lines 1083--1085
+Underfull \hbox (badness 1571) in paragraph at lines 1097--1099
 \OML/cmm/m/it/10 d \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 85$\T1/
 ptm/m/n/10 , con-ver-gence to $\OML/cmm/m/it/10 ^^O \OT1/cmr/m/n/10 = 10[]$ \T1
 /ptm/m/n/10 re-quires $\OML/cmm/m/it/10 t \OMS/cmsy/m/n/10 ^^U
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 1198--1198
+Underfull \hbox (badness 10000) in paragraph at lines 1218--1218
 []\T1/ptm/m/n/9 Long-range
  []
 
 
-Overfull \hbox (102.67075pt too wide) in paragraph at lines 1188--1204
- [][] 
- []
-
-
-Overfull \hbox (45.48642pt too wide) in paragraph at lines 1215--1226
- [][] 
- []
-
-
-Underfull \hbox (badness 6063) in paragraph at lines 1243--1244
+Underfull \hbox (badness 6063) in paragraph at lines 1259--1260
 []\T1/ptm/b/n/10 Runtime: \T1/ptm/m/n/10 WASM-compiled (fork-less up-grades via
 
  []
 
 
-Underfull \hbox (badness 4316) in paragraph at lines 1265--1266
+Underfull \hbox (badness 4316) in paragraph at lines 1281--1282
 [] []$[] \OMS/cmsy/m/n/10   []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d\OT1/cmr/m/n/1
 0 )$ \T1/ptm/m/n/10 {At-tes-ta-tion graph
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 1291--1292
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1308
 []\T1/ptm/b/n/10 Block time: \T1/ptm/m/n/10 6 sec-onds (con-fig-urable via
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1307--1308
+Underfull \hbox (badness 10000) in paragraph at lines 1323--1324
 []\T1/pcr/m/n/10 agentRegistry_getAgentInfo(did: Bytes)\T1/ptm/m/n/10 :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1308--1309
+Underfull \hbox (badness 10000) in paragraph at lines 1324--1325
 []\T1/pcr/m/n/10 agentRegistry_getAttestationGraph(did:
  []
 
 
-Underfull \hbox (badness 1635) in paragraph at lines 1308--1309
+Underfull \hbox (badness 1635) in paragraph at lines 1324--1325
 \T1/pcr/m/n/10 Bytes)\T1/ptm/m/n/10 : Re-turns in-com-ing/out-go-ing at-tes-ta-
 tions for
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1309--1310
+Underfull \hbox (badness 10000) in paragraph at lines 1325--1326
 []\T1/pcr/m/n/10 reputation_getScore(did: Bytes)\T1/ptm/m/n/10 : Re-turns
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1310--1311
+Underfull \hbox (badness 10000) in paragraph at lines 1326--1327
 []\T1/pcr/m/n/10 taskMarket_getOpenTasks(capability:
  []
 
 
-Underfull \hbox (badness 1590) in paragraph at lines 1310--1311
+Underfull \hbox (badness 1590) in paragraph at lines 1326--1327
 \T1/pcr/m/n/10 CapabilityType)\T1/ptm/m/n/10 : Re-turns task feed fil-tered by
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1311--1312
+Underfull \hbox (badness 10000) in paragraph at lines 1327--1328
 []\T1/pcr/m/n/10 governance_getVotingWeight(did: Bytes,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1318--1319
+Underfull \hbox (badness 10000) in paragraph at lines 1334--1335
 []\T1/ptm/m/n/10 We de-tail the two most crit-i-cal pal-lets:
  []
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 1324.
+nput line 1340.
 
-Underfull \hbox (badness 4132) in paragraph at lines 1324--1324
+Underfull \hbox (badness 4132) in paragraph at lines 1340--1340
 []\T1/ptm/m/n/10 Listing 1: |pallet-agent-registry: stor-age and reg-is-tra-tio
 n
  []
 
 [13]
-Underfull \hbox (badness 3758) in paragraph at lines 1392--1393
+Underfull \hbox (badness 3758) in paragraph at lines 1408--1409
 []\T1/ptm/b/n/10 Cross-pallet call\T1/ptm/m/n/10 : The reg-istry di-rectly call
 s into
  []
 
 
-Underfull \hbox (badness 5711) in paragraph at lines 1397--1398
+Underfull \hbox (badness 5711) in paragraph at lines 1413--1414
  \T1/ptm/m/it/10 2) pallet-reputation: [][][] \T1/ptm/m/n/10 The rep-u-ta-tion 
 pal-let com-putes,
  []
 
 
-Underfull \hbox (badness 2941) in paragraph at lines 1397--1398
+Underfull \hbox (badness 2941) in paragraph at lines 1413--1414
 \T1/ptm/m/n/10 stores, and de-cays agent scores. List-ing []2[] shows the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1397--1398
+Underfull \hbox (badness 10000) in paragraph at lines 1413--1414
 \T1/pcr/m/n/10 record_contribution \T1/ptm/m/n/10 ex-trin-sic and the in-ter-na
 l
  []
 
 
-Overfull \hbox (11.98984pt too wide) in paragraph at lines 1522--1539
- [][] 
- []
-
-
-Underfull \hbox (badness 1436) in paragraph at lines 1577--1577
+Underfull \hbox (badness 1436) in paragraph at lines 1594--1594
 []\T1/ptm/m/n/10 Fig. 7: |Agent reg-is-tra-tion la-tency (end-to-end, in-clud-i
 ng
  []
 
-
-Overfull \hbox (56.59702pt too wide) in paragraph at lines 1617--1618
- [][] 
- []
-
 [14]
-Overfull \hbox (34.61847pt too wide) in paragraph at lines 1669--1686
+Overfull \hbox (3.68001pt too wide) in paragraph at lines 1634--1635
  [][] 
  []
 
 
-Underfull \hbox (badness 2644) in paragraph at lines 1695--1696
+Overfull \hbox (4.61847pt too wide) in paragraph at lines 1687--1704
+ [][] 
+ []
+
+
+Underfull \hbox (badness 2644) in paragraph at lines 1713--1714
 []\T1/pcr/m/n/10 did:claw:b2c4... \T1/ptm/m/n/10 (\T1/ptm/b/n/10 cloud-trader\T
 1/ptm/m/n/10 ): A cryp-tocur-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1702--1703
+Underfull \hbox (badness 10000) in paragraph at lines 1720--1721
  \T1/ptm/m/it/10 1) End-to-End Reg-is-tra-tion Trace: [][][] \T1/ptm/m/n/10 To 
 pro-vide
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1706--1707
+Underfull \hbox (badness 10000) in paragraph at lines 1724--1725
 []\T1/ptm/b/n/10 Metadata Con-struc-tion: \T1/ptm/m/n/10 A CBOR-encoded
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1706--1707
+Underfull \hbox (badness 10000) in paragraph at lines 1724--1725
 \T1/ptm/m/n/10 DID doc-u-ment is cre-ated with ca-pa-bil-i-ties
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1706--1707
+Underfull \hbox (badness 10000) in paragraph at lines 1724--1725
 \T1/pcr/m/n/10 ["trading", "price-forecasting"] \T1/ptm/m/n/10 and
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1708--1709
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 1726--1727
 []\T1/ptm/b/n/10 Transaction: \T1/ptm/m/n/10 The agent broad-casts
  []
 
 
-Overfull \hbox (6.33002pt too wide) in paragraph at lines 1708--1709
+Overfull \hbox (6.33002pt too wide) in paragraph at lines 1726--1727
 \T1/pcr/m/n/10 AgentRegistry::register_agent(metadata,
  []
 
-[15]
-Underfull \hbox (badness 1616) in paragraph at lines 1710--1711
+
+Underfull \hbox (badness 1616) in paragraph at lines 1728--1729
 []\T1/ptm/b/n/10 DID Com-pu-ta-tion: \T1/ptm/m/n/10 On-chain: $\OML/cmm/m/it/10
  d \OT1/cmr/m/n/10 = []$
  []
 
 
-Underfull \hbox (badness 2426) in paragraph at lines 1775--1775
+Underfull \hbox (badness 2426) in paragraph at lines 1793--1793
 []\T1/ptm/m/n/10 TABLE X: |Gas cost com-par-i-son for agent op-er-a-tions.
  []
 
 
-Underfull \hbox (badness 2213) in paragraph at lines 1779--1780
+Underfull \hbox (badness 2213) in paragraph at lines 1797--1798
 \T1/ptm/m/n/10 on Ethereum---a dif-fer-ence that makes on-chain micro-
  []
 
-Package pgfplots info on input line 1799: Using 'lua backend=false' for axis: x
+Package pgfplots info on input line 1817: Using 'lua backend=false' for axis: x
 mode=log unsupported (yet).
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 1862--1863
+Underfull \hbox (badness 10000) in paragraph at lines 1880--1881
 \T1/pcr/m/n/10 reward, deadline, min_rep)\T1/ptm/m/n/10 . The re-ward
  []
 
 
-Underfull \hbox (badness 3417) in paragraph at lines 1866--1867
+Underfull \hbox (badness 3417) in paragraph at lines 1884--1885
 []\T1/ptm/b/n/10 Bidding and As-sign-ment Phase: \T1/ptm/m/n/10 Ex-ecu-tor call
 s
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1868--1869
+Underfull \hbox (badness 10000) in paragraph at lines 1886--1887
 []\T1/ptm/b/n/10 Settlement Phase: \T1/ptm/m/n/10 Ex-ecu-tor calls
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1868--1869
+Underfull \hbox (badness 10000) in paragraph at lines 1886--1887
 \T1/pcr/m/n/10 submit_result(task_id, proof_hash)\T1/ptm/m/n/10 .
  []
 
 
-Underfull \hbox (badness 8000) in paragraph at lines 1889--1890
+Underfull \hbox (badness 8000) in paragraph at lines 1907--1908
 [] []$\OML/cmm/m/it/10 []$ \T1/ptm/m/n/10 eval-u-ates $\OML/cmm/m/it/10 ^^Z$ \
 T1/ptm/m/n/10 and sub-mits \T1/pcr/m/n/10 vote(task_id,
  []
 
 
-Underfull \hbox (badness 6825) in paragraph at lines 1893--1895
+Underfull \hbox (badness 6825) in paragraph at lines 1911--1913
 [] []\T1/ptm/m/n/10 Release es-crow to ex-ecu-tor; $\OMS/cmsy/m/n/10 R\OT1/cmr/
 m/n/10 ([]) []=
  []
 
 [17] [18]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-030.
+048.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \hbox (badness 1354) in paragraph at lines 2032--2033
+Underfull \hbox (badness 1354) in paragraph at lines 2050--2051
 \T1/ptm/m/n/10 plat-form (Up-work, Fiverr) charges 5--20% plat-form fees
  []
 
-
-Overfull \hbox (62.63786pt too wide) in paragraph at lines 2075--2089
- [][] 
- []
-
 [19]
-Underfull \hbox (badness 1424) in paragraph at lines 2108--2109
+Underfull \hbox (badness 1424) in paragraph at lines 2127--2128
 \T1/ptm/m/n/10 tri-bu-tion graphs, LinkedIn, pro-fes-sional cer-ti-fi-ca-tion
  []
 
 
-Underfull \hbox (badness 8000) in paragraph at lines 2131--2132
+Underfull \hbox (badness 8000) in paragraph at lines 2150--2151
 \T1/ptm/m/n/10 de-signed from first prin-ci-ples for au-tonomous agent
  []
 
 
-Underfull \hbox (badness 1655) in paragraph at lines 2131--2132
+Underfull \hbox (badness 1655) in paragraph at lines 2150--2151
 \T1/ptm/m/n/10 address the fun-da-men-tal mis-align-ments be-tween ex-ist-ing
  []
 
 
-Underfull \hbox (badness 2970) in paragraph at lines 2137--2138
+Underfull \hbox (badness 2970) in paragraph at lines 2156--2157
 \T1/ptm/m/n/10 mar-kets. The gas cost anal-y-sis (Ta-ble []X[]) shows that
  []
 
-
-Underfull \vbox (badness 2318) has occurred while \output is active []
-
- [20]
-Underfull \hbox (badness 2103) in paragraph at lines 2153--2154
+[20]
+Underfull \hbox (badness 2103) in paragraph at lines 2172--2173
 []\T1/ptm/b/n/10 Concentration risks. \T1/ptm/m/n/10 De-spite quadratic vot-ing
 's anti-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2185--2186
+Underfull \hbox (badness 10000) in paragraph at lines 2204--2205
 []\T1/ptm/m/n/10 ClawChain is fully open-source: []$https : / / github . com /
  []
 
 
-Underfull \hbox (badness 3919) in paragraph at lines 2185--2186
+Underfull \hbox (badness 3919) in paragraph at lines 2204--2205
 \T1/ptm/m/n/10 clawinfra / claw-[]chain$[]. The test-net can be launched via
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2185--2186
+Underfull \hbox (badness 10000) in paragraph at lines 2204--2205
 \T1/pcr/m/n/10 clawchain-node --dev\T1/ptm/m/n/10 . Agent reg-is-tra-tion SDK
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 2315--2318
+Underfull \hbox (badness 10000) in paragraph at lines 2334--2337
 \T1/ptm/m/n/8 ethereum-[]optimism / retroactive-[]public-[]goods-[]funding-[]33
 c9b7d00f0c$[],
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 2330--2333
+Underfull \hbox (badness 2065) in paragraph at lines 2349--2352
 []\T1/ptm/m/n/8 M. Goldin.  Token-curated reg-istries 1.0.  []$https : / / medi
 um . com /
- []
-
-
-Overfull \hbox (313.6742pt too wide) in paragraph at lines 2511--2512
- [][] 
  []
 
 [22
@@ -1524,7 +1463,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{cite.brill201
 7phragmen}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2524 \end{proof}
+l.2548 \end{lemma}
                   ]
 
 ** Conference Paper **
@@ -1553,13 +1492,13 @@ Package rerunfilecheck Info: File `clawchain-ieee-sse2026.out' has not changed.
 (rerunfilecheck)             Checksum: CC262EA5EAF0BB8E868B3F91DE57A3A8;17606.
  ) 
 Here is how much of TeX's memory you used:
- 38788 strings out of 476106
- 870625 string characters out of 5793934
- 2401975 words of memory out of 5000000
- 59609 multiletter control sequences out of 15000+600000
- 710807 words of font info for 205 fonts, out of 8000000 for 9000
+ 38791 strings out of 476106
+ 870757 string characters out of 5793934
+ 2400975 words of memory out of 5000000
+ 59613 multiletter control sequences out of 15000+600000
+ 710186 words of font info for 203 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 102i,19n,107p,1710b,2553s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,21n,107p,1710b,2574s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/
@@ -1589,7 +1528,7 @@ times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on clawchain-ieee-sse2026.pdf (23 pages, 525504 bytes).
+Output written on clawchain-ieee-sse2026.pdf (23 pages, 525946 bytes).
 PDF statistics:
  1389 PDF objects out of 1440 (max. 8388607)
  1287 compressed objects within 13 object streams
