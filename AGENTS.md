@@ -207,12 +207,13 @@ That's it. The router decides. You execute. No guessing, no overriding.
 **Tier→Model mapping (auto-selected by intelligent-router — trust the output):**
 - **SIMPLE** (monitoring, heartbeat, checks, summaries) → `ollama-gpu-server/glm-4.7-flash` (FREE, 8B local GPU) or `nvidia-nim/qwen/qwen2.5-7b-instruct` ($0.15/M when GPU server offline)
 - **MEDIUM** (code fixes, research, patches, data analysis) → `nvidia-nim/meta/llama-3.3-70b-instruct` ($0.40/M, 70B capable)
-- **COMPLEX** (features, architecture, multi-file changes) → `anthropic/claude-sonnet-4-6` ($3/M, OAuth) [fallback: `nvidia-nim/minimaxai/minimax-m2.1` ($0.3/M, 456B)]
+- **COMPLEX** (features, architecture, multi-file changes) → `anthropic/claude-sonnet-4-6` ($3/M, OAuth) ← **DEFAULT FOR ALL CODING TASKS**
 - **GLM-5** (large-scale reasoning, agentic tasks) → `nvidia-nim/z-ai/glm5` ($0.5/M, 744B MoE, reasoning toggle)
 - **REASONING** (proofs, formal logic, deep analysis) → `nvidia-nim/moonshotai/kimi-k2-thinking` ($1/M, 1T MoE specialist)
 - **CRITICAL** (security, production, strategic planning) → `anthropic/claude-opus-4-6` ($5/M) ONLY
 
 ⚠️ **Bowen's rule:** Opus is reserved for critical thinking and planning ONLY. Never use Opus for routine coding, docs, or monitoring tasks.
+⚠️ **Bowen's rule:** Use `anthropic/claude-sonnet-4-6` (Sonnet46-OAuth) for ALL coding sub-agents. Do not route coding tasks to Llama, GLM, or MiniMax regardless of router output.
 
 ℹ️ **Why no "IGNORE router" anymore:** The router was fixed (v2.0) to use real capability signals (parameter count, context window, reasoning flag) instead of cost-only. DeepSeek V3.2 ($0.40/M, 274B) now correctly routes to COMPLEX. The router output is now trustworthy — use spawn_helper directly without manual overrides.
 
