@@ -1,0 +1,18 @@
+[
+    {
+        "pattern": "import os",
+        "description": "Potential arbitrary command execution"
+    },
+    {
+        "pattern": "import subprocess",
+        "description": "Potential arbitrary command execution"
+    },
+    {
+        "pattern": "import requests",
+        "description": "Potential data exfiltration"
+    },
+    {
+        "pattern": "import json",
+        "description": "Potential data tampering"
+    }
+]

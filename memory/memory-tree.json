@@ -6,8 +6,7 @@
     "last_access": 0,
     "children": [
       "technical",
-      "general",
-      "projects"
+      "general"
     ]
   },
   "technical": {
@@ -48,22 +47,6 @@
     "warm_count": 285,
     "cold_count": 0,
     "last_access": 1771534019.5602827,
-    "children": []
-  },
-  "projects": {
-    "desc": "Projects",
-    "warm_count": 0,
-    "cold_count": 0,
-    "last_access": 0,
-    "children": [
-      "projects/clawchain"
-    ]
-  },
-  "projects/clawchain": {
-    "desc": "Clawchain",
-    "warm_count": 1,
-    "cold_count": 0,
-    "last_access": 1771647205.4379673,
     "children": []
   }
 }

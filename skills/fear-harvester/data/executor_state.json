@@ -9,10 +9,30 @@
       "status": "open",
       "mode": "paper",
       "hl_order_id": null
+    },
+    {
+      "timestamp": "2026-02-21T23:21:04.698797",
+      "entry_price": 67997.52,
+      "btc_qty": 0.00735,
+      "usd_amount": 500.0,
+      "fg_at_entry": 8,
+      "status": "open",
+      "mode": "paper",
+      "hl_order_id": null
+    },
+    {
+      "timestamp": "2026-02-22T00:21:05.854611",
+      "entry_price": 68153.14,
+      "btc_qty": 0.00734,
+      "usd_amount": 500.0,
+      "fg_at_entry": 8,
+      "status": "open",
+      "mode": "paper",
+      "hl_order_id": null
     }
   ],
-  "total_invested": 500.0,
+  "total_invested": 1500.0,
   "mode": "paper",
-  "last_action": "DCA_BUY $500 @ $68,118 (F&G=8) [paper]",
+  "last_action": "DCA_BUY $500 @ $68,153 (F&G=8) [paper]",
   "version": 2
 }
