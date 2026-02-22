@@ -42,12 +42,13 @@ logger = logging.getLogger("fear-harvester.simmer")
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-BET_PER_MARKET = 15.0       # $SIM per bet
-MAX_BETS_PER_RUN = 3        # Max new bets per F&G check
+BET_PER_MARKET = 5.0        # USDC per bet (real money — conservative)
+MAX_BETS_PER_RUN = 2        # Max new bets per F&G check
 MAX_TOTAL_POSITIONS = 5     # Hard cap: don't open if already ≥ this many open
 MIN_MARKET_VOLUME = 100.0   # Skip thin markets (must have real volume)
 MIN_YES_PROB = 0.25         # Don't bet YES if probability already > 75% (low edge)
 MAX_YES_PROB = 0.75
+USDC_ONLY = True            # Only trade on USDC markets (no $SIM)
 
 # Patterns for short-term candle markets to EXCLUDE (these are coin flips)
 SHORT_TERM_CANDLE_PATTERNS = [
@@ -221,6 +222,13 @@ def find_fear_markets(client: Any) -> list[Any]:
                 if not _has_real_volume(m):
                     logger.debug("Simmer: skipping zero-volume market — %s", title[:60])
                     continue
+
+                # Hard filter: USDC only (no $SIM paper markets)
+                if USDC_ONLY:
+                    currency = str(_market_attr(m, "currency") or "").upper()
+                    if currency and currency != "USDC":
+                        logger.debug("Simmer: skipping non-USDC market — %s (%s)", title[:60], currency)
+                        continue
 
                 candidates.append(m)
         except Exception as e:
@@ -405,9 +413,9 @@ def execute_fear_trades(
 # TP/SL Position Management (v3)
 # ---------------------------------------------------------------------------
 
-# TP/SL thresholds
-TP_PNL_PCT = 0.40        # Take profit at +40% PnL
-SL_PNL_PCT = -0.25       # Stop loss at -25% PnL
+# TP/SL thresholds (USDC — real money, conservative)
+TP_PNL_PCT = 0.30        # Take profit at +30% PnL
+SL_PNL_PCT = -0.15       # Stop loss at -15% PnL
 TP_YES_PRICE = 0.85      # Take profit if YES price ≥ 0.85 (diminishing returns)
 SL_YES_PRICE = 0.15      # Stop loss if YES price ≤ 0.15 (thesis broken)
 
@@ -481,6 +489,10 @@ def manage_positions(
 
         # Skip candle markets — let them expire
         if _is_candle_market(title):
+            continue
+
+        # Only manage USDC positions (ignore $SIM legacy)
+        if USDC_ONLY and currency.upper() != "USDC":
             continue
 
         # Current price
