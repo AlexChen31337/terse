@@ -66,4 +66,4 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - **[meta]** Eat your own dogfood — use skills you build
 
 ---
-*Generated: 2026-02-22 12:06*
+*Generated: 2026-02-23 00:00*

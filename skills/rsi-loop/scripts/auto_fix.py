@@ -119,6 +119,49 @@ def search_codebase(search_terms: list[str], max_results: int = 20) -> list[dict
     return unique[:max_results]
 
 
+def _infer_safe_category(category: str, issue: str, fix_type: str, target_file: str = "") -> bool:
+    """Determine if a proposal is safe for auto-deploy."""
+    UNSAFE_FILES = {"AGENTS.md", "SOUL.md", "USER.md"}
+    if any(uf in target_file for uf in UNSAFE_FILES):
+        return False
+    SAFE_COMBOS = {
+        ("model_routing", "rate_limit"), ("model_routing", "model_fallback"),
+        ("model_routing", "slow_response"), ("model_routing", "wrong_model_tier"),
+        ("model_routing", "cost_overrun"),
+    }
+    SAFE_FIX_TYPES = {"threshold_tuning", "retry_logic"}
+    if (category, issue) in SAFE_COMBOS or fix_type in SAFE_FIX_TYPES:
+        return True
+    return False
+
+
+def _infer_priority(issue: str, impact_score: float = 0, failure_rate: float = 0) -> str:
+    """Infer priority from issue type and metrics."""
+    if issue in ("session_reset", "context_loss") or failure_rate > 0.7:
+        return "high"
+    if issue in ("rate_limit", "model_fallback", "tool_error", "empty_response") or impact_score > 0.15:
+        return "medium"
+    return "low"
+
+
+def _find_existing_proposal(category: str, issue: str, task_type: str) -> Path | None:
+    """Check if a proposal with the same (category, issue, task_type) already exists."""
+    if not PROPOSALS_DIR.exists():
+        return None
+    for f in PROPOSALS_DIR.glob("*.json"):
+        try:
+            with open(f) as fh:
+                p = json.load(fh)
+            p_issue = p.get("issue", p.get("pattern", {}).get("issue", ""))
+            p_task = p.get("task_type", p.get("pattern", {}).get("task_type", ""))
+            p_cat = p.get("category", p.get("pattern", {}).get("category", ""))
+            if p_issue == issue and p_task == task_type and p_cat == category:
+                return f
+        except Exception:
+            pass
+    return None
+
+
 def generate_fix_proposal(pattern: dict) -> dict:
     """Generate a fix proposal for a detected pattern."""
     issue = pattern["issue"]
@@ -131,8 +174,8 @@ def generate_fix_proposal(pattern: dict) -> dict:
 
     # Determine if auto-fixable
     category = pattern.get("category", "other")
-    is_safe = category in SAFE_CATEGORIES
     fix_type = template.get("fix_type", "investigation")
+    is_safe = _infer_safe_category(category, issue, fix_type)
 
     proposal = {
         "id": str(uuid.uuid4())[:8],
@@ -140,6 +183,8 @@ def generate_fix_proposal(pattern: dict) -> dict:
         "title": f"Fix: {pattern['description'][:80]}",
         "status": "draft",
         "auto_fixable": is_safe,
+        "safe_category": is_safe,
+        "priority": _infer_priority(issue, pattern.get("impact_score", 0), pattern.get("failure_rate", 0)),
         "fix_type": fix_type,
         "category": category,
         "issue": issue,
@@ -209,6 +254,25 @@ def auto_fix(pattern_id: str, dry_run: bool = False) -> dict:
             "proposal": proposal,
             "applied": False,
             "message": f"Dry run — proposal generated but not saved",
+        }
+
+    # Dedup: check if proposal with same (category, issue, task_type) exists
+    category = proposal["category"]
+    existing = _find_existing_proposal(category, proposal["issue"], proposal["task_type"])
+    if existing:
+        with open(existing) as f:
+            old = json.load(f)
+        old["duplicate_count"] = old.get("duplicate_count", 1) + 1
+        old["last_seen"] = datetime.now(timezone.utc).isoformat()
+        old["frequency"] = max(old.get("frequency", 0), proposal.get("frequency", 0))
+        with open(existing, "w") as f:
+            json.dump(old, f, indent=2)
+        return {
+            "pattern": pattern,
+            "proposal": old,
+            "proposal_path": str(existing),
+            "applied": False,
+            "message": f"Updated existing proposal {existing.name} (count: {old['duplicate_count']})",
         }
 
     # Save proposal

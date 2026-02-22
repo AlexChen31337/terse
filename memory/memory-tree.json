@@ -6,7 +6,8 @@
     "last_access": 0,
     "children": [
       "technical",
-      "general"
+      "general",
+      "projects"
     ]
   },
   "technical": {
@@ -44,9 +45,25 @@
   "_schema_version": "2.0",
   "general": {
     "desc": "General",
-    "warm_count": 285,
+    "warm_count": 298,
     "cold_count": 0,
-    "last_access": 1771534019.5602827,
+    "last_access": 1771765208.1227283,
+    "children": []
+  },
+  "projects": {
+    "desc": "Projects",
+    "warm_count": 0,
+    "cold_count": 0,
+    "last_access": 0,
+    "children": [
+      "projects/evoclaw"
+    ]
+  },
+  "projects/evoclaw": {
+    "desc": "Evoclaw",
+    "warm_count": 4,
+    "cold_count": 0,
+    "last_access": 1771765208.138468,
     "children": []
   }
 }

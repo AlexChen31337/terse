@@ -1,0 +1,17 @@
+{
+  "stop_loss_pct": -0.20,
+  "circuit_breaker_pct": -0.15,
+  "take_profit_pct": 0.50,
+  "max_position_pct": 0.30,
+  "max_positions": 5,
+  "trading_paused": false,
+  "high_water_mark": 18.00,
+  "notes": {
+    "stop_loss_pct": "Sell entire position if PnL drops below -20% from entry",
+    "circuit_breaker_pct": "Pause ALL trading if portfolio drops >15% from high-water mark",
+    "take_profit_pct": "Sell half position if PnL reaches +50% from entry",
+    "max_position_pct": "No single position can exceed 30% of total portfolio value",
+    "max_positions": "Maximum 5 open positions at any time (real money only)",
+    "high_water_mark": "Updated automatically when portfolio reaches new highs (USDC)"
+  }
+}

@@ -203,6 +203,15 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
         else:
             priority = "low"
 
+        # Determine safe_category
+        SAFE_COMBOS = {
+            ("model_routing", "rate_limit"), ("model_routing", "model_fallback"),
+            ("model_routing", "slow_response"), ("model_routing", "wrong_model_tier"),
+        }
+        SAFE_FIX_TYPES = {"threshold_tuning", "retry_logic"}
+        fix_type_hint = {"rate_limit": "retry_logic", "slow_response": "threshold_tuning"}.get(issue, "")
+        safe_category = (category, issue) in SAFE_COMBOS or fix_type_hint in SAFE_FIX_TYPES
+
         # Category-specific proposals
         if category == "skill_gap":
             proposal = {
@@ -210,6 +219,7 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
                 "created_at": datetime.now(timezone.utc).isoformat(),
                 "status": "draft",
                 "priority": priority,
+                "safe_category": safe_category,
                 "mutation_type": mutation_type,
                 "pattern": {"category": category, "task_type": task_type, "issue": issue},
                 "title": f"Create skill for '{task_type}' tasks",
@@ -246,6 +256,7 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
                 "created_at": datetime.now(timezone.utc).isoformat(),
                 "status": "draft",
                 "priority": priority,
+                "safe_category": safe_category,
                 "mutation_type": mutation_type,
                 "pattern": {"category": category, "task_type": task_type, "issue": issue},
                 "title": f"Fix model routing for '{task_type}' tasks",
@@ -279,6 +290,7 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
                 "created_at": datetime.now(timezone.utc).isoformat(),
                 "status": "draft",
                 "priority": priority,
+                "safe_category": safe_category,
                 "mutation_type": mutation_type,
                 "pattern": {"category": category, "task_type": task_type, "issue": issue},
                 "title": f"Improve memory continuity for '{task_type}'",
@@ -311,6 +323,7 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
                 "created_at": datetime.now(timezone.utc).isoformat(),
                 "status": "draft",
                 "priority": priority,
+                "safe_category": safe_category,
                 "mutation_type": mutation_type,
                 "pattern": {"category": category, "task_type": task_type, "issue": issue},
                 "title": f"Update behavioral rules for '{issue}' pattern",
@@ -343,6 +356,7 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
                 "created_at": datetime.now(timezone.utc).isoformat(),
                 "status": "draft",
                 "priority": priority,
+                "safe_category": safe_category,
                 "mutation_type": mutation_type,
                 "pattern": {"category": category, "task_type": task_type, "issue": issue},
                 "title": f"Address '{issue}' in '{task_type}' tasks",
@@ -361,14 +375,45 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
 
     return proposals
 
+def _find_existing_proposal(issue: str, task_type: str, category: str) -> Path | None:
+    """Check if a proposal with the same dedup key exists."""
+    if not PROPOSALS_DIR.exists():
+        return None
+    for f in PROPOSALS_DIR.glob("*.json"):
+        try:
+            with open(f) as fh:
+                p = json.load(fh)
+            p_issue = p.get("issue", p.get("pattern", {}).get("issue", ""))
+            p_task = p.get("task_type", p.get("pattern", {}).get("task_type", ""))
+            p_cat = p.get("category", p.get("pattern", {}).get("category", ""))
+            if p_issue == issue and p_task == task_type and p_cat == category:
+                return f
+        except Exception:
+            pass
+    return None
+
+
 def save_proposals(proposals: list) -> list:
     PROPOSALS_DIR.mkdir(parents=True, exist_ok=True)
     saved = []
     for p in proposals:
-        path = PROPOSALS_DIR / f"{p['id']}.json"
-        with open(path, "w") as f:
-            json.dump(p, f, indent=2)
-        saved.append(str(path))
+        issue = p.get("pattern", {}).get("issue", "")
+        task_type = p.get("pattern", {}).get("task_type", "")
+        category = p.get("pattern", {}).get("category", "")
+        existing = _find_existing_proposal(issue, task_type, category)
+        if existing:
+            with open(existing) as f:
+                old = json.load(f)
+            old["duplicate_count"] = old.get("duplicate_count", 1) + 1
+            old["last_seen"] = datetime.now(timezone.utc).isoformat()
+            with open(existing, "w") as f:
+                json.dump(old, f, indent=2)
+            saved.append(str(existing))
+        else:
+            path = PROPOSALS_DIR / f"{p['id']}.json"
+            with open(path, "w") as f:
+                json.dump(p, f, indent=2)
+            saved.append(str(path))
     return saved
 
 def load_all_proposals(status_filter: str = None) -> list:
@@ -421,6 +466,11 @@ def main():
     reject = sub.add_parser("reject", help="Reject a proposal")
     reject.add_argument("proposal_id")
 
+    # cleanup command
+    cleanup = sub.add_parser("cleanup", help="Archive deployed proposals older than N days")
+    cleanup.add_argument("--days", type=int, default=7, help="Age threshold in days (default: 7)")
+    cleanup.add_argument("--dry-run", action="store_true")
+
     # show command
     show = sub.add_parser("show", help="Show proposal details")
     show.add_argument("proposal_id")
@@ -451,10 +501,21 @@ def main():
         if not proposals:
             print("No proposals found.")
             return
-        print(f"\n{'ID':12} {'PRIORITY':10} {'STATUS':10} {'TITLE'}")
-        print("-" * 70)
+        print(f"\n{'ID':12} {'PRIORITY':10} {'STATUS':10} {'SAFE':6} {'TITLE'}")
+        print("-" * 80)
         for p in proposals:
-            print(f"{p['id']:12} {p['priority']:10} {p['status']:10} {p['title'][:45]}")
+            # Infer priority if missing
+            priority = p.get("priority", "")
+            if not priority:
+                issue = p.get("issue", p.get("pattern", {}).get("issue", ""))
+                if issue in ("session_reset", "context_loss"):
+                    priority = "high"
+                elif issue in ("rate_limit", "model_fallback", "tool_error", "empty_response"):
+                    priority = "medium"
+                else:
+                    priority = "low"
+            safe = "✓" if p.get("safe_category") else "✗"
+            print(f"{p['id']:12} {priority:10} {p.get('status','?'):10} {safe:6} {p.get('title','?')[:45]}")
 
     elif args.cmd == "approve":
         ok = update_proposal_status(args.proposal_id, "approved")
@@ -475,6 +536,33 @@ def main():
         with open(path) as f:
             p = json.load(f)
         print(json.dumps(p, indent=2))
+
+    elif args.cmd == "cleanup":
+        archive_dir = PROPOSALS_DIR / "archived"
+        archive_dir.mkdir(parents=True, exist_ok=True)
+        now = datetime.now(timezone.utc)
+        archived = 0
+        for f in PROPOSALS_DIR.glob("*.json"):
+            with open(f) as fh:
+                p = json.load(fh)
+            if p.get("status") not in ("deployed", "rejected"):
+                continue
+            updated = p.get("updated_at", p.get("created_at", ""))
+            if not updated:
+                continue
+            try:
+                ts = datetime.fromisoformat(updated.replace("Z", "+00:00"))
+                age_days = (now - ts).days
+            except Exception:
+                continue
+            if age_days >= args.days:
+                if args.dry_run:
+                    print(f"  Would archive: {f.name} ({p.get('title','?')[:50]}, {age_days}d old)")
+                else:
+                    f.rename(archive_dir / f.name)
+                    print(f"  Archived: {f.name} ({age_days}d old)")
+                archived += 1
+        print(f"\n{'Would archive' if args.dry_run else 'Archived'} {archived} proposals.")
 
     else:
         parser.print_help()
