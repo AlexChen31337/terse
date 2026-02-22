@@ -16,6 +16,17 @@ Detect if this is a new session (reset/restart) and hydrate if so:
    d. Notify Bowen: "🔄 Session reset detected — I've reloaded context. Here's what I remember: [brief summary]"
 3. If SAME session: continue to other checks below.
 
+## EvoClaw Hub + Eye Health (every 6 hours)
+If 6+ hours since last EvoClaw check:
+1. Hub API: `curl -s http://localhost:8420/api/agents | python3 -c "import sys,json; agents=json.load(sys.stdin); print(f'{len(agents)} agents registered')" 2>/dev/null || echo "HUB DOWN"`
+2. Hub PID: `cat ~/.evoclaw-hub/evoclaw.pid 2>/dev/null && ps -p $(cat ~/.evoclaw-hub/evoclaw.pid) > /dev/null 2>&1 && echo "HUB OK" || echo "HUB DEAD"`
+3. Eye SSH: `ssh -i ~/.ssh/id_ed25519_alexchen -o ConnectTimeout=5 admin@192.168.99.188 "pgrep evoclaw > /dev/null && echo 'EYE OK' || echo 'EYE DOWN'"`
+4. Eye MQTT: `ssh -i ~/.ssh/id_ed25519_alexchen -o ConnectTimeout=5 admin@192.168.99.188 "nc -z -w2 192.168.99.44 1883 && echo 'MQTT OK' || echo 'MQTT DOWN'"`
+5. If Hub DOWN: restart with `cd ~/.evoclaw-hub && bash start.sh`
+6. If Eye DOWN: `ssh -i ~/.ssh/id_ed25519_alexchen admin@192.168.99.188 "cd ~/.evoclaw && bash start-agent.sh"`
+7. Update lastEvoclawCheck timestamp in memory/heartbeat-state.json
+8. Alert Bowen ONLY if restart fails
+
 ## GitHub Trending - Coding/Technical Models (every 12 hours)
 Watch for:
 - Open-source models good at technical data analysis
