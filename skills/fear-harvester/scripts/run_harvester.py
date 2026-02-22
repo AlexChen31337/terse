@@ -75,6 +75,7 @@ def format_report(
     simmer_trades: list[dict[str, Any]],
     simmer_briefing: str,
     mode: str,
+    whale_signal: str = "N/A",
 ) -> str:
     """Format a human-readable run report."""
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S AEDT")
@@ -83,6 +84,7 @@ def format_report(
         f"🌾 FearHarvester Run — {ts}",
         f"   {fg_icon} F&G: {fg['value']} ({fg['label']})",
         f"   BTC: ${btc_price:,.2f}",
+        f"   🐋 Whale: {whale_signal}",
         f"   Mode: {mode}",
         "",
         f"📊 HL Spot (UBTC/USDC):",
@@ -239,22 +241,61 @@ def main() -> None:
                     a["pnl_pct"], a["reason"],
                 )
 
-        # Only open new trades on Simmer during extreme fear
-        if fg["value"] <= config["buy_threshold"]:
-            simmer_trades = execute_fear_trades(
-                fg["value"],
-                simmer_client,
-                dry_run=(mode == "dry-run"),
-                bet_amount=args.simmer_bet,
-                max_bets=args.simmer_max_bets,
+        # --- Whale signal for trade confirmation ---
+        whale_signal = "NEUTRAL"
+        whale_confirms = True  # default: don't block if whale data unavailable
+        try:
+            import subprocess
+            whale_result = subprocess.run(
+                ["uv", "run", "whalecli", "scan", "--chain", "ETH", "--hours", "4",
+                 "--threshold", "60", "--format", "json"],
+                capture_output=True, text=True, timeout=30,
             )
+            if whale_result.returncode == 0 and whale_result.stdout.strip():
+                whale_data = json.loads(whale_result.stdout)
+                summary = whale_data.get("summary", {})
+                acc = summary.get("accumulating", 0)
+                dist = summary.get("distributing", 0)
+                avg_score = summary.get("avg_score", 0)
+
+                if acc > dist and avg_score >= 60:
+                    whale_signal = "BULLISH"
+                    whale_confirms = True
+                    logger.info("🐋 Whale signal: BULLISH (%d acc, %d dist, score %d) — confirms fear trade", acc, dist, avg_score)
+                elif dist > acc and avg_score >= 60:
+                    whale_signal = "BEARISH"
+                    whale_confirms = False
+                    logger.warning("🐋 Whale signal: BEARISH (%d acc, %d dist, score %d) — BLOCKING fear trade", acc, dist, avg_score)
+                else:
+                    whale_signal = "NEUTRAL"
+                    whale_confirms = True
+                    logger.info("🐋 Whale signal: NEUTRAL (%d acc, %d dist, score %d) — proceeding", acc, dist, avg_score)
+        except Exception as e:
+            logger.warning("Whale scan failed (non-blocking): %s", e)
+
+        # Only open new trades on Simmer during extreme fear + whale confirmation
+        if fg["value"] <= config["buy_threshold"]:
+            if not whale_confirms:
+                logger.warning(
+                    "Simmer: F&G=%d triggers buy but whale signal is %s — SKIPPING trades",
+                    fg["value"], whale_signal,
+                )
+            else:
+                simmer_trades = execute_fear_trades(
+                    fg["value"],
+                    simmer_client,
+                    dry_run=(mode == "dry-run"),
+                    bet_amount=args.simmer_bet,
+                    max_bets=args.simmer_max_bets,
+                )
     except Exception as e:
         logger.warning("Simmer integration error: %s", e)
         simmer_briefing = f"Simmer: unavailable ({e})"
 
     # --- Report ---
     report = format_report(
-        fg, btc_price, hl_action, hl_result, simmer_trades, simmer_briefing, mode
+        fg, btc_price, hl_action, hl_result, simmer_trades, simmer_briefing, mode,
+        whale_signal=whale_signal,
     )
     print(report)
 
@@ -266,6 +307,7 @@ def main() -> None:
         "mode": mode,
         "hl_action": hl_action,
         "hl_result": hl_result,
+        "whale_signal": whale_signal,
         "simmer_trades_count": len(simmer_trades),
         "simmer_trades": simmer_trades,
     }
