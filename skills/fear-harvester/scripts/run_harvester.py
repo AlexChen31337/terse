@@ -47,6 +47,7 @@ from simmer_integration import (  # noqa: E402
     execute_fear_trades,
     format_briefing_summary,
     get_briefing,
+    manage_positions,
 )
 
 logger = logging.getLogger("fear-harvester.runner")
@@ -227,7 +228,18 @@ def main() -> None:
         briefing = get_briefing(simmer_client)
         simmer_briefing = format_briefing_summary(briefing)
 
-        # Only trade on Simmer during extreme fear
+        # Run TP/SL management on every cycle (before new trades)
+        tpsl_actions = manage_positions(simmer_client, dry_run=(mode == "dry-run"))
+        if tpsl_actions:
+            logger.info("Simmer TP/SL: %d actions", len(tpsl_actions))
+            for a in tpsl_actions:
+                logger.info(
+                    "  %s %s '%s' (PnL %s) — %s",
+                    a["action"], a["side"].upper(), a["title"][:40],
+                    a["pnl_pct"], a["reason"],
+                )
+
+        # Only open new trades on Simmer during extreme fear
         if fg["value"] <= config["buy_threshold"]:
             simmer_trades = execute_fear_trades(
                 fg["value"],

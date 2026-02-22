@@ -402,6 +402,174 @@ def execute_fear_trades(
 
 
 # ---------------------------------------------------------------------------
+# TP/SL Position Management (v3)
+# ---------------------------------------------------------------------------
+
+# TP/SL thresholds
+TP_PNL_PCT = 0.40        # Take profit at +40% PnL
+SL_PNL_PCT = -0.25       # Stop loss at -25% PnL
+TP_YES_PRICE = 0.85      # Take profit if YES price ≥ 0.85 (diminishing returns)
+SL_YES_PRICE = 0.15      # Stop loss if YES price ≤ 0.15 (thesis broken)
+
+
+def _is_candle_market(title: str) -> bool:
+    """Return True if this is a short-term candle market (let it expire, don't manage)."""
+    return _is_short_term_candle(title)
+
+
+def _compute_pnl_pct(position: Any) -> Optional[float]:
+    """Compute PnL as a percentage of cost basis."""
+    pnl = float(_market_attr(position, "pnl") or 0)
+    cost = float(_market_attr(position, "cost_basis", "avg_price", "entry_price") or 0)
+    shares_yes = float(_market_attr(position, "shares_yes") or 0)
+    shares_no = float(_market_attr(position, "shares_no") or 0)
+    shares = max(shares_yes, shares_no)
+
+    # Try cost basis first
+    if cost > 0:
+        return pnl / cost
+
+    # Fallback: estimate cost from shares * entry price
+    entry_price = float(_market_attr(position, "avg_price_yes", "avg_price_no", "entry_price") or 0)
+    if entry_price > 0 and shares > 0:
+        estimated_cost = shares * entry_price
+        if estimated_cost > 0:
+            return pnl / estimated_cost
+
+    # Can't compute percentage without cost basis
+    return None
+
+
+def manage_positions(
+    client: Any,
+    *,
+    dry_run: bool = True,
+    tp_pnl_pct: float = TP_PNL_PCT,
+    sl_pnl_pct: float = SL_PNL_PCT,
+    tp_yes_price: float = TP_YES_PRICE,
+    sl_yes_price: float = SL_YES_PRICE,
+) -> list[dict[str, Any]]:
+    """
+    Scan open positions and apply TP/SL rules.
+
+    Rules:
+    1. Skip candle markets (5-15 min windows) — they resolve too fast
+    2. Take profit: PnL% ≥ tp_pnl_pct OR current YES price ≥ tp_yes_price
+    3. Stop loss: PnL% ≤ sl_pnl_pct OR current YES price ≤ sl_yes_price
+    4. USDC positions: more conservative (TP +30%, SL -15%)
+
+    Returns list of actions taken.
+    """
+    try:
+        positions = client.get_positions() or []
+    except Exception as e:
+        logger.warning("Simmer: failed to get positions for TP/SL: %s", e)
+        return []
+
+    actions = []
+
+    for pos in positions:
+        market_id = str(_market_attr(pos, "market_id", "id") or "")
+        title = str(_market_attr(pos, "question", "title") or "Unknown")
+        currency = str(_market_attr(pos, "currency") or "$SIM")
+        pnl = float(_market_attr(pos, "pnl") or 0)
+        shares_yes = float(_market_attr(pos, "shares_yes") or 0)
+        shares_no = float(_market_attr(pos, "shares_no") or 0)
+
+        if shares_yes == 0 and shares_no == 0:
+            continue  # No position
+
+        # Skip candle markets — let them expire
+        if _is_candle_market(title):
+            continue
+
+        # Current price
+        yes_price = _get_yes_prob(pos)
+        pnl_pct = _compute_pnl_pct(pos)
+
+        # More conservative thresholds for real USDC
+        is_real = currency.upper() == "USDC"
+        eff_tp_pnl = 0.30 if is_real else tp_pnl_pct
+        eff_sl_pnl = -0.15 if is_real else sl_pnl_pct
+
+        side = "yes" if shares_yes > shares_no else "no"
+        shares = max(shares_yes, shares_no)
+
+        # Determine action
+        action = None
+        reason = None
+
+        if pnl_pct is not None and pnl_pct >= eff_tp_pnl:
+            action = "TAKE_PROFIT"
+            reason = f"PnL {pnl_pct:+.0%} ≥ {eff_tp_pnl:+.0%} threshold"
+        elif yes_price is not None and side == "yes" and yes_price >= tp_yes_price:
+            action = "TAKE_PROFIT"
+            reason = f"YES price {yes_price:.2f} ≥ {tp_yes_price} (diminishing returns)"
+        elif pnl_pct is not None and pnl_pct <= eff_sl_pnl:
+            action = "STOP_LOSS"
+            reason = f"PnL {pnl_pct:+.0%} ≤ {eff_sl_pnl:+.0%} threshold"
+        elif yes_price is not None and side == "yes" and yes_price <= sl_yes_price:
+            action = "STOP_LOSS"
+            reason = f"YES price {yes_price:.2f} ≤ {sl_yes_price} (thesis broken)"
+        elif yes_price is not None and side == "no" and yes_price >= (1.0 - sl_yes_price):
+            action = "STOP_LOSS"
+            reason = f"YES price {yes_price:.2f} ≥ {1.0 - sl_yes_price:.2f} (NO thesis broken)"
+
+        if action is None:
+            continue
+
+        # Execute exit
+        exit_side = "no" if side == "yes" else "yes"  # Sell by buying opposite
+        action_record = {
+            "market_id": market_id,
+            "title": title[:70],
+            "action": action,
+            "reason": reason,
+            "side": side,
+            "shares": shares,
+            "pnl": pnl,
+            "pnl_pct": f"{pnl_pct:+.1%}" if pnl_pct is not None else "?",
+            "currency": currency,
+            "dry_run": dry_run,
+            "result": None,
+        }
+
+        if dry_run:
+            logger.info(
+                "[DRY RUN] %s: %s %.1f shares of '%s' (%s) — %s",
+                action, side.upper(), shares, title[:50], reason,
+                f"PnL ${pnl:+.2f}",
+            )
+            action_record["result"] = "DRY_RUN"
+        else:
+            try:
+                result = client.trade(
+                    market_id=market_id,
+                    side=exit_side,
+                    amount=shares,
+                    source="fear-harvester-tpsl",
+                    reasoning=f"{action}: {reason}",
+                )
+                action_record["result"] = result
+                logger.info(
+                    "✅ %s: Exited %s %.1f shares of '%s' — %s",
+                    action, side.upper(), shares, title[:50], result,
+                )
+            except Exception as e:
+                logger.error("TP/SL exit failed for %s: %s", market_id, e)
+                action_record["result"] = f"ERROR: {e}"
+
+        actions.append(action_record)
+
+    if actions:
+        logger.info("Simmer TP/SL: %d actions taken", len(actions))
+    else:
+        logger.debug("Simmer TP/SL: no actions needed")
+
+    return actions
+
+
+# ---------------------------------------------------------------------------
 # Briefing (heartbeat)
 # ---------------------------------------------------------------------------
 
@@ -459,9 +627,10 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
     parser = argparse.ArgumentParser(description="Simmer crypto fear trades")
-    parser.add_argument("--fg", type=int, required=True, help="Current Fear & Greed value")
+    parser.add_argument("--fg", type=int, default=None, help="Current Fear & Greed value")
     parser.add_argument("--live", action="store_true", help="Execute real trades (virtual $SIM)")
     parser.add_argument("--briefing", action="store_true", help="Just show briefing, no trades")
+    parser.add_argument("--manage", action="store_true", help="Run TP/SL position management")
     args = parser.parse_args()
 
     client = _load_client()
@@ -469,6 +638,13 @@ if __name__ == "__main__":
     if args.briefing:
         b = get_briefing(client)
         print(format_briefing_summary(b))
-    else:
+    elif args.manage:
+        actions = manage_positions(client, dry_run=not args.live)
+        print(json.dumps(actions, indent=2, default=str))
+        if not actions:
+            print("No TP/SL actions needed.")
+    elif args.fg is not None:
         trades = execute_fear_trades(args.fg, client, dry_run=not args.live)
         print(json.dumps(trades, indent=2, default=str))
+    else:
+        parser.error("Specify --fg VALUE, --briefing, or --manage")
