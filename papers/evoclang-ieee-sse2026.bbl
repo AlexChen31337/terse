@@ -37,11 +37,6 @@ W.~Tan \emph{et~al.}, ``Head-of-line blocking: Causes and solutions,''
 R.~Ford, ``Circuit breakers: Ensuring availability in microservices,'' in
   \emph{IEEE Software}, 2000.
 
-\bibitem{atkinson1971human}
-R.~C. Atkinson and R.~M. Shiffrin, ``Human memory: A proposed system and its
-  control processes,'' \emph{Psychology of Learning and Motivation}, vol.~8,
-  pp. 73--110, 1971.
-
 \bibitem{wang2023survey}
 L.~Wang, C.~Ma, Z.~Feng, Y.~Zhang \emph{et~al.}, ``A survey on large language
   model based autonomous agents,'' \emph{arXiv preprint arXiv:2308.11432},
@@ -144,6 +139,11 @@ J.~Z. Park \emph{et~al.}, ``Generative agents: Interactive simulacra of human
 Y.~Ma \emph{et~al.}, ``Agentboard: An interactive board for multi-turn llm
   agent evaluation,'' \emph{arXiv preprint arXiv:2401.12950}, 2024.
 
+\bibitem{zhong2023token}
+W.~Zhong, L.~Guo, Q.~Gao, H.~Ye, and Y.~Wang, ``Memorybank: Enhancing large
+  language models with long-term memory,'' \emph{arXiv preprint
+  arXiv:2305.10250}, 2023.
+
 \bibitem{chen2023longlora}
 L.~Chen \emph{et~al.}, ``Longlora: Efficient long-context fine-tuning,''
   \emph{arXiv preprint arXiv:2305.14824}, 2023.
@@ -219,9 +219,6 @@ Y.~Ma \emph{et~al.}, ``Eureka: Evolutionary automatic curriculum learning for
 J.~Von~Neumann, ``Theory of self-reproducing automata,'' \emph{IEEE Annals of
   the History of Computing}, 1966.
 
-\bibitem{quine_thompson}
-K.~Thompson, ``A quick quine,'' 2009.
-
 \bibitem{smith1984reflection}
 B.~C. Smith, ``Reflection and semantics in lisp,'' in \emph{POPL}, 1984.
 
@@ -279,5 +276,10 @@ J.~Lin \emph{et~al.}, ``Tinyml: Machine learning at the edge,'' \emph{arXiv
 \bibitem{shi2016edge}
 W.~Shi \emph{et~al.}, ``Edge computing: Vision and challenges,'' \emph{IEEE
   Internet of Things Journal}, 2016.
+
+\bibitem{atkinson1971human}
+R.~C. Atkinson and R.~M. Shiffrin, ``Human memory: A proposed system and its
+  control processes,'' \emph{Psychology of Learning and Motivation}, vol.~8,
+  pp. 73--110, 1971.
 
 \end{thebibliography}

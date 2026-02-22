@@ -59,6 +59,9 @@ def analyze(days: int = 7) -> dict:
     if not outcomes:
         return {"patterns": [], "meta": {"outcomes": 0, "days": days}}
 
+    # ── Import high-severity set ─────────────────────────────────────────────
+    from observer import HIGH_SEVERITY_ISSUES
+
     # ── Group by (task_type, issue) pairs ──────────────────────────────────────
     groups = defaultdict(list)
     for o in outcomes:
@@ -67,11 +70,53 @@ def analyze(days: int = 7) -> dict:
         for issue in issues:
             groups[(task, issue)].append(o)
 
+    # ── Group by error message similarity ──────────────────────────────────────
+    error_groups = defaultdict(list)
+    for o in outcomes:
+        err = o.get("error_msg", "")
+        if err:
+            # Normalize: lowercase, strip numbers/hashes for grouping
+            import re
+            normalized = re.sub(r'[0-9a-f]{8,}', '<ID>', err.lower().strip())
+            normalized = re.sub(r'\d+', '<N>', normalized)
+            error_groups[normalized[:100]].append(o)
+
+    # ── Cross-source correlation ───────────────────────────────────────────────
+    # Detect when related issues appear across different sources
+    cross_source_correlations = []
+    CORRELATED_ISSUES = {
+        frozenset({"session_reset", "context_loss"}): "context_management",
+        frozenset({"cost_overrun", "wrong_model_tier"}): "model_routing",
+        frozenset({"wal_miss", "context_loss"}): "persistence_gap",
+        frozenset({"hydration_fail", "context_loss"}): "session_recovery",
+        frozenset({"empty_response", "tool_error"}): "tool_reliability",
+    }
+    issue_sources = defaultdict(set)
+    for o in outcomes:
+        src = o.get("source", "manual")
+        for issue in o.get("issues", []):
+            issue_sources[issue].add(src)
+
+    active_issues = set(issue_sources.keys())
+    for issue_pair, correlation_name in CORRELATED_ISSUES.items():
+        if issue_pair.issubset(active_issues):
+            sources_involved = set()
+            for iss in issue_pair:
+                sources_involved.update(issue_sources[iss])
+            if len(sources_involved) > 1:
+                cross_source_correlations.append({
+                    "issues": sorted(issue_pair),
+                    "correlation": correlation_name,
+                    "sources": sorted(sources_involved),
+                })
+
     # ── Score each group ───────────────────────────────────────────────────────
     patterns = []
     for (task, issue), group_outcomes in groups.items():
         n = len(group_outcomes)
-        if n < 2:  # ignore one-offs
+        # Lower threshold for high-severity issues (n>=1)
+        min_threshold = 1 if issue in HIGH_SEVERITY_ISSUES else 2
+        if n < min_threshold:
             continue
 
         failures = [o for o in group_outcomes if not o.get("success")]
@@ -136,12 +181,63 @@ def analyze(days: int = 7) -> dict:
     overall_quality = sum(o.get("quality", 3) for o in outcomes) / len(outcomes)
     health_score = round((total_success / len(outcomes)) * (overall_quality / 5.0), 3)
 
+    # ── Add error-group patterns ──────────────────────────────────────────────
+    for norm_err, err_outcomes in error_groups.items():
+        if len(err_outcomes) >= 2:
+            # Check if already covered by task/issue patterns
+            n = len(err_outcomes)
+            failures = [o for o in err_outcomes if not o.get("success")]
+            avg_quality = sum(o.get("quality", 3) for o in err_outcomes) / n
+            quality_deficit = 5.0 - avg_quality
+            impact = (n / len(outcomes)) * quality_deficit
+
+            sources = list(set(o.get("source", "manual") for o in err_outcomes))
+            patterns.append({
+                "id": f"errmsg-{hash(norm_err) % 99999:05d}-{n}",
+                "category": "error_cluster",
+                "task_type": "mixed",
+                "issue": "error_cluster",
+                "frequency": n,
+                "impact_score": round(impact, 4),
+                "failure_rate": round(len(failures) / n, 3),
+                "avg_quality": round(avg_quality, 2),
+                "description": f"Error cluster ({n}x across {sources}): {norm_err[:60]}",
+                "sample_notes": [o.get("error_msg", "") for o in err_outcomes[:3]],
+                "suggested_action": "Investigate common error pattern",
+                "sources": sources,
+            })
+
+    # Re-sort after adding error clusters
+    patterns.sort(key=lambda p: -p["impact_score"])
+
+    # ── Recurrence detection across analysis cycles ────────────────────────────
+    prev_patterns = {}
+    if PATTERNS_FILE.exists():
+        try:
+            with open(PATTERNS_FILE) as f:
+                prev = json.load(f)
+            for p in prev.get("patterns", []):
+                key = (p.get("task_type"), p.get("issue"))
+                prev_patterns[key] = p
+        except Exception:
+            pass
+
+    for p in patterns:
+        key = (p.get("task_type"), p.get("issue"))
+        if key in prev_patterns:
+            p["recurring"] = True
+            prev_freq = prev_patterns[key].get("frequency", 0)
+            p["trend"] = "increasing" if p["frequency"] > prev_freq else "stable"
+        else:
+            p["recurring"] = False
+
     result = {
         "meta": {
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "outcomes": len(outcomes),
             "days": days,
             "health_score": health_score,
+            "cross_source_correlations": cross_source_correlations,
         },
         "patterns": patterns[:20],  # top 20
     }

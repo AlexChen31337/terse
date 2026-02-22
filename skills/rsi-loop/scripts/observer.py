@@ -3,6 +3,9 @@
 RSI Loop - Observer
 Logs agent turn outcomes to a structured JSONL store.
 Called at end of each significant task/turn to build the improvement dataset.
+
+Platform-agnostic: covers OpenClaw sessions, EvoClaw agents, cron jobs,
+sub-agents, and self-governance failures — not just EvoClaw tool tasks.
 """
 
 import argparse
@@ -19,6 +22,17 @@ SKILL_DIR = Path(__file__).parent.parent
 DATA_DIR = SKILL_DIR / "data"
 OUTCOMES_FILE = DATA_DIR / "outcomes.jsonl"
 
+# ── Source taxonomy (platform that generated the event) ───────────────────────
+SOURCES = [
+    "openclaw",       # session resets, compaction, heartbeat, model fallbacks
+    "evoclaw",        # tool loop, MQTT, edge agent timeouts
+    "cron",           # scheduled job failures
+    "subagent",       # sub-agent spawning / result failures
+    "self_governance", # forgot WAL, VBR miss, persona drift
+    "operational",    # wrong model tier, cost overruns, gateway issues
+    "manual",         # human-logged via rsi_cli.py log (default/backward compat)
+]
+
 # ── Task type taxonomy ─────────────────────────────────────────────────────────
 TASK_TYPES = [
     "code_generation", "code_debug", "code_review",
@@ -30,12 +44,29 @@ TASK_TYPES = [
 ]
 
 # ── Issue taxonomy ─────────────────────────────────────────────────────────────
+# Extend with new platform-agnostic issues; old entries kept for backward compat.
 ISSUE_TYPES = [
-    "rate_limit", "model_fallback", "tool_error", "wrong_output",
-    "incomplete_task", "context_loss", "memory_miss", "skill_gap",
-    "bad_routing", "slow_response", "over_confirmation", "repeated_mistake",
-    "missing_tool", "wrong_model_tier", "compaction_lost_context", "other"
+    # Model / routing issues
+    "rate_limit", "model_fallback", "wrong_model_tier", "cost_overrun",
+    "bad_routing", "slow_response",
+    # Tool / execution issues
+    "tool_error", "empty_response", "missing_tool", "incomplete_task",
+    # Output quality issues
+    "wrong_output",
+    # Memory / context issues
+    "context_loss", "memory_miss", "compaction_lost_context", "session_reset",
+    "hydration_fail",
+    # Self-governance issues
+    "over_confirmation", "repeated_mistake", "skill_gap", "wal_miss",
+    # Catch-all
+    "other",
 ]
+
+# High-severity issues that warrant immediate attention (threshold n>=1)
+HIGH_SEVERITY_ISSUES = {
+    "tool_error", "wrong_output", "empty_response",
+    "session_reset", "cost_overrun", "wal_miss",
+}
 
 def load_outcomes():
     if not OUTCOMES_FILE.exists():
@@ -62,18 +93,31 @@ def log_outcome(
     notes: str = "",
     session_id: str = "",
     agent_id: str = "main",
+    # v2 additions — optional, default-safe for backward compat
+    source: str = "manual",
+    error_msg: str = "",
 ):
-    """Log a single turn outcome."""
+    """Log a single turn outcome.
+
+    Args:
+        source: Platform that generated the event — one of SOURCES.
+                Defaults to "manual" (backward compatible with old CLI calls).
+        error_msg: Raw error message string (used by auto_observe for pattern matching).
+    """
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     if task_type not in TASK_TYPES:
         task_type = "unknown"
+
+    if source not in SOURCES:
+        source = "manual"
 
     record = {
         "id": str(uuid.uuid4())[:8],
         "ts": datetime.now(timezone.utc).isoformat(),
         "agent_id": agent_id,
         "session_id": session_id or os.environ.get("OPENCLAW_SESSION_ID", ""),
+        "source": source,
         "task_type": task_type,
         "model": model or os.environ.get("OPENCLAW_MODEL", ""),
         "success": success,
@@ -83,6 +127,10 @@ def log_outcome(
         "tags": tags or [],
         "notes": notes,
     }
+
+    # Only include error_msg if provided (keeps old records clean)
+    if error_msg:
+        record["error_msg"] = error_msg
 
     with open(OUTCOMES_FILE, "a") as f:
         f.write(json.dumps(record) + "\n")
@@ -147,6 +195,9 @@ def main():
     log_cmd.add_argument("--notes", default="")
     log_cmd.add_argument("--agent-id", default="main")
     log_cmd.add_argument("--session-id", default="")
+    log_cmd.add_argument("--source", default="manual", choices=SOURCES,
+                         help="Platform that generated the event")
+    log_cmd.add_argument("--error-msg", default="", help="Raw error message string")
 
     # stats command
     stats_cmd = sub.add_parser("stats", help="Show outcome stats")
@@ -169,8 +220,10 @@ def main():
             notes=args.notes,
             agent_id=args.agent_id,
             session_id=args.session_id,
+            source=args.source,
+            error_msg=args.error_msg,
         )
-        print(f"Logged: {record['id']} | {record['task_type']} | success={record['success']} | quality={record['quality']}")
+        print(f"Logged: {record['id']} | {record['source']} | {record['task_type']} | success={record['success']} | quality={record['quality']}")
 
     elif args.cmd == "stats":
         stats = stats_summary(args.days)
@@ -179,6 +232,8 @@ def main():
     elif args.cmd == "types":
         print("Task types:", TASK_TYPES)
         print("Issue types:", ISSUE_TYPES)
+        print("Sources:", SOURCES)
+        print("High-severity issues (n>=1 threshold):", sorted(HIGH_SEVERITY_ISSUES))
 
     else:
         parser.print_help()

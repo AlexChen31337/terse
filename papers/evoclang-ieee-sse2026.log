@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  20 FEB 2026 12:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  22 FEB 2026 12:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1105,308 +1105,273 @@ LaTeX Font Info:    Trying to load font information for T1+pcr on input line 23
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 230
+LaTeX Font Info:    Trying to load font information for U+msa on input line 232
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 230
+LaTeX Font Info:    Trying to load font information for U+msb on input line 232
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texm
-f-dist/fonts/enc/dvips/base/8r.enc}
+)
+Underfull \hbox (badness 1817) in paragraph at lines 241--242
+[]\T1/ptm/m/n/10 AI agent tech-nolo-gies are ex-pe-ri-enc-ing un-prece-dented
+ []
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-
+dist/fonts/enc/dvips/base/8r.enc}
 
 
 ]
-Underfull \hbox (badness 1817) in paragraph at lines 286--287
-\T1/ptm/m/n/10 tro-duce a declar-a-tive genome spec-i-fi-ca-tion that en-codes
- []
-
-[2]
-Underfull \hbox (badness 2221) in paragraph at lines 302--303
-\T1/ptm/m/n/10 Agents reg-is-ter de-cen-tral-ized iden-ti-ties (DIDs), ac-cu-mu
--
- []
-
-
-Underfull \hbox (badness 6608) in paragraph at lines 315--316
+Underfull \hbox (badness 6608) in paragraph at lines 295--296
 []\T1/ptm/b/n/10 Intelligent Model Router \T1/ptm/m/n/10 (Ÿ[][]VI[][]): A 15-di
 mension
  []
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 360--361
+
+Underfull \hbox (badness 2980) in paragraph at lines 301--302
+[]\T1/ptm/b/n/10 Self-Governance Mech-a-nisms \T1/ptm/m/n/10 (Ÿ[][]IX[][]): Fou
+r pro-to-cols
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 340--341
  \T1/ptm/m/it/10 2) Task De-com-po-si-tion Agents: [][][] \T1/ptm/m/n/10 Au-to-
-GPT [[][]8[][]] and
+GPT [[][]7[][]] and
  []
 
 
-Underfull \hbox (badness 3679) in paragraph at lines 360--361
+Underfull \hbox (badness 3679) in paragraph at lines 340--341
 \T1/ptm/m/n/10 These sys-tems main-tain task queues, ex-e-cute sub-tasks
  []
 
 
-Underfull \hbox (badness 1371) in paragraph at lines 371--372
+Underfull \hbox (badness 1371) in paragraph at lines 351--352
 []\T1/ptm/b/n/10 Domain gen-er-al-ity: \T1/ptm/m/n/10 Voy-ager's skills are con
 -fined to
  []
 
 
-Underfull \hbox (badness 2478) in paragraph at lines 377--378
+Underfull \hbox (badness 2478) in paragraph at lines 357--358
 []\T1/ptm/b/n/10 Evolutionary op-ti-miza-tion: \T1/ptm/m/n/10 Voy-ager adds ski
 lls but
  []
 
 
-Underfull \hbox (badness 2384) in paragraph at lines 387--388
+Underfull \hbox (badness 2384) in paragraph at lines 367--368
 []\T1/ptm/b/n/10 Eviction pol-icy: \T1/ptm/m/n/10 LRU evic-tion is recency-base
 d, not
  []
 
-
-Underfull \hbox (badness 2020) in paragraph at lines 404--405
+[3]
+Underfull \hbox (badness 2020) in paragraph at lines 384--385
  \T1/ptm/m/it/10 6) Tool Use and Func-tion Call-ing: [][][] \T1/ptm/m/n/10 Tool
--Former [[][]18[][]]
+-Former [[][]17[][]]
  []
 
-[4]
-Underfull \hbox (badness 1565) in paragraph at lines 444--445
+
+Underfull \hbox (badness 1565) in paragraph at lines 424--425
  \T1/ptm/m/it/10 3) Gen-er-a-tive Agents and So-cial Sim-u-la-tion: [][][] \T1/
 ptm/m/n/10 Park et
  []
 
 
-LaTeX Warning: Citation `zhong2023token' on page 5 undefined on input line 454.
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 458--459
+Underfull \hbox (badness 10000) in paragraph at lines 438--439
  \T1/ptm/m/it/10 1) Con-text Win-dow Ex-ten-sion: [][][] \T1/ptm/m/n/10 Meth-od
 s like
  []
 
 
-Underfull \hbox (badness 3138) in paragraph at lines 458--459
+Underfull \hbox (badness 3138) in paragraph at lines 438--439
 \T1/ptm/m/n/10 win-dows through ar-chi-tec-tural mod-i-fi-ca-tions or train-ing
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 478--479
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 458--459
  \T1/ptm/m/it/10 3) Com-pres-sive Mem-ory: [][][] \T1/ptm/m/n/10 The Com-pres-s
 ive
  []
 
 
-Underfull \hbox (badness 7631) in paragraph at lines 478--479
+Underfull \hbox (badness 7631) in paragraph at lines 458--459
 \T1/ptm/m/n/10 Trans-former [[][]36[][]] re-cur-sively sum-ma-rizes old con-tex
 t,
  []
 
 
-Underfull \hbox (badness 3158) in paragraph at lines 478--479
+Underfull \hbox (badness 3158) in paragraph at lines 458--459
 \T1/ptm/m/n/10 re-duc-ing se-quence length while pre-serv-ing in-for-ma-tion.
  []
 
 
-Underfull \hbox (badness 1769) in paragraph at lines 480--481
+Underfull \hbox (badness 1769) in paragraph at lines 460--461
 \T1/ptm/m/n/10 be im-por-tant. Our dis-til-la-tion en-gine ex-tracts \T1/ptm/m/
 it/10 struc-tured
  []
 
 
-Underfull \hbox (badness 2573) in paragraph at lines 480--481
+Underfull \hbox (badness 2573) in paragraph at lines 460--461
 \T1/ptm/m/it/10 facts\T1/ptm/m/n/10 ^^Vnot prose sum-maries^^Vpreserving key in
 -for-ma-tion
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 519--520
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
  \T1/ptm/m/it/10 2) Per-for-mance Op-ti-miza-tion: [][][] \T1/ptm/m/n/10 Dist-S
 erve [[][]42[][]] and
  []
 
 
-Underfull \hbox (badness 1565) in paragraph at lines 519--520
+Underfull \hbox (badness 1565) in paragraph at lines 499--500
 \T1/ptm/m/n/10 rout-ing, these sys-tems ben-e-fit from our health reg-istry:
  []
 
 
-Underfull \hbox (badness 7291) in paragraph at lines 555--556
- \T1/ptm/m/it/10 4) De-lib-er-ate Search: [][][] \T1/ptm/m/n/10 Tree of Thought
-s [[][]52[][]] and
+Underfull \hbox (badness 4819) in paragraph at lines 517--518
+[]\T1/ptm/m/n/10 Blockchain en-ables trust-less co-or-di-na-tion [[][]59[][]], 
+[[][]60[][]].
  []
 
-[6]
-Underfull \hbox (badness 6961) in paragraph at lines 585--586
-[]\T1/ptm/m/n/10 Blockchain tech-nol-ogy en-ables trust-less co-or-di-na-tion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 589--590
- \T1/ptm/m/it/10 1) De-cen-tral-ized Iden-tity: [][][] \T1/ptm/m/n/10 De-cen-tr
-al-ized Iden-ti-fiers
- []
-
-
-Underfull \hbox (badness 1394) in paragraph at lines 589--590
-\T1/ptm/m/n/10 (DIDs) [[][]62[][]] pro-vide cryptographically-verifiable iden-t
-i-ties
- []
-
+[5]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 611.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 523.
 
-Underfull \hbox (badness 6842) in paragraph at lines 677--678
+Underfull \hbox (badness 6842) in paragraph at lines 589--590
 []\T1/ptm/b/n/10 Edge (512MB--4GB RAM): \T1/ptm/m/n/10 Lo-cal skill ex-e-cu-tio
 n,
  []
 
-[7]
-Underfull \hbox (badness 1661) in paragraph at lines 777--778
+
+Underfull \hbox (badness 1661) in paragraph at lines 705--706
 []\T1/ptm/b/n/10 Memory Man-ager: \T1/ptm/m/n/10 Main-tains Hot (5KB) and Warm
  []
 
-
-Underfull \hbox (badness 2478) in paragraph at lines 813--814
+[6]
+Underfull \hbox (badness 2478) in paragraph at lines 741--742
 []$\OML/cmm/m/it/10 S \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 s[];
  [] ; s[]\OMS/cmsy/m/n/10 g$ \T1/ptm/m/it/10 is the \T1/ptm/b/it/10 skill set\T
 1/ptm/m/it/10 : each $\OML/cmm/m/it/10 s[] \OT1/cmr/m/n/10 =
  []
 
-[8]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 836.
+put line 764.
 
-Underfull \hbox (badness 10000) in paragraph at lines 850--851
+Underfull \hbox (badness 10000) in paragraph at lines 778--779
 [] \T1/ptm/b/n/10 re-turn \T1/ptm/m/sc/10 Er-ror\T1/ptm/m/n/10 (``Parameter out
  of
  []
 
 
-Underfull \hbox (badness 6658) in paragraph at lines 853--854
+Underfull \hbox (badness 6658) in paragraph at lines 781--782
 [] $\OML/cmm/m/it/10 total[]resources \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 total
 []resources \OT1/cmr/m/n/10 +
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 871.
- [9]
-[10]
-Underfull \hbox (badness 2529) in paragraph at lines 994--995
+nput line 799.
+[7] [8]
+Underfull \hbox (badness 2529) in paragraph at lines 903--904
 []\T1/ptm/m/n/10 Importantly, hu-man mem-ory fea-tures \T1/ptm/m/it/10 strate-g
 ic for-get-
  []
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[9] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-145.
+054.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 1147--1148
+Underfull \hbox (badness 10000) in paragraph at lines 1056--1057
 [][][][][][][][][][]
  []
 
-[11] [12]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[13]
-Underfull \hbox (badness 1895) in paragraph at lines 1478--1479
+[10] [11]
+Underfull \hbox (badness 1895) in paragraph at lines 1387--1388
 []\T1/ptm/m/n/10 Tool def-i-ni-tions in skill.toml are con-verted to LLM-
  []
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 1641--1642
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 1550--1551
 []\T1/ptm/b/n/10 Drawdown Penalty \T1/ptm/m/n/10 ($\OML/cmm/m/it/10 w[] \OT1/cm
 r/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1$\T1/ptm/m/n/10 ): $\OT1/cmr/m/n
 /10 (1 \OMS/cmsy/m/n/10 ^^@
  []
 
-[15]
-Underfull \hbox (badness 2334) in paragraph at lines 1834--1835
+[13] [14]
+Underfull \hbox (badness 2334) in paragraph at lines 1743--1744
 []\T1/ptm/m/n/10 Cloud de-ploy-ment en-ables quick ex-per-i-men-ta-tion and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1841--1842
+Underfull \hbox (badness 10000) in paragraph at lines 1750--1751
 []\T1/ptm/b/n/10 Topics: \T1/pcr/m/n/10 evoclaw/agents/{id}/commands\T1/ptm/m/n
 /10 ,
  []
 
 
-Underfull \hbox (badness 2894) in paragraph at lines 1859--1860
+Underfull \hbox (badness 2894) in paragraph at lines 1768--1769
 []\T1/ptm/b/n/10 Orchestrator: \T1/ptm/m/n/10 Go 1.21+, con-cur-rent with gor-o
 u-tines,
  []
 
-[16]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \hbox (badness 5504) in paragraph at lines 2029--2030
+[15]
+Underfull \hbox (badness 5504) in paragraph at lines 1938--1939
  \T1/ptm/m/it/10 d) For-mal Ver-i-fi-ca-tion.: [][] \T1/ptm/m/n/10 Safety con-s
 traints ver-i-fied
  []
 
 
-Underfull \hbox (badness 2189) in paragraph at lines 2039--2040
+Underfull \hbox (badness 2189) in paragraph at lines 1948--1949
 []\T1/ptm/m/n/10 We present three de-tailed case stud-ies demon-strat-ing
  []
 
-[17] [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 2412--2413
-[]\T1/ptm/m/n/10 By im-ple-men-ta-tion, the mu-ta-tion op-er-a-tors in
- []
-
-
-Overfull \hbox (2.40259pt too wide) in paragraph at lines 2437--2439
+[16] [17]
+Overfull \hbox (2.40259pt too wide) in paragraph at lines 2267--2269
 [][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (16.80273pt too wide) in paragraph at lines 2440--2441
+Overfull \hbox (16.80273pt too wide) in paragraph at lines 2270--2271
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (12.00269pt too wide) in paragraph at lines 2446--2447
+Overfull \hbox (12.00269pt too wide) in paragraph at lines 2276--2277
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (12.00269pt too wide) in paragraph at lines 2449--2450
+Overfull \hbox (12.00269pt too wide) in paragraph at lines 2279--2280
 [][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (7.20264pt too wide) in paragraph at lines 2454--2455
+Overfull \hbox (7.20264pt too wide) in paragraph at lines 2284--2285
 [][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (21.60278pt too wide) in paragraph at lines 2466--2467
+Overfull \hbox (21.60278pt too wide) in paragraph at lines 2296--2297
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (16.80273pt too wide) in paragraph at lines 2483--2484
+Overfull \hbox (16.80273pt too wide) in paragraph at lines 2313--2314
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (21.60278pt too wide) in paragraph at lines 2484--2485
+Overfull \hbox (21.60278pt too wide) in paragraph at lines 2314--2315
 [][][][][][][][][][][][][][][][][] 
  []
 
@@ -1415,8 +1380,22 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-) [20] [21]
-(./evoclang-ieee-sse2026.bbl [22]
+) [18]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[19] [20]
+Underfull \hbox (badness 3138) in paragraph at lines 2660--2661
+[][]\T1/ptm/b/n/10 Theorem A.4 \T1/ptm/m/n/10 (Rout-ing Cost Op-ti-mal-ity)\T1/
+ptm/b/n/10 . []\T1/ptm/m/it/10 Let $\OMS/cmsy/m/n/10 M \OT1/cmr/m/n/10 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2678--2679
+[]\T1/ptm/m/n/10 By im-ple-men-ta-tion, the mu-ta-tion op-er-a-tors in
+ []
+
+(./evoclang-ieee-sse2026.bbl [21]
 Underfull \hbox (badness 10000) in paragraph at lines 171--173
 []\T1/ptm/m/n/8 Y. Wu \T1/ptm/m/it/8 et al.\T1/ptm/m/n/8 , ``Scal-ing laws for 
 re-trieval,'' \T1/ptm/m/it/8 arXiv preprint
@@ -1434,26 +1413,24 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[23] (./evoclang-ieee-sse2026.aux)
+[22
+
+] (./evoclang-ieee-sse2026.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `evoclang-ieee-sse2026.out' has not changed.
-(rerunfilecheck)             Checksum: EA70E30DDABA3C042AF7D892F7ED6E9C;27967.
+(rerunfilecheck)             Checksum: DE0E0C1046C4FA65D978FFCAE39CCBA7;25474.
  ) 
 Here is how much of TeX's memory you used:
- 39916 strings out of 476106
- 892659 string characters out of 5793934
- 2411975 words of memory out of 5000000
- 60382 multiletter control sequences out of 15000+600000
+ 39909 strings out of 476106
+ 892771 string characters out of 5793934
+ 2424975 words of memory out of 5000000
+ 60399 multiletter control sequences out of 15000+600000
  679089 words of font info for 172 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 84i,14n,94p,1455b,2036s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,14n,94p,906b,2042s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texli
@@ -1474,10 +1451,10 @@ ype1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on evoclang-ieee-sse2026.pdf (23 pages, 421390 bytes).
+Output written on evoclang-ieee-sse2026.pdf (22 pages, 408862 bytes).
 PDF statistics:
- 1944 PDF objects out of 2073 (max. 8388607)
- 1840 compressed objects within 19 object streams
- 918 named destinations out of 1000 (max. 500000)
- 1389 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1854 PDF objects out of 2073 (max. 8388607)
+ 1752 compressed objects within 18 object streams
+ 894 named destinations out of 1000 (max. 500000)
+ 1269 words of extra memory for PDF output out of 10000 (max. 10000000)
 

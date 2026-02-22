@@ -8,55 +8,53 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: evoclang-extended-full.bib
-Warning--I didn't find a database entry for "zhong2023token"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--empty journal in openai2023function
 Warning--empty journal in vectifyai_pageindex
-Warning--empty journal in quine_thompson
 Warning--empty journal in swan2018blockchain
 
 Done.
 You've used 65 entries,
             4087 wiz_defined-function locations,
-            1089 strings with 14597 characters,
-and the built_in function-call counts, 27570 in all, are:
-= -- 2039
-> -- 565
+            1088 strings with 14687 characters,
+and the built_in function-call counts, 27756 in all, are:
+= -- 2051
+> -- 582
 < -- 9
-+ -- 281
-- -- 138
-* -- 1119
-:= -- 4757
++ -- 289
+- -- 142
+* -- 1131
+:= -- 4778
 add.period$ -- 130
 call.type$ -- 65
 change.case$ -- 61
 chr.to.int$ -- 21
-cite$ -- 69
-duplicate$ -- 2461
-empty$ -- 2973
-format.name$ -- 186
-if$ -- 6322
+cite$ -- 68
+duplicate$ -- 2473
+empty$ -- 2985
+format.name$ -- 191
+if$ -- 6367
 int.to.chr$ -- 0
 int.to.str$ -- 65
-missing$ -- 460
+missing$ -- 464
 newline$ -- 218
 num.names$ -- 65
-pop$ -- 1269
+pop$ -- 1280
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2167
+skip$ -- 2179
 stack$ -- 0
 substring$ -- 109
-swap$ -- 1270
+swap$ -- 1282
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 65
-warning$ -- 4
+warning$ -- 3
 while$ -- 69
 width$ -- 67
-write$ -- 536
-(There were 5 warnings)
+write$ -- 537
+(There were 3 warnings)

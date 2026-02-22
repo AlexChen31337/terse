@@ -320,6 +320,8 @@ Examples:
     cycle_p.add_argument("--days", type=int, default=7)
     cycle_p.add_argument("--auto-approve-below-mins", type=int, default=20)
     cycle_p.add_argument("--dry-run", action="store_true")
+    cycle_p.add_argument("--auto", action="store_true",
+                         help="Run auto-fix for safe categories after analysis")
 
     # gene
     gene_p = sub.add_parser("gene", help="Manage the Gene registry")
@@ -335,6 +337,17 @@ Examples:
     events_p = sub.add_parser("events", help="Show EvolutionEvent audit log")
     events_p.add_argument("--last", type=int, default=10,
                           help="Show last N events (default: 10)")
+
+    # auto-observe
+    ao_p = sub.add_parser("auto-observe", help="Feed task outcomes programmatically (JSON)")
+    ao_p.add_argument("--input", "-i", required=True, help="JSON string with task outcome")
+    ao_p.add_argument("--quiet", "-q", action="store_true")
+
+    # auto-fix
+    af_p = sub.add_parser("auto-fix", help="Attempt to auto-fix a detected pattern")
+    af_p.add_argument("--pattern-id", "-p", help="Pattern ID to fix")
+    af_p.add_argument("--all-safe", action="store_true", help="Fix all safe-category patterns")
+    af_p.add_argument("--dry-run", action="store_true")
 
     # personality (Phase 3 — PersonalityState)
     sub.add_parser("personality", help="Show current PersonalityState with bias")
@@ -391,6 +404,21 @@ Examples:
             "--auto-approve-below-mins", str(args.auto_approve_below_mins),
         ] + extra)
 
+        # Auto-fix for safe categories if --auto
+        if getattr(args, "auto", False):
+            print("\n=== Auto-Fix Phase ===")
+            sys.path.insert(0, str(SCRIPTS_DIR))
+            from auto_fix import auto_fix_all_safe
+            results = auto_fix_all_safe(dry_run=args.dry_run)
+            for r in results:
+                if "error" in r:
+                    print(f"  ✗ {r['error']}")
+                else:
+                    p = r["proposal"]
+                    print(f"  📝 [{p['id']}] {p['title'][:70]}")
+            if not results:
+                print("  No patterns in safe/high-severity categories.")
+
     elif args.cmd == "gene":
         sys.path.insert(0, str(SCRIPTS_DIR))
         if not args.gene_cmd:
@@ -401,6 +429,48 @@ Examples:
     elif args.cmd == "events":
         sys.path.insert(0, str(SCRIPTS_DIR))
         cmd_events(args)
+
+    elif args.cmd == "auto-observe":
+        sys.path.insert(0, str(SCRIPTS_DIR))
+        from auto_observe import auto_observe
+        input_data = json.loads(args.input)
+        result = auto_observe(input_data)
+        if not args.quiet:
+            record = result["record"]
+            print(f"Logged: {record['id']} | {record['source']} | {record['task_type']} | "
+                  f"success={record['success']} | quality={record['quality']} | "
+                  f"issues={record.get('issues', [])}")
+            if result["recurrence_flags"]:
+                print("\n⚠️  RECURRING PATTERNS DETECTED:")
+                for flag in result["recurrence_flags"]:
+                    severity = "🔴" if flag["severity"] == "high" else "🟡"
+                    print(f"  {severity} {flag['issue']}: {flag['count']}x in {flag['days']} days")
+        else:
+            print(json.dumps(result))
+
+    elif args.cmd == "auto-fix":
+        sys.path.insert(0, str(SCRIPTS_DIR))
+        from auto_fix import auto_fix, auto_fix_all_safe
+        if args.all_safe:
+            results = auto_fix_all_safe(dry_run=args.dry_run)
+            for r in results:
+                if "error" in r:
+                    print(f"  ✗ {r['error']}")
+                else:
+                    p = r["proposal"]
+                    print(f"  📝 [{p['id']}] {p['title'][:70]}")
+            if not results:
+                print("No patterns in safe/high-severity categories.")
+        elif args.pattern_id:
+            result = auto_fix(args.pattern_id, dry_run=args.dry_run)
+            if "error" in result:
+                print(f"Error: {result['error']}")
+            else:
+                p = result["proposal"]
+                print(f"Proposal: {p['id']} | {p['title'][:70]}")
+                print(f"  Saved to: {result.get('proposal_path', 'N/A')}")
+        else:
+            print("Specify --pattern-id <id> or --all-safe")
 
     elif args.cmd == "personality":
         sys.path.insert(0, str(SCRIPTS_DIR))

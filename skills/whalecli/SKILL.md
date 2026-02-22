@@ -1,11 +1,16 @@
 ---
 name: whalecli
-description: >
-  Agent-native whale wallet tracker for ETH and BTC chains. Track large crypto wallet movements,
-  score whale activity, detect accumulation/distribution patterns, and stream real-time alerts.
-  Integrates with FearHarvester and Simmer prediction markets for closed-loop signal→bet workflows.
-  Use when: user asks about whale activity, on-chain signals, large wallet movements, smart money flows,
-  or when pre-validating crypto trades/bets with on-chain data.
+version: 1.0.0
+description: "Agent-native whale wallet tracker for ETH and BTC chains. Track large crypto wallet movements, score whale activity, detect accumulation/distribution patterns, and stream real-time alerts."
+author: "Alex Chen <alex.chen31337@gmail.com>"
+license: MIT
+tags: [crypto, trading, onchain, whale, eth, btc, signals]
+metadata:
+  evoclaw:
+    permissions:
+      - network
+    env:
+      - ETHERSCAN_API_KEY
 ---
 
 # WhaleWatch CLI — Agent Skill

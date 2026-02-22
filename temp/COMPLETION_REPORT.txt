@@ -1,0 +1,35 @@
+[EvoClaw Paper Revision] ✅ COMPLETE
+
+All 17 peer review comments from Prof. Shiping Chen have been addressed:
+
+**Completed Changes:**
+1. ✅ Author: Alex Chen → Jordan Chen + UNSW affiliation
+2. ✅ Added intro background paragraph (AutoGPT 160K+ stars, $47B market by 2030)
+3. ✅ Abstract trimmed 25% (removed numbers/acronyms, ~180 words)
+4. ✅ "Challenges" → "Problems" (section header)
+5. ✅ Consistent formatting (enumerate style)
+6. ✅ Removed "Beyond Static Agents" section (eliminated redundancy)
+7. ✅ Trimmed Related Work by ~50% (all 8 subsections)
+8. ✅ Comparison table in Related Work
+9. ✅ Consistent "Definition N" format
+10. ✅ Improved architecture diagram (TikZ with connections, tier colors, professional layout)
+11. ✅ Fixed overlapping line in memory figure
+12. ✅ Code listings use lstlisting consistently
+13. ✅ Algorithm 1 positioned correctly
+14. ✅ Performance numbers moved to Evaluation section
+15. ✅ "Protocols" → "Mechanisms" throughout
+16. ✅ Combined deployment + evaluation sections
+17. ✅ Formal proofs/security analysis repositioned
+
+**PDF Details:**
+- Location: /media/DATA/clawd/papers/evoclang-ieee-sse2026.pdf
+- Pages: 23
+- File size: 404.5 KB
+- Compilation: ✅ Successful (pdflatex ×3 + bibtex)
+
+**Source Changes:**
+- Original: 130,407 characters
+- Final: 126,893 characters
+- Reduction: ~3,514 characters (2.7% shorter)
+
+Full revision summary at: /home/bowen/clawd/temp/REVISION_SUMMARY.md
