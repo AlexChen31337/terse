@@ -202,6 +202,8 @@ ISSUE_META = {
     "model_fallback": {"task_type": "model_routing", "success": False, "quality": 3},
     "rate_limit": {"task_type": "api_call", "success": False, "quality": 2},
     "timeout": {"task_type": "tool_call", "success": False, "quality": 2},
+    # User request dropped due to session reset or end-of-session without response
+    "incomplete_task": {"task_type": "message_routing", "success": False, "quality": 1},
 }
 
 
@@ -231,27 +233,92 @@ def parse_since(since_str: str) -> float:
     return now - (value * multiplier.get(unit, 3600))
 
 
-def scan_session_file(log_file: Path) -> list[tuple[str, str, str]]:
-    """Scan a single session JSONL file. Returns [(issue_type, detail, timestamp), ...]."""
+def scan_session_file(log_file: Path, is_active: bool = False) -> list[tuple[str, str, str]]:
+    """Scan a single session JSONL file. Returns [(issue_type, detail, timestamp), ...].
+
+    Args:
+        log_file: Path to the JSONL session log.
+        is_active: True if this is the currently active session. Used to suppress
+                   false positives from in-flight user messages at end-of-file.
+    """
     hits = []
     try:
+        entries: list[dict] = []
         with open(log_file) as f:
             for line in f:
                 line = line.strip()
                 if not line:
                     continue
                 try:
-                    entry = json.loads(line)
+                    entries.append(json.loads(line))
                 except json.JSONDecodeError:
                     continue
-                
-                for detector in DETECTORS:
-                    result = detector(entry)
-                    if result:
-                        issue_type, detail = result
-                        ts = entry.get("timestamp", "")
-                        hits.append((issue_type, detail, ts))
-                        break  # first matching detector wins
+
+        # ── Pass 1: structural detectors (stateless, existing logic) ─────────
+        for entry in entries:
+            for detector in DETECTORS:
+                result = detector(entry)
+                if result:
+                    issue_type, detail = result
+                    ts = entry.get("timestamp", "")
+                    hits.append((issue_type, detail, ts))
+                    break  # first matching detector wins
+
+        # ── Pass 2: stateful dropped-request detection ────────────────────────
+        # Detect user messages that were never answered before a session reset
+        # or before the session ended (covers the "address it" class of bugs).
+        _RESET_TYPES = {"context_reset", "session_reset", "compaction"}
+        _RESET_CUSTOM = {"context-reset", "compaction"}
+        pending_user: tuple[str, str] | None = None  # (text_preview, timestamp)
+
+        for entry in entries:
+            et = entry.get("type", "")
+
+            if et == "message":
+                msg = entry.get("message", {})
+                role = msg.get("role", "")
+                if role == "user":
+                    content = msg.get("content", [])
+                    text = ""
+                    if isinstance(content, list):
+                        text = " ".join(
+                            p.get("text", "") for p in content
+                            if isinstance(p, dict) and p.get("type") == "text"
+                        )
+                    pending_user = (text.strip()[:80], entry.get("timestamp", ""))
+                elif role == "assistant":
+                    pending_user = None  # request was answered
+
+            elif et in _RESET_TYPES or (
+                et == "custom" and entry.get("customType", "") in _RESET_CUSTOM
+            ):
+                # Session reset while a user message was waiting for a response
+                if pending_user:
+                    text, ts = pending_user
+                    hits.append((
+                        "incomplete_task",
+                        f"Request dropped at session reset: '{text[:60]}'",
+                        ts,
+                    ))
+                    pending_user = None
+
+        # End-of-file: pending user message that was never answered.
+        # Only flag for closed (non-active) sessions that had at least one prior
+        # assistant response — avoids flagging brand-new sessions or in-flight turns.
+        if pending_user and not is_active:
+            had_responses = any(
+                e.get("type") == "message"
+                and e.get("message", {}).get("role") == "assistant"
+                for e in entries
+            )
+            if had_responses:
+                text, ts = pending_user
+                hits.append((
+                    "incomplete_task",
+                    f"Request at end of closed session (no response): '{text[:60]}'",
+                    ts,
+                ))
+
     except Exception as e:
         print(f"Error scanning {log_file}: {e}", file=sys.stderr)
     return hits
@@ -314,6 +381,20 @@ def scan_session_logs(since_ts: float) -> list[dict]:
 
     all_hits: dict[str, list[tuple[str, str, str]]] = {}
 
+    # Determine which file is the active session (most recently modified, within last 5 min)
+    active_cutoff = time.time() - 300  # 5 minutes
+    candidate_files = []
+    for log_file in OPENCLAW_SESSION_DIR.glob("*.jsonl"):
+        try:
+            candidate_files.append((log_file.stat().st_mtime, log_file))
+        except OSError:
+            pass
+    active_file: Path | None = None
+    if candidate_files:
+        newest_mtime, newest_file = max(candidate_files, key=lambda x: x[0])
+        if newest_mtime >= active_cutoff:
+            active_file = newest_file
+
     for log_file in sorted(OPENCLAW_SESSION_DIR.glob("*.jsonl")):
         try:
             mtime = log_file.stat().st_mtime
@@ -322,7 +403,8 @@ def scan_session_logs(since_ts: float) -> list[dict]:
         except OSError:
             continue
 
-        hits = scan_session_file(log_file)
+        is_active = (log_file == active_file)
+        hits = scan_session_file(log_file, is_active=is_active)
         if hits:
             all_hits[log_file.name] = hits
 

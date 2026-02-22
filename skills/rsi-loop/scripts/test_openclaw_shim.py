@@ -360,3 +360,107 @@ class TestParseSince:
         import time
         ts = parse_since("invalid")
         assert abs(ts - (time.time() - 3600)) < 2
+
+
+# ── Test: dropped request detection (incomplete_task) ──────────────────────────
+
+def _make_user_msg(text: str, ts: str = "2026-02-20T10:00:00.000Z") -> dict:
+    return {
+        "type": "message",
+        "timestamp": ts,
+        "message": {
+            "role": "user",
+            "content": [{"type": "text", "text": text}],
+        },
+    }
+
+
+def _make_assistant_msg(text: str = "OK", ts: str = "2026-02-20T10:01:00.000Z") -> dict:
+    return {
+        "type": "message",
+        "timestamp": ts,
+        "message": {
+            "role": "assistant",
+            "content": [{"type": "text", "text": text}],
+        },
+    }
+
+
+def _make_context_reset(ts: str = "2026-02-20T10:00:30.000Z") -> dict:
+    return {"type": "context_reset", "timestamp": ts}
+
+
+def _write_jsonl(lines: list[dict]) -> Path:
+    f = tempfile.NamedTemporaryFile(mode="w", suffix=".jsonl", delete=False)
+    for line in lines:
+        f.write(json.dumps(line) + "\n")
+    f.close()
+    return Path(f.name)
+
+
+class TestDroppedRequests:
+    """Tests for incomplete_task detection (dropped user requests at session reset)."""
+
+    def test_request_dropped_at_context_reset(self):
+        """User message followed by context_reset with no assistant response = dropped."""
+        f = _write_jsonl([
+            _make_assistant_msg("Previous answer"),          # prior response exists
+            _make_user_msg("Read https://docs.openclaw.ai/tools/lobster"),
+            _make_context_reset(),
+        ])
+        hits = scan_session_file(f, is_active=False)
+        dropped = [h for h in hits if h[0] == "incomplete_task"]
+        assert len(dropped) == 1
+        assert "lobster" in dropped[0][1].lower() or "dropped" in dropped[0][1].lower()
+
+    def test_request_answered_not_flagged(self):
+        """User message followed by assistant response = NOT dropped."""
+        f = _write_jsonl([
+            _make_user_msg("What is lobster?"),
+            _make_assistant_msg("Lobster is a workflow tool."),
+            _make_context_reset(),
+        ])
+        hits = scan_session_file(f, is_active=False)
+        dropped = [h for h in hits if h[0] == "incomplete_task"]
+        assert len(dropped) == 0
+
+    def test_request_at_eof_closed_session(self):
+        """User message at end of closed (non-active) session with prior responses = dropped."""
+        f = _write_jsonl([
+            _make_assistant_msg("Earlier response"),
+            _make_user_msg("Address it"),
+        ])
+        hits = scan_session_file(f, is_active=False)
+        dropped = [h for h in hits if h[0] == "incomplete_task"]
+        assert len(dropped) == 1
+        assert "address it" in dropped[0][1].lower() or "no response" in dropped[0][1].lower()
+
+    def test_request_at_eof_active_session_not_flagged(self):
+        """User message at end of active session = NOT flagged (in-flight)."""
+        f = _write_jsonl([
+            _make_assistant_msg("Earlier response"),
+            _make_user_msg("Address it"),
+        ])
+        hits = scan_session_file(f, is_active=True)
+        dropped = [h for h in hits if h[0] == "incomplete_task"]
+        assert len(dropped) == 0
+
+    def test_no_prior_responses_eof_not_flagged(self):
+        """Brand-new session with only user message at EOF = NOT flagged."""
+        f = _write_jsonl([
+            _make_user_msg("Hello"),
+        ])
+        hits = scan_session_file(f, is_active=False)
+        dropped = [h for h in hits if h[0] == "incomplete_task"]
+        assert len(dropped) == 0
+
+    def test_compaction_resets_pending(self):
+        """context_loss (compaction) after unanswered user message is also flagged."""
+        f = _write_jsonl([
+            _make_assistant_msg("Previous answer"),
+            _make_user_msg("Summarize this"),
+            {"type": "compaction", "timestamp": "2026-02-20T10:00:30.000Z"},
+        ])
+        hits = scan_session_file(f, is_active=False)
+        dropped = [h for h in hits if h[0] == "incomplete_task"]
+        assert len(dropped) == 1
