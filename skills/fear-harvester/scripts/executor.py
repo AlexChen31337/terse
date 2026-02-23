@@ -35,7 +35,7 @@ import requests
 # ---------------------------------------------------------------------------
 UBTC_PAIR = "@142"  # Hyperliquid spot pair index for UBTC/USDC
 UBTC_SZ_DECIMALS = 5  # Hyperliquid szDecimals for UBTC
-UBTC_PX_DECIMALS = 1  # Price precision (1 decimal place)
+UBTC_PX_DECIMALS = 0  # Price precision — UBTC tick size is $1 (integer prices only)
 DEFAULT_HOLD_DAYS = 120
 DEFAULT_BUY_THRESHOLD = 20  # F&G ≤ 20 → buy
 DEFAULT_SELL_THRESHOLD = 50  # F&G ≥ 50 → consider rebalance
@@ -142,36 +142,49 @@ class HLSpotExecutor:
         self._client: Any = None  # Lazy-loaded HyperliquidClient
 
     @property
-    def client(self) -> Any:
-        """Lazy-load the HL client (avoids import overhead in dry-run)."""
+    def exchange(self) -> Any:
+        """Lazy-load the official HL Exchange SDK (signing + trading)."""
         if self._client is None:
-            # Add HL scripts to path so we can import the client
-            hl_scripts = Path("/home/bowen/.openclaw/skills/hyperliquid/scripts")
-            if str(hl_scripts) not in sys.path:
-                sys.path.insert(0, str(hl_scripts))
-            from client import HyperliquidClient  # type: ignore[import-not-found]
+            from eth_account import Account
+            from hyperliquid.exchange import Exchange
+            from hyperliquid.utils import constants
 
             if not self.private_key:
                 raise ValueError(
                     "HL_PRIVATE_KEY required for live trading. "
                     "Set via environment or .env file."
                 )
-            self._client = HyperliquidClient(
-                private_key=self.private_key, testnet=self.testnet
+            acct = Account.from_key(self.private_key)
+            base_url = (
+                constants.TESTNET_API_URL if self.testnet else constants.MAINNET_API_URL
             )
+            self._client = Exchange(acct, base_url)
         return self._client
+
+    @property
+    def info(self) -> Any:
+        """Lazy-load the official HL Info SDK (market data)."""
+        from hyperliquid.info import Info
+        from hyperliquid.utils import constants
+        base_url = constants.TESTNET_API_URL if self.testnet else constants.MAINNET_API_URL
+        return Info(base_url, skip_ws=True)
+
+    # Keep client as alias for backwards compat (info queries only)
+    @property
+    def client(self) -> Any:
+        return self.info
 
     def get_ubtc_mid_price(self) -> float:
         """Get current UBTC mid price from HL."""
-        mids = self.client.get_all_mids()
-        price_str = mids.get(UBTC_PAIR)
+        mids = self.info.all_mids()
+        price_str = mids.get(UBTC_PAIR) or mids.get("BTC")
         if price_str is None:
             raise ValueError(f"UBTC pair {UBTC_PAIR} not found in HL mids")
         return float(price_str)
 
     def get_ubtc_best_ask(self) -> float:
         """Get best ask price from UBTC order book."""
-        book = self.client.get_l2_book(UBTC_PAIR)
+        book = self.info.l2_snapshot(UBTC_PAIR)
         asks = book.get("levels", [[], []])[1]
         if not asks:
             raise ValueError("No asks in UBTC order book")
@@ -179,7 +192,7 @@ class HLSpotExecutor:
 
     def get_spot_meta(self) -> dict[str, Any]:
         """Get spot market metadata."""
-        return self.client.get_spot_meta()
+        return self.info.spot_meta()
 
     def _get_spot_asset_index(self) -> int:
         """
@@ -212,28 +225,12 @@ class HLSpotExecutor:
         if btc_size <= 0:
             raise ValueError(f"Order size too small: {btc_size} BTC from ${amount_usdc}")
 
-        # IOC limit at 1% above mid acts as aggressive market buy
+        # GTC limit at 1% above mid for aggressive fill
         limit_price = round(price * 1.01, UBTC_PX_DECIMALS)
 
-        asset_index = self._get_spot_asset_index()
-
-        # Build the order action directly (spot uses 10000+index)
-        order = {
-            "a": asset_index,
-            "b": True,
-            "p": str(limit_price),
-            "s": str(btc_size),
-            "r": False,
-            "t": {"limit": {"tif": "Ioc"}},
-        }
-
-        action = {
-            "type": "order",
-            "orders": [order],
-            "grouping": "na",
-        }
-
-        result = self.client._exchange_request(action)
+        result = self.exchange.order(
+            UBTC_PAIR, True, btc_size, limit_price, {"limit": {"tif": "Gtc"}}
+        )
         logger.info(
             "Spot buy: %.5f UBTC @ limit $%.1f (mid $%.1f) — result: %s",
             btc_size, limit_price, price, result.get("status", "unknown"),
@@ -260,27 +257,12 @@ class HLSpotExecutor:
         if btc_size <= 0:
             raise ValueError(f"Sell size too small: {btc_size} BTC")
 
-        # IOC limit at 1% below mid acts as aggressive market sell
+        # GTC limit at 1% below mid for aggressive fill
         limit_price = round(price * 0.99, UBTC_PX_DECIMALS)
 
-        asset_index = self._get_spot_asset_index()
-
-        order = {
-            "a": asset_index,
-            "b": False,
-            "p": str(limit_price),
-            "s": str(btc_size),
-            "r": False,
-            "t": {"limit": {"tif": "Ioc"}},
-        }
-
-        action = {
-            "type": "order",
-            "orders": [order],
-            "grouping": "na",
-        }
-
-        result = self.client._exchange_request(action)
+        result = self.exchange.order(
+            UBTC_PAIR, False, btc_size, limit_price, {"limit": {"tif": "Gtc"}}
+        )
         logger.info(
             "Spot sell: %.5f UBTC @ limit $%.1f (mid $%.1f) — result: %s",
             btc_size, limit_price, price, result.get("status", "unknown"),
@@ -289,23 +271,29 @@ class HLSpotExecutor:
 
     def get_spot_balances(self) -> dict[str, Any]:
         """Get user's spot balances from HL."""
-        if not self.wallet_address:
+        from eth_account import Account
+        addr = self.wallet_address
+        if not addr and self.private_key:
+            addr = Account.from_key(self.private_key).address
+        if not addr:
             raise ValueError("Wallet address required to query balances")
-        return self.client.get_spot_user_state(self.wallet_address)
+        return self.info.spot_user_state(addr)
 
     def get_user_fills(self, start_time: Optional[int] = None) -> list[dict[str, Any]]:
         """Get user's recent fills."""
         if not self.wallet_address:
             raise ValueError("Wallet address required to query fills")
-        if start_time:
-            return self.client.get_user_fills_by_time(self.wallet_address, start_time)
-        return self.client.get_user_fills(self.wallet_address)
+        from eth_account import Account
+        addr = self.wallet_address
+        if not addr and self.private_key:
+            addr = Account.from_key(self.private_key).address
+        if not addr:
+            raise ValueError("Wallet address required to query fills")
+        return self.info.user_fills(addr)
 
     def close(self) -> None:
         """Clean up client resources."""
-        if self._client is not None:
-            self._client.close()
-            self._client = None
+        self._client = None
 
 
 # ---------------------------------------------------------------------------
@@ -375,16 +363,31 @@ def execute_dca_buy(
         if status != "ok":
             err_msg = result.get("response", "Unknown error")
             return f"❌ LIVE ORDER FAILED: {err_msg}"
-        # Extract fill info
+        # Extract fill info — only proceed if actually filled
         statuses = result.get("response", {}).get("data", {}).get("statuses", [])
-        if statuses:
-            fill_info = statuses[0]
-            if "filled" in fill_info:
-                hl_order_id = str(fill_info["filled"].get("oid", ""))
-                fill_price = float(fill_info["filled"].get("avgPx", price))
-                btc_qty = float(fill_info["filled"].get("totalSz", btc_qty))
-            elif "resting" in fill_info:
-                hl_order_id = str(fill_info["resting"].get("oid", ""))
+        if not statuses:
+            return f"❌ LIVE ORDER: No status returned — {result}"
+        fill_info = statuses[0]
+        if "filled" in fill_info:
+            hl_order_id = str(fill_info["filled"].get("oid", ""))
+            fill_price = float(fill_info["filled"].get("avgPx", price))
+            btc_qty = float(fill_info["filled"].get("totalSz", btc_qty))
+            logger.info("Order filled: %.5f UBTC @ $%.2f | oid=%s", btc_qty, fill_price, hl_order_id)
+        elif "resting" in fill_info:
+            # Order placed but not immediately filled (e.g. limit too far from market)
+            hl_order_id = str(fill_info["resting"].get("oid", ""))
+            logger.warning("Order resting (not filled): oid=%s — cancelling to avoid stuck order", hl_order_id)
+            # Cancel the resting order to avoid leaving open orders
+            try:
+                cancel_result = hl_executor.exchange.cancel(UBTC_PAIR, int(hl_order_id))
+                logger.info("Cancelled resting order %s: %s", hl_order_id, cancel_result.get("status"))
+            except Exception as ce:
+                logger.error("Failed to cancel resting order: %s", ce)
+            return f"❌ LIVE ORDER RESTING (not filled, cancelled): oid={hl_order_id}"
+        elif "error" in fill_info:
+            return f"❌ LIVE ORDER REJECTED: {fill_info['error']}"
+        else:
+            return f"❌ LIVE ORDER UNKNOWN STATUS: {fill_info}"
 
     pos = {
         "timestamp": datetime.now().isoformat(),
