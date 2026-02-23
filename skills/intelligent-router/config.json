@@ -1,5 +1,5 @@
 {
-  "_comment": "Intelligent Router — Updated 2026-02-23 16:45. NIM models REMOVED from routing (Bowen: don't use NIM). GLM-4.7 (proxy-4/6) as primary for SIMPLE/MEDIUM. Sonnet 4.6 for COMPLEX (Bowen rule). Opus 4.6 for CRITICAL. REASONING tier disabled (no stable non-NIM options).",
+  "_comment": "Intelligent Router — Updated 2026-02-23 23:00. NIM models DISABLED from routing. GLM-4.7 (proxy-4/6) primary for ALL tiers. No NIM in routing chains.",
   "models": [
     {
       "id": "qwen2.5:1.5b",
@@ -23,7 +23,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Primary for SIMPLE tier (stable proxy)"
+      "notes": "PRIMARY for SIMPLE tier (stable proxy - Bowen: keep GLM-4.7)"
     },
     {
       "id": "glm-4.7",
@@ -35,7 +35,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Primary for MEDIUM tier (stable proxy)"
+      "notes": "PRIMARY for MEDIUM tier (stable proxy - Bowen: keep GLM-4.7)"
     },
     {
       "id": "deepseek-chat",
@@ -278,7 +278,8 @@
   },
   "nim_disabled": true,
   "nim_disabled_reason": "NIM models unstable — frequent timeouts (2026-02-23, Bowen instruction: don't use NIM)",
+  "skip_nim_in_routing": true,
   "max_fallback_attempts": 3,
-  "last_updated": "2026-02-23T16:45:00",
-  "last_discovery": "2026-02-23T16:40:01.457550"
+  "last_updated": "2026-02-23T23:00:00",
+  "last_discovery": "2026-02-23T22:38:54.711426"
 }
