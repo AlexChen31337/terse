@@ -44,7 +44,7 @@ logger = logging.getLogger("fear-harvester.simmer")
 # ---------------------------------------------------------------------------
 BET_PER_MARKET = 5.0        # USDC per bet (real money — conservative)
 MAX_BETS_PER_RUN = 2        # Max new bets per F&G check
-MAX_TOTAL_POSITIONS = 5     # Hard cap: don't open if already ≥ this many open
+MAX_TOTAL_POSITIONS = 30    # Hard cap: don't open if already ≥ this many open (increased from 5 to 23→30)
 MIN_MARKET_VOLUME = 100.0   # Skip thin markets (must have real volume)
 MIN_YES_PROB = 0.25         # Don't bet YES if probability already > 75% (low edge)
 MAX_YES_PROB = 0.75
