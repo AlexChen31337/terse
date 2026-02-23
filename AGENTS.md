@@ -336,6 +336,34 @@ A sub-agent used `gateway.config.apply` with a full config snapshot that was mis
 
 ---
 
+## Credential Storage Rules (NON-NEGOTIABLE)
+
+**Root cause of the HL key corruption (2026-02-23):** `decrypt.sh` ran two backends sequentially — openssl output the key, GPG failed and appended `DECRYPT_ERROR`. The outputs concatenated into `0x488b...DECRYPT_ERROR` which was written to .env.
+
+### Rules
+
+1. **NEVER use `decrypt.sh` output directly in a variable assignment without validation:**
+   ```bash
+   # ❌ WRONG — if decrypt fails, ERROR string ends up in your variable
+   KEY=$(bash memory/decrypt.sh my-key)
+   echo "HL_PRIVATE_KEY=$KEY" > .env
+
+   # ✅ RIGHT — validate before writing
+   KEY=$(bash memory/decrypt.sh my-key) || { echo "Decrypt failed"; exit 1; }
+   bash memory/store_credential.sh hl-private-key "$KEY" --type hex
+   ```
+
+2. **ALWAYS use `store_credential.sh` to write credentials** — it validates before storing and rejects ERROR strings, empty values, and malformed keys.
+
+3. **NEVER write a credential that contains the word ERROR, DECRYPT_ERROR, null, or undefined** — if you see these in a value, STOP and report to Bowen instead of writing.
+
+4. **After writing any .env file, verify it:**
+   ```bash
+   cat .env | grep -i "error\|null\|undefined\|DECRYPT" && echo "CORRUPTION DETECTED" || echo "Clean"
+   ```
+
+5. **Sub-agents writing credentials must use `store_credential.sh`** — raw writes to .env are forbidden for sensitive values.
+
 ## Infrastructure Diagnosis Rules (VBR Enforcement)
 
 **Before diagnosing any resource problem (RAM, disk, VRAM, CPU), you MUST:**

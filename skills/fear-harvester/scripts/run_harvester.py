@@ -158,7 +158,7 @@ def main() -> None:
         return
 
     # --- Status only ---
-    state = load_state()
+    state = load_state(mode)
     if args.status:
         show_status(state)
         return

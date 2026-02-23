@@ -40,6 +40,7 @@ DEFAULT_HOLD_DAYS = 120
 DEFAULT_BUY_THRESHOLD = 20  # F&G ≤ 20 → buy
 DEFAULT_SELL_THRESHOLD = 50  # F&G ≥ 50 → consider rebalance
 STATE_FILE = Path(__file__).parent.parent / "data" / "executor_state.json"
+STATE_FILE_LIVE = Path(__file__).parent.parent / "data" / "executor_state_live.json"
 
 logger = logging.getLogger("fear-harvester.executor")
 
@@ -47,23 +48,30 @@ logger = logging.getLogger("fear-harvester.executor")
 # State management
 # ---------------------------------------------------------------------------
 
-def load_state() -> dict[str, Any]:
-    """Load executor state from disk."""
-    if STATE_FILE.exists():
-        return json.loads(STATE_FILE.read_text())
+def _get_state_file(mode: str = "paper") -> Path:
+    """Return the correct state file path for the given mode."""
+    return STATE_FILE_LIVE if mode == "live" else STATE_FILE
+
+
+def load_state(mode: str = "paper") -> dict[str, Any]:
+    """Load executor state from disk. Separate files for live vs paper."""
+    state_file = _get_state_file(mode)
+    if state_file.exists():
+        return json.loads(state_file.read_text())
     return {
         "positions": [],
         "total_invested": 0.0,
-        "mode": "paper",
+        "mode": mode,
         "last_action": None,
         "version": 2,
     }
 
 
-def save_state(state: dict[str, Any]) -> None:
+def save_state(state: dict[str, Any], mode: str = "paper") -> None:
     """Persist executor state to disk."""
-    STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
-    STATE_FILE.write_text(json.dumps(state, indent=2))
+    state_file = _get_state_file(mode)
+    state_file.parent.mkdir(parents=True, exist_ok=True)
+    state_file.write_text(json.dumps(state, indent=2))
 
 
 # ---------------------------------------------------------------------------
@@ -397,7 +405,7 @@ def execute_dca_buy(
             f"DCA_BUY ${dca_amount:.0f} @ ${fill_price:,.0f} (F&G={fg}) [{mode}]"
         )
         state["mode"] = mode
-        save_state(state)
+        save_state(state, mode)
 
     prefix = {"dry-run": "[DRY RUN] ", "paper": "[PAPER] ", "live": ""}[mode]
     oid_info = f" | oid={hl_order_id}" if hl_order_id else ""
@@ -460,7 +468,7 @@ def execute_rebalance(
         state["last_action"] = (
             f"REBALANCE ${total_value:,.0f} ({pnl_pct:+.1f}%) @ F&G={fg} [{mode}]"
         )
-        save_state(state)
+        save_state(state, mode)
 
     prefix = {"dry-run": "[DRY RUN] ", "paper": "[PAPER] ", "live": ""}[mode]
     return (
@@ -589,19 +597,19 @@ def main() -> None:
         "max_capital": args.max_capital,
     }
 
-    state = load_state()
-
-    if args.status:
-        show_status(state)
-        return
-
-    # Determine mode
+    # Determine mode first so we load the right state file
     if args.live:
         mode = "live"
     elif args.paper:
         mode = "paper"
     else:
         mode = "dry-run"
+
+    state = load_state(mode)
+
+    if args.status:
+        show_status(state)
+        return
 
     # Initialize HL executor for live mode
     hl_executor: Optional[HLSpotExecutor] = None
