@@ -11,7 +11,7 @@
       "context_window": 32768,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:44:31.205850"
+      "notes": "Auto-discovered 2026-02-23T14:36:00.780954"
     },
     {
       "id": "z-ai/glm4.7",
@@ -23,7 +23,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:44:32.428703"
+      "notes": "Auto-discovered 2026-02-23T14:36:08.140131"
     },
     {
       "id": "qwen/qwen2.5-7b-instruct",
@@ -35,7 +35,7 @@
       "context_window": 32768,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:44:33.852903"
+      "notes": "Auto-discovered 2026-02-23T14:36:08.860468"
     },
     {
       "id": "meta/llama-3.1-70b-instruct",
@@ -47,7 +47,7 @@
       "context_window": 128000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:44:34.319281"
+      "notes": "Auto-discovered 2026-02-23T14:36:09.361245"
     },
     {
       "id": "meta/llama-3.3-70b-instruct",
@@ -59,7 +59,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:44:34.803167"
+      "notes": "Auto-discovered 2026-02-23T14:36:09.844000"
     },
     {
       "id": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
@@ -71,7 +71,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:45:05.591636"
+      "notes": "Auto-discovered 2026-02-23T14:36:40.665479"
     },
     {
       "id": "deepseek-ai/deepseek-r1-distill-qwen-32b",
@@ -83,31 +83,31 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:45:06.309312"
+      "notes": "Auto-discovered 2026-02-23T14:36:41.486797"
     },
     {
-      "id": "deepseek-ai/deepseek-r1-distill-qwen-14b",
-      "alias": "DeepSeek-R1-Distill-Qwen-14B-(NIM)",
+      "id": "qwen/qwq-32b",
+      "alias": "QwQ-32B-(NIM)",
       "tier": "REASONING",
       "provider": "nvidia-nim",
-      "input_cost_per_m": 0.3,
-      "output_cost_per_m": 1,
+      "input_cost_per_m": 0.6,
+      "output_cost_per_m": 1.5,
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:45:27.558235"
+      "notes": "Auto-discovered 2026-02-23T14:37:12.654914"
     },
     {
-      "id": "moonshotai/kimi-k2-thinking",
-      "alias": "Kimi-K2-Thinking-(NIM)",
+      "id": "qwen/qwen3-next-80b-a3b-thinking",
+      "alias": "Qwen3-Next-80B-Thinking-(NIM)",
       "tier": "REASONING",
       "provider": "nvidia-nim",
-      "input_cost_per_m": 1,
-      "output_cost_per_m": 2.5,
+      "input_cost_per_m": 1.2,
+      "output_cost_per_m": 3,
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:46:31.187075"
+      "notes": "Auto-discovered 2026-02-23T14:37:13.208079"
     },
     {
       "id": "microsoft/phi-4-mini-flash-reasoning",
@@ -119,7 +119,7 @@
       "context_window": 128000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:46:32.567146"
+      "notes": "Auto-discovered 2026-02-23T14:37:44.183392"
     },
     {
       "id": "mistralai/mistral-large-3-675b-instruct-2512",
@@ -131,7 +131,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:46:36.975597"
+      "notes": "Auto-discovered 2026-02-23T14:38:15.362063"
     },
     {
       "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
@@ -143,7 +143,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:46:37.566673"
+      "notes": "Auto-discovered 2026-02-23T14:38:15.887206"
     },
     {
       "id": "meta/llama-3.2-11b-vision-instruct",
@@ -155,7 +155,7 @@
       "context_window": 128000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:46:38.651207"
+      "notes": "Auto-discovered 2026-02-23T14:38:16.985234"
     },
     {
       "id": "microsoft/phi-3.5-vision-instruct",
@@ -167,7 +167,19 @@
       "context_window": 128000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:46:39.982388"
+      "notes": "Auto-discovered 2026-02-23T14:38:17.690341"
+    },
+    {
+      "id": "z-ai/glm5",
+      "alias": "GLM-5-744B-MoE",
+      "tier": "COMPLEX",
+      "provider": "nvidia-nim",
+      "input_cost_per_m": 0,
+      "output_cost_per_m": 0,
+      "context_window": 131072,
+      "capabilities": [],
+      "agentic": false,
+      "notes": "Auto-discovered 2026-02-23T14:38:19.419501"
     },
     {
       "id": "minimaxai/minimax-m2.1",
@@ -179,7 +191,7 @@
       "context_window": 1000000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:47:19.645886"
+      "notes": "Auto-discovered 2026-02-23T14:38:20.137145"
     },
     {
       "id": "minimaxai/minimax-m2",
@@ -191,7 +203,7 @@
       "context_window": 1000000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:47:20.292734"
+      "notes": "Auto-discovered 2026-02-23T14:38:20.681322"
     },
     {
       "id": "claude-opus-4-6",
@@ -203,7 +215,7 @@
       "context_window": 1000000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:47:20.293855"
+      "notes": "Auto-discovered 2026-02-23T14:38:20.681710"
     },
     {
       "id": "claude-sonnet-4-6",
@@ -215,7 +227,19 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:47:20.294781"
+      "notes": "Auto-discovered 2026-02-23T14:38:20.682002"
+    },
+    {
+      "id": "glm-4.7",
+      "alias": "GLM-4.7-(z.ai-Key-2)",
+      "tier": "MEDIUM",
+      "provider": "anthropic-proxy-4",
+      "input_cost_per_m": 0.5,
+      "output_cost_per_m": 1.5,
+      "context_window": 131072,
+      "capabilities": [],
+      "agentic": false,
+      "notes": "Auto-discovered 2026-02-23T14:38:24.405196"
     },
     {
       "id": "deepseek-chat",
@@ -227,7 +251,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:47:55.628766"
+      "notes": "Auto-discovered 2026-02-23T14:38:25.642002"
     },
     {
       "id": "claude-opus-4-6",
@@ -239,7 +263,7 @@
       "context_window": 1000000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:47:55.629961"
+      "notes": "Auto-discovered 2026-02-23T14:38:25.643193"
     },
     {
       "id": "claude-sonnet-4-5",
@@ -251,7 +275,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:47:55.630856"
+      "notes": "Auto-discovered 2026-02-23T14:38:25.644124"
     },
     {
       "id": "claude-opus-4-5",
@@ -263,7 +287,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:47:55.631767"
+      "notes": "Auto-discovered 2026-02-23T14:38:25.645055"
     },
     {
       "id": "claude-sonnet-4-6",
@@ -275,7 +299,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:47:55.632652"
+      "notes": "Auto-discovered 2026-02-23T14:38:25.645802"
     },
     {
       "id": "glm-4.7",
@@ -287,7 +311,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-23T02:47:56.994283"
+      "notes": "Auto-discovered 2026-02-23T14:38:26.763335"
     }
   ],
   "routing_rules": {
@@ -311,11 +335,11 @@
     "MEDIUM": {
       "primary": "nvidia-nim/meta/llama-3.3-70b-instruct",
       "fallback_chain": [
+        "anthropic-proxy-4/glm-4.7",
         "anthropic-proxy-6/glm-4.7",
         "nvidia-nim/meta/llama-3.1-70b-instruct",
         "nvidia-nim/nvidia/llama-3.3-nemotron-super-49b-v1.5",
-        "nvidia-nim/z-ai/glm4.7",
-        "nvidia-nim/meta/llama-3.2-11b-vision-instruct"
+        "nvidia-nim/z-ai/glm4.7"
       ],
       "use_for": [
         "code fixes",
@@ -346,10 +370,10 @@
       ]
     },
     "REASONING": {
-      "primary": "nvidia-nim/moonshotai/kimi-k2-thinking",
+      "primary": "nvidia-nim/deepseek-ai/deepseek-r1-distill-qwen-32b",
       "fallback_chain": [
-        "nvidia-nim/deepseek-ai/deepseek-r1-distill-qwen-32b",
-        "nvidia-nim/deepseek-ai/deepseek-r1-distill-qwen-14b",
+        "nvidia-nim/qwen/qwq-32b",
+        "nvidia-nim/qwen/qwen3-next-80b-a3b-thinking",
         "nvidia-nim/microsoft/phi-4-mini-flash-reasoning"
       ],
       "use_for": [
@@ -375,7 +399,7 @@
     }
   },
   "max_fallback_attempts": 3,
-  "last_discovery": "2026-02-23T02:44:31.073625",
+  "last_discovery": "2026-02-23T14:36:00.618538",
   "tiers": {
     "SIMPLE": {
       "description": "Monitoring, heartbeat, summaries \u2014 free/tiny/cheap models",
@@ -399,6 +423,7 @@
       "description": "Code fixes, research, data analysis \u2014 capable mid-range",
       "primary": "nvidia-nim/meta/llama-3.3-70b-instruct",
       "fallbacks": [
+        "anthropic-proxy-4/glm-4.7",
         "anthropic-proxy-6/glm-4.7",
         "nvidia-nim/meta/llama-3.1-70b-instruct",
         "nvidia-nim/nvidia/llama-3.3-nemotron-super-49b-v1.5",
@@ -425,6 +450,7 @@
         "anthropic-proxy-1/claude-sonnet-4-6",
         "nvidia-nim/mistralai/mistral-large-3-675b-instruct-2512",
         "nvidia-nim/nvidia/llama-3.1-nemotron-ultra-253b-v1",
+        "nvidia-nim/z-ai/glm5",
         "anthropic-proxy-5/deepseek-chat"
       ],
       "use_for": [
@@ -438,10 +464,10 @@
     },
     "REASONING": {
       "description": "Formal logic, deep analysis, math \u2014 dedicated thinking models",
-      "primary": "nvidia-nim/moonshotai/kimi-k2-thinking",
+      "primary": "nvidia-nim/deepseek-ai/deepseek-r1-distill-qwen-32b",
       "fallbacks": [
-        "nvidia-nim/deepseek-ai/deepseek-r1-distill-qwen-32b",
-        "nvidia-nim/deepseek-ai/deepseek-r1-distill-qwen-14b",
+        "nvidia-nim/qwen/qwq-32b",
+        "nvidia-nim/qwen/qwen3-next-80b-a3b-thinking",
         "nvidia-nim/microsoft/phi-4-mini-flash-reasoning"
       ],
       "use_for": [

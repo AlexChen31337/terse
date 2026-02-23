@@ -6,13 +6,13 @@
     "importance": 0.7,
     "created_at": 1771533772.0500326,
     "access_count": 1,
-    "score": 0.7042278119908439,
+    "score": 0.6924812123982093,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "hot"
+    "tier": "warm"
   },
   {
     "id": "91c9621a2a95",
@@ -21,13 +21,13 @@
     "importance": 0.7,
     "created_at": 1771533772.654951,
     "access_count": 1,
-    "score": 0.7042279763422931,
+    "score": 0.6924813740079392,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "hot"
+    "tier": "warm"
   },
   {
     "id": "de4f2e0c69c5",
@@ -36,7 +36,7 @@
     "importance": 0.7,
     "created_at": 1771533773.2137918,
     "access_count": 2,
-    "score": 0.768248867100191,
+    "score": 0.7554343890630388,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -51,7 +51,7 @@
     "importance": 0.7,
     "created_at": 1771533773.7885537,
     "access_count": 0,
-    "score": 0.6402075312125551,
+    "score": 0.6295287971468637,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -66,7 +66,7 @@
     "importance": 0.7,
     "created_at": 1771533774.3492866,
     "access_count": 0,
-    "score": 0.6402076697099014,
+    "score": 0.6295289333339428,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -81,7 +81,7 @@
     "importance": 0.7,
     "created_at": 1771533774.8990283,
     "access_count": 1,
-    "score": 0.7042285860418002,
+    "score": 0.6924819735368888,
     "metadata": {
       "urls": [],
       "commands": [
@@ -90,7 +90,7 @@
       ],
       "paths": []
     },
-    "tier": "hot"
+    "tier": "warm"
   },
   {
     "id": "04a284e2d485",
@@ -99,7 +99,7 @@
     "importance": 0.7,
     "created_at": 1771533775.517146,
     "access_count": 0,
-    "score": 0.6402079581636241,
+    "score": 0.6295292169762826,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -114,7 +114,7 @@
     "importance": 0.7,
     "created_at": 1771533776.0680125,
     "access_count": 0,
-    "score": 0.6402080942241036,
+    "score": 0.629529350767258,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -129,7 +129,7 @@
     "importance": 0.7,
     "created_at": 1771533777.2007518,
     "access_count": 0,
-    "score": 0.6402083740037045,
+    "score": 0.6295296258801034,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -144,7 +144,7 @@
     "importance": 0.7,
     "created_at": 1771533777.7604384,
     "access_count": 0,
-    "score": 0.6402085122428327,
+    "score": 0.6295297618133874,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -159,7 +159,7 @@
     "importance": 0.7,
     "created_at": 1771533778.385088,
     "access_count": 0,
-    "score": 0.6402086665273748,
+    "score": 0.6295299135245037,
     "metadata": {
       "urls": [],
       "commands": [
@@ -176,13 +176,13 @@
     "importance": 0.7,
     "created_at": 1771533778.9456394,
     "access_count": 1,
-    "score": 0.7042296854781683,
+    "score": 0.6924830546345977,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "hot"
+    "tier": "warm"
   },
   {
     "id": "d9cc0f0bba04",
@@ -191,7 +191,7 @@
     "importance": 0.7,
     "created_at": 1771533779.52829,
     "access_count": 0,
-    "score": 0.6402089488912902,
+    "score": 0.6295301911785571,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -206,7 +206,7 @@
     "importance": 0.7,
     "created_at": 1771533780.0876179,
     "access_count": 0,
-    "score": 0.6402090870419161,
+    "score": 0.629530327024815,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -221,7 +221,7 @@
     "importance": 0.7,
     "created_at": 1771533780.6430047,
     "access_count": 0,
-    "score": 0.6402092242191527,
+    "score": 0.6295304619139198,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -236,7 +236,7 @@
     "importance": 0.7,
     "created_at": 1771533781.2022128,
     "access_count": 0,
-    "score": 0.6402093623402763,
+    "score": 0.6295305977311673,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -251,7 +251,7 @@
     "importance": 0.7,
     "created_at": 1771533781.7749128,
     "access_count": 0,
-    "score": 0.6402095037938459,
+    "score": 0.6295307368252753,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -266,7 +266,7 @@
     "importance": 0.7,
     "created_at": 1771533782.3321376,
     "access_count": 1,
-    "score": 0.7042306055676538,
+    "score": 0.6924839593770139,
     "metadata": {
       "urls": [
         "https://github.com/clawinfra/identity-resolver"
@@ -274,7 +274,7 @@
       "commands": [],
       "paths": []
     },
-    "tier": "hot"
+    "tier": "warm"
   },
   {
     "id": "c8466ba211c0",
@@ -283,7 +283,7 @@
     "importance": 0.7,
     "created_at": 1771533782.910496,
     "access_count": 0,
-    "score": 0.6402097842763618,
+    "score": 0.6295310126293112,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -298,7 +298,7 @@
     "importance": 0.7,
     "created_at": 1771533784.070109,
     "access_count": 0,
-    "score": 0.6402100706942743,
+    "score": 0.6295312942697983,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -313,7 +313,7 @@
     "importance": 0.7,
     "created_at": 1771533784.6532218,
     "access_count": 1,
-    "score": 0.704231236191933,
+    "score": 0.6924845794824085,
     "metadata": {
       "urls": [],
       "commands": [
@@ -321,7 +321,7 @@
       ],
       "paths": []
     },
-    "tier": "hot"
+    "tier": "warm"
   },
   {
     "id": "7a038f5acf9e",
@@ -330,7 +330,7 @@
     "importance": 0.7,
     "created_at": 1771533785.2190263,
     "access_count": 0,
-    "score": 0.6402103544705342,
+    "score": 0.6295315733126382,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -345,13 +345,13 @@
     "importance": 0.7,
     "created_at": 1771533785.7861786,
     "access_count": 1,
-    "score": 0.7042315440094602,
+    "score": 0.6924848821655045,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "hot"
+    "tier": "warm"
   },
   {
     "id": "ac8680c52700",
@@ -360,7 +360,7 @@
     "importance": 0.7,
     "created_at": 1771533786.3468318,
     "access_count": 0,
-    "score": 0.6402106330323734,
+    "score": 0.6295318472280343,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -375,7 +375,7 @@
     "importance": 0.7,
     "created_at": 1771533786.9122772,
     "access_count": 0,
-    "score": 0.6402107726943743,
+    "score": 0.6295319845604573,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -390,7 +390,7 @@
     "importance": 0.7,
     "created_at": 1771533787.4871464,
     "access_count": 0,
-    "score": 0.6402109146839613,
+    "score": 0.6295321241816418,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -405,7 +405,7 @@
     "importance": 0.7,
     "created_at": 1771533788.925523,
     "access_count": 0,
-    "score": 0.6402112699557169,
+    "score": 0.6295324735274245,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -420,7 +420,7 @@
     "importance": 0.7,
     "created_at": 1771533789.4981863,
     "access_count": 0,
-    "score": 0.6402114114006391,
+    "score": 0.6295326126130293,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -435,7 +435,7 @@
     "importance": 0.7,
     "created_at": 1771533790.0888143,
     "access_count": 0,
-    "score": 0.6402115572827629,
+    "score": 0.6295327560618228,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -450,8 +450,8 @@
     "importance": 0.9,
     "created_at": 1770901224.1941369,
     "access_count": 1,
-    "score": 0.7093703914491464,
-    "tier": "hot",
+    "score": 0.6975380130483921,
+    "tier": "warm",
     "search_method": "keyword-tree"
   },
   {
@@ -461,7 +461,7 @@
     "importance": 0.8,
     "created_at": 1770603278.377375,
     "access_count": 3,
-    "score": 0.6642779234012596,
+    "score": 0.6531976924701458,
     "tier": "warm"
   },
   {
@@ -471,7 +471,7 @@
     "importance": 0.8,
     "created_at": 1771074043.6508107,
     "access_count": 2,
-    "score": 0.7353012788666318,
+    "score": 0.7230363703293834,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -486,7 +486,7 @@
     "importance": 0.8,
     "created_at": 1771074043.887379,
     "access_count": 1,
-    "score": 0.6740262338116548,
+    "score": 0.6627833999597292,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -501,7 +501,7 @@
     "importance": 0.8,
     "created_at": 1771074044.122165,
     "access_count": 2,
-    "score": 0.7353014125805727,
+    "score": 0.7230365018130273,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -516,7 +516,7 @@
     "importance": 0.8,
     "created_at": 1771095636.6020772,
     "access_count": 1,
-    "score": 0.6796646776001373,
+    "score": 0.6683277938678422,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -531,7 +531,7 @@
     "importance": 0.75,
     "created_at": 1771533763.5591288,
     "access_count": 0,
-    "score": 0.6859339335111332,
+    "score": 0.6744924778807603,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -546,7 +546,7 @@
     "importance": 0.75,
     "created_at": 1771533764.118573,
     "access_count": 0,
-    "score": 0.6859340815595387,
+    "score": 0.6744926234597638,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -561,7 +561,7 @@
     "importance": 0.75,
     "created_at": 1771533764.6763897,
     "access_count": 0,
-    "score": 0.6859342291772973,
+    "score": 0.6744927686152413,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -576,7 +576,7 @@
     "importance": 0.75,
     "created_at": 1771533783.4889903,
     "access_count": 0,
-    "score": 0.685939207669982,
+    "score": 0.6744976640661047,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -591,7 +591,7 @@
     "importance": 0.8,
     "created_at": 1771138829.5050104,
     "access_count": 1,
-    "score": 0.6910854544829322,
+    "score": 0.6795580708998727,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -606,7 +606,7 @@
     "importance": 0.9,
     "created_at": 1771095636.7073271,
     "access_count": 2,
-    "score": 0.8341339563788245,
+    "score": 0.8202205075969689,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -621,7 +621,7 @@
     "importance": 0.8,
     "created_at": 1771160437.3352547,
     "access_count": 1,
-    "score": 0.6968706679467865,
+    "score": 0.6852467863485031,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -636,7 +636,7 @@
     "importance": 0.8,
     "created_at": 1771160464.5418885,
     "access_count": 1,
-    "score": 0.6968779826089179,
+    "score": 0.6852539790012422,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -651,7 +651,7 @@
     "importance": 0.8,
     "created_at": 1771160464.5951035,
     "access_count": 2,
-    "score": 0.7602305420902203,
+    "score": 0.7475498106215077,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -668,7 +668,7 @@
     "importance": 0.85,
     "created_at": 1771041476.1792974,
     "access_count": 2,
-    "score": 0.7715028217915544,
+    "score": 0.7586340674219377,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -685,7 +685,7 @@
     "importance": 0.8,
     "created_at": 1770603278.2826345,
     "access_count": 8,
-    "score": 0.9197693987803051,
+    "score": 0.9044275411288863,
     "tier": "hot",
     "tree_relevance": 1.333308210833677,
     "search_method": "keyword-tree"
@@ -697,7 +697,7 @@
     "importance": 0.7,
     "created_at": 1771182017.9329922,
     "access_count": 3,
-    "score": 0.7266525048307145,
+    "score": 0.714531858823201,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -712,7 +712,7 @@
     "importance": 0.9,
     "created_at": 1771239283.3715694,
     "access_count": 0,
-    "score": 0.7347216276427437,
+    "score": 0.7224663877536354,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -727,7 +727,7 @@
     "importance": 0.75,
     "created_at": 1771533765.248862,
     "access_count": 1,
-    "score": 0.7545278187392233,
+    "score": 0.7419422093413859,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -742,7 +742,7 @@
     "importance": 0.9,
     "created_at": 1771074043.419154,
     "access_count": 2,
-    "score": 0.8272138647906991,
+    "score": 0.8134158439196765,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -757,7 +757,7 @@
     "importance": 0.9,
     "created_at": 1771095636.4439633,
     "access_count": 2,
-    "score": 0.8341338716237765,
+    "score": 0.82022042425572,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -772,7 +772,7 @@
     "importance": 0.7,
     "created_at": 1771533770.3375487,
     "access_count": 2,
-    "score": 0.7682480145966918,
+    "score": 0.755433550779325,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -787,7 +787,7 @@
     "importance": 0.7,
     "created_at": 1771533776.6394746,
     "access_count": 3,
-    "score": 0.8322707059756386,
+    "score": 0.8183883364215014,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -802,7 +802,7 @@
     "importance": 0.9,
     "created_at": 1771117238.729161,
     "access_count": 2,
-    "score": 0.8411147723782052,
+    "score": 0.8270848827956924,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -817,7 +817,7 @@
     "importance": 0.85,
     "created_at": 1771049139.3538048,
     "access_count": 3,
-    "score": 0.8382693833364863,
+    "score": 0.8242869551651693,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -833,7 +833,7 @@
     "importance": 0.9,
     "created_at": 1771138829.3475142,
     "access_count": 2,
-    "score": 0.8481502789633778,
+    "score": 0.8340030363348973,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -848,7 +848,7 @@
     "importance": 0.9,
     "created_at": 1771160437.4418483,
     "access_count": 1,
-    "score": 0.7839795336781895,
+    "score": 0.7709026663425281,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -864,7 +864,7 @@
     "importance": 0.9,
     "created_at": 1771160437.494436,
     "access_count": 2,
-    "score": 0.8552504177277827,
+    "score": 0.8409847439812711,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -880,7 +880,7 @@
     "importance": 0.9,
     "created_at": 1770858052.078376,
     "access_count": 3,
-    "score": 0.8244990417767972,
+    "score": 0.8107463044610009,
     "tier": "hot"
   },
   {
@@ -890,7 +890,7 @@
     "importance": 0.9,
     "created_at": 1771074043.966223,
     "access_count": 2,
-    "score": 0.8272140393812976,
+    "score": 0.8134160155981583,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -905,7 +905,7 @@
     "importance": 0.7,
     "created_at": 1771037649.449347,
     "access_count": 8,
-    "score": 0.9516269142047887,
+    "score": 0.9357536695913979,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -920,7 +920,7 @@
     "importance": 0.9,
     "created_at": 1771160464.7532754,
     "access_count": 4,
-    "score": 0.9978026473785747,
+    "score": 0.9811591863106791,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -935,7 +935,7 @@
     "importance": 0.9,
     "created_at": 1771160464.860456,
     "access_count": 4,
-    "score": 0.9978026886380686,
+    "score": 0.98115922688196,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -949,8 +949,8 @@
     "category": "projects/clawchain",
     "importance": 0.9,
     "created_at": 1771647205.4337666,
-    "access_count": 3,
-    "score": 1.1179291647940044,
+    "access_count": 4,
+    "score": 1.1838421321163344,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -967,7 +967,7 @@
     "importance": 0.95,
     "created_at": 1771566283.8878691,
     "access_count": 2,
-    "score": 1.0557831303941267,
+    "score": 1.0381725483087516,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -985,7 +985,7 @@
     "importance": 0.95,
     "created_at": 1771566329.030747,
     "access_count": 0,
-    "score": 0.8798345985998491,
+    "score": 0.8651588579347226,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1000,7 +1000,7 @@
     "importance": 0.7,
     "created_at": 1770987661.7719114,
     "access_count": 8,
-    "score": 0.9334502726331194,
+    "score": 0.917880216458066,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1015,7 +1015,7 @@
     "importance": 0.9,
     "created_at": 1771160464.8068938,
     "access_count": 6,
-    "score": 1.1403459063062384,
+    "score": 1.1213248075496869,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1030,7 +1030,7 @@
     "importance": 0.7,
     "created_at": 1770987661.8755405,
     "access_count": 11,
-    "score": 1.0890253616112053,
+    "score": 1.0708602953475017,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1045,7 +1045,7 @@
     "importance": 0.9,
     "created_at": 1770621651.5485682,
     "access_count": 9,
-    "score": 1.099995858093251,
+    "score": 1.0816478027068268,
     "tier": "hot"
   },
   {
@@ -1055,7 +1055,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3982527,
     "access_count": 9,
-    "score": 1.0044950563019244,
+    "score": 0.9877399650962494,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1070,7 +1070,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3307042,
     "access_count": 12,
-    "score": 1.1630995085648794,
+    "score": 1.1436988771481102,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1085,7 +1085,7 @@
     "importance": 0.7,
     "created_at": 1771037649.3432972,
     "access_count": 12,
-    "score": 1.163099514215494,
+    "score": 1.143698882704472,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1100,7 +1100,7 @@
     "importance": 0.9,
     "created_at": 1770858052.1201756,
     "access_count": 9,
-    "score": 1.2050370804872765,
+    "score": 1.184936925625165,
     "tier": "hot"
   },
   {
@@ -1110,7 +1110,7 @@
     "importance": 0.9,
     "created_at": 1770879637.8976207,
     "access_count": 9,
-    "score": 1.2151143467238446,
+    "score": 1.1948461019205836,
     "tier": "hot"
   },
   {
@@ -1120,7 +1120,7 @@
     "importance": 0.9,
     "created_at": 1770879637.8497229,
     "access_count": 10,
-    "score": 1.2790677097572705,
+    "score": 1.2577327156217775,
     "tier": "hot"
   },
   {
@@ -1129,8 +1129,8 @@
     "category": "projects/clawchain",
     "importance": 0.8,
     "created_at": 1770613764.1543171,
-    "access_count": 35,
-    "score": 2.3087445990667526,
+    "access_count": 36,
+    "score": 2.3206841329658774,
     "tier": "hot"
   },
   {
@@ -1139,8 +1139,8 @@
     "category": "projects/clawchain",
     "importance": 0.9,
     "created_at": 1770610454.8254375,
-    "access_count": 33,
-    "score": 2.4787337064140815,
+    "access_count": 34,
+    "score": 2.4940715929981874,
     "tier": "hot"
   },
   {
@@ -1149,8 +1149,8 @@
     "category": "projects/clawchain",
     "importance": 0.9,
     "created_at": 1770618231.019124,
-    "access_count": 33,
-    "score": 2.48618125877642,
+    "access_count": 34,
+    "score": 2.50156522925963,
     "tier": "hot"
   },
   {
@@ -1159,8 +1159,8 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1771037649.493801,
-    "access_count": 38,
-    "score": 2.537671814724842,
+    "access_count": 39,
+    "score": 2.547329477566766,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1174,8 +1174,8 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1770987661.7097778,
-    "access_count": 39,
-    "score": 2.541059014581593,
+    "access_count": 40,
+    "score": 2.5496672068137247,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1189,8 +1189,8 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1770987661.713866,
-    "access_count": 39,
-    "score": 2.541059018588944,
+    "access_count": 40,
+    "score": 2.5496672108346505,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1204,8 +1204,8 @@
     "category": "projects/evoclaw/memory",
     "importance": 0.8,
     "created_at": 1770603278.5991645,
-    "access_count": 40,
-    "score": 2.5549153085937126,
+    "access_count": 41,
+    "score": 2.562545012780249,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -1215,8 +1215,8 @@
     "category": "projects/evoclaw/memory",
     "importance": 0.75,
     "created_at": 1770848917.960907,
-    "access_count": 39,
-    "score": 2.5806624243618534,
+    "access_count": 40,
+    "score": 2.589404778675105,
     "tier": "hot"
   },
   {
@@ -1225,8 +1225,8 @@
     "category": "projects/evoclaw/memory",
     "importance": 0.75,
     "created_at": 1770848917.963316,
-    "access_count": 39,
-    "score": 2.5806624267598224,
+    "access_count": 40,
+    "score": 2.589404781081198,
     "tier": "hot"
   },
   {
@@ -1235,8 +1235,8 @@
     "category": "projects/evoclaw",
     "importance": 0.75,
     "created_at": 1770848917.9673443,
-    "access_count": 39,
-    "score": 2.580662430770048,
+    "access_count": 40,
+    "score": 2.589404785105009,
     "tier": "hot"
   },
   {
@@ -1245,8 +1245,8 @@
     "category": "projects/evoclaw",
     "importance": 0.75,
     "created_at": 1770848917.968247,
-    "access_count": 41,
-    "score": 2.685995592144534,
+    "access_count": 42,
+    "score": 2.6929809774465325,
     "tier": "hot"
   },
   {
@@ -1255,8 +1255,8 @@
     "category": "projects/evoclaw",
     "importance": 0.75,
     "created_at": 1770848917.9691088,
-    "access_count": 39,
-    "score": 2.580662432525916,
+    "access_count": 40,
+    "score": 2.589404786866587,
     "tier": "hot"
   },
   {
@@ -1265,8 +1265,8 @@
     "category": "projects/evoclaw",
     "importance": 0.75,
     "created_at": 1770848917.9700267,
-    "access_count": 39,
-    "score": 2.580662433439338,
+    "access_count": 40,
+    "score": 2.5894047877833417,
     "tier": "hot"
   },
   {
@@ -1275,8 +1275,8 @@
     "category": "projects/evoclaw",
     "importance": 0.75,
     "created_at": 1770848917.9754503,
-    "access_count": 39,
-    "score": 2.5806624388386856,
+    "access_count": 40,
+    "score": 2.5894047932009805,
     "tier": "hot"
   },
   {
@@ -1285,8 +1285,8 @@
     "category": "projects/evoclaw",
     "importance": 0.75,
     "created_at": 1770848917.977328,
-    "access_count": 39,
-    "score": 2.5806624407075454,
+    "access_count": 40,
+    "score": 2.5894047950764087,
     "tier": "hot"
   },
   {
@@ -1295,8 +1295,8 @@
     "category": "projects/evoclaw",
     "importance": 0.75,
     "created_at": 1770848917.9793704,
-    "access_count": 39,
-    "score": 2.5806624427404308,
+    "access_count": 40,
+    "score": 2.589404797116181,
     "tier": "hot"
   },
   {
@@ -1305,8 +1305,8 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1770987661.7264295,
-    "access_count": 41,
-    "score": 2.644775726038417,
+    "access_count": 42,
+    "score": 2.651653912115281,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1320,8 +1320,8 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1770603278.50327,
-    "access_count": 48,
-    "score": 2.593238942276242,
+    "access_count": 49,
+    "score": 2.593948654710048,
     "tier": "hot"
   },
   {
@@ -1330,8 +1330,8 @@
     "category": "projects/evoclaw",
     "importance": 0.75,
     "created_at": 1770848917.976349,
-    "access_count": 41,
-    "score": 2.6859956005363275,
+    "access_count": 42,
+    "score": 2.6929809858601508,
     "tier": "hot"
   },
   {
@@ -1340,8 +1340,8 @@
     "category": "projects/evoclaw",
     "importance": 0.75,
     "created_at": 1770848917.9782953,
-    "access_count": 40,
-    "score": 2.633329022110412,
+    "access_count": 41,
+    "score": 2.6411928919608867,
     "tier": "hot"
   },
   {
@@ -1350,8 +1350,8 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1771037649.4981942,
-    "access_count": 40,
-    "score": 2.643408144809611,
+    "access_count": 41,
+    "score": 2.651302113789016,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1365,8 +1365,8 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1770987661.7180986,
-    "access_count": 41,
-    "score": 2.6447757175352957,
+    "access_count": 42,
+    "score": 2.651653903590046,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1380,8 +1380,8 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1770987661.73495,
-    "access_count": 41,
-    "score": 2.644775734729346,
+    "access_count": 42,
+    "score": 2.6516539208290566,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1395,8 +1395,8 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1771182017.7169092,
-    "access_count": 40,
-    "score": 2.794817093250405,
+    "access_count": 41,
+    "score": 2.8031632124379513,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1410,8 +1410,8 @@
     "category": "projects/clawchain",
     "importance": 0.95,
     "created_at": 1770629133.8014925,
-    "access_count": 34,
-    "score": 2.696651888148055,
+    "access_count": 35,
+    "score": 2.711936689268763,
     "tier": "hot"
   },
   {
@@ -1420,8 +1420,8 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1770987661.7222998,
-    "access_count": 43,
-    "score": 2.7484924167933986,
+    "access_count": 44,
+    "score": 2.7536405966508015,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1435,8 +1435,8 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1770987661.7308817,
-    "access_count": 44,
-    "score": 2.800350773551001,
+    "access_count": 45,
+    "score": 2.804633950318596,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1450,8 +1450,8 @@
     "category": "projects/evoclaw/bsc",
     "importance": 0.8,
     "created_at": 1770603278.2195358,
-    "access_count": 44,
-    "score": 2.759308129136111,
+    "access_count": 45,
+    "score": 2.7635285305892743,
     "tier": "hot",
     "tree_relevance": 0.6666538966332228
   },
@@ -1461,8 +1461,8 @@
     "category": "projects/evoclaw",
     "importance": 0.75,
     "created_at": 1770987661.4968448,
-    "access_count": 39,
-    "score": 2.7225630062364896,
+    "access_count": 40,
+    "score": 2.73178606858588,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1481,8 +1481,8 @@
     "category": "projects/evoclaw",
     "importance": 0.75,
     "created_at": 1770987661.5010297,
-    "access_count": 39,
-    "score": 2.7225630106317533,
+    "access_count": 40,
+    "score": 2.731786072996033,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1501,8 +1501,8 @@
     "category": "projects/evoclaw/memory",
     "importance": 0.75,
     "created_at": 1770987661.5811749,
-    "access_count": 39,
-    "score": 2.722563094813407,
+    "access_count": 40,
+    "score": 2.7317861574628632,
     "metadata": {
       "urls": [],
       "commands": [
@@ -1519,8 +1519,8 @@
     "category": "projects/evoclaw/memory",
     "importance": 0.75,
     "created_at": 1770987661.585305,
-    "access_count": 39,
-    "score": 2.722563099151072,
+    "access_count": 40,
+    "score": 2.7317861618152235,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1535,8 +1535,8 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1771037649.3265023,
-    "access_count": 42,
-    "score": 2.749144288494415,
+    "access_count": 43,
+    "score": 2.7552745631894116,
     "metadata": {
       "urls": [
         "cs.AI"
@@ -1552,8 +1552,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770858031.0936832,
-    "access_count": 39,
-    "score": 2.7624017755939363,
+    "access_count": 40,
+    "score": 2.7717597973374213,
     "tier": "hot"
   },
   {
@@ -1562,8 +1562,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770858031.1349287,
-    "access_count": 40,
-    "score": 2.818777366887929,
+    "access_count": 41,
+    "score": 2.8271950382716753,
     "tier": "hot"
   },
   {
@@ -1572,8 +1572,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770879637.2224507,
-    "access_count": 39,
-    "score": 2.7855245604562415,
+    "access_count": 40,
+    "score": 2.7949609138624605,
     "tier": "hot"
   },
   {
@@ -1582,8 +1582,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770879637.515192,
-    "access_count": 39,
-    "score": 2.7855248750537704,
+    "access_count": 40,
+    "score": 2.7949612295257333,
     "tier": "hot"
   },
   {
@@ -1592,8 +1592,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770879637.6592467,
-    "access_count": 39,
-    "score": 2.785525029863376,
+    "access_count": 40,
+    "score": 2.794961384859777,
     "tier": "hot"
   },
   {
@@ -1602,8 +1602,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770879638.046249,
-    "access_count": 41,
-    "score": 2.8992203619131085,
+    "access_count": 42,
+    "score": 2.9067602742515595,
     "tier": "hot"
   },
   {
@@ -1612,8 +1612,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770879638.099425,
-    "access_count": 40,
-    "score": 2.8423729621485467,
+    "access_count": 41,
+    "score": 2.8508610966943015,
     "tier": "hot"
   },
   {
@@ -1622,8 +1622,8 @@
     "category": "projects/evoclaw",
     "importance": 0.7,
     "created_at": 1771037649.4890444,
-    "access_count": 43,
-    "score": 2.8020126235957097,
+    "access_count": 44,
+    "score": 2.807261051738707,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1637,8 +1637,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770901223.9106195,
-    "access_count": 41,
-    "score": 2.923465535842325,
+    "access_count": 42,
+    "score": 2.9310685018514997,
     "tier": "hot"
   },
   {
@@ -1647,8 +1647,8 @@
     "category": "projects/clawchain",
     "importance": 0.9,
     "created_at": 1770944438.939319,
-    "access_count": 33,
-    "score": 2.81961323067832,
+    "access_count": 34,
+    "score": 2.8370604085801494,
     "tier": "hot"
   },
   {
@@ -1657,8 +1657,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1771074043.3392706,
-    "access_count": 36,
-    "score": 2.8186545634885847,
+    "access_count": 37,
+    "score": 2.8318921100361165,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1672,8 +1672,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770858051.8253617,
-    "access_count": 43,
-    "score": 2.9879278596957897,
+    "access_count": 44,
+    "score": 2.993524524227843,
     "tier": "hot"
   },
   {
@@ -1682,8 +1682,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770922835.0454159,
-    "access_count": 41,
-    "score": 2.947942204254379,
+    "access_count": 42,
+    "score": 2.9556088259750606,
     "tier": "hot"
   },
   {
@@ -1692,8 +1692,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770922837.8350434,
-    "access_count": 40,
-    "score": 2.8901425264354734,
+    "access_count": 41,
+    "score": 2.898773314494956,
     "tier": "hot"
   },
   {
@@ -1702,8 +1702,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770922857.5116065,
-    "access_count": 39,
-    "score": 2.832361177033172,
+    "access_count": 40,
+    "score": 2.8419561960183537,
     "tier": "hot"
   },
   {
@@ -1712,8 +1712,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770922872.2013025,
-    "access_count": 39,
-    "score": 2.83237722897816,
+    "access_count": 40,
+    "score": 2.841972302341547,
     "tier": "hot"
   },
   {
@@ -1722,8 +1722,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1771095636.3898034,
-    "access_count": 36,
-    "score": 2.8422338735078334,
+    "access_count": 37,
+    "score": 2.8555821580712903,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1737,8 +1737,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1771095636.495916,
-    "access_count": 36,
-    "score": 2.8422339898639812,
+    "access_count": 37,
+    "score": 2.855582274973894,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1752,8 +1752,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770879637.7547972,
-    "access_count": 41,
-    "score": 2.8992200359092544,
+    "access_count": 42,
+    "score": 2.9067599474001447,
     "tier": "hot"
   },
   {
@@ -1762,8 +1762,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770944439.7650976,
-    "access_count": 39,
-    "score": 2.856043252079724,
+    "access_count": 40,
+    "score": 2.8657184974009824,
     "tier": "hot"
   },
   {
@@ -1772,8 +1772,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1771074043.4960601,
-    "access_count": 37,
-    "score": 2.879929836895648,
+    "access_count": 38,
+    "score": 2.8921453085933173,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1787,8 +1787,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1770879637.7071779,
-    "access_count": 41,
-    "score": 2.8992199826439036,
+    "access_count": 42,
+    "score": 2.9067598939962687,
     "tier": "hot"
   },
   {
@@ -1797,8 +1797,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1771160437.2831426,
-    "access_count": 37,
-    "score": 2.9775382485815154,
+    "access_count": 38,
+    "score": 2.9901677348071467,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1812,8 +1812,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1771160464.3298085,
-    "access_count": 36,
-    "score": 2.914216779684761,
+    "access_count": 37,
+    "score": 2.927903125209729,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1827,8 +1827,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1771117238.9972398,
-    "access_count": 37,
-    "score": 2.9283258066507285,
+    "access_count": 38,
+    "score": 2.940746554043941,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1842,8 +1842,8 @@
     "category": "projects/evoclaw",
     "importance": 0.9,
     "created_at": 1770606835.0856192,
-    "access_count": 43,
-    "score": 3.0509198057504086,
+    "access_count": 44,
+    "score": 3.0566344600090156,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -1853,8 +1853,8 @@
     "category": "projects/evoclaw",
     "importance": 0.75,
     "created_at": 1770848917.9745195,
-    "access_count": 47,
-    "score": 3.001995080808762,
+    "access_count": 48,
+    "score": 3.0037095590085356,
     "tier": "hot"
   },
   {
@@ -1863,8 +1863,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1771117238.8912566,
-    "access_count": 38,
-    "score": 2.9906304887631996,
+    "access_count": 39,
+    "score": 3.002011984503456,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1878,8 +1878,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1771182017.6626358,
-    "access_count": 39,
-    "score": 3.13019507887403,
+    "access_count": 40,
+    "score": 3.140799051790153,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1893,8 +1893,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1771182017.825397,
-    "access_count": 39,
-    "score": 3.13019527542992,
+    "access_count": 40,
+    "score": 3.140799249011903,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1908,8 +1908,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1771182017.8797367,
-    "access_count": 38,
-    "score": 3.0663138034794293,
+    "access_count": 39,
+    "score": 3.07798332855908,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1923,8 +1923,8 @@
     "category": "projects/evoclaw",
     "importance": 0.8,
     "created_at": 1771182017.770818,
-    "access_count": 39,
-    "score": 3.1301952095171215,
+    "access_count": 40,
+    "score": 3.140799182875816,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1938,8 +1938,8 @@
     "category": "projects/evoclaw/bsc",
     "importance": 0.95,
     "created_at": 1770630505.1354907,
-    "access_count": 41,
-    "score": 3.1273188028329333,
+    "access_count": 42,
+    "score": 3.1354519237022624,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -1949,8 +1949,8 @@
     "category": "projects/evoclaw/memory",
     "importance": 0.9,
     "created_at": 1770858030.757867,
-    "access_count": 40,
-    "score": 3.1711240764215147,
+    "access_count": 41,
+    "score": 3.180593955351452,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -1960,8 +1960,8 @@
     "category": "projects/evoclaw",
     "importance": 0.9,
     "created_at": 1770858030.926781,
-    "access_count": 39,
-    "score": 3.1077017974129952,
+    "access_count": 40,
+    "score": 3.1182295711978814,
     "tier": "hot"
   },
   {
@@ -1970,8 +1970,8 @@
     "category": "projects/evoclaw",
     "importance": 0.85,
     "created_at": 1771241120.197766,
-    "access_count": 37,
-    "score": 3.2636596492193117,
+    "access_count": 38,
+    "score": 3.277502744133541,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -1985,8 +1985,8 @@
     "category": "projects/evoclaw",
     "importance": 0.9,
     "created_at": 1770879637.1740577,
-    "access_count": 39,
-    "score": 3.13371507198532,
+    "access_count": 40,
+    "score": 3.1443309693699124,
     "tier": "hot"
   },
   {
@@ -1995,8 +1995,8 @@
     "category": "projects/evoclaw",
     "importance": 0.9,
     "created_at": 1770901223.8614366,
-    "access_count": 39,
-    "score": 3.1599222471465187,
+    "access_count": 40,
+    "score": 3.1706269249964247,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -2006,8 +2006,8 @@
     "category": "projects/evoclaw",
     "importance": 0.9,
     "created_at": 1770901223.957171,
-    "access_count": 39,
-    "score": 3.159922363856251,
+    "access_count": 40,
+    "score": 3.170627042101528,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -2017,8 +2017,8 @@
     "category": "projects/evoclaw",
     "importance": 0.9,
     "created_at": 1770901224.0043564,
-    "access_count": 39,
-    "score": 3.159922421379693,
+    "access_count": 40,
+    "score": 3.1706270998198387,
     "tier": "hot",
     "search_method": "keyword-tree"
   },
@@ -2028,8 +2028,8 @@
     "category": "projects/evoclaw/architecture",
     "importance": 0.85,
     "created_at": 1771161294.243141,
-    "access_count": 40,
-    "score": 3.3666813981254737,
+    "access_count": 41,
+    "score": 3.3767352668696757,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -2047,8 +2047,8 @@
     "category": "projects/evoclaw",
     "importance": 0.9,
     "created_at": 1771037807.2176938,
-    "access_count": 41,
-    "score": 3.4668519135846134,
+    "access_count": 42,
+    "score": 3.4758680476687704,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -2056,7 +2056,8 @@
         "/media/DATA/clawd/papers/evoclang-paper-final.pdf"
       ]
     },
-    "tier": "hot"
+    "tier": "hot",
+    "search_method": "keyword-tree"
   },
   {
     "id": "3d27d2785f14",
@@ -2064,8 +2065,8 @@
     "category": "projects/evoclaw/memory",
     "importance": 0.9,
     "created_at": 1771161856.934242,
-    "access_count": 39,
-    "score": 3.4941855128332238,
+    "access_count": 40,
+    "score": 3.5060225541710244,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -2073,7 +2074,8 @@
         "/warm/cold"
       ]
     },
-    "tier": "hot"
+    "tier": "hot",
+    "search_method": "keyword-tree"
   },
   {
     "id": "526e26692898",
@@ -2081,8 +2083,8 @@
     "category": "projects/evoclaw/memory",
     "importance": 0.95,
     "created_at": 1771162554.4913397,
-    "access_count": 37,
-    "score": 3.538715998666756,
+    "access_count": 38,
+    "score": 3.553725768897188,
     "metadata": {
       "urls": [],
       "commands": [],
@@ -2097,13 +2099,14 @@
     "category": "projects/evoclaw",
     "importance": 0.95,
     "created_at": 1771242087.408154,
-    "access_count": 37,
-    "score": 3.6489809790485053,
+    "access_count": 38,
+    "score": 3.6644584477381006,
     "metadata": {
       "urls": [],
       "commands": [],
       "paths": []
     },
-    "tier": "hot"
+    "tier": "hot",
+    "search_method": "keyword-tree"
   }
 ]
