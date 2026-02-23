@@ -8,7 +8,10 @@ Detect if this is a new session (reset/restart) and hydrate if so:
   a. **Run hydration immediately:**
     - Read `memory/$(date +%Y-%m-%d).md` (today's daily notes)
     - Read `memory/$(date -d 'yesterday' +%Y-%m-%d 2>/dev/null || date -v-1d +%Y-%m-%d).md` (yesterday)
-    - Search tiered memory: `uv run python skills/tiered-memory/scripts/memory_cli.py retrieve --query "recent projects decisions events" --limit 5`
+    - **CRITICAL: Search tiered memory FIRST** (prevents WAL misses):
+      ```bash
+      uv run python skills/tiered-memory/scripts/memory_cli.py retrieve --query "config credentials agents projects decisions" --limit 10
+      ```
     - Search hybrid memory: `uv run python skills/hybrid-memory/scripts/hybrid_cli.py search "recent projects decisions credentials" --limit 10`
     - Synthesize key context from MEMORY.md + retrieved results
   b. Update session ID: `uv run python memory/scripts/update_session_id.py <CURRENT_ID>`

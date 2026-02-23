@@ -6,8 +6,7 @@
     "last_access": 0,
     "children": [
       "technical",
-      "general",
-      "projects"
+      "general"
     ]
   },
   "technical": {
@@ -48,22 +47,6 @@
     "warm_count": 298,
     "cold_count": 0,
     "last_access": 1771765208.1227283,
-    "children": []
-  },
-  "projects": {
-    "desc": "Projects",
-    "warm_count": 0,
-    "cold_count": 0,
-    "last_access": 0,
-    "children": [
-      "projects/evoclaw"
-    ]
-  },
-  "projects/evoclaw": {
-    "desc": "Evoclaw",
-    "warm_count": 4,
-    "cold_count": 0,
-    "last_access": 1771765208.138468,
     "children": []
   }
 }

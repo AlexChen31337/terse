@@ -20,10 +20,40 @@
       "status": "open",
       "mode": "live",
       "hl_order_id": "327328416415"
+    },
+    {
+      "timestamp": "2026-02-23T16:20:46.078550",
+      "entry_price": 65057.0,
+      "btc_qty": 0.0046,
+      "usd_amount": 500.0,
+      "fg_at_entry": 5,
+      "status": "open",
+      "mode": "live",
+      "hl_order_id": "327342973585"
+    },
+    {
+      "timestamp": "2026-02-23T18:21:26.627830",
+      "entry_price": 65739.0,
+      "btc_qty": 0.0076,
+      "usd_amount": 500.0,
+      "fg_at_entry": 5,
+      "status": "open",
+      "mode": "live",
+      "hl_order_id": "327413553934"
+    },
+    {
+      "timestamp": "2026-02-23T19:21:25.598316",
+      "entry_price": 65737.0,
+      "btc_qty": 1e-05,
+      "usd_amount": 500.0,
+      "fg_at_entry": 5,
+      "status": "open",
+      "mode": "live",
+      "hl_order_id": "327450302926"
     }
   ],
-  "total_invested": 200.3,
+  "total_invested": 1700.3,
   "mode": "live",
-  "last_action": "DCA_BUY $100 @ $64,801 (F&G=5) [live]",
+  "last_action": "DCA_BUY $500 @ $65,737 (F&G=5) [live]",
   "version": 2
 }

@@ -18,20 +18,29 @@ Don't ask permission. Just do it.
 
 ## Memory Retrieval Protocol (MANDATORY)
 
-**Before answering ANY question, you MUST search tiered memory for relevant context.**
+**⚠️ CRITICAL: Before answering ANY question, you MUST search tiered memory for relevant context.**
 
-This is not optional. Memory is your continuity across sessions.
+This is not optional. Memory is your continuity across sessions. **Skipping this step causes WAL misses and context loss.**
 
 ### Standard Retrieval Flow:
 
 1. **Parse the question** — identify key entities, topics, time references
 2. **Search tiered memory** using tree-based page index:
    ```bash
-   python3 skills/tiered-memory/scripts/memory_cli.py retrieve "search query" --limit 5
+   uv run python skills/tiered-memory/scripts/memory_cli.py retrieve "search query" --limit 5
    ```
 3. **Review retrieved nodes** — 1-3KB of relevant past context
 4. **Synthesize answer** — combine retrieved memory + current knowledge
 5. **If no relevant memory found** — proceed with current knowledge only
+
+### 🚨 NEVER Skip Memory Search For:
+- Configuration questions ("what agents exist?", "what's the model routing?")
+- Credential locations ("where's the API key stored?")
+- Project status ("how's X going?")
+- Decisions made ("why did we choose X?")
+- Any question where the answer might be in memory
+
+**If you catch yourself answering from memory WITHOUT searching:** STOP, search first, then answer. This prevents WAL misses.
 
 ### When to Search:
 
