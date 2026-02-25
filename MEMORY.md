@@ -26,12 +26,14 @@
 ## 💼 Active Projects
 
 ### EvoClaw
-Self-evolving agent framework. Go binary. BSC adapter, cloud sync (Turso), tiered memory. Hackathon deadline Feb 19.
-**Status:** Active — CI coverage boost (74% → 85%), release prep
+Self-evolving agent framework. Go binary. BSC adapter, cloud sync (Turso), tiered memory.
+**Status:** Active — Tool Loop Ph.2 ✅ merged, Web Terminal ✅ merged, Coverage boost 🔄 in flight
+**Phase 1b remaining:** Multi-Chain CLI, BSC contract deployment
+**Phase 2 not started:** Android, ClawHub, iOS, WASM
 
 ### ClawChain
 L1 blockchain for agents. Substrate, NPoS, near-zero fees. 8 pallets deployed. Hetzner VPS 135.181.157.121.
-**Status:** Testnet live at testnet.clawchain.win
+**Status:** Mainnet sprint underway — Faucet (#39) ✅ merged, Block Explorer (#38) ✅ merged, PoA Bootstrap (#28) 🔄 in flight
 
 ### GPU Media Pipeline
 AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@10.0.0.44.
@@ -39,12 +41,18 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 
 ## ✅ Pending Tasks
 
-- [IN-PROGRESS] EvoClaw test coverage to 85%+
-- [IN-PROGRESS] Fix tiered memory integration loop
-- [PENDING] AI stack migration to /data verify
+- [IN-PROGRESS] ClawChain: PoA Bootstrap (#28) — PBR Planner running, branch feat/poa-bootstrap
+- [IN-PROGRESS] EvoClaw: Coverage boost api 53%→85%+, cmd 7%→85%+ — Builder running
+- [IN-PROGRESS] ADR-007: Native memory migration — Builder running (config patched, archiving skills)
+- [PENDING] ClawChain: OpenClaw integration (#36) — next sprint
+- [PENDING] EvoClaw: Multi-Chain CLI, BSC contract deployment
 
 ## 📅 Recent Events
 
+- [Feb 25] ClawChain mainnet sprint: Faucet + Block Explorer PRs merged to main
+- [Feb 25] EvoClaw: Tool Loop Ph.2 (parallel errgroup) + Web Terminal (xterm.js+WS) merged
+- [Feb 25] ADR-007 committed: migrating to native OpenClaw memorySearch + memoryFlush + contextPruning
+- [Feb 25] Native memory config patched: sqlite-vec bundled with OpenClaw at openclaw/node_modules/sqlite-vec-linux-x64/vec0.so
 - [Feb 19] EvoClaw hackathon deadline Feb 19 3AM UTC
 - [Feb 12] New 112GB SSD mounted at /data on GPU server
 - [Feb 12] Router config populated with 14 real models
@@ -59,8 +67,28 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - **Target profit:** +$5 USDC (reach $26.59), session start recorded in risk_config.json
 - **DO NOT** treat Simmer as paper-only — it IS real USDC when private key is loaded
 
+## 🏗️ Architecture Decisions
+
+### ADR-007: Native Memory Lifecycle (2026-02-25)
+- `memorySearch` = SQLite + sqlite-vec + hybrid BM25+vector + onSessionStart auto-inject
+- `compaction.memoryFlush` = auto-save context before compaction at 150k tokens
+- `contextPruning` = cache-ttl 2h, prunes old Read+exec tool results
+- tiered-memory, hybrid-memory, session-guard → archived to `skills/archived/`
+- Trade-off: reliability (always-on) > sophistication (LLM tree navigation)
+- Rollback: `openclaw config patch '{"agents":{"defaults":{"memorySearch":{"enabled":false}}}}'`
+
+### ClawChain Pallet Storage Names (verified 2026-02-25)
+- `agentRegistry.ownerAgents(address)` → agent IDs for owner
+- `agentRegistry.agentRegistry(agentId)` → agent details
+- `reputation.reputations(accountId)` → reputation score
+- `gasQuota.agentQuotas(accountId)` → quota info
+
 ## 🎯 Critical Lessons
 
+- **[arch]** Check if OpenClaw already ships a feature natively before building a Python wrapper — learned with tiered-memory/session-guard
+- **[arch]** PBR Review phase always catches real bugs — never skip (found: setInterval leak, CSWSH, missing 72 tests, personal info in docs)
+- **[ops]** Always verify pallet storage names from source before building UIs — assumed names will be wrong
+- **[ops]** Parallel PBR pipelines work well when features touch separate dirs (services/faucet, services/explorer, etc.)
 - **[security]** Never commit plaintext credentials — encrypt first, gitignore plaintext
 - **[security]** Use SSH keys for git remotes, not PATs in URLs
 - **[security]** Rotate compromised credentials immediately
@@ -75,4 +103,4 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - **[meta]** Eat your own dogfood — use skills you build
 
 ---
-*Generated: 2026-02-24 00:00*
+*Updated: 2026-02-25 17:43 AEDT*
