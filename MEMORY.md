@@ -39,8 +39,11 @@ L1 blockchain for agents. Substrate, NPoS, near-zero fees. 8 pallets deployed. H
 
 ### GPU Media Pipeline
 AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
-**ComfyUI:** running from `/data2/comfyui/ComfyUI`, port 8188, output at `/data2/comfyui/ComfyUI/output/`
-**Status:** Z-Image Turbo active. Models migrated to SSD 2026-02-25 ✅
+**ComfyUI (GPU 0, primary):** port 8188, RTX 3090 24GB, full-speed, no flags needed
+**ComfyUI (GPU 1, secondary):** port 8189, RTX 3080 10GB, `--cuda-device 1 --lowvram`, pid 158708
+**Status:** Z-Image Turbo active. Models migrated to SSD 2026-02-25 ✅. GPU 1 verified working 2026-02-26 ✅
+**RTX 3080 lowvram peak:** ~4.3–4.4 GB VRAM (blog claim of 8GB req = correct; actual much lower)
+**GPU 1 use case:** parallel/background generation jobs (4x slower than GPU 0 due to block offloading)
 
 **ZImage Turbo model files (on SSD, symlinked from /data2):**
 - Actual location: `/data/comfyui/models/{diffusion_models,text_encoders,vae}/`
@@ -69,6 +72,8 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 - [PENDING] EvoClaw: Multi-Chain CLI, BSC contract deployment
 
 ## 📅 Recent Events
+- [Feb 26] ZImage Turbo confirmed on GPU 1 (RTX 3080) — `--lowvram` mode, peak 4.4GB VRAM; ComfyUI port 8189, pid 158708
+- [Feb 26] RSI health score 0.148 — 68% failure rate, 5 proposals pending auto-deploy
 - [Feb 26] Daily Ideas Email cron wired — 08:00 AEDT → bowen31337@outlook.com (market + 3 ideas + project pulse)
 
 - [Feb 25] Quant risk_config.json v2.0 written — $5/day target on $127.44 active capital, UBTC/HYPE as long holds
@@ -133,8 +138,21 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 
 **⚠️ Trap:** Incomplete workflow (no UNETLoader/sampler) → job stuck at `running=1` with ~683 MiB VRAM, `ep_poll` state. Fix with repeated POST `/interrupt`. CLIPLoader type=`qwen_image` IS valid.
 **⚠️ Always check history first before rebuilding:** `curl -s http://localhost:8188/history` — working workflows are preserved. Reference job: `abcbbb2c` (evoclaw_promo, good template).
+**⚠️ TextEncodeZImageOmni bug:** `auto_resize_images` is REQUIRED in BOTH positive AND negative nodes — missing it silently fails with "Required input is missing" in log.
 **Special ZImage nodes:** `TextEncodeZImageOmni`, `EmptyQwenImageLayeredLatentImage`, `TextEncodeQwenImageEdit`, `QwenImageDiffsynthControlnet`, `ZImageFunControlnet`, `ModelMergeQwenImage`
 **Model load time:** ~10 min cold from USB HDD → **~35 sec from SSD** (models migrated to `/data/comfyui/models/` on 2026-02-25)
+
+### ZImage on RTX 3080 / GPU 1 — lowvram mode (verified 2026-02-26)
+**Confirmed:** ZImage Turbo runs on RTX 3080 (10GB) — blog's 8GB claim is correct, actual peak ~4.3GB.
+**Launch cmd:** `nohup /home/peter/miniconda3/bin/python main.py --listen 0.0.0.0 --port 8189 --cuda-device 1 --lowvram > /tmp/comfyui_gpu1.log 2>&1 &`
+**How lowvram works:**
+- CLIP (5.3GB fp8): fully offloaded to CPU RAM (`load device: cpu`)
+- UNet (12GB bf16 Lumina2): loaded block-by-block in GPU, offloaded between steps
+- VAE: on GPU (small)
+- Requires 15GB+ system RAM — server has 15.9GB + 256GB swap ✓
+**Tradeoff:** ~4x slower than GPU 0 full-speed; good for background/parallel jobs
+**Both GPUs can run simultaneously:** GPU 0 (port 8188, full speed) + GPU 1 (port 8189, lowvram)
+**Process:** pid 158708 (may not survive reboots — check with `ss -tlnp | grep 8189`)
 
 ### ADR-007: Native Memory Lifecycle (2026-02-25)
 - `memorySearch` = SQLite + sqlite-vec + hybrid BM25+vector + onSessionStart auto-inject
@@ -174,6 +192,8 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 ## 🎯 Critical Lessons
 - **[ideas]** Daily ideas email ALWAYS uses Opus 4.6 — Bowen explicit. Ideas drive real execution, quality beats cost.
 
+- **[comfyui]** ZImage Turbo runs on RTX 3080 10GB with `--lowvram` — peak only 4.3GB, blog's 8GB claim is an upper bound. CLIP offloads to CPU, UNet blocks cycle through GPU.
+- **[comfyui]** `TextEncodeZImageOmni` requires `auto_resize_images` in BOTH pos AND neg nodes — missing it silently fails validation
 - **[comfyui]** ZImage Turbo needs UNETLoader (not CheckpointLoaderSimple) — incomplete workflows silently hang at running=1 with near-zero VRAM
 - **[comfyui]** CLIPLoader type=`qwen_image` IS valid for Qwen text encoders; job hangs were from missing sampler/decode nodes
 - **[comfyui]** Always check `/history` before rebuilding a workflow — previous working jobs are cached there
@@ -208,4 +228,4 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 - **[cron]** Always set `model` in cron payloads — no model = Sonnet default = expensive waste for monitoring tasks
 
 ---
-*Updated: 2026-02-25 23:32 AEDT*
+*Updated: 2026-02-26 09:21 AEDT*
