@@ -62,7 +62,7 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 - [DONE] Quant SOUL.md v2.0 updated — profit targets, approval gate, UBTC/HYPE long holds
 - [PENDING] Pillow text overlay for EvoClaw social card — same typo issue as ClawChain card (fixed Feb 25)
 - [PENDING] PoA Bootstrap — deploy systemd service on VPS 135.181.157.121
-- [PENDING] Active-task WAL — implement `memory/active-task.json` (survives compaction; stores prompt_id, status, started_at)
+- [DONE] Active-task WAL — scripts/active_task.py built, wired into AGENTS.md session start
 - [MONITOR] Awesome-openclaw PR #30 — awaiting review at hesamsheikh/awesome-openclaw-usecases
 - [MONITOR] Native memory effectiveness — evaluate 1 week, trigger tiered plugin build if <80% accurate
 - [PENDING] ClawChain: OpenClaw integration (#36) — next sprint
