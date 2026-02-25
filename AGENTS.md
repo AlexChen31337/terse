@@ -13,74 +13,26 @@ Before doing anything else:
 2. Read `USER.md` — this is who you're helping
 3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
 4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+5. **Check for interrupted tasks:**
+   ```bash
+   uv run python scripts/active_task.py resume
+   ```
+   - Exit 0 = clean start, proceed normally
+   - Exit 1 = task was in-flight when session ended → **resume it before doing anything else**
+   - The resume output tells you exactly where you were and what the next step is
 
 Don't ask permission. Just do it.
-
-## Memory Retrieval Protocol (MANDATORY)
-
-**⚠️ CRITICAL: Before answering ANY question, you MUST search tiered memory for relevant context.**
-
-This is not optional. Memory is your continuity across sessions. **Skipping this step causes WAL misses and context loss.**
-
-### Standard Retrieval Flow:
-
-1. **Parse the question** — identify key entities, topics, time references
-2. **Search tiered memory** using tree-based page index:
-   ```bash
-   uv run python skills/tiered-memory/scripts/memory_cli.py retrieve "search query" --limit 5
-   ```
-3. **Review retrieved nodes** — 1-3KB of relevant past context
-4. **Synthesize answer** — combine retrieved memory + current knowledge
-5. **If no relevant memory found** — proceed with current knowledge only
-
-### 🚨 NEVER Skip Memory Search For:
-- Configuration questions ("what agents exist?", "what's the model routing?")
-- Credential locations ("where's the API key stored?")
-- Project status ("how's X going?")
-- Decisions made ("why did we choose X?")
-- Any question where the answer might be in memory
-
-**If you catch yourself answering from memory WITHOUT searching:** STOP, search first, then answer. This prevents WAL misses.
-
-### When to Search:
-
-- ✅ **User asks about past events** ("what did we do yesterday?")
-- ✅ **User asks about projects** ("how's EvoClaw going?")
-- ✅ **User asks about people/places** ("who is Sarah?")
-- ✅ **User asks for status** ("what's the LTX-2 situation?")
-- ✅ **User asks about decisions** ("why did we choose X?")
-- ✅ **Technical questions that might have documented answers** ("how do I use skill Y?")
-- ❌ **General knowledge** ("what's the capital of France?")
-- ❌ **Current time/weather** (use real-time tools instead)
-
-### Why Tree-Based Retrieval Matters:
-
-The tiered memory system uses **LLM-powered tree navigation**, not vector similarity:
-- **O(log n) search** — navigates categories, doesn't scan everything
-- **Explainable** — every result traces a reasoning path
-- **No embeddings required** — pure reasoning-based retrieval
-- **Context-aware** — understands "recent project updates" vs "old architecture decisions"
-
-### Integration with Existing Memory Files:
-
-The tiered memory system **automatically ingests** from daily notes:
-- `memory/YYYY-MM-DD.md` files → automatically consolidated into warm/cold tiers
-- Tree index updated during consolidation
-- You don't need to manually sync — consolidation jobs handle it
-
-**Your workflow:**
-1. Write to `memory/YYYY-MM-DD.md` for new events (raw notes)
-2. Search tiered memory for past context (tree retrieval)
-3. Update `MEMORY.md` for critical lessons (manual curation)
 
 ## Memory
 
 You wake up fresh each session. These files are your continuity:
 - **Daily notes:** `memory/YYYY-MM-DD.md` (create `memory/` if needed) — raw logs of what happened
 - **Long-term:** `MEMORY.md` — your curated memories, like a human's long-term memory
-- **Tiered memory:** Searchable via tree index — use `memory_cli.py retrieve` before answering
+- **Native search:** OpenClaw auto-indexes memory files and injects relevant context on session start — no scripts needed
 
 Capture what matters. Decisions, context, things to remember. Skip the secrets unless asked to keep them.
+
+**Note:** `memory_cli.py` and `hybrid_cli.py` are archived — do not call them manually.
 
 ### 🧠 MEMORY.md - Your Long-Term Memory
 - **ONLY load in main session** (direct chats with your human)
@@ -90,6 +42,26 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - Write significant events, thoughts, decisions, opinions, lessons learned
 - This is your curated memory — the distilled essence, not raw logs
 - Over time, review your daily files and update MEMORY.md with what's worth keeping
+
+### 🔄 Active Task WAL — Use It for Every Multi-Step Task
+For any task that takes >5 minutes or involves multiple steps (spawning builders, running tests, multi-file edits):
+
+```bash
+# On task start
+uv run python scripts/active_task.py start "Task description" \
+  --step "Step 1/N: what you're doing now" \
+  --context "Key state: files touched, agents spawned, what comes next"
+
+# As you progress through steps
+uv run python scripts/active_task.py update --step "Step 2/N: ..."
+
+# When fully complete
+uv run python scripts/active_task.py done
+```
+
+**Why:** Compaction or restart mid-task = context_loss. The WAL file survives both.
+**Session start automatically checks:** `uv run python scripts/active_task.py resume`
+**History:** `uv run python scripts/active_task.py history`
 
 ### 📝 Write It Down - No "Mental Notes"!
 - **Memory is limited** — if you want to remember something, WRITE IT TO A FILE
