@@ -36,15 +36,22 @@ L1 blockchain for agents. Substrate, NPoS, near-zero fees. 8 pallets deployed. H
 **Status:** Mainnet sprint underway — Faucet (#39) ✅ merged, Block Explorer (#38) ✅ merged, PoA Bootstrap (#28) 🔄 in flight
 
 ### GPU Media Pipeline
-AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@10.0.0.44.
-**Status:** Z-Image active on GPU server (LTX-2 removed per Bowen)
+AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
+**ComfyUI:** running from `/data2/comfyui/ComfyUI`, port 8188, output at `/data2/comfyui/ComfyUI/output/`
+**Status:** Z-Image Turbo active — correct workflow discovered 2026-02-25 (see Architecture Decisions)
+
+**ZImage Turbo model files:**
+- Diffusion: `models/diffusion_models/z_image_turbo_bf16.safetensors`
+- CLIP (text encoder): `models/text_encoders/qwen_3_4b_fp8_mixed.safetensors`
+- VAE: `models/vae/z_image_ae.safetensors`
 
 ## ✅ Pending Tasks
 
-- [IN-PROGRESS] ClawChain: PoA Bootstrap (#28) — PBR Planner running (long), branch feat/poa-bootstrap
-- [IN-PROGRESS] EvoClaw: Coverage boost api 53%→85%+, cmd 7%→85%+ — Builder running
-- [IN-PROGRESS] EvoClaw: RSI auto-log — Builder running, branch feat/toolloop-rsi-autolog
-- [IN-PROGRESS] ADR-007: Native memory migration — Builder running (config patched, archiving skills)
+- [PENDING] **Milka claw machine image** — ZImage Turbo, complete workflow ready (see below), needs to be submitted to ComfyUI
+- [IN-PROGRESS] ClawChain: PoA Bootstrap (#28) — PBR Planner was running (long), branch feat/poa-bootstrap — check status
+- [IN-PROGRESS] EvoClaw: Coverage boost api 53%→85%+, cmd 7%→85%+ — Builder was running — check status
+- [IN-PROGRESS] ADR-007: Native memory migration — Builder was running (config patched, archiving skills) — check status
+- [MERGED] EvoClaw: RSI auto-log ✅ PR #16 merged
 - [MONITOR] Native memory effectiveness — evaluate for 1 week, trigger plugin build if <80% effective
 - [PENDING] ClawChain: OpenClaw integration (#36) — next sprint
 - [PENDING] EvoClaw: Multi-Chain CLI, BSC contract deployment
@@ -70,6 +77,21 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - **DO NOT** treat Simmer as paper-only — it IS real USDC when private key is loaded
 
 ## 🏗️ Architecture Decisions
+
+### ZImage Turbo ComfyUI Workflow (2026-02-25)
+**Correct node order for text-to-image generation:**
+1. `UNETLoader` → unet_name=`z_image_turbo_bf16.safetensors`, weight_dtype=`default` → MODEL
+2. `CLIPLoader` → clip_name=`qwen_3_4b_fp8_mixed.safetensors`, type=`qwen_image` → CLIP
+3. `VAELoader` → vae_name=`z_image_ae.safetensors` → VAE
+4. `TextEncodeZImageOmni` (clip=CLIP, prompt=text, auto_resize_images=true) → CONDITIONING (pos)
+5. `TextEncodeZImageOmni` (clip=CLIP, prompt="") → CONDITIONING (neg)
+6. `EmptyQwenImageLayeredLatentImage` (width=1024, height=1024, layers=3, batch_size=1) → LATENT
+7. `KSampler` (model=MODEL, pos/neg/latent, steps=8, cfg=1.0, sampler=euler, scheduler=simple)
+8. `VAEDecode` (samples=LATENT, vae=VAE) → IMAGE
+9. `SaveImage` (filename_prefix=`milka_claw_machine`) → output file
+
+**⚠️ Trap:** Incomplete workflow (no UNETLoader/sampler) → job stuck at `running=1` with ~683 MiB VRAM, `ep_poll` state. Fix with repeated POST `/interrupt`. CLIPLoader type=`qwen_image` IS valid.
+**Special ZImage nodes:** `TextEncodeZImageOmni`, `EmptyQwenImageLayeredLatentImage`, `TextEncodeQwenImageEdit`, `QwenImageDiffsynthControlnet`, `ZImageFunControlnet`, `ModelMergeQwenImage`
 
 ### ADR-007: Native Memory Lifecycle (2026-02-25)
 - `memorySearch` = SQLite + sqlite-vec + hybrid BM25+vector + onSessionStart auto-inject
@@ -97,6 +119,8 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 
 ## 🎯 Critical Lessons
 
+- **[comfyui]** ZImage Turbo needs UNETLoader (not CheckpointLoaderSimple) — incomplete workflows silently hang at running=1 with near-zero VRAM
+- **[comfyui]** CLIPLoader type=`qwen_image` IS valid for Qwen text encoders; job hangs were from missing sampler/decode nodes
 - **[arch]** Check if OpenClaw already ships a feature natively before building a Python wrapper — learned with tiered-memory/session-guard
 - **[arch]** For RSI: fix data pipeline (auto-logging) before building plugin — proposals are only as good as the signal quality
 - **[arch]** Plugin = lifecycle hooks needed; Cron = periodic execution fine. RSI analysis/deploy = cron; outcome logging = tool loop hook
@@ -117,4 +141,4 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - **[meta]** Eat your own dogfood — use skills you build
 
 ---
-*Updated: 2026-02-25 18:11 AEDT*
+*Updated: 2026-02-25 21:40 AEDT*
