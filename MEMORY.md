@@ -27,13 +27,15 @@
 
 ### EvoClaw
 Self-evolving agent framework. Go binary. BSC adapter, cloud sync (Turso), tiered memory.
-**Status:** Active — Tool Loop Ph.2 ✅ merged, Web Terminal ✅ merged, Coverage boost 🔄 in flight
-**Phase 1b remaining:** Multi-Chain CLI, BSC contract deployment
+**Status:** Active — Tool Loop Ph.2 ✅ merged, Web Terminal ✅ merged, RSI auto-log ✅ merged (#16), CI hotfix PR #17 (WebSocket migration) open
+**CI fix:** Migrated `nhooyr.io/websocket` → `github.com/coder/websocket` v1.8.14 (nhooyr deprecated/archived, caused staticcheck failures)
+**Phase 1b remaining:** Multi-Chain CLI, BSC contract deployment, Coverage boost (api 53%→85%+, cmd 7%→85%+) 🔄
 **Phase 2 not started:** Android, ClawHub, iOS, WASM
 
 ### ClawChain
 L1 blockchain for agents. Substrate, NPoS, near-zero fees. 8 pallets deployed. Hetzner VPS 135.181.157.121.
 **Status:** Mainnet sprint underway — Faucet (#39) ✅ merged, Block Explorer (#38) ✅ merged, PoA Bootstrap (#28) 🔄 in flight
+**VPS needs:** systemd service for node process (currently running raw)
 
 ### GPU Media Pipeline
 AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
@@ -52,35 +54,67 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 
 ## ✅ Pending Tasks
 
-- [DONE] ~~Milka claw machine image~~ — generated ✅ (`milka_claw_machine_00001_.png`, sent to Bowen 22:01 AEDT)
-- [PENDING] **Active-task WAL** — implement `memory/active-task.json` to survive compaction (prompt_id, status, started_at); check on session start and resume instead of restart
-- [IN-PROGRESS] ClawChain: PoA Bootstrap (#28) — PBR Planner was running (long), branch feat/poa-bootstrap — check status
-- [IN-PROGRESS] EvoClaw: Coverage boost api 53%→85%+, cmd 7%→85%+ — Builder was running — check status
-- [IN-PROGRESS] ADR-007: Native memory migration — Builder was running (config patched, archiving skills) — check status
-- [MERGED] EvoClaw: RSI auto-log ✅ PR #16 merged
-- [MONITOR] Native memory effectiveness — evaluate for 1 week, trigger plugin build if <80% effective
+- [IN-PROGRESS] EvoClaw CI hotfix PR #17 — WebSocket migration fix, awaiting green CI then merge
+- [IN-PROGRESS] EvoClaw coverage boost — api 53%→85%+, cmd 7%→85%+ (Builder was running)
+- [IN-PROGRESS] ClawChain PoA Bootstrap PR — branch feat/poa-bootstrap, Planner was long-running
+- [IN-PROGRESS] ADR-007 Native Memory migration — config patched 3x, Builder archiving skills
+- [PENDING] Quant daily trading cron — 06:00 AM AlphaStrike scan + Simmer briefing, 30-min monitor, 10:00 PM close + P&L + report to Alex
+- [PENDING] Quant SOUL.md — update with profit target rules, 3% daily target, -2% stop-loss, dual-track split
+- [PENDING] Pillow text overlay for EvoClaw social card — same typo issue as ClawChain card (fixed Feb 25)
+- [PENDING] PoA Bootstrap — deploy systemd service on VPS 135.181.157.121
+- [PENDING] Active-task WAL — implement `memory/active-task.json` (survives compaction; stores prompt_id, status, started_at)
+- [MONITOR] Awesome-openclaw PR #30 — awaiting review at hesamsheikh/awesome-openclaw-usecases
+- [MONITOR] Native memory effectiveness — evaluate 1 week, trigger tiered plugin build if <80% accurate
 - [PENDING] ClawChain: OpenClaw integration (#36) — next sprint
 - [PENDING] EvoClaw: Multi-Chain CLI, BSC contract deployment
 
 ## 📅 Recent Events
 
-- [Feb 25] ClawChain mainnet sprint: Faucet + Block Explorer PRs merged to main
-- [Feb 25] EvoClaw: Tool Loop Ph.2 (parallel errgroup) + Web Terminal (xterm.js+WS) merged
-- [Feb 25] ADR-007 committed: migrating to native OpenClaw memorySearch + memoryFlush + contextPruning
-- [Feb 25] Native memory config patched: sqlite-vec bundled with OpenClaw at openclaw/node_modules/sqlite-vec-linux-x64/vec0.so
+- [Feb 25] Quant risk_config.json v2.0 written — $5/day target on $127.44 active capital, UBTC/HYPE as long holds
+- [Feb 25] Marketing assets repo created: `clawinfra/marketing-assets` (public), 6 AI-generated images + Pillow social cards
+- [Feb 25] ClawChain social card regenerated with Pillow text overlay (AI diffusion hallucinated text — fixed)
+- [Feb 25] EvoClaw CI hotfix PR #17 opened — nhooyr→coder/websocket migration
+- [Feb 25] Awesome-openclaw PR #30 opened — PBR Code Shipping Pipeline use case
+- [Feb 25] ZImage Turbo models migrated to SSD (10 min load → 35 sec); 6 marketing images generated
+- [Feb 25] ADR-007 committed: native OpenClaw memorySearch + memoryFlush + contextPruning
+- [Feb 25] ClawChain: Faucet (#39) + Block Explorer (#38) merged; RSI auto-log (#16) merged
+- [Feb 25] EvoClaw: Tool Loop Ph.2 (#14) + Web Terminal (#15) merged
 - [Feb 19] EvoClaw hackathon deadline Feb 19 3AM UTC
 - [Feb 12] New 112GB SSD mounted at /data on GPU server
-- [Feb 12] Router config populated with 14 real models
 
-## 💰 Simmer / Prediction Markets
+## 💰 Portfolio & Trading
 
-- **Wallet:** `0xb2Ae880e2d1Dbe5E6d33ACa514126702DEf92e62` — ALREADY LINKED, ALREADY CLAIMED (leaf-7IPH)
-- **Trading:** Real USDC via `venue='polymarket'` — NOT paper, NOT $SIM
-- **Private key:** `~/clawd/memory/encrypted/simmer-polymarket-private-key.txt.enc` (GPG, passphrase in `.key`)
-- **`_load_client()`** in `fear-harvester/scripts/simmer_integration.py` auto-decrypts key + sets `venue='polymarket'`
-- **Balance:** $21.59 USDC real money
-- **Target profit:** +$5 USDC (reach $26.59), session start recorded in risk_config.json
+### Wallets (as of 2026-02-25)
+- **HL address:** `0x64e830dd7af93431c898ea9e4c375c6706bd0fc5`
+- **Simmer/Polymarket wallet:** `0xb2Ae880e2d1Dbe5E6d33ACa514126702DEf92e62` — LINKED + CLAIMED (leaf-7IPH)
+
+### Balances (snapshot 2026-02-25)
+- **HL Perp account:** $105.85 USDC (no open positions)
+- **Spot UBTC:** 0.01529 BTC @ $65,751.50 = **$1,005.32** — LONG-TERM HOLD, DO NOT TRADE
+- **Spot HYPE:** 1.2264 HYPE @ $27.31 = **$33.50** — LONG-TERM HOLD, DO NOT TRADE
+- **Spot USDC:** $0.37
+- **Simmer:** $21.59 USDC real money
+- **Grand Total:** ~$1,166.63
+
+### Active Trading Capital Only
+- HL Perp ($105.85) + Simmer ($21.59) = **$127.44 active capital**
+- UBTC/HYPE excluded from active trading
+
+### Risk Config v2.0 (written 2026-02-25)
+- **Daily target:** $5.00 profit on active capital (~0.40% of total portfolio)
+- **Daily stop-loss:** -$3.00 (-2.50%)
+- **Max leverage HL perp:** 3x
+- **Simmer min edge:** 5%+ with AlphaStrike confidence ≥ 0.70
+- **HYPE alert threshold:** price < $15
+- **UBTC stop-loss alert:** price < $50,000
+- **High-water mark:** $1,166.63 (full portfolio)
+- File: `/home/bowen/clawd/skills/simmer-risk/risk_config.json`
+
+### Trading Rules
 - **DO NOT** treat Simmer as paper-only — it IS real USDC when private key is loaded
+- Private key: `~/clawd/memory/encrypted/simmer-polymarket-private-key.txt.enc` (GPG, passphrase in `.key`)
+- `_load_client()` in `fear-harvester/scripts/simmer_integration.py` auto-decrypts key + sets `venue='polymarket'`
+- HL import issue: `ModuleNotFoundError: No module named 'signing'` — use raw `requests` to HL REST API instead
 
 ## 🏗️ Architecture Decisions
 
@@ -152,6 +186,13 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 - **[work]** Coverage threshold 85% minimum, 90% ideal — Bowen explicit
 - **[tools]** Use uv not pip on GPU server — Bowen explicit
 - **[meta]** Eat your own dogfood — use skills you build
+- **[trading]** Separate long holds from active trading capital — UBTC/HYPE are NOT trading capital
+- **[trading]** % target beats flat $ — $5/day = 23% ROI on $21 (unsustainable); use % of active capital
+- **[trading]** HL signing module has import path issues — use raw `requests` to HL REST API (`https://api.hyperliquid.xyz/info`)
+- **[marketing]** AI diffusion models hallucinate text — always Pillow-compose all text overlays onto visual-only backgrounds
+- **[ci]** nhooyr.io/websocket deprecated/archived — use `github.com/coder/websocket` v1.8.14 for Go WebSocket in EvoClaw
+- **[community]** Awesome-openclaw entry: PBR pipeline (not multi-agent-team) — `multi-agent-team.md` already existed; PBR distinct via agent isolation + quality gates
+- **[cron]** Always set `model` in cron payloads — no model = Sonnet default = expensive waste for monitoring tasks
 
 ---
-*Updated: 2026-02-25 22:19 AEDT*
+*Updated: 2026-02-25 23:32 AEDT*
