@@ -6,7 +6,8 @@
     "last_access": 0,
     "children": [
       "technical",
-      "general"
+      "general",
+      "trading"
     ]
   },
   "technical": {
@@ -47,6 +48,22 @@
     "warm_count": 298,
     "cold_count": 0,
     "last_access": 1771765208.1227283,
+    "children": []
+  },
+  "trading": {
+    "desc": "Trading",
+    "warm_count": 0,
+    "cold_count": 0,
+    "last_access": 0,
+    "children": [
+      "trading/simmer"
+    ]
+  },
+  "trading/simmer": {
+    "desc": "Simmer",
+    "warm_count": 1,
+    "cold_count": 0,
+    "last_access": 1771965554.6913323,
     "children": []
   }
 }

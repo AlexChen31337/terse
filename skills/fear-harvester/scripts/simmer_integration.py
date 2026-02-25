@@ -62,7 +62,7 @@ RECOVERY_KEYWORDS = [
     "bitcoin", "btc", "crypto", "fear greed", "cryptocurrency",
     "ethereum", "eth", "bull", "recovery",
 ]
-CRASH_KEYWORDS = ["crash", "bear", "below", "collapse", "dump"]
+CRASH_KEYWORDS = ["crash", "bear", "below", "collapse", "dump", "dip", "fall", "drop", "decline"]
 
 # Preferred resolution horizon keywords (score boost)
 LONG_HORIZON_KEYWORDS = [
@@ -121,12 +121,63 @@ def _sync_open_positions(client: Any, state: dict[str, Any]) -> dict[str, Any]:
 # Client
 # ---------------------------------------------------------------------------
 
+def _load_privkey() -> str | None:
+    """
+    Decrypt the Polymarket wallet private key from GPG-encrypted storage.
+    Returns the key with '0x' prefix, or None if unavailable.
+
+    Setup (already done):
+      - Wallet linked: 0xb2Ae880e2d1Dbe5E6d33ACa514126702DEf92e62
+      - Encrypted at: ~/clawd/memory/encrypted/simmer-polymarket-private-key.txt.enc
+      - GPG passphrase: ~/clawd/memory/encrypted/.key
+    """
+    import subprocess
+    key_file = Path.home() / "clawd/memory/encrypted/simmer-polymarket-private-key.txt.enc"
+    pass_file = Path.home() / "clawd/memory/encrypted/.key"
+    if not key_file.exists() or not pass_file.exists():
+        logger.warning("Simmer: private key or passphrase file missing — trading in $SIM mode")
+        return None
+    try:
+        passphrase = pass_file.read_text().strip()
+        result = subprocess.run(
+            ["gpg", "--batch", "--quiet", "--passphrase", passphrase, "--decrypt", str(key_file)],
+            capture_output=True, text=True, timeout=10
+        )
+        if result.returncode != 0:
+            logger.warning("Simmer: GPG decrypt failed — trading in $SIM mode")
+            return None
+        raw = result.stdout.strip()
+        if not raw or "ERROR" in raw.upper():
+            logger.warning("Simmer: decrypted key looks invalid — trading in $SIM mode")
+            return None
+        key = raw if raw.startswith("0x") else f"0x{raw}"
+        logger.info("Simmer: Polymarket wallet loaded (0x%s...)", key[2:8])
+        return key
+    except Exception as e:
+        logger.warning("Simmer: failed to load private key (%s) — trading in $SIM mode", e)
+        return None
+
+
 def _load_client():
-    """Load Simmer SDK client from credentials."""
+    """
+    Load Simmer SDK client with Polymarket wallet for real USDC trading.
+
+    The Polymarket wallet (0xb2Ae880e2d1Dbe5E6d33ACa514126702DEf92e62) is already
+    linked to the Simmer agent. Passing the private key activates real USDC trading
+    via venue='polymarket'. Without it, the client defaults to $SIM virtual trades.
+    """
     try:
         from simmer_sdk import SimmerClient  # type: ignore[import-not-found]
         creds = json.loads(SIMMER_CREDS_PATH.read_text())
-        return SimmerClient(api_key=creds["api_key"])
+        privkey = _load_privkey()
+        venue = "polymarket" if privkey else "simmer"
+        client = SimmerClient(api_key=creds["api_key"], private_key=privkey, venue=venue)
+        if privkey:
+            logger.info("Simmer: client ready — venue=polymarket (real USDC), wallet=%s...",
+                        client.wallet_address[:10] if client.wallet_address else "?")
+        else:
+            logger.warning("Simmer: client ready — venue=simmer ($SIM virtual, no real trades)")
+        return client
     except ImportError:
         raise RuntimeError("Simmer SDK not found. Run: pip install simmer-sdk")
     except FileNotFoundError:
@@ -176,15 +227,16 @@ def _is_short_term_candle(title: str) -> bool:
 def _has_real_volume(market: Any) -> bool:
     """
     Return True only if market has explicitly nonzero volume.
-    volume=0 or volume=None → thin/inactive → skip.
+    volume=0 → thin/inactive → skip.
+    volume=None → SDK doesn't expose it (Simmer SDK v2) → pass through, rely on other filters.
     """
     vol_raw = _market_attr(market, "volume", "total_volume")
     if vol_raw is None:
-        return False  # Unknown volume → skip conservatively
+        return True  # Unknown volume → can't filter, pass through
     try:
         return float(vol_raw) >= MIN_MARKET_VOLUME
     except (TypeError, ValueError):
-        return False
+        return True  # Unparseable → pass through
 
 
 def _long_horizon_score(title: str) -> int:
@@ -195,46 +247,69 @@ def _long_horizon_score(title: str) -> int:
 
 def find_fear_markets(client: Any) -> list[Any]:
     """
-    Find crypto markets relevant to a fear-based contrarian trade.
-    Filters out candle markets and low-volume markets.
-    Returns markets sorted by long-horizon score + volume desc.
+    Find markets relevant to a fear-based contrarian trade.
+
+    Strategy (v2): scan ALL active markets (get_markets limit=100) instead of
+    keyword searches that only return short-term candle markets.  Supplement
+    with targeted keyword searches for longer-horizon crypto/finance markets.
+
+    Filters out candle markets and SDK-invisible-volume markets.
+    Returns markets sorted by long-horizon score desc.
     """
     candidates = []
     seen_ids: set[str] = set()
 
-    for keyword in ["bitcoin", "crypto", "btc", "fear", "cryptocurrency"]:
+    def _add_market(m: Any) -> None:
+        mid = str(_market_attr(m, "market_id", "id") or id(m))
+        if mid in seen_ids:
+            return
+        seen_ids.add(mid)
+
+        title = (_market_attr(m, "question", "title") or "").strip()
+
+        # Hard filter: skip 5-60min candle markets
+        if _is_short_term_candle(title):
+            logger.debug("Simmer: skipping candle market — %s", title[:60])
+            return
+
+        # Hard filter: must have real volume (passthrough if SDK doesn't expose it)
+        if not _has_real_volume(m):
+            logger.debug("Simmer: skipping zero-volume market — %s", title[:60])
+            return
+
+        # Hard filter: USDC only — must be Polymarket-bridged (real USDC), not SDK-native ($SIM)
+        # The `currency` field is never populated by the SDK, so we use `is_sdk_only` instead:
+        #   is_sdk_only=True  → Simmer-native market, bets in $SIM  ← SKIP
+        #   is_sdk_only=False → Polymarket-bridged, bets in real USDC ← ALLOW
+        if USDC_ONLY:
+            is_sdk_only = _market_attr(m, "is_sdk_only")
+            if is_sdk_only is True:
+                logger.debug("Simmer: skipping SDK-only ($SIM) market — %s", title[:60])
+                return
+            import_source = str(_market_attr(m, "import_source") or "").lower()
+            if import_source and import_source != "polymarket":
+                logger.debug("Simmer: skipping non-Polymarket market (source=%s) — %s", import_source, title[:60])
+                return
+
+        candidates.append(m)
+
+    # Pass 1: all active markets (catches long-horizon markets missed by keywords)
+    try:
+        for m in (client.get_markets(limit=100) or []):
+            _add_market(m)
+    except Exception as e:
+        logger.warning("Simmer: get_markets() failed: %s — falling back to keyword search", e)
+
+    # Pass 2: supplemental keyword search for crypto/finance terms
+    for keyword in ["bitcoin", "ethereum", "crypto", "btc", "eth", "market", "fear",
+                    "s&p", "nasdaq", "fed", "interest rate"]:
         try:
-            markets = client.find_markets(keyword)
-            for m in (markets or []):
-                mid = str(_market_attr(m, "market_id", "id") or id(m))
-                if mid in seen_ids:
-                    continue
-                seen_ids.add(mid)
-
-                title = (_market_attr(m, "question", "title") or "").strip()
-
-                # Hard filter: skip 5-60min candle markets
-                if _is_short_term_candle(title):
-                    logger.debug("Simmer: skipping candle market — %s", title[:60])
-                    continue
-
-                # Hard filter: must have real volume
-                if not _has_real_volume(m):
-                    logger.debug("Simmer: skipping zero-volume market — %s", title[:60])
-                    continue
-
-                # Hard filter: USDC only (no $SIM paper markets)
-                if USDC_ONLY:
-                    currency = str(_market_attr(m, "currency") or "").upper()
-                    if currency and currency != "USDC":
-                        logger.debug("Simmer: skipping non-USDC market — %s (%s)", title[:60], currency)
-                        continue
-
-                candidates.append(m)
+            for m in (client.find_markets(keyword) or []):
+                _add_market(m)
         except Exception as e:
-            logger.warning("Simmer market search failed for '%s': %s", keyword, e)
+            logger.debug("Simmer market search failed for '%s': %s", keyword, e)
 
-    # Sort: long-horizon score (desc), then volume (desc)
+    # Sort: long-horizon score (desc), then volume (desc, 0 if unknown)
     candidates.sort(
         key=lambda m: (
             _long_horizon_score(_market_attr(m, "question", "title") or ""),
@@ -280,11 +355,14 @@ def classify_market(market: Any) -> Optional[str]:
         if MIN_YES_PROB <= yes_prob <= MAX_YES_PROB:
             return "BET_YES"
     elif crash_signals and not recovery_signals:
-        if yes_prob >= 0.50:
+        # Contrarian NO: in extreme fear, we bet the crash WON'T materialise.
+        # Allow NO bets when yes_prob is 0.20–0.65 (market showing some fear but
+        # not overwhelming — ideal range for contrarian positioning).
+        if MIN_YES_PROB <= yes_prob <= 0.65:
             return "BET_NO"
 
-    # Any crypto market priced pessimistically (YES < 40%) — contrarian YES bet
-    if is_crypto and yes_prob < 0.40:
+    # Fallback: any crypto recovery market priced pessimistically (YES 25–50%) — YES bet
+    if is_crypto and yes_prob < 0.50 and not crash_signals:
         return "BET_YES"
 
     return None

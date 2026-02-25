@@ -29,7 +29,7 @@ Things like:
   - `/data2` — 916GB USB HDD (870GB free) — new models, InfiniteTalk, 256GB swapfile
 - **ComfyUI:** `/data/ai-stack/comfyui/ComfyUI/` (port 8188)
 - **Models:**
-  - `/data`: realistic_vision_v51, ltx-2-19b-distilled-fp8, Gemma-3, Z-Image
+  - `/data`: realistic_vision_v51, Gemma-3, Z-Image
   - `/data2/ai-models/`: (new storage for InfiniteTalk, etc.)
 - **Password backup:** encrypted in `memory/gpu-server-credentials.json.enc`
 

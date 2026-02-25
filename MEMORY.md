@@ -35,11 +35,10 @@ L1 blockchain for agents. Substrate, NPoS, near-zero fees. 8 pallets deployed. H
 
 ### GPU Media Pipeline
 AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@10.0.0.44.
-**Status:** LTX-2 setup in progress, blocked on Gemma 3 download
+**Status:** Z-Image active on GPU server (LTX-2 removed per Bowen)
 
 ## ✅ Pending Tasks
 
-- [BLOCKED] LTX-2 Gemma 3 text encoder download (needs HF auth)
 - [IN-PROGRESS] EvoClaw test coverage to 85%+
 - [IN-PROGRESS] Fix tiered memory integration loop
 - [PENDING] AI stack migration to /data verify
@@ -49,6 +48,16 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - [Feb 19] EvoClaw hackathon deadline Feb 19 3AM UTC
 - [Feb 12] New 112GB SSD mounted at /data on GPU server
 - [Feb 12] Router config populated with 14 real models
+
+## 💰 Simmer / Prediction Markets
+
+- **Wallet:** `0xb2Ae880e2d1Dbe5E6d33ACa514126702DEf92e62` — ALREADY LINKED, ALREADY CLAIMED (leaf-7IPH)
+- **Trading:** Real USDC via `venue='polymarket'` — NOT paper, NOT $SIM
+- **Private key:** `~/clawd/memory/encrypted/simmer-polymarket-private-key.txt.enc` (GPG, passphrase in `.key`)
+- **`_load_client()`** in `fear-harvester/scripts/simmer_integration.py` auto-decrypts key + sets `venue='polymarket'`
+- **Balance:** $21.59 USDC real money
+- **Target profit:** +$5 USDC (reach $26.59), session start recorded in risk_config.json
+- **DO NOT** treat Simmer as paper-only — it IS real USDC when private key is loaded
 
 ## 🎯 Critical Lessons
 

@@ -1,21 +1,14 @@
 {
-  "lastCryptoPriceCheck": "2026-02-19T12:14:24.453071+00:00",
-  "lastKOLCheck": "2026-02-22T21:14:20.695357+00:00",
-  "lastTwitterCheck": "2026-02-22T21:14:20.695357+00:00",
-  "lastMoltbookCheck": "2026-02-22T05:13:00+00:00",
-  "lastGitHubCheck": "2026-02-21T17:14:00+00:00",
-  "lastGitHubTrendingCheck": "2026-02-21T17:14:00+00:00",
-  "lastSimmerCheck": "2026-02-24T10:14:54.430284+00:00",
-  "lastSessionId": "12205b0c-d05b-44e2-a24f-4aff915ebec5",
-  "notes": {
-    "heartbeat_20260222_0013": "Simmer: 4 positions expiring soon! Claude Opus +$0.86 (~1.7h), Bitcoin positions mixed (+$72.72, -$15.40, -$0.85). Risk alert: 81% concentration, 1 position >30% adverse move.",
-    "simmerExpiringPositions": [
-      "Bitcoin Feb 21 7AM ET: YES +$72.72 (EXPIRED)",
-      "Bitcoin Feb 21 8:00-8:15AM ET: YES -$15.40 (~0h)",
-      "Bitcoin Feb 21 8:30-8:45AM ET: YES -$0.85 (~0.5h)",
-      "Claude Opus 4.6 top model: YES +$0.86 (~1.7h)"
-    ]
+  "lastChecks": {
+    "email": 1703275200,
+    "calendar": 1703260800,
+    "weather": null,
+    "rsi": 1703240000,
+    "simmer": 1703240000,
+    "hybridMemory": 1703200000
   },
-  "lastRSICheck": "2026-02-24T10:14:45.646584+00:00",
-  "lastHybridMemoryReindex": "2026-02-23T18:15:34.169833+00:00"
+  "lastRSICheck": 1703240000,
+  "lastSimmerCheck": 1703240000,
+  "lastHybridMemoryReindex": 1703200000,
+  "lastSessionId": "1d338c23-6ec3-4c5c-a235-7fd390f7bb00"
 }

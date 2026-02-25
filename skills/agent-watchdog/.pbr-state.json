@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "task": "Build a new skill called agent-watchdog that detects and kills runaway/deadloop agent sessions in OpenClaw.\n\n## Context\nWe had two costly incidents:\n1. Runaway spawn loop: a cron agent spawned 31 sub-agents in <5 min, burned ~$10\n2. Retry dead loop: a sub-agent retried a broken command for 51 min, burned 37.6M tokens (~$15)\n\n## What to build: ~/clawd/skills/agent-watchdog/\n\n### Core script: watchdog.py\nA single-file watchdog that:\n1. Reads active OpenClaw sessions from ~/.openclaw/agents/*/sessions/*.jsonl (last-modified within 30 min)\n2. For each active session, runs these detectors:\n\n**Detector 1 \u2014 spawn_explosion**\n- Count sessions_spawn tool calls in last 5 min of the session file\n- If >3 spawns in <2 min \u2192 KILL (runaway spawn loop)\n\n**Detector 2 \u2014 stagnation**  \n- Compare token count at t-5min vs now (count lines in session file as proxy)\n- If session file hasn't grown by >5 lines in 5 min AND session age >10 min \u2192 KILL (stuck retry loop)\n\n**Detector 3 \u2014 long_runner**\n- Read session start time from first line of .jsonl\n- Thresholds by session name/label:\n  - Contains 'position-guard', 'sentinel', 'heartbeat', 'session-watcher': kill after 8 min\n  - Contains 'fear-harvester', 'backup', 'rsi', 'memory': kill after 20 min  \n  - Default isolated sessions: kill after 30 min\n  - Main session (agent:main:main): never kill\n\n3. To kill: use OpenClaw REST API: POST http://localhost:18789/api/sessions/{sessionKey}/terminate\n   Auth: read gateway token from ~/.openclaw/openclaw.json (auth.token field, decrypt if needed)\n   If terminate fails, log the failure and continue.\n\n4. On kill: log to ~/clawd/skills/agent-watchdog/data/kills.jsonl:\n   {ts, session_key, agent_id, reason, runtime_min, estimated_tokens, action}\n\n5. Alert: if kill happened, sessions_send(sessionKey='agent:main:main', message='[Watchdog] \ud83d\udd2a Killed {session_key}: {reason} ({runtime_min:.1f}min)')\n\n6. If nothing killed: exit 0 silently (no output)\n\n### Config: config.json\n{\n  'thresholds': {\n    'spawn_explosion_count': 3,\n    'spawn_explosion_window_min': 2,\n    'stagnation_min_lines': 5,\n    'stagnation_window_min': 5,\n    'stagnation_min_age_min': 10,\n    'long_runner_monitoring_min': 8,\n    'long_runner_medium_min': 20,\n    'long_runner_default_min': 30\n  },\n  'monitoring_keywords': ['position-guard', 'sentinel', 'heartbeat', 'session-watcher', 'size-watcher'],\n  'medium_keywords': ['fear-harvester', 'backup', 'rsi', 'memory', 'alphastrike'],\n  'never_kill': ['agent:main:main']\n}\n\n### SKILL.md with usage docs\n### data/ directory (gitignored kills.jsonl)\n\n## Constraints\n- Python only, use uv\n- No external deps beyond stdlib + requests\n- Must handle missing/empty session files gracefully\n- Must NOT kill the main session\n- Test with a dry-run mode: python watchdog.py --dry-run\n- Keep it under 300 lines total",
+  "workspace": "/home/bowen/clawd/skills/agent-watchdog",
+  "created_at": "2026-02-24T21:07:18.275197+00:00",
+  "current_phase": "plan",
+  "config": {
+    "models": {
+      "plan": "anthropic/claude-opus-4-6",
+      "build": "anthropic/claude-sonnet-4-6",
+      "review": "anthropic/claude-sonnet-4-6"
+    },
+    "timeout": 600,
+    "retries": 1
+  },
+  "phases": {
+    "plan": {
+      "name": "plan",
+      "status": "running",
+      "started_at": "2026-02-24T21:07:18.275497+00:00",
+      "completed_at": null,
+      "duration_seconds": null,
+      "artifacts": [],
+      "attempt": 1,
+      "error": null
+    },
+    "build": {
+      "name": "build",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "duration_seconds": null,
+      "artifacts": [],
+      "attempt": 0,
+      "error": null
+    },
+    "review": {
+      "name": "review",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "duration_seconds": null,
+      "artifacts": [],
+      "attempt": 0,
+      "error": null
+    }
+  }
+}

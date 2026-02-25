@@ -69,15 +69,17 @@ result = client.trade(market_id, "yes", 10.0, source="sdk:strategy", reasoning="
 
 | Venue | Currency | Status |
 |-------|----------|--------|
-| `simmer` | $SIM virtual | ✅ Active ($10,000 balance) |
-| `polymarket` | USDC.e (real) | ❌ Requires claim + wallet |
+| `simmer` | $SIM virtual | (paper only — do not use for real trades) |
+| `polymarket` | USDC.e (real) | ✅ **ACTIVE** — wallet linked, real USDC |
 | `kalshi` | USD (real) | ❌ Requires Pro + Solana wallet |
 
-## Activate Real Trading
+## Real Trading — ALREADY SET UP
 
-1. Bowen claims agent at: **https://simmer.markets/claim/leaf-7IPH**
-2. Set up Polymarket wallet: `WALLET_PRIVATE_KEY=0x...` (dedicated wallet only!)
-3. Link wallet: `client.link_wallet()`
+- **Claimed:** ✅ (leaf-7IPH already claimed)
+- **Wallet:** `0xb2Ae880e2d1Dbe5E6d33ACa514126702DEf92e62` (linked)
+- **Private key:** `~/clawd/memory/encrypted/simmer-polymarket-private-key.txt.enc`
+- **`_load_client()`** in `fear-harvester/scripts/simmer_integration.py` handles decryption + sets `venue='polymarket'` automatically
+- **Balance:** $21.59 USDC real money
 4. Set approvals: `client.set_approvals()`
 5. Trade: `client.trade(market_id, "yes", 10.0, venue="polymarket")`
 
