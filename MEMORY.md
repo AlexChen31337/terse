@@ -58,7 +58,7 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 - [IN-PROGRESS] EvoClaw coverage boost — api 53%→85%+, cmd 7%→85%+ (Builder was running)
 - [IN-PROGRESS] ClawChain PoA Bootstrap PR — branch feat/poa-bootstrap, Planner was long-running
 - [IN-PROGRESS] ADR-007 Native Memory migration — config patched 3x, Builder archiving skills
-- [PENDING] Quant daily trading cron — 06:00 AM AlphaStrike scan + Simmer briefing, 30-min monitor, 10:00 PM close + P&L + report to Alex
+- [PENDING] Quant cron — 09:00 AEDT: pre-flight position_guard.py check → trigger alphastrike.lobster pipeline (has its own approval gate); separate Simmer briefing cron; 22:00 AEDT EOD P&L log
 - [PENDING] Quant SOUL.md — update with profit target rules, 3% daily target, -2% stop-loss, dual-track split
 - [PENDING] Pillow text overlay for EvoClaw social card — same typo issue as ClawChain card (fixed Feb 25)
 - [PENDING] PoA Bootstrap — deploy systemd service on VPS 135.181.157.121
@@ -144,6 +144,17 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 - Effective accuracy: native ~87% vs tiered ~62% (tiered only fires ~65% of time)
 - Rollback: `openclaw config patch '{"agents":{"defaults":{"memorySearch":{"enabled":false}}}}'`
 - **Trigger to build tiered plugin:** if native effective accuracy <80% after 1 week of use
+
+### AlphaStrike v2 Trading Loop (verified 2026-02-25)
+- AlphaStrike v2 has a **built-in lobster pipeline** — do NOT build a separate daily_trading_loop.py
+- Workflow: `skills/alphastrike/workflows/alphastrike.lobster`
+  1. `generate_signals` → `scripts/signal.py --assets BTC ETH SOL --interval 1h --min-confidence 0.4`
+  2. `review` (APPROVAL GATE) → sends signals to Alex for review before any trade fires
+  3. `execute` → `scripts/execute.py --max-trades 3 --position-size $POSITION_SIZE --dry-run=false`
+- Quant cron design: position_guard pre-flight → trigger lobster pipeline → (approval gate is built-in)
+- Simmer is separate — AlphaStrike only covers HL perps
+- `execute.py` (the script, not the file) does NOT exist yet — only `scripts/execute.py` exists
+- HL signing module broken for direct import — use raw `requests` to `https://api.hyperliquid.xyz/info`
 
 ### RSI Auto-logging (2026-02-25)
 - Decision: wire EvoClaw tool loop → JSONL, NOT a plugin
