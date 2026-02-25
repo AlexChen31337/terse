@@ -69,6 +69,7 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 - [PENDING] EvoClaw: Multi-Chain CLI, BSC contract deployment
 
 ## 📅 Recent Events
+- [Feb 26] Daily Ideas Email cron wired — 08:00 AEDT → bowen31337@outlook.com (market + 3 ideas + project pulse)
 
 - [Feb 25] Quant risk_config.json v2.0 written — $5/day target on $127.44 active capital, UBTC/HYPE as long holds
 - [Feb 25] Marketing assets repo created: `clawinfra/marketing-assets` (public), 6 AI-generated images + Pillow social cards
