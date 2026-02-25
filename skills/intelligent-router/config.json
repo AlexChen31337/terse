@@ -401,10 +401,11 @@
   "tiers": {
     "SIMPLE": {
       "description": "Monitoring, heartbeat, summaries \u2014 free/tiny/cheap models",
-      "primary": "nvidia-nim/qwen/qwen2.5-7b-instruct",
+      "primary": "anthropic-proxy-6/glm-4.7",
       "fallbacks": [
-        "ollama/qwen2.5:1.5b",
-        "nvidia-nim/microsoft/phi-3.5-vision-instruct"
+        "anthropic-proxy-4/glm-4.7",
+        "nvidia-nim/qwen/qwen2.5-7b-instruct",
+        "ollama/qwen2.5:7b"
       ],
       "use_for": [
         "monitoring",
@@ -415,7 +416,8 @@
         "tweet monitoring",
         "price alerts",
         "memory consolidation"
-      ]
+      ],
+      "note": "Cloud-only: proxy-4/6 alternate for load distribution."
     },
     "MEDIUM": {
       "description": "Code fixes, research, data analysis \u2014 capable mid-range",
@@ -440,16 +442,10 @@
     },
     "COMPLEX": {
       "description": "Features, architecture, debugging \u2014 high quality models",
-      "primary": "nvidia-nim/minimaxai/minimax-m2.1",
+      "primary": "anthropic/claude-sonnet-4-6",
       "fallbacks": [
-        "nvidia-nim/minimaxai/minimax-m2",
-        "anthropic/claude-sonnet-4-6",
-        "anthropic/claude-sonnet-4-5",
         "anthropic-proxy-1/claude-sonnet-4-6",
-        "nvidia-nim/mistralai/mistral-large-3-675b-instruct-2512",
-        "nvidia-nim/nvidia/llama-3.1-nemotron-ultra-253b-v1",
-        "nvidia-nim/z-ai/glm5",
-        "anthropic-proxy-5/deepseek-chat"
+        "nvidia-nim/deepseek-ai/deepseek-v3.2"
       ],
       "use_for": [
         "feature development",
@@ -504,5 +500,18 @@
   "skip_nim_in_routing": true,
   "max_fallback_attempts": 3,
   "last_updated": "2026-02-23T23:00:00",
-  "last_discovery": "2026-02-24T22:34:15.449183"
+  "last_discovery": "2026-02-24T22:34:15.449183",
+  "version": "3.2.0",
+  "policy": {
+    "blocked_models": [
+      "ollama-gpu-server/glm-4.7-flash",
+      "ollama-gpu-server/qwen2.5:7b"
+    ],
+    "blocked_reason": "ollama-gpu-server binds to 127.0.0.1 by default \u2014 unreachable over LAN",
+    "enforce_model_in_cron": true,
+    "cron_safe_tiers": {
+      "SIMPLE": "anthropic-proxy-6/glm-4.7",
+      "SIMPLE_alt": "anthropic-proxy-4/glm-4.7"
+    }
+  }
 }
