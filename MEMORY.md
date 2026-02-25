@@ -38,16 +38,22 @@ L1 blockchain for agents. Substrate, NPoS, near-zero fees. 8 pallets deployed. H
 ### GPU Media Pipeline
 AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 **ComfyUI:** running from `/data2/comfyui/ComfyUI`, port 8188, output at `/data2/comfyui/ComfyUI/output/`
-**Status:** Z-Image Turbo active — correct workflow discovered 2026-02-25 (see Architecture Decisions)
+**Status:** Z-Image Turbo active. Models migrated to SSD 2026-02-25 ✅
 
-**ZImage Turbo model files:**
-- Diffusion: `models/diffusion_models/z_image_turbo_bf16.safetensors`
-- CLIP (text encoder): `models/text_encoders/qwen_3_4b_fp8_mixed.safetensors`
-- VAE: `models/vae/z_image_ae.safetensors`
+**ZImage Turbo model files (on SSD, symlinked from /data2):**
+- Actual location: `/data/comfyui/models/{diffusion_models,text_encoders,vae}/`
+- ComfyUI still sees: `/data2/comfyui/ComfyUI/models/...` (symlinks, transparent)
+- Cold load: ~35 sec from SSD (was ~10 min from USB HDD)
+
+**Root SSD (`/dev/sda2`) state after cleanup (2026-02-25):**
+- 87 GB used / 16 GB free / 109 GB total
+- Freed 26 GB by clearing: uv cache (23 GB) + pip cache (7 GB) + /tmp/claw-chain (3.1 GB)
+- ⚠️ `/data` dir owned by root — need `sudo mkdir` + `sudo chown peter:peter` to create subdirs
 
 ## ✅ Pending Tasks
 
-- [PENDING] **Milka claw machine image** — ZImage Turbo, complete workflow ready (see below), needs to be submitted to ComfyUI
+- [DONE] ~~Milka claw machine image~~ — generated ✅ (`milka_claw_machine_00001_.png`, sent to Bowen 22:01 AEDT)
+- [PENDING] **Active-task WAL** — implement `memory/active-task.json` to survive compaction (prompt_id, status, started_at); check on session start and resume instead of restart
 - [IN-PROGRESS] ClawChain: PoA Bootstrap (#28) — PBR Planner was running (long), branch feat/poa-bootstrap — check status
 - [IN-PROGRESS] EvoClaw: Coverage boost api 53%→85%+, cmd 7%→85%+ — Builder was running — check status
 - [IN-PROGRESS] ADR-007: Native memory migration — Builder was running (config patched, archiving skills) — check status
@@ -91,7 +97,9 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 9. `SaveImage` (filename_prefix=`milka_claw_machine`) → output file
 
 **⚠️ Trap:** Incomplete workflow (no UNETLoader/sampler) → job stuck at `running=1` with ~683 MiB VRAM, `ep_poll` state. Fix with repeated POST `/interrupt`. CLIPLoader type=`qwen_image` IS valid.
+**⚠️ Always check history first before rebuilding:** `curl -s http://localhost:8188/history` — working workflows are preserved. Reference job: `abcbbb2c` (evoclaw_promo, good template).
 **Special ZImage nodes:** `TextEncodeZImageOmni`, `EmptyQwenImageLayeredLatentImage`, `TextEncodeQwenImageEdit`, `QwenImageDiffsynthControlnet`, `ZImageFunControlnet`, `ModelMergeQwenImage`
+**Model load time:** ~10 min cold from USB HDD → **~35 sec from SSD** (models migrated to `/data/comfyui/models/` on 2026-02-25)
 
 ### ADR-007: Native Memory Lifecycle (2026-02-25)
 - `memorySearch` = SQLite + sqlite-vec + hybrid BM25+vector + onSessionStart auto-inject
@@ -121,6 +129,11 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 
 - **[comfyui]** ZImage Turbo needs UNETLoader (not CheckpointLoaderSimple) — incomplete workflows silently hang at running=1 with near-zero VRAM
 - **[comfyui]** CLIPLoader type=`qwen_image` IS valid for Qwen text encoders; job hangs were from missing sampler/decode nodes
+- **[comfyui]** Always check `/history` before rebuilding a workflow — previous working jobs are cached there
+- **[gpu-server]** `/data` dir is owned by root — always `sudo mkdir` + `sudo chown peter:peter` before writing
+- **[gpu-server]** `nohup` subshell doesn't inherit dirs created in parent SSH session — create dirs, verify, THEN launch nohup
+- **[memory]** Compaction kills live task state — curated memory survives, but "what was I literally doing 5 min ago" does not. Fix: WAL for active tasks
+- **[memory]** Native memoryFlush saves project context, not working state (prompt_ids, VRAM progress, in-flight jobs)
 - **[arch]** Check if OpenClaw already ships a feature natively before building a Python wrapper — learned with tiered-memory/session-guard
 - **[arch]** For RSI: fix data pipeline (auto-logging) before building plugin — proposals are only as good as the signal quality
 - **[arch]** Plugin = lifecycle hooks needed; Cron = periodic execution fine. RSI analysis/deploy = cron; outcome logging = tool loop hook
@@ -141,4 +154,4 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 - **[meta]** Eat your own dogfood — use skills you build
 
 ---
-*Updated: 2026-02-25 21:40 AEDT*
+*Updated: 2026-02-25 22:19 AEDT*
