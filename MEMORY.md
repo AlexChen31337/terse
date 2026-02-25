@@ -58,8 +58,8 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 - [IN-PROGRESS] EvoClaw coverage boost — api 53%→85%+, cmd 7%→85%+ (Builder was running)
 - [IN-PROGRESS] ClawChain PoA Bootstrap PR — branch feat/poa-bootstrap, Planner was long-running
 - [IN-PROGRESS] ADR-007 Native Memory migration — config patched 3x, Builder archiving skills
-- [PENDING] Quant cron — 09:00 AEDT: pre-flight position_guard.py check → trigger alphastrike.lobster pipeline (has its own approval gate); separate Simmer briefing cron; 22:00 AEDT EOD P&L log
-- [PENDING] Quant SOUL.md — update with profit target rules, 3% daily target, -2% stop-loss, dual-track split
+- [DONE] Quant crons wired: AlphaStrike daily (09:00), Simmer briefing (09:30), EOD P&L (22:00) AEDT
+- [DONE] Quant SOUL.md v2.0 updated — profit targets, approval gate, UBTC/HYPE long holds
 - [PENDING] Pillow text overlay for EvoClaw social card — same typo issue as ClawChain card (fixed Feb 25)
 - [PENDING] PoA Bootstrap — deploy systemd service on VPS 135.181.157.121
 - [PENDING] Active-task WAL — implement `memory/active-task.json` (survives compaction; stores prompt_id, status, started_at)
