@@ -41,9 +41,11 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 
 ## ✅ Pending Tasks
 
-- [IN-PROGRESS] ClawChain: PoA Bootstrap (#28) — PBR Planner running, branch feat/poa-bootstrap
+- [IN-PROGRESS] ClawChain: PoA Bootstrap (#28) — PBR Planner running (long), branch feat/poa-bootstrap
 - [IN-PROGRESS] EvoClaw: Coverage boost api 53%→85%+, cmd 7%→85%+ — Builder running
+- [IN-PROGRESS] EvoClaw: RSI auto-log — Builder running, branch feat/toolloop-rsi-autolog
 - [IN-PROGRESS] ADR-007: Native memory migration — Builder running (config patched, archiving skills)
+- [MONITOR] Native memory effectiveness — evaluate for 1 week, trigger plugin build if <80% effective
 - [PENDING] ClawChain: OpenClaw integration (#36) — next sprint
 - [PENDING] EvoClaw: Multi-Chain CLI, BSC contract deployment
 
@@ -75,7 +77,17 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - `contextPruning` = cache-ttl 2h, prunes old Read+exec tool results
 - tiered-memory, hybrid-memory, session-guard → archived to `skills/archived/`
 - Trade-off: reliability (always-on) > sophistication (LLM tree navigation)
+- Effective accuracy: native ~87% vs tiered ~62% (tiered only fires ~65% of time)
 - Rollback: `openclaw config patch '{"agents":{"defaults":{"memorySearch":{"enabled":false}}}}'`
+- **Trigger to build tiered plugin:** if native effective accuracy <80% after 1 week of use
+
+### RSI Auto-logging (2026-02-25)
+- Decision: wire EvoClaw tool loop → JSONL, NOT a plugin
+- `internal/orchestrator/rsi_logger.go` — RSILogger interface, JSONL + Noop, DeriveQuality/DeriveTaskType
+- One aggregate record per Execute() call → `skills/rsi-loop/data/outcomes.jsonl`
+- Quality 1-5 from error rate buckets; task_type inferred from tool names
+- Graceful no-op if data dir missing; WithRSILogger functional option
+- PR: `feat/toolloop-rsi-autolog` (Builder running 2026-02-25)
 
 ### ClawChain Pallet Storage Names (verified 2026-02-25)
 - `agentRegistry.ownerAgents(address)` → agent IDs for owner
@@ -86,6 +98,8 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 ## 🎯 Critical Lessons
 
 - **[arch]** Check if OpenClaw already ships a feature natively before building a Python wrapper — learned with tiered-memory/session-guard
+- **[arch]** For RSI: fix data pipeline (auto-logging) before building plugin — proposals are only as good as the signal quality
+- **[arch]** Plugin = lifecycle hooks needed; Cron = periodic execution fine. RSI analysis/deploy = cron; outcome logging = tool loop hook
 - **[arch]** PBR Review phase always catches real bugs — never skip (found: setInterval leak, CSWSH, missing 72 tests, personal info in docs)
 - **[ops]** Always verify pallet storage names from source before building UIs — assumed names will be wrong
 - **[ops]** Parallel PBR pipelines work well when features touch separate dirs (services/faucet, services/explorer, etc.)
@@ -103,4 +117,4 @@ AI video+audio generation. LTX-2 on RTX 3090. ComfyUI for images. Server: peter@
 - **[meta]** Eat your own dogfood — use skills you build
 
 ---
-*Updated: 2026-02-25 17:43 AEDT*
+*Updated: 2026-02-25 18:03 AEDT*
