@@ -22,8 +22,12 @@ function parseArgs() {
     if (arg.startsWith('--')) {
       const key = arg.slice(2);
       const value = args[i + 1];
-      options[key] = value || true;
-      if (value && !value.startsWith('--')) i++;
+      if (!value || value.startsWith('--')) {
+        options[key] = true;  // boolean flag (no value or next arg is another flag)
+      } else {
+        options[key] = value;
+        i++;
+      }
     } else {
       positional.push(arg);
     }
@@ -174,7 +178,11 @@ async function main() {
           const fs = require('fs');
           options.html = fs.readFileSync(options['html-file'], 'utf8');
         } else if (options.body) {
-          options.text = options.body;
+          if (options.html === true) {
+            options.html = options.body;  // --html flag: render --body content as HTML
+          } else {
+            options.text = options.body;
+          }
         }
 
         result = await sendEmailWithContent(options);
