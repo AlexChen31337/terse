@@ -172,6 +172,7 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 - `gasQuota.agentQuotas(accountId)` → quota info
 
 ## 🎯 Critical Lessons
+- **[ideas]** Daily ideas email ALWAYS uses Opus 4.6 — Bowen explicit. Ideas drive real execution, quality beats cost.
 
 - **[comfyui]** ZImage Turbo needs UNETLoader (not CheckpointLoaderSimple) — incomplete workflows silently hang at running=1 with near-zero VRAM
 - **[comfyui]** CLIPLoader type=`qwen_image` IS valid for Qwen text encoders; job hangs were from missing sampler/decode nodes
