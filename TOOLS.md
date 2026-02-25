@@ -25,12 +25,14 @@ Things like:
   - GPU 2: RTX 2070 SUPER (8GB)
 - **RAM:** 16GB system memory + **256GB swapfile on /data2**
 - **Storage:**
-  - `/data` — 110GB SSD (18GB free) — ComfyUI, existing models (⚠️ I/O errors, avoid writes)
-  - `/data2` — 916GB USB HDD (870GB free) — new models, InfiniteTalk, 256GB swapfile
-- **ComfyUI:** `/data/ai-stack/comfyui/ComfyUI/` (port 8188)
-- **Models:**
-  - `/data`: realistic_vision_v51, Gemma-3, Z-Image
-  - `/data2/ai-models/`: (new storage for InfiniteTalk, etc.)
+  - `/` (root, `/dev/sda2`) — 110GB SSD, 70GB used after cleanup — **⚠️ owned by root, need `sudo` to create dirs**
+  - `/data` — empty directory ON the root SSD (not a separate mount), use `sudo` to create subdirs then `chown peter:peter`
+  - `/data2` — 916GB USB HDD — ComfyUI at `/data2/comfyui/ComfyUI/`, 256GB swapfile, slow (~60MB/s read)
+- **ComfyUI:** `/data2/comfyui/ComfyUI/` (port 8188), output at `/data2/comfyui/ComfyUI/output/`
+- **ZImage models (as of 2026-02-25, migrating to SSD):**
+  - Diffusion: `/data/comfyui/models/diffusion_models/z_image_turbo_bf16.safetensors` (12GB, symlinked from /data2)
+  - CLIP: `/data/comfyui/models/text_encoders/qwen_3_4b_fp8_mixed.safetensors` (5.3GB, symlinked from /data2)
+  - VAE: `/data/comfyui/models/vae/z_image_ae.safetensors` (320MB, symlinked from /data2)
 - **Password backup:** encrypted in `memory/gpu-server-credentials.json.enc`
 
 ### Pi (Bloop-Eye)
