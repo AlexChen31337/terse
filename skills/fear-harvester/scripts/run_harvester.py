@@ -50,6 +50,22 @@ from simmer_integration import (  # noqa: E402
     manage_positions,
 )
 
+# ---------------------------------------------------------------------------
+# Risk check integration — MANDATORY pre-flight before any Simmer trade
+# ---------------------------------------------------------------------------
+RISK_CHECK_PATH = Path(__file__).parent.parent.parent / "simmer-risk" / "risk_check.py"
+_risk_check_available = False
+try:
+    if RISK_CHECK_PATH.exists():
+        import importlib.util
+        _spec = importlib.util.spec_from_file_location("risk_check", RISK_CHECK_PATH)
+        _risk_mod = importlib.util.module_from_spec(_spec)
+        _spec.loader.exec_module(_risk_mod)
+        check_trade = _risk_mod.check_trade
+        _risk_check_available = True
+except Exception:
+    _risk_check_available = False
+
 logger = logging.getLogger("fear-harvester.runner")
 
 STATE_FILE = Path(__file__).parent.parent / "data" / "runner_state.json"
@@ -222,6 +238,7 @@ def main() -> None:
     # --- Simmer integration ---
     simmer_trades: list[dict[str, Any]] = []
     simmer_briefing = ""
+    whale_signal = "NEUTRAL"  # Initialize before try block to prevent UnboundLocalError
 
     try:
         simmer_client = load_simmer_client()
@@ -281,13 +298,36 @@ def main() -> None:
                     fg["value"], whale_signal,
                 )
             else:
-                simmer_trades = execute_fear_trades(
-                    fg["value"],
-                    simmer_client,
-                    dry_run=(mode == "dry-run"),
-                    bet_amount=args.simmer_bet,
-                    max_bets=args.simmer_max_bets,
-                )
+                # --- MANDATORY pre-flight risk check ---
+                risk_blocked = False
+                if _risk_check_available:
+                    try:
+                        rc = check_trade(
+                            market_id="fear-harvester-batch",
+                            amount=args.simmer_bet,
+                            venue="polymarket",
+                        )
+                        if not rc.get("approved"):
+                            logger.warning(
+                                "🛑 Risk check DENIED Simmer trades: %s",
+                                rc.get("reason", "unknown"),
+                            )
+                            risk_blocked = True
+                        else:
+                            logger.info("✅ Risk check approved Simmer trades")
+                    except Exception as e:
+                        logger.warning("Risk check error (non-blocking): %s", e)
+                else:
+                    logger.warning("⚠️  risk_check.py not found — proceeding without pre-flight check")
+
+                if not risk_blocked:
+                    simmer_trades = execute_fear_trades(
+                        fg["value"],
+                        simmer_client,
+                        dry_run=(mode == "dry-run"),
+                        bet_amount=args.simmer_bet,
+                        max_bets=args.simmer_max_bets,
+                    )
     except Exception as e:
         logger.warning("Simmer integration error: %s", e)
         simmer_briefing = f"Simmer: unavailable ({e})"
