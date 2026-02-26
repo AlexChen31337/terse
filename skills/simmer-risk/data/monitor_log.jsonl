@@ -4,3 +4,12 @@
 {"event": "monitor_start", "portfolio": {"balance_usdc": 4.04, "total_exposure": 17.69, "positions_count": 1, "pnl_total": 3.54, "polymarket_pnl": null}, "dry_run": true, "timestamp": "2026-02-22T11:25:20.933092+00:00"}
 {"event": "circuit_breaker_check", "total_portfolio_value": 21.73, "balance_usdc": 4.04, "total_exposure": 17.69, "high_water_mark": 18.0, "drawdown_pct": 0.2072, "threshold": -0.15, "triggered": false, "timestamp": "2026-02-22T11:25:20.934253+00:00"}
 {"event": "monitor_complete", "actions_taken": 0, "circuit_breaker": false, "dry_run": true, "timestamp": "2026-02-22T11:25:22.540929+00:00"}
+{"event": "monitor_start", "portfolio": {"balance_usdc": 6.46, "total_exposure": 15.97, "positions_count": 1, "pnl_total": 4.6, "polymarket_pnl": null}, "dry_run": false, "timestamp": "2026-02-26T13:02:24.714086+00:00"}
+{"event": "circuit_breaker_check", "total_portfolio_value": 22.43, "balance_usdc": 6.46, "total_exposure": 15.97, "high_water_mark": 18.0, "drawdown_pct": 0.2461, "threshold": -0.15, "triggered": false, "timestamp": "2026-02-26T13:02:24.714712+00:00"}
+{"event": "hwm_updated", "old_hwm": 18.0, "new_hwm": 22.43, "timestamp": "2026-02-26T13:02:24.714899+00:00"}
+{"event": "position_ok", "market_id": "32ab8d63-ce57-488d-bbba-b19fe894b31c", "question": "Will the price of Bitcoin be above $68,000 on February 26?", "venue": "polymarket", "pnl_pct": 0.0554, "current_value": 15.9677, "cost_basis": 15.1299, "near_stop_loss": false, "timestamp": "2026-02-26T13:02:28.776631+00:00"}
+{"event": "monitor_complete", "actions_taken": 0, "circuit_breaker": false, "dry_run": false, "timestamp": "2026-02-26T13:02:28.776876+00:00"}
+{"event": "monitor_start", "portfolio": {"balance_usdc": 6.46, "total_exposure": 9.39, "positions_count": 1, "pnl_total": 2.92, "polymarket_pnl": null}, "dry_run": false, "timestamp": "2026-02-26T15:02:57.977969+00:00"}
+{"event": "circuit_breaker_check", "total_portfolio_value": 15.850000000000001, "balance_usdc": 6.46, "total_exposure": 9.39, "high_water_mark": 22.43, "drawdown_pct": -0.2934, "threshold": -0.15, "triggered": true, "timestamp": "2026-02-26T15:02:57.979378+00:00"}
+{"event": "circuit_breaker_triggered", "portfolio_value": 15.850000000000001, "high_water_mark": 22.43, "drawdown_pct": -0.2933571110120374, "dry_run": false, "timestamp": "2026-02-26T15:02:57.980257+00:00"}
+{"event": "monitor_complete", "actions_taken": 0, "circuit_breaker": true, "dry_run": false, "timestamp": "2026-02-26T15:03:08.649984+00:00"}

@@ -11,19 +11,7 @@
       "context_window": 32768,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:24:50.812824",
-      "hardware_fit": {
-        "fit": "perfect",
-        "fit_level": "Perfect",
-        "score": 75.8,
-        "tok_s": 125.4,
-        "quant": "Q8_0",
-        "run_mode": "GPU",
-        "host": "local",
-        "llmfit_name": "Qwen/Qwen2.5-1.5B",
-        "match_confidence": 0.75,
-        "updated_at": "2026-02-26T17:13:55.168517+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:24:50.667749"
     },
     {
       "id": "qwen2.5:7b",
@@ -35,19 +23,7 @@
       "context_window": 32768,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:24:52.998601",
-      "hardware_fit": {
-        "fit": "perfect",
-        "fit_level": "Perfect",
-        "score": 76.8,
-        "tok_s": 42.9,
-        "quant": "Q2_K",
-        "run_mode": "GPU",
-        "host": "local",
-        "llmfit_name": "Qwen/Qwen2.5-7B",
-        "match_confidence": 0.625,
-        "updated_at": "2026-02-26T17:13:55.169453+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:24:53.230740"
     },
     {
       "id": "z-ai/glm4.7",
@@ -59,11 +35,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:25:03.276626",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.170193+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:24:53.858363"
     },
     {
       "id": "qwen/qwen2.5-7b-instruct",
@@ -75,19 +47,7 @@
       "context_window": 32768,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:25:03.967642",
-      "hardware_fit": {
-        "fit": "perfect",
-        "fit_level": "Perfect",
-        "score": 77.3,
-        "tok_s": 25.4,
-        "quant": "Q8_0",
-        "run_mode": "GPU",
-        "host": "gpu-server",
-        "llmfit_name": "Qwen/Qwen2.5-7B-Instruct",
-        "match_confidence": 0.667,
-        "updated_at": "2026-02-26T17:13:55.171255+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:24:55.284584"
     },
     {
       "id": "meta/llama-3.1-70b-instruct",
@@ -99,19 +59,7 @@
       "context_window": 128000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:25:04.397168",
-      "hardware_fit": {
-        "fit": "perfect",
-        "fit_level": "Perfect",
-        "score": 78.5,
-        "tok_s": 40.7,
-        "quant": "Q2_K",
-        "run_mode": "GPU",
-        "host": "local",
-        "llmfit_name": "NousResearch/Meta-Llama-3.1-8B-Instruct",
-        "match_confidence": 0.333,
-        "updated_at": "2026-02-26T17:13:55.172314+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:24:55.711872"
     },
     {
       "id": "meta/llama-3.3-70b-instruct",
@@ -123,27 +71,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:25:04.877572",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.173327+11:00"
-      }
-    },
-    {
-      "id": "deepseek-ai/deepseek-v3.2",
-      "alias": "DeepSeek-V3.2-(NIM)",
-      "tier": "COMPLEX",
-      "provider": "nvidia-nim",
-      "input_cost_per_m": 0.4,
-      "output_cost_per_m": 1.3,
-      "context_window": 131072,
-      "capabilities": [],
-      "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:25:09.811639",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.174101+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:24:57.227697"
     },
     {
       "id": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
@@ -155,11 +83,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:25:10.306968",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.175108+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:25:27.924738"
     },
     {
       "id": "deepseek-ai/deepseek-r1-distill-qwen-14b",
@@ -171,19 +95,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:25:11.633612",
-      "hardware_fit": {
-        "fit": "perfect",
-        "fit_level": "Perfect",
-        "score": 79.3,
-        "tok_s": 20.5,
-        "quant": "Q3_K_M",
-        "run_mode": "GPU",
-        "host": "gpu-server",
-        "llmfit_name": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
-        "match_confidence": 0.875,
-        "updated_at": "2026-02-26T17:13:55.176043+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:25:30.959239"
     },
     {
       "id": "qwen/qwq-32b",
@@ -195,11 +107,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:25:12.427647",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.176695+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:25:31.755784"
     },
     {
       "id": "qwen/qwen3-next-80b-a3b-thinking",
@@ -211,11 +119,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:25:12.955195",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.177647+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:25:32.312966"
     },
     {
       "id": "moonshotai/kimi-k2-thinking",
@@ -227,11 +131,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:25:13.709163",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.178383+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:25:36.850589"
     },
     {
       "id": "microsoft/phi-4-mini-flash-reasoning",
@@ -243,19 +143,7 @@
       "context_window": 128000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:25:15.079381",
-      "hardware_fit": {
-        "fit": "perfect",
-        "fit_level": "Perfect",
-        "score": 77.9,
-        "tok_s": 13.8,
-        "quant": "Q8_0",
-        "run_mode": "GPU",
-        "host": "gpu-server",
-        "llmfit_name": "microsoft/phi-4",
-        "match_confidence": 0.333,
-        "updated_at": "2026-02-26T17:13:55.179302+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:25:38.288821"
     },
     {
       "id": "mistralai/mistral-large-3-675b-instruct-2512",
@@ -267,11 +155,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:25:46.354218",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.180425+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:10.962028"
     },
     {
       "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
@@ -283,11 +167,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:25:46.811467",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.181570+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:11.402187"
     },
     {
       "id": "meta/llama-3.2-11b-vision-instruct",
@@ -299,11 +179,7 @@
       "context_window": 128000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:25:48.879831",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.182652+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:12.406254"
     },
     {
       "id": "microsoft/phi-3.5-vision-instruct",
@@ -315,19 +191,7 @@
       "context_window": 128000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:25:50.301913",
-      "hardware_fit": {
-        "fit": "perfect",
-        "fit_level": "Perfect",
-        "score": 80.3,
-        "tok_s": 50.7,
-        "quant": "Q8_0",
-        "run_mode": "GPU",
-        "host": "gpu-server",
-        "llmfit_name": "microsoft/Phi-3.5-mini-instruct",
-        "match_confidence": 0.444,
-        "updated_at": "2026-02-26T17:13:55.183690+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:13.776553"
     },
     {
       "id": "z-ai/glm5",
@@ -339,11 +203,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:26:17.083648",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.184399+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:20.828625"
     },
     {
       "id": "minimaxai/minimax-m2.1",
@@ -355,11 +215,7 @@
       "context_window": 1000000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:26:34.011184",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.185134+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:21.864150"
     },
     {
       "id": "minimaxai/minimax-m2",
@@ -371,11 +227,7 @@
       "context_window": 1000000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:26:35.617113",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.185773+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:22.463739"
     },
     {
       "id": "claude-opus-4-6",
@@ -387,11 +239,7 @@
       "context_window": 1000000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:26:35.618312",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.186619+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:22.464043"
     },
     {
       "id": "claude-sonnet-4-6",
@@ -403,11 +251,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:26:35.619367",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.187467+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:22.464210"
     },
     {
       "id": "glm-4.7",
@@ -419,11 +263,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:26:38.637527",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.188284+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:30.222965"
     },
     {
       "id": "deepseek-chat",
@@ -435,11 +275,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:26:40.354078",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.189015+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:31.806388"
     },
     {
       "id": "claude-opus-4-6",
@@ -451,11 +287,7 @@
       "context_window": 1000000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:26:40.354388",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.189794+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:31.807621"
     },
     {
       "id": "claude-sonnet-4-5",
@@ -467,11 +299,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:26:40.354614",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.190661+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:31.808623"
     },
     {
       "id": "claude-opus-4-5",
@@ -483,11 +311,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:26:40.354800",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.191520+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:31.809608"
     },
     {
       "id": "claude-sonnet-4-6",
@@ -499,11 +323,7 @@
       "context_window": 200000,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:26:40.355019",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.192305+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:31.810575"
     },
     {
       "id": "glm-4.7",
@@ -515,11 +335,7 @@
       "context_window": 131072,
       "capabilities": [],
       "agentic": false,
-      "notes": "Auto-discovered 2026-02-26T15:26:41.500803",
-      "hardware_fit": {
-        "fit": "unknown",
-        "updated_at": "2026-02-26T17:13:55.193126+11:00"
-      }
+      "notes": "Auto-discovered 2026-02-27T02:26:35.436481"
     }
   ],
   "routing_rules": {
@@ -660,8 +476,7 @@
         "nvidia-nim/mistralai/mistral-large-3-675b-instruct-2512",
         "nvidia-nim/nvidia/llama-3.1-nemotron-ultra-253b-v1",
         "nvidia-nim/z-ai/glm5",
-        "anthropic-proxy-5/deepseek-chat",
-        "nvidia-nim/deepseek-ai/deepseek-v3.2"
+        "anthropic-proxy-5/deepseek-chat"
       ],
       "use_for": [
         "feature development",
@@ -717,7 +532,7 @@
   "skip_nim_in_routing": true,
   "max_fallback_attempts": 3,
   "last_updated": "2026-02-23T23:00:00",
-  "last_discovery": "2026-02-26T15:24:49.186327",
+  "last_discovery": "2026-02-27T02:24:48.984782",
   "version": "3.2.0",
   "policy": {
     "blocked_models": [

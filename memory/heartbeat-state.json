@@ -1,18 +1,11 @@
 {
   "lastChecks": {
-    "email": 1703275200,
-    "calendar": 1703260800,
-    "weather": null,
-    "rsi": 1772082872,
-    "simmer": 1740567180
+    "rsi": 1772115290,
+    "simmer": 1772115290,
+    "heartbeat": 1772118845
   },
-  "lastRSICheck": 1772082872,
-  "lastSimmerCheck": 1772086513,
+  "lastRSICheck": 1772115290,
+  "lastSimmerCheck": 1772115290,
   "lastSessionId": "a18b3c73-4180-44f3-8eda-399c7202e24c",
-  "notes": [
-    "RSI health score 0.165 (below 0.3 threshold) - alerted Bowen",
-    "Simmer: 1 Polymarket position expiring in ~13h (BTC >$68k on Feb 26)",
-    "RSI deployer bug: KeyError 'action_type' - needs investigation",
-    "Simmer PnL: -$125.98 (-1.26%), rank 1443/1733"
-  ]
+  "notes": []
 }

@@ -62,5 +62,7 @@
     "high_water_mark": 1166.63,
     "session_start_active": 127.44,
     "last_updated": "2026-02-25"
-  }
+  },
+  "high_water_mark": 22.43,
+  "trading_paused": true
 }

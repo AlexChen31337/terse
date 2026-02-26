@@ -1,8 +1,8 @@
 {
-  "scan_timestamp": "2026-02-26T15:24:49.186327",
+  "scan_timestamp": "2026-02-27T02:24:48.984782",
   "total_models": 41,
-  "available_models": 29,
-  "unavailable_models": 12,
+  "available_models": 28,
+  "unavailable_models": 13,
   "providers": {
     "ollama": {
       "name": "ollama",
@@ -25,7 +25,7 @@
           "latency": 0.002,
           "error": "HTTP 404: {\"error\":{\"message\":\"model 'llama3.2-vision:11b' not found\",\"type\":\"api_error\",\"param\":null,\"code\":null}}\n",
           "response_preview": null,
-          "timestamp": "2026-02-26T15:24:49.198552"
+          "timestamp": "2026-02-27T02:24:48.997063"
         },
         {
           "id": "llama3.2:3b",
@@ -42,10 +42,10 @@
           "context_window": 128000,
           "agentic": false,
           "available": false,
-          "latency": 0.001,
+          "latency": 0.0,
           "error": "HTTP 404: {\"error\":{\"message\":\"model 'llama3.2:3b' not found\",\"type\":\"api_error\",\"param\":null,\"code\":null}}\n",
           "response_preview": null,
-          "timestamp": "2026-02-26T15:24:49.199262"
+          "timestamp": "2026-02-27T02:24:48.997743"
         },
         {
           "id": "qwen2.5:1.5b",
@@ -62,10 +62,10 @@
           "context_window": 32768,
           "agentic": false,
           "available": true,
-          "latency": 1.613,
+          "latency": 1.67,
           "error": null,
           "response_preview": "Hello! How can I",
-          "timestamp": "2026-02-26T15:24:50.812824"
+          "timestamp": "2026-02-27T02:24:50.667749"
         },
         {
           "id": "qwen2.5:32b",
@@ -85,7 +85,7 @@
           "latency": 0.001,
           "error": "HTTP 404: {\"error\":{\"message\":\"model 'qwen2.5:32b' not found\",\"type\":\"api_error\",\"param\":null,\"code\":null}}\n",
           "response_preview": null,
-          "timestamp": "2026-02-26T15:24:50.813735"
+          "timestamp": "2026-02-27T02:24:50.668710"
         },
         {
           "id": "llama3.3",
@@ -105,7 +105,7 @@
           "latency": 0.001,
           "error": "HTTP 404: {\"error\":{\"message\":\"model 'llama3.3' not found\",\"type\":\"api_error\",\"param\":null,\"code\":null}}\n",
           "response_preview": null,
-          "timestamp": "2026-02-26T15:24:50.814432"
+          "timestamp": "2026-02-27T02:24:50.669445"
         },
         {
           "id": "qwen2-vl:7b",
@@ -125,7 +125,7 @@
           "latency": 0.001,
           "error": "HTTP 404: {\"error\":{\"message\":\"model 'qwen2-vl:7b' not found\",\"type\":\"api_error\",\"param\":null,\"code\":null}}\n",
           "response_preview": null,
-          "timestamp": "2026-02-26T15:24:50.815155"
+          "timestamp": "2026-02-27T02:24:50.670147"
         },
         {
           "id": "qwen2.5:7b",
@@ -142,10 +142,10 @@
           "context_window": 32768,
           "agentic": false,
           "available": true,
-          "latency": 2.183,
+          "latency": 2.56,
           "error": null,
           "response_preview": "Hello! How can I",
-          "timestamp": "2026-02-26T15:24:52.998601"
+          "timestamp": "2026-02-27T02:24:53.230740"
         }
       ],
       "available": 2,
@@ -169,10 +169,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": true,
-          "latency": 10.277,
+          "latency": 0.627,
           "error": null,
           "response_preview": "Let me consider how to",
-          "timestamp": "2026-02-26T15:25:03.276626"
+          "timestamp": "2026-02-27T02:24:53.858363"
         },
         {
           "id": "qwen/qwen2.5-7b-instruct",
@@ -189,10 +189,10 @@
           "context_window": 32768,
           "agentic": false,
           "available": true,
-          "latency": 0.689,
+          "latency": 1.425,
           "error": null,
           "response_preview": "Hello! How can I",
-          "timestamp": "2026-02-26T15:25:03.967642"
+          "timestamp": "2026-02-27T02:24:55.284584"
         },
         {
           "id": "meta/llama-3.1-70b-instruct",
@@ -209,10 +209,10 @@
           "context_window": 128000,
           "agentic": false,
           "available": true,
-          "latency": 0.428,
+          "latency": 0.426,
           "error": null,
-          "response_preview": "How's it going?",
-          "timestamp": "2026-02-26T15:25:04.397168"
+          "response_preview": "How can I assist you",
+          "timestamp": "2026-02-27T02:24:55.711872"
         },
         {
           "id": "meta/llama-3.3-70b-instruct",
@@ -229,10 +229,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": true,
-          "latency": 0.479,
+          "latency": 1.514,
           "error": null,
-          "response_preview": "Hi, how can I",
-          "timestamp": "2026-02-26T15:25:04.877572"
+          "response_preview": "It's nice to meet",
+          "timestamp": "2026-02-27T02:24:57.227697"
         },
         {
           "id": "deepseek-ai/deepseek-v3.2",
@@ -248,11 +248,11 @@
           },
           "context_window": 131072,
           "agentic": false,
-          "available": true,
-          "latency": 4.932,
-          "error": null,
-          "response_preview": "\u4f60\u597d\uff01\ud83d\ude0a",
-          "timestamp": "2026-02-26T15:25:09.811639"
+          "available": false,
+          "latency": 30.246,
+          "error": "The read operation timed out",
+          "response_preview": null,
+          "timestamp": "2026-02-27T02:25:27.475297"
         },
         {
           "id": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
@@ -269,10 +269,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": true,
-          "latency": 0.494,
+          "latency": 0.448,
           "error": null,
-          "response_preview": "Hello, it's nice",
-          "timestamp": "2026-02-26T15:25:10.306968"
+          "response_preview": "Hello! How can I",
+          "timestamp": "2026-02-27T02:25:27.924738"
         },
         {
           "id": "deepseek-ai/deepseek-r1-distill-qwen-32b",
@@ -289,10 +289,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": false,
-          "latency": 0.602,
-          "error": "HTTP 500: {\"error\":\"Error during inference of request chat-4bda6881f74244499300d35281651b52 -- Encountered an error in forwardAsyn",
+          "latency": 0.572,
+          "error": "HTTP 500: {\"error\":\"Error during inference of request chat-307889bedb6f4aab98d57919de681f3b -- Encountered an error in forwardAsyn",
           "response_preview": null,
-          "timestamp": "2026-02-26T15:25:10.909854"
+          "timestamp": "2026-02-27T02:25:28.498353"
         },
         {
           "id": "deepseek-ai/deepseek-r1-distill-qwen-14b",
@@ -309,10 +309,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": true,
-          "latency": 0.722,
+          "latency": 2.46,
           "error": null,
           "response_preview": "Hello",
-          "timestamp": "2026-02-26T15:25:11.633612"
+          "timestamp": "2026-02-27T02:25:30.959239"
         },
         {
           "id": "qwen/qwq-32b",
@@ -329,10 +329,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": true,
-          "latency": 0.793,
+          "latency": 0.796,
           "error": null,
           "response_preview": "Okay, the user said",
-          "timestamp": "2026-02-26T15:25:12.427647"
+          "timestamp": "2026-02-27T02:25:31.755784"
         },
         {
           "id": "qwen/qwen3-next-80b-a3b-thinking",
@@ -349,10 +349,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": true,
-          "latency": 0.527,
+          "latency": 0.556,
           "error": null,
           "response_preview": "Okay, the user said",
-          "timestamp": "2026-02-26T15:25:12.955195"
+          "timestamp": "2026-02-27T02:25:32.312966"
         },
         {
           "id": "moonshotai/kimi-k2-thinking",
@@ -369,10 +369,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": true,
-          "latency": 0.753,
+          "latency": 4.536,
           "error": null,
-          "response_preview": "The user said \"",
-          "timestamp": "2026-02-26T15:25:13.709163"
+          "response_preview": "The user just said",
+          "timestamp": "2026-02-27T02:25:36.850589"
         },
         {
           "id": "microsoft/phi-4-mini-flash-reasoning",
@@ -389,10 +389,10 @@
           "context_window": 128000,
           "agentic": false,
           "available": true,
-          "latency": 1.369,
+          "latency": 1.437,
           "error": null,
           "response_preview": "(thinking model)",
-          "timestamp": "2026-02-26T15:25:15.079381"
+          "timestamp": "2026-02-27T02:25:38.288821"
         },
         {
           "id": "meta/llama-4-maverick-17b-128e-instruct",
@@ -409,10 +409,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": false,
-          "latency": 30.242,
+          "latency": 30.246,
           "error": "The read operation timed out",
           "response_preview": null,
-          "timestamp": "2026-02-26T15:25:45.321471"
+          "timestamp": "2026-02-27T02:26:08.536436"
         },
         {
           "id": "meta/llama-4-scout-17b-16e-instruct",
@@ -429,10 +429,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": false,
-          "latency": 0.383,
+          "latency": 0.346,
           "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function 'b6bb6e01-780e-4ba0-a5b8-379f00ed9b1c': Not found for account 'TTxq",
           "response_preview": null,
-          "timestamp": "2026-02-26T15:25:45.705612"
+          "timestamp": "2026-02-27T02:26:08.882897"
         },
         {
           "id": "mistralai/mistral-large-3-675b-instruct-2512",
@@ -449,10 +449,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": true,
-          "latency": 0.647,
+          "latency": 2.077,
           "error": null,
-          "response_preview": "Hi! \ud83d\ude0a",
-          "timestamp": "2026-02-26T15:25:46.354218"
+          "response_preview": "Hello! \ud83d\ude0a",
+          "timestamp": "2026-02-27T02:26:10.962028"
         },
         {
           "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
@@ -469,10 +469,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": true,
-          "latency": 0.456,
+          "latency": 0.438,
           "error": null,
           "response_preview": "(thinking model)",
-          "timestamp": "2026-02-26T15:25:46.811467"
+          "timestamp": "2026-02-27T02:26:11.402187"
         },
         {
           "id": "nvidia/llama-3.1-nemotron-51b-instruct",
@@ -489,10 +489,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": false,
-          "latency": 0.347,
+          "latency": 0.35,
           "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '5beba52c-65a9-4f46-8cd9-656689a1b205': Not found for account 'TTxq",
           "response_preview": null,
-          "timestamp": "2026-02-26T15:25:47.159594"
+          "timestamp": "2026-02-27T02:26:11.753643"
         },
         {
           "id": "meta/llama-3.2-11b-vision-instruct",
@@ -509,10 +509,10 @@
           "context_window": 128000,
           "agentic": false,
           "available": true,
-          "latency": 1.719,
+          "latency": 0.652,
           "error": null,
           "response_preview": "It's nice to meet",
-          "timestamp": "2026-02-26T15:25:48.879831"
+          "timestamp": "2026-02-27T02:26:12.406254"
         },
         {
           "id": "microsoft/phi-3.5-vision-instruct",
@@ -529,10 +529,10 @@
           "context_window": 128000,
           "agentic": false,
           "available": true,
-          "latency": 1.421,
+          "latency": 1.37,
           "error": null,
-          "response_preview": "hello! Is",
-          "timestamp": "2026-02-26T15:25:50.301913"
+          "response_preview": "Hi! How can I",
+          "timestamp": "2026-02-27T02:26:13.776553"
         },
         {
           "id": "z-ai/glm5",
@@ -544,10 +544,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": true,
-          "latency": 26.78,
+          "latency": 7.052,
           "error": null,
           "response_preview": "Let me consider how to",
-          "timestamp": "2026-02-26T15:26:17.083648"
+          "timestamp": "2026-02-27T02:26:20.828625"
         },
         {
           "id": "minimaxai/minimax-m2.1",
@@ -559,10 +559,10 @@
           "context_window": 1000000,
           "agentic": false,
           "available": true,
-          "latency": 16.926,
+          "latency": 1.034,
           "error": null,
           "response_preview": "(thinking model)",
-          "timestamp": "2026-02-26T15:26:34.011184"
+          "timestamp": "2026-02-27T02:26:21.864150"
         },
         {
           "id": "minimaxai/minimax-m2",
@@ -574,14 +574,14 @@
           "context_window": 1000000,
           "agentic": false,
           "available": true,
-          "latency": 1.604,
+          "latency": 0.598,
           "error": null,
           "response_preview": "(thinking model)",
-          "timestamp": "2026-02-26T15:26:35.617113"
+          "timestamp": "2026-02-27T02:26:22.463739"
         }
       ],
-      "available": 18,
-      "unavailable": 4
+      "available": 17,
+      "unavailable": 5
     },
     "anthropic-proxy-1": {
       "name": "anthropic-proxy-1",
@@ -604,7 +604,7 @@
           "latency": 0.0,
           "error": null,
           "response_preview": "(OAuth \u2014 tested via OpenClaw, not raw HTTP)",
-          "timestamp": "2026-02-26T15:26:35.618312"
+          "timestamp": "2026-02-27T02:26:22.464043"
         },
         {
           "id": "claude-sonnet-4-6",
@@ -624,7 +624,7 @@
           "latency": 0.0,
           "error": null,
           "response_preview": "(OAuth \u2014 tested via OpenClaw, not raw HTTP)",
-          "timestamp": "2026-02-26T15:26:35.619367"
+          "timestamp": "2026-02-27T02:26:22.464210"
         }
       ],
       "available": 2,
@@ -648,10 +648,10 @@
           "context_window": 200000,
           "agentic": false,
           "available": false,
-          "latency": 1.821,
-          "error": "HTTP 400: {\"request_id\":\"772079997275362814\",\"ResponseMeta\":{\"RequestId\":\"772079997275362814\",\"ErrorCode\":\"InvalidArgument\",\"Error",
+          "latency": 4.042,
+          "error": "HTTP 400: {\"request_id\":\"772119586325598897\",\"ResponseMeta\":{\"RequestId\":\"772119586325598897\",\"ErrorCode\":\"InvalidArgument\",\"Error",
           "response_preview": null,
-          "timestamp": "2026-02-26T15:26:37.441219"
+          "timestamp": "2026-02-27T02:26:26.506681"
         },
         {
           "id": "claude-opus-4-5",
@@ -668,10 +668,10 @@
           "context_window": 200000,
           "agentic": false,
           "available": false,
-          "latency": 0.355,
-          "error": "HTTP 400: {\"request_id\":\"772079997631362814\",\"ResponseMeta\":{\"RequestId\":\"772079997631362814\",\"ErrorCode\":\"InvalidArgument\",\"Error",
+          "latency": 2.121,
+          "error": "HTTP 400: {\"request_id\":\"772119588459628705\",\"ResponseMeta\":{\"RequestId\":\"772119588459628705\",\"ErrorCode\":\"InvalidArgument\",\"Error",
           "response_preview": null,
-          "timestamp": "2026-02-26T15:26:37.797858"
+          "timestamp": "2026-02-27T02:26:28.628503"
         }
       ],
       "available": 0,
@@ -695,10 +695,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": true,
-          "latency": 0.838,
+          "latency": 1.593,
           "error": null,
-          "response_preview": "Hi there! How can I help you today?",
-          "timestamp": "2026-02-26T15:26:38.637527"
+          "response_preview": "Hi there! I'm the GLM language model tra",
+          "timestamp": "2026-02-27T02:26:30.222965"
         }
       ],
       "available": 1,
@@ -722,10 +722,10 @@
           "context_window": 200000,
           "agentic": false,
           "available": true,
-          "latency": 0.231,
+          "latency": 0.34,
           "error": null,
           "response_preview": "\u4f60\u597d\uff01\ud83d\udc4b ",
-          "timestamp": "2026-02-26T15:26:40.354078"
+          "timestamp": "2026-02-27T02:26:31.806388"
         }
       ],
       "available": 1,
@@ -752,7 +752,7 @@
           "latency": 0.0,
           "error": null,
           "response_preview": "(OAuth \u2014 tested via OpenClaw, not raw HTTP)",
-          "timestamp": "2026-02-26T15:26:40.354388"
+          "timestamp": "2026-02-27T02:26:31.807621"
         },
         {
           "id": "claude-sonnet-4-5",
@@ -772,7 +772,7 @@
           "latency": 0.0,
           "error": null,
           "response_preview": "(OAuth \u2014 tested via OpenClaw, not raw HTTP)",
-          "timestamp": "2026-02-26T15:26:40.354614"
+          "timestamp": "2026-02-27T02:26:31.808623"
         },
         {
           "id": "claude-opus-4-5",
@@ -792,7 +792,7 @@
           "latency": 0.0,
           "error": null,
           "response_preview": "(OAuth \u2014 tested via OpenClaw, not raw HTTP)",
-          "timestamp": "2026-02-26T15:26:40.354800"
+          "timestamp": "2026-02-27T02:26:31.809608"
         },
         {
           "id": "claude-sonnet-4-6",
@@ -812,7 +812,7 @@
           "latency": 0.0,
           "error": null,
           "response_preview": "(OAuth \u2014 tested via OpenClaw, not raw HTTP)",
-          "timestamp": "2026-02-26T15:26:40.355019"
+          "timestamp": "2026-02-27T02:26:31.810575"
         }
       ],
       "available": 4,
@@ -836,10 +836,10 @@
           "context_window": 131072,
           "agentic": false,
           "available": true,
-          "latency": 1.145,
+          "latency": 3.625,
           "error": null,
           "response_preview": "Hi there! I'm the GLM language model tra",
-          "timestamp": "2026-02-26T15:26:41.500803"
+          "timestamp": "2026-02-27T02:26:35.436481"
         }
       ],
       "available": 1,
@@ -863,10 +863,10 @@
           "context_window": 32768,
           "agentic": false,
           "available": false,
-          "latency": 12.537,
-          "error": "HTTP 500: {\"error\":{\"message\":\"unexpected server status: llm server loading model\",\"type\":\"api_error\",\"param\":null,\"code\":null}}\n",
+          "latency": 30.035,
+          "error": "timed out",
           "response_preview": null,
-          "timestamp": "2026-02-26T15:26:54.038527"
+          "timestamp": "2026-02-27T02:27:05.472581"
         }
       ],
       "available": 0,
