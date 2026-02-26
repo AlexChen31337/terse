@@ -192,6 +192,12 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 - `reputation.reputations(accountId)` → reputation score
 - `gasQuota.agentQuotas(accountId)` → quota info
 
+## 🏠 Workspace Paths
+- **Main workspace:** `/home/bowen/.openclaw/workspace` (canonical)
+- **On disk:** `/media/DATA/.openclaw/workspace` (same dir, same inode)
+- **`~/clawd` symlink REMOVED** (2026-02-26) — do NOT reference it
+- **Always use:** `cd ~/.openclaw/workspace` or `cd /home/bowen/.openclaw/workspace`
+
 ## 🎯 Critical Lessons
 - **[ideas]** Daily ideas email ALWAYS uses Opus 4.6 — Bowen explicit. Ideas drive real execution, quality beats cost.
 
