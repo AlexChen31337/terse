@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "task": "Wire EvoClaw tool loop to auto-log outcomes to RSI SQLite database. In internal/orchestrator/toolloop.go, after Execute() completes (success or failure), automatically write an outcome record to the RSI SQLite DB at ~/.evoclaw/rsi/outcomes.db (same schema as skills/rsi-loop/scripts uses). Fields: task_id, agent_id, session_key, tool_calls_count, parallel_batches, success (bool), error_count, wall_time_ms, timestamp. No agent cooperation needed \u2014 fires on every tool loop completion. Add RSILogger interface so it's mockable in tests. Keep zero-value behavior when RSI DB path doesn't exist (graceful no-op). Add Go tests.",
+  "workspace": "/home/bowen/.openclaw/workspace/pbr/evoclaw-rsi-autolog",
+  "created_at": "2026-02-25T06:56:35.226819+00:00",
+  "current_phase": null,
+  "config": {
+    "models": {
+      "plan": "anthropic/claude-opus-4-6",
+      "build": "anthropic/claude-sonnet-4-6",
+      "review": "anthropic/claude-sonnet-4-6"
+    },
+    "timeout": 1800,
+    "retries": 1
+  },
+  "phases": {
+    "plan": {
+      "name": "plan",
+      "status": "completed",
+      "started_at": "2026-02-25T06:56:35.227056+00:00",
+      "completed_at": "2026-02-25T06:59:28.813457+00:00",
+      "duration_seconds": 173.586401,
+      "artifacts": [],
+      "attempt": 1,
+      "error": null
+    },
+    "build": {
+      "name": "build",
+      "status": "completed",
+      "started_at": "2026-02-25T06:59:28.878251+00:00",
+      "completed_at": "2026-02-25T07:07:43.715680+00:00",
+      "duration_seconds": 494.837429,
+      "artifacts": [],
+      "attempt": 1,
+      "error": null
+    },
+    "review": {
+      "name": "review",
+      "status": "completed",
+      "started_at": "2026-02-25T07:07:43.779906+00:00",
+      "completed_at": "2026-02-25T07:10:53.107807+00:00",
+      "duration_seconds": 189.327901,
+      "artifacts": [],
+      "attempt": 1,
+      "error": null
+    }
+  }
+}

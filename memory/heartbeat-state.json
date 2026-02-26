@@ -3,12 +3,10 @@
     "email": 1703275200,
     "calendar": 1703260800,
     "weather": null,
-    "rsi": 1703240000,
-    "simmer": 1703240000,
-    "hybridMemory": 1703200000
+    "rsi": 1772062040,
+    "simmer": 1772062040
   },
-  "lastRSICheck": 1703240000,
-  "lastSimmerCheck": 1703240000,
-  "lastHybridMemoryReindex": 1703200000,
-  "lastSessionId": "1d338c23-6ec3-4c5c-a235-7fd390f7bb00"
+  "lastRSICheck": 1772072825,
+  "lastSimmerCheck": 1772072825,
+  "lastSessionId": "a18b3c73-4180-44f3-8eda-399c7202e24c"
 }
