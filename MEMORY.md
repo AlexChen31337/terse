@@ -43,7 +43,10 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 **ComfyUI (GPU 1, secondary):** port 8189, RTX 3080 10GB, `--cuda-device 1 --lowvram`, pid 158708
 **Status:** Z-Image Turbo active. Models migrated to SSD 2026-02-25 ✅. GPU 1 verified working 2026-02-26 ✅
 **RTX 3080 lowvram peak:** ~4.3–4.4 GB VRAM (blog claim of 8GB req = correct; actual much lower)
-**GPU 1 use case:** parallel/background generation jobs (4x slower than GPU 0 due to block offloading)
+**GPU 1 use case:** overflow/parallel jobs — works well in isolation (~5-10 min for 512×512)
+**GPU 2 use case:** emergency fallback ONLY — 29 min when all 3 running (RAM contention + swap thrash); ~5-10 min in isolation
+**Recommended stack:** GPU 0 production → GPU 1 overflow → GPU 2 emergency only. Never run GPU 1 + GPU 2 simultaneously (exhausts 15GB RAM with two CLIPs)
+**GPU 2 Turing caveat:** RTX 2070 SUPER (SM 7.5) has no native bf16 — VAE falls back to float32, adds minor overhead
 
 **ZImage Turbo model files (on SSD, symlinked from /data2):**
 - Actual location: `/data/comfyui/models/{diffusion_models,text_encoders,vae}/`
@@ -228,4 +231,4 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 - **[cron]** Always set `model` in cron payloads — no model = Sonnet default = expensive waste for monitoring tasks
 
 ---
-*Updated: 2026-02-26 09:21 AEDT*
+*Updated: 2026-02-26 11:30 AEDT*
