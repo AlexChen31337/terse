@@ -22,19 +22,6 @@
   "default_preset": "moderate",
   "auto_register": true,
   "positions": {
-    "a535772c-5793-4e81-8f8e-17bbe0f2f473": {
-      "name": "Will Google have the best AI model at the end of February 2026?",
-      "side": "no",
-      "shares": 0.0014285700661798018,
-      "entry_price": 0.0195,
-      "stop_loss_price": 0.0146,
-      "take_profit_price": 0.0351,
-      "trailing_stop_pct": null,
-      "preset": "moderate",
-      "venue": "simmer",
-      "active": true,
-      "registered_at": "2026-02-26T08:11:08.377549+00:00"
-    },
     "32ab8d63-ce57-488d-bbba-b19fe894b31c": {
       "name": "Will the price of Bitcoin be above $68,000 on February 26?",
       "side": "yes",

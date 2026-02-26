@@ -1,8 +1,0 @@
-{
-  "task": "ClawChain PoA Bootstrap \u2014 Mainnet Sprint",
-  "step": "Step 2/5: Spawning PBR Builder for PoA Bootstrap implementation",
-  "started_at": "2026-02-26T03:05:19.947715+00:00",
-  "updated_at": "2026-02-26T03:08:45.129962+00:00",
-  "context": "Issue #28 open. VPS at 135.181.157.121. Chain spec exists for dev/testnet but no mainnet. Need: mainnet chain_spec, authority key generation, systemd service, VPS deployment.",
-  "tags": []
-}

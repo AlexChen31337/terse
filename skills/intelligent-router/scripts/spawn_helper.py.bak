@@ -51,62 +51,6 @@ _CODING_PATTERNS = [
 def _is_coding_task(task_description: str) -> bool:
     """Return True if task description has clear coding intent."""
     import re
-
-# [llmfit-integration-start]
-# Hardware fitness filtering for fallback chains.
-# Added by: uv run python skills/llmfit/scripts/integrate.py
-# Do NOT remove the marker comments — they allow re-patching to be idempotent.
-import functools as _functools
-
-_HARDWARE_FITS_FILE = Path(__file__).parent.parent.parent / "llmfit" / "data" / "hardware_fits.json"
-_DEPRIORITIZE_FITS = {"marginal", "none"}  # fits to push to end of fallback chain
-
-
-@_functools.lru_cache(maxsize=1)
-def _load_hardware_fits() -> dict:
-    """Load llmfit hardware fitness cache (cached for process lifetime)."""
-    if not _HARDWARE_FITS_FILE.exists():
-        return {}
-    try:
-        with open(_HARDWARE_FITS_FILE) as _f:
-            return json.load(_f)
-    except Exception:
-        return {}
-
-
-def get_hardware_fit(model_id: str) -> str:
-    """
-    Return the canonical fit string for a model_id (e.g. "good", "marginal", "none").
-    Looks up the hardware_fit field added by integrate.py in config.json.
-    Falls back to "unknown" if not found.
-    """
-    try:
-        cfg = load_config()
-        for entry in cfg.get("models", []):
-            eid = entry.get("id", "")
-            provider = entry.get("provider", "")
-            # Match by full "provider/id" or bare "id"
-            full_id = f"{provider}/{eid}" if provider else eid
-            if model_id in (eid, full_id) or full_id.endswith(model_id):
-                hw = entry.get("hardware_fit", {})
-                return hw.get("fit", "unknown")
-    except Exception:
-        pass
-    return "unknown"
-
-
-def rerank_fallback_chain(chain: list) -> list:
-    """
-    Move models with fit="marginal" or fit="none" to the end of the fallback chain.
-    Models with unknown/good/perfect fit keep their original order.
-    This does NOT remove any models — just reranks for hardware awareness.
-    """
-    fits = [(model_id, get_hardware_fit(model_id)) for model_id in chain]
-    preferred = [mid for mid, fit in fits if fit not in _DEPRIORITIZE_FITS]
-    deprioritized = [mid for mid, fit in fits if fit in _DEPRIORITIZE_FITS]
-    return preferred + deprioritized
-# [llmfit-integration-end]
-
     text = task_description.lower()
     return any(re.search(p, text) for p in _CODING_PATTERNS)
 
@@ -246,7 +190,6 @@ def main():
 
     icon = TIER_COLORS.get(tier, "⚪")
     fallback_chain = config.get("routing_rules", {}).get(tier, {}).get("fallback_chain", [])
-    fallback_chain = rerank_fallback_chain(fallback_chain)  # [llmfit-rerank-applied]
 
     print(f"\n{icon} Task classified as: {tier} (confidence: {confidence})")
     print(f"💰 Recommended model: {model_id}")

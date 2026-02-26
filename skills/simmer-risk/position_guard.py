@@ -182,6 +182,12 @@ def sync_positions(config, verbose=True):
         if shares_yes <= 0 and shares_no <= 0:
             continue  # No active position
 
+        # Skip $SIM virtual positions — only track real money (USDC/Polymarket)
+        currency = pos.get("currency", "")
+        venue = pos.get("venue", "")
+        if currency == "$SIM" or venue == "simmer":
+            continue
+
         side = "yes" if shares_yes > shares_no else "no"
         shares = shares_yes if side == "yes" else shares_no
 
