@@ -21,26 +21,12 @@
   },
   "default_preset": "moderate",
   "auto_register": true,
-  "positions": {
-    "32ab8d63-ce57-488d-bbba-b19fe894b31c": {
-      "name": "Will the price of Bitcoin be above $68,000 on February 26?",
-      "side": "yes",
-      "shares": 28.0185,
-      "entry_price": 0.54,
-      "stop_loss_price": 0.405,
-      "take_profit_price": 0.972,
-      "trailing_stop_pct": null,
-      "preset": "moderate",
-      "venue": "polymarket",
-      "active": true,
-      "registered_at": "2026-02-26T08:11:08.378446+00:00"
-    }
-  },
+  "positions": {},
   "global": {
     "check_interval_minutes": 60,
     "circuit_breaker_loss_pct": -0.15,
-    "trading_paused": false,
-    "high_water_mark_usdc": 22.99,
+    "trading_paused": true,
+    "high_water_mark_usdc": 6.46,
     "target_profit_usdc": 5.0,
     "session_start_balance": 21.59
   }

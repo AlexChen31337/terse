@@ -31,7 +31,7 @@ except ImportError:
 SKILL_DIR = Path(__file__).parent.parent
 DATA_DIR = SKILL_DIR / "data"
 PROPOSALS_DIR = DATA_DIR / "proposals"
-WORKSPACE = Path.home() / "clawd"
+WORKSPACE = Path.home() / ".openclaw" / "workspace"
 
 # ---------------------------------------------------------------------------
 # IMMUTABLE_CORE — files that block auto-deploy and require --force-core
@@ -205,7 +205,14 @@ def deploy_fix_routing(p: dict, dry_run: bool = False) -> str:
     if not config_path.exists():
         return "ERROR: intelligent-router config.json not found"
 
-    changes = p["implementation"].get("changes", "")
+    changes = ""
+    if "implementation" in p:
+        changes = p["implementation"].get("changes", "")
+    elif "suggested_changes" in p:
+        changes = "\n".join(f"- {c.get('file','')}: {c.get('action','')} — {c.get('detail','')}" for c in p["suggested_changes"])
+    else:
+        changes = p.get("description", "No details available")
+
     if dry_run:
         return f"DRY RUN: Would update {config_path}\n{changes}"
 
@@ -372,7 +379,7 @@ def deploy_proposal(proposal_id: str, dry_run: bool = False, force_core: bool = 
     if p["status"] not in ("approved", "draft"):
         return f"Proposal '{proposal_id}' status is '{p['status']}' - only 'approved' or 'draft' can be deployed"
 
-    action_type = p["action_type"]
+    action_type = p.get("action_type") or p.get("fix_type", "routing_config")
     print(f"\nDeploying: [{p['priority'].upper()}] {p['title']}")
     print(f"Action: {action_type}")
     print(f"Dry run: {dry_run}\n")
@@ -416,6 +423,7 @@ def deploy_proposal(proposal_id: str, dry_run: bool = False, force_core: bool = 
         "update_soul": lambda p, dr: deploy_update_soul(p, dr, force_core),
         "update_agents": lambda p, dr: deploy_update_soul(p, dr, force_core),
         "fix_routing": lambda p, dr: deploy_fix_routing(p, dr),
+        "routing_config": lambda p, dr: deploy_fix_routing(p, dr),
         "update_memory": lambda p, dr: deploy_update_memory(p, dr),
         "add_cron": lambda p, dr: "add_cron: Use cron tool to implement: " + p["implementation"]["changes"],
         "apply_gene": lambda p, dr: deploy_apply_gene(p, dr, force_core),

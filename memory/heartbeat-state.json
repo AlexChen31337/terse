@@ -1,11 +1,19 @@
 {
   "lastChecks": {
-    "rsi": 1772115290,
-    "simmer": 1772115290,
-    "heartbeat": 1772118845
+    "rsi": 1740635580,
+    "simmer": 1740635580,
+    "heartbeat": 1740635580,
+    "github_ci": 1740635580
   },
-  "lastRSICheck": 1772115290,
-  "lastSimmerCheck": 1772115290,
+  "lastRSICheck": 1740635580,
+  "lastSimmerCheck": 1740635580,
+  "lastGithubCICheck": 1740635580,
   "lastSessionId": "a18b3c73-4180-44f3-8eda-399c7202e24c",
-  "notes": []
+  "notes": [
+    "Heartbeat check completed 2026-02-27 14:13 AEDT",
+    "Simmer API health: OK (v1.10.0)",
+    "All Simmer positions remain closed as of 2026-02-22",
+    "position_guard.py not found in ~/clawd — module may not be installed",
+    "RSI health 0.139 (< 0.3 threshold) — Bowen alerted"
+  ]
 }

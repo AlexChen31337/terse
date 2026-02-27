@@ -231,10 +231,14 @@ AI video+audio generation. ComfyUI for images. Server: peter@10.0.0.44.
 - **[trading]** Separate long holds from active trading capital — UBTC/HYPE are NOT trading capital
 - **[trading]** % target beats flat $ — $5/day = 23% ROI on $21 (unsustainable); use % of active capital
 - **[trading]** HL signing module has import path issues — use raw `requests` to HL REST API (`https://api.hyperliquid.xyz/info`)
+- **[trading]** NEVER use unstable/untested local models for trading decisions. GLM-4.7-flash on GPU server failed silently (loaded but inference hung). Trading crons must use proven cloud models (NIM, z.ai, Anthropic) only. Test any local model thoroughly before routing trading tasks to it.
 - **[marketing]** AI diffusion models hallucinate text — always Pillow-compose all text overlays onto visual-only backgrounds
 - **[ci]** nhooyr.io/websocket deprecated/archived — use `github.com/coder/websocket` v1.8.14 for Go WebSocket in EvoClaw
 - **[community]** Awesome-openclaw entry: PBR pipeline (not multi-agent-team) — `multi-agent-team.md` already existed; PBR distinct via agent isolation + quality gates
 - **[cron]** Always set `model` in cron payloads — no model = Sonnet default = expensive waste for monitoring tasks
+- **[git]** ALWAYS push immediately after commit — commit + push is ONE action. Bowen had to remind me twice. No excuses.
+- **[subagents]** Builder timeout guidelines: Python scaffold 300s, Go scaffold 900s, large repo (50+ files) 900s. Default 600s is too tight for Go (CGO compile + mod download). Timed out 3x on 2026-02-27 before learning this.
+- **[ci]** Reviewer MUST run full CI pipeline locally (lint, vet, tests) before approving. Sub-agents don't run golangci-lint → lint errors hit CI → repeated fix cycles. Updated reviewer template 2026-02-27.
 
 ---
 *Updated: 2026-02-26 11:30 AEDT*

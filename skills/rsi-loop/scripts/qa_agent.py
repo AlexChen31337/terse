@@ -23,7 +23,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-WORKSPACE = Path.home() / "clawd"
+WORKSPACE = Path.home() / ".openclaw" / "workspace"
 
 QA_PROMPT_TEMPLATE = """You are a senior QA engineer reviewing code just written by agent Alex Chen.
 

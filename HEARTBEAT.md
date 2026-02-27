@@ -1,9 +1,16 @@
 # HEARTBEAT.md
+## CI Pipeline Monitor (every heartbeat)
+Check Gmail for GitHub Actions failure notifications:
+1. Search inbox for unread GitHub Actions failure emails: subject "Run failed" or "workflow run failed"
+2. If found: read the failure details, clone/cd to the repo, fix locally, push
+3. Mark email as read after fixing
+4. If fix is non-trivial, alert Bowen
+
 ## RSI Loop Health (every 4+ hours)
 If 4+ hours since last RSI check:
-1. Run cycle: `cd ~/clawd && uv run python skills/rsi-loop/scripts/rsi_cli.py cycle --auto`
-2. Check health: `cd ~/clawd && uv run python skills/rsi-loop/scripts/rsi_cli.py status`
-3. Run shim scan: `cd ~/clawd && uv run python skills/rsi-loop/scripts/openclaw_shim.py scan --since 4h`
+1. Run cycle: `cd ~/.openclaw/workspace && uv run python skills/rsi-loop/scripts/rsi_cli.py cycle --auto`
+2. Check health: `cd ~/.openclaw/workspace && uv run python skills/rsi-loop/scripts/rsi_cli.py status`
+3. Run shim scan: `cd ~/.openclaw/workspace && uv run python skills/rsi-loop/scripts/openclaw_shim.py scan --since 4h`
 4. If health score < 0.3, alert Bowen
 5. Deploy any safe proposals automatically
 6. Update lastRSICheck timestamp in memory/heartbeat-state.json
@@ -21,7 +28,7 @@ If 4+ hours since last Simmer check:
 10. Update lastSimmerCheck timestamp in memory/heartbeat-state.json
 11. If anything notable (big move, expiring position, good opportunity) → alert Bowen
 All positions closed as of 2026-02-22. Risk framework at skills/simmer-risk/ must be active before any new trades.
-Check position guard status: `cd ~/clawd && uv run python skills/simmer-risk/position_guard.py status`
+Check position guard status: `cd ~/.openclaw/workspace && uv run python skills/simmer-risk/position_guard.py status`
 
 ## Handling Inbound Agent Reports
 When the following system messages arrive in the main session, handle them as Alex — synthesise and filter before surfacing to Bowen:

@@ -1,73 +1,50 @@
 # RSI Loop Health Check Report
-**Generated:** 2026-02-24 03:02 AM AEDT
+**Date:** 2026-02-27 03:00:00 AEDT
+**Status:** ⚠️ CRITICAL - Health score below threshold (0.156 < 0.3)
 
----
+## Executive Summary
+- **Health Score:** 0.156 (CRITICAL - below 0.3 threshold)
+- **Tests:** ✅ All 32 tests passed
+- **7-Day Outcomes:** 115 logged
+- **Success Rate:** 34%
+- **Avg Quality:** 2.3/5
 
-## 🚨 CRITICAL ALERT
+## Top Failure Patterns (Last 7 Days)
+1. **tool_error (34 occurrences)** - 100% failure rate in unknown tasks
+2. **context_loss (21 occurrences)** - 5% failure rate in unknown tasks
+3. **wal_miss (11 occurrences)** - scattered across tasks
 
-**Health Score: 0.176 / 1.0** (WELL BELOW 0.3 THRESHOLD)
+## RSI Cycle Results
+- **Patterns Detected:** 17
+- **Proposals Generated:** 5
+- **Auto-Approved:** 0 (all require manual review)
+- **Awaiting Review:** 5 proposals
 
----
-
-## Metrics Summary
-
-| Metric | Value | Status |
-|--------|-------|--------|
-| Health Score | 0.176 | 🔴 CRITICAL |
-| Outcomes (24h) | 23 | ✅ OK |
-| Outcomes (7d) | 68 total | - |
-| Success Rate | 35% | 🔴 POOR |
-| Avg Quality | 2.5/5 | 🔴 POOR |
-| Test Results | 32 passed | ✅ PASS |
-| Pending Proposals | 21 files | ⚠️ HIGH |
-
----
-
-## Top Failure Patterns
-
-1. **[0.794 confidence]** `none` in 'unknown' tasks — **78% failure rate** (18 occurrences)
-2. **[0.603 confidence]** `tool_error` in 'unknown' tasks — **100% failure** (13 occurrences)
-3. **[0.338 confidence]** `wal_miss` in 'unknown' tasks — **100% failure** (7 occurrences)
-
----
-
-## Recent Issues (Last 7 Days)
-
-- **tool_error:** 17 occurrences
-- **wal_miss:** 11 occurrences
-- **context_loss:** 9 occurrences
-
----
-
-## Proposals Status
-
-### Awaiting Deployment (3 ready):
-- `2cea18f8`: Fix wal_miss in memory_retrieval tasks
-- `56638f19`: Fix tool_error in infrastructure_ops tasks
-- `fcc33a1d`: Address 'none' in 'unknown' tasks
-
-### Newly Generated (5 proposals from this cycle):
-- `[682e6962]` Address 'tool_error' in 'unknown' tasks
-- `[8479eda7]` Address 'wal_miss' in 'unknown' tasks
-- `[c98028aa]` Address 'cost_overrun' in 'trading' tasks
-- `[f4533796]` Address 'wal_miss' in 'trading' tasks
-- `[1d3f9b39]` Address 'tool_error' in 'trading' tasks
-
----
+### Awaiting Review Proposals
+- 682e6962: Address 'tool_error' in 'unknown' tasks
+- 8479eda7: Address 'wal_miss' in 'unknown' tasks
+- c98028aa: Address 'cost_overrun' in 'trading' tasks
+- f4533796: Address 'wal_miss' in 'trading' tasks
+- 1d3f9b39: Address 'tool_error' in 'trading' tasks
+- 989cb2b1: Address 'empty_response' in 'code_debug' tasks
+- 56638f19: Fix: In 'infrastructure_ops' tasks, 'tool_error' occurs 1x with 100% failure
+- b1b44540: Fix: In 'monitoring' tasks, 'cost_overrun' occurs 1x with 100% failure
+- 2cea18f8: Fix: In 'memory_retrieval' tasks, 'wal_miss' occurs 1x with 100% failure
 
 ## Test Results
-✅ **ALL TESTS PASSED** (32/32 in 0.68s)
+✅ All 32 tests passed (test_auto_observe.py + test_auto_fix.py)
+- Test coverage: auto-observe, auto-fix, pattern detection, proposal generation
+- Execution time: 0.70s
 
----
+## Recommendations
+1. **URGENT:** Review and address the high tool_error rate (34 occurrences, 100% failure)
+2. Review pending proposals with: `uv run python skills/rsi-loop/scripts/synthesizer.py list`
+3. Consider deploying ready proposal b1b44540 for monitoring cost_overrun fix
+4. Investigate context_loss patterns affecting task continuity
+5. Address wal_miss issues to improve outcome tracking accuracy
 
-## 🔔 Immediate Action Required
-
-The health score of **0.176** is critically low. Bowen should review:
-
-1. **Why are 78% of 'unknown' tasks failing with 'none'?** — This suggests tasks aren't being classified properly
-2. **Tool errors are spiking** — 17 occurrences in 7 days
-3. **WAL misses remain high** — 11 occurrences, indicating memory retrieval protocol isn't being followed
-
----
-
-*Report saved to memory/rsi-healthcheck-latest.md*
+## System Health
+- ✅ RSI Loop operational
+- ✅ Auto-observe functional
+- ✅ Auto-fix generating proposals
+- ⚠️ Health score critically low - needs immediate attention

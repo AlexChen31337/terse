@@ -233,7 +233,7 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
                     "target_file": f"skills/{task_type.replace('_', '-')}/",
                     "changes": (
                         f"1. Run: python3 skills/skill-creator/scripts/init_skill.py {task_type.replace('_', '-')} "
-                        f"--path ~/clawd/skills --resources scripts,references\n"
+                        f"--path ~/.openclaw/workspace/skills --resources scripts,references\n"
                         f"2. Add scripts for common {task_type} workflows\n"
                         f"3. Add references for domain knowledge\n"
                         f"4. Write SKILL.md with clear triggering description"
