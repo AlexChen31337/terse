@@ -43,3 +43,39 @@
 {"event": "monitor_start", "portfolio": {"balance_usdc": 6.46, "total_exposure": 0.0, "positions_count": 1, "pnl_total": -12.9, "polymarket_pnl": null}, "dry_run": false, "timestamp": "2026-02-27T03:02:20.125279+00:00"}
 {"event": "circuit_breaker_check", "total_portfolio_value": 6.46, "balance_usdc": 6.46, "total_exposure": 0, "high_water_mark": 6.46, "drawdown_pct": 0.0, "threshold": -0.15, "triggered": false, "timestamp": "2026-02-27T03:02:20.126489+00:00"}
 {"event": "monitor_complete", "actions_taken": 0, "circuit_breaker": false, "dry_run": false, "timestamp": "2026-02-27T03:02:24.246668+00:00"}
+{"event": "monitor_run_paused", "reason": "trading_paused flag set", "timestamp": "2026-02-27T05:03:05.790064+00:00"}
+{"event": "monitor_start", "portfolio": {"balance_usdc": 6.46, "total_exposure": 0.0, "positions_count": 1, "pnl_total": -12.94, "polymarket_pnl": null}, "dry_run": false, "timestamp": "2026-02-27T05:03:10.327025+00:00"}
+{"event": "circuit_breaker_check", "total_portfolio_value": 6.46, "balance_usdc": 6.46, "total_exposure": 0, "high_water_mark": 6.46, "drawdown_pct": 0.0, "threshold": -0.15, "triggered": false, "timestamp": "2026-02-27T05:03:10.327242+00:00"}
+{"event": "monitor_complete", "actions_taken": 0, "circuit_breaker": false, "dry_run": false, "timestamp": "2026-02-27T05:03:14.650485+00:00"}
+{"event": "monitor_run_paused", "reason": "trading_paused flag set", "timestamp": "2026-02-27T07:02:24.469839+00:00"}
+{"event": "monitor_start", "portfolio": {"balance_usdc": 6.46, "total_exposure": 0.0, "positions_count": 1, "pnl_total": -12.91, "polymarket_pnl": null}, "dry_run": false, "timestamp": "2026-02-27T07:02:27.341219+00:00"}
+{"event": "circuit_breaker_check", "total_portfolio_value": 6.46, "balance_usdc": 6.46, "total_exposure": 0, "high_water_mark": 6.46, "drawdown_pct": 0.0, "threshold": -0.15, "triggered": false, "timestamp": "2026-02-27T07:02:27.341447+00:00"}
+{"event": "monitor_complete", "actions_taken": 0, "circuit_breaker": false, "dry_run": false, "timestamp": "2026-02-27T07:02:29.741339+00:00"}
+{"event": "monitor_run_paused", "reason": "trading_paused flag set", "timestamp": "2026-02-27T07:02:39.404647+00:00"}
+{"event": "monitor_start", "portfolio": {"balance_usdc": 6.46, "total_exposure": 0.0, "positions_count": 1, "pnl_total": -12.91, "polymarket_pnl": null}, "dry_run": false, "timestamp": "2026-02-27T07:02:41.933316+00:00"}
+{"event": "circuit_breaker_check", "total_portfolio_value": 6.46, "balance_usdc": 6.46, "total_exposure": 0, "high_water_mark": 6.46, "drawdown_pct": 0.0, "threshold": -0.15, "triggered": false, "timestamp": "2026-02-27T07:02:41.934414+00:00"}
+{"event": "monitor_complete", "actions_taken": 0, "circuit_breaker": false, "dry_run": false, "timestamp": "2026-02-27T07:02:48.165359+00:00"}
+{"event": "monitor_run_paused", "reason": "trading_paused flag set", "timestamp": "2026-02-27T07:02:58.934896+00:00"}
+{"event": "monitor_start", "portfolio": {"balance_usdc": 6.46, "total_exposure": 0.0, "positions_count": 1, "pnl_total": -12.91, "polymarket_pnl": null}, "dry_run": false, "timestamp": "2026-02-27T07:03:01.813100+00:00"}
+{"event": "circuit_breaker_check", "total_portfolio_value": 6.46, "balance_usdc": 6.46, "total_exposure": 0, "high_water_mark": 6.46, "drawdown_pct": 0.0, "threshold": -0.15, "triggered": false, "timestamp": "2026-02-27T07:03:01.813317+00:00"}
+{"event": "monitor_complete", "actions_taken": 0, "circuit_breaker": false, "dry_run": false, "timestamp": "2026-02-27T07:03:05.825161+00:00"}
+{"event": "monitor_run_paused", "reason": "trading_paused flag set", "timestamp": "2026-02-27T09:02:44.160983+00:00"}
+{"event": "monitor_start", "portfolio": {"balance_usdc": 6.46, "total_exposure": 0.0, "positions_count": 1, "pnl_total": -12.91, "polymarket_pnl": null}, "dry_run": false, "timestamp": "2026-02-27T09:02:46.908672+00:00"}
+{"event": "circuit_breaker_check", "total_portfolio_value": 6.46, "balance_usdc": 6.46, "total_exposure": 0, "high_water_mark": 6.46, "drawdown_pct": 0.0, "threshold": -0.15, "triggered": false, "timestamp": "2026-02-27T09:02:46.908882+00:00"}
+{"event": "monitor_complete", "actions_taken": 0, "circuit_breaker": false, "dry_run": false, "timestamp": "2026-02-27T09:02:53.723730+00:00"}
+{"event": "monitor_run_paused", "reason": "trading_paused flag set", "timestamp": "2026-02-27T11:02:41.784239+00:00"}
+{"event": "monitor_start", "portfolio": {"balance_usdc": 6.46, "total_exposure": 0.0, "positions_count": 1, "pnl_total": -12.94, "polymarket_pnl": null}, "dry_run": false, "timestamp": "2026-02-27T11:02:44.564547+00:00"}
+{"event": "circuit_breaker_check", "total_portfolio_value": 6.46, "balance_usdc": 6.46, "total_exposure": 0, "high_water_mark": 6.46, "drawdown_pct": 0.0, "threshold": -0.15, "triggered": false, "timestamp": "2026-02-27T11:02:44.564761+00:00"}
+{"event": "monitor_complete", "actions_taken": 0, "circuit_breaker": false, "dry_run": false, "timestamp": "2026-02-27T11:02:49.982581+00:00"}
+{"event": "monitor_run_paused", "reason": "trading_paused flag set", "timestamp": "2026-02-27T13:02:37.009046+00:00"}
+{"event": "monitor_start", "portfolio": {"balance_usdc": 6.46, "total_exposure": 0.0, "positions_count": 1, "pnl_total": -12.91, "polymarket_pnl": null}, "dry_run": false, "timestamp": "2026-02-27T13:02:39.739503+00:00"}
+{"event": "circuit_breaker_check", "total_portfolio_value": 6.46, "balance_usdc": 6.46, "total_exposure": 0, "high_water_mark": 6.46, "drawdown_pct": 0.0, "threshold": -0.15, "triggered": false, "timestamp": "2026-02-27T13:02:39.740617+00:00"}
+{"event": "monitor_complete", "actions_taken": 0, "circuit_breaker": false, "dry_run": false, "timestamp": "2026-02-27T13:02:45.132633+00:00"}
+{"event": "monitor_run_paused", "reason": "trading_paused flag set", "timestamp": "2026-02-27T15:02:17.076706+00:00"}
+{"event": "monitor_start", "portfolio": {"balance_usdc": 6.46, "total_exposure": 0.0, "positions_count": 1, "pnl_total": -12.85, "polymarket_pnl": null}, "dry_run": false, "timestamp": "2026-02-27T15:02:18.545571+00:00"}
+{"event": "circuit_breaker_check", "total_portfolio_value": 6.46, "balance_usdc": 6.46, "total_exposure": 0, "high_water_mark": 6.46, "drawdown_pct": 0.0, "threshold": -0.15, "triggered": false, "timestamp": "2026-02-27T15:02:18.545795+00:00"}
+{"event": "monitor_complete", "actions_taken": 0, "circuit_breaker": false, "dry_run": false, "timestamp": "2026-02-27T15:02:20.502178+00:00"}
+{"event": "monitor_run_paused", "reason": "trading_paused flag set", "timestamp": "2026-02-27T15:02:25.948027+00:00"}
+{"event": "monitor_start", "portfolio": {"balance_usdc": 6.46, "total_exposure": 0.0, "positions_count": 1, "pnl_total": -12.85, "polymarket_pnl": null}, "dry_run": false, "timestamp": "2026-02-27T15:02:28.730990+00:00"}
+{"event": "circuit_breaker_check", "total_portfolio_value": 6.46, "balance_usdc": 6.46, "total_exposure": 0, "high_water_mark": 6.46, "drawdown_pct": 0.0, "threshold": -0.15, "triggered": false, "timestamp": "2026-02-27T15:02:28.731307+00:00"}
+{"event": "monitor_complete", "actions_taken": 0, "circuit_breaker": false, "dry_run": false, "timestamp": "2026-02-27T15:02:34.116851+00:00"}

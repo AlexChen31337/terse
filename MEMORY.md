@@ -27,26 +27,41 @@
 
 ### EvoClaw
 Self-evolving agent framework. Go binary. BSC adapter, cloud sync (Turso), tiered memory.
-**Status:** PHASE 1b COMPLETE ✅
+**Status:** v0.6.0 PENDING (beta merge in progress as of 2026-02-27 22:00 AEDT)
 - PR #19 Multi-Chain CLI — MERGED ✅ (89.1% coverage)
 - PR #20 Coverage boost — MERGED ✅ (api 81%, cmd 79%)
 - CI WebSocket fix (nhooyr→coder/websocket) — MERGED ✅
 - RSI auto-log hook — MERGED ✅
-**Latest tag:** v0.5.0
-**Next:** Phase 2 (Android, ClawHub, iOS, WASM)
+**Latest tag:** v0.5.0 (v0.6.0 pending beta merge)
+**beta branch:** 49 commits ahead of main — dashboard SPA, Docker Compose, Rust edge agent, skill plugin system, Telegram bot, E2B cloud, ChatSync, multi-tenant API, agent registration, Ollama LLM routing, GPIO support. All from Feb 6-7, never merged.
+**evoclaw-beta-merge subagent:** running as of 22:00 AEDT — will PR beta→main, tag v0.6.0, create release. Auto-announces on complete.
+**Next after v0.6.0:** Phase 2 (Android, ClawHub, iOS, WASM)
 **Open issues:** NONE — all cleared
 
 ### ClawChain
 L1 blockchain for agents. Substrate, NPoS. Hetzner VPS 135.181.157.121.
-**Status:** MILESTONE — 12 PALLETS ✅
-**Merged today (2026-02-27):**
-- PR #45 OpenClaw integration (#36) — MERGED ✅ (55 tests, 99.33% cov)
-- PR #46 pallet-ibc-lite (#41) — MERGED ✅ (25 tests)
-- PR #47 pallet-anon-messaging (#43) — MERGED ✅ (28 tests)
-- PR #48 pallet-service-market v2 (#42) — MERGED ✅ (49 tests)
+**Status:** MAINNET READINESS SPRINT ✅ (2026-02-27 evening)
+**Merged (2026-02-27 day):**
+- PR #45 OpenClaw integration — MERGED ✅ (55 tests, 99.33% cov)
+- PR #46 pallet-ibc-lite — MERGED ✅ (25 tests)
+- PR #47 pallet-anon-messaging — MERGED ✅ (28 tests)
+- PR #48 pallet-service-market v2 — MERGED ✅ (49 tests)
+**Merged (2026-02-27 evening mainnet sprint):**
+- PR #49 Block explorer (`feat/block-explorer`) — MERGED ✅, live at http://135.181.157.121:3000 (pm2, port 3000)
+- PR #50 Security audit report — MERGED ✅ (`docs/security-audit-2026-02.md`)
 **12 pallets total:** agent-did, agent-receipts, agent-registry, claw-token, gas-quota, quadratic-governance, reputation, rpc-registry, task-market, ibc-lite, anon-messaging, service-market
-**Open issues:** NONE — all cleared (#36, #41, #42, #43, #44 closed)
-**VPS systemd:** node process still running raw (not yet as systemd service)
+**Open issues:** NONE
+**VPS systemd:** `clawchain.service` updated — `--dev` REMOVED, now uses `chain-spec/clawchain-staging.json` (chainType: Live, id: clawchain_testnet), `--alice --force-authoring`, block ~12 and climbing post-restart
+**Block explorer:** Running via pm2 on VPS port 3000 (no nginx). `NEXT_PUBLIC_WS_URL=ws://135.181.157.121:9944`
+**Security audit (2026-02-27):** CRITICAL=0, HIGH=3, MEDIUM=8, LOW=6
+- HIGH-1: `pallet-agent-registry` L294 — `update_reputation` unrestricted, any account can modify any agent's rep → restrict to oracle/internal
+- HIGH-2: `pallet-claw-token` L224 — `treasury_spend` emits success event but does NO token transfer (stub) → implement
+- HIGH-3: `pallet-agent-receipts` L222 — `for nonce in 0..before_nonce` with caller-supplied u64 → DoS risk, cap with MaxClearBatchSize
+- NOT audited: ibc-lite, anon-messaging, service-market (feature branches, not on main) — must audit before mainnet inclusion
+- `cargo-audit` should be added to CI
+**Chainspec:** `chain-spec/clawchain-staging.json` (Live, not --dev); `chain-spec/clawchain-staging-plain.json`
+**Setup script:** `scripts/setup-node.sh` on VPS documents full node setup process
+**⚠️ Mainnet blockers remaining:** (1) Fix 3 HIGH audit findings, (2) Audit ibc-lite/anon-messaging/service-market, (3) Replace `--alice` + `--force-authoring` with proper keystore mgmt for multi-validator, (4) Multi-validator testnet
 
 ### GPU Media Pipeline
 ComfyUI for images. Server: peter@10.0.0.44.
@@ -62,30 +77,64 @@ Agent Tool Registry v0.1. NEW repo.
 
 ### clawchain-sdk
 TypeScript SDK for ClawChain. NEW repo.
-**Status:** COMPLETE ✅ — github.com/clawinfra/clawchain-sdk, @clawchain/sdk, 114 tests, 99.48% cov
+**Status:** v1.0.0 RELEASED ✅ — github.com/clawinfra/clawchain-sdk, @clawchain/sdk, 114 tests, 99.48% cov
+- GitHub Release: https://github.com/clawinfra/clawchain-sdk/releases/tag/v1.0.0
+- Fixed 6 TS strict-mode errors in TokenModule (noUncheckedIndexedAccess + polkadot API query objects)
+- CHANGELOG.md written
+- ⏭️ npm publish pending — needs NPM_TOKEN env var, then: `npm publish --access public`
+
+### clawkeyring
+Agent-native validator key management for ClawChain. NEW repo (2026-02-27 evening).
+**Status:** v0.1.0 RELEASED ✅ — https://github.com/clawinfra/clawkeyring
+**Release:** https://github.com/clawinfra/clawkeyring/releases/tag/v0.1.0
+**What it does:**
+- `age`-encrypted key storage (atomic writes, strict 600/700 perms, plaintext zeroing)
+- `author_insertKey` JSON-RPC injector → Substrate node on startup
+- mTLS gRPC server for key ops (rotate/list/status)
+- `NewEra` event subscriber → auto session key rotation
+- On-chain audit trail via `agent-receipts` pallet (SHA-256 hashes)
+**CLI commands:** `init, import, inject, rotate, serve, status, audit`
+**Coverage:** 90.9% total (keystore 87.4%, injector 93.9%, audit 97.3%, rotation 97.0%, server 86.9%, pkg 100%, cmd 89.7%)
+**Binaries:** linux/amd64 + linux/arm64 attached to v0.1.0 release
+**Docs:** README.md + docs/DESIGN.md (threat model, ASCII key lifecycle, future HSM/TEE)
+**Decision:** Built clawkeyring (self-hosted age+mTLS) over AWS Secrets Manager (vendor lock-in) or HashiCorp Vault (overkill). Agent-native approach logs rotations on-chain — better story for ecosystem.
 
 ## ✅ Completed Today (2026-02-27) — MASSIVE SPRINT
 
-10 PRs shipped across 6 repos. ~30k lines. 250+ tests.
+14 PRs / releases shipped across 6 repos. ~30k+ lines. 300+ tests.
 
 1. ✅ fear-protocol (NEW repo, 173 tests)
 2. ✅ agent-tools v0.1 (NEW repo, CI green)
 3. ✅ orchestrator skill — iterative PBR loop added (69 tests)
-4. ✅ clawchain-sdk (NEW repo, 114 tests, 99.48%)
+4. ✅ clawchain-sdk v1.0.0 (NEW repo + GitHub release, 114 tests, 99.48%)
 5. ✅ ClawChain PR #45 — OpenClaw integration (55 tests, 99.33%)
 6. ✅ EvoClaw PR #19 — Multi-Chain CLI (89.1% cov)
 7. ✅ EvoClaw PR #20 — Coverage boost (api 81%, cmd 79%)
 8. ✅ ClawChain PR #46 — pallet-ibc-lite (25 tests)
 9. ✅ ClawChain PR #47 — pallet-anon-messaging (28 tests)
 10. ✅ ClawChain PR #48 — pallet-service-market v2 (49 tests)
+11. ✅ ClawChain PR #49 — Block explorer merged + deployed (pm2, port 3000)
+12. ✅ ClawChain PR #50 — Security audit report (docs/security-audit-2026-02.md)
+13. ✅ ClawChain VPS — removed --dev, live staging chainspec, blocks producing
+14. ✅ AlphaStrike V2 — fixed ensemble loading, live signals firing (BTC/ETH/SOL SHORT)
 
 ## ✅ Pending Tasks
 
-- [PENDING] EvoClaw Phase 2: Android, ClawHub, iOS, WASM
-- [PENDING] ClawChain: systemd service for node on VPS 135.181.157.121
+- [IN-PROGRESS] EvoClaw beta→main merge (subagent running, auto-announces)
+- [PENDING] EvoClaw Phase 2: Android, ClawHub, iOS, WASM (after v0.6.0 lands)
+- [PENDING] clawkeyring: integrate with ClawChain VPS validator (run `clawkeyring inject` replacing --alice/--force-authoring)
+- [PENDING] ClawChain HIGH audit fixes: update_reputation restriction, treasury_spend impl, receipt DoS cap
+- [PENDING] ClawChain: audit ibc-lite, anon-messaging, service-market pallets (not on main yet)
+- [PENDING] ClawChain: replace --alice/--force-authoring with proper keystore for multi-validator
+- [PENDING] clawchain-sdk npm publish — needs NPM_TOKEN, then `npm publish --access public`
+- [PENDING] ZImage model copy on GPU server (check if still running, then delete /data/ai-stack/z-image/ to free 20GB)
+- [PENDING] Storm landscape image gen via ComfyUI GPU 0 port 8188 (blocked until ZImage models available)
+- [PENDING] OpenClaw config: remove stale glm-4.7-flash entry from ollama-gpu-server
+- [PENDING] Router config: unblock ollama-gpu-server/qwen2.5:7b from policy.blocked_models
 - [PENDING] Pillow text overlay for EvoClaw social card (same fix as ClawChain card)
 - [MONITOR] Awesome-openclaw PR #30 — awaiting review
 - [MONITOR] RSI health score 0.141 — low but driven by historical failures; should improve
+- [MONITOR] AlphaStrike V2 paper trading — monitor cycle #2+ for SHORT signal execution
 
 ## 💰 Portfolio & Trading
 
@@ -194,15 +243,23 @@ All `~/clawd` references cleaned up:
 - UBTC/HYPE are long-term holds — never trade them
 - Use raw `requests` to HL REST API — HL signing module import path broken
 
-## 📅 Recent Events (Feb 27, 2026)
+## 📅 Recent Events (Feb 27, 2026 — Evening)
 
-- Massive sprint: 10 PRs shipped, 6 repos, ~30k lines, 250+ tests
-- All ClawChain issues cleared: 0 open issues
-- All EvoClaw issues cleared: 0 open issues
-- Fixed all `~/clawd` path references across HEARTBEAT.md + RSI scripts
-- Agent-Reach reviewed — patterns worth adopting, not the project itself
-- RSI health score: 0.141 (low — historical, will improve with successful outcomes)
-- Simmer: 0 positions, circuit breaker active, $6.46 cash
+**Day sprint (14 deliverables total):**
+- 10 PRs + 4 evening PRs/releases shipped across 6 repos
+- ClawChain: 12 pallets merged, block explorer live, --dev removed, staging chainspec active
+- Security audit complete: CRITICAL=0, HIGH=3, MEDIUM=8, LOW=6
+- clawchain-sdk v1.0.0 GitHub release — npm publish pending (needs NPM_TOKEN)
+- AlphaStrike V2 fixed: ensemble pkl loading, live signals firing
+- Simmer circuit breaker cleared (re-enabled)
+- RSI health score: 0.141 (historical, improving)
+- Fixed all `~/clawd` path refs; GPU server: ZImage copy in progress
+
+**ClawChain VPS state (end of day):**
+- Block: ~12+ (fresh chain after --dev removal)
+- Service: `clawchain.service` active, staging chainspec
+- Explorer: http://135.181.157.121:3000 (pm2)
+- WS RPC: ws://135.181.157.121:9944
 
 ---
-*Updated: 2026-02-27 18:10 AEDT*
+*Updated: 2026-02-27 22:08 AEDT*

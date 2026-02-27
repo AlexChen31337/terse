@@ -55,14 +55,14 @@
     }
   },
   "state": {
-    "trading_paused": true,
+    "trading_paused": false,
     "today_pnl_usd": 0.0,
     "today_trades": 0,
     "consecutive_losses": 0,
     "high_water_mark": 6.46,
     "session_start_active": 127.44,
-    "last_updated": "2026-02-25"
+    "last_updated": "2026-02-28"
   },
   "high_water_mark": 6.46,
-  "trading_paused": true
+  "trading_paused": false
 }
