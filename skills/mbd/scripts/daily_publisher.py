@@ -279,7 +279,7 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description="MbD每日书稿自动发布器")
     parser.add_argument("--token", help="MbD开发者Key（可选，默认从加密存储加载）")
-    parser.add_argument("--notify-email", default="31337bowen@gmail.com", help="通知邮件地址")
+    parser.add_argument("--notify-email", default="bowen31337@outlook.com", help="通知邮件地址")
     parser.add_argument("--dry-run", action="store_true", help="仅生成内容，不提交到MbD")
     args = parser.parse_args()
 
