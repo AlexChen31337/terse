@@ -259,17 +259,17 @@ def backup_to_github(topic: dict, detail: str, content: str, cover_local_path: s
             capture_output=True, text=True, timeout=10
         )
         gh_token = result.stdout.strip()
-        # github-config.json returns JSON, extract token field
+        # github-config.json returns JSON, extract bowen31337 token
         try:
             import json as _json
-            gh_token = _json.loads(gh_token).get("token", gh_token)
+            gh_token = _json.loads(gh_token)["accounts"]["bowen31337"]["token"]
         except Exception:
             pass
         if not gh_token or "ERROR" in gh_token.upper():
             print("⚠️ GitHub token unavailable, skipping backup")
             return
 
-        repo_url = f"https://{gh_token}@github.com/AlexChen31337/mbd-book-ideas.git"
+        repo_url = f"https://{gh_token}@github.com/bowen31337/mbd-book-ideas.git"
         clone_dir = Path(tempfile.mkdtemp()) / "mbd-book-ideas"
 
         print("📦 Backing up to GitHub...")
