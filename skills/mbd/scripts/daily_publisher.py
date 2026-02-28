@@ -15,6 +15,31 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pathlib import Path
 
+try:
+    import markdown as _md_lib
+    def md_to_html(text: str) -> str:
+        """Convert Markdown to HTML with common extensions."""
+        return _md_lib.markdown(
+            text,
+            extensions=["extra", "nl2br", "sane_lists"],
+        )
+except ImportError:
+    import re
+    def md_to_html(text: str) -> str:
+        """Minimal Markdown→HTML fallback (no library needed)."""
+        # Headers
+        text = re.sub(r'^### (.+)$', r'<h3>\1</h3>', text, flags=re.M)
+        text = re.sub(r'^## (.+)$',  r'<h2>\1</h2>', text, flags=re.M)
+        text = re.sub(r'^# (.+)$',   r'<h1>\1</h1>', text, flags=re.M)
+        # Bold / italic
+        text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+        text = re.sub(r'\*(.+?)\*',     r'<em>\1</em>', text)
+        # Blockquote
+        text = re.sub(r'^> (.+)$', r'<blockquote>\1</blockquote>', text, flags=re.M)
+        # Line breaks → <br> for blank lines
+        text = re.sub(r'\n\n', '</p><p>', text)
+        return f'<p>{text}</p>'
+
 WORKSPACE = Path.home() / ".openclaw/workspace"
 STATE_FILE = WORKSPACE / "memory/mbd-publisher-state.json"
 SKILLS_DIR = WORKSPACE / "skills/mbd"
@@ -193,7 +218,11 @@ def generate_book_content(topic: dict) -> tuple[str, str]:
 
 
 def save_draft_to_mbd(token: str, topic: dict, detail: str, content: str) -> dict:
-    """将书稿保存为面包多草稿"""
+    """将书稿保存为面包多草稿（Markdown自动转HTML）"""
+    # MbD WYSIWYG editor expects HTML, not Markdown
+    detail_html = md_to_html(detail)
+    content_html = md_to_html(content)
+
     headers = {
         "x-token": token,
         "Content-Type": "application/json",
@@ -202,8 +231,8 @@ def save_draft_to_mbd(token: str, topic: dict, detail: str, content: str) -> dic
         "productname": topic["title"],
         "producttype": 1,  # 单品
         "productprice": 9.9,
-        "productdetail": detail,
-        "productcontent": content,
+        "productdetail": detail_html,
+        "productcontent": content_html,
         "productimage": "https://cdn.2zimu.com/mianbaoduo/img/logoPC.png",  # 默认封面
         "category": topic["category"],
         "opendata": 0,
