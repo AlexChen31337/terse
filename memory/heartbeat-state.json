@@ -2,7 +2,7 @@
   "lastChecks": {
     "rsi": 1772244872,
     "simmer": 1772244872,
-    "heartbeat": 1772244872,
+    "heartbeat": 1772252072,
     "github_ci": 1772237710
   },
   "lastRSICheck": 1772241296,
@@ -12,9 +12,9 @@
   "notes": [
     "Gmail credentials file missing - CI monitoring disabled",
     "2026-02-27 22:15:48: Found 5 CI failures, dispatched sub-agent to fix",
-    "2026-02-28 02:13: RSI health score 0.135 (<0.3 threshold) — alerted Bowen",
-    "2026-02-28 03:13: RSI health still 0.133 — no change, already alerted",
-    "2026-02-28 04:13: RSI health 0.132 (stable low) — already alerted",
+    "2026-02-28 02:13: RSI health score 0.135 (<0.3 threshold) \u2014 alerted Bowen",
+    "2026-02-28 03:13: RSI health still 0.133 \u2014 no change, already alerted",
+    "2026-02-28 04:13: RSI health 0.132 (stable low) \u2014 already alerted",
     "2026-02-28 04:13: Simmer balance $9872.70, no positions, PnL -1.27%, rank 1516/1822",
     "2026-02-28 04:13: Shim scan found 5 events (8 context_loss, 3 rate_limit, 2 tool_error)",
     "2026-02-28 06:14: Heartbeat - Gmail credentials missing, CI monitoring disabled",
@@ -32,7 +32,8 @@
     "2026-02-28 12:14: RSI health 0.129 (stable), 1 proposal needs manual config update",
     "2026-02-28 12:14: Simmer OK, no positions, trading paused",
     "2026-02-28 12:14: Shim scan - 1 event (1 context_loss)",
-    "2026-02-28 13:14: All systems stable - RSI 0.129, Simmer OK, 3 shim events (normal)"
+    "2026-02-28 13:14: All systems stable - RSI 0.129, Simmer OK, 3 shim events (normal)",
+    "2026-02-28 15:14: Heartbeat - 2 shim events (normal), RSI/Simmer due in ~1h"
   ],
-  "lastHeartbeat": 1772244872
+  "lastHeartbeat": 1772252072
 }

@@ -27,24 +27,26 @@
 
 ### EvoClaw
 Self-evolving agent framework. Go binary. BSC adapter, cloud sync (Turso), tiered memory.
-**Status:** v0.6.0 RELEASED ✅ (2026-02-28)
-- PR #19 Multi-Chain CLI — MERGED ✅ (89.1% coverage)
-- PR #20 Coverage boost — MERGED ✅ (api 81%, cmd 79%)
-- PR #21 Beta→main merge — MERGED ✅
-- v0.6.0 tag: Created and released ✅
-- **Blocker:** One Go lint error at `internal/cli/cloud.go:277` (unchecked error return)
-- **Next:** Fix lint, re-run release CI to attach build packages
-- **Phase 2 planning:** Android, ClawHub, iOS, WASM
-- **SKILLRL integration:** Research complete (`workspace-foundry/research/skillrl-integration.md`), proposed `internal/skillbank/` package, 3-phase roadmap (6-8 weeks)
+**Status:** v0.6.0 RELEASED ✅ + Phase 2 SHIPPED ✅ + SKILLRL SHIPPED ✅ (2026-02-28)
+- v0.6.0 released (PRs #19-21 merged) ✅
+- **Phase 2 DONE** (commit 0c97c61 on main): Android, iOS, WASM, ClawHub — 2,628 lines, 90%+ cov
+- **SKILLRL DONE** (PR #22): `internal/skillbank/` — all 3 phases, 92.9% cov, 40+ tests
+  - Phase 1: types.go + store.go (FileStore JSONL, thread-safe)
+  - Phase 2: distiller.go + retriever.go + injector.go (LLM distillation, keyword+embedding retrieval)
+  - Phase 3: updater.go (recursive evolution, prune, confidence EMA)
+- **Next:** v0.6.1 release, RSI loop integration (RecordTrajectory hook)
 
 ### ClawChain
 L1 blockchain for agents. Substrate, NPoS. Hetzner VPS 135.181.157.121.
-**Status:** MAINNET READINESS — 3 HIGH audit fixes shipped (2026-02-28)
-**PR #53 created:** https://github.com/clawinfra/claw-chain/pull/53
-- HIGH-1: `update_reputation` unrestricted → changed `ensure_signed` → `ensure_root` ✅ (47/47 tests)
-- HIGH-2: `treasury_spend` stub → implemented actual `T::Currency::transfer` ✅ (28/28 tests)
-- HIGH-3: `clear_old_receipts` DoS → added `MaxClearBatchSize` (1000) ✅ (11/11 tests)
-**Remaining mainnet blockers:** Audit ibc-lite/anon-messaging/service-market (not on main), replace --alice with proper keystore, multi-validator testnet
+**Status:** MAINNET READINESS — all security audits complete (2026-02-28)
+- PR #51: 3 original HIGH fixes (update_reputation, treasury_spend, MaxClearBatchSize) — MERGED ✅
+- PR #54: 3 remaining pallets audited+fixed — https://github.com/clawinfra/claw-chain/pull/54
+  - **1C · 4H · 3M · 3L** found and CRITICAL+HIGH all fixed (103/103 tests)
+  - C1: ibc-lite timeout_packet zero validation → PacketTimeoutHeights storage
+  - H1-H4: saturating arithmetic, dispute governance auth, O(n)→O(k) block scan
+- **VPS:** `--alice` REMOVED, clawkeyring v0.1.0 managing aura+gran keys, auto-inject on restart ✅
+- **Blocks:** #5313+ producing cleanly ✅
+- **Remaining:** MEDIUM audit findings (open_channel_confirm, cooldown), multi-validator testnet
 **CI fixed (2026-02-28):**
 - claw-chain: Fixed `ReputationOracle` type missing in runtime Config ✅
 - evoclaw: Removed dead references from partial beta merge (skill_registry, handle_trade, handle_risk, handle_skill) ✅
@@ -167,10 +169,15 @@ Agent-native validator key management for ClawChain. NEW repo (2026-02-27 evenin
 
 ## ✅ Pending Tasks
 
-- [DONE 2026-02-28] Fix EvoClaw lint error (internal/cli/cloud.go:277) — already fixed in commit f50efaa ✅
-- [DONE 2026-02-28] Fix clawchain-sdk CI — fixed (ESLint config 32dd979 + pnpm-lock 5d1d1ee), 114 tests green ✅
-- [DONE 2026-02-28] Fix clawkeyring CI — unused imports removed, 7/7 packages pass ✅
-- [DONE 2026-02-28] ClawChain PR #53 security fixes — already landed in main via PR #51 ✅
+- [DONE] EvoClaw lint, clawchain-sdk CI, clawkeyring CI — all fixed ✅
+- [DONE] ClawChain all security audits — PR #51 + PR #54, 1C+4H+3M+3L found, C+H all fixed ✅
+- [DONE] EvoClaw Phase 2 — Android/iOS/WASM/ClawHub, 2628 lines, 90%+ cov ✅
+- [DONE] SKILLRL all 3 phases — internal/skillbank/, PR #22, 92.9% cov ✅
+- [DONE] clawkeyring VPS integration — --alice removed, age-encrypted keys, auto-inject ✅
+- [PENDING] clawchain-sdk npm publish — needs NPM_TOKEN from npmjs.com
+- [PENDING] SKILLRL RSI loop hook (RecordTrajectory follow-up PR)
+- [PENDING] EvoClaw v0.6.1 release tag
+- [MONITOR] clawchain-sdk nightly integration tests failing
 - [PENDING] EvoClaw Phase 2: Android, ClawHub, iOS, WASM (after v0.6.0 builds ship)
 - [PENDING] clawkeyring: integrate with ClawChain VPS validator (run `clawkeyring inject` replacing --alice/--force-authoring)
 - [PENDING] ClawChain: audit ibc-lite, anon-messaging, service-market pallets (not on main yet)
@@ -378,4 +385,4 @@ All `~/clawd` references cleaned up:
 - WS RPC: ws://135.181.157.121:9944
 
 ---
-*Updated: 2026-02-28 14:48 AEDT*
+*Updated: 2026-02-28 15:20 AEDT*
