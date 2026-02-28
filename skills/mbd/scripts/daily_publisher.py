@@ -246,6 +246,81 @@ def save_draft_to_mbd(token: str, topic: dict, detail: str, content: str) -> dic
     return data["result"]
 
 
+def backup_to_github(topic: dict, detail: str, content: str, cover_local_path: str | None = None):
+    """Push markdown + cover image to bowen31337/mbd-book-ideas repo."""
+    try:
+        import tempfile, shutil
+        today = date.today().strftime("%Y-%m-%d")
+        safe_title = topic["title"].replace("/", "、").replace(" ", "_")[:40]
+
+        # Decrypt GitHub token
+        result = subprocess.run(
+            ["bash", str(WORKSPACE / "memory/decrypt.sh"), "github-token-bowen31337"],
+            capture_output=True, text=True, timeout=10
+        )
+        gh_token = result.stdout.strip()
+        if not gh_token or "ERROR" in gh_token.upper():
+            print("⚠️ GitHub token unavailable, skipping backup")
+            return
+
+        repo_url = f"https://{gh_token}@github.com/bowen31337/mbd-book-ideas.git"
+        clone_dir = Path(tempfile.mkdtemp()) / "mbd-book-ideas"
+
+        print("📦 Backing up to GitHub...")
+        subprocess.run(
+            ["git", "clone", "--depth", "1", repo_url, str(clone_dir)],
+            capture_output=True, timeout=60
+        )
+
+        # Create folders
+        books_dir = clone_dir / "books"
+        covers_dir = clone_dir / "covers"
+        books_dir.mkdir(exist_ok=True)
+        covers_dir.mkdir(exist_ok=True)
+
+        # Write markdown
+        md_filename = f"{today}_{safe_title}.md"
+        md_content = f"# 《{topic['title']}》\n\n> 发布日期：{today}\n\n## 公开简介\n\n{detail}\n\n---\n\n## 正文\n\n{content}\n"
+        (books_dir / md_filename).write_text(md_content, encoding="utf-8")
+        print(f"   📝 books/{md_filename}")
+
+        # Copy cover image if available
+        cover_filename = None
+        if cover_local_path and Path(cover_local_path).exists():
+            cover_filename = f"{today}_{safe_title}.png"
+            shutil.copy2(cover_local_path, covers_dir / cover_filename)
+            print(f"   🖼  covers/{cover_filename}")
+
+        # Git commit & push
+        subprocess.run(["git", "config", "user.email", "alex.chen31337@gmail.com"], cwd=clone_dir, capture_output=True)
+        subprocess.run(["git", "config", "user.name", "Alex Chen"], cwd=clone_dir, capture_output=True)
+        subprocess.run(["git", "add", "books/", "covers/"], cwd=clone_dir, capture_output=True)
+
+        commit_msg = f"feat: add {today} — 《{topic['title']}》"
+        result = subprocess.run(
+            ["git", "commit", "-m", commit_msg],
+            cwd=clone_dir, capture_output=True, text=True
+        )
+        if "nothing to commit" in result.stdout:
+            print("   ℹ️  Nothing new to commit")
+            return
+
+        push = subprocess.run(
+            ["git", "push", repo_url, "main"],
+            cwd=clone_dir, capture_output=True, text=True, timeout=60
+        )
+        if push.returncode == 0:
+            print(f"✅ GitHub backup pushed: books/{md_filename}" + (f" + covers/{cover_filename}" if cover_filename else ""))
+        else:
+            print(f"⚠️ Push failed: {push.stderr[:200]}")
+
+        # Cleanup
+        shutil.rmtree(clone_dir.parent, ignore_errors=True)
+
+    except Exception as e:
+        print(f"⚠️ GitHub backup failed (non-fatal): {e}")
+
+
 def send_email_notification(smtp_env: dict, topic: dict, draft: dict, bowen_email: str):
     """发送邮件通知"""
     if not smtp_env:
@@ -309,6 +384,7 @@ def main():
     parser = argparse.ArgumentParser(description="MbD每日书稿自动发布器")
     parser.add_argument("--token", help="MbD开发者Key（可选，默认从加密存储加载）")
     parser.add_argument("--notify-email", default="bowen31337@outlook.com", help="通知邮件地址")
+    parser.add_argument("--cover-image", help="本地封面图路径，用于GitHub备份（可选）")
     parser.add_argument("--dry-run", action="store_true", help="仅生成内容，不提交到MbD")
     args = parser.parse_args()
 
@@ -359,6 +435,10 @@ def main():
         "urlkey": draft.get("urlkey"),
     })
     save_state(state)
+
+    # GitHub备份
+    cover_path = args.cover_image if hasattr(args, 'cover_image') and args.cover_image else None
+    backup_to_github(topic, detail, content, cover_local_path=cover_path)
 
     # 发送邮件通知
     print(f"📧 发送邮件通知至 {args.notify_email}...")
