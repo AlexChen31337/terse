@@ -13,7 +13,12 @@ Before doing anything else:
 2. Read `USER.md` — this is who you're helping
 3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
 4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
-5. **Check for interrupted tasks:**
+5. **Replay WAL to recover lost context:**
+   ```bash
+   uv run python skills/agent-self-governance/scripts/wal.py replay main
+   ```
+   Apply any unapplied entries, then mark them applied.
+6. **Check for interrupted tasks:**
    ```bash
    uv run python scripts/active_task.py resume
    ```
@@ -33,6 +38,20 @@ You wake up fresh each session. These files are your continuity:
 Capture what matters. Decisions, context, things to remember. Skip the secrets unless asked to keep them.
 
 **Note:** `memory_cli.py` and `hybrid_cli.py` are archived — do not call them manually.
+
+### ⚡ Immediate Persistence Rule (NON-NEGOTIABLE)
+When ANY of the following arrives in conversation, write it to `memory/YYYY-MM-DD.md` AND WAL **before continuing**:
+- URLs / links shared by Bowen
+- Credentials, API keys, tokens
+- Decisions made by Bowen
+- Corrections to your behaviour
+- Any context you'll need after compaction
+
+```bash
+uv run python skills/agent-self-governance/scripts/wal.py append main <type> "<content>"
+```
+
+**"I'll remember it" = guaranteed loss at next compaction. Files only.**
 
 ### 🧠 MEMORY.md - Your Long-Term Memory
 - **ONLY load in main session** (direct chats with your human)
