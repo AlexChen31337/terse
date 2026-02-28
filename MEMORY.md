@@ -27,20 +27,28 @@
 
 ### EvoClaw
 Self-evolving agent framework. Go binary. BSC adapter, cloud sync (Turso), tiered memory.
-**Status:** v0.6.0 PENDING (beta merge in progress as of 2026-02-27 22:00 AEDT)
+**Status:** v0.6.0 RELEASED ✅ (2026-02-28)
 - PR #19 Multi-Chain CLI — MERGED ✅ (89.1% coverage)
 - PR #20 Coverage boost — MERGED ✅ (api 81%, cmd 79%)
-- CI WebSocket fix (nhooyr→coder/websocket) — MERGED ✅
-- RSI auto-log hook — MERGED ✅
-**Latest tag:** v0.5.0 (v0.6.0 pending beta merge)
-**beta branch:** 49 commits ahead of main — dashboard SPA, Docker Compose, Rust edge agent, skill plugin system, Telegram bot, E2B cloud, ChatSync, multi-tenant API, agent registration, Ollama LLM routing, GPIO support. All from Feb 6-7, never merged.
-**evoclaw-beta-merge subagent:** running as of 22:00 AEDT — will PR beta→main, tag v0.6.0, create release. Auto-announces on complete.
-**Next after v0.6.0:** Phase 2 (Android, ClawHub, iOS, WASM)
-**Open issues:** NONE — all cleared
+- PR #21 Beta→main merge — MERGED ✅
+- v0.6.0 tag: Created and released ✅
+- **Blocker:** One Go lint error at `internal/cli/cloud.go:277` (unchecked error return)
+- **Next:** Fix lint, re-run release CI to attach build packages
+- **Phase 2 planning:** Android, ClawHub, iOS, WASM
+- **SKILLRL integration:** Research complete (`workspace-foundry/research/skillrl-integration.md`), proposed `internal/skillbank/` package, 3-phase roadmap (6-8 weeks)
 
 ### ClawChain
 L1 blockchain for agents. Substrate, NPoS. Hetzner VPS 135.181.157.121.
-**Status:** MAINNET READINESS SPRINT ✅ (2026-02-27 evening)
+**Status:** MAINNET READINESS — 3 HIGH audit fixes shipped (2026-02-28)
+**PR #53 created:** https://github.com/clawinfra/claw-chain/pull/53
+- HIGH-1: `update_reputation` unrestricted → changed `ensure_signed` → `ensure_root` ✅ (47/47 tests)
+- HIGH-2: `treasury_spend` stub → implemented actual `T::Currency::transfer` ✅ (28/28 tests)
+- HIGH-3: `clear_old_receipts` DoS → added `MaxClearBatchSize` (1000) ✅ (11/11 tests)
+**Remaining mainnet blockers:** Audit ibc-lite/anon-messaging/service-market (not on main), replace --alice with proper keystore, multi-validator testnet
+**CI fixed (2026-02-28):**
+- claw-chain: Fixed `ReputationOracle` type missing in runtime Config ✅
+- evoclaw: Removed dead references from partial beta merge (skill_registry, handle_trade, handle_risk, handle_skill) ✅
+- clawchain-sdk: Added pnpm-lock.yaml (commit 5d1d1ee) ✅
 **Merged (2026-02-27 day):**
 - PR #45 OpenClaw integration — MERGED ✅ (55 tests, 99.33% cov)
 - PR #46 pallet-ibc-lite — MERGED ✅ (25 tests)
@@ -51,6 +59,7 @@ L1 blockchain for agents. Substrate, NPoS. Hetzner VPS 135.181.157.121.
 - PR #50 Security audit report — MERGED ✅ (`docs/security-audit-2026-02.md`)
 **12 pallets total:** agent-did, agent-receipts, agent-registry, claw-token, gas-quota, quadratic-governance, reputation, rpc-registry, task-market, ibc-lite, anon-messaging, service-market
 **Open issues:** NONE
+**Local dev node:** Killed (security fix) — was exposing 0.0.0.0:9944. Rebuild in progress, will bind to localhost.
 **VPS systemd:** `clawchain.service` updated — `--dev` REMOVED, now uses `chain-spec/clawchain-staging.json` (chainType: Live, id: clawchain_testnet), `--alice --force-authoring`, block ~12 and climbing post-restart
 **Block explorer:** Running via pm2 on VPS port 3000 (no nginx). `NEXT_PUBLIC_WS_URL=ws://135.181.157.121:9944`
 **Security audit (2026-02-27):** CRITICAL=0, HIGH=3, MEDIUM=8, LOW=6
@@ -65,7 +74,12 @@ L1 blockchain for agents. Substrate, NPoS. Hetzner VPS 135.181.157.121.
 
 ### GPU Media Pipeline
 ComfyUI for images. Server: peter@10.0.0.44.
-**Status:** ZImage Turbo active. Models on SSD. Both GPU 0 (8188) and GPU 1 (8189) working.
+**Status (2026-02-28):** Systemd service created, auto-restart enabled, GPU 1 VRAM freed (8.3GB).
+- **Service:** `~/.config/systemd/user/comfyui.service` — auto-restart on failure, auto-start on boot
+- **GPU 0 (RTX 3090, 24GB):** Port 8188, active, 281 MB VRAM idle
+- **GPU 1 (RTX 3080, 10GB):** Was 8.3GB idle, killed stale process, now 14 MB idle ✅
+- **GPU 2 (RTX 2070S, 8GB):** Emergency spare, 4 MB idle
+- **Models:** ZImage Turbo on SSD (`/data/comfyui/models/`), symlinks from `/data2`
 
 ### fear-protocol
 Exchange-agnostic DCA protocol. NEW repo.
@@ -99,9 +113,42 @@ Agent-native validator key management for ClawChain. NEW repo (2026-02-27 evenin
 **Docs:** README.md + docs/DESIGN.md (threat model, ASCII key lifecycle, future HSM/TEE)
 **Decision:** Built clawkeyring (self-hosted age+mTLS) over AWS Secrets Manager (vendor lock-in) or HashiCorp Vault (overkill). Agent-native approach logs rotations on-chain — better story for ecosystem.
 
-## ✅ Completed Today (2026-02-27) — MASSIVE SPRINT
+## ✅ Completed (2026-02-28) — Foundry Agent Launch + Major Shipping
 
-14 PRs / releases shipped across 6 repos. ~30k+ lines. 300+ tests.
+**Foundry agent launched:**
+- Workspace: `/home/bowen/.openclaw/workspace-foundry`
+- Purpose: ClawInfra maintenance (CI/CD, PR review, roadmap execution)
+- Cron jobs: Hourly CI health check, daily PR review
+- Scripts: `scripts/ci-audit.sh`, `scripts/pr-review.sh`
+- First achievement: ClawChain PR #53 (3 HIGH audit fixes)
+
+**ClawChain security fixes (PR #53):**
+- HIGH-1: `update_reputation` restricted to root (47/47 tests)
+- HIGH-2: `treasury_spend` implemented (28/28 tests)
+- HIGH-3: `MaxClearBatchSize` added (11/11 tests)
+
+**EvoClaw v0.6.0:**
+- Beta→main merged, tag created, release shipped
+- One lint blocker: `internal/cli/cloud.go:277`
+
+**Repo cleanup:**
+- Deleted decision-markets (stale hackathon repo)
+
+**SKILLRL research:**
+- Full report: `workspace-foundry/research/skillrl-integration.md`
+- Proposed `internal/skillbank/` package for EvoClaw
+- 3-phase implementation roadmap (6-8 weeks)
+
+**GPU server maintenance (peter@10.0.0.44):**
+- Freed 8.3GB GPU 1 VRAM (killed stale ComfyUI)
+- Cleaned 45GB incomplete downloads from /data2
+- Created ComfyUI systemd service
+
+**Quant decommission finalization:**
+- Last cron job (Position Guard) disabled
+- Total: 10 Quant/Simmer jobs removed
+
+## ✅ Pending Tasks
 
 1. ✅ fear-protocol (NEW repo, 173 tests)
 2. ✅ agent-tools v0.1 (NEW repo, CI green)
@@ -120,10 +167,11 @@ Agent-native validator key management for ClawChain. NEW repo (2026-02-27 evenin
 
 ## ✅ Pending Tasks
 
-- [IN-PROGRESS] EvoClaw beta→main merge (subagent running, auto-announces)
-- [PENDING] EvoClaw Phase 2: Android, ClawHub, iOS, WASM (after v0.6.0 lands)
+- [IN-PROGRESS] Fix EvoClaw lint error (internal/cli/cloud.go:277) — Foundry working on it
+- [PENDING] Fix clawchain-sdk CI (pnpm-lock.yaml issue) — Foundry queued
+- [PENDING] Fix clawkeyring CI (gofmt issues) — Foundry queued
+- [PENDING] EvoClaw Phase 2: Android, ClawHub, iOS, WASM (after v0.6.0 builds ship)
 - [PENDING] clawkeyring: integrate with ClawChain VPS validator (run `clawkeyring inject` replacing --alice/--force-authoring)
-- [PENDING] ClawChain HIGH audit fixes: update_reputation restriction, treasury_spend impl, receipt DoS cap
 - [PENDING] ClawChain: audit ibc-lite, anon-messaging, service-market pallets (not on main yet)
 - [PENDING] ClawChain: replace --alice/--force-authoring with proper keystore for multi-validator
 - [PENDING] clawchain-sdk npm publish — needs NPM_TOKEN, then `npm publish --access public`
@@ -133,7 +181,7 @@ Agent-native validator key management for ClawChain. NEW repo (2026-02-27 evenin
 - [PENDING] Router config: unblock ollama-gpu-server/qwen2.5:7b from policy.blocked_models
 - [PENDING] Pillow text overlay for EvoClaw social card (same fix as ClawChain card)
 - [MONITOR] Awesome-openclaw PR #30 — awaiting review
-- [MONITOR] RSI health score 0.141 — low but driven by historical failures; should improve
+- [MONITOR] RSI health score 0.127 — low but stable
 - [MONITOR] AlphaStrike V2 paper trading — monitor cycle #2+ for SHORT signal execution
 
 ## 💰 Portfolio & Trading
@@ -142,16 +190,23 @@ Agent-native validator key management for ClawChain. NEW repo (2026-02-27 evenin
 - **HL address:** `0x64e830dd7af93431c898ea9e4c375c6706bd0fc5`
 - **Simmer/Polymarket wallet:** `0xb2Ae880e2d1Dbe5E6d33ACa514126702DEf92e62`
 
-### Balances (snapshot 2026-02-25)
-- **HL Perp account:** $105.85 USDC (no open positions)
+### Balances (snapshot 2026-02-28)
+- **HL Perp account:** $112.22 USDC (idle, no positions) — Simmer $6.46 withdrawn here (fee: $0.09)
 - **Spot UBTC:** 0.01529 BTC — LONG-TERM HOLD
 - **Spot HYPE:** 1.2264 HYPE — LONG-TERM HOLD
-- **Simmer:** $21.59 USDC (circuit breaker ACTIVE — no trading)
-- **Grand Total:** ~$1,166.63
+- **Simmer:** $0.00 USDC (Quant decommissioned, -70% loss, funds withdrawn)
+- **Paper FearHarvester:** 0.06586 BTC ($4,500 invested), unrealized PnL: -$108.89
+- **Grand Total:** ~$1,173 (HL perp + spot holds)
 
-### Risk Config
-- Daily target: $5.00 | Stop-loss: -$3.00 | Max leverage: 3x
-- Simmer circuit breaker active — no new positions until re-enabled manually
+### Risk Config (DEPRECATED — Quant Decommissioned 2026-02-28)
+- **Quant agent status:** DECOMMISSIONED
+- **Reason:** Simmer/Polymarket trading -70% loss ($21→$6.46), no proven edge
+- **Post-mortem:** `memory/quant-postmortem-2026-02-28.md` — full analysis of what went wrong
+- **Future trading approach:** Paper trade first (4+ weeks), proven edge required (100-trade backtest, 55%+ win rate), strict risk (2% max per trade, hard stop-loss)
+- **Lesson learned:** Efficient markets hypothesis is real — prediction markets are efficient, simple signal divergence doesn't work
+- **AlphaStrike V2:** Moved to manual monitoring (no auto-execution)
+- **FearHarvester:** Paper mode only, manual/ad-hoc use
+- **Quant workspace:** `/home/bowen/.openclaw/workspace-quant` — read-only archive
 
 ## 🏠 Workspace Paths
 - **Main workspace:** `/home/bowen/.openclaw/workspace` (canonical)
@@ -160,6 +215,20 @@ Agent-native validator key management for ClawChain. NEW repo (2026-02-27 evenin
 - **Always use:** `cd ~/.openclaw/workspace`
 
 ## 🔧 Infrastructure
+
+### Named Agents (OpenClaw Multi-Agent Architecture)
+**Configured in gateway config (`agents.list`):**
+1. **Alex (main)** — Orchestrator, technical partner, autonomous builder. Default agent. Workspace: `/home/bowen/.openclaw/workspace`
+2. **Sentinel** — Market monitoring, whale tracking, risk surveillance. Workspace: `/home/bowen/.openclaw/workspace-sentinel`
+3. **Quant** — Autonomous trading agent. Strategies: AlphaStrike V2, FearHarvester, Simmer/Polymarket. Workspace: `/home/bowen/.openclaw/workspace-quant`
+4. **Shield** — Security agent, access control, audit. Workspace: `/home/bowen/.openclaw/workspace-shield`
+5. **Herald** — Social media, content distribution. Workspace: `/home/bowen/.openclaw/workspace-herald`
+
+**Communication rules (per SOUL.md):**
+- Bowen talks ONLY to Alex — never directly to subordinates
+- Alex delegates to subordinates via `sessions_send` (persistent) or `sessions_spawn` (ephemeral)
+- Subordinates report ONLY to Alex — never to Bowen (except life/safety/financial emergency)
+- All subordinate messages use `[AgentName]` prefix (e.g., `[Quant]`, `[Sentinel]`)
 
 ### GPU Server (peter@10.0.0.44)
 - Key: `~/.ssh/id_ed25519_alexchen`
@@ -177,6 +246,13 @@ export PATH=$PATH:/home/bowen/go/bin
 export GOROOT=/home/bowen/go
 export GOPATH=/home/bowen/gopath
 ```
+
+### Security Lessons (2026-02-28)
+- **Local dev nodes should NEVER use `--rpc-external`** — binds to 0.0.0.0, world-accessible
+- Killed local ClawChain dev node exposing 0.0.0.0:9944 with `--rpc-methods unsafe`
+- `--dev --tmp` = ephemeral, safe to kill without data loss
+- VPS nodes are the real staging/prod environment — local dev is disposable
+- **Firewall recommendations pending:** Install UFW, restrict SSH, bind Ollama to localhost, firewall ClawChain RPC
 
 ## 🏗️ Architecture Decisions
 
@@ -226,12 +302,28 @@ Reviewed github.com/Panniantong/Agent-Reach — platform integration scaffolding
 - **Rebase before merge** when concurrent PRs land on same files (Cargo.toml, runtime/src/lib.rs)
 - **Always `--admin` to bypass branch protection** for ClawInfra repos
 - **`~/clawd` is gone** — always use `~/.openclaw/workspace`
+- **Model router bug** — sessions_spawn `model` parameter not guaranteed; intelligent-router may override to GLM-4.7 for Sonnet requests. Always verify with subagents list.
 
 ### Path References (fixed 2026-02-27)
 All `~/clawd` references cleaned up:
 - `HEARTBEAT.md` → `~/.openclaw/workspace`
 - `skills/rsi-loop/scripts/qa_agent.py` → `Path.home() / ".openclaw" / "workspace"`
 - `skills/rsi-loop/scripts/synthesizer.py` → `~/.openclaw/workspace/skills`
+
+### Model Fallback Routes (NON-NEGOTIABLE)
+- **anthropic-proxy-1/claude-sonnet-4-6** → fallback: **anthropic/claude-sonnet-4-6** (OAuth)
+- **anthropic-proxy-1/claude-opus-4-6** → fallback: **anthropic/claude-opus-4-6** (OAuth)
+- **NEVER fall back from Sonnet/Opus to GLM-4.7** — always try OAuth first
+- When spawning subagents: if proxy-1 is rate-limited, use OAuth directly
+
+### Model Router Bug (DISCOVERED 2026-02-28)
+- **Problem:** intelligent-router is NOT respecting the `model` parameter for Sonnet requests
+- **Evidence:** Spawned subagent with `model="anthropic/claude-sonnet-4-6"` (OAuth), router routed to `anthropic-proxy-4/glm-4.7`
+- **Affected subagents:** foundry-ci-fixes-v2, foundry-fix-evoclaw, foundry-evocraw-oauth (all used GLM-4.7 despite explicit Sonnet request)
+- **Opus works:** `anthropic-proxy-1/claude-opus-4-6` requests are respected correctly
+- **Root cause:** Router config or policy is forcing Sonnet → GLM-4.7 regardless of explicit model parameter
+- **Fix needed:** Check `skills/intelligent-router/` config, find where Sonnet is being rerouted, remove/fix the policy
+- **Lesson:** Model parameter in sessions_spawn is not a guarantee — router may override it. Verify with subagents list.
 
 ### Cost
 - **[ideas]** Daily ideas email uses Opus 4.6 always — Bowen explicit
@@ -243,9 +335,19 @@ All `~/clawd` references cleaned up:
 - UBTC/HYPE are long-term holds — never trade them
 - Use raw `requests` to HL REST API — HL signing module import path broken
 
-## 📅 Recent Events (Feb 27, 2026 — Evening)
+### Foundry Agent (Launched 2026-02-28)
+- **Purpose:** ClawInfra maintenance agent — CI/CD, PR review, roadmap execution
+- **Workspace:** `/home/bowen/.openclaw/workspace-foundry`
+- **Identity:** SOUL.md (infrastructure reliability engineer), AGENTS.md (quality gates: 90% coverage), REPOS.md (7 repos), TODO.md (priority tracking)
+- **Scripts:** `scripts/ci-audit.sh` (hourly health check), `scripts/pr-review.sh` (daily PR review)
+- **Cron jobs:** Hourly CI check, daily PR review (9 AM Sydney), both use `anthropic-proxy-4/glm-4.7`
+- **Authority:** Report + fix small stuff, flag big decisions, autonomous execution for infrastructure improvements
+- **First achievement:** ClawChain PR #53 (3 HIGH audit fixes shipped)
+- **Ongoing:** Fixing CI failures across all clawinfra repos
 
-**Day sprint (14 deliverables total):**
+## 📅 Recent Events (Feb 28, 2026 — Afternoon)
+
+**Day sprint (Feb 27, 2026 — 14 deliverables total):**
 - 10 PRs + 4 evening PRs/releases shipped across 6 repos
 - ClawChain: 12 pallets merged, block explorer live, --dev removed, staging chainspec active
 - Security audit complete: CRITICAL=0, HIGH=3, MEDIUM=8, LOW=6
@@ -255,11 +357,21 @@ All `~/clawd` references cleaned up:
 - RSI health score: 0.141 (historical, improving)
 - Fixed all `~/clawd` path refs; GPU server: ZImage copy in progress
 
-**ClawChain VPS state (end of day):**
+**Morning/afternoon achievements (Feb 28, 2026):**
+- **Foundry agent launched** — Workspace, SOUL.md, AGENTS.md, REPOS.md, TODO.md all created; CI audit + PR review scripts ready; cron jobs scheduled
+- **ClawChain PR #53 shipped** — All 3 HIGH audit fixes fixed (update_reputation, treasury_spend, MaxClearBatchSize)
+- **EvoClaw v0.6.0 released** — Beta→main merged, tag created, release shipped (one lint blocker remaining)
+- **decision-markets repo deleted** — Stale hackathon repo cleaned up
+- **SKILLRL research completed** — Full report: `workspace-foundry/research/skillrl-integration.md`; proposed `internal/skillbank/` package for EvoClaw
+- **GPU server maintained** — Freed 8.3GB VRAM, cleaned 45GB incomplete downloads, created ComfyUI systemd service
+- **Quant fully decommissioned** — Final Position Guard cron job disabled (10 total jobs removed)
+- **Model fallback routes documented** — proxy-1→OAuth for Sonnet/Opus, never drop to GLM-4.7
+
+**ClawChain local node** (end of day):
 - Block: ~12+ (fresh chain after --dev removal)
 - Service: `clawchain.service` active, staging chainspec
 - Explorer: http://135.181.157.121:3000 (pm2)
 - WS RPC: ws://135.181.157.121:9944
 
 ---
-*Updated: 2026-02-27 22:08 AEDT*
+*Updated: 2026-02-28 13:20 AEDT*

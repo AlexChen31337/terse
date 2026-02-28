@@ -64,5 +64,5 @@
     "last_updated": "2026-02-28"
   },
   "high_water_mark": 6.46,
-  "trading_paused": false
+  "trading_paused": true
 }

@@ -25,7 +25,7 @@
   "global": {
     "check_interval_minutes": 60,
     "circuit_breaker_loss_pct": -0.15,
-    "trading_paused": false,
+    "trading_paused": true,
     "high_water_mark_usdc": 6.46,
     "target_profit_usdc": 5.0,
     "session_start_balance": 21.59

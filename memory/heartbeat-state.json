@@ -1,18 +1,38 @@
 {
   "lastChecks": {
-    "rsi": 1772205242,
-    "simmer": 1772198042,
-    "heartbeat": 1772205242,
-    "github_ci": 1772201651
+    "rsi": 1772244872,
+    "simmer": 1772244872,
+    "heartbeat": 1772244872,
+    "github_ci": 1772237710
   },
-  "lastRSICheck": 1772205242,
-  "lastSimmerCheck": 1772198042,
-  "lastGithubCICheck": 1772201651,
+  "lastRSICheck": 1772241296,
+  "lastSimmerCheck": 1772241296,
+  "lastGithubCICheck": 1772237710,
   "lastSessionId": "a18b3c73-4180-44f3-8eda-399c7202e24c",
   "notes": [
-    "Gmail credentials not configured - CI monitoring skipped",
+    "Gmail credentials file missing - CI monitoring disabled",
     "2026-02-27 22:15:48: Found 5 CI failures, dispatched sub-agent to fix",
-    "2026-02-28 02:13: RSI health score 0.135 (<0.3 threshold) — alerted Bowen"
+    "2026-02-28 02:13: RSI health score 0.135 (<0.3 threshold) — alerted Bowen",
+    "2026-02-28 03:13: RSI health still 0.133 — no change, already alerted",
+    "2026-02-28 04:13: RSI health 0.132 (stable low) — already alerted",
+    "2026-02-28 04:13: Simmer balance $9872.70, no positions, PnL -1.27%, rank 1516/1822",
+    "2026-02-28 04:13: Shim scan found 5 events (8 context_loss, 3 rate_limit, 2 tool_error)",
+    "2026-02-28 06:14: Heartbeat - Gmail credentials missing, CI monitoring disabled",
+    "2026-02-28 07:14: Heartbeat - Gmail credentials missing, skipped CI check",
+    "2026-02-28 08:14: RSI health 0.129 (stable), deployed cost_overrun fix for monitoring tasks",
+    "2026-02-28 08:14: Simmer OK - $9872.70 balance, no positions, rank 1521/1830",
+    "2026-02-28 08:14: Shim scan - 5 events (8 context_loss, 3 rate_limit, 2 tool_error)",
+    "2026-02-28 09:14: GitHub CI check - 10+ failures across evoclaw/claw-chain/repos (Feb 26-27)",
+    "2026-02-28 10:14: Heartbeat - Gmail credentials missing, skipped CI check",
+    "2026-02-28 11:14: RSI health 0.127 (stable low, monitoring tier config already correct)",
+    "2026-02-28 11:14: Simmer OK - $9872.70 balance, no positions, trading paused",
+    "2026-02-28 11:14: Position Guard - 0 positions, trading paused, circuit breaker -15%",
+    "2026-02-28 11:14: Shim scan - 1 event (1 context_loss in ec8ffeef session)",
+    "2026-02-28 11:14: GitHub CI - no runs found (repos may be archived/org changed)",
+    "2026-02-28 12:14: RSI health 0.129 (stable), 1 proposal needs manual config update",
+    "2026-02-28 12:14: Simmer OK, no positions, trading paused",
+    "2026-02-28 12:14: Shim scan - 1 event (1 context_loss)",
+    "2026-02-28 13:14: All systems stable - RSI 0.129, Simmer OK, 3 shim events (normal)"
   ],
-  "lastHeartbeat": 1772205242
+  "lastHeartbeat": 1772244872
 }
