@@ -37,3 +37,4 @@ node_modules/
 # OS
 .DS_Store
 shield-agent/
+evoclaw-fix
