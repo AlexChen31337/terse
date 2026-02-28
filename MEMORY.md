@@ -167,9 +167,10 @@ Agent-native validator key management for ClawChain. NEW repo (2026-02-27 evenin
 
 ## ✅ Pending Tasks
 
-- [IN-PROGRESS] Fix EvoClaw lint error (internal/cli/cloud.go:277) — Foundry working on it
-- [PENDING] Fix clawchain-sdk CI (pnpm-lock.yaml issue) — Foundry queued
-- [PENDING] Fix clawkeyring CI (gofmt issues) — Foundry queued
+- [DONE 2026-02-28] Fix EvoClaw lint error (internal/cli/cloud.go:277) — already fixed in commit f50efaa ✅
+- [DONE 2026-02-28] Fix clawchain-sdk CI — fixed (ESLint config 32dd979 + pnpm-lock 5d1d1ee), 114 tests green ✅
+- [DONE 2026-02-28] Fix clawkeyring CI — unused imports removed, 7/7 packages pass ✅
+- [DONE 2026-02-28] ClawChain PR #53 security fixes — already landed in main via PR #51 ✅
 - [PENDING] EvoClaw Phase 2: Android, ClawHub, iOS, WASM (after v0.6.0 builds ship)
 - [PENDING] clawkeyring: integrate with ClawChain VPS validator (run `clawkeyring inject` replacing --alice/--force-authoring)
 - [PENDING] ClawChain: audit ibc-lite, anon-messaging, service-market pallets (not on main yet)
@@ -316,14 +317,17 @@ All `~/clawd` references cleaned up:
 - **NEVER fall back from Sonnet/Opus to GLM-4.7** — always try OAuth first
 - When spawning subagents: if proxy-1 is rate-limited, use OAuth directly
 
-### Model Router Bug (DISCOVERED 2026-02-28)
-- **Problem:** intelligent-router is NOT respecting the `model` parameter for Sonnet requests
-- **Evidence:** Spawned subagent with `model="anthropic/claude-sonnet-4-6"` (OAuth), router routed to `anthropic-proxy-4/glm-4.7`
-- **Affected subagents:** foundry-ci-fixes-v2, foundry-fix-evoclaw, foundry-evocraw-oauth (all used GLM-4.7 despite explicit Sonnet request)
-- **Opus works:** `anthropic-proxy-1/claude-opus-4-6` requests are respected correctly
-- **Root cause:** Router config or policy is forcing Sonnet → GLM-4.7 regardless of explicit model parameter
-- **Fix needed:** Check `skills/intelligent-router/` config, find where Sonnet is being rerouted, remove/fix the policy
-- **Lesson:** Model parameter in sessions_spawn is not a guarantee — router may override it. Verify with subagents list.
+### Model Router Bug (FIXED 2026-02-28)
+- **Was:** Sonnet fallback chain included GLM-4.7 (2nd fallback after proxy-1/opus)
+- **Fix:** `config.patch` → fallbacks = `["anthropic-proxy-1/claude-opus-4-6", "anthropic/claude-opus-4-6"]`
+- **Router COMPLEX tier:** Fixed to `anthropic-proxy-1/claude-sonnet-4-6` primary, `anthropic/claude-sonnet-4-6` fallback
+- **Status:** ✅ RESOLVED — OAuth Sonnet working, router routing correctly
+
+### Anthropic OAuth Token (FIXED 2026-02-28 ~14:20 AEDT)
+- **Problem:** Expired OAuth token, auto-refresh broken
+- **Fix:** `openclaw models auth paste-token --provider anthropic` + new setup-token from `claude setup-token`
+- **Lesson:** `ANTHROPIC_SETUP_TOKEN` env var does NOT auto-exchange — must use interactive CLI
+- **Status:** ✅ WORKING — test confirmed subagent using `anthropic/claude-sonnet-4-6` successfully
 
 ### Cost
 - **[ideas]** Daily ideas email uses Opus 4.6 always — Bowen explicit
@@ -374,4 +378,4 @@ All `~/clawd` references cleaned up:
 - WS RPC: ws://135.181.157.121:9944
 
 ---
-*Updated: 2026-02-28 13:20 AEDT*
+*Updated: 2026-02-28 14:48 AEDT*
