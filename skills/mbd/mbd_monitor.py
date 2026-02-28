@@ -1,7 +1,12 @@
 """
-MbD (面包多) 销售监控
-检查新订单和通知，将新销售输出到 stdout。
-可从 heartbeat 调用。
+面包多销售监控
+~~~~~~~~~~~~~
+
+轮询新订单和通知，适合从 HEARTBEAT.md 调用。
+
+用法:
+    uv run python mbd_monitor.py [--interval 30]
+    uv run python mbd_monitor.py --once    # 单次检查
 """
 
 from __future__ import annotations
@@ -9,10 +14,12 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 from datetime import datetime
-from typing import Optional
+from pathlib import Path
+from typing import Any
 
-from mbd_client import MbDClient, MbDError
+from mbd_client import MbDClient, MbDError, format_datetime
 
 STATE_FILE = os.path.expanduser(
     "~/.openclaw/workspace/memory/mbd-monitor-state.json"
@@ -20,100 +27,145 @@ STATE_FILE = os.path.expanduser(
 
 
 def _load_state() -> dict:
+    """加载上次检查状态。"""
     if os.path.exists(STATE_FILE):
-        try:
-            with open(STATE_FILE, encoding="utf-8") as f:
-                return json.load(f)
-        except Exception:
-            pass
-    return {"last_order_id": None, "last_check": None, "known_order_ids": []}
+        with open(STATE_FILE) as f:
+            return json.load(f)
+    return {
+        "last_order_time": None,
+        "last_order_count": 0,
+        "last_notification_check": None,
+        "seen_order_ids": [],
+    }
 
 
 def _save_state(state: dict) -> None:
-    os.makedirs(os.path.dirname(STATE_FILE), exist_ok=True)
-    with open(STATE_FILE, "w", encoding="utf-8") as f:
-        json.dump(state, f, ensure_ascii=False, indent=2)
+    """保存状态到文件。"""
+    Path(os.path.dirname(STATE_FILE)).mkdir(parents=True, exist_ok=True)
+    with open(STATE_FILE, "w") as f:
+        json.dump(state, f, indent=2, ensure_ascii=False)
 
 
-def check_new_sales(token: Optional[str] = None, verbose: bool = False) -> list[dict]:
-    """
-    检查新订单。返回新订单列表。
-    有新订单时打印到 stdout。
-    """
-    state = _load_state()
-    known_ids = set(state.get("known_order_ids") or [])
-
+def check_new_orders(client: MbDClient, state: dict) -> list[dict]:
+    """检查新订单，返回新订单列表。"""
     try:
-        client = MbDClient(token=token)
-    except MbDError as e:
-        print(f"[MbD监控] ❌ 无法连接：{e.message}", file=sys.stderr)
+        data = client.order_list(page=1, limit=50)
+    except MbDError as exc:
+        print(f"⚠️ 获取订单失败: {exc}", file=sys.stderr)
         return []
 
-    # 获取最新订单（第1页）
-    try:
-        data = client.get_order_list(page=1, limit=50)
-    except MbDError as e:
-        print(f"[MbD监控] ❌ 获取订单失败：{e}", file=sys.stderr)
-        return []
-
-    orders = data.get("orders") or (data if isinstance(data, list) else [])
-
+    orders = data.get("orders", data.get("results", []))
+    seen_ids: set[str] = set(state.get("seen_order_ids", []))
     new_orders = []
+
     for order in orders:
-        oid = str(order.get("order_id") or order.get("id") or "")
-        if not oid:
-            continue
-        if oid not in known_ids:
+        oid = order.get("order_id", "")
+        if oid and oid not in seen_ids:
             new_orders.append(order)
-            known_ids.add(oid)
+            seen_ids.add(oid)
 
-    # 检查购买通知
-    new_notifications = []
-    try:
-        notif_data = client.get_notifications(types=[3])  # 3=购买
-        items = notif_data if isinstance(notif_data, list) else notif_data.get("mentions") or []
-        new_notifications = items
-    except MbDError:
-        pass
-
-    # 输出新销售
-    if new_orders:
-        print(f"\n🎉 面包多新销售提醒（{datetime.now().strftime('%Y-%m-%d %H:%M')}）")
-        print("=" * 50)
-        for o in new_orders:
-            state_map = {"success": "✅ 成功", "cancel": "❌ 取消", "invalid": "⚠️ 无效"}
-            state_label = state_map.get(o.get("state"), str(o.get("state", "-")))
-            amount = o.get("orderamount") or o.get("amount") or 0
-            urlkey = o.get("urlkey") or o.get("product_url_key") or "-"
-            oid_display = o.get("order_id") or o.get("id") or "-"
-            print(f"  订单: {oid_display}")
-            print(f"  商品: {urlkey}")
-            print(f"  金额: ¥{float(amount):.2f}")
-            print(f"  状态: {state_label}")
-            print("-" * 30)
-    elif verbose:
-        print(f"[MbD监控] ✅ 暂无新订单（{datetime.now().strftime('%Y-%m-%d %H:%M')}）")
-
-    if new_notifications and verbose:
-        print(f"[MbD监控] 📬 {len(new_notifications)} 条购买通知")
-
-    # 更新状态
-    state["known_order_ids"] = list(known_ids)
-    state["last_check"] = datetime.now().isoformat()
-    _save_state(state)
+    # Keep only last 200 IDs to prevent unbounded growth
+    state["seen_order_ids"] = list(seen_ids)[-200:]
+    state["last_order_count"] = data.get("count", len(orders))
+    state["last_order_time"] = datetime.now().isoformat()
 
     return new_orders
 
 
-def main():
+def check_notifications(client: MbDClient, state: dict) -> list[dict]:
+    """检查新通知，返回新通知列表。"""
+    try:
+        data = client.notifications(types=[3])  # 购买通知
+    except MbDError as exc:
+        print(f"⚠️ 获取通知失败: {exc}", file=sys.stderr)
+        return []
+
+    items = data if isinstance(data, list) else data.get("mentions", data.get("results", []))
+    state["last_notification_check"] = datetime.now().isoformat()
+    return items if items else []
+
+
+def report(new_orders: list[dict], notifications: list[dict]) -> str:
+    """生成报告字符串。"""
+    lines: list[str] = []
+
+    if new_orders:
+        lines.append(f"🍞 面包多: {len(new_orders)} 笔新订单!")
+        for o in new_orders[:5]:  # Show max 5
+            amount = o.get("orderamount", 0)
+            time_str = format_datetime(o.get("ordertime"))
+            lines.append(f"  💰 ¥{amount:.2f} — {time_str}")
+        if len(new_orders) > 5:
+            lines.append(f"  ... 还有 {len(new_orders) - 5} 笔")
+
+    if notifications:
+        lines.append(f"🔔 {len(notifications)} 条新购买通知")
+
+    if not lines:
+        return ""
+
+    return "\n".join(lines)
+
+
+def run_once(client: MbDClient | None = None) -> str:
+    """单次检查，返回报告字符串。无新内容返回空字符串。"""
+    if client is None:
+        try:
+            client = MbDClient()
+        except MbDError as exc:
+            return f"⚠️ 面包多监控初始化失败: {exc}"
+
+    state = _load_state()
+    new_orders = check_new_orders(client, state)
+    notifications = check_notifications(client, state)
+    _save_state(state)
+
+    return report(new_orders, notifications)
+
+
+def run_loop(interval_minutes: int = 30) -> None:  # pragma: no cover
+    """持续监控循环。"""
+    try:
+        client = MbDClient()
+    except MbDError as exc:
+        print(f"❌ 初始化失败: {exc}", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"🍞 面包多销售监控已启动 (每 {interval_minutes} 分钟检查一次)")
+    print(f"📁 状态文件: {STATE_FILE}")
+
+    while True:
+        result = run_once(client)
+        if result:
+            print(f"\n[{datetime.now().strftime('%Y-%m-%d %H:%M')}]")
+            print(result)
+        else:
+            print(f"[{datetime.now().strftime('%H:%M')}] ✅ 无新动态", end="\r")
+
+        time.sleep(interval_minutes * 60)
+
+
+def main() -> None:  # pragma: no cover
+    """CLI 入口。"""
     import argparse
-    parser = argparse.ArgumentParser(description="MbD 销售监控")
-    parser.add_argument("--token", default=None, help="MbD 开发者密钥")
-    parser.add_argument("--verbose", "-v", action="store_true", help="显示详细信息")
+
+    parser = argparse.ArgumentParser(description="面包多销售监控")
+    parser.add_argument("--interval", type=int, default=30, help="检查间隔 (分钟)")
+    parser.add_argument("--once", action="store_true", help="只检查一次")
+    parser.add_argument("--token", default=None, help="API token")
     args = parser.parse_args()
 
-    new_orders = check_new_sales(token=args.token, verbose=args.verbose)
-    sys.exit(0 if not new_orders else 0)
+    if args.token:
+        os.environ["MBD_TOKEN"] = args.token
+
+    if args.once:
+        result = run_once()
+        if result:
+            print(result)
+        else:
+            print("✅ 面包多: 无新动态")
+    else:
+        run_loop(args.interval)
 
 
 if __name__ == "__main__":
