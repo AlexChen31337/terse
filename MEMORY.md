@@ -174,10 +174,14 @@ Agent-native validator key management for ClawChain. NEW repo (2026-02-27 evenin
 - [DONE] EvoClaw Phase 2 — Android/iOS/WASM/ClawHub, 2628 lines, 90%+ cov ✅
 - [DONE] SKILLRL all 3 phases — internal/skillbank/, PR #22, 92.9% cov ✅
 - [DONE] clawkeyring VPS integration — --alice removed, age-encrypted keys, auto-inject ✅
-- [PENDING] clawchain-sdk npm publish — needs NPM_TOKEN from npmjs.com
-- [PENDING] SKILLRL RSI loop hook (RecordTrajectory follow-up PR)
-- [PENDING] EvoClaw v0.6.1 release tag
-- [MONITOR] clawchain-sdk nightly integration tests failing
+- [DONE] clawchain-sdk npm published as `clawchain-sdk` (unscoped, free) ✅
+- [DONE] SKILLRL RSI hook — PR #23, RecordTrajectory wired into observer ✅
+- [DONE] clawchain-sdk nightly tests — 5s TCP probe, graceful skip when offline ✅
+- [DONE] ClawChain MEDIUM findings — PR #55 (M1 cooldown, M2 RequirementsEmpty, M3 open_channel_confirm) ✅
+- [PENDING] EvoClaw v0.6.1 release (after PRs #22+#23 merge)
+- [PENDING] ClawChain PR #55 merge (after CI passes)
+- [PENDING] claw-chain CI failure investigation
+- [MONITOR] awesome-openclaw PR #30
 - [PENDING] EvoClaw Phase 2: Android, ClawHub, iOS, WASM (after v0.6.0 builds ship)
 - [PENDING] clawkeyring: integrate with ClawChain VPS validator (run `clawkeyring inject` replacing --alice/--force-authoring)
 - [PENDING] ClawChain: audit ibc-lite, anon-messaging, service-market pallets (not on main yet)
@@ -385,4 +389,4 @@ All `~/clawd` references cleaned up:
 - WS RPC: ws://135.181.157.121:9944
 
 ---
-*Updated: 2026-02-28 15:20 AEDT*
+*Updated: 2026-02-28 16:16 AEDT*
