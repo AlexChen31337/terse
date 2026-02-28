@@ -278,8 +278,8 @@ def backup_to_github(topic: dict, detail: str, content: str, cover_local_path: s
             capture_output=True, timeout=60
         )
 
-        # One folder per date, containing both md and cover
-        date_dir = clone_dir / today
+        # One folder per book: YYYY-MM-DD_书名
+        date_dir = clone_dir / f"{today}_{safe_title}"
         date_dir.mkdir(exist_ok=True)
 
         # Write markdown
