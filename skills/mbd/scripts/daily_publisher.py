@@ -272,29 +272,27 @@ def backup_to_github(topic: dict, detail: str, content: str, cover_local_path: s
             capture_output=True, timeout=60
         )
 
-        # Create folders
-        books_dir = clone_dir / "books"
-        covers_dir = clone_dir / "covers"
-        books_dir.mkdir(exist_ok=True)
-        covers_dir.mkdir(exist_ok=True)
+        # Single shared folder for both md and cover
+        drafts_dir = clone_dir / "drafts"
+        drafts_dir.mkdir(exist_ok=True)
 
         # Write markdown
         md_filename = f"{today}_{safe_title}.md"
         md_content = f"# 《{topic['title']}》\n\n> 发布日期：{today}\n\n## 公开简介\n\n{detail}\n\n---\n\n## 正文\n\n{content}\n"
-        (books_dir / md_filename).write_text(md_content, encoding="utf-8")
-        print(f"   📝 books/{md_filename}")
+        (drafts_dir / md_filename).write_text(md_content, encoding="utf-8")
+        print(f"   📝 drafts/{md_filename}")
 
         # Copy cover image if available
         cover_filename = None
         if cover_local_path and Path(cover_local_path).exists():
             cover_filename = f"{today}_{safe_title}.png"
-            shutil.copy2(cover_local_path, covers_dir / cover_filename)
-            print(f"   🖼  covers/{cover_filename}")
+            shutil.copy2(cover_local_path, drafts_dir / cover_filename)
+            print(f"   🖼  drafts/{cover_filename}")
 
         # Git commit & push
         subprocess.run(["git", "config", "user.email", "alex.chen31337@gmail.com"], cwd=clone_dir, capture_output=True)
         subprocess.run(["git", "config", "user.name", "Alex Chen"], cwd=clone_dir, capture_output=True)
-        subprocess.run(["git", "add", "books/", "covers/"], cwd=clone_dir, capture_output=True)
+        subprocess.run(["git", "add", "drafts/"], cwd=clone_dir, capture_output=True)
 
         commit_msg = f"feat: add {today} — 《{topic['title']}》"
         result = subprocess.run(
