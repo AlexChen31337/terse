@@ -413,11 +413,11 @@
   "tiers": {
     "SIMPLE": {
       "description": "Monitoring, heartbeat, summaries \u2014 free/tiny/cheap models",
-      "primary": "anthropic-proxy-6/glm-4.7",
+      "primary": "ollama/qwen2.5:7b",
       "fallbacks": [
-        "anthropic-proxy-4/glm-4.7",
-        "ollama/qwen2.5:7b",
-        "ollama/qwen2.5:1.5b"
+        "ollama/qwen2.5:1.5b",
+        "anthropic-proxy-6/glm-4.7",
+        "anthropic-proxy-4/glm-4.7"
       ],
       "use_for": [
         "monitoring",
@@ -429,7 +429,7 @@
         "price alerts",
         "memory consolidation"
       ],
-      "_comment": "RSI fix 2026-03-01: primary changed from ollama-gpu-server (unreachable LAN) to GLM-4.7 to prevent cost_overrun via NIM fallback"
+      "_comment": "Updated 2026-03-01: primary = local XPS Ollama qwen2.5:7b (free, always on). GPU server removed (unreachable LAN)."
     },
     "MEDIUM": {
       "description": "Code fixes, research, data analysis \u2014 capable mid-range",
