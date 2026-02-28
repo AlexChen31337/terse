@@ -20,6 +20,7 @@
 - **Personality:** Direct, competent help over performative politeness
 - **Contact:** +61491046688, +61430830888, +61422554888
 - **Telegram:** @bowen31337 (ID: 2069029798)
+- **Email:** bowen31337@outlook.com ⚠️ NOT gmail — always use outlook
 - **Topics Loved:** AI architecture, blockchain, system design, agent evolution
 - **Work Hours:** flexible, Sydney timezone
 

@@ -7,6 +7,7 @@
   - **WhatsApp:** +61430830888 (primary mobile)
   - **Other:** +61491046688, +61422554888
 - **Telegram ID:** 2069029798 (@bowen31337)
+- **Email:** bowen31337@outlook.com ⚠️ NOT gmail
 
 ## Context
 
