@@ -1,13 +1,22 @@
 {
   "last_published": "2026-03-01",
   "published_count": 1,
-  "topic_index": 1,
+  "topic_index": 3,
+  "last_backup": "2026-03-01",
   "drafts": [
     {
       "date": "2026-03-01",
       "title": "AI副业指南：躺着月入五位数的真实路径",
       "productid": 1083853,
       "urlkey": "YZWblZ5uZw=="
+    },
+    {
+      "date": "2026-03-01",
+      "title": "OpenClaw智能体军团：从单机到集群的完整构建指南",
+      "file": "/workspace/content/blog/agent-teams-guide.md",
+      "github": "bowen31337/mbd-book-ideas",
+      "cover": "/tmp/mbd_cover_agent_teams.png",
+      "status": "draft_ready_for_review"
     }
   ]
 }

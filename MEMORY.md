@@ -196,7 +196,6 @@ Agent-native validator key management for ClawChain. NEW repo (2026-02-27 evenin
 - [PENDING] MbD: Bowen to review + publish draft `1083692` at https://mbd.pub/o/config/developer
 - [PENDING] MbD: rotate API key (exposed briefly via Telegram 2026-02-28)
 - [PENDING] Wire mbd_monitor.py into HEARTBEAT.md for sales monitoring
-- [MONITOR] awesome-openclaw PR #30 — awaiting external review
 - [MONITOR] AlphaStrike V2 paper trading signals (BTC/ETH/SOL)
 
 ## 📚 面包多 (mbd.pub) — Chinese Content Monetization
