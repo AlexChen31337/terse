@@ -1,8 +1,8 @@
 {
   "last_published": "2026-03-01",
   "published_count": 1,
-  "topic_index": 3,
-  "last_backup": "2026-03-01",
+  "topic_index": 4,
+  "last_backup": "2026-03-02",
   "drafts": [
     {
       "date": "2026-03-01",
@@ -17,6 +17,14 @@
       "github": "bowen31337/mbd-book-ideas",
       "cover": "/tmp/mbd_cover_agent_teams.png",
       "status": "draft_ready_for_review"
+    },
+    {
+      "date": "2026-03-02",
+      "title": "赛博朋克副业：当AI成为你的赚钱外挂",
+      "github": "bowen31337/mbd-book-ideas",
+      "cover": "covers/2026-03-02.png",
+      "content": "books/2026-03-02/content.md",
+      "status": "backed_up"
     }
   ]
 }

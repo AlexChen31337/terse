@@ -1,7 +1,12 @@
 {
   "lastChecks": {
-    "rsi": 1772360092.930134,
-    "github_ci": 0
+    "rsi": 1772525640,
+    "github_ci": 1772414150.264773
   },
-  "lastRSICheck": 1772349294.181516
+  "lastRSICheck": 1772525640,
+  "rsiHealthScore": 0.109,
+  "rsiOutcomes": 207,
+  "rsiSuccessRate": 0.27,
+  "rsiAvgQuality": 2.01,
+  "rsiAlert": "Health score 0.109 < 0.3 threshold - proposal 60126e7f requires manual action: add session_management context to HEARTBEAT.md hydration"
 }

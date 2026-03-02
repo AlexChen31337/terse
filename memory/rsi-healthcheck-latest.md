@@ -1,65 +1,51 @@
 # RSI Loop Health Check Report
-**Date:** 2026-02-28 03:00:00 AEDT
-**Status:** ⚠️ HEALTH SCORE BELOW THRESHOLD
+**Date:** 2026-03-02 03:00:00 AEDT
+**Trigger:** Nightly cron (8cc932c5)
 
 ## Health Score
-- **Current:** 0.133 (13.3%)
-- **Threshold:** 0.30 (30%)
-- **Verdict:** ❌ BELOW THRESHOLD - ALERT REQUIRED
+🚨 **0.119 / 1.0** — CRITICAL (below 0.3 threshold)
 
-## Outcomes Analysis (7 days)
-- **Total logged:** 147 outcomes
-- **Success rate:** 30%
-- **Average quality:** 2.22/5
+## Status Summary
+- **Outcomes (7d):** 200 logged
+- **Success rate:** 28% (very low)
+- **Avg quality:** 2.11/5 (poor)
+- **Patterns detected:** 11 issues
 
-### Top Failure Patterns
-| Pattern | Occurrences | Failure Rate |
-|---------|-------------|--------------|
-| tool_error | 51 | - |
-| context_loss | 28 | 4% |
-| wal_miss | 11 | - |
+## Top Failure Patterns
+| Pattern | Frequency | Failure Rate |
+|---------|-----------|--------------|
+| `tool_error` in 'unknown' tasks | 68x | 100% |
+| `context_loss` in 'unknown' tasks | 46x | 0% |
+| `none` in 'unknown' tasks | 60x | 98% |
+| `rate_limit` in 'unknown' tasks | 9x | 100% |
 
-### High-Confidence Patterns (score > 0.3)
-- **[0.965]** In 'unknown' tasks, 'tool_error' occurs 45x with 100% failure rate
-- **[0.937]** In 'unknown' tasks, 'none' occurs 38x with 89% failure rate
-- **[0.373]** In 'unknown' tasks, 'context_loss' occurs 26x with 4% failure rate
+## Proposals
+- **Generated:** 5 proposals
+- **Auto-approved:** 1 (5f54ae79)
+- **Deployed:** 15 total proposals to date
 
-## Proposals Status
-- **Draft:** 1
-- **Approved:** 1
-- **Deployed:** 14
+## Deployment Error
+⚠️ **Proposal '5f54ae79' not found** — Auto-approved proposal was generated but failed to deploy (FileNotFoundError).
 
-### Ready to Deploy
-- `b1b44540`: Fix: In 'monitoring' tasks, 'cost_overrun' occurs 1x with 10
-
-### Auto-Cycle Issues
-The auto-cycle encountered an error during deployment phase:
-```
-FileNotFoundError: Proposal '4d46d054' not found
-```
-This suggests a race condition where the proposal list changed between synthesis and deployment.
+## Auto-Fix Generated
+6 new fix proposals drafted:
+- [682e6962] Address 'tool_error' in 'unknown' tasks
+- [c5a69afe] Fix 'rate_limit' in 'unknown' tasks
+- [56638f19] Fix 'tool_error' in 'infrastructure_ops'
+- [b1b44540] Fix 'cost_overrun' in 'monitoring'
+- [2cea18f8] Fix 'wal_miss' in 'memory_retrieval'
+- [8479eda7] Address 'wal_miss' in 'unknown' tasks
 
 ## Test Results
-✅ **All tests passed (32/32)**
-- test_auto_observe.py: 21 passed
-- test_auto_fix.py: 11 passed
-- Duration: 0.76s
+✅ **All 32 tests passed** (0.74s)
 
 ## Recommendations
-1. **URGENT:** Address the 'tool_error' pattern in 'unknown' tasks (45 occurrences, 100% failure)
-2. **URGENT:** Fix the 'none' pattern in 'unknown' tasks (38 occurrences, 89% failure)
-3. Fix the auto-cycle deployment bug (proposal file not found)
-4. Review 'context_loss' pattern (28 occurrences, though low failure rate)
+1. Fix deployment bug — proposal not being saved before deploy
+2. Investigate 'unknown' task classification — 60%+ of failures
+3. Address 'tool_error' cascade — 68 occurrences
 
-## Next Action Required
-🚨 **Health score (0.133) is below threshold (0.30)** - Manual intervention recommended.
-
-Run the following to deploy pending fixes:
+## Next Steps
+Run manual review of proposals:
 ```bash
-uv run python skills/rsi-loop/scripts/rsi_cli.py deploy b1b44540
-```
-
-Or review all proposals:
-```bash
-uv run python skills/rsi-loop/scripts/rsi_cli.py proposals
+uv run python skills/rsi-loop/scripts/rsi_cli.py review
 ```

@@ -304,40 +304,23 @@
   ],
   "routing_rules": {
     "SIMPLE": {
-      "primary": "ollama-gpu-server/qwen2.5:7b",
+      "primary": "cerebras/llama-3.1-8b",
       "fallback_chain": [
-        "ollama/qwen2.5:7b",
-        "ollama/qwen2.5:1.5b",
-        "nvidia-nim/microsoft/phi-3.5-vision-instruct"
-      ],
-      "use_for": [
-        "monitoring",
-        "status checks",
-        "summarization",
-        "simple API calls",
-        "memory consolidation",
-        "tweet monitoring",
-        "price alerts",
-        "heartbeat"
+        "groq/llama-3.1-8b-instant",
+        "cerebras/llama-3.3-70b",
+        "groq/llama-3.3-70b-versatile",
+        "anthropic-proxy-6/glm-4.7",
+        "ollama/qwen2.5:7b"
       ]
     },
     "MEDIUM": {
-      "primary": "nvidia-nim/meta/llama-3.3-70b-instruct",
+      "primary": "cerebras/llama-3.3-70b",
       "fallback_chain": [
+        "groq/llama-3.3-70b-versatile",
+        "cerebras/qwen-3-32b",
         "anthropic-proxy-4/glm-4.7",
         "anthropic-proxy-6/glm-4.7",
-        "nvidia-nim/meta/llama-3.1-70b-instruct",
-        "nvidia-nim/nvidia/llama-3.3-nemotron-super-49b-v1.5",
-        "nvidia-nim/meta/llama-4-maverick-17b-128e-instruct"
-      ],
-      "use_for": [
-        "code fixes",
-        "research",
-        "data analysis",
-        "API integration",
-        "documentation",
-        "general QA",
-        "moderate complexity"
+        "nvidia-nim/meta/llama-3.3-70b-instruct"
       ]
     },
     "COMPLEX": {

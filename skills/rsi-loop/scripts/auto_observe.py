@@ -161,10 +161,15 @@ def auto_observe(input_data: dict) -> dict:
     description = input_data.get("description", "")
 
     # Auto-classify task type
-    task_type = classify_task(
-        description or input_data.get("task", ""),
-        input_data.get("task"),
-    )
+    # Trust pre-classified task_type from shim/upstream if it's already set and valid
+    _pre_classified = input_data.get("task_type", "")
+    if _pre_classified and _pre_classified in TASK_TYPES and _pre_classified != "unknown":
+        task_type = _pre_classified
+    else:
+        task_type = classify_task(
+            description or input_data.get("task", ""),
+            _pre_classified or input_data.get("task"),
+        )
 
     # Auto-classify issues from error message
     issues = classify_issues(error_msg, input_data.get("issues"))

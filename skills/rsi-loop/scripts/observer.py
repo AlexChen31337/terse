@@ -40,7 +40,10 @@ TASK_TYPES = [
     "memory_retrieval", "skill_creation", "cron_management",
     "api_integration", "data_analysis", "message_routing",
     "infrastructure_ops", "documentation", "general_qa",
-    "trading", "monitoring", "blockchain", "unknown"
+    "trading", "monitoring", "blockchain",
+    # shim-emitted types from ISSUE_META
+    "tool_call", "session_management", "model_routing", "api_call",
+    "unknown"
 ]
 
 # ── Issue taxonomy ─────────────────────────────────────────────────────────────

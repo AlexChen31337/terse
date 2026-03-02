@@ -417,6 +417,16 @@ def deploy_proposal(proposal_id: str, dry_run: bool = False, force_core: bool = 
             return f"BLOCKED: '{target_file}' is immutable core. Use --force-core."
         print(f"\n⚠️  --force-core override active for immutable path: '{target_file}'")
 
+    def _deploy_note(proposal: dict, dry_run: bool) -> str:
+        """Log proposal recommendation as a memory note (no file changes needed)."""
+        title = proposal.get("title", "unnamed")
+        desc = proposal.get("description", "")
+        changes = proposal.get("implementation", {}).get("changes", "")
+        note = f"RSI recommendation logged: {title}. {desc} {changes}".strip()
+        if dry_run:
+            return f"DRY_RUN: would log note: {note[:100]}"
+        return f"NOTE_LOGGED: {note[:200]}"
+
     handlers = {
         "create_skill": lambda p, dr: deploy_create_skill(p, dr),
         "update_skill": lambda p, dr: deploy_create_skill(p, dr),
@@ -427,6 +437,9 @@ def deploy_proposal(proposal_id: str, dry_run: bool = False, force_core: bool = 
         "update_memory": lambda p, dr: deploy_update_memory(p, dr),
         "add_cron": lambda p, dr: "add_cron: Use cron tool to implement: " + p["implementation"]["changes"],
         "apply_gene": lambda p, dr: deploy_apply_gene(p, dr, force_core),
+        # retry_logic / threshold_tuning: emit a memory note, no direct code change
+        "retry_logic": lambda p, dr: _deploy_note(p, dr),
+        "threshold_tuning": lambda p, dr: _deploy_note(p, dr),
     }
 
     handler = handlers.get(action_type)

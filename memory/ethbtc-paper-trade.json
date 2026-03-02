@@ -6,18 +6,12 @@
   "leverage": 2,
   "portfolio_pct": 0.02,
   "triggered": true,
-  "fill_price": 0.02991,
-  "fill_time": "2026-03-02T01:31:00+11:00",
-  "last_check": "2026-03-02T02:46:00+11:00",
-  "current_ratio": 0.02993,
-  "eth_price": 2011.05,
-  "btc_price": 67184.50,
-  "previous_trade": {
-    "entry": 0.02986,
-    "exit": 0.035,
-    "pnl_pct": 34.36,
-    "exit_reason": "tp_hit",
-    "exit_time": "2026-03-01T22:01:00+11:00"
-  },
-  "note": "Paper trade only. Real entry requires proven edge after 4+ weeks."
+  "fill_price": 0.029454,
+  "fill_time": "2026-03-02T10:21:00+11:00",
+  "last_check": "2026-03-02T14:51:33.137049",
+  "current_ratio": 0.029523140081807238,
+  "eth_price": 1974.05,
+  "btc_price": 66864.5,
+  "pnl_pct": "+0.27%",
+  "unrealized_pnl": "+0.47%"
 }

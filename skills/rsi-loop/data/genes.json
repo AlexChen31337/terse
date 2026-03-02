@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-02-21T07:55:48.802186+00:00",
+  "updated_at": "2026-03-01T20:31:13.602728+00:00",
   "genes": [
     {
       "gene_id": "gene_repair_model_routing_rate_limit",
       "schema_version": "1.0",
-      "asset_id": "6ca2a0c0aa20250c",
+      "asset_id": "b817dafe808c81b2",
       "meta": {
         "title": "Fix model routing rate limits",
         "description": "Moves tasks away from throttled providers by updating router tier config via live discovery",
         "author": "alex-chen",
         "created_at": "2026-02-21T07:00:00Z",
-        "updated_at": "2026-02-21T07:00:00Z",
+        "updated_at": "2026-03-01T20:31:13.602644+00:00",
         "tags": [
           "model_routing",
           "rate_limit",
           "intelligent-router"
         ],
-        "times_applied": 1,
-        "last_applied": "2026-02-21T17:30:00Z",
+        "times_applied": 2,
+        "last_applied": "2026-03-01T20:31:13.602635+00:00",
         "success_rate": 1.0
       },
       "trigger": {
@@ -121,21 +121,21 @@
     {
       "gene_id": "gene_optimize_rsi_proposal_dedup",
       "schema_version": "1.0",
-      "asset_id": "b59ddc31d3809eb5",
+      "asset_id": "0296a900b918949e",
       "meta": {
         "title": "RSI proposal deduplication",
         "description": "Checks events.jsonl for similar past proposals before generating a new one to prevent repeated proposals",
         "author": "alex-chen",
         "created_at": "2026-02-21T07:00:00Z",
-        "updated_at": "2026-02-21T07:00:00Z",
+        "updated_at": "2026-03-01T20:23:22.434107+00:00",
         "tags": [
           "rsi-loop",
           "dedup",
           "synthesizer"
         ],
-        "times_applied": 0,
-        "last_applied": null,
-        "success_rate": 0.0
+        "times_applied": 1,
+        "last_applied": "2026-03-01T20:23:22.434101+00:00",
+        "success_rate": 1.0
       },
       "trigger": {
         "pattern_category": "behavior_pattern",

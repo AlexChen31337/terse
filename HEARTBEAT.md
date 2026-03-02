@@ -6,6 +6,12 @@ Check Gmail for GitHub Actions failure notifications:
 3. Mark email as read after fixing
 4. If fix is non-trivial, alert Bowen
 
+## Session Context Hydration (every heartbeat)
+Prevent context_loss for long-running session_management tasks:
+1. Check `memory/active_task.json` — if a task is in-flight, log current step to WAL before proceeding
+2. If session was recently compacted (check `memory/2026-*.md` for today), re-read SOUL.md + USER.md to restore persona
+3. For any multi-step task >5min, ensure WAL entry exists: `uv run python skills/agent-self-governance/scripts/wal.py append main session_management "<current state>"`
+
 ## RSI Loop Health (every 4+ hours)
 If 4+ hours since last RSI check:
 1. Run cycle: `cd ~/.openclaw/workspace && uv run python skills/rsi-loop/scripts/rsi_cli.py cycle --auto`

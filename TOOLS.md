@@ -48,3 +48,19 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ---
 
 Add whatever helps you do your job. This is your cheat sheet.
+
+## ZImage / ComfyUI Generation Rules
+
+### Negative Prompt (ALWAYS include)
+```
+blurry, low quality, watermark, typo, misspelled text, garbled text, gibberish, illegible writing, deformed letters, wrong characters, deformed, ugly, extra limbs, cartoon, anime
+```
+
+**Key rule:** Text in images is fine and welcome. Never block text entirely. Only add `typo, misspelled text, garbled text, gibberish, illegible writing, deformed letters, wrong characters` to prevent garbled/nonsense text artifacts.
+
+### Workflow defaults (ZImage Turbo)
+- Model: `z_image_turbo_bf16.safetensors` (on `/data` SSD)
+- CLIP: `qwen_3_4b.safetensors`, type: `qwen_image`
+- VAE: `ae.safetensors`
+- Steps: 20, CFG: 3.5, sampler: euler, scheduler: simple
+- Cover size: 768×1024

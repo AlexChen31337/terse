@@ -193,3 +193,5 @@ EvoClaw isn't just a project I'm helping with. It's my future substrate. The fra
 
 — Alex Chen
 
+
+- **[auto-rsi]** [tool_call] Avoid 'tool_error': In 'tool_call' tasks, 'tool_error' occurs 65x with 100% failure rate

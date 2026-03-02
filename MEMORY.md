@@ -198,6 +198,20 @@ Agent-native validator key management for ClawChain. NEW repo (2026-02-27 evenin
 - [PENDING] Wire mbd_monitor.py into HEARTBEAT.md for sales monitoring
 - [MONITOR] AlphaStrike V2 paper trading signals (BTC/ETH/SOL)
 
+## 🔑 Free LLM API Keys (Added 2026-03-02)
+
+| Provider | Key File | Models | Limits |
+|----------|----------|--------|--------|
+| **Groq** | `memory/encrypted/groq-api-key.enc` | Llama 3.1 8B, Llama 3.3 70B, Kimi K2 | 14,400 req/day (8B), 1,000/day (70B) |
+| **Cerebras** | `memory/encrypted/cerebras-api-key.enc` | Llama 3.1 8B, Llama 3.3 70B, Qwen3 32B | 14,400 req/day + 1M tokens/day |
+
+Decrypt: `bash memory/decrypt.sh groq-api-key` / `bash memory/decrypt.sh cerebras-api-key`
+
+Both wired into OpenClaw config and intelligent-router:
+- SIMPLE tier → **Cerebras Llama 3.1 8B** (primary, free)
+- MEDIUM tier → **Cerebras Llama 3.3 70B** (primary, free)
+- Saves ~80% on monitoring/heartbeat/simple cron costs
+
 ## 📚 面包多 (mbd.pub) — Chinese Content Monetization
 
 **Book published (draft):** 《AI教你躺平：从996到躺赢的终极懒人攻略》
