@@ -165,7 +165,9 @@ Key milestones today:
 - **QA subagent MUST run after every non-trivial code change** — After writing or significantly modifying code (new scripts, new skills, bug fixes, architecture changes), ALWAYS spawn a QA subagent before declaring done. The QA agent reviews correctness, runs tests, checks for bugs/edge cases, scans for personal info, and verifies the implementation matches the spec. No exceptions. "It looks right" is not enough — prove it. Use: `uv run python skills/rsi-loop/scripts/qa_agent.py spawn "<what was built>"` or spawn manually via `sessions_spawn`. Log the outcome in RSI loop with observer.py.
 
 **Lessons learned:**
-- **Verify Before Reporting (VBR)** — Run checks before claiming task completion. See memory/vbr-protocol.md for full protocol. NEVER claim done without: local test run, evidence of completion, or reproducible verification. "I think it works" is not acceptable.
+- **Verify Before Reporting (VBR)** — Run checks before claiming task completion. See `skills/verification-gate/SKILL.md` for full protocol. NEVER claim done without: local test run, evidence of completion, or reproducible verification. "I think it works" is not acceptable.
+- **Systematic Debugging** — When facing any technical failure, use `skills/systematic-debug/SKILL.md`. Root cause before fixes, always. No guessing.
+- **Parallel Dispatch** — When facing 3+ independent failures, use `skills/parallel-dispatch/SKILL.md`. Spawn one agent per domain, let them run concurrently.
 - **Write-Ahead Log (WAL)** — Log corrections and decisions before responding to survive compaction
 - **Memory consolidation** — Prevents context loss, auto-runs via cron (quick/daily/monthly)
 - When given trust + autonomy, ship faster
