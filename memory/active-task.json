@@ -1,0 +1,8 @@
+{
+  "task": "Build claw-forge tutorial/landing webpage to beat AutoForge",
+  "step": "Pre-compaction: saved context to WAL and daily memory. claw-forge v0.3.0 released, PyPI blocked on PYPI_TOKEN secret.",
+  "started_at": "2026-03-02T07:13:49.839814+00:00",
+  "updated_at": "2026-03-02T13:12:16.197205+00:00",
+  "context": "claw-forge at /tmp/claw-forge. 111 tests passing. Builder done (Kanban UI + anthropic_compat + OAuth). Features agent adding AutoForge parity (YOLO, pause/resume, expand-project, GSD-to-spec). GitHub: https://github.com/clawinfra/claw-forge",
+  "tags": []
+}

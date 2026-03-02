@@ -8,10 +8,10 @@
   "triggered": true,
   "fill_price": 0.029454,
   "fill_time": "2026-03-02T10:21:00+11:00",
-  "last_check": "2026-03-02T14:51:33.137049",
-  "current_ratio": 0.029523140081807238,
-  "eth_price": 1974.05,
-  "btc_price": 66864.5,
-  "pnl_pct": "+0.27%",
-  "unrealized_pnl": "+0.47%"
+  "last_check": "2026-03-03T02:51:00+11:00",
+  "current_ratio": 0.029584,
+  "eth_price": 2053.15,
+  "btc_price": 69401.5,
+  "pnl_pct": "+0.88%",
+  "unrealized_pnl": "+0.88%"
 }
