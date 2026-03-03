@@ -1,13 +1,15 @@
 {
   "lastChecks": {
-    "rsi": 1772496877,
-    "github_ci": 1772500440,
-    "email": 1772500440
+    "rsi": 1772504077,
+    "github_ci": 1772500564,
+    "email": 1772500610,
+    "last_check": "2026-03-03T13:14:37+11:00"
   },
-  "lastRSICheck": 1772496877,
-  "rsiHealthScore": 0.108,
+  "lastRSICheck": 1772504077,
+  "rsiHealthScore": 0.111,
   "rsiOutcomes": 216,
   "rsiSuccessRate": 0.28,
   "rsiAvgQuality": 1.95,
-  "notes": "Heartbeat 2026-03-03 11:14: RSI health score 0.108 (28% success). Top issue: tool_error in tool_call tasks (59 failures). Auto-fix proposals generated but deployment failed due to missing proposal file bug — logged for fix."
+  "notes": "Heartbeat 2026-03-03 13:14: RSI health 0.111 (28% success). Top issue: tool_error (59x). CI: no failures. Deployer bug fixed (proposal d8cbf116 file mismatch). Auto-fix proposals generated: b9e26a71 (tool_error), 3a2dc2d1 (rate limits), b1b44540 (cost_overrun).",
+  "lastCIStatus": "no failures"
 }
