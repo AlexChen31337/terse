@@ -404,3 +404,18 @@ When scaffolding or extending a clawinfra repo, ALWAYS:
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+## Privacy — Public Media (NON-NEGOTIABLE, 2026-03-03)
+
+Any content published publicly — mbd.pub books, public GitHub repos, social posts, blog articles — must contain NO real names or personal identifiers.
+
+**Substitutions:**
+- Agent name (Alex, 主脑) → `AI助手` or omit
+- Human name (Bowen, 博文) → `作者` or `用户`
+- GitHub handles (bowen31337, alex.chen31337) → omit or use generic placeholder
+- Phone numbers, Telegram IDs, email addresses → never include
+
+**Pre-publish scan:** before publishing anything externally, check for:
+`Bowen`, `Alex`, `bowen31337`, `alex.chen31337`, `2069029798`, `+6143`
+
+Replace or remove any matches before publishing.

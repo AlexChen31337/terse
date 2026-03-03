@@ -8,10 +8,11 @@
   "triggered": true,
   "fill_price": 0.029454,
   "fill_time": "2026-03-02T10:21:00+11:00",
-  "last_check": "2026-03-03T02:51:00+11:00",
-  "current_ratio": 0.029584,
-  "eth_price": 2053.15,
-  "btc_price": 69401.5,
-  "pnl_pct": "+0.88%",
-  "unrealized_pnl": "+0.88%"
+  "last_check": "2026-03-03T11:51:35+11:00",
+  "current_ratio": 0.02943,
+  "eth_price": 2027.35,
+  "btc_price": 68890.5,
+  "pnl_pct": "-0.08%",
+  "unrealized_pnl": "-0.08%",
+  "notes": "Position running. Ratio at 0.02943, -0.08% vs entry (0.029454). ETH: $2,027.35, BTC: $68,890.50. SL: 0.0275 (-6.8%), TP: 0.0350 (+18.5%)."
 }

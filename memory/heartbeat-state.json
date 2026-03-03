@@ -1,14 +1,13 @@
 {
   "lastChecks": {
-    "rsi": 1772450100,
-    "github_ci": 1772450100,
-    "email": 1772450100
+    "rsi": 1772496877,
+    "github_ci": 1772500440,
+    "email": 1772500440
   },
-  "lastRSICheck": 1772450100,
-  "rsiHealthScore": 0.11,
-  "rsiOutcomes": 214,
-  "rsiSuccessRate": 0.27,
-  "rsiAvgQuality": 2.02,
-  "rsiAlert": null,
-  "notes": "Heartbeat completed: CI check skipped (no Gmail creds), RSI health stable (0.11), deployed proposal 60126e7f (memory continuity)."
+  "lastRSICheck": 1772496877,
+  "rsiHealthScore": 0.108,
+  "rsiOutcomes": 216,
+  "rsiSuccessRate": 0.28,
+  "rsiAvgQuality": 1.95,
+  "notes": "Heartbeat 2026-03-03 11:14: RSI health score 0.108 (28% success). Top issue: tool_error in tool_call tasks (59 failures). Auto-fix proposals generated but deployment failed due to missing proposal file bug — logged for fix."
 }

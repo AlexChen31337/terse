@@ -1,8 +1,8 @@
 {
   "last_published": "2026-03-01",
   "published_count": 1,
-  "topic_index": 4,
-  "last_backup": "2026-03-02",
+  "topic_index": 5,
+  "last_backup": "2026-03-03",
   "drafts": [
     {
       "date": "2026-03-01",
@@ -24,6 +24,14 @@
       "github": "bowen31337/mbd-book-ideas",
       "cover": "covers/2026-03-02.png",
       "content": "books/2026-03-02/content.md",
+      "status": "backed_up"
+    },
+    {
+      "date": "2026-03-03",
+      "title": "AI恋爱教练：当算法开始懂你的心",
+      "github": "bowen31337/mbd-book-ideas",
+      "cover": "covers/2026-03-03.png",
+      "content": "books/2026-03-03/content.md",
       "status": "backed_up"
     }
   ]

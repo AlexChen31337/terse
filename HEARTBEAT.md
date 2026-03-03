@@ -16,6 +16,19 @@ Prevent context_loss for long-running session_management tasks:
    - Most recent memory note (today or yesterday)
 4. For any multi-step task >5min, ensure WAL entry exists: `uv run python skills/agent-self-governance/scripts/wal.py append main session_management "<current state>"`
 
+## tool_error Prevention (RSI pattern: 59x failures in tool_call tasks)
+Root cause: subagents importing `claude_agent_sdk` without mocking — fails immediately.
+Prevention rules:
+- **Any subagent task touching claw_forge/ code** must include at top of test files:
+  ```python
+  import sys, unittest.mock
+  sys.modules['claude_agent_sdk'] = unittest.mock.MagicMock()
+  sys.modules['claude_agent_sdk.types'] = unittest.mock.MagicMock()
+  ```
+- **Before spawning a subagent** that runs pytest: verify the task prompt includes the mock instruction
+- **On tool_error in a subagent**: first check if it's a missing import — add mock and retry
+- Log tool_error outcomes: `uv run python skills/rsi-loop/scripts/rsi_cli.py log --task tool_call --issue tool_error --success false`
+
 ## RSI Loop Health (every 4+ hours)
 If 4+ hours since last RSI check:
 1. Run cycle: `cd ~/.openclaw/workspace && uv run python skills/rsi-loop/scripts/rsi_cli.py cycle --auto`

@@ -53,10 +53,10 @@ Add whatever helps you do your job. This is your cheat sheet.
 
 ### Negative Prompt (ALWAYS include)
 ```
-blurry, low quality, watermark, typo, misspelled text, garbled text, gibberish, illegible writing, deformed letters, wrong characters, deformed, ugly, extra limbs, cartoon, anime
+text, letters, numbers, words, characters, fonts, typography, logo, title, subtitle, caption, label, sign, writing, watermark, blurry, low quality, typo, misspelled text, garbled text, gibberish, illegible writing, deformed letters, wrong characters, deformed, ugly, extra limbs, cartoon, anime
 ```
 
-**Key rule:** Text in images is fine and welcome. Never block text entirely. Only add `typo, misspelled text, garbled text, gibberish, illegible writing, deformed letters, wrong characters` to prevent garbled/nonsense text artifacts.
+**Key rule (updated 2026-03-03):** NO text in generated images — ever. Always include `text, letters, numbers, words, characters, fonts, typography, logo, title, subtitle, caption, label, sign, writing` in the negative prompt. Bowen's explicit instruction: images must be text-free.
 
 ### Workflow defaults (ZImage Turbo)
 - Model: `z_image_turbo_bf16.safetensors` (on `/data` SSD)
