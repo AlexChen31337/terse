@@ -1,15 +1,15 @@
 {
   "lastChecks": {
-    "rsi": 1772504077,
-    "github_ci": 1772500564,
-    "email": 1772500610,
-    "last_check": "2026-03-03T13:14:37+11:00"
+    "rsi": 1772536512.0222,
+    "github_ci": 1772536512.022205,
+    "email": 1772536512.022206
   },
-  "lastRSICheck": 1772504077,
-  "rsiHealthScore": 0.111,
-  "rsiOutcomes": 216,
+  "lastRSICheck": 1772536512.022207,
+  "rsiHealthScore": 0.11,
+  "rsiOutcomes": 210,
   "rsiSuccessRate": 0.28,
-  "rsiAvgQuality": 1.95,
-  "notes": "Heartbeat 2026-03-03 13:14: RSI health 0.111 (28% success). Top issue: tool_error (59x). CI: no failures. Deployer bug fixed (proposal d8cbf116 file mismatch). Auto-fix proposals generated: b9e26a71 (tool_error), 3a2dc2d1 (rate limits), b1b44540 (cost_overrun).",
-  "lastCIStatus": "no failures"
+  "rsiAvgQuality": 1.96,
+  "notes": "Heartbeat 2026-03-03 22:14: RSI health critical (0.11). CI still failing in claw-forge (5 consecutive failures). RSI cycle generated 3 auto-fix proposals but deployer has bug (proposal file not found). No action taken pending RSI fix.",
+  "lastCIStatus": "still_failing",
+  "last_check": "2026-03-03T22:15:12.022207"
 }

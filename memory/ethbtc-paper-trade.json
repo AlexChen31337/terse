@@ -1,18 +1,15 @@
 {
-  "status": "open",
+  "status": "watching",
   "entry_zone": 0.029,
   "sl": 0.0275,
   "tp": 0.035,
   "leverage": 2,
   "portfolio_pct": 0.02,
-  "triggered": true,
-  "fill_price": 0.029454,
-  "fill_time": "2026-03-02T10:21:00+11:00",
-  "last_check": "2026-03-03T14:51:00+11:00",
-  "current_ratio": 0.02939,
-  "eth_price": 2006.95,
-  "btc_price": 68322.5,
-  "pnl_pct": "-0.22%",
-  "unrealized_pnl": "-0.22%",
-  "notes": "Ratio: 0.02939, PnL: -0.22%. SL: 0.0275 (6.5% away), TP: 0.035 (19.1% away). Position holding."
+  "triggered": false,
+  "fill_price": null,
+  "fill_time": null,
+  "last_check": "2026-03-03T15:52:34.246693+00:00",
+  "eth_price": 1967.15,
+  "btc_price": 67714.5,
+  "current_ratio": 0.029050646464198953
 }

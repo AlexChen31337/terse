@@ -1,0 +1,11 @@
+{
+  "positions": {},
+  "closed": [],
+  "equity_curve": [
+    {
+      "time": "2026-03-03T13:07:12.466441+00:00",
+      "equity": 1000.0
+    }
+  ],
+  "starting_equity": 1000.0
+}
