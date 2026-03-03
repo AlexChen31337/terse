@@ -1,0 +1,10 @@
+{
+  "anthropic-proxy-1": {
+    "last_429_at": 1772572352.2380378,
+    "consecutive_429s": 5,
+    "cooldown_until": 1772715600.0,
+    "total_failures": 3,
+    "last_updated": 1772572352.2380378,
+    "note": "Blocked until midnight Friday 2026-03-06 AEDT per Bowen"
+  }
+}

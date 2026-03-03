@@ -326,11 +326,10 @@
     "COMPLEX": {
       "primary": "anthropic-proxy-1/claude-sonnet-4-6",
       "fallback_chain": [
-        "nvidia-nim/minimaxai/minimax-m2.1",
         "anthropic/claude-sonnet-4-6",
-        "anthropic/claude-sonnet-4-5",
-        "nvidia-nim/mistralai/mistral-large-3-675b-instruct-2512",
-        "nvidia-nim/nvidia/llama-3.1-nemotron-ultra-253b-v1"
+        "anthropic/claude-opus-4-6",
+        "anthropic-proxy-4/glm-4.7",
+        "anthropic-proxy-6/glm-4.7"
       ],
       "use_for": [
         "feature development",
