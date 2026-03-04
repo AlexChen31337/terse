@@ -1,9 +1,10 @@
 # Quant Report
-_2026-03-04T01:07:43.110166+00:00_
+_2026-03-04T13:07:43.068220+00:00_
 
 📊 **[Quant] AlphaStrike V2 Paper Trading Update**
 
 ⏸  BTC LONG conf=40% — below threshold, no trade
+⏸  ETH LONG conf=40% — below threshold, no trade
 ⏸  SOL LONG conf=40% — below threshold, no trade
 
 **Open positions:** 0 | none

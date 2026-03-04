@@ -16,6 +16,13 @@ Prevent context_loss for long-running session_management tasks:
    - Most recent memory note (today or yesterday)
 4. For any multi-step task >5min, ensure WAL entry exists: `uv run python skills/agent-self-governance/scripts/wal.py append main session_management "<current state>"`
 
+## Pre-Push Gate (NON-NEGOTIABLE — learned 2026-03-04)
+Before ANY git push to a repo with CI:
+1. Run full test suite locally and confirm pass
+2. Run lint locally and confirm clean
+3. If fixing a bug: reproduce the bug locally FIRST, then fix, then verify fix kills it
+Never push "I think it's fine" — prove it locally.
+
 ## tool_error Prevention (RSI pattern: 59x failures in tool_call tasks)
 Root cause: subagents importing `claude_agent_sdk` without mocking — fails immediately.
 Prevention rules:
