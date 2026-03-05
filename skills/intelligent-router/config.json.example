@@ -1,5 +1,5 @@
 {
-  "_comment": "Intelligent Router \u2014 Updated 2026-02-28 02:14. RSI fix: expanded SIMPLE tier use_for to catch all monitoring variants. NIM models DISABLED from routing. GLM-4.7 (proxy-4/6) primary for ALL tiers. No NIM in routing chains.",
+  "_comment": "Copy to config.json and customize. See README.md for tier guidance.",
   "models": [
     {
       "id": "qwen2.5:1.5b",
@@ -367,32 +367,13 @@
         "financial operations",
         "high-stakes analysis"
       ]
-    },
-    "on_rate_limit": "fallback_to_next_tier",
-    "rate_limit_backoff_seconds": 10,
-    "max_retries_per_model": 2
+    }
   },
   "tier_overrides": {
     "COMPLEX": {
       "forced_primary": "anthropic-proxy-1/claude-sonnet-4-6",
       "forced_fallback": "anthropic/claude-sonnet-4-6",
       "reason": "Bowen: ALWAYS use Sonnet 4.6 for coding tasks (2026-02-28). anthropic-proxy-1 primary, OAuth fallback. NO GLM, NO Llama, NO DeepSeek for code. Non-negotiable."
-    }
-  },
-  "nim_disabled": true,
-  "nim_disabled_reason": "NIM models unstable \u2014 frequent timeouts (2026-02-23, Bowen instruction: don't use NIM)",
-  "skip_nim_in_routing": true,
-  "max_fallback_attempts": 3,
-  "last_updated": "2026-02-28T02:14:00",
-  "last_discovery": "2026-02-28T17:56:31.817367",
-  "version": "3.2.1",
-  "policy": {
-    "blocked_models": [],
-    "blocked_reason": "ollama-gpu-server binds to 127.0.0.1 by default \u2014 unreachable over LAN. GLM-4.7 removed from MEDIUM/COMPLEX fallback chains (2026-02-28): 135k tokens, failed Rust test fix, weak code editing. Use Sonnet 4.6 for ALL coding tasks.",
-    "enforce_model_in_cron": true,
-    "cron_safe_tiers": {
-      "SIMPLE": "anthropic-proxy-6/glm-4.7",
-      "SIMPLE_alt": "anthropic-proxy-4/glm-4.7"
     }
   },
   "tiers": {
@@ -489,5 +470,7 @@
         "strategic planning"
       ]
     }
-  }
+  },
+  "max_fallback_attempts": 3,
+  "version": "3.0.0"
 }

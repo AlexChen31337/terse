@@ -12,6 +12,17 @@ Things like:
 - Device nicknames
 - Anything environment-specific
 
+## Twitter/X (bird CLI)
+
+Auth via stored tokens (work as of 2026-03-05):
+```bash
+AUTH_TOKEN=25472f65c86e1e2cc3cfa906e4681319dc056776
+CT0=0d42d73880783e42fd267f26fbf6b082374982e72d04b44459f6bd5cca0166f3fdad8f693e733f79c933a618ddae34d1d3b7855db0e9b775ff99caf1d8ca7d01e59e11035cb7fab0c1d02b1067eb2bb1
+```
+Usage: `AUTH_TOKEN=... CT0=... bird read <url>`
+Full creds: `memory/encrypted/twitter-bird-credentials.txt.enc`
+Account: @unoclaw / @AlexChen31337
+
 ## SSH Hosts
 
 ### GPU Server

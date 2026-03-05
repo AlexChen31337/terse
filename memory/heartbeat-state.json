@@ -1,14 +1,16 @@
 {
   "lastChecks": {
-    "rsi": "1772619284",
-    "github_ci": "1772619284",
-    "email": "1772619284"
+    "rsi": 1772680479,
+    "github_ci": 1772669697,
+    "email": 1772669697,
+    "blogwatcher": 1772680511,
+    "releases": 1772680479
   },
-  "lastRSICheck": "1772619284",
-  "rsiHealthScore": 0.095,
-  "rsiOutcomes": 244,
-  "rsiSuccessRate": 0.25,
-  "rsiAvgQuality": 1.87,
+  "lastRSICheck": 1772673335,
+  "rsiHealthScore": 0.087,
+  "rsiOutcomes": 238,
+  "rsiSuccessRate": 0.24,
+  "rsiAvgQuality": 1.82,
   "lastCIStatus": "clean",
-  "notes": "RSI cycle run: 5 proposals generated, 1 auto-approved, deployment pending review. No new GitHub failures in inbox."
+  "notes": "Heartbeat 14:14: RSI cycle completed (health 0.086 stable). Blogwatcher: 2 new articles (below threshold). clawinfra releases: latest v0.6.0 (no new). No open PRs. All systems nominal."
 }

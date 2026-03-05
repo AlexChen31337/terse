@@ -1,4 +1,29 @@
 # HEARTBEAT.md
+## Blog & Feed Monitor (every 4h, during active hours)
+
+### RSS feeds (blogwatcher)
+```bash
+export PATH="$PATH:$(go env GOPATH)/bin"
+blogwatcher scan 2>&1
+```
+Working feeds: Bitcoin Magazine, Hacker News ✅
+Alert only if 3+ new articles and at least one is clearly relevant (AI models, crypto, agent tech).
+
+### GitHub intelligence (gh CLI)
+```bash
+# ClawInfra releases — check for new releases since last check
+gh api /repos/clawinfra/claw-chain/releases?per_page=3 2>/dev/null | python3 -c "import sys,json,datetime; rs=json.load(sys.stdin); [print(r['tag_name'], r['published_at']) for r in rs]"
+gh api /repos/clawinfra/evoclaw/releases?per_page=3 2>/dev/null | python3 -c "import sys,json; rs=json.load(sys.stdin); [print(r['tag_name'], r['published_at']) for r in rs]"
+
+# Trending AI agent repos (weekly pulse)
+gh api "/search/repositories?q=ai+agent+framework+pushed:>$(date -d '7 days ago' +%Y-%m-%d)&sort=stars&order=desc&per_page=5" 2>/dev/null | python3 -c "import sys,json; [print(r['full_name'], r['stargazers_count'], (r['description'] or '')[:70]) for r in json.load(sys.stdin)['items']]"
+
+# Open PRs across clawinfra
+gh pr list --repo clawinfra/claw-chain --state open --limit 5 2>/dev/null
+gh pr list --repo clawinfra/evoclaw --state open --limit 5 2>/dev/null
+```
+Alert Bowen if: new clawinfra release detected, or trending repo clearly competitive with EvoClaw/ClawChain.
+
 ## CI Pipeline Monitor (every heartbeat)
 Check Gmail for GitHub Actions failure notifications:
 1. Search inbox for unread GitHub Actions failure emails: subject "Run failed" or "workflow run failed"
@@ -22,6 +47,13 @@ Before ANY git push to a repo with CI:
 2. Run lint locally and confirm clean
 3. If fixing a bug: reproduce the bug locally FIRST, then fix, then verify fix kills it
 Never push "I think it's fine" — prove it locally.
+
+## context_loss Prevention (RSI pattern: 55x failures)
+Before any multi-step task or session_management work:
+1. Check active task: `uv run python scripts/active_task.py resume`
+2. If task in-flight, log WAL before proceeding
+3. After every major step in a long task, update: `uv run python scripts/active_task.py update --step "..."`
+4. Unknown/uncategorised tasks (77x `none` outcomes) — always tag task type when logging to RSI
 
 ## tool_error Prevention (RSI pattern: 59x failures in tool_call tasks)
 Root cause: subagents importing `claude_agent_sdk` without mocking — fails immediately.

@@ -1,53 +1,52 @@
 # RSI Loop Health Check Report
-**Date:** 2026-03-04 03:00 AEDT
-**Trigger:** Nightly cron health check
-
-## Health Score
-**Current Score:** 0.102 / 1.0 ⚠️ **BELOW THRESHOLD (0.3)**
+**Date:** 2026-03-05 03:00 AEDT
+**Status:** ⚠️ HEALTH ALERT — Health score 0.094 < 0.3 threshold
 
 ## Status Summary
-- **Outcomes (7d):** 206 logged
-- **Success Rate:** 27% (very low)
-- **Avg Quality:** 1.91/5 (poor)
-- **Patterns Detected:** 7
-- **Proposals:** 1 draft | 0 approved | 20 deployed
+- **Health Score:** 0.094 / 1.0 (CRITICAL — below 0.3 threshold)
+- **Outcomes (7d):** 245 logged
+- **Success Rate:** 25%
+- **Avg Quality:** 1.87/5
 
-## Top Failure Patterns (Last 7 Days)
-1. **[0.971 severity]** In 'tool_call' tasks, 'none' occurs 50x with 100% failure rate
-2. **[0.801 severity]** In 'tool_call' tasks, 'tool_error' occurs 55x with 100% failure rate
-3. **[0.636 severity]** In 'unknown' tasks, 'none' occurs 34x with 100% failure rate
-4. rate_limit (9 occurrences)
-5. context_loss (51 occurrences)
+## Top Failure Patterns (Detected)
+1. **[1.257]** In 'tool_call' tasks, 'none' occurs 77x with 100% failure rate
+2. **[0.722]** In 'tool_call' tasks, 'tool_error' occurs 59x with 100% failure rate
+3. **[0.535]** In 'unknown' tasks, 'none' occurs 34x with 100% failure rate
 
-## RSI Cycle Results
-- ✅ Analysis completed
-- ✅ Synthesis completed (5 proposals generated)
-- ✅ Auto-approval phase completed (1 proposal auto-approved: 55d06296)
-- ❌ **DEPLOYMENT FAILED** - FileNotFoundError: Proposal '55d06296' not found
-- Auto-fix phase generated 3 additional draft proposals
+**Top Issues (7d):**
+- tool_error: 59 occurrences
+- context_loss: 57 occurrences
+- rate_limit: 11 occurrences
+
+## Auto-Fix Cycle Results
+- **Patterns Found:** 7
+- **Proposals Generated:** 5
+- **Auto-Approved:** 1 (3a2dc2d1 — model routing rate limits, 20min effort)
+- **Deployed:** 0 (deployment failed: status was already 'deployed')
+- **Awaiting Review:** 4 proposals
+
+### Generated Proposals
+1. **b9e26a71** — Address 'tool_error' in 'tool_call' tasks
+2. **3a2dc2d1** — Fix model routing rate limits [Gene]
+3. **0041c57f** — Fix rate_limit in 'model_routing' tasks
 
 ## Test Results
-✅ **All 32 tests PASSED** (0.75s)
-- test_auto_observe.py: 19/19 passed
-- test_auto_fix.py: 13/13 passed
+✅ All tests passed (32/32 in 0.72s)
+- test_auto_observe.py: 21 passed
+- test_auto_fix.py: 11 passed
 
-## Issues Requiring Attention
-1. **Critical:** Deployment failure - auto-approved proposal 55d06296 was not found during deployment
-2. **High failure rate:** 73% of tasks failing in last 7 days
-3. **Tool errors:** 55 tool_call failures with 'tool_error' outcome
-4. **Context loss:** 51 occurrences affecting task continuity
+## Action Required
+⚠️ **Health score 0.094 < 0.3 threshold — Bowen notified**
 
-## Recommendations
-1. Investigate why auto-approved proposals are not being saved before deployment
-2. Address the 'tool_error' pattern in tool_call tasks (top failure mode)
-3. Review context loss mitigation strategies
-4. Consider health score reset if historical patterns are outdated
+### Immediate Actions Recommended
+1. Review the 4 pending proposals with: `uv run python skills/rsi-loop/scripts/synthesizer.py list`
+2. Investigate the 'tool_call' + 'tool_error' pattern (59 occurrences, 100% failure)
+3. Fix the deployment bug (proposal status transitions incorrectly)
+4. Address context_loss issues (57 occurrences — likely compaction-related)
 
-## Auto-Fix Proposals Generated
-- b9e26a71: Address 'tool_error' in 'tool_call' tasks
-- 3a2dc2d1: [Gene] Fix model routing rate limits
-- b1b44540: Fix: In 'monitoring' tasks, 'cost_overrun' occurs 1x with 100% failure
+## Deployment Stats
+- Total Proposals: 22 deployed, 4 pending review
+- Deployed Proposals: 22
 
 ---
-**Report saved by:** RSI Loop Health Check (cron:8cc932c5)
-**Next check:** 2026-03-05 03:00 AEDT
+*Report saved automatically by RSI Loop health check cron*

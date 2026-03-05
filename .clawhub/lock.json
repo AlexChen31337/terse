@@ -44,6 +44,34 @@
     "claude-code": {
       "version": "1.0.0",
       "installedAt": 1772610963336
+    },
+    "sag": {
+      "version": "1.0.0",
+      "installedAt": 1772659291760
+    },
+    "summarize": {
+      "version": "1.0.0",
+      "installedAt": 1772659291932
+    },
+    "session-logs": {
+      "version": "1.0.0",
+      "installedAt": 1772659292011
+    },
+    "blogwatcher": {
+      "version": "1.0.0",
+      "installedAt": 1772659297202
+    },
+    "openai-whisper-api": {
+      "version": "1.0.0",
+      "installedAt": 1772659297310
+    },
+    "video-frames": {
+      "version": "1.0.0",
+      "installedAt": 1772659297328
+    },
+    "model-usage": {
+      "version": "1.0.0",
+      "installedAt": 1772659297398
     }
   }
 }

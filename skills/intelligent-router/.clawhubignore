@@ -1,0 +1,11 @@
+config.json
+config.json.bak
+discovered-models.json
+known-model-params.json
+prev-inventory.json
+provider-health.json
+AUTO_DISCOVERY.md
+scripts/__pycache__/
+references/
+*.pyc
+*.bak

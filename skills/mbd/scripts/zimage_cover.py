@@ -93,10 +93,10 @@ def build_workflow(prompt: str, seed: int, filename_prefix: str) -> dict:
             "unet_name": "z_image_turbo_bf16.safetensors", "weight_dtype": "default"
         }},
         "2": {"class_type": "CLIPLoader", "inputs": {
-            "clip_name": "qwen_3_4b_fp8_mixed.safetensors", "type": "pixart"
+            "clip_name": "qwen_3_4b.safetensors", "type": "pixart"
         }},
         "3": {"class_type": "VAELoader", "inputs": {
-            "vae_name": "z_image_ae.safetensors"
+            "vae_name": "ae.safetensors"
         }},
         "4": {"class_type": "CLIPTextEncode", "inputs": {
             "text": prompt, "clip": ["2", 0]
