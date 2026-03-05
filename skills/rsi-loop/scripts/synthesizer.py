@@ -408,9 +408,9 @@ def save_proposals(proposals: list) -> list:
             old["last_seen"] = datetime.now(timezone.utc).isoformat()
             with open(existing, "w") as f:
                 json.dump(old, f, indent=2)
-            # BUGFIX: update proposal object's id to match the existing file
-            # so callers using p["id"] after save_proposals() find the right file
+            # Update proposal object to match existing file — prevents false "awaiting review" counts
             p["id"] = old["id"]
+            p["status"] = old.get("status", p.get("status", "draft"))
             saved.append(str(existing))
         else:
             path = PROPOSALS_DIR / f"{p['id']}.json"
