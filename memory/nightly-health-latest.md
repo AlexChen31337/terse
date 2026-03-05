@@ -1,21 +1,24 @@
 # Nightly Health Check Report
-**Date:** 2026-03-05 12:05 AM AEDT
-**Trigger:** Nightly cron
+**Date:** 2026-03-06 12:05 AM AEDT
 
-## Results
+## Services
+| Service | Status |
+|---------|--------|
+| AlphaStrike | ✅ active |
+| EvoClaw hub | ❌ DOWN (API unreachable) |
+| GPU server | ✅ online |
 
-| Service | Status | Details |
-|---------|--------|---------|
-| **AlphaStrike** | ✅ ACTIVE | Running normally |
-| **EvoClaw Hub** | ❌ DOWN | API unreachable on http://localhost:8420 |
-| **GPU Server** | ✅ ONLINE | All 3 GPUs responsive |
-| **Skills** | ✅ 45 | Installed skill count |
-| **Memory Files** | ✅ 145 | Daily notes stored |
+## GPU Server (10.0.0.44)
+| GPU | VRAM Used | VRAM Total |
+|-----|-----------|------------|
+| RTX 3090 | 19.9 GB | 24 GB |
+| RTX 3080 | 18 MB | 10 GB |
+| RTX 2070 SUPER | 9 MB | 8 GB |
 
-## GPU Status (peter@10.0.0.44)
-- RTX 3090: 19966 MiB / 24576 MiB (81% used)
-- RTX 3080: 18 MiB / 10240 MiB (idle)
-- RTX 2070 SUPER: 9 MiB / 8192 MiB (idle)
+## Workspace
+- Skills installed: 53
+- Memory files: 145
 
-## Alert Required
-⚠️ **EvoClaw hub is DOWN** - Alerting Bowen via Telegram
+## Alerts
+- 🚨 **EvoClaw hub API is not responding** - service may be down
+- Recommendation: `systemctl --user status evoclaw-hub`

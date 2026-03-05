@@ -1,16 +1,16 @@
 {
   "lastChecks": {
-    "rsi": 1772680479,
-    "github_ci": 1772669697,
-    "email": 1772669697,
-    "blogwatcher": 1772680511,
-    "releases": 1772680479
+    "rsi": 1772709317,
+    "github_ci": 1772709317,
+    "email": 1772709317,
+    "blogwatcher": 1772709317,
+    "releases": 1772709317
   },
-  "lastRSICheck": 1772673335,
-  "rsiHealthScore": 0.087,
-  "rsiOutcomes": 238,
-  "rsiSuccessRate": 0.24,
-  "rsiAvgQuality": 1.82,
+  "lastRSICheck": 1772709317,
+  "rsiHealthScore": 0.085,
+  "rsiOutcomes": 235,
+  "rsiSuccessRate": 0.23,
+  "rsiAvgQuality": 1.8,
   "lastCIStatus": "clean",
-  "notes": "Heartbeat 14:14: RSI cycle completed (health 0.086 stable). Blogwatcher: 2 new articles (below threshold). clawinfra releases: latest v0.6.0 (no new). No open PRs. All systems nominal."
+  "notes": "Heartbeat 22:14: EvoClaw v0.6.1 released! 4 new HN articles, 1 open PR (claw-chain #56). RSI cycle ran: 6 patterns, 5 proposals, health 0.085. tool_error #1 issue (56x)."
 }
