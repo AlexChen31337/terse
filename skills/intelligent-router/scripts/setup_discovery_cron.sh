@@ -16,7 +16,7 @@ cat > /tmp/model-discovery-cron.json << 'EOF'
   "payload": {
     "kind": "systemEvent",
     "text": "Run: bash skills/intelligent-router/scripts/auto_refresh_models.sh",
-    "model": "ollama/glm-4.7-flash"
+    "model": "ollama/qwen3.5:4b"
   },
   "sessionTarget": "main",
   "enabled": true

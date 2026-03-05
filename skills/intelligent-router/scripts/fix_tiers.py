@@ -102,7 +102,7 @@ def build_tiers(models: list) -> dict:
     # SIMPLE tier: GPU-server GLM flash first (free local), then proxy-4/6, then others
     def simple_sort(m):
         pid = full_id(m)
-        if pid == "ollama-gpu-server/glm-4.7-flash":     return 0  # free local
+        if pid == "ollama/qwen3.5:4b":     return 0  # free local
         if pid == "anthropic-proxy-4/glm-4.7":           return 1  # z.ai key 2
         if pid == "anthropic-proxy-6/glm-4.7":           return 2  # z.ai key 1
         if "glm" in m["id"].lower():                     return 3

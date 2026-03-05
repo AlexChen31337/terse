@@ -7,7 +7,7 @@ Catches bad model assignments BEFORE they are created, not after they fail.
 
 Usage:
     # Validate a cron payload JSON
-    python3 router_policy.py check '{"kind":"agentTurn","model":"ollama-gpu-server/glm-4.7-flash","message":"check server"}'
+    python3 router_policy.py check '{"kind":"agentTurn","model":"ollama/qwen3.5:4b","message":"check server"}'
 
     # Get the correct model for a task (enforced recommendation)
     python3 router_policy.py recommend "monitor alphastrike service health"
@@ -37,7 +37,7 @@ CONFIG_FILE = SKILL_DIR / "config.json"
 # Models that must never be used in isolated cron jobs.
 # Reason: these are network-dependent local models that become SPOFs.
 BLOCKED_MODELS: dict[str, str] = {
-    "ollama-gpu-server/glm-4.7-flash":
+    "ollama/qwen3.5:4b":
         "GPU server Ollama binds to 127.0.0.1 by default — unreachable over LAN. "
         "Use anthropic-proxy-4/glm-4.7 or anthropic-proxy-6/glm-4.7 instead.",
     "ollama-gpu-server/qwen2.5:7b":

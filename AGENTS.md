@@ -185,7 +185,7 @@ Skills provide your tools. When you need one, check its `SKILL.md`. Keep local n
    ```bash
    uv run python skills/intelligent-router/scripts/spawn_helper.py --model-only "task description"
    ```
-   Output: e.g. `ollama-gpu-server/glm-4.7-flash` or `nvidia-nim/meta/llama-3.3-70b-instruct`
+   Output: e.g. `ollama/qwen3.5:4b` or `nvidia-nim/meta/llama-3.3-70b-instruct`
 
 2. **Use that model ID directly in sessions_spawn — no manual override:**
    ```python
@@ -205,7 +205,7 @@ That's it. The router decides. You execute. No guessing, no overriding.
 - Automatic fallback chains if primary model fails
 
 **Tier→Model mapping (auto-selected by intelligent-router — trust the output):**
-- **SIMPLE** (monitoring, heartbeat, checks, summaries) → `ollama-gpu-server/glm-4.7-flash` (FREE, 8B local GPU) or `nvidia-nim/qwen/qwen2.5-7b-instruct` ($0.15/M when GPU server offline)
+- **SIMPLE** (monitoring, heartbeat, checks, summaries) → `ollama/qwen3.5:4b` (FREE local) or `cerebras/llama-3.1-8b` (FREE cloud)
 - **MEDIUM** (code fixes, research, patches, data analysis) → `nvidia-nim/meta/llama-3.3-70b-instruct` ($0.40/M, 70B capable)
 - **COMPLEX** (features, architecture, multi-file changes) → `anthropic/claude-sonnet-4-6` ($3/M, OAuth) ← **DEFAULT FOR ALL CODING TASKS**
 - **GLM-5** (large-scale reasoning, agentic tasks) → `nvidia-nim/z-ai/glm5` ($0.5/M, 744B MoE, reasoning toggle)

@@ -47,7 +47,7 @@ python3 skills/intelligent-router/scripts/spawn_helper.py --validate '{"kind":"a
 ### ✅ CORRECT:
 ```python
 # Always specify model from router recommendation
-{"kind": "agentTurn", "message": "check server...", "model": "ollama/glm-4.7-flash"}
+{"kind": "agentTurn", "message": "check server...", "model": "ollama/qwen3.5:4b"}
 ```
 
 ---
@@ -81,8 +81,8 @@ python3 skills/intelligent-router/scripts/spawn_helper.py --validate '{"kind":"a
 ### Validate a cron payload before submitting
 ```bash
 python3 skills/intelligent-router/scripts/router_policy.py check \
-  '{"kind":"agentTurn","model":"ollama-gpu-server/glm-4.7-flash","message":"check server"}'
-# Output: VIOLATION: Blocked model 'ollama-gpu-server/glm-4.7-flash'. Recommended: anthropic-proxy-6/glm-4.7
+  '{"kind":"agentTurn","model":"ollama/qwen3.5:4b","message":"check server"}'
+# Output: VIOLATION: Blocked model 'ollama/qwen3.5:4b'. Recommended: anthropic-proxy-6/glm-4.7
 ```
 
 ### Get enforced model recommendation for a task
@@ -228,7 +228,7 @@ openclaw cron add --job '{
   "payload": {
     "kind": "systemEvent",
     "text": "Run: bash skills/intelligent-router/scripts/auto_refresh_models.sh",
-    "model": "ollama/glm-4.7-flash"
+    "model": "ollama/qwen3.5:4b"
   }
 }'
 ```

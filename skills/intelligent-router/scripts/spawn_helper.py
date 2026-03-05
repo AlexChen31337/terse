@@ -142,7 +142,7 @@ def _get_complex_primary() -> str:
 def classify_task(task_description):
     """Run router.py classify and return (tier, full_model_id, confidence).
     
-    full_model_id is always provider/id (e.g. 'ollama-gpu-server/glm-4.7-flash'),
+    full_model_id is always provider/id (e.g. 'ollama/qwen3.5:4b'),
     which is the format required by sessions_spawn(model=...) and cron payloads.
 
     User override: coding tasks always route to COMPLEX (Sonnet 4.6 per tier_overrides).

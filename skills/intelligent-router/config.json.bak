@@ -549,7 +549,7 @@
   "version": "3.2.0",
   "policy": {
     "blocked_models": [
-      "ollama-gpu-server/glm-4.7-flash",
+      "ollama-gpu-server/qwen3.5:4b",
       "ollama-gpu-server/qwen2.5:7b"
     ],
     "blocked_reason": "ollama-gpu-server binds to 127.0.0.1 by default \u2014 unreachable over LAN",
