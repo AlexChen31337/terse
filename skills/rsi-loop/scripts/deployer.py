@@ -543,8 +543,8 @@ def main():
             result = deploy_proposal(p["id"], dry_run=args.dry_run)
             print(f"  {p['id']}: {result[:100]}")
 
-        # Summary
-        remaining = [p for p in proposals if p not in auto_approved]
+        # Summary — only count genuinely new (draft) proposals as awaiting review
+        remaining = [p for p in proposals if p not in auto_approved and p.get("status") == "draft"]
         print(f"\n=== Cycle Complete ===")
         print(f"  Patterns found: {len(patterns)}")
         print(f"  Proposals generated: {len(proposals)}")
@@ -552,6 +552,8 @@ def main():
         if remaining:
             print(f"  Awaiting review: {len(remaining)} proposals")
             print("  Review with: uv run python skills/rsi-loop/scripts/synthesizer.py list")
+        else:
+            print(f"  Awaiting review: 0 (all proposals already deployed or auto-approved)")
 
     else:
         parser.print_help()
