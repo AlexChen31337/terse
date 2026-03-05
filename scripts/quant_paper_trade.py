@@ -12,7 +12,7 @@ from pathlib import Path
 
 WORKSPACE = Path(__file__).parent.parent
 PAPER_BOOK = WORKSPACE / "memory" / "paper-trades.json"
-MIN_CONFIDENCE = 0.55
+MIN_CONFIDENCE = 0.40
 
 
 def load_book() -> dict:
@@ -25,7 +25,7 @@ def save_book(book: dict):
     PAPER_BOOK.write_text(json.dumps(book, indent=2, default=str))
 
 
-def get_signals() -> list[dict]:
+def get_signals() -> list[dict] | None:
     result = subprocess.run(
         ["uv", "run", "python",
          str(WORKSPACE / "skills/alphastrike/scripts/alphastrike_signal.py"),
@@ -34,9 +34,16 @@ def get_signals() -> list[dict]:
     )
     if result.returncode != 0:
         print(f"Signal error: {result.stderr[:200]}", file=sys.stderr)
-        return []
-    data = json.loads(result.stdout)
-    return data.get("signals", [])
+        return None
+    try:
+        data = json.loads(result.stdout)
+        if not data.get("ok"):
+            print(f"Signal API error: {data.get('error', 'unknown')[:200]}", file=sys.stderr)
+            return None
+        return data.get("signals", [])
+    except json.JSONDecodeError as e:
+        print(f"Signal JSON decode error: {e}", file=sys.stderr)
+        return None
 
 
 def compute_equity(book: dict) -> float:
@@ -113,7 +120,9 @@ def main():
     book = load_book()
     signals = get_signals()
 
-    if not signals:
+    # Empty signals is valid (all assets below threshold)
+    # Only fail if signals is None (error state)
+    if signals is None:
         print("[Quant] Failed to get signals")
         return
 

@@ -30,13 +30,13 @@ HL_INFO_URL = "https://api.hyperliquid.xyz/info"
 HL_EXCHANGE_URL = "https://api.hyperliquid.xyz/exchange"
 
 # Technical indicator thresholds
-RSI_OVERBOUGHT = 70
-RSI_OVERSOLD = 30
+RSI_OVERBOUGHT = 65
+RSI_OVERSOLD = 35
 MACD_BULL_THRESHOLD = 0
 MACD_BEAR_THRESHOLD = 0
 EMA_THRESHOLD = 0
 BB_THRESHOLD = 0
-VOLUME_CONFIRM = 1.5
+VOLUME_CONFIRM = 1.0
 
 # Signal confidence levels
 CONFIDENCE_HIGH = 0.8
@@ -62,6 +62,7 @@ class Indicators:
     bb_position: float | None = None  # 0-1, where 1 = at upper band
     atr_14: float | None = None
     volume_ratio: float | None = None
+    macd_hist_prev: float | None = None  # previous bar macd histogram (for slope)
 
 
 @dataclass
@@ -291,6 +292,7 @@ def calculate_indicators(candles: list[dict]) -> Indicators:
 
     # MACD
     macd, macd_sig, macd_h = calculate_macd(closes)
+    _, _, macd_h_prev = calculate_macd(closes[:-1])
 
     # EMA crossover (9/21)
     ema_9 = calculate_ema(closes, 9)
@@ -330,6 +332,7 @@ def calculate_indicators(candles: list[dict]) -> Indicators:
         bb_position=bb_position,
         atr_14=atr,
         volume_ratio=vol_ratio,
+        macd_hist_prev=macd_h_prev,
     )
 
 
@@ -356,8 +359,16 @@ def generate_signal(asset: str, indicators: Indicators, current_price: float) ->
             bearish_signals += 1
             reasons.append(f"RSI overbought ({indicators.rsi_14:.1f})")
 
-    # MACD signals
-    if indicators.macd_hist:
+    # MACD signals — use momentum (slope) so rising histogram = bullish even if negative
+    if indicators.macd_hist is not None and indicators.macd_hist_prev is not None:
+        macd_slope = indicators.macd_hist - indicators.macd_hist_prev
+        if macd_slope > 0:
+            bullish_signals += 1
+            reasons.append(f"MACD rising (slope +{macd_slope:.4f}, hist {indicators.macd_hist:.4f})")
+        else:
+            bearish_signals += 1
+            reasons.append(f"MACD falling (slope {macd_slope:.4f}, hist {indicators.macd_hist:.4f})")
+    elif indicators.macd_hist is not None:
         if indicators.macd_hist > 0:
             bullish_signals += 1
             reasons.append(f"MACD bullish (hist {indicators.macd_hist:.4f})")
@@ -390,12 +401,12 @@ def generate_signal(asset: str, indicators: Indicators, current_price: float) ->
     signal: SIGNALS = "HOLD"
     confidence = 0.0
 
-    if bullish_signals >= 3 and volume_confirmed:
+    if bullish_signals >= 2 and volume_confirmed:
         signal = "LONG"
-        confidence = CONFIDENCE_HIGH if bullish_signals >= 4 else CONFIDENCE_MED
-    elif bearish_signals >= 3 and volume_confirmed:
+        confidence = CONFIDENCE_HIGH if bullish_signals >= 3 else CONFIDENCE_MED
+    elif bearish_signals >= 2 and volume_confirmed:
         signal = "SHORT"
-        confidence = CONFIDENCE_HIGH if bearish_signals >= 4 else CONFIDENCE_MED
+        confidence = CONFIDENCE_HIGH if bearish_signals >= 3 else CONFIDENCE_MED
     elif bullish_signals >= 2:
         signal = "LONG"
         confidence = CONFIDENCE_LOW
