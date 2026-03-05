@@ -576,6 +576,8 @@ class IntelligentRouter:
         # Validate fallback chains
         routing_rules = self.config.get('routing_rules', {})
         for tier, rules in routing_rules.items():
+            if not isinstance(rules, dict):
+                continue  # skip non-dict entries (e.g. on_rate_limit, backoff configs)
             if 'fallback_chain' in rules:
                 for fallback_id in rules['fallback_chain']:
                     if not any(self._model_matches(m, fallback_id) for m in self.config.get('models', [])):
