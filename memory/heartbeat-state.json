@@ -1,16 +1,16 @@
 {
   "lastChecks": {
-    "rsi": 1772766926,
-    "github_ci": 1772766926,
-    "email": 1772766926,
-    "blogwatcher": 1772766926,
-    "releases": 1772766926
+    "rsi": 1772792121,
+    "github_ci": 1772792121,
+    "email": 1772792121,
+    "blogwatcher": 1772792121,
+    "releases": 1772792121
   },
-  "lastRSICheck": 1772766926,
-  "rsiHealthScore": 0.092,
-  "rsiOutcomes": 244,
-  "rsiSuccessRate": 0.24,
-  "rsiAvgQuality": 1.84,
+  "lastRSICheck": 1772784916,
+  "rsiHealthScore": 0.094,
+  "rsiOutcomes": 250,
+  "rsiSuccessRate": 0.25,
+  "rsiAvgQuality": 1.86,
   "lastCIStatus": "clean",
-  "notes": "Heartbeat 14:14: RSI cycle ran, 5 proposals generated, 1 auto-approved (3a2dc2d1). Health score 0.092 (below threshold but patterns are known: tool_error, context_loss). 4 new HN articles. EvoClaw v0.6.1 latest. No open PRs. No CI failures. No active tasks. 2 shim events logged (context_loss x3, tool_error x1)."
+  "notes": "Heartbeat 21:14: All systems nominal. 2 new HN articles (not critical). No new releases (v0.6.1 known). No open PRs. RSI last checked 1h ago (health 0.094)."
 }
