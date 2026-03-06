@@ -1,8 +1,8 @@
 {
   "last_published": "2026-03-01",
   "published_count": 1,
-  "topic_index": 7,
-  "last_backup": "2026-03-05",
+  "topic_index": 8,
+  "last_backup": "2026-03-06",
   "drafts": [
     {
       "date": "2026-03-01",
@@ -47,6 +47,13 @@
       "title": "AI写作工厂：让机器替你码字，你只负责数钱",
       "github": "bowen31337/mbd-book-ideas",
       "folder": "2026-03-05_AI写作工厂_让机器替你码字你只负责数钱",
+      "status": "backed_up"
+    },
+    {
+      "date": "2026-03-06",
+      "title": "AI副业指南：躺平时代的主动收入密码",
+      "github": "bowen31337/mbd-book-ideas",
+      "folder": "2026-03-06_AI副业指南_躺平时代的主动收入密码",
       "status": "backed_up"
     }
   ]

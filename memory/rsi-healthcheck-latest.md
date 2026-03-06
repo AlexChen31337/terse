@@ -1,52 +1,56 @@
 # RSI Loop Health Check Report
-**Date:** 2026-03-05 03:00 AEDT
-**Status:** ⚠️ HEALTH ALERT — Health score 0.094 < 0.3 threshold
+
+**Date:** Friday, March 6th, 2026 — 3:00 AM AEDT
+**Trigger:** Nightly cron health check
+
+## Health Score
+
+**Current Score: 0.087 / 1.0** ⚠️ CRITICAL (threshold: < 0.3)
 
 ## Status Summary
-- **Health Score:** 0.094 / 1.0 (CRITICAL — below 0.3 threshold)
-- **Outcomes (7d):** 245 logged
-- **Success Rate:** 25%
-- **Avg Quality:** 1.87/5
 
-## Top Failure Patterns (Detected)
-1. **[1.257]** In 'tool_call' tasks, 'none' occurs 77x with 100% failure rate
-2. **[0.722]** In 'tool_call' tasks, 'tool_error' occurs 59x with 100% failure rate
-3. **[0.535]** In 'unknown' tasks, 'none' occurs 34x with 100% failure rate
-
-**Top Issues (7d):**
-- tool_error: 59 occurrences
-- context_loss: 57 occurrences
-- rate_limit: 11 occurrences
-
-## Auto-Fix Cycle Results
-- **Patterns Found:** 7
+- **Outcomes (7d):** 234 logged
+- **Success Rate:** 24% (very low)
+- **Avg Quality:** 1.82/5
+- **Patterns Detected:** 6
 - **Proposals Generated:** 5
-- **Auto-Approved:** 1 (3a2dc2d1 — model routing rate limits, 20min effort)
-- **Deployed:** 0 (deployment failed: status was already 'deployed')
-- **Awaiting Review:** 4 proposals
+- **Auto-Approved:** 1 (3a2dc2d1 - "Fix model routing rate limits")
+- **Proposals Deployed:** 22 (all-time)
 
-### Generated Proposals
-1. **b9e26a71** — Address 'tool_error' in 'tool_call' tasks
-2. **3a2dc2d1** — Fix model routing rate limits [Gene]
-3. **0041c57f** — Fix rate_limit in 'model_routing' tasks
+## Top Issues (Last 7 Days)
+
+1. **tool_error** (56 occurrences) — highest priority
+2. **context_loss** (54 occurrences)
+3. **rate_limit** (11 occurrences)
+
+## Top Patterns Detected
+
+1. **[1.318]** In 'tool_call' tasks, 'none' occurs 78x with 100% failure rate
+2. **[0.725]** In 'tool_call' tasks, 'tool_error' occurs 57x with 100% failure rate
+3. **[0.538]** In 'unknown' tasks, 'none' occurs 33x with 100% failure rate
+
+## Auto-Fix Proposals Generated This Cycle
+
+- `b9e26a71`: Address 'tool_error' in 'tool_call' tasks
+- `3a2dc2d1`: [Gene] Fix model routing rate limits (auto-approved)
+- `0041c57f`: Fix: In 'model_routing' tasks, 'rate_limit' occurs 2x with 100% failure
 
 ## Test Results
-✅ All tests passed (32/32 in 0.72s)
-- test_auto_observe.py: 21 passed
-- test_auto_fix.py: 11 passed
 
-## Action Required
-⚠️ **Health score 0.094 < 0.3 threshold — Bowen notified**
+**Status:** ✅ ALL PASSED (32/32 tests in 0.76s)
 
-### Immediate Actions Recommended
-1. Review the 4 pending proposals with: `uv run python skills/rsi-loop/scripts/synthesizer.py list`
-2. Investigate the 'tool_call' + 'tool_error' pattern (59 occurrences, 100% failure)
-3. Fix the deployment bug (proposal status transitions incorrectly)
-4. Address context_loss issues (57 occurrences — likely compaction-related)
+- `test_auto_observe.py`: 19 tests passed
+- `test_auto_fix.py`: 13 tests passed
 
-## Deployment Stats
-- Total Proposals: 22 deployed, 4 pending review
-- Deployed Proposals: 22
+## Alert Status
 
----
-*Report saved automatically by RSI Loop health check cron*
+🚨 **HEALTH SCORE BELOW THRESHOLD** — 0.087 < 0.3
+
+**Recommendation:** Alert required — Bowen should review top patterns and consider deploying the pending proposals.
+
+## Next Steps
+
+1. Review the 3 proposals generated this cycle
+2. Address the 'tool_error' pattern in 'tool_call' tasks (57 failures)
+3. Investigate high context_loss rate (54 occurrences)
+4. Consider deployment of auto-approved proposal 3a2dc2d1
