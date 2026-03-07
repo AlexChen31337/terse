@@ -38,11 +38,47 @@
 
 ---
 
+## Hunt #2 — 2026-03-07 16:00 AEDT
+
+**Scan Summary:**
+- GitHub `label:bounty` issues searched: 20 (top results)
+- GitHub `label:"help wanted"` issues searched: 10
+- Scan duration: ~2 minutes
+
+### Bounties Found & ROI Filter
+
+| # | Repo | Title | Reward | Currency | Complexity | Decision |
+|---|------|-------|--------|----------|------------|----------|
+| 1 | Scottcjn/rustchain-bounties (×18) | Various RustChain/BoTTube tasks | 0.5–200 RTC | **RTC token** | 1–8/10 | ❌ SKIP — non-mainstream token |
+| 2 | Various "help wanted" | Trivial content contributions | None/trivial | N/A | 1/10 | ❌ SKIP — no cash value |
+
+**Notable RTC bounties reviewed (for future reference if RTC gains USD value):**
+- Backup Verification Script: 10 RTC, complexity 2 — simplest task, bash/Python
+- Multi-Node Health Dashboard: 15–20 RTC, complexity 3 — static HTML
+- Epoch Reporter Bot: 10–15 RTC, complexity 3 — Python cron + Discord webhook
+- Bounty Verification Bot: 50–75 RTC, complexity 5 — GitHub Action (best ROI if token had value)
+- Native Rust Wallet: 50–100 RTC, complexity 7 — high skill, worthwhile if USD-backed
+
+### Result: **0 qualifying bounties this cycle**
+
+**Root cause:** Same as Hunt #1 — GitHub bounty ecosystem dominated by custom tokens.
+The entire rustchain-bounties board pays in RTC, not USD/ETH/USDC.
+
+### Actions Taken
+- No issues claimed
+- No PRs opened  
+- No subagents spawned (cost: ~$0.01 token scan)
+
+### Income This Cycle: $0
+
+---
+
 ## Cumulative Income
 
 | Date | Amount | Source |
 |------|--------|--------|
-| 2026-03-07 | $0 | Hunt #1 — dry scan |
+| 2026-03-07 10:00 | $0 | Hunt #1 — dry scan |
+| 2026-03-07 16:00 | $0 | Hunt #2 — RTC tokens only |
 
 **Total: $0**
 

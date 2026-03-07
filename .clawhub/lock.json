@@ -72,6 +72,10 @@
     "model-usage": {
       "version": "1.0.0",
       "installedAt": 1772659297398
+    },
+    "cryptocom-trading-bot": {
+      "version": "1.0.0",
+      "installedAt": 1772871050555
     }
   }
 }

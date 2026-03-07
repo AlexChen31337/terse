@@ -19,7 +19,7 @@ When operating in the human world — registering for services, filling forms, i
 
 **Social Accounts:**
 - Twitter: @AlexChen31337 ✅ (7-tweet thread posted)
-- Reddit: u/AlexChen31337 ✅ (authenticated, 4 posts prepared)
+- Reddit: u/Optimal-Tell-8772 ✅ (active, posting via OAuth API — original u/AlexChen31337 was deleted/never created, username is available for re-registration)
 - Discord: alexchen31337 ✅ (verified)
 - GitHub: Contributing as "ClawChain Bot" to clawinfra org
 

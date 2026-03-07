@@ -1,67 +1,95 @@
 {
-  "last_published": "2026-03-01",
-  "published_count": 1,
-  "topic_index": 9,
-  "last_backup": "2026-03-07",
-  "drafts": [
-    {
-      "date": "2026-03-01",
-      "title": "AI副业指南：躺着月入五位数的真实路径",
-      "productid": 1083853,
-      "urlkey": "YZWblZ5uZw=="
-    },
-    {
-      "date": "2026-03-01",
-      "title": "OpenClaw智能体军团：从单机到集群的完整构建指南",
-      "file": "/workspace/content/blog/agent-teams-guide.md",
-      "github": "bowen31337/mbd-book-ideas",
-      "cover": "/tmp/mbd_cover_agent_teams.png",
-      "status": "draft_ready_for_review"
-    },
-    {
+  "lastRun": "2026-03-08T00:30:00+11:00",
+  "drafts": {
+    "1085514": {
+      "name": "赛博朋克副业：当AI成为你的赚钱外挂",
+      "urlkey": "YZWbl5tqaA==",
+      "status": "draft_created",
+      "price": 19.9,
+      "category": "写作",
       "date": "2026-03-02",
-      "title": "赛博朋克副业：当AI成为你的赚钱外挂",
-      "github": "bowen31337/mbd-book-ideas",
-      "cover": "covers/2026-03-02.png",
-      "content": "books/2026-03-02/content.md",
-      "status": "backed_up"
+      "publishBlocker": "Account needs creator verification"
     },
-    {
+    "1085515": {
+      "name": "AI恋爱教练：当算法开始懂你的心",
+      "urlkey": "YZWbl5tqaQ==",
+      "status": "draft_created",
+      "price": 19.9,
+      "category": "写作",
       "date": "2026-03-03",
-      "title": "AI恋爱教练：当算法开始懂你的心",
-      "github": "bowen31337/mbd-book-ideas",
-      "cover": "covers/2026-03-03.png",
-      "content": "books/2026-03-03/content.md",
-      "status": "backed_up"
+      "publishBlocker": "Account needs creator verification"
     },
-    {
+    "1085516": {
+      "name": "懒人理财经：让AI替你盯盘、选基、算账",
+      "urlkey": "YZWbl5tqag==",
+      "status": "draft_created",
+      "price": 19.9,
+      "category": "科技",
       "date": "2026-03-04",
-      "title": "懒人理财经：让AI替你盯盘、选基、算账",
-      "github": "bowen31337/mbd-book-ideas",
-      "cover": "covers/2026-03-04.png",
-      "content": "books/2026-03-04/content.md",
-      "status": "backed_up"
+      "publishBlocker": "Account needs creator verification"
     },
-    {
+    "1085517": {
+      "name": "AI写作工厂：让机器替你码字，你只负责数钱",
+      "urlkey": "YZWbl5tqaw==",
+      "status": "draft_created",
+      "price": 19.9,
+      "category": "写作",
       "date": "2026-03-05",
-      "title": "AI写作工厂：让机器替你码字，你只负责数钱",
-      "github": "bowen31337/mbd-book-ideas",
-      "folder": "2026-03-05_AI写作工厂_让机器替你码字你只负责数钱",
-      "status": "backed_up"
+      "publishBlocker": "Account needs creator verification"
     },
-    {
+    "1085518": {
+      "name": "AI副业指南：躺平时代的主动收入密码",
+      "urlkey": "YZWbl5tqbA==",
+      "status": "draft_created",
+      "price": 19.9,
+      "category": "科技",
       "date": "2026-03-06",
-      "title": "AI副业指南：躺平时代的主动收入密码",
-      "github": "bowen31337/mbd-book-ideas",
-      "folder": "2026-03-06_AI副业指南_躺平时代的主动收入密码",
-      "status": "backed_up"
+      "publishBlocker": "Account needs creator verification"
     },
-    {
+    "1085519": {
+      "name": "提示词炼金术：把AI调教成你的专属印钞机",
+      "urlkey": "YZWbl5tqbQ==",
+      "status": "draft_created",
+      "price": 19.9,
+      "category": "科技",
       "date": "2026-03-07",
-      "title": "提示词炼金术：把AI调教成你的专属印钞机",
-      "github": "bowen31337/mbd-book-ideas",
-      "folder": "2026-03-07_提示词炼金术_把AI调教成你的专属印钞机",
-      "status": "backed_up"
+      "publishBlocker": "Account needs creator verification"
+    },
+    "harness-2026-03-08": {
+      "name": "AI工程革命：我们如何用\"驾驭框架\"让AI稳定写出百万行代码",
+      "status": "backed_up",
+      "price": 19.9,
+      "category": "科技",
+      "date": "2026-03-08",
+      "filePath": "/tmp/mbd-book-ideas/2026-03-08_AI工程革命_驾驭框架让AI稳定写出百万行代码/AI工程革命.md",
+      "githubBacked": true,
+      "note": "Backed up to GitHub. Awaiting MbD publish instruction from owner."
     }
-  ]
+  },
+  "twitter": {
+    "status": "posted",
+    "tweetId": "2030203251837300774",
+    "url": "https://x.com/AlexChen31337/status/2030203251837300774",
+    "account": "@AlexChen31337",
+    "postedAt": "2026-03-07T08:45:49+00:00"
+  },
+  "reddit": {
+    "status": "blocked",
+    "reason": "CAPTCHA required, session authenticates as wrong account (Optimal-Tell-8772)",
+    "postsPrepped": [
+      "r/ChatGPT",
+      "r/artificial",
+      "r/singularity"
+    ]
+  },
+  "devto": {
+    "status": "pending_verification",
+    "email": "alex.chen31337@gmail.com",
+    "username": "alexchen31337",
+    "articlePrepped": "/tmp/devto-article.md"
+  },
+  "telegram": {
+    "status": "not_started",
+    "reason": "Bot API cannot create channels"
+  }
 }
