@@ -1,86 +1,64 @@
-# INCOME_MANAGEMENT.md — Atlas Bounty Hunter Log
+# INCOME_MANAGEMENT.md — Atlas Bounty Hunt Log
 
----
+## Hunt #1 — 2026-03-07 10:00 AEST
 
-## Session: 2026-03-06 4:00 PM AEDT (Afternoon Scan #2)
+**Scan Summary:**
+- GitHub `label:bounty` issues searched: 100 (from 12 unique repos)
+- GitHub `label:"help wanted"` issues searched: 20
+- Scan duration: ~3 minutes
 
-### Scan Summary
+### Bounties Found & ROI Filter
 
-**Scanned:** 70+ GitHub issues (`bounty` + `💎 Bounty` + `help wanted` labels)
-**Mainstream Currency Filter:** USD/ETH/USDC only
-**Viable Candidates Found:** 0 (all contested or filtered out)
+| # | Repo | Title | Reward | Currency | Complexity | Decision |
+|---|------|-------|--------|----------|------------|----------|
+| 1 | ChinchillaEnterprises/openclaw-crm #15 | Complete 5-task implementation | $3 | USD | 4/10 | ❌ SKIP — below $20 threshold |
+| 2 | peteromallet/desloppify #204 | Find poorly-engineered code ($1k) | $1,000 | USD | 5/10 | ❌ SKIP — deadline expired Mar 6 UTC |
+| 3 | Dasharo/dasharo-issues #1273 | EC Testability Interface | $1,000 | USD | 9/10 | ❌ SKIP — embedded HW complexity |
+| 4 | Dasharo/dasharo-issues #1790 | DTS nightly branch config fix | Unknown | N/A | 5/10 | ❌ SKIP — no explicit USD payout |
+| 5 | fengking-li/group-buying-data-monitor #1 | OpenClaw data monitor system | ¥3,000 | CNY/WeChat | 7/10 | ❌ SKIP — WeChat-only, not mainstream |
+| 6 | Scottcjn/rustchain-bounties (multiple) | Various RTC tasks | Various | RTC token | 2-6/10 | ❌ SKIP — non-mainstream token |
+| 7 | INDIGOAZUL/la-tanda-web (multiple) | Frontend/docs features | Various | LTD token | 3-7/10 | ❌ SKIP — non-mainstream token |
+| 8 | Chevalier12/InkkSlinger (2x) | MediaElement / InkCanvas impl | License | Software | 7/10 | ❌ SKIP — no cash value |
 
-### Candidates Evaluated
+### Result: **0 qualifying bounties this cycle**
 
-| Title | Reward | Currency | Complexity | Competition | Decision |
-|-------|--------|----------|------------|-------------|----------|
-| nuclei XSS Context Analyzer | $100 | USD (Algora) | 4/10 | **5 PRs open** | ❌ Too late |
-| Coolify TCP Proxy Timeout | $100 | USD (Algora) | 5/10 | 2 PRs open | ❌ Contested |
-| Coolify Predefined Server Env Vars | $111 | USD (Algora) | 6/10 | 1 PR open | ❌ Contested + high complexity |
-| Coolify OAuth Self-Register | $50 | USD (Algora) | 5/10 | 1 PR open | ❌ Contested |
-| Archestra MCP Apps | $900 | USD (Algora) | 8/10 | 145 comments, 1 PR | ❌ Complexity > 6, reward < $1000 |
-| tscircuit matchpack decoupling caps | $300 | USD (Algora) | 7/10 | **5 PRs open** | ❌ Too late |
-| tscircuit capacitive touch slider | $200 | USD (Algora) | 6/10 | 3 attempts + PR | ❌ Contested |
-| projectdiscovery/dnsx auto-wildcard | $100 | USD (Algora) | 5/10 | **5 PRs open** | ❌ Too late |
-| FinMind login anomaly detection | $50 | USD (Algora) | 5/10 | **5 PRs open** | ❌ Too late |
-| FinMind smart weekly digest | $50 | USD (Algora) | 4/10 | **5 PRs open** | ❌ Too late |
-| FinMind shared household budgeting | $20 | USD (Algora) | 4/10 | **5 PRs open** | ❌ Too late |
-| Databuddy feature flag folders | $15 | USD (Algora) | 3/10 | low | ❌ Below $20 threshold |
-
-### Non-Mainstream Currency (Auto-Filtered)
-- **LTD tokens** — La Tanda Web: 7 issues (100–300 LTD) → Not USD/ETH/USDC
-- **RTC tokens** — RustChain: 15+ issues → Not USD/ETH/USDC
-- **SOL** — Desloppify $1000 (deadline 4PM UTC today) → Not in approved list
+**Root cause:** The current GitHub bounty market is dominated by:
+1. Custom/shitcoin token rewards (RTC, LTD, etc.)
+2. Sub-$20 micro-bounties (openclaw-crm $3 total)
+3. High-complexity embedded/firmware tasks ($1k Dasharo EC)
+4. Expired bounties (desloppify deadline passed)
+5. Regional payment rails (Chinese WeChat/RMB)
 
 ### Actions Taken
-- **None** — no bounties cleared all filters in this cycle
-- Desloppify ($1000 SOL, deadline today) is the only high-ROI opportunity — blocked by SOL currency rule
+- No issues claimed (nothing qualifying)
+- No PRs opened
+- No token spent on subagents
+
+### Income This Cycle: $0
 
 ---
 
-## Market Intelligence (Updated 2026-03-06)
+## Cumulative Income
 
-**Key finding:** The Algora/GitHub bounty market is **extremely saturated**. Popular repos ($50–$300 USD range) accumulate 5+ competing PRs within 24–48 hours of bounty posting. The viable window to be first-mover is narrow (< 6 hours after posting).
+| Date | Amount | Source |
+|------|--------|--------|
+| 2026-03-07 | $0 | Hunt #1 — dry scan |
 
-**Best strategy going forward:**
-1. Monitor algora.io for bounties posted < 6 hours ago
-2. Target mid-range ($100–$300) on less-popular repos (< 500 stars)
-3. Consider Coolify `$111` env vars bounty — only 1 PR, maintainer not yet accepted it
-4. Consider Desloppify if Bowen approves SOL as valid currency
-
-**Pending Bowen Decision:**
-- ✅ Approve SOL → Attempt Desloppify $1000 (deadline 4PM UTC today, ~11h remaining)
-- ❌ Keep USD/ETH/USDC only → Continue monitoring
+**Total: $0**
 
 ---
 
-## Session: 2026-03-06 10:00 AM AEDT (Morning Scan #1)
+## Next Steps / Recommendations
 
-### Candidates Evaluated
-
-| Title | Reward | Currency | Complexity | ROI | Decision |
-|-------|--------|----------|------------|-----|----------|
-| Cap Deeplinks + Raycast Extension | $200 | USD (Algora) | 5 | $40/pt | ❌ 57 comments, contested |
-| Coolify TCP Proxy Timeout Fix | $100 | USD (Algora) | 4 | $25/pt | ❌ PR already submitted |
-| Coolify SSH Auth Bug | $250 | USD (Algora) | 7 | $36/pt | ❌ Core Team Only |
-| ROS2 Humble → Jazzy Upgrade | $100 | USD (Algora) | 6 | $17/pt | ❌ Complexity vs reward |
-| FinMind Universal Deployment | $1000 | USD/crypto | 9 | $111/pt | ❌ Complexity 9 |
-| Desloppify bad engineering | $1000 | SOL | 4 | $250/pt | ⚠️ SOL not USD/ETH/USDC |
-| OpenPango GitHub App | $11 | USD/ETH | 4 | $3/pt | ❌ Below $20 threshold |
-
-### Actions Taken
-- None — no viable candidates
+1. **Expand search scope**: Try `label:bounty` + TypeScript/Go language filters on GitHub
+2. **Check Gitcoin**: https://gitcoin.co — more structured USD bounties
+3. **Check Algora**: https://algora.io — OSS bounties with PayPal/Stripe payouts
+4. **Check IssueHunt**: https://issuehunt.io — established platform
+5. **Check Bountysource**: legacy but some active USD bounties
+6. **Monitor desloppify #204**: Issue still open — if no winner declared, watch for new bounties from same author
+7. **Flag for Bowen**: ¥3000 (~$415) Chinese data monitor task if payment can be arranged via bank transfer instead of WeChat
 
 ---
 
-## Totals
-
-| Metric | Value |
-|--------|-------|
-| Scans completed | 2 |
-| Bounties found | 70+ |
-| Mainstream USD/ETH bounties | ~12 |
-| Bounties with open slot | 0 |
-| PRs submitted | 0 |
-| Income earned | $0 |
-| Pending opportunities | Desloppify $1000 (SOL, needs approval) |
+*Atlas — autonomous bounty hunter agent*
+*Operated by Alex Chen | OpenClaw workspace*

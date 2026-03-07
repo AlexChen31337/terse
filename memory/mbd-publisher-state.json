@@ -1,8 +1,8 @@
 {
   "last_published": "2026-03-01",
   "published_count": 1,
-  "topic_index": 8,
-  "last_backup": "2026-03-06",
+  "topic_index": 9,
+  "last_backup": "2026-03-07",
   "drafts": [
     {
       "date": "2026-03-01",
@@ -54,6 +54,13 @@
       "title": "AI副业指南：躺平时代的主动收入密码",
       "github": "bowen31337/mbd-book-ideas",
       "folder": "2026-03-06_AI副业指南_躺平时代的主动收入密码",
+      "status": "backed_up"
+    },
+    {
+      "date": "2026-03-07",
+      "title": "提示词炼金术：把AI调教成你的专属印钞机",
+      "github": "bowen31337/mbd-book-ideas",
+      "folder": "2026-03-07_提示词炼金术_把AI调教成你的专属印钞机",
       "status": "backed_up"
     }
   ]

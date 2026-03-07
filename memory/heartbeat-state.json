@@ -1,16 +1,16 @@
 {
   "lastChecks": {
-    "rsi": 1772792121,
-    "github_ci": 1772792121,
-    "email": 1772792121,
-    "blogwatcher": 1772792121,
-    "releases": 1772792121
+    "rsi": 1772846097,
+    "github_ci": 1740956147,
+    "email": 1740956147,
+    "blogwatcher": 1772846097,
+    "releases": 1772846097
   },
-  "lastRSICheck": 1772784916,
-  "rsiHealthScore": 0.094,
-  "rsiOutcomes": 250,
-  "rsiSuccessRate": 0.25,
-  "rsiAvgQuality": 1.86,
+  "lastRSICheck": 1772846097,
+  "rsiHealthScore": 0.096,
+  "rsiOutcomes": 217,
+  "rsiSuccessRate": 0.26,
+  "rsiAvgQuality": 1.82,
   "lastCIStatus": "clean",
-  "notes": "Heartbeat 21:14: All systems nominal. 2 new HN articles (not critical). No new releases (v0.6.1 known). No open PRs. RSI last checked 1h ago (health 0.094)."
+  "notes": "Heartbeat 12:14: All systems nominal. 3 new articles on HN (below alert threshold). No new clawinfra releases (v0.6.1 still latest). No open PRs. RSI cycle run — health 0.096, 22 proposals deployed, 2 new fixes auto-approved."
 }
