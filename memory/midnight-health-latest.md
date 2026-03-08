@@ -1,94 +1,88 @@
 # Midnight Health Check Report
-**Date:** 2026-03-08 12:00 AM AEDT
-**Status:** ⚠️ 2 CRITICAL FAILURES
-
----
+**Date**: Monday, March 9th, 2026 — 12:00 AM (AEDT)
+**Checked by**: Sentinel (cron:3b4465c3-4a20-4e25-8325-30d108cd3f04)
 
 ## Summary
-| Component | Status | Details |
-|-----------|--------|---------|
-| Sentinel | ✅ OK | State loaded, last price check: 2h ago |
-| Quant | ⚠️ DECOMMISSIONED | Simmer trading -70% loss, decommissioned 2026-02-28 |
-| Shield | ⚠️ MISSING | access-control.json not found |
-| Herald | ✅ OK | State loaded, no activity |
-| AlphaStrike | ✅ RUNNING | systemd service active |
-| EvoClaw Hub | ❌ DOWN | http://localhost:8420 not responding |
-| Alex Eye (Pi) | ❌ DOWN | SSH timeout to pi@192.168.1.100 |
-| Disk (/media/DATA) | ✅ OK | 54% used (477G/937G) |
-| Disk (/data2) | ⚠️ MISSING | No output from df |
+🚨 **CRITICAL**: 2 systems DOWN, 1 MISSING, 1 DECOMMISSIONED
+Alert sent to Bowen (Telegram: 2069029798)
 
 ---
 
-## Critical Issues Requiring Attention
+## Component Status
 
-### 1. EvoClaw Hub - DOWN
-- **Endpoint:** http://localhost:8420/api/agents
-- **Error:** Connection timeout
-- **Impact:** No agent registration service
-- **Action Required:** Restart hub service
+### ✅ Sentinel — OK
+- **State**: /home/bowen/.openclaw/workspace-sentinel/memory/sentinel-state.json
+- **Last Price Check**: 1772973722 (2025-12-05)
+- **Fear & Greed**: 12 (Extreme Fear)
+- **Last Alerts**: BTC, FNG logged
+- **Status**: Operational
 
-### 2. Alex Eye (Pi) - DOWN
-- **Host:** pi@192.168.1.100
-- **Error:** SSH connection timeout
-- **Impact:** Camera monitoring offline
-- **Action Required:** Check Pi power/network, restart if needed
+### ⚠️ Quant — DECOMMISSIONED
+- **State**: /home/bowen/.openclaw/workspace-quant/memory/quant-state.json
+- **Status**: `DECOMMISSIONED` since 2026-02-28
+- **Reason**: Simmer trading -70% loss ($21→$6.46), no proven edge
+- **Capital Remaining**: $6.46 USDC
+- **Last FearHarvester**: 2026-02-28T06:21:30+11:00 (HOLD, FG=13)
+- **AlphaStrike Service**: `active` (systemd)
+- **Positions**: None
+- **Note**: Service running but trading logic decommissioned
 
-### 3. Shield - MISSING STATE
-- **File:** ~/.openclaw/workspace-shield/access-control.json
-- **Impact:** No access control state tracking
-- **Action Required:** Initialize Shield state
+### ❌ Shield — MISSING
+- **Expected**: /home/bowen/.openclaw/workspace-shield/access-control.json
+- **Error**: File not found (ENOENT)
+- **Impact**: Unknown (access control state unavailable)
+- **Action Required**: Initialize or restore Shield state
+
+### ✅ Herald — OK (Idle)
+- **State**: /home/bowen/.openclaw/workspace-herald/memory/herald-state.json
+- **Last Checks**: Twitter=0, Moltbook=0, Analytics=0
+- **Posts/Scheduled**: None
+- **Status**: Operational but inactive
+
+### ❌ EvoClaw Hub — DOWN (RESTART FAILED)
+- **Endpoint**: http://localhost:8420/api/agents
+- **Status**: HUB_DOWN → HUB_RESTART_FAILED
+- **Actions Taken**:
+  1. Checked endpoint: DOWN
+  2. Attempted `systemctl --user start evoclaw-hub`
+  3. Re-checked endpoint: still DOWN
+  4. Checked logs: No journal entries found
+- **Impact**: Agent registration/discovery unavailable
+- **Action Required**: Manual investigation (service config, port conflicts)
+
+### ❌ Alex Eye (Pi) — DOWN (RESTART FAILED)
+- **Host**: pi@10.0.0.50
+- **Status**: ALEX_EYE_DOWN → ALEX_EYE_RESTART_FAILED
+- **Actions Taken**:
+  1. SSH connection: FAILED
+  2. Remote restart command: FAILED
+- **Impact**: Vision/camera monitoring unavailable
+- **Action Required**: Physical access or network diagnostics
 
 ---
 
-## Component Details
+## Infrastructure
 
-### Sentinel ✅
-- **State:** Loaded
-- **Last Price Check:** 1741353710 (~2 hours ago)
-- **BTC:** $67,941.50
-- **ETH:** $1,983.85
-- **SOL:** $84.52
-- **HYPE:** $30.71
-- **Fear & Greed:** 12 (Extreme Fear)
-- **Recent Alerts:** BTC, ETH, SOL, HYPE, FNG
+### Disk Space
+- **/**: 55% used (482G/937G, 408G free)
+- **/media/DATA**: Not mounted (no data)
+- **/data2**: Not available (no data)
 
-### Quant ⚠️ (DECOMMISSIONED)
-- **Status:** DECOMMISSIONED
-- **Reason:** Simmer trading -70% loss ($21 → $6.46)
-- **Decommissioned:** 2026-02-28
-- **Capital Remaining:** $6.46 USDC
-- **AlphaStrike Service:** ✅ Still running (systemd active)
-- **Note:** Service running but Quant logic decommissioned
-
-### Herald ✅
-- **State:** Loaded
-- **Activity:** No recent posts or outreach
-- **Scheduled Posts:** None
-- **Metrics:** Empty
-
-### AlphaStrike ✅
-- **Service:** alphastrike.service
-- **Status:** active (running)
-- **Note:** Running despite Quant decommission
+### Services
+- **AlphaStrike**: `active` (systemd user service)
 
 ---
+
+## Alerts Sent
+1. **Telegram** (target=2069029798, msg_id=30066): Full critical alert with all failures
 
 ## Recommendations
-
-1. **Immediate:**
-   - Restart EvoClaw Hub: `systemctl --user restart evoclaw-hub`
-   - Check Alex Eye Pi: Verify power and network connectivity
-   - Initialize Shield state if access control is needed
-
-2. **Soon:**
-   - Clean up AlphaStrike service if Quant is permanently decommissioned
-   - Verify /data2 mount (not showing in df)
-
-3. **Consider:**
-   - Is Quant decommission permanent? Capitalize remaining $6.46?
-   - Hub monitoring: Add auto-restart on failure
+1. **EvoClaw Hub**: Check service file, port 8420 conflicts, logs location
+2. **Alex Eye**: Network diagnostics, Pi power cycle, SSH key check
+3. **Shield**: Initialize access-control.json or restore from backup
+4. **Quant**: Confirm decommissioned status is intentional
 
 ---
 
-**Generated by:** Sentinel (Midnight Health Check)
-**Report ID:** 3b4465c3-4a20-4e25-8325-30d108cd3f04
+**Generated by**: Sentinel
+**Report Path**: ~/.openclaw/workspace/memory/midnight-health-latest.md

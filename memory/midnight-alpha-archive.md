@@ -1111,3 +1111,23 @@ If AAVE drops below $100 in the next leg down, it's a generational DeFi blue-chi
 *"Extreme fear is where fortunes are built — but only if you survive to deploy."*
 
 — Alex Chen, Midnight Alpha
+
+---
+
+# 🌙 Midnight Alpha — Mon 9 Mar 2026 02:00 AEDT
+
+**Sentiment:** EXTREME FEAR (12/100, 3rd consecutive day)
+**BTC:** $67,290 | **ETH:** $1,944 | **SOL:** $82.23 | **HYPE:** $30.66
+**BTC Dom:** 56.6% | **Total MCap:** $2.37T | **24h:** -1.24%
+
+**Headlines:**
+- US lost 92K jobs in Feb → BTC dumped below $69K
+- Kazakhstan Central Bank → $350M crypto allocation (deploy Apr 2026)
+- KuCoin banned from Dubai (VARA, no license)
+- Colossus: KYC-less crypto card network by ex-SushiSwap CTO
+- KITE +17% outlier in bleeding AI sector
+
+**Top Pick:** Extreme Fear Accumulation — BTC DCA $65K-$68K zone
+**AI Sector:** TAO $175 (-5.3%), NEAR $1.23 (+0.3%), RENDER $1.36 (-1.6%)
+**DeFi TVL:** Lido $33.9B, AAVE V3 $33.3B — fundamentals disconnected from token prices
+

@@ -72,3 +72,38 @@ Scanned 20 help-wanted issues. None had explicit USD/ETH/USDC reward attached. N
 ---
 
 *Log maintained by Atlas (Alex's bounty hunter module)*
+
+---
+
+## Atlas Bounty Hunt Run — 2026-03-08 16:00 AEDT
+
+**Scan Summary:**
+- Searched GitHub bounty label: 20 issues scanned
+- Searched help-wanted label (Go, TypeScript, Rust, Python): 20 issues scanned
+- Total candidates evaluated: 40
+
+**ROI Analysis:**
+
+| # | Bounty | Reward | Currency | Complexity | Status | Decision |
+|---|--------|--------|----------|------------|--------|----------|
+| 1 | woodpecker-ci/autoscaler #102 Oracle Cloud Provider | $50 | USD | 4/10 | 2 PRs already open (#539, #530) | ❌ SKIP — race lost |
+| 2 | woodpecker-ci/autoscaler #103 DigitalOcean Provider | $50 | USD | 4/10 | 2 PRs already open (#537, #529) | ❌ SKIP — race lost |
+| 3 | woodpecker-ci/autoscaler #104 Equinix Metal Provider | $50 | USD | 4/10 | 1 PR already open (#538) | ❌ SKIP — race lost |
+| 4 | rustchain-bounties MCP Server | 75-100 RTC | RTC token | 4/10 | Open | ❌ REJECT — non-mainstream token |
+| 5 | rustchain-bounties Cross-Chain Airdrop | 100-200 RTC | RTC token | 7/10 | Open | ❌ REJECT — non-mainstream token + complexity |
+| 6-20 | rustchain-bounties (social media, video, community) | 1-25 RTC | RTC token | 1-2/10 | Open | ❌ REJECT — non-mainstream token |
+
+**Actions Taken:** None — no qualifying bounties met all criteria (USD/ETH/USDC + unclaimed + complexity ≤ 6 + reward ≥ $20)
+
+**Root Cause:** 
+- Woodpecker autoscaler bounties ($50 USD, Go, complexity 4) were the only USD-denominated bounties — but `sangokp` beat Atlas to all three with PRs opened on 2026-02-06. Race lost by ~1 month.
+- Dominant bounty source in this scan cycle (Scottcjn/rustchain-bounties) pays exclusively in RTC tokens — filtered per mainstream-only rule.
+
+**Next Hunt Recommendations:**
+1. Monitor woodpecker-ci/autoscaler for new provider requests (pattern is well-established, good ROI)
+2. Check Gitcoin Grants for USD-denominated coding bounties
+3. Try Bountysource, IssueHunt, or StackOverflow Jobs for USD bounties
+4. Watch for merged/rejected PRs on the autoscaler issues — if sangokp's PRs are rejected, opportunity reopens
+
+**Token cost this run:** ~$0.05 (minimal — scan + analysis only, no fix attempted)
+

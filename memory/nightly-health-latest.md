@@ -1,23 +1,23 @@
 # Nightly Health Check Report
-**Date:** 2026-03-08 12:05 AM AEDT
-**Status:** ⚠️ EvoClaw DOWN
+**Date:** Monday, March 9th, 2026 — 12:05 AM AEDT
 
 ## Services
-
 | Service | Status |
 |---------|--------|
-| AlphaStrike | ✅ active |
-| EvoClaw hub | ❌ DOWN |
-| GPU server | ✅ online (3 GPUs) |
+| AlphaStrike | ✅ **active** |
+| EvoClaw hub | ❌ **DOWN** |
 
-## GPU Server Status
-- RTX 3090: 19966 MiB / 24576 MiB (81% used)
-- RTX 3080: 18 MiB / 10240 MiB (0% used)
-- RTX 2070 SUPER: 9 MiB / 8192 MiB (0% used)
+## GPU Server (peter@10.0.0.44)
+| GPU | Memory Used | Total |
+|-----|-------------|-------|
+| RTX 3090 | 20,225 MiB | 24,576 MiB |
+| RTX 3080 | 18 MiB | 10,240 MiB |
+| RTX 2070 SUPER | 9 MiB | 8,192 MiB |
+**Status:** ✅ All 3 GPUs online
 
-## Workspace Metrics
-- Skills installed: 55
-- Memory files: 150
+## Workspace Stats
+- Skills installed: **56**
+- Memory files: **153**
 
-## Issues Detected
-- **EvoClaw hub is DOWN** — API at http://localhost:8420/api/agents not responding
+## Alert Required
+⚠️ **EvoClaw hub is DOWN** — needs investigation and restart.
