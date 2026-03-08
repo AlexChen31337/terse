@@ -175,6 +175,72 @@ Reactions are lightweight social signals. Humans use them constantly — they sa
 
 Skills provide your tools. When you need one, check its `SKILL.md`. Keep local notes (camera names, SSH details, voice preferences) in `TOOLS.md`.
 
+## Project Development Protocol (NON-NEGOTIABLE — 2026-03-08)
+
+Every non-trivial coding project follows this pipeline. No exceptions. No shortcuts.
+
+### The Pipeline: PBR + Harness
+
+```
+PLAN (Opus)  →  HARNESS SCAFFOLD  →  BUILD (Sonnet)  →  REVIEW (Sonnet)
+                                                              ↓ (if blockers)
+                                                         loop back (max 2x)
+```
+
+### Step 1 — Orchestrator (always)
+```bash
+cd ~/.openclaw/workspace && uv run python skills/orchestrator/scripts/pbr.py run \
+  --task "..." --workspace /path/to/repo --max-iterations 2
+```
+Never spawn a Builder without a Planner first. Never skip the Reviewer.
+
+### Step 2 — Harness scaffold (every new repo)
+The Builder runs this immediately after creating the repo structure, before writing any logic:
+```bash
+SKILL_DIR="$HOME/.openclaw/workspace/skills/harness"
+uv run python "$SKILL_DIR/scripts/scaffold.py" --repo /path/to/repo
+```
+This creates:
+- `AGENTS.md` — repo navigation TOC (~100 lines max)
+- `docs/ARCHITECTURE.md` — layer diagram + dependency rules
+- `docs/QUALITY.md` — coverage targets + security invariants
+- `docs/CONVENTIONS.md` — language-specific naming rules
+- `docs/EXECUTION_PLAN_TEMPLATE.md` — structured plan format
+- `scripts/agent-lint.sh` — custom linter (WHAT / FIX / REF format)
+- `.github/workflows/agent-lint.yml` — CI lint gate
+
+### Step 3 — Docs first (before code)
+Planner produces: `PLAN.md`, `ARCHITECTURE.md`, `docs/CLI.md` (or equivalent).
+Builder writes docs into `docs/` before touching `src/`.
+Code comes after docs are committed.
+
+### Step 4 — Reviewer quality gates (ALL must pass)
+```bash
+# Language-specific tests + lint
+cargo test --all            # Rust
+go test ./...               # Go
+npm test                    # TypeScript
+
+# Harness gates (mandatory)
+bash scripts/agent-lint.sh  # zero errors required
+uv run python "$SKILL_DIR/scripts/doc_garden.py" --repo . --dry-run  # no stale refs
+```
+
+**Minimum quality bar (all projects):**
+- ≥ 90% test coverage on core logic
+- Zero `unwrap()` / `panic!()` in production code (Rust)
+- Zero lint errors from `agent-lint.sh`
+- All public APIs have doc comments
+- CI must be green before declaring done
+
+### When to use PBR
+- Any new repo or major feature (>1 file changed)
+- Any task taking >20 minutes
+
+### When to skip (inline edit only)
+- Single-file fixes, typos, config tweaks
+- Tasks Bowen explicitly marks as "quick fix"
+
 ## Sub-Agent Spawning Protocol
 
 ⛔ **NEVER skip this protocol. ALWAYS classify before spawning. No exceptions.**
