@@ -1,100 +1,74 @@
 # INCOME_MANAGEMENT.md — Atlas Bounty Hunt Log
 
-## Hunt #1 — 2026-03-07 10:00 AEST
+## Session: 2026-03-08 10:00 AEDT
 
-**Scan Summary:**
-- GitHub `label:bounty` issues searched: 100 (from 12 unique repos)
-- GitHub `label:"help wanted"` issues searched: 20
-- Scan duration: ~3 minutes
+### Scan Summary
 
-### Bounties Found & ROI Filter
-
-| # | Repo | Title | Reward | Currency | Complexity | Decision |
-|---|------|-------|--------|----------|------------|----------|
-| 1 | ChinchillaEnterprises/openclaw-crm #15 | Complete 5-task implementation | $3 | USD | 4/10 | ❌ SKIP — below $20 threshold |
-| 2 | peteromallet/desloppify #204 | Find poorly-engineered code ($1k) | $1,000 | USD | 5/10 | ❌ SKIP — deadline expired Mar 6 UTC |
-| 3 | Dasharo/dasharo-issues #1273 | EC Testability Interface | $1,000 | USD | 9/10 | ❌ SKIP — embedded HW complexity |
-| 4 | Dasharo/dasharo-issues #1790 | DTS nightly branch config fix | Unknown | N/A | 5/10 | ❌ SKIP — no explicit USD payout |
-| 5 | fengking-li/group-buying-data-monitor #1 | OpenClaw data monitor system | ¥3,000 | CNY/WeChat | 7/10 | ❌ SKIP — WeChat-only, not mainstream |
-| 6 | Scottcjn/rustchain-bounties (multiple) | Various RTC tasks | Various | RTC token | 2-6/10 | ❌ SKIP — non-mainstream token |
-| 7 | INDIGOAZUL/la-tanda-web (multiple) | Frontend/docs features | Various | LTD token | 3-7/10 | ❌ SKIP — non-mainstream token |
-| 8 | Chevalier12/InkkSlinger (2x) | MediaElement / InkCanvas impl | License | Software | 7/10 | ❌ SKIP — no cash value |
-
-### Result: **0 qualifying bounties this cycle**
-
-**Root cause:** The current GitHub bounty market is dominated by:
-1. Custom/shitcoin token rewards (RTC, LTD, etc.)
-2. Sub-$20 micro-bounties (openclaw-crm $3 total)
-3. High-complexity embedded/firmware tasks ($1k Dasharo EC)
-4. Expired bounties (desloppify deadline passed)
-5. Regional payment rails (Chinese WeChat/RMB)
-
-### Actions Taken
-- No issues claimed (nothing qualifying)
-- No PRs opened
-- No token spent on subagents
-
-### Income This Cycle: $0
+**Sources scanned:**
+- GitHub `label:bounty state:open` — 20 results
+- GitHub `label:"help wanted" state:open` — 20 results
+- GitHub `label:funded state:open` — 20 results (grant proposals, not actionable)
 
 ---
 
-## Hunt #2 — 2026-03-07 16:00 AEDT
+### ROI Analysis
 
-**Scan Summary:**
-- GitHub `label:bounty` issues searched: 20 (top results)
-- GitHub `label:"help wanted"` issues searched: 10
-- Scan duration: ~2 minutes
+#### All RTC-Only Bounties (SKIPPED — Not mainstream USD/ETH/USDC payout)
 
-### Bounties Found & ROI Filter
+All 20 bounty-label issues came from `Scottcjn/rustchain-bounties` paying in **RTC tokens** (RustChain's native token, unverifiable market value). Per rules: *"Mainstream payouts only (USD/ETH/USDC). No tokens, no testnet rewards."*
 
-| # | Repo | Title | Reward | Currency | Complexity | Decision |
-|---|------|-------|--------|----------|------------|----------|
-| 1 | Scottcjn/rustchain-bounties (×18) | Various RustChain/BoTTube tasks | 0.5–200 RTC | **RTC token** | 1–8/10 | ❌ SKIP — non-mainstream token |
-| 2 | Various "help wanted" | Trivial content contributions | None/trivial | N/A | 1/10 | ❌ SKIP — no cash value |
+| Title | Reward | Complexity | ROI Decision |
+|-------|--------|------------|--------------|
+| Health Check CLI Tool | 8 RTC | 2 | ❌ SKIP — token reward |
+| GitHub Star Growth Tracker | 10 RTC | 3 | ❌ SKIP — token reward |
+| Token Distribution Analysis | 8 RTC | 2 | ❌ SKIP — token reward |
+| Fuzz /attest/submit Endpoint | 10 RTC | 4 | ❌ SKIP — token reward |
+| 60-Second Explainer Video | 10 RTC | 2 | ❌ SKIP — token reward + token |
+| All BoTTube micro-tasks | 1-5 RTC | 1 | ❌ SKIP — token reward |
 
-**Notable RTC bounties reviewed (for future reference if RTC gains USD value):**
-- Backup Verification Script: 10 RTC, complexity 2 — simplest task, bash/Python
-- Multi-Node Health Dashboard: 15–20 RTC, complexity 3 — static HTML
-- Epoch Reporter Bot: 10–15 RTC, complexity 3 — Python cron + Discord webhook
-- Bounty Verification Bot: 50–75 RTC, complexity 5 — GitHub Action (best ROI if token had value)
-- Native Rust Wallet: 50–100 RTC, complexity 7 — high skill, worthwhile if USD-backed
+#### Help Wanted Issues (no USD bounties found)
 
-### Result: **0 qualifying bounties this cycle**
+Scanned 20 help-wanted issues. None had explicit USD/ETH/USDC reward attached. Notable ones without monetary bounty:
 
-**Root cause:** Same as Hunt #1 — GitHub bounty ecosystem dominated by custom tokens.
-The entire rustchain-bounties board pays in RTC, not USD/ETH/USDC.
+- `Shelterflex/monorepo` — Frontend/contract work (Beta-Campaign), no explicit bounty
+- `festeraeb/nauticuvs` — Rust signal processing, serde feature, no bounty
+- `Jordan231111/MalwareMinimizer` — Python test coverage, no bounty
 
-### Actions Taken
-- No issues claimed
-- No PRs opened  
-- No subagents spawned (cost: ~$0.01 token scan)
+#### Funded Grant Proposals (SKIPPED — Already awarded, not open bounties)
 
-### Income This Cycle: $0
+`FreeCAD/FPA-grant-proposals` and `numfocus/small-development-grant-proposals` issues are retrospective grant awards — already approved/delivered. Not actionable.
 
 ---
 
-## Cumulative Income
+### Result: No Qualifying Bounties Found
 
-| Date | Amount | Source |
-|------|--------|--------|
-| 2026-03-07 10:00 | $0 | Hunt #1 — dry scan |
-| 2026-03-07 16:00 | $0 | Hunt #2 — RTC tokens only |
-
-**Total: $0**
+**Pass criteria:** reward $20+ in USD/ETH/USDC, complexity ≤ 6  
+**Found:** 0 issues meeting criteria
 
 ---
 
-## Next Steps / Recommendations
+### Recommendations for Next Hunt
 
-1. **Expand search scope**: Try `label:bounty` + TypeScript/Go language filters on GitHub
-2. **Check Gitcoin**: https://gitcoin.co — more structured USD bounties
-3. **Check Algora**: https://algora.io — OSS bounties with PayPal/Stripe payouts
-4. **Check IssueHunt**: https://issuehunt.io — established platform
-5. **Check Bountysource**: legacy but some active USD bounties
-6. **Monitor desloppify #204**: Issue still open — if no winner declared, watch for new bounties from same author
-7. **Flag for Bowen**: ¥3000 (~$415) Chinese data monitor task if payment can be arranged via bank transfer instead of WeChat
+1. **Broaden search** to platforms with USD bounties:
+   - Gitcoin (USDC/ETH bounties)
+   - IssueHunt (USD)
+   - Bountysource (USD)
+   - Algora.io (USD)
+   - Sourceforge bounties
+
+2. **Target specific repos known to pay USD:**
+   - Rust/TypeScript ecosystem with active bounty programs
+   - Web3 protocol bugs (audit-style, careful scope)
+   - OSS repos with Gitcoin grants rounds active
+
+3. **Alternative: Audit competitions**
+   - Code4rena, Sherlock, Immunefi for smart contract audits
+   - These pay USDC and are well-scoped
 
 ---
 
-*Atlas — autonomous bounty hunter agent*
-*Operated by Alex Chen | OpenClaw workspace*
+### Next Hunt: 2026-03-09 or when directed by Alex
+
+---
+
+*Log maintained by Atlas (Alex's bounty hunter module)*

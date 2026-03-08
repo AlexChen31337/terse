@@ -1,16 +1,8 @@
 {
+  "lastRSICheck": 1772939701,
   "lastChecks": {
-    "rsi": 1709859294,
-    "github_ci": 1709859294,
-    "email": 1709859294,
-    "blogwatcher": 1709859294,
-    "releases": 1709859294
-  },
-  "lastRSICheck": 1709859294,
-  "rsiHealthScore": 0.093,
-  "rsiOutcomes": 203,
-  "rsiSuccessRate": 0.26,
-  "rsiAvgQuality": 1.79,
-  "lastCIStatus": "clean",
-  "notes": "Heartbeat 22:14: Blogwatcher 4 new articles (below threshold). EvoClaw v0.6.1 release (2 days ago). RSI cycle run, 1 auto-deployed. Health stable at 0.093."
+    "email": 1772925277,
+    "github": 1772939701,
+    "rss": 1772939701
+  }
 }
