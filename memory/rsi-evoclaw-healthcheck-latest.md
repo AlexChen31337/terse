@@ -1,74 +1,87 @@
-# RSI Loop Health Check — EvoClaw Core
-**Date:** 2026-03-08 03:30 AEDT
-**Trigger:** Cron 95f18441 (nightly RSI health check)
+# RSI Loop Health Check Report — EvoClaw Core
+
+**Date:** 2026-03-09 03:30 AEDT
+**Commit:** b6e310e (feat: agent engineering harness)
+**Check Interval:** Nightly
+
+---
 
 ## Summary
-✅ **All checks passed** — RSI package is healthy, integrated, and tests passing.
+
+✅ **All systems healthy**
 
 ## Detailed Results
 
 ### 1. RSI Package Status
 - **Location:** `/tmp/evoclaw-check/internal/rsi/`
-- **Source files:** 6 Go files
-  - `analyzer.go` (10,747 bytes) — pattern detection and analysis
-  - `fixer.go` (4,073 bytes) — fix application logic
-  - `loop.go` (3,392 bytes) — main RSI loop orchestration
-  - `loop_test.go` (15,356 bytes) — comprehensive test suite
-  - `observer.go` (7,266 bytes) — outcome observation and recording
-  - `types.go` (4,974 bytes) — core data structures
+- **Source files:** 6 `.go` files
+  - analyzer.go (10.7KB)
+  - fixer.go (4.1KB)
+  - loop.go (3.4KB)
+  - observer.go (7.3KB)
+  - types.go (5.0KB)
+  - loop_test.go (15.4KB — comprehensive test suite)
+- **Status:** ✅ Present and complete
 
 ### 2. Test Results
-✅ **All 18 tests PASSED** (0.006s)
-- Outcome recording and max trim
-- Pattern detection (recurrences, correlations)
-- Health score calculation
-- Safe vs unsafe fix categorization
-- Auto-fix safety checks
-- Cross-source correlation
-- Loop lifecycle (creation, run cycle)
-- Fixer all categories
-- Trajectory recording on outcomes
+- **Command:** `go test ./internal/rsi/... -v -count=1`
+- **Result:** ✅ **ALL PASSED** (19/19 tests)
+- **Duration:** 0.006s
+- **Coverage:**
+  - Outcome recording, trimming, agent/tool recording
+  - Pattern & recurrence detection
+  - Health score calculation
+  - Safe vs unsafe fix categorization
+  - Auto-fix logic
+  - Loop lifecycle (creation, run cycle)
+  - Cross-source correlation
+  - Token overlap detection
+  - Trajectory tracking
 
-**Test coverage:** 18/18 passed (100%)
-
-### 3. ADR Documentation
-✅ **ADR-005 present** (`docs/architecture/adr-005-rsi-core-primitive.md`)
-- Status: Accepted (2026-02-22)
-- Key points:
-  - RSI promoted from optional OpenClaw skill to core primitive
-  - Addresses pattern detection gaps (toolloop bugs, rate limits)
-  - Auto-feeding operational data into RSI loop
-  - Cross-source correlation for compound issues
+### 3. ADR Status
+- **File:** `docs/architecture/adr-005-rsi-core-primitive.md`
+- **Status:** ✅ Present
+- **Date:** 2026-02-22
+- **Key directive:** Promote RSI from optional skill to core primitive (integrated into orchestrator)
 
 ### 4. Orchestrator Integration
-✅ **RSI fully wired into orchestrator** (`internal/orchestrator/orchestrator.go`)
-- Import: `github.com/clawinfra/evoclaw/internal/rsi`
-- Field: `rsiLoop *rsi.Loop` (line 153)
-- Initialization: `o.initRSI()` (line 317)
-- ToolLoop integration: `WithRSILogger(NewDefaultRSILogger())` (line 268)
-- Health persistence: 5-minute periodic persistence loop (lines 399-430)
+- **File:** `internal/orchestrator/orchestrator.go`
+- **Integration points:** ✅ **Fully wired**
+  - Line 19: `import "github.com/clawinfra/evoclaw/internal/rsi"`
+  - Line 153: `rsiLoop *rsi.Loop` (struct field)
+  - Line 268: ToolLoop configured with RSI logger
+  - Line 317: `o.initRSI()` call in constructor
+  - Line 552: `initRSI()` function implementation
 
-### 5. Recent Commits (Last 10)
-- `7dc38bb` feat(channels): Telegram enhancements + MQTT TLS + WhatsApp — v0.7
-- `84cb38a` chore: prepare v0.6.1 release — SKILLRL skillbank, RSI hook, lint fixes
-- `1ca8b7e` feat: RSI loop RecordTrajectory integration (#23) ⭐
-- `c9d6679` feat: SKILLRL-inspired skillbank — Phases 1-3 (#22)
-- `c3799f8` fix: remove deprecated version field from .golangci.yml
+### 5. CI Status
+- **Latest runs (3):** ✅ **ALL SUCCESS**
+  1. Agent Harness Lint (push) — success — 1m30s — 2026-03-07
+  2. Full CI (push) — success — 5m21s — 2026-03-07
+  3. Agent Harness Lint (PR) — success — 2m03s — 2026-03-07
 
-**RSI-specific commits:**
-- `1ca8b7e` — RSI loop RecordTrajectory integration (merged Mar 6)
-- Recent activity shows active RSI development and integration
+### 6. Recent RSI Commits
+- **Latest:** 7dc38bb — feat(channels): v0.7 release
+- **No breaking changes** to RSI package in recent commits
 
-### 6. CI Status
-- **Latest (feat/agent-harness PR):** ❌ Lint failed (22799688213, Mar 7)
-- **Latest main push:** ✅ Success (22754549435, Mar 6)
+---
 
-**Note:** The agent-harness PR lint failure is unrelated to RSI — it's a new feature branch with linting issues. The main branch CI (which includes RSI) is green.
+## Health Assessment
 
-## Recommendations
-1. ✅ No immediate action required — RSI is healthy
-2. 🔍 Monitor agent-harness PR (#228) for merge — ensure RSI integration isn't affected
-3. 📊 RSI integration is maturing well — core primitive status achieved per ADR-005
+| Component | Status | Notes |
+|-----------|--------|-------|
+| RSI package exists | ✅ | 6 source files, complete implementation |
+| Tests passing | ✅ | 19/19 tests, all green |
+| ADR documented | ✅ | adr-005 accepted, integrated |
+| Orchestrator wired | ✅ | Import, struct field, init, logger all present |
+| CI green | ✅ | All workflows passing |
+| Recent commits | ✅ | No breaking changes |
 
-## Health Score
-**9.5/10** — RSI is production-ready, well-integrated, and fully tested. Minor ding for unrelated CI failure on feature branch.
+---
+
+## Conclusion
+
+**RSI Loop is production-ready and fully integrated into EvoClaw core.**
+
+No alerts required. The package is stable, well-tested, and properly integrated into the orchestrator. Auto-fix remains disabled by default (safe). CI is green across all workflows.
+
+**Next health check:** 2026-03-10 03:30 AEDT

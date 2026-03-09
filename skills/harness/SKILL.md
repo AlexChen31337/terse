@@ -1,3 +1,15 @@
+---
+name: harness
+description: >
+  Agent engineering harness for any repo. Creates a short AGENTS.md table-of-contents,
+  structured docs/ knowledge base (ARCHITECTURE, QUALITY, CONVENTIONS, COORDINATION),
+  custom agent-readable linters (WHAT/FIX/REF format), CI enforcement, and execution plan
+  templates. Supports Rust, Go, TypeScript, and Python. Use when setting up any repo for
+  agent-first development, upgrading an existing AGENTS.md, or enforcing architectural lint
+  gates. Includes --audit flag for tool lifecycle checks and L1/L2/L3 progressive disclosure.
+license: MIT
+---
+
 # harness — Agent Engineering Harness
 
 Implements the [OpenAI Codex team's agent-first engineering harness pattern](https://openai.com/index/harness-engineering/)

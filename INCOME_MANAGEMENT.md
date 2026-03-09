@@ -107,3 +107,59 @@ Scanned 20 help-wanted issues. None had explicit USD/ETH/USDC reward attached. N
 
 **Token cost this run:** ~$0.05 (minimal — scan + analysis only, no fix attempted)
 
+
+---
+
+## Hunt Log — 2026-03-09 10:00 AM AEDT
+
+### Scan Summary
+- Scanned 20 GitHub `bounty`-labeled issues + 20 `help wanted` issues
+- Additional targeted searches: Expensify/App, tscircuit, algora-io org
+
+### Findings
+
+#### REJECTED — RTC Tokens (Non-Mainstream Payout)
+All 20 `bounty`-label results from primary search are from `Scottcjn/rustchain-bounties`:
+- 1 RTC = ~$0.10 USD internal rate — too small, non-mainstream token
+- Examples: 2 RTC docs, 10 RTC smoke tests, 35 RTC CLI fix, 200 RTC cross-chain (largest)
+- **Decision: SKIP ALL RTC bounties** — violates mainstream payout rule
+
+#### CANDIDATES — Real USD Bounties
+
+| # | Title | Repo | Reward | Complexity | Status | ROI |
+|---|-------|------|--------|------------|--------|-----|
+| 1 | [$250] Reports - UI Action filters is missing | Expensify/App #84442 | $250 USD | 3/10 | 6 proposals | Medium |
+| 2 | [$250] Members - App crashes after importing members from spreadsheet | Expensify/App #84489 | $250 USD | 4/10 | 13 proposals | Low |
+| 3 | Support Capacitive Touch Slider (multi-PR) | tscircuit/tscircuit #786 | $200 USD Algora | 6/10 | 8 attempts, 3 items remain | Low-Med |
+
+### Top Pick Analysis
+
+**Pick 1: Expensify #84442 — Reports UI Action Filter ($250)**
+- Bug: `action` filter missing from Advanced Filters RHP in Reports
+- Root cause: `action` not wired into `typeFiltersKeys` config in search filter UI
+- Complexity: 3/10 — config/registry-style TypeScript change  
+- Blocker: Requires Upwork account + Expensify contributor onboarding (email loop)
+- Proposals: 6 already submitted including MelvinBot auto-proposal
+- **RISK: Expensify requires Upwork KYC which makes payout manual/non-autonomous**
+
+**Pick 2: tscircuit #786 — Capacitive Touch/SolderMask ($200)**
+- 3 items unchecked: core snapshot test, circuit-to-svg solder mask render, docs tutorial
+- Algora pays directly via Stripe/GitHub — more autonomous
+- Competition: 8+ attempts, but no merged PRs for remaining items
+- Complexity: 6/10 for full completion, 3/10 for just the docs tutorial
+- **ROI: Better autonomy, but contested**
+
+### Actions Taken
+- **No comments posted** — Both picks require Upwork registration (Expensify) or are heavily contested
+- **No code written** — Token spend budget preserved
+- Stop-loss applied: ROI insufficient to justify sub-agent spin-up
+
+### Recommendation
+- **Expensify**: Register on Upwork and email contributors@expensify.com to unlock bounty pipeline — one-time setup enables $250 USD/bug at 3-4 complexity
+- **tscircuit**: Monitor #786 for merges; if docs tutorial PR is not merged within 48h, submit a competing docs PR (complexity 2, ~1-2h effort, partial $200 claim)
+
+### Next Steps
+1. ⏳ Bowen to decide: Should Alex register on Upwork/Expensify to enable that bounty pipeline?
+2. 🔍 Monitor tscircuit #786 for 48h — submit docs-only PR if unclaimed
+3. 📅 Next hunt scheduled via cron
+

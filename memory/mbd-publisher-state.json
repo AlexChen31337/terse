@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-03-08T09:00:00+11:00",
-  "last_backup": "2026-03-08",
-  "topic_index": 3,
+  "lastRun": "2026-03-09T09:00:00+11:00",
+  "last_backup": "2026-03-09",
+  "topic_index": 4,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -73,6 +73,15 @@
       "category": "科技",
       "date": "2026-03-08",
       "folder": "2026-03-08_AI职场生存手册_当机器人成为你的同事对手和救命稻草",
+      "githubBacked": true,
+      "note": "Backed up to GitHub. Awaiting MbD publish instruction from owner."
+    },
+    "daily-2026-03-09": {
+      "name": "赛博朋克副业：当AI成为你的数字雇佣兵",
+      "status": "backed_up",
+      "category": "科技",
+      "date": "2026-03-09",
+      "folder": "2026-03-09_赛博朋克副业_当AI成为你的数字雇佣兵",
       "githubBacked": true,
       "note": "Backed up to GitHub. Awaiting MbD publish instruction from owner."
     }
