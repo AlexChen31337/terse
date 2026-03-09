@@ -38,23 +38,29 @@ def buffer_path(wal_dir: str, agent_id: str) -> Path:
     return Path(wal_dir) / f"{agent_id}{BUFFER_SUFFIX}"
 
 
-def make_entry(agent_id: str, action_type: str, payload: str) -> dict:
+VALID_CATEGORIES = {"fact", "assumption", "correction", "policy", "decision", "context"}
+
+
+def make_entry(agent_id: str, action_type: str, payload: str, category: str = "context") -> dict:
     ts = datetime.now(timezone.utc).isoformat()
     raw = f"{agent_id}:{ts}:{payload}"
     entry_id = hashlib.sha256(raw.encode()).hexdigest()[:12]
+    if category not in VALID_CATEGORIES:
+        category = "context"
     return {
         "id": entry_id,
         "timestamp": ts,
         "agent_id": agent_id,
         "action_type": action_type,
+        "category": category,
         "payload": payload,
         "applied": False,
     }
 
 
-def append_entry(wal_dir: str, agent_id: str, action_type: str, payload: str) -> dict:
+def append_entry(wal_dir: str, agent_id: str, action_type: str, payload: str, category: str = "context") -> dict:
     os.makedirs(wal_dir, exist_ok=True)
-    entry = make_entry(agent_id, action_type, payload)
+    entry = make_entry(agent_id, action_type, payload, category)
     with open(wal_path(wal_dir, agent_id), "a") as f:
         f.write(json.dumps(entry) + "\n")
     return entry

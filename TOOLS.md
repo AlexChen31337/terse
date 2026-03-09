@@ -60,6 +60,12 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 Add whatever helps you do your job. This is your cheat sheet.
 
+## Intelligent Router
+
+- **Config path:** `~/.evoclaw/skills/intelligent-router/config.json` (17 models as of 2026-03-09)
+- **spawn_helper:** `uv run python skills/intelligent-router/scripts/spawn_helper.py --model-only "task"`
+- **Note:** Config is NOT at `~/skills/intelligent-router/` — always use the `~/.evoclaw/skills/` path
+
 ## ZImage / ComfyUI Generation Rules
 
 ### Negative Prompt (ALWAYS include)
