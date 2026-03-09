@@ -192,7 +192,29 @@ PLAN (Opus)  →  HARNESS SCAFFOLD  →  BUILD (Sonnet)  →  REVIEW (Sonnet)
 cd ~/.openclaw/workspace && uv run python skills/orchestrator/scripts/pbr.py run \
   --task "..." --workspace /path/to/repo --max-iterations 2
 ```
-Never spawn a Builder without a Planner first. Never skip the Reviewer.
+
+**HARDENED RULES (non-negotiable — 2026-03-09):**
+- ❌ NEVER spawn a Planner/Builder/Reviewer ad-hoc via `sessions_spawn` without first calling `pbr.py run`
+- ❌ NEVER call `pbr.py run` and then ignore its output spawn spec — use the exact model/task/label it emits
+- ❌ NEVER spawn a Builder without a Planner having written PLAN.md first
+- ❌ NEVER skip the Reviewer — it is what triggers the loop or declares DONE
+- ✅ ALWAYS use the `pbr.py next` command to get the correct next-phase spawn instruction
+- ✅ ALWAYS call `pbr.py complete` after each phase finishes (auto-detects REVIEW.md verdict)
+- ✅ For parallel tracks, run `pbr.py run` once per workspace BEFORE spawning any subagents
+
+```bash
+# Correct pattern for each phase:
+cd ~/.openclaw/workspace/skills/orchestrator
+
+# Phase start: get spawn instruction
+uv run python scripts/pbr.py next --workspace /path/to/repo
+
+# Phase end: mark complete (auto-reads REVIEW.md verdict)
+uv run python scripts/pbr.py complete --workspace /path/to/repo
+
+# Check state at any time
+uv run python scripts/pbr.py status --workspace /path/to/repo
+```
 
 ### Step 2 — Harness scaffold (every new repo)
 The Builder runs this immediately after creating the repo structure, before writing any logic:
