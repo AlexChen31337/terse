@@ -376,6 +376,8 @@ def deploy_apply_gene(p: dict, dry_run: bool = False, force_core: bool = False) 
 def deploy_proposal(proposal_id: str, dry_run: bool = False, force_core: bool = False) -> str:
     p = load_proposal(proposal_id)
 
+    if p["status"] == "deployed":
+        return f"SKIP: Proposal '{proposal_id}' already deployed — skipping."
     if p["status"] not in ("approved", "draft"):
         return f"Proposal '{proposal_id}' status is '{p['status']}' - only 'approved' or 'draft' can be deployed"
 
@@ -526,10 +528,13 @@ def main():
         saved = synthesizer.save_proposals(proposals)
         print(f"  Generated {len(proposals)} proposals")
 
-        # Step 3: Auto-approve low-effort items
+        # Step 3: Auto-approve low-effort items (skip already deployed)
         print(f"\nStep 3: Auto-approving proposals < {args.auto_approve_below_mins}min effort...")
         auto_approved = []
         for p in proposals:
+            if p.get("status") == "deployed":
+                print(f"  Skipping {p['id']} (already deployed)")
+                continue
             effort = p["implementation"].get("estimated_effort", 999)
             if effort <= args.auto_approve_below_mins:
                 p["status"] = "approved"

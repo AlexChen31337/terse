@@ -53,7 +53,7 @@ ISSUE_TYPES = [
     "rate_limit", "model_fallback", "wrong_model_tier", "cost_overrun",
     "bad_routing", "slow_response",
     # Tool / execution issues
-    "tool_error", "empty_response", "missing_tool", "incomplete_task",
+    "tool_error", "tool_validation_error", "timeout", "empty_response", "missing_tool", "incomplete_task",
     # Output quality issues
     "wrong_output",
     # Memory / context issues
@@ -67,7 +67,7 @@ ISSUE_TYPES = [
 
 # High-severity issues that warrant immediate attention (threshold n>=1)
 HIGH_SEVERITY_ISSUES = {
-    "tool_error", "wrong_output", "empty_response",
+    "tool_error", "tool_validation_error", "timeout", "wrong_output", "empty_response",
     "session_reset", "cost_overrun", "wal_miss",
 }
 

@@ -55,13 +55,22 @@ Before any multi-step task or session_management work:
 3. After every major step in a long task, update: `uv run python scripts/active_task.py update --step "..."`
 4. Unknown/uncategorised tasks (77x `none` outcomes) — always tag task type when logging to RSI
 
-## tool_validation_error Prevention (RSI pattern: 78x failures — #1 issue)
+## tool_validation_error Prevention (RSI pattern: 45x/7d — #1 active issue)
 Root cause: agents calling tools with malformed names (angle-bracket formatting `<tool_name>` instead of the actual tool name), or passing invalid parameter types.
 Prevention rules:
 - **Never use angle brackets in tool calls** — if you write `<exec>` or `<Read>` as a string instead of calling the tool directly, it logs as tool_validation_error
 - **Check required params before calling** — missing required params = validation error = logged failure
 - **In subagent prompts that mention tools**: use backtick code format, never XML angle-bracket style
 - On tool_validation_error in a subagent: check if the tool name is correctly spelled and params are valid types
+- **MANDATORY in all sub-agent task prompts:** Add this line — "Use tool names exactly as listed (exec, Read, Write, Edit, web_search, etc). Never wrap tool names in angle brackets."
+
+## timeout Prevention (RSI pattern: 8x/7d)
+Root cause: sub-agents running long exec commands synchronously without yieldMs, or exec calls on remote hosts that hang.
+Prevention rules:
+- **For exec calls >10s expected runtime:** always set `yieldMs` or use `background=true` + `process(poll)`
+- **For SSH/remote exec:** add explicit timeout: `ssh ... 'command' 2>&1; echo EXIT:$?'` with `timeout=60` on the exec tool call
+- **For test suites:** use `timeout=300` on exec, never rely on default
+- **Pattern:** if a sub-agent last step is a long build/test, set `runTimeoutSeconds=600` in sessions_spawn
 
 ## tool_error Prevention (RSI pattern: 59x failures in tool_call tasks)
 Root cause: subagents importing `claude_agent_sdk` without mocking — fails immediately.

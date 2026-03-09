@@ -1,87 +1,95 @@
-# RSI Loop Health Check Report — EvoClaw Core
-
-**Date:** 2026-03-09 03:30 AEDT
-**Commit:** b6e310e (feat: agent engineering harness)
-**Check Interval:** Nightly
-
----
+# RSI Loop Health Check — EvoClaw Core
+**Date:** 2026-03-10 03:30:00 AEDT
+**Cron:** 95f18441-07b6-4048-bb4a-50b13bf0941f
 
 ## Summary
-
-✅ **All systems healthy**
-
-## Detailed Results
-
-### 1. RSI Package Status
-- **Location:** `/tmp/evoclaw-check/internal/rsi/`
-- **Source files:** 6 `.go` files
-  - analyzer.go (10.7KB)
-  - fixer.go (4.1KB)
-  - loop.go (3.4KB)
-  - observer.go (7.3KB)
-  - types.go (5.0KB)
-  - loop_test.go (15.4KB — comprehensive test suite)
-- **Status:** ✅ Present and complete
-
-### 2. Test Results
-- **Command:** `go test ./internal/rsi/... -v -count=1`
-- **Result:** ✅ **ALL PASSED** (19/19 tests)
-- **Duration:** 0.006s
-- **Coverage:**
-  - Outcome recording, trimming, agent/tool recording
-  - Pattern & recurrence detection
-  - Health score calculation
-  - Safe vs unsafe fix categorization
-  - Auto-fix logic
-  - Loop lifecycle (creation, run cycle)
-  - Cross-source correlation
-  - Token overlap detection
-  - Trajectory tracking
-
-### 3. ADR Status
-- **File:** `docs/architecture/adr-005-rsi-core-primitive.md`
-- **Status:** ✅ Present
-- **Date:** 2026-02-22
-- **Key directive:** Promote RSI from optional skill to core primitive (integrated into orchestrator)
-
-### 4. Orchestrator Integration
-- **File:** `internal/orchestrator/orchestrator.go`
-- **Integration points:** ✅ **Fully wired**
-  - Line 19: `import "github.com/clawinfra/evoclaw/internal/rsi"`
-  - Line 153: `rsiLoop *rsi.Loop` (struct field)
-  - Line 268: ToolLoop configured with RSI logger
-  - Line 317: `o.initRSI()` call in constructor
-  - Line 552: `initRSI()` function implementation
-
-### 5. CI Status
-- **Latest runs (3):** ✅ **ALL SUCCESS**
-  1. Agent Harness Lint (push) — success — 1m30s — 2026-03-07
-  2. Full CI (push) — success — 5m21s — 2026-03-07
-  3. Agent Harness Lint (PR) — success — 2m03s — 2026-03-07
-
-### 6. Recent RSI Commits
-- **Latest:** 7dc38bb — feat(channels): v0.7 release
-- **No breaking changes** to RSI package in recent commits
+✅ **All systems healthy** — RSI package present, tests passing, ADR in place, orchestrator integrated.
 
 ---
 
-## Health Assessment
+## 1. RSI Package Status
+- **Location:** `/tmp/evoclaw-check/internal/rsi/`
+- **Files:** 6 Go source files
+  - `analyzer.go` (10.7 KB)
+  - `fixer.go` (4.0 KB)
+  - `loop.go` (3.4 KB)
+  - `loop_test.go` (15.4 KB)
+  - `observer.go` (7.3 KB)
+  - `types.go` (5.0 KB)
+- **Status:** ✅ Present and complete
 
-| Component | Status | Notes |
-|-----------|--------|-------|
-| RSI package exists | ✅ | 6 source files, complete implementation |
-| Tests passing | ✅ | 19/19 tests, all green |
-| ADR documented | ✅ | adr-005 accepted, integrated |
-| Orchestrator wired | ✅ | Import, struct field, init, logger all present |
-| CI green | ✅ | All workflows passing |
-| Recent commits | ✅ | No breaking changes |
+---
+
+## 2. Test Results
+```
+All 18 tests PASSED (0.006s)
+```
+**Coverage:**
+- Outcome recording ✅
+- Pattern detection ✅
+- Recurrence detection ✅
+- Health scoring ✅
+- Safe vs unsafe fix categorization ✅
+- Cross-source correlation ✅
+- Auto-fix behavior ✅
+- Token overlap detection ✅
+
+**Status:** ✅ No failures
+
+---
+
+## 3. ADR-005 Status
+- **File:** `docs/architecture/adr-005-rsi-core-primitive.md`
+- **Title:** "Promote RSI to Core Primitive"
+- **Status:** Accepted
+- **Date:** 2026-02-22
+- **Status:** ✅ Present and current
+
+---
+
+## 4. Orchestrator Integration
+Found **RSI references** in `internal/orchestrator/orchestrator.go`:
+- Line 19: `import "github.com/clawinfra/evoclaw/internal/rsi"`
+- Line 153: `rsiLoop *rsi.Loop` (field declaration)
+- Line 268: `WithRSILogger(NewDefaultRSILogger())` (toolloop integration)
+- Line 317: `o.initRSI()` (initialization call)
+- Line 552: `func (o *Orchestrator) initRSI()` (implementation)
+
+**Status:** ✅ Orchestrator fully wired to RSI loop
+
+---
+
+## 5. Recent Activity
+**Latest commits (last 2):**
+- `b6e310e` — feat(harness): agent engineering harness — docs, lints, CI enforcement
+- `7dc38bb` — feat(channels): Telegram enhancements + MQTT TLS + WhatsApp — v0.7
+
+**No recent commits touching `internal/rsi/`** — RSI core is stable, no recent changes required.
+
+---
+
+## 6. CI Status
+| Workflow | Status | Branch | Event | Duration |
+|----------|--------|--------|-------|----------|
+| Agent Harness Lint | ✅ success | main | push | 1m30s |
+| CI | ✅ success | main | push | 5m21s |
+| Agent Harness Lint | ✅ success | feat/agent-harness | PR | 2m03s |
+
+**Latest run:** 2026-03-07T22:35:33Z
+**Status:** ✅ All green
 
 ---
 
 ## Conclusion
+RSI Loop is a **healthy core primitive** in EvoClaw:
+- ✅ Package complete (6 files)
+- ✅ All tests passing (18/18)
+- ✅ ADR accepted and documented
+- ✅ Orchestrator integration active
+- ✅ CI passing on latest commits
 
-**RSI Loop is production-ready and fully integrated into EvoClaw core.**
+No alerts required.
 
-No alerts required. The package is stable, well-tested, and properly integrated into the orchestrator. Auto-fix remains disabled by default (safe). CI is green across all workflows.
+---
 
-**Next health check:** 2026-03-10 03:30 AEDT
+**Next check:** 2026-03-11 03:30:00 AEDT
