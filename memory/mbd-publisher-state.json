@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-03-09T09:00:00+11:00",
-  "last_backup": "2026-03-09",
-  "topic_index": 4,
+  "lastRun": "2026-03-10T09:00:00+11:00",
+  "last_backup": "2026-03-10",
+  "topic_index": 5,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -83,6 +83,16 @@
       "date": "2026-03-09",
       "folder": "2026-03-09_赛博朋克副业_当AI成为你的数字雇佣兵",
       "githubBacked": true,
+      "note": "Backed up to GitHub. Awaiting MbD publish instruction from owner."
+    },
+    "daily-2026-03-10": {
+      "name": "AI恋爱教练_当算法开始读懂你的心跳",
+      "status": "backed_up",
+      "category": "情感",
+      "date": "2026-03-10",
+      "folder": "2026-03-10_AI恋爱教练_当算法开始读懂你的心跳",
+      "githubBacked": true,
+      "coverGenerated": true,
       "note": "Backed up to GitHub. Awaiting MbD publish instruction from owner."
     }
   },

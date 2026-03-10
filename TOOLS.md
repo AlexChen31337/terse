@@ -81,3 +81,8 @@ text, letters, numbers, words, characters, fonts, typography, logo, title, subti
 - VAE: `ae.safetensors`
 - Steps: 20, CFG: 3.5, sampler: euler, scheduler: simple
 - Cover size: 768×1024
+
+## Intelligent Router
+
+- **Config path:** `~/.openclaw/workspace/skills/intelligent-router/config.json`
+- **Model count:** 24 (as of 2026-03-10; was 17 on 2026-03-09)
