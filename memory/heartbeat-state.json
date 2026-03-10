@@ -1,11 +1,10 @@
 {
-  "lastRSICheck": 1773105301,
-  "lastChecks": {
-    "blog": "2026-03-10T13:15:58.291103",
-    "ci": "2026-03-10T13:15:58.291103",
-    "rsi": "2026-03-10T12:14:00+11:00",
-    "calendar": null,
-    "weather": null,
-    "email": null
-  }
+  "lastRSICheck": "2026-03-10T09:14:00Z",
+  "lastHeartbeat": "2026-03-10T20:14:00+11:00",
+  "status": "HEALTHY",
+  "lastCheck": "2026-03-10T09:14:00Z",
+  "rsiHealthScore": 0.103,
+  "blogArticles": 2,
+  "ciFailures": 0,
+  "notes": "RSI cycle completed, 5 proposals already deployed. No new ClawInfra releases. No CI failures detected."
 }

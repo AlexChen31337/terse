@@ -1,34 +1,22 @@
-# Nightly Health Check Report
-**Generated:** 2026-03-10 12:05 AM AEDT
+# Nightly Health Check
+**Date:** 2026-03-11 00:05 AEDT (2026-03-10 13:05 UTC)
 
-## System Status
+## Results
 
-| Service | Status |
-|---------|--------|
-| **AlphaStrike** | ✅ Active |
-| **EvoClaw Hub** | ❌ DOWN |
-| **GPU Server** | ✅ Online (3 GPUs) |
+| Service | Status | Details |
+|---------|--------|---------|
+| **AlphaStrike** | ✅ Active | Running |
+| **EvoClaw Hub** | ❌ DOWN | API not responding |
+| **GPU Server** | ✅ Online | All 3 GPUs responsive |
+| **Skills** | ✅ 56 | Installed |
+| **Memory Files** | ✅ 156 | Daily notes |
 
-## Details
+## GPU Status (peter@10.0.0.44)
+- **GPU 0:** RTX 3090 — 19998 MiB / 24576 MiB (81% used)
+- **GPU 1:** RTX 3080 — 18 MiB / 10240 MiB (0.2% used)
+- **GPU 2:** RTX 2070 SUPER — 9 MiB / 8192 MiB (0.1% used)
 
-### AlphaStrike Service
-- Status: `active`
-- Running normally
-
-### EvoClaw Hub
-- Status: **DOWN**
-- API endpoint unresponsive
-- ⚠️ **Action required:** Restart hub service
-
-### GPU Server (10.0.0.44)
-- GPU 0: RTX 3090 — 20GB/24GB used (83%)
-- GPU 1: RTX 3080 — 18MB/10GB used (idle)
-- GPU 2: RTX 2070 SUPER — 9MB/8GB used (idle)
-
-### Workspace Stats
-- Skills installed: 56
-- Memory files: 155
-
-## Summary
-
-⚠️ **Issue detected:** EvoClaw hub is down and needs attention.
+## Action Required
+- **EvoClaw hub is DOWN** — investigate `http://localhost:8420/api/agents`
+- Check if `evoclaw-hub` service is running: `systemctl --user status evoclaw-hub`
+- Review logs: `journalctl --user -u evoclaw-hub -n 50`
