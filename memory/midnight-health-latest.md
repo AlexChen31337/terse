@@ -1,69 +1,62 @@
 # Midnight Health Check Report
-**Generated:** 2026-03-10 13:00 UTC (2026-03-11 00:00 AEDT)
-**Agent:** Sentinel (via cron)
+**Generated:** 2026-03-12 00:00:11 AEDT (1773234011)
 
----
+## Component Status
 
-## 1. SENTINEL ✅
-- **Status:** ACTIVE
-- **Last Price Check:** 1773146550 (~13h ago, needs update)
-- **Last Alerts:**
-  - BTC crossed $70,000 (2025-03-10)
-  - HYPE crossed $30 (2025-03-10)
-- **Market Data:** API timeout (Binance 24h ticker failed)
-- **Recommendation:** Market data fetch failed — check network/API limits
+| Component | Status | Notes |
+|-----------|--------|-------|
+| **Sentinel** | ✅ OK | State loaded, last price check ~18min ago |
+| **Quant** | ⚠️ MISSING | No state file at workspace-quant/quant-state.json |
+| **Shield** | ⚠️ MISSING | No access-control.json at workspace-shield/ |
+| **Herald** | ⚠️ MISSING | No state file at workspace-herald/herald-state.json |
+| **AlphaStrike** | ✅ RUNNING | systemd active, BTC/ETH/SOL streaming normally |
+| **EvoClaw Hub** | ✅ UP | 2 agents registered (alex-hub, alex-eye) |
+| **Alex Eye (Pi)** | ❌ DOWN | SSH connection failed - No route to host |
 
-## 2. QUANT ✅
-- **Status:** ACTIVE
-- **AlphaStrike Service:** **ACTIVE** (systemd user service running)
-- **Last Signals:** 2026-03-10T11:18:19Z (~2h ago)
-- **Positions:** None open
-- **Account Value:** $112.22
-- **Signals:**
-  - BTC: SHORT (confidence 0.4 — below threshold)
-  - ETH: SHORT (confidence 0.4 — below threshold)
-  - SOL: NONE
-- **Errors:** None in last 24h
+## Details
 
-## 3. SHIELD ⚠️
-- **Status:** NOT CONFIGURED
-- **File:** `/home/bowen/.openclaw/access-control.json` — **MISSING**
-- **Pending Approvals:** N/A
-- **Recommendation:** Initialize Shield config
+### Sentinel
+- Last prices: BTC $69,229.50, ETH $2,021.65, SOL $84.94, HYPE $35.70
+- Fear & Greed: 15 (Extreme Fear)
+- Recent alerts: BTC $67.5k, $70k, HYPE $30, $25 thresholds
+- Last health check: never (health: 0)
 
-## 4. HERALD ✅
-- **Status:** IDLE
-- **Last Checks:** All zeros (never run)
-- **Posts:** None
-- **Scheduled:** None
-- **Recommendation:** Herald active but no activity
+### Quant
+- State file: **MISSING**
+- AlphaStrike service: Running despite missing state file
+- FearHarvester status: Unknown (no state file)
 
-## 5. EVOCLAW HUB ❌ DOWN
-- **Status:** **DOWN**
-- **Endpoint:** http://localhost:8420/api/agents
-- **Error:** Connection refused
-- **Process:** Not running (no hub/evo processes found)
-- **Systemd:** No hub service registered
-- **Recommendation:** **RESTART REQUIRED**
+### Shield
+- Access control file: **MISSING**
+- Pending approvals: Unknown
 
-## 6. ALEX EYE (PI) ❌ DOWN
-- **Status:** **DOWN**
-- **SSH:** Connection timeout (192.168.1.100)
-- **Error:** PI_DOWN
-- **Recommendation:** **CHECK PI POWER/NETWORK**
+### Herald
+- State file: **MISSING**
+- Marketing/social status: Unknown
 
----
+### AlphaStrike
+- Service: active (systemd --user)
+- Recent logs:
+  - BTCUSDT: 349 candles buffered, last close $69,129
+  - ETHUSDT: 278 candles buffered, last close $2,016.90
+  - SOLUSDT: 295 candles buffered, last close $85.20
 
-## Summary
-| Component | Status | Action Needed |
-|-----------|--------|---------------|
-| Sentinel | ✅ Active | Fix market data API |
-| Quant | ✅ Active | None |
-| Shield | ⚠️ Missing | Initialize config |
-| Herald | ✅ Idle | None |
-| EvoClaw Hub | ❌ DOWN | **RESTART** |
-| Alex Eye (Pi) | ❌ DOWN | **CHECK HARDWARE** |
+### EvoClaw Hub
+- URL: http://localhost:8420
+- Agents registered: 2
+  - alex-hub (Desktop Hub) - idle, started Feb 17
+  - alex-eye (Pi Camera) - idle, **not reachable**
 
-## Critical Actions Required
-1. **EvoClaw Hub** — Restart hub service on bowen-XPS-8940
-2. **Alex Eye (Pi)** — Check power/network on Pi at 192.168.1.100
+### Alex Eye (Pi)
+- SSH host: pi@192.168.1.200
+- Status: **DOWN** - No route to host
+- Action needed: Check network connectivity or restart Pi
+
+## Recommendations
+
+1. **URGENT:** Investigate Alex Eye (Pi) connectivity - may need restart
+2. **HIGH:** Initialize Quant/Shield/Herald state files if agents are active
+3. **MEDIUM:** Sentinel should run health checks periodically (lastChecks.health: 0)
+
+## Alert History
+- No critical alerts in last 24h (based on Sentinel state)

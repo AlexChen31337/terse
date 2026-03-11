@@ -1,22 +1,28 @@
 # Nightly Health Check
-**Date:** 2026-03-11 00:05 AEDT (2026-03-10 13:05 UTC)
+**Date:** 2026-03-12 00:05 AEDT
+**Status:** ✅ All systems operational
 
-## Results
+## Systems Checked
 
-| Service | Status | Details |
-|---------|--------|---------|
-| **AlphaStrike** | ✅ Active | Running |
-| **EvoClaw Hub** | ❌ DOWN | API not responding |
-| **GPU Server** | ✅ Online | All 3 GPUs responsive |
-| **Skills** | ✅ 56 | Installed |
-| **Memory Files** | ✅ 156 | Daily notes |
+### 1. AlphaStrike Service
+- **Status:** ✅ Active
 
-## GPU Status (peter@10.0.0.44)
-- **GPU 0:** RTX 3090 — 19998 MiB / 24576 MiB (81% used)
-- **GPU 1:** RTX 3080 — 18 MiB / 10240 MiB (0.2% used)
-- **GPU 2:** RTX 2070 SUPER — 9 MiB / 8192 MiB (0.1% used)
+### 2. EvoClaw Hub
+- **Status:** ✅ Running
+- **Active agents:** 2
 
-## Action Required
-- **EvoClaw hub is DOWN** — investigate `http://localhost:8420/api/agents`
-- Check if `evoclaw-hub` service is running: `systemctl --user status evoclaw-hub`
-- Review logs: `journalctl --user -u evoclaw-hub -n 50`
+### 3. GPU Server (10.0.0.44)
+- **Status:** ✅ Online
+- **GPUs detected:** 3
+  - RTX 3090: 19998 MiB / 24576 MiB (81% used)
+  - RTX 3080: 18 MiB / 10240 MiB (0.2% used)
+  - RTX 2070 SUPER: 9 MiB / 8192 MiB (0.1% used)
+
+### 4. Skills
+- **Count:** 56 skills installed
+
+### 5. Memory Files
+- **Count:** 158 markdown files in memory/
+
+## Summary
+All core systems healthy. No action required.
