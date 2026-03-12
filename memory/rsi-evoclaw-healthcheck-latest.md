@@ -1,76 +1,82 @@
-# RSI Loop Health Check Report
-**Date:** 2026-03-11 03:30 AEDT (2026-03-10 16:30 UTC)  
-**Repository:** clawinfra/evoclaw  
-**Branch:** main (commit b6e310e)
+# RSI Loop Health Check — EvoClaw Core
+**Date:** 2026-03-12 03:30 AEDT (2026-03-11 16:30 UTC)
+**Repo:** clawinfra/evoclaw (main)
+**Commit:** b6e310e
 
-## Summary
-✅ **ALL CHECKS PASSED** — RSI Loop is healthy and integrated.
+## Executive Summary
+✅ **All systems healthy**
 
-## Detailed Results
+## Package Integrity
+- **RSI source files:** 6 Go files
+- **Files:**
+  - analyzer.go (10,747 bytes)
+  - fixer.go (4,073 bytes)
+  - loop.go (3,392 bytes)
+  - loop_test.go (15,356 bytes)
+  - observer.go (7,266 bytes)
+  - types.go (4,974 bytes)
 
-### 1. RSI Package Status
-- **Location:** `internal/rsi/`
-- **Files Present:** 6
-  - `analyzer.go` (10,747 bytes)
-  - `fixer.go` (4,073 bytes)
-  - `loop.go` (3,392 bytes)
-  - `observer.go` (7,266 bytes)
-  - `types.go` (4,974 bytes)
-  - `loop_test.go` (15,356 bytes)
-- **Status:** ✅ Complete
+## Test Results
+✅ **All tests passing** (19/19)
+- TestOutcomeRecording ✅
+- TestOutcomeMaxTrim ✅
+- TestRecordFromAgent ✅
+- TestRecordToolCall ✅
+- TestPatternDetection ✅
+- TestRecurrenceDetection ✅
+- TestHealthScore ✅
+- TestSafeVsUnsafeFixCategorization ✅
+- TestApplyIfSafe ✅
+- TestDetectIssues ✅
+- TestLoopCreation ✅
+- TestCrossSourceCorrelation ✅
+- TestAutoFixDisabled ✅
+- TestLoopRunCycle ✅
+- TestFixerAllCategories ✅
+- TestSuggestAction ✅
+- TestCategorizeIssue ✅
+- TestTokenOverlap ✅
+- TestRSILoop_RecordsTrajectoryOnOutcome ✅
 
-### 2. Test Results
-- **Command:** `go test ./internal/rsi/... -v -count=1`
-- **Tests Run:** 18
-- **Result:** ✅ **ALL PASSED** (0.007s)
-- **Test Coverage:**
-  - Outcome recording & trimming
-  - Pattern & recurrence detection
-  - Health score calculation
-  - Safe vs unsafe fix categorization
-  - Cross-source correlation
-  - Auto-fix behavior
-  - Full RSI loop cycles
+**Test time:** 0.005s
 
-### 3. ADR Documentation
-- **File:** `docs/architecture/adr-005-rsi-core-primitive.md`
-- **Status:** ✅ Present
-- **Content:** ADR-005 "Promote RSI to Core Primitive" (Accepted 2026-02-22)
-- **Key Point:** RSI promoted from optional OpenClaw skill to EvoClaw core primitive
+## Architecture Documentation
+✅ **ADR-005 present** — "Promote RSI to Core Primitive"
+- Status: Accepted (2026-02-22)
+- RSI promoted from optional skill to core primitive
+- Integrated into orchestrator as first-class citizen
 
-### 4. Orchestrator Integration
-- **File:** `internal/orchestrator/orchestrator.go`
-- **RSI References:** 20+ matches found
-- **Key Integrations:**
-  - Line 19: `rsi` package imported
-  - Line 153: `rsiLoop *rsi.Loop` field
-  - Line 268: ToolLoop configured with RSI logger
-  - Line 317: `initRSI()` called during orchestrator init
-  - Line 551: `initRSI()` implementation
-- **Status:** ✅ Fully wired
+## Orchestrator Integration
+✅ **RSI wired into orchestrator**
+- Imported: `github.com/clawinfra/evoclaw/internal/rsi`
+- Field: `rsiLoop *rsi.Loop` (line 153)
+- Initialization: `o.initRSI()` (line 317)
+- ToolLoop integration: `WithRSILogger(NewDefaultRSILogger())` (line 268)
 
-### 5. Recent Activity
-- **Latest Commit:** b6e310e "feat(harness): agent engineering harness — docs, lints, CI enforcement"
-- **RSI Last Modified:** 7dc38bb "feat(channels): Telegram enhancements + MQTT TLS + WhatsApp — v0.7"
-- **Status:** ✅ RSI stable (no recent changes needed)
+## CI Status
+✅ **Latest CI runs passing** (3/3)
+1. Agent Harness Lint — 1m30s — 2026-03-07T22:35:33Z ✅
+2. CI — 5m21s — 2026-03-07T22:35:33Z ✅
+3. Agent Harness Lint (feat/agent-harness PR) — 2m3s — 2026-03-07T21:49:43Z ✅
 
-### 6. CI Status
-- **Latest Runs (GitHub Actions):**
-  1. ✅ Agent Harness Lint (main push) — success (1m30s)
-  2. ✅ CI (main push) — success (5m21s)
-  3. ✅ Agent Harness Lint (feat/agent-harness PR) — success (2m3s)
-- **Status:** ✅ All green
+## Recent Activity
+**Latest commits (none touching RSI directly):**
+- b6e310e: feat(harness): agent engineering harness — docs, lints, CI enforcement
+- 7dc38bb: feat(channels): Telegram enhancements + MQTT TLS + WhatsApp — v0.7
+
+**Assessment:** No RSI-specific commits in last 10, but this is expected — RSI is in stable maintenance phase. Core functionality is solid and tested.
+
+## Recommendations
+- Continue monitoring for failure pattern recurrence
+- ADR-005 acceptance confirms RSI is now core infrastructure
+- Test coverage is comprehensive (19 tests, all passing)
+- Integration into orchestrator is complete and functional
 
 ## Health Score: 100%
 - Package integrity: ✅
-- Test coverage: ✅ (18/18 tests passing)
-- Documentation: ✅ (ADR present)
-- Integration: ✅ (orchestrator wired)
-- CI/CD: ✅ (all pipelines green)
+- Test suite: ✅ (19/19 passing)
+- Documentation: ✅
+- Integration: ✅
+- CI: ✅
 
-## Recommendations
-No immediate action required. RSI Loop is functioning as designed and fully integrated into EvoClaw core.
-
----
-**Generated by:** RSI Loop Nightly Health Check (cron:95f18441)  
-**Auto-saved to:** memory/rsi-evoclaw-healthcheck-latest.md
+No alerts required.
