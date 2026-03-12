@@ -1,28 +1,42 @@
-# Nightly Health Check
-**Date:** 2026-03-12 00:05 AEDT
-**Status:** ✅ All systems operational
+# Nightly Health Check Report
+**Generated:** 2026-03-13 12:05 AEDT (2026-03-12 13:05 UTC)
 
-## Systems Checked
+## System Status Summary
+✅ **All systems operational**
+
+---
+
+## Detailed Results
 
 ### 1. AlphaStrike Service
-- **Status:** ✅ Active
+- **Status:** `active` ✅
+- **Check:** `systemctl --user is-active alphastrike.service`
 
 ### 2. EvoClaw Hub
-- **Status:** ✅ Running
-- **Active agents:** 2
+- **Status:** `2 agents` ✅
+- **Check:** `curl -s http://localhost:8420/api/agents`
+- **API:** Responding normally
 
 ### 3. GPU Server (10.0.0.44)
-- **Status:** ✅ Online
-- **GPUs detected:** 3
-  - RTX 3090: 19998 MiB / 24576 MiB (81% used)
-  - RTX 3080: 18 MiB / 10240 MiB (0.2% used)
-  - RTX 2070 SUPER: 9 MiB / 8192 MiB (0.1% used)
+- **Status:** `online` ✅
+- **Connection:** SSH successful (5s timeout)
 
-### 4. Skills
-- **Count:** 56 skills installed
+**GPU Status:**
+- **GPU 0:** RTX 3090 — 20GB / 24GB used (ComfyUI primary)
+- **GPU 1:** RTX 3080 — 18MB / 10GB used (idle)
+- **GPU 2:** RTX 2070 SUPER — 9MB / 8GB used (idle)
+
+### 4. Workspace Skills
+- **Count:** 57 skills installed
+- **Path:** `~/.openclaw/workspace/skills/`
 
 ### 5. Memory Files
-- **Count:** 158 markdown files in memory/
+- **Count:** 159 daily markdown files
+- **Path:** `~/.openclaw/workspace/memory/*.md`
 
-## Summary
-All core systems healthy. No action required.
+---
+
+## Health Score
+**5/5 systems operational** 🟢
+
+No action required.

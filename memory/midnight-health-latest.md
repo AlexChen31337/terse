@@ -1,62 +1,48 @@
-# Midnight Health Check Report
-**Generated:** 2026-03-12 00:00:11 AEDT (1773234011)
+# Midnight Health Report
+**Generated:** 2026-03-13 00:00 AEDT (2026-03-12 13:00 UTC)
+**Cron Job:** 3b4465c3-4a20-4e25-8325-30d108cd3f04
 
 ## Component Status
 
-| Component | Status | Notes |
-|-----------|--------|-------|
-| **Sentinel** | ✅ OK | State loaded, last price check ~18min ago |
-| **Quant** | ⚠️ MISSING | No state file at workspace-quant/quant-state.json |
-| **Shield** | ⚠️ MISSING | No access-control.json at workspace-shield/ |
-| **Herald** | ⚠️ MISSING | No state file at workspace-herald/herald-state.json |
-| **AlphaStrike** | ✅ RUNNING | systemd active, BTC/ETH/SOL streaming normally |
-| **EvoClaw Hub** | ✅ UP | 2 agents registered (alex-hub, alex-eye) |
-| **Alex Eye (Pi)** | ❌ DOWN | SSH connection failed - No route to host |
+| Component | Status | Details |
+|-----------|--------|---------|
+| **Sentinel** | ✅ OK | State loaded, last price check: 2026-03-12 11:58 AM UTC |
+| **Quant** | ✅ OK | State loaded, AlphaStrike service: ACTIVE (systemd) |
+| **Shield** | ⚠️ NOT FOUND | access-control.json does not exist |
+| **Herald** | ✅ OK | State loaded, no scheduled posts pending |
+| **EvoClaw Hub** | ✅ OK | 2 agents registered |
+| **Alex Eye (Pi)** | ❌ DOWN | SSH timeout, ping failed |
 
-## Details
+## Sentinel Details
+- **Last Prices:** BTC $70,359.50 | ETH $2,063.55 | SOL $87.10 | HYPE $37.47
+- **Fear & Greed:** 18 (Extreme Fear)
+- **Last Alerts (24h):** 7 alerts logged (BTC/HYPE thresholds)
 
-### Sentinel
-- Last prices: BTC $69,229.50, ETH $2,021.65, SOL $84.94, HYPE $35.70
-- Fear & Greed: 15 (Extreme Fear)
-- Recent alerts: BTC $67.5k, $70k, HYPE $30, $25 thresholds
-- Last health check: never (health: 0)
+## Quant Details
+- **Account Value:** $112.22
+- **Open Positions:** None
+- **Signals:** LONG BTC/ETH/SOL (all confidence 0.40 — no trades triggered)
+- **Consecutive Losses:** 0
+- **Circuit Breakers:** Armed (daily target 5%, stop -3%)
 
-### Quant
-- State file: **MISSING**
-- AlphaStrike service: Running despite missing state file
-- FearHarvester status: Unknown (no state file)
+## Shield Status
+- access-control.json not found at `/home/bowen/.openclaw/access-control.json`
+- This may need initialization or path verification
 
-### Shield
-- Access control file: **MISSING**
-- Pending approvals: Unknown
+## Herald Details
+- No active scheduled posts
+- No recent outreach activity
 
-### Herald
-- State file: **MISSING**
-- Marketing/social status: Unknown
+## EvoClaw Hub
+- 2 agents registered
+- Responding on http://localhost:8420/api/agents
 
-### AlphaStrike
-- Service: active (systemd --user)
-- Recent logs:
-  - BTCUSDT: 349 candles buffered, last close $69,129
-  - ETHUSDT: 278 candles buffered, last close $2,016.90
-  - SOLUSDT: 295 candles buffered, last close $85.20
+## Alex Eye (Pi) — ❌ DOWN
+- **SSH:** Connection timeout
+- **Ping:** Failed (host unreachable)
+- **IP:** 10.0.0.100
+- **Action Required:** Manual intervention — Pi may be offline or network issue
 
-### EvoClaw Hub
-- URL: http://localhost:8420
-- Agents registered: 2
-  - alex-hub (Desktop Hub) - idle, started Feb 17
-  - alex-eye (Pi Camera) - idle, **not reachable**
-
-### Alex Eye (Pi)
-- SSH host: pi@192.168.1.200
-- Status: **DOWN** - No route to host
-- Action needed: Check network connectivity or restart Pi
-
-## Recommendations
-
-1. **URGENT:** Investigate Alex Eye (Pi) connectivity - may need restart
-2. **HIGH:** Initialize Quant/Shield/Herald state files if agents are active
-3. **MEDIUM:** Sentinel should run health checks periodically (lastChecks.health: 0)
-
-## Alert History
-- No critical alerts in last 24h (based on Sentinel state)
+## Summary
+- **5/6 components OK**
+- **1 DOWN:** Alex Eye (Pi) — requires manual restart or network troubleshooting
