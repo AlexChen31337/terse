@@ -1,48 +1,98 @@
-# Midnight Health Report
-**Generated:** 2026-03-13 00:00 AEDT (2026-03-12 13:00 UTC)
-**Cron Job:** 3b4465c3-4a20-4e25-8325-30d108cd3f04
+# Midnight Health Check Report
+**Date:** 2026-03-14 00:00 AEDT (2026-03-13 13:00 UTC)
+**Run by:** Sentinel Cron Job
 
 ## Component Status
 
-| Component | Status | Details |
-|-----------|--------|---------|
-| **Sentinel** | ✅ OK | State loaded, last price check: 2026-03-12 11:58 AM UTC |
-| **Quant** | ✅ OK | State loaded, AlphaStrike service: ACTIVE (systemd) |
-| **Shield** | ⚠️ NOT FOUND | access-control.json does not exist |
-| **Herald** | ✅ OK | State loaded, no scheduled posts pending |
-| **EvoClaw Hub** | ✅ OK | 2 agents registered |
-| **Alex Eye (Pi)** | ❌ DOWN | SSH timeout, ping failed |
+| Component | Status | Notes |
+|-----------|--------|-------|
+| **Sentinel** | 🟢 ACTIVE | Last price check: 2026-03-13 23:45 UTC |
+| **Quant** | 🟢 ACTIVE | Account: $112.22, no open positions |
+| **AlphaStrike** | 🟢 RUNNING | Process active (PID 1216118), logging normally |
+| **Shield** | 🟡 MINIMAL | No access-control.json found |
+| **Herald** | 🟢 QUIET | No recent activity, no errors |
+| **EvoClaw Hub** | 🔴 DOWN | `localhost:8420` not responding |
+| **Alex Eye (Pi)** | 🔴 DOWN | SSH to 10.0.0.50 failed |
 
-## Sentinel Details
-- **Last Prices:** BTC $70,359.50 | ETH $2,063.55 | SOL $87.10 | HYPE $37.47
-- **Fear & Greed:** 18 (Extreme Fear)
-- **Last Alerts (24h):** 7 alerts logged (BTC/HYPE thresholds)
+---
 
-## Quant Details
-- **Account Value:** $112.22
-- **Open Positions:** None
-- **Signals:** LONG BTC/ETH/SOL (all confidence 0.40 — no trades triggered)
-- **Consecutive Losses:** 0
-- **Circuit Breakers:** Armed (daily target 5%, stop -3%)
+## Detailed Findings
 
-## Shield Status
-- access-control.json not found at `/home/bowen/.openclaw/access-control.json`
-- This may need initialization or path verification
+### 1. Sentinel (Market Monitoring)
+- **Last checks:**
+  - Prices: 2026-03-13 23:45 UTC (15 min ago)
+  - Polymarket: Never
+  - Health: Never run before (this is first health check)
+- **Recent alerts (last 24h):**
+  - Fear & Greed: Extreme Fear (15)
+  - BTC crossed $75K, $80K
+  - HYPE crossed $30
+  - SOL >3% move
+  - Broad decline detected
+- **State file:** Intact, 585 bytes
 
-## Herald Details
-- No active scheduled posts
-- No recent outreach activity
+### 2. Quant (Trading)
+- **Status:** ACTIVE, version 4
+- **Account value:** $112.22
+- **Open positions:** None
+- **Strategy:** Hyperliquid perps via AlphaStrike
+- **Signals:** All below confidence threshold (0.40 < 0.70)
+  - BTC: SHORT @ $72,345 (RSI 76.3, overbought)
+  - ETH: LONG @ $2,124 (RSI 70.9, overbought)
+  - SOL: LONG @ $90.10 (RSI 69.0, overbought)
+- **Last check:** 2026-03-13 11:19 UTC (2h ago)
+- **Circuit breakers:** Intact, no triggers
 
-## EvoClaw Hub
-- 2 agents registered
-- Responding on http://localhost:8420/api/agents
+### 3. AlphaStrike Service
+- **Service:** `alphastrike.service` (systemd user)
+- **Status:** Active (running)
+- **Process:** PID 1216118, running since Feb 23
+- **Recent logs:** Cycling normally (Cycle 27162)
+  - BTCUSDT: 368 candles, last close $71,598
+  - ETHUSDT: 287 candles, last close $2,072.5
+  - SOLUSDT: 304 candles, last close $90.139
+- **Uptime:** ~19 days continuous
 
-## Alex Eye (Pi) — ❌ DOWN
-- **SSH:** Connection timeout
-- **Ping:** Failed (host unreachable)
-- **IP:** 10.0.0.100
-- **Action Required:** Manual intervention — Pi may be offline or network issue
+### 4. Shield (Security)
+- **State file:** Present, minimal (121 bytes)
+- **Issues:**
+  - `access-control.json` not found in workspace-shield
+  - No audits recorded
+  - No blocked attempts
+- **Recommendation:** Shield may need initialization
+
+### 5. Herald (Marketing/Social)
+- **Status:** Quiet, no errors
+- **Activity:** No recent posts or scheduled content
+- **State:** 137 bytes, initialized but unused
+
+### 6. EvoClaw Hub
+- **Status:** 🔴 DOWN
+- **Endpoint:** `http://localhost:8420/api/agents`
+- **Error:** Connection refused / timeout
+- **Impact:** Agent registration/unavailable
+- **Action needed:** Restart hub service
+
+### 7. Alex Eye (Pi)
+- **Target:** 10.0.0.50 (Raspberry Pi)
+- **SSH:** Connection failed (timeout)
+- **Status:** 🔴 DOWN
+- **Possible causes:** Pi powered off, network issue, or IP changed
+
+---
+
+## Disk Space
+- **Root (/):** 937G total, 553G used, 337G free (63% used)
+- **Status:** Healthy
+
+---
 
 ## Summary
-- **5/6 components OK**
-- **1 DOWN:** Alex Eye (Pi) — requires manual restart or network troubleshooting
+- **Passing:** 4/7 components (Sentinel, Quant, AlphaStrike, Herald)
+- **Failing:** 2/7 components (EvoClaw Hub, Alex Eye Pi)
+- **Warning:** 1/7 components (Shield needs initialization)
+
+**Critical items requiring attention:**
+1. Restart EvoClaw Hub on localhost:8420
+2. Investigate Alex Eye Pi connectivity (10.0.0.50)
+3. Initialize Shield access-control.json if needed

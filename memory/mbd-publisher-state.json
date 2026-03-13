@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-03-13T09:07:00+11:00",
-  "last_backup": "2026-03-13",
-  "topic_index": 1,
+  "lastRun": "2026-03-14T00:15:00+11:00",
+  "last_backup": "2026-03-14",
+  "topic_index": 2,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -121,6 +121,16 @@
       "category": "科技",
       "date": "2026-03-13",
       "folder": "2026-03-13_AI副业指南_躺平时代的主动收入密码升级版",
+      "githubBacked": true,
+      "coverGenerated": true,
+      "note": "Backed up to GitHub. Awaiting MbD publish instruction from owner."
+    },
+    "daily-2026-03-14": {
+      "name": "Chains Worth Building: A Builder Field Guide to L1 Design, DeFi Architecture, and Tokenomics That Actually Work",
+      "status": "backed_up",
+      "category": "crypto/blockchain",
+      "date": "2026-03-14",
+      "folder": "2026-03-14_blockchain-builders-field-guide",
       "githubBacked": true,
       "coverGenerated": true,
       "note": "Backed up to GitHub. Awaiting MbD publish instruction from owner."
