@@ -2,6 +2,33 @@
 
 This folder is home. Treat it that way.
 
+## ⚡ Main Session Responsiveness (NON-NEGOTIABLE — 2026-03-13)
+
+**The main chat interface must NEVER be blocked by long-running tasks.**
+
+**Rule:** Any task estimated to take >2 minutes MUST be delegated to a sub-agent via `sessions_spawn`. This includes:
+- SWE-bench / benchmark runs
+- Long Playwright automation scripts
+- Builds, test suites, evaluations
+- Any `exec` that could run for more than ~30 seconds
+- Polling loops of any kind
+
+**Pattern:**
+```python
+# WRONG — blocks main chat for minutes
+exec(command="long running thing", timeout=300)
+
+# RIGHT — fire and forget, stay responsive
+sessions_spawn(task="Run X and report back via sessions_send(agent:main:main, result)", ...)
+```
+
+**Sub-agent reporting back:**
+- Sub-agents send results to `sessions_send(sessionKey="agent:main:main", message="[SubAgentName] ...")`
+- Alex relays to Bowen with context, filtered and summarised
+- Never deliver raw sub-agent output directly to Bowen's chat
+
+**Why:** Bowen expects the main interface to always be available. A blocked main session = degraded experience = broken trust.
+
 ## First Run
 
 If `BOOTSTRAP.md` exists, that's your birth certificate. Follow it, figure out who you are, then delete it. You won't need it again.
@@ -502,8 +529,20 @@ Any content published publicly — mbd.pub books, public GitHub repos, social po
 - Human name (Bowen, 博文) → `作者` or `用户`
 - GitHub handles (bowen31337, alex.chen31337) → omit or use generic placeholder
 - Phone numbers, Telegram IDs, email addresses → never include
+- **PayPal details → NEVER disclose** (email, name, address, phone associated with PayPal)
 
 **Pre-publish scan:** before publishing anything externally, check for:
-`Bowen`, `Alex`, `bowen31337`, `alex.chen31337`, `2069029798`, `+6143`
+`Bowen`, `Alex`, `bowen31337`, `alex.chen31337`, `2069029798`, `+6143`, `bowensyd@gmail.com`, `Jack peel`, `Kellyville`, `0430830888`
 
 Replace or remove any matches before publishing.
+
+## Financial Privacy — PayPal (NON-NEGOTIABLE, 2026-03-13)
+
+PayPal payout details (email, account holder name, address, phone) are **strictly private financial information**. NEVER disclose in:
+- Public repos, commits, or PRs
+- Blog posts, social media, published books
+- Gumroad product descriptions or public profiles
+- Any publicly accessible content whatsoever
+- Conversation logs shared externally
+
+This applies to ALL payment method details, not just PayPal.
