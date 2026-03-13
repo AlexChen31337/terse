@@ -1,11 +1,11 @@
 # Quant Report
-_2026-03-12T15:13:17.146522+00:00_
+_2026-03-13T03:13:17.020501+00:00_
 
 📊 **[Quant] AlphaStrike V2 Paper Trading Update**
 
-⏸  BTC HOLD conf=0% — Model agreement 0% < 60%
-⏸  ETH HOLD conf=0% — signal_is_hold
-⏸  SOL SHORT conf=13% — below_threshold
+⏸  BTC HOLD conf=0% — Net return -0.0003 below minimum 0.0005
+⏸  ETH HOLD conf=0% — Model agreement 33% < 60%
+⏸  SOL HOLD conf=0% — signal_is_hold
 
 **Open positions:** 0 | none
 **Closed trades:** 0 | Win rate: 0% | Total P&L: $+0.00

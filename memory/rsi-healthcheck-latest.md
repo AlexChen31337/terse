@@ -1,46 +1,117 @@
 # RSI Loop Health Check Report
-**Date:** 2026-03-12 3:00 AM AEDT (2026-03-11 16:00 UTC)
-**Trigger:** Cron job 8cc932c5
+**Date:** 2026-03-13 03:00 AEDT (2026-03-12 16:00 UTC)
+**Trigger:** Cron job `8cc932c5`
 
-## Health Score: 0.135 / 1.0 ⚠️ LOW
+---
 
-### Outcomes Summary (7d)
-- **Total logged:** 132
+## Health Score: 0.136 / 1.0 ⚠️
+
+**Status:** Degraded (health score < 0.3 threshold)
+
+---
+
+## Outcomes Summary (Last 7 Days)
+
+- **Total logged:** 139 outcomes
 - **Success rate:** 31%
-- **Avg quality:** 2.2/5
+- **Average quality:** 2.19/5
 
-### Top Failure Patterns
-1. **tool_error** (63 occurrences, 100% failure)
-   - Context: tool_call tasks
-   - Severity: 1.421 (critical)
-   - Status: Fix proposal b9e26a71 already deployed
+---
 
-2. **context_loss** (41 occurrences, 0% failure rate, but indicates issues)
-   - Context: session_management tasks
-   - Severity: 0.617 (moderate)
-   - Note: 0% failure suggests these are logged but not causing task failures
+## Top Failure Patterns
 
-3. **tool_validation_error** (15 occurrences, 100% failure)
-   - Context: tool_call tasks
-   - Severity: 0.451 (moderate)
-   - Status: Fix proposal 15c31c37 already deployed
+| Pattern | Count | Failure Rate | Priority Score |
+|---------|-------|--------------|----------------|
+| **tool_error** (in tool_call tasks) | 64 | 100% | **1.381** 🔴 |
+| **context_loss** (in session_management tasks) | 43 | 0% | 0.619 |
+| **tool_validation_error** (in tool_call tasks) | 16 | 100% | 0.460 |
+| **timeout** (in tool_call tasks) | 16 | N/A | 0.460 |
 
-4. **timeout** (14 occurrences, task duration issues)
-   - Context: tool_call tasks
-   - Status: Fix proposal db32089a already deployed
+---
 
-### Proposals Status
-- **Draft:** 0
-- **Approved:** 0
-- **Deployed:** 24 (4 new proposals in this cycle, all already deployed)
+## Critical Issue: tool_call tool_error (Priority 1.381)
 
-### Test Results: ✅ ALL PASSED
-- 32/32 tests passed
-- Auto-observe: 17 tests passed
-- Auto-fix: 15 tests passed
-- Execution time: 0.85s
+**The biggest problem:** `tool_error` occurs **64 times** in the last 7 days, with a **100% failure rate** when this issue appears in `tool_call` tasks.
 
-### Assessment
-Health score (0.135) is below the 0.3 threshold, BUT all critical patterns have identified fix proposals that are already deployed. The system is self-correcting. Test suite confirms all automation is functioning correctly.
+**Impact:**
+- This is the single biggest contributor to low health score
+- When tool_call tasks encounter tool_error, they fail completely
+- Affects 46% of all logged outcomes (64/139)
 
-**Recommendation:** No manual intervention required. The deployed fixes should reduce these failure rates in the next 7-day cycle. Monitor health score in next health check.
+**Proposals Generated:**
+- 📝 **b9e26a71** - Address 'tool_error' in 'tool_call' tasks (already deployed)
+- 📝 **15c31c37** - Address 'tool_validation_error' in 'tool_call' tasks (already deployed)
+- 📝 **db32089a** - Address 'timeout' in 'tool_call' tasks (already deployed)
+
+**Status:** All proposals have been previously deployed, but the issue persists. This suggests:
+1. The fixes may not have been fully effective
+2. New instances of the same pattern are continuing to occur
+3. Root cause may require deeper investigation
+
+---
+
+## RSI Cycle Results
+
+**Step 1 - Observe:** 139 outcomes analyzed, health score 0.136, 4 patterns found
+
+**Step 2 - Synthesize:** 4 proposals generated (all repair type)
+
+**Step 3 - Auto-approve:** All 4 proposals already deployed, skipped
+
+**Step 4 - Deploy:** 0 new deployments (all existing)
+
+---
+
+## Test Suite Results
+
+✅ **All 32 tests passed** (0.86s)
+
+- test_auto_observe.py: 22 tests passed
+- test_auto_fix.py: 10 tests passed
+
+**Coverage:**
+- Issue classification
+- Task classification
+- Auto-observe workflow
+- Recurrence detection
+- Pattern finding
+- Proposal generation
+- Codebase search
+- Auto-fix workflow
+
+---
+
+## Recommendations
+
+### Immediate Action Required
+1. **Investigate tool_call tool_error root cause** - The 100% failure rate when tool_error occurs suggests a systemic issue with how tool_call tasks handle errors
+2. **Review deployed proposal effectiveness** - Proposals b9e26a71, 15c31c37, and db32089a are deployed but the pattern persists
+
+### Medium Priority
+3. **Address context_loss in session_management** - 43 occurrences, though 0% failure rate suggests these are recovered or non-critical
+4. **Reduce timeout occurrences** - 16 timeout instances in tool_call tasks
+
+### Metrics to Track
+- tool_error frequency per day (target: < 5/day, current: ~9/day)
+- tool_call success rate (target: > 80%, current: unknown but heavily impacted by tool_error)
+- Context recovery rate after context_loss events
+
+---
+
+## Proposals Awaiting Review
+
+**None** - All generated proposals have been auto-approved and deployed previously.
+
+---
+
+## Next Steps
+
+1. Bowen should review the deployed proposals to determine if they were correctly implemented
+2. Consider spawning a sub-agent to investigate the tool_error root cause in tool_call tasks
+3. Monitor health score over next 7 days to see if trend improves
+
+---
+
+**Report generated by:** RSI Loop Health Check Cron Job
+**Action taken:** Report saved to memory/rsi-healthcheck-latest.md
+**Alert triggered:** No (health score < 0.3 but this is expected baseline; alert only if degradation continues)
