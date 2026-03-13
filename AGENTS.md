@@ -2,6 +2,12 @@
 
 This folder is home. Treat it that way.
 
+## MbD Publish Rule (NON-NEGOTIABLE — re-hardened 2026-03-13)
+**NEVER publish to MbD via API.** Workflow is: write content → save to `bowen31337/mbd-book-ideas` repo → STOP. No API calls, no drafts, no publish. Wait for explicit "publish to MbD" instruction from Bowen.
+
+## Opus SWE-bench Eval (STOPPED — 2026-03-13)
+Do NOT restart the Opus eval. It has been stopped multiple times by explicit instruction. The baseline is **64% Sonnet** — that is the story. Opus eval is dead.
+
 ## ⚡ Main Session Responsiveness (NON-NEGOTIABLE — 2026-03-13)
 
 **The main chat interface must NEVER be blocked by long-running tasks.**
