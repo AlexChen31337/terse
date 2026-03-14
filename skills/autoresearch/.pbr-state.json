@@ -1,0 +1,51 @@
+{
+  "version": 2,
+  "task": "Build the autoresearch skill: a nightly research pipeline that rotates through topic tracks (AI/agents, crypto/DeFi, developer tools), pulls from arXiv, GitHub trending, Hacker News, and web search, synthesises into a structured markdown report saved to memory/autoresearch-latest.md. The skill lives in ~/.openclaw/workspace/skills/autoresearch/ and includes: SKILL.md, scripts/run.py (main pipeline), scripts/sources.py (fetchers), scripts/synthesise.py (report builder). After building, wire a nightly cron at 1 AM Sydney that runs the pipeline and saves output. The book draft cron (id: 9c4835bf) should be updated to read autoresearch-latest.md as source material before writing. No new repo needed \u2014 workspace skill only.",
+  "workspace": "/home/bowen/.openclaw/workspace/skills/autoresearch",
+  "created_at": "2026-03-14T14:01:16.430787+00:00",
+  "current_phase": "plan",
+  "config": {
+    "models": {
+      "plan": "anthropic/claude-opus-4-6",
+      "build": "anthropic/claude-sonnet-4-6",
+      "review": "anthropic/claude-sonnet-4-6"
+    },
+    "timeout": 600,
+    "retries": 1
+  },
+  "phases": {
+    "plan": {
+      "name": "plan",
+      "status": "running",
+      "started_at": "2026-03-14T14:01:16.431189+00:00",
+      "completed_at": null,
+      "duration_seconds": null,
+      "artifacts": [],
+      "attempt": 1,
+      "error": null
+    },
+    "build": {
+      "name": "build",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "duration_seconds": null,
+      "artifacts": [],
+      "attempt": 0,
+      "error": null
+    },
+    "review": {
+      "name": "review",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "duration_seconds": null,
+      "artifacts": [],
+      "attempt": 0,
+      "error": null
+    }
+  },
+  "iteration": 1,
+  "max_iterations": 3,
+  "review_verdict": null
+}
