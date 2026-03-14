@@ -1,98 +1,89 @@
 # Midnight Health Check Report
-**Date:** 2026-03-14 00:00 AEDT (2026-03-13 13:00 UTC)
-**Run by:** Sentinel Cron Job
+**Generated:** 2026-03-15 00:00:00 AEDT (2026-03-14 13:00:00 UTC)
 
-## Component Status
-
+## Executive Summary
 | Component | Status | Notes |
 |-----------|--------|-------|
-| **Sentinel** | 🟢 ACTIVE | Last price check: 2026-03-13 23:45 UTC |
-| **Quant** | 🟢 ACTIVE | Account: $112.22, no open positions |
-| **AlphaStrike** | 🟢 RUNNING | Process active (PID 1216118), logging normally |
-| **Shield** | 🟡 MINIMAL | No access-control.json found |
-| **Herald** | 🟢 QUIET | No recent activity, no errors |
-| **EvoClaw Hub** | 🔴 DOWN | `localhost:8420` not responding |
-| **Alex Eye (Pi)** | 🔴 DOWN | SSH to 10.0.0.50 failed |
+| **Sentinel** | ✅ OK | State loaded, last check 1773829201 (recent) |
+| **Quant** | ✅ OK | AlphaStrike active, signals current |
+| **Shield** | ⚠️ MISSING | access-control.json not found at expected path |
+| **Herald** | ✅ OK | State loaded, metrics empty (expected) |
+| **EvoClaw Hub** | 🚨 DOWN | Service not running, no agents registered |
+| **AlphaStrike** | ✅ ACTIVE | systemd service active, processing candles |
+| **Alex Eye (Pi)** | 🚨 DOWN | SSH connection refused to 10.0.0.50 |
 
 ---
 
 ## Detailed Findings
 
-### 1. Sentinel (Market Monitoring)
+### 1. Sentinel (workspace-sentinel)
+- **State file:** ✅ Loaded
 - **Last checks:**
-  - Prices: 2026-03-13 23:45 UTC (15 min ago)
-  - Polymarket: Never
-  - Health: Never run before (this is first health check)
-- **Recent alerts (last 24h):**
-  - Fear & Greed: Extreme Fear (15)
-  - BTC crossed $75K, $80K
-  - HYPE crossed $30
-  - SOL >3% move
-  - Broad decline detected
-- **State file:** Intact, 585 bytes
+  - Prices: 1773829201 (Sat Mar 15 03:00:01 2026 - recent)
+  - Polymarket: 0 (never run)
+  - Health: 0 (never run)
+- **Recent alerts (24h):**
+  - Fear & Greed (extreme fear): 2026-03-13
+  - BTC thresholds: 70000, 75000
+  - HYPE thresholds: 30, 25
+  - SOL 3% decline
+- **Open alerts:** None requiring immediate action
 
-### 2. Quant (Trading)
-- **Status:** ACTIVE, version 4
+### 2. Quant (workspace-quant)
+- **State file:** ✅ Loaded
+- **Status:** ACTIVE, v4, recommissioned 2026-03-10
+- **Strategy:** HL perps via AlphaStrike
 - **Account value:** $112.22
 - **Open positions:** None
-- **Strategy:** Hyperliquid perps via AlphaStrike
-- **Signals:** All below confidence threshold (0.40 < 0.70)
-  - BTC: SHORT @ $72,345 (RSI 76.3, overbought)
-  - ETH: LONG @ $2,124 (RSI 70.9, overbought)
-  - SOL: LONG @ $90.10 (RSI 69.0, overbought)
-- **Last check:** 2026-03-13 11:19 UTC (2h ago)
-- **Circuit breakers:** Intact, no triggers
+- **Signals (2026-03-14 11:19:18 UTC):**
+  - BTC: HOLD (no signal)
+  - ETH: LONG @ 2069.45 (confidence 0.40 - below threshold)
+  - SOL: LONG @ 86.67 (confidence 0.40 - below threshold)
+- **AlphaStrike service:** ✅ Active
+  - Processing: BTC (376 candles), ETH (291), SOL (305)
+  - Last candles: BTC 70480, ETH 2073.6, SOL 86.77
 
-### 3. AlphaStrike Service
-- **Service:** `alphastrike.service` (systemd user)
-- **Status:** Active (running)
-- **Process:** PID 1216118, running since Feb 23
-- **Recent logs:** Cycling normally (Cycle 27162)
-  - BTCUSDT: 368 candles, last close $71,598
-  - ETHUSDT: 287 candles, last close $2,072.5
-  - SOLUSDT: 304 candles, last close $90.139
-- **Uptime:** ~19 days continuous
+### 3. Shield (access-control)
+- **State file:** ❌ NOT FOUND
+  - Expected: `/home/bowen/.openclaw/memory/access-control.json`
+  - **Action required:** Initialize or restore access control state
 
-### 4. Shield (Security)
-- **State file:** Present, minimal (121 bytes)
-- **Issues:**
-  - `access-control.json` not found in workspace-shield
-  - No audits recorded
-  - No blocked attempts
-- **Recommendation:** Shield may need initialization
+### 4. Herald (workspace-herald)
+- **State file:** ✅ Loaded
+- **Metrics:** Empty (expected - no recent campaigns)
+- **Scheduled posts:** None
+- **Last checks:** All zero (inactive)
 
-### 5. Herald (Marketing/Social)
-- **Status:** Quiet, no errors
-- **Activity:** No recent posts or scheduled content
-- **State:** 137 bytes, initialized but unused
+### 5. EvoClaw Hub (localhost:8420)
+- **API endpoint:** 🚨 DOWN (connection failed)
+- **Systemd service:** NOT FOUND
+- **Running processes:** None
+- **Action required:** Install and start evo-claw-hub service
 
-### 6. EvoClaw Hub
-- **Status:** 🔴 DOWN
-- **Endpoint:** `http://localhost:8420/api/agents`
-- **Error:** Connection refused / timeout
-- **Impact:** Agent registration/unavailable
-- **Action needed:** Restart hub service
-
-### 7. Alex Eye (Pi)
-- **Target:** 10.0.0.50 (Raspberry Pi)
-- **SSH:** Connection failed (timeout)
-- **Status:** 🔴 DOWN
-- **Possible causes:** Pi powered off, network issue, or IP changed
+### 6. Alex Eye (Pi 10.0.0.50)
+- **SSH status:** 🚨 DOWN (Connection refused)
+- **Action required:** Check Pi power/network, restart sshd if needed
 
 ---
 
-## Disk Space
-- **Root (/):** 937G total, 553G used, 337G free (63% used)
-- **Status:** Healthy
+## Actions Required
+
+### Critical (DOWN)
+1. **EvoClaw Hub:** Service not installed or not running
+   - Check install: `which evo-claw-hub`
+   - Check logs: `journalctl --user -u evo-claw-hub`
+   - Restart if installed: `systemctl --user start evo-claw-hub`
+
+2. **Alex Eye (Pi):** SSH connection refused
+   - Verify Pi is powered on
+   - Check network connectivity to 10.0.0.50
+   - Restart sshd on Pi if needed
+
+### Warning
+3. **Shield:** State file missing
+   - Verify correct path or reinitialize access control
 
 ---
 
-## Summary
-- **Passing:** 4/7 components (Sentinel, Quant, AlphaStrike, Herald)
-- **Failing:** 2/7 components (EvoClaw Hub, Alex Eye Pi)
-- **Warning:** 1/7 components (Shield needs initialization)
-
-**Critical items requiring attention:**
-1. Restart EvoClaw Hub on localhost:8420
-2. Investigate Alex Eye Pi connectivity (10.0.0.50)
-3. Initialize Shield access-control.json if needed
+## Automated Alert Status
+**No alerts sent** — only DOWN components trigger alerts, and manual intervention required for both (Hub install, Pi hardware/network).
