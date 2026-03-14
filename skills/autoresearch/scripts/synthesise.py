@@ -1,6 +1,7 @@
 """Synthesise raw source data into a structured markdown report."""
 from __future__ import annotations
 
+import os
 from datetime import datetime, timezone
 from dataclasses import dataclass
 
@@ -257,4 +258,3 @@ def build_report(
 
 
 # Make os available for the web_skipped check
-import os

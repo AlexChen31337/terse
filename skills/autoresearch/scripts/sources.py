@@ -233,8 +233,15 @@ def _parse_github_trending(html: str) -> list[dict]:
         repo_path = repo_match.group(1).strip()
         repo_url = f"https://github.com/{repo_path}"
 
-        # Description — look for <p> tag
-        desc_match = re.search(r'<p[^>]*>(.*?)</p>', block, re.DOTALL | re.IGNORECASE)
+        # Description — target col-9 paragraph (avoids Star/button boilerplate)
+        desc_match = re.search(r'<p[^>]*col-9[^>]*>(.*?)</p>', block, re.DOTALL | re.IGNORECASE)
+        if not desc_match:
+            # fallback: any <p> that doesn't start with whitespace-only or "Star"
+            for m in re.finditer(r'<p[^>]*>(.*?)</p>', block, re.DOTALL | re.IGNORECASE):
+                candidate = re.sub(r'<[^>]+>', '', m.group(1)).strip()
+                if candidate and not candidate.lower().startswith('star'):
+                    desc_match = m
+                    break
         description = ""
         if desc_match:
             raw = desc_match.group(1)
