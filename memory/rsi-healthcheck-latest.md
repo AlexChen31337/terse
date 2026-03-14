@@ -1,37 +1,63 @@
 # RSI Loop Health Check Report
-**Date:** 2026-03-14 (3:00 AM AEDT / 2026-03-13 16:00 UTC)
+**Generated:** 2026-03-15 03:00 AEDT (2026-03-14 16:00 UTC)
+**Status:** ⚠️ CRITICAL — Health score below threshold
 
-## Health Score
-**0.136 / 1.0** ⚠️ Low
+## Health Metrics
 
-## Status Summary
-- **Outcomes (7d):** 142 logged
-- **Success rate:** 31%
-- **Average quality:** 2.19/5
+| Metric | Value | Status |
+|--------|-------|--------|
+| Health Score | 0.134 / 1.0 | ⚠️ CRITICAL (threshold: 0.3) |
+| 7-Day Outcomes | 148 logged | — |
+| Success Rate | 31% | ❌ Poor |
+| Avg Quality | 2.16 / 5 | ❌ Below average |
+| Patterns Detected | 4 | — |
+| Proposals Deployed | 24 total (0 new this cycle) | — |
 
-## Top Failure Patterns
-1. **[1.394]** tool_call → tool_error (66 occurrences, 100% failure)
-2. **[0.620]** session_management → context_loss (44 occurrences, 0% failure)
-3. **[0.451]** tool_call → tool_validation_error (16 occurrences, 100% failure)
+## Critical Failure Patterns
 
-## Proposals Status
-- **Draft:** 0
-- **Approved:** 0
-- **Deployed:** 24
+### 1. Tool Call Errors (SEVERITY: 1.236)
+- **Context:** 'tool_call' tasks
+- **Issue:** 'tool_error' occurs 61 times
+- **Failure Rate:** 100%
+- **Impact:** HIGH — 41% of all logged outcomes
 
-## Auto-Fix Proposals (Already Deployed)
-- [b9e26a71] Address 'tool_error' in 'tool_call' tasks
-- [15c31c37] Address 'tool_validation_error' in 'tool_call' tasks
-- [db32089a] Address 'timeout' in 'tool_call' tasks
-- [60126e7f] Address 'context_loss' in 'session_management' tasks
+### 2. Tool Validation Errors (SEVERITY: 0.568)
+- **Context:** 'tool_call' tasks
+- **Issue:** 'tool_validation_error' occurs 21 times
+- **Failure Rate:** 100%
+- **Impact:** MEDIUM-HIGH — 14% of all logged outcomes
+
+### 3. Context Loss (SEVERITY: 0.622)
+- **Context:** 'session_management' tasks
+- **Issue:** 'context_loss' occurs 46 times
+- **Failure Rate:** 0% (appears to be non-fatal but frequent)
+- **Impact:** MEDIUM — 31% of all logged outcomes
 
 ## Test Results
-✅ All 32 tests passed (test_auto_observe.py + test_auto_fix.py)
 
-## Analysis
-The health score remains low (0.136) primarily due to persistent tool_call errors. However, all patterns have been analyzed and proposals have already been deployed. The RSI loop is functioning correctly — it's detecting issues, generating proposals, and deploying fixes.
+**Auto-Observe Tests:** ✅ All 20 tests passed
+**Auto-Fix Tests:** ✅ All 12 tests passed
+**Total:** 32/32 passed in 0.88s
 
-The high occurrence of tool_error and tool_validation_error suggests tool configuration or API issues that may require manual investigation beyond auto-fix capabilities.
+## Cycle Actions
 
-## Recommendation
-Monitor over next 3 days. If health score doesn't improve above 0.3, investigate tool_call configuration and API endpoints manually.
+- **Proposals Generated:** 4 (all previously deployed)
+- **Auto-Approved:** 0 (all already deployed)
+- **New Deployments:** 0
+
+## Recommendations
+
+1. **IMMEDIATE:** Investigate `tool_error` in 'tool_call' tasks — this is the single largest failure pattern (41% of outcomes, 100% failure rate)
+2. **URGENT:** Fix `tool_validation_error` pattern — 100% failure rate suggests systematic validation issues
+3. **MEDIUM:** Address `context_loss` frequency — may require session architecture review
+4. **LONG-TERM:** Target health score >0.7 by reducing overall failure rate below 20%
+
+## Previous Deployments
+
+The following proposals were already deployed in previous cycles:
+- `b9e26a71` — Address 'tool_error' in 'tool_call' tasks
+- `60126e7f` — Address 'context_loss' in 'session_management' tasks
+- `15c31c37` — Address 'tool_validation_error' in 'tool_call' tasks
+- `db32089a` — Address 'timeout' in 'tool_call' tasks
+
+**Note:** The recurrence of these patterns suggests the deployed fixes may have been ineffective or the underlying issues are multi-factorial.

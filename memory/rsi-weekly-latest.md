@@ -1,39 +1,53 @@
-# RSI Weekly Report — 2026-03-08
+# RSI Weekly Report — 2026-03-15
 
 ## Executive Summary
-- **Health Score:** 0.093 / 1.0 (CRITICAL — below 0.3 threshold)
-- **Outcomes Analyzed:** 206 (last 7 days)
-- **Success Rate:** 26%
-- **Average Quality:** 1.8 / 5
-
-## Critical Issues Detected
-
-### Top Failure Patterns
-1. **[1.602]** In 'tool_call' tasks, 'none' occurs 83x with 100% failure rate
-2. **[0.641]** In 'tool_call' tasks, 'tool_error' occurs 44x with 100% failure rate
-3. **[0.490]** In 'session_management' tasks, 'context_loss' occurs 51x
-
-### Issue Breakdown (7d)
-- **context_loss:** 51 occurrences
-- **tool_error:** 44 occurrences
-- **rate_limit:** 2 occurrences
-
-## Proposals Generated
-- **Total Generated:** 5 proposals
-- **Auto-Approved:** 1 (20min effort)
-- **Auto-Deployed:** 0 (deployment error - proposal status issue)
-- **Awaiting Review:** 0
-
-## Deployment Status
-⚠️ **Deployment Issue:** Proposal 0041c57f failed to deploy (status was 'deployed' instead of 'approved')
-
-## Recommendation
-The health score of 0.093 is critically low. The dominant failure pattern is 'none' results in tool_call tasks (83 occurrences, 100% failure), suggesting tools are returning empty/undefined results systematically. This requires immediate investigation.
-
-**Next Steps:**
-1. Investigate why tools are returning 'none' results
-2. Fix the proposal deployment status issue
-3. Address context_loss patterns in session management
+- **Health Score:** 0.134 (CRITICAL — below 0.3 threshold)
+- **Outcomes Analyzed:** 148 (7-day window)
+- **Success Rate:** 31%
+- **Avg Quality:** 2.16/5
+- **Patterns Detected:** 4
+- **Proposals Generated:** 4 (all previously deployed)
+- **Critical Alerts:** ✅ Health score < 0.3 — ALERT REQUIRED
 
 ---
-*Generated: 2026-03-08 03:00 AEDT*
+
+## Top Failure Patterns
+
+### 🔴 Pattern #1: tool_error (Severity: 1.236)
+- **Context:** `tool_call` tasks
+- **Frequency:** 61 occurrences
+- **Failure Rate:** 100%
+- **Status:** Repair proposals already deployed
+
+### 🟡 Pattern #2: context_loss (Severity: 0.622)
+- **Context:** `session_management` tasks
+- **Frequency:** 46 occurrences
+- **Failure Rate:** 0% (non-fatal but degrading)
+- **Status:** Repair proposals already deployed
+
+### 🟡 Pattern #3: tool_validation_error (Severity: 0.568)
+- **Context:** `tool_call` tasks
+- **Frequency:** 21 occurrences
+- **Failure Rate:** 100%
+- **Status:** Repair proposals already deployed
+
+---
+
+## Proposals Status
+- **Previously Deployed:** 4 proposals (all auto-approved)
+- **New Proposals:** 0 (all patterns already addressed)
+- **Awaiting Review:** 0
+
+---
+
+## Health Trend
+⚠️ **CRITICAL** — Health score 0.134 is well below the 0.3 threshold. This indicates systemic issues with tool reliability and session management. The 31% success rate over 7 days is concerning and needs attention.
+
+---
+
+## Recommended Actions
+1. **URGENT:** Investigate tool_error pattern — 61/61 failures in tool_call tasks
+2. Review context_loss mitigation — 46 instances in session_management
+3. Audit tool_validation pipeline — 21/21 failures indicate validation logic issues
+
+Generated: 2026-03-15 03:00 AEDT
