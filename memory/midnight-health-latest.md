@@ -1,89 +1,79 @@
 # Midnight Health Check Report
-**Generated:** 2026-03-15 00:00:00 AEDT (2026-03-14 13:00:00 UTC)
-
-## Executive Summary
-| Component | Status | Notes |
-|-----------|--------|-------|
-| **Sentinel** | ✅ OK | State loaded, last check 1773829201 (recent) |
-| **Quant** | ✅ OK | AlphaStrike active, signals current |
-| **Shield** | ⚠️ MISSING | access-control.json not found at expected path |
-| **Herald** | ✅ OK | State loaded, metrics empty (expected) |
-| **EvoClaw Hub** | 🚨 DOWN | Service not running, no agents registered |
-| **AlphaStrike** | ✅ ACTIVE | systemd service active, processing candles |
-| **Alex Eye (Pi)** | 🚨 DOWN | SSH connection refused to 10.0.0.50 |
+**Generated:** 2026-03-16 00:00 AEDT (2026-03-15 13:00 UTC)
 
 ---
 
-## Detailed Findings
+## 1. Sentinel ✅
+- **Status:** ACTIVE
+- **Last Price Check:** 2026-03-15 12:30 UTC (2h ago)
+- **Recent Alerts (24h):**
+  - BTC crossed $75,000 (alert at 1773616194)
+  - Fear & Greed: Extreme Fear (15) — alert sent
+  - HYPE at $37.44 (above $30 threshold)
+- **State File:** `/home/bowen/.openclaw/workspace-sentinel/memory/sentinel-state.json` — OK
+- **Verdict:** HEALTHY
 
-### 1. Sentinel (workspace-sentinel)
-- **State file:** ✅ Loaded
-- **Last checks:**
-  - Prices: 1773829201 (Sat Mar 15 03:00:01 2026 - recent)
-  - Polymarket: 0 (never run)
-  - Health: 0 (never run)
-- **Recent alerts (24h):**
-  - Fear & Greed (extreme fear): 2026-03-13
-  - BTC thresholds: 70000, 75000
-  - HYPE thresholds: 30, 25
-  - SOL 3% decline
-- **Open alerts:** None requiring immediate action
+## 2. Quant ✅
+- **Status:** ACTIVE
+- **AlphaStrike Service:** `active` (systemd user service running)
+- **Account Value:** $112.22
+- **Strategy:** Hyperliquid perps, no Simmer
+- **Open Positions:** None
+- **Current Signals:**
+  - BTC: SHORT @ $71,730 (confidence 0.4 — HOLD)
+  - ETH: SHORT @ $2,118 (confidence 0.4 — HOLD)
+  - SOL: SHORT @ $88.29 (confidence 0.4 — HOLD)
+- **Last Checks:** 2026-03-15 11:21 UTC
+- **FearHarvester:** Last run 2026-02-27 (stale — needs investigation)
+- **Verdict:** HEALTHY (but FearHarvester stale)
 
-### 2. Quant (workspace-quant)
-- **State file:** ✅ Loaded
-- **Status:** ACTIVE, v4, recommissioned 2026-03-10
-- **Strategy:** HL perps via AlphaStrike
-- **Account value:** $112.22
-- **Open positions:** None
-- **Signals (2026-03-14 11:19:18 UTC):**
-  - BTC: HOLD (no signal)
-  - ETH: LONG @ 2069.45 (confidence 0.40 - below threshold)
-  - SOL: LONG @ 86.67 (confidence 0.40 - below threshold)
-- **AlphaStrike service:** ✅ Active
-  - Processing: BTC (376 candles), ETH (291), SOL (305)
-  - Last candles: BTC 70480, ETH 2073.6, SOL 86.77
+## 3. Shield ⚠️
+- **Access Control File:** `/home/bowen/.openclaw/access-control.json` — NOT FOUND
+- **Pending Approvals:** Cannot check (file missing)
+- **Verdict:** NEEDS ATTENTION — access-control.json missing
 
-### 3. Shield (access-control)
-- **State file:** ❌ NOT FOUND
-  - Expected: `/home/bowen/.openclaw/memory/access-control.json`
-  - **Action required:** Initialize or restore access control state
+## 4. Herald ✅
+- **Status:** IDLE (no recent activity)
+- **State File:** `/home/bowen/.openclaw/workspace-herald/memory/herald-state.json` — OK
+- **Scheduled Posts:** None
+- **Outreach Log:** Empty
+- **Verdict:** HEALTHY (no active campaigns)
 
-### 4. Herald (workspace-herald)
-- **State file:** ✅ Loaded
-- **Metrics:** Empty (expected - no recent campaigns)
-- **Scheduled posts:** None
-- **Last checks:** All zero (inactive)
+## 5. EvoClaw Hub ❌
+- **API Check:** `curl http://localhost:8420/api/agents` — FAILED (HUB_DOWN)
+- **Service Status:** `evo-hub.service` not found
+- **Process Check:** No hub process running
+- **Action Required:** Restart EvoClaw Hub
+- **Verdict:** DOWN
 
-### 5. EvoClaw Hub (localhost:8420)
-- **API endpoint:** 🚨 DOWN (connection failed)
-- **Systemd service:** NOT FOUND
-- **Running processes:** None
-- **Action required:** Install and start evo-claw-hub service
-
-### 6. Alex Eye (Pi 10.0.0.50)
-- **SSH status:** 🚨 DOWN (Connection refused)
-- **Action required:** Check Pi power/network, restart sshd if needed
+## 6. Alex Eye (Pi) ⏸️
+- **SSH Check:** Timed out (ALEXEYE_DOWN)
+- **Host:** pi@192.168.1.100
+- **Verdict:** DOWN (network or host issue)
 
 ---
 
-## Actions Required
+## Disk Status
+- `/`: 63% used (337G free of 937G) — OK
+- `/media/DATA`: Not mounted
+- `/data2`: Not mounted
 
-### Critical (DOWN)
-1. **EvoClaw Hub:** Service not installed or not running
-   - Check install: `which evo-claw-hub`
-   - Check logs: `journalctl --user -u evo-claw-hub`
-   - Restart if installed: `systemctl --user start evo-claw-hub`
+## Summary
+| Component | Status | Action Needed |
+|---|---|---|
+| Sentinel | ✅ OK | None |
+| Quant | ✅ OK | Check FearHarvester (stale since Feb 27) |
+| Shield | ⚠️ WARN | Recreate access-control.json |
+| Herald | ✅ OK | None |
+| EvoClaw Hub | ❌ DOWN | **RESTART REQUIRED** |
+| Alex Eye (Pi) | ❌ DOWN | Check network/host |
 
-2. **Alex Eye (Pi):** SSH connection refused
-   - Verify Pi is powered on
-   - Check network connectivity to 10.0.0.50
-   - Restart sshd on Pi if needed
-
-### Warning
-3. **Shield:** State file missing
-   - Verify correct path or reinitialize access control
+## Critical Actions
+1. **RESTART EvoClaw Hub** — not running, no systemd service found
+2. **Check Alex Eye (Pi)** — network timeout, verify host is up
+3. **Recreate Shield access-control.json** — missing file
+4. **Investigate FearHarvester** — last run Feb 27, may need manual trigger
 
 ---
 
-## Automated Alert Status
-**No alerts sent** — only DOWN components trigger alerts, and manual intervention required for both (Hub install, Pi hardware/network).
+*Report saved to: `~/.openclaw/workspace/memory/midnight-health-latest.md`*
