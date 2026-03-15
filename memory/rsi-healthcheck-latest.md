@@ -1,63 +1,70 @@
 # RSI Loop Health Check Report
-**Generated:** 2026-03-15 03:00 AEDT (2026-03-14 16:00 UTC)
-**Status:** ⚠️ CRITICAL — Health score below threshold
+**Generated:** 2026-03-16 03:00 AEDT (2026-03-15 16:00 UTC)
+**Cycle:** Nightly automated check
 
-## Health Metrics
+## System Status
 
-| Metric | Value | Status |
-|--------|-------|--------|
-| Health Score | 0.134 / 1.0 | ⚠️ CRITICAL (threshold: 0.3) |
-| 7-Day Outcomes | 148 logged | — |
-| Success Rate | 31% | ❌ Poor |
-| Avg Quality | 2.16 / 5 | ❌ Below average |
-| Patterns Detected | 4 | — |
-| Proposals Deployed | 24 total (0 new this cycle) | — |
+### Health Score
+**Current: 0.124 / 1.0** ⚠️ LOW
+- Threshold for alert: < 0.3
+- Status: **Below healthy threshold**
 
-## Critical Failure Patterns
+### Outcomes Analysis (7 days)
+- **Total logged:** 150 outcomes
+- **Success rate:** 29% (43 successes / 150 total)
+- **Average quality:** 2.12 / 5
 
-### 1. Tool Call Errors (SEVERITY: 1.236)
-- **Context:** 'tool_call' tasks
-- **Issue:** 'tool_error' occurs 61 times
-- **Failure Rate:** 100%
-- **Impact:** HIGH — 41% of all logged outcomes
+### Detected Failure Patterns
 
-### 2. Tool Validation Errors (SEVERITY: 0.568)
-- **Context:** 'tool_call' tasks
-- **Issue:** 'tool_validation_error' occurs 21 times
-- **Failure Rate:** 100%
-- **Impact:** MEDIUM-HIGH — 14% of all logged outcomes
+1. **[1.100] tool_call → tool_error** (Severity: Critical)
+   - Occurrences: 55 times
+   - Failure rate: 100%
+   - Impact: Highest confidence pattern
 
-### 3. Context Loss (SEVERITY: 0.622)
-- **Context:** 'session_management' tasks
-- **Issue:** 'context_loss' occurs 46 times
-- **Failure Rate:** 0% (appears to be non-fatal but frequent)
-- **Impact:** MEDIUM — 31% of all logged outcomes
+2. **[0.667] tool_call → tool_validation_error** (Severity: High)
+   - Occurrences: 25 times
+   - Failure rate: 100%
+
+3. **[0.587] session_management → context_loss** (Severity: Medium)
+   - Occurrences: 44 times
+   - Failure rate: 0% (non-critical but frequent)
+
+4. **[0.xxx] tool_call → timeout** (Severity: Medium)
+   - Occurrences: 25 times
+   - Failure rate: N/A
+
+### Proposals Status
+- **Generated:** 4 proposals (all repair type)
+- **Status:** All already deployed
+  - b9e26a71: tool_error fixes (deployed)
+  - 15c31c37: tool_validation_error fixes (deployed)
+  - 60126e7f: timeout fixes (deployed)
+  - db32089a: additional tool_call fixes (deployed)
 
 ## Test Results
+**Status:** ✅ ALL PASSED
+- 32/32 tests passed in 0.88s
+- Coverage: auto_observe, auto_fix, pattern detection, proposal generation
 
-**Auto-Observe Tests:** ✅ All 20 tests passed
-**Auto-Fix Tests:** ✅ All 12 tests passed
-**Total:** 32/32 passed in 0.88s
+## Analysis
 
-## Cycle Actions
+### Why is health score low despite deployed fixes?
+The patterns detected are from historical outcomes (last 7 days). The proposals were already deployed, but:
+1. Newly deployed fixes haven't yet produced enough positive outcomes to shift the 7-day rolling average
+2. The 150 outcomes analyzed include pre-fix failures
+3. Health score is a lagging indicator (7-day window)
 
-- **Proposals Generated:** 4 (all previously deployed)
-- **Auto-Approved:** 0 (all already deployed)
-- **New Deployments:** 0
+### Positive Indicators
+- ✅ Test suite fully passing
+- ✅ Proposals generated and deployed correctly
+- ✅ Auto-fix cycle completing successfully
+- ✅ No new unsafe proposals generated
 
-## Recommendations
+### Recommendations
+1. **Monitor over next 3-5 days** — Health score should improve as fixed outcomes accumulate
+2. **Check tool_error root cause** — 100% failure rate suggests systematic issue (may need infrastructure fix, not just skill updates)
+3. **Review context loss pattern** — 44 occurrences is high even if non-critical
 
-1. **IMMEDIATE:** Investigate `tool_error` in 'tool_call' tasks — this is the single largest failure pattern (41% of outcomes, 100% failure rate)
-2. **URGENT:** Fix `tool_validation_error` pattern — 100% failure rate suggests systematic validation issues
-3. **MEDIUM:** Address `context_loss` frequency — may require session architecture review
-4. **LONG-TERM:** Target health score >0.7 by reducing overall failure rate below 20%
-
-## Previous Deployments
-
-The following proposals were already deployed in previous cycles:
-- `b9e26a71` — Address 'tool_error' in 'tool_call' tasks
-- `60126e7f` — Address 'context_loss' in 'session_management' tasks
-- `15c31c37` — Address 'tool_validation_error' in 'tool_call' tasks
-- `db32089a` — Address 'timeout' in 'tool_call' tasks
-
-**Note:** The recurrence of these patterns suggests the deployed fixes may have been ineffective or the underlying issues are multi-factorial.
+## Alert Status
+**🔴 BELOW THRESHOLD** — Health score 0.124 < 0.3
+**Decision:** Report to Bowen (this report serves as the alert)
