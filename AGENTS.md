@@ -5,6 +5,11 @@ This folder is home. Treat it that way.
 ## MbD Publish Rule (NON-NEGOTIABLE — re-hardened 2026-03-13)
 **NEVER publish to MbD via API.** Workflow is: write content → save to `bowen31337/mbd-book-ideas` repo → STOP. No API calls, no drafts, no publish. Wait for explicit "publish to MbD" instruction from Bowen.
 
+## Daily Book Auto-Publish to Payhip (NON-NEGOTIABLE — 2026-03-16)
+**AUTO-PUBLISH daily books to Payhip immediately after generation. No pause, no asking Bowen.**
+Workflow: write → cover → PDF → push to `bowen31337/mbd-book-ideas` → **publish to Payhip** → notify Bowen with live URL.
+MbD is still manual (separate rule above). Payhip = fully autonomous.
+
 ## Opus SWE-bench Eval (STOPPED — 2026-03-13)
 Do NOT restart the Opus eval. It has been stopped multiple times by explicit instruction. The baseline is **64% Sonnet** — that is the story. Opus eval is dead.
 
