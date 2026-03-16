@@ -1,7 +1,7 @@
 {
   "lastRun": "2026-03-16T00:22:00+11:00",
   "last_backup": "2026-03-16",
-  "topic_index": 4,
+  "topic_index": 5,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -164,6 +164,22 @@
       "chapters": 12,
       "telegramSent": true,
       "note": "Backed up to GitHub. Awaiting publish instruction from owner."
+    },
+    "daily-2026-03-17": {
+      "name": "The Agentic Mind: A Builder's Field Guide to Autonomous AI Systems",
+      "status": "backed_up",
+      "category": "autonomous-ai-systems",
+      "price": 14,
+      "date": "2026-03-17",
+      "folder": "2026-03-17_agentic-mind-autonomous-ai-systems",
+      "githubBacked": true,
+      "coverGenerated": true,
+      "pdfGenerated": true,
+      "wordCount": 8095,
+      "chapters": 12,
+      "telegramSent": true,
+      "payhipUrl": "https://payhip.com/b/BmOPX",
+      "note": "Auto-published to Payhip. Backed up to GitHub."
     }
   },
   "twitter": {

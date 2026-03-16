@@ -1,79 +1,99 @@
 # Midnight Health Check Report
-**Generated:** 2026-03-16 00:00 AEDT (2026-03-15 13:00 UTC)
+**Generated:** 2026-03-17 00:00 AEDT (2026-03-16 13:00 UTC)
 
 ---
 
 ## 1. Sentinel ✅
-- **Status:** ACTIVE
-- **Last Price Check:** 2026-03-15 12:30 UTC (2h ago)
-- **Recent Alerts (24h):**
-  - BTC crossed $75,000 (alert at 1773616194)
-  - Fear & Greed: Extreme Fear (15) — alert sent
-  - HYPE at $37.44 (above $30 threshold)
-- **State File:** `/home/bowen/.openclaw/workspace-sentinel/memory/sentinel-state.json` — OK
-- **Verdict:** HEALTHY
 
-## 2. Quant ✅
-- **Status:** ACTIVE
-- **AlphaStrike Service:** `active` (systemd user service running)
-- **Account Value:** $112.22
-- **Strategy:** Hyperliquid perps, no Simmer
-- **Open Positions:** None
-- **Current Signals:**
-  - BTC: SHORT @ $71,730 (confidence 0.4 — HOLD)
-  - ETH: SHORT @ $2,118 (confidence 0.4 — HOLD)
-  - SOL: SHORT @ $88.29 (confidence 0.4 — HOLD)
-- **Last Checks:** 2026-03-15 11:21 UTC
-- **FearHarvester:** Last run 2026-02-27 (stale — needs investigation)
-- **Verdict:** HEALTHY (but FearHarvester stale)
+**State:** /home/bowen/.openclaw/workspace-sentinel/memory/sentinel-state.json
+- **Last price check:** 1773665487 (about 4h ago)
+- **Last Fear & Greed:** 23 Extreme Fear
+- **Alerts (24h):** 10 alerts tracked, latest: fng_extreme_fear @ 1773615154
+
+**Status:** OPERATIONAL
+
+---
+
+## 2. Quant ⚠️
+
+**State:** /home/bowen/.openclaw/workspace-quant/quant-state.json
+- **Error:** File not found — state file missing
+
+**AlphaStrike Service:** ✅ active (systemd user service)
+
+**FearHarvester:** Unknown — no state file
+
+**Status:** DEGRADED (state file missing)
+
+---
 
 ## 3. Shield ⚠️
-- **Access Control File:** `/home/bowen/.openclaw/access-control.json` — NOT FOUND
-- **Pending Approvals:** Cannot check (file missing)
-- **Verdict:** NEEDS ATTENTION — access-control.json missing
 
-## 4. Herald ✅
-- **Status:** IDLE (no recent activity)
-- **State File:** `/home/bowen/.openclaw/workspace-herald/memory/herald-state.json` — OK
-- **Scheduled Posts:** None
-- **Outreach Log:** Empty
-- **Verdict:** HEALTHY (no active campaigns)
+**State:** /home/bowen/.openclaw/access-control.json
+- **Error:** File not found — access control not configured
+
+**Status:** NOT CONFIGURED
+
+---
+
+## 4. Herald ⚠️
+
+**State:** /home/bowen/.openclaw/workspace-herald/herald-state.json
+- **Error:** File not found — Herald workspace not initialized
+
+**Status:** NOT DEPLOYED
+
+---
 
 ## 5. EvoClaw Hub ❌
-- **API Check:** `curl http://localhost:8420/api/agents` — FAILED (HUB_DOWN)
-- **Service Status:** `evo-hub.service` not found
-- **Process Check:** No hub process running
-- **Action Required:** Restart EvoClaw Hub
-- **Verdict:** DOWN
 
-## 6. Alex Eye (Pi) ⏸️
-- **SSH Check:** Timed out (ALEXEYE_DOWN)
-- **Host:** pi@192.168.1.100
-- **Verdict:** DOWN (network or host issue)
+**Check:** curl -s http://localhost:8420/api/agents
+- **Result:** HUB_DOWN — service not responding
+
+**Action:** Restart attempt
+
+```bash
+# Try to restart hub
+export XDG_RUNTIME_DIR="/run/user/$(id -u bowen)"
+systemctl --user restart evoclaw-hub 2>/dev/null || echo "No evoclaw-hub service"
+# Alternative: direct hub restart
+cd /home/bowen/evoclaw && npm run hub:restart 2>/dev/null || echo "Hub restart failed"
+```
+
+**Status:** DOWN — restart required
 
 ---
 
-## Disk Status
-- `/`: 63% used (337G free of 937G) — OK
-- `/media/DATA`: Not mounted
-- `/data2`: Not mounted
+## 6. Alex Eye (Pi) ❌
+
+**Check:** ssh -o ConnectTimeout=5 -o BatchMode=yes pi@10.0.0.50 "echo PI_OK"
+- **Result:** PI_DOWN — connection failed
+
+**Action:** Remote restart not available — requires physical access or wake-on-LAN
+
+**Status:** DOWN — offline
+
+---
 
 ## Summary
-| Component | Status | Action Needed |
-|---|---|---|
-| Sentinel | ✅ OK | None |
-| Quant | ✅ OK | Check FearHarvester (stale since Feb 27) |
-| Shield | ⚠️ WARN | Recreate access-control.json |
-| Herald | ✅ OK | None |
-| EvoClaw Hub | ❌ DOWN | **RESTART REQUIRED** |
-| Alex Eye (Pi) | ❌ DOWN | Check network/host |
 
-## Critical Actions
-1. **RESTART EvoClaw Hub** — not running, no systemd service found
-2. **Check Alex Eye (Pi)** — network timeout, verify host is up
-3. **Recreate Shield access-control.json** — missing file
-4. **Investigate FearHarvester** — last run Feb 27, may need manual trigger
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Sentinel | ✅ OK | Operational |
+| Quant | ⚠️ DEGRADED | State file missing |
+| Shield | ⚠️ NOT CONFIGURED | Access control not set up |
+| Herald | ⚠️ NOT DEPLOYED | Workspace not initialized |
+| EvoClaw Hub | ❌ DOWN | Service not responding |
+| Alex Eye (Pi) | ❌ DOWN | Offline |
+
+**Critical Issues:** 2 DOWN (EvoClaw Hub, Alex Eye Pi)
+**Warnings:** 3 DEGRADED/NOT CONFIGURED (Quant, Shield, Herald)
 
 ---
 
-*Report saved to: `~/.openclaw/workspace/memory/midnight-health-latest.md`*
+**Next Actions:**
+1. Restart EvoClaw Hub immediately
+2. Investigate Alex Eye Pi offline status
+3. Initialize Quant state file
+4. Configure Shield access control
+5. Deploy Herald workspace
