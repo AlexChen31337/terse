@@ -180,6 +180,16 @@
       "telegramSent": true,
       "payhipUrl": "https://payhip.com/b/BmOPX",
       "note": "Auto-published to Payhip. Backed up to GitHub."
+    },
+    "mbd-daily-2026-03-16": {
+      "name": "《懒人理财经》2026-03-16",
+      "status": "backed_up",
+      "category": "理财",
+      "date": "2026-03-16",
+      "githubBacked": true,
+      "folder": "2026-03-16_懒人理财经_让AI替你管钱躺赚不是梦升级版",
+      "title": "懒人理财经_让AI替你管钱躺赚不是梦升级版",
+      "note": "MbD Chinese backup. Awaiting publish instruction from owner."
     }
   },
   "twitter": {
