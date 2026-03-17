@@ -1,9 +1,9 @@
 # Quant Report
-_2026-03-17T03:16:51.553019+00:00_
+_2026-03-17T15:16:50.764626+00:00_
 
 📊 **[Quant] AlphaStrike V2 Paper Trading Update**
 
-⏸  BTC HOLD conf=0% — signal_is_hold
+⏸  BTC HOLD conf=0% — Model agreement 33% < 60%
 ⏸  ETH HOLD conf=0% — signal_is_hold
 ⏸  SOL HOLD conf=0% — Model agreement 33% < 60%
 

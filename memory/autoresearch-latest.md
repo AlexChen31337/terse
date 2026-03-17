@@ -1,51 +1,32 @@
-# 🔬 Nightly Research: Developer Tools
+# 🔬 Nightly Research: AI & Agents
 
-> Generated: 2026-03-17 00:00 AEST | Track: devtools (3 of 3)
+> Generated: 2026-03-18 00:00 AEST | Track: ai (1 of 3)
 
 ---
 
 ## 📄 Top Papers (arXiv)
 
-1. **[daVinci-Env: Open SWE Environment Synthesis at Scale](http://arxiv.org/abs/2603.13023v1)**
-   > Training capable software engineering (SWE) agents demands large-scale, executable, and verifiable environments that provide dynamic feedback loops for iterative code editing, test execution, and solu…
-   _Authors: Dayuan Fu, Shenyu Wu, Yunze Wu | Categories: cs.SE, cs.AI, cs.CL | Published: 2026-03-13_
+_No items found for this source._
 
-2. **[A Requirement-Based Framework for Engineering Adaptive Authentication](http://arxiv.org/abs/2603.12968v1)**
-   > Authentication is crucial to confirm that an individual or entity trying to perform an action is actually who or what they claim to be. In dynamic environments such as the Internet of Things (IoT), In…
-   _Authors: Alzubair Hassan, Alkabashi Alnour, Bashar Nuseibeh | Categories: cs.CR, cs.SE | Published: 2026-03-13_
-
-3. **[Teaching Agile Requirements Engineering: A Stakeholder Simulation with Generative AI](http://arxiv.org/abs/2603.12925v1)**
-   > Context: The active involvement of users and customers in agile software development remains a persistent challenge in practice. For this reason, it is important that students in higher education beco…
-   _Authors: Eva-Maria Schön, Michael Neumann, Tiago Silva da Silva | Categories: cs.SE, cs.HC | Published: 2026-03-13_
-
-4. **[Human-Centered Evaluation of an LLM-Based Process Modeling Copilot: A Mixed-Methods Study with Domain Experts](http://arxiv.org/abs/2603.12895v1)**
-   > Integrating Large Language Models (LLMs) into business process management tools promises to democratize Business Process Model and Notation (BPMN) modeling for non-experts. While automated frameworks …
-   _Authors: Chantale Lauer, Peter Pfeiffer, Nijat Mehdiyev | Categories: cs.HC, cs.AI, cs.SE | Published: 2026-03-13_
-
-5. **[Design-Specification Tiling for ICL-based CAD Code Generation](http://arxiv.org/abs/2603.12712v1)**
-   > Large language models (LLMs) have demonstrated remarkable capabilities in code generation, yet they underperform on domain-specific tasks such as Computer-Aided Design (CAD) code generation due to sca…
-   _Authors: Yali Du, San-Zhuo Xi, Hui Sun | Categories: cs.SE, cs.LG | Published: 2026-03-13_
-
-_(up to 5 items)_
 
 ---
 
 ## 🔥 Trending Repos (GitHub)
 
-1. **[sponsors/abhigyanpatwari](https://github.com/sponsors/abhigyanpatwari)** — ⭐ 1,867 | 📈 +1867 today | TypeScript
-   > GitNexus: The Zero-Server Code Intelligence Engine - GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a GitHub repo or ZIP file, and get an interactive knowledge graph wit a built in Graph RAG Agent. Perfect for code exploration
+1. **[volcengine/OpenViking](https://github.com/volcengine/OpenViking)** — ⭐ 1,421 | 📈 +1421 today | Python
+   > OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need through a file system paradigm, enabling hierarchical context delivery and self-evolving.
 
-2. **[voidzero-dev/vite-plus](https://github.com/voidzero-dev/vite-plus)** — ⭐ 622 | 📈 +622 today | Rust
-   > Vite+ is the unified toolchain and entry point for web development. It manages your runtime, package manager, and frontend toolchain in one place.
+2. **[langchain-ai/deepagents](https://github.com/langchain-ai/deepagents)** — ⭐ 1,418 | 📈 +1418 today | Python
+   > Agent harness built with LangChain and LangGraph. Equipped with a planning tool, a filesystem backend, and the ability to spawn subagents - well-equipped to handle complex agentic tasks.
 
-3. **[vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)** — ⭐ 454 | 📈 +454 today | Rust
-   > Browser automation CLI for AI agents
+3. **[sponsors/thedotmack](https://github.com/sponsors/thedotmack)** — ⭐ 1,393 | 📈 +1393 today | TypeScript
+   > A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.
 
-4. **[vxcontrol/pentagi](https://github.com/vxcontrol/pentagi)** — ⭐ 246 | 📈 +246 today | Go
-   > ✨ Fully autonomous AI Agents system capable of performing complex penetration testing tasks
+4. **[shareAI-lab/learn-claude-code](https://github.com/shareAI-lab/learn-claude-code)** — ⭐ 1,102 | 📈 +1102 today | TypeScript
+   > Bash is all you need - A nano Claude Code–like agent, built from 0 to 1
 
-5. **[sxyazi/yazi](https://github.com/sxyazi/yazi)** — ⭐ 194 | 📈 +194 today | Rust
-   > 💥 Blazing fast terminal file manager written in Rust, based on async I/O.
+5. **[YishenTu/claudian](https://github.com/YishenTu/claudian)** — ⭐ 480 | 📈 +480 today | TypeScript
+   > An Obsidian plugin that embeds Claude Code as an AI collaborator in your vault
 
 _(up to 5 items)_
 
@@ -53,20 +34,20 @@ _(up to 5 items)_
 
 ## 🗞️ Hacker News Highlights
 
-1. **[$96 3D-printed rocket that recalculates its mid-air trajectory using a $5 sensor](https://github.com/novatic14/MANPADS-System-Launcher-and-Rocket)** — 411 pts, 366 comments
-   > _github.com_
+1. **[Bill C-22, the Lawful Access Act: Dangerous backdoor surveillance risks remain](https://www.michaelgeist.ca/2026/03/a-tale-of-two-bills-lawful-access-returns-with-changes-to-warrantless-access-but-dangerous-backdoor-surveillance-risks-remains/)** — 988 pts, 329 comments
+   > _michaelgeist.ca_
 
-2. **[Ask HN: How is AI-assisted coding going for you professionally?](https://news.ycombinator.com/item?id=47388646)** — 328 pts, 522 comments
-   > HN discussion (522 comments)
+2. **[Leanstral: Open-source agent for trustworthy coding and formal proof engineering](https://mistral.ai/news/leanstral)** — 624 pts, 139 comments
+   > _mistral.ai_
 
-3. **[Glassworm is back: A new wave of invisible Unicode attacks hits repositories](https://www.aikido.dev/blog/glassworm-returns-unicode-attack-github-npm-vscode)** — 283 pts, 169 comments
-   > _aikido.dev_
+3. **[US Job Market Visualizer](https://karpathy.ai/jobs/)** — 471 pts, 343 comments
+   > _karpathy.ai_
 
-4. **[//go:fix inline and the source-level inliner](https://go.dev/blog/inliner)** — 173 pts, 69 comments
-   > _go.dev_
+4. **[AirPods Max 2](https://www.apple.com/airpods-max/)** — 301 pts, 499 comments
+   > _apple.com_
 
-5. **[What is agentic engineering?](https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/)** — 144 pts, 85 comments
-   > _simonwillison.net_
+5. **[Starlink Mini as a failover](https://www.jackpearce.co.uk/posts/starlink-failover/)** — 285 pts, 208 comments
+   > _jackpearce.co.uk_
 
 _(up to 5 items)_
 
@@ -76,11 +57,11 @@ _(up to 5 items)_
 
 | Source | Items Found | Items Used | Status |
 |--------|------------|------------|--------|
-| arXiv | 5 | 5 | ✅ |
+| arXiv | 0 | 0 | ❌ failed |
 | GitHub Trending | 5 | 5 | ✅ |
 | Hacker News | 5 | 5 | ✅ |
 | Web Search | 0 | 0 | ⏭️ skipped |
 
 ---
 
-_Next track: AI & Agents | Archive: memory/autoresearch-archive.md_
+_Next track: Crypto & DeFi | Archive: memory/autoresearch-archive.md_
