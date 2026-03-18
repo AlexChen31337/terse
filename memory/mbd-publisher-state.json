@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-03-18T09:10:00+11:00",
+  "lastRun": "2026-03-19T00:00:00+11:00",
   "last_backup": "2026-03-18",
-  "topic_index": 6,
+  "topic_index": 7,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -202,6 +202,21 @@
       "title": "懒人理财经_AI钱包管家让你躺着月入过万",
       "wordCount": 3800,
       "note": "MbD Chinese backup. Awaiting publish instruction from owner."
+    },
+    "daily-2026-03-19": {
+      "name": "The Founder's AI Playbook: Ship Faster, Think Clearer, Build Smarter with Artificial Intelligence",
+      "status": "published",
+      "category": "founder-ai-playbook",
+      "price": 14,
+      "date": "2026-03-19",
+      "folder": "2026-03-19_founders-ai-playbook",
+      "payhipUrl": "https://payhip.com/b/1xrQm",
+      "githubBacked": true,
+      "wordCount": 8371,
+      "chapters": 12,
+      "coverGenerated": true,
+      "pdfGenerated": true,
+      "note": "Auto-published to Payhip. Backed up to GitHub."
     }
   },
   "twitter": {

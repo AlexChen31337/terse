@@ -1,20 +1,21 @@
-# Nightly Health Check
-**Generated:** 2026-03-18 00:05 AEDT (2026-03-17 13:05 UTC)
+# Nightly Health Check Report
+**Generated:** 2026-03-19 12:05 AM AEDT (2026-03-18 13:05 UTC)
 
-## System Status ✅
+## System Status: ✅ ALL GREEN
 
-| Component | Status | Details |
-|-----------|--------|---------|
-| **AlphaStrike** | ✅ ACTIVE | Running |
-| **EvoClaw Hub** | ✅ UP | 2 agents connected |
-| **GPU Server** | ✅ ONLINE | 3 GPUs healthy |
-| **Skills** | ✅ 60 | Core stack intact |
-| **Memory Files** | ✅ 170 | Daily logs active |
+### Services
+- **AlphaStrike:** ✅ Active (systemd user service running)
+- **EvoClaw Hub:** ✅ Online (2 agents registered)
 
-## GPU Details
-- **GPU 0:** RTX 3090 — 20.0GB / 24GB used (83%)
-- **GPU 1:** RTX 3080 — 18MB / 10GB used (idle)
-- **GPU 2:** RTX 2070 SUPER — 9MB / 8GB used (idle)
+### Infrastructure
+- **GPU Server:** ✅ Online (3 GPUs detected)
+  - RTX 3090: 20GB / 24GB used (ComfyUI primary)
+  - RTX 3080: 18 MB / 10GB used (idle)
+  - RTX 2070 SUPER: 9 MB / 8GB used (idle)
 
-## Summary
-All critical systems operational. No alerts required.
+### Workspace
+- **Skills:** 60 installed
+- **Memory files:** 171 daily notes
+
+---
+*No alerts triggered. All systems nominal.*

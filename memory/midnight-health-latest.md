@@ -1,68 +1,72 @@
 # Midnight Health Check Report
-**Generated:** 2026-03-18 00:00:00 AEDT / 2026-03-17 13:00:00 UTC
+**Date:** 2026-03-19 12:00 AM AEDT (2026-03-18 13:00 UTC)
+**Run by:** Sentinel (cron job)
+
+## Overall Status: ⚠️ PARTIAL
 
 ---
 
-## 1. Sentinel ✅
-- **Status:** ACTIVE
-- **Last checks:** Prices (1773751000 ≈ 2026-03-17 11:28 UTC), Fear & Greed (same)
-- **Recent alerts:** BTC crossing $75K (1773710811), FNG Extreme Fear (1773676574)
-- **No issues**
+## ✅ Components UP
 
-## 2. Quant ✅
-- **Status:** ACTIVE (v4, recommissioned 2026-03-10)
-- **Strategy:** HL perps via AlphaStrike — no Simmer
-- **AlphaStrike:** ✅ RUNNING (systemd service active)
-  - Last log: 2026-03-18 00:00:01 — candles buffered for BTC/ETH/SOL
-  - BTC: 73701, ETH: 2326.7, SOL: 96.138
+### 1. **Sentinel** (workspace-sentinel)
+- **State:** ACTIVE ✅
+- **Last price check:** 1773894600 (2026-03-18 23:50 UTC)
+- **Last Fear & Greed:** 26 (Fear) - timestamp 1773894600
+- **Recent alerts:** 10 alerts logged (latest: btc_75000 @ 1773813505)
+- **Tracked prices:** BTC $72,703.5 | ETH $2,258.85 | SOL $91.56 | HYPE $40.80
+
+### 2. **Quant** (workspace-quant)
+- **State:** ACTIVE ✅
 - **Account value:** $112.22
-- **Open positions:** None
-- **Signals:** All LONG at 0.40 confidence (below 0.70 threshold)
-- **No issues**
+- **Open positions:** 0
+- **Today P&L:** $0.00
+- **Last signals check:** 2026-03-18T11:18:17+00:00
+- **Market signals:**
+  - BTC: SHORT (confidence 0.40 — HOLD)
+  - ETH: SHORT (confidence 0.40 — HOLD)
+  - SOL: LONG (confidence 0.40 — HOLD)
+- **Consecutive losses:** 0
 
-## 3. Shield ⚠️
-- **Status:** NOT FOUND
-- **Missing file:** `/home/bowen/.openclaw/workspace-shield/access-control.json`
-- **Action needed:** Shield workspace or access-control state not initialized
+### 3. **AlphaStrike Service** (systemd)
+- **Status:** `active` ✅
+- **Type:** User systemd service (bowen)
 
-## 4. Herald ✅
-- **Status:** IDLE (no recent activity)
-- **Last checks:** Twitter (0), Moltbook (0), Analytics (0)
-- **Scheduled posts:** None
-- **No issues** — dormant but no errors
-
-## 5. EvoClaw Hub ✅
-- **Status:** RUNNING
+### 4. **EvoClaw Hub** (localhost:8420)
+- **Status:** UP ✅
 - **Agents registered:** 2
-- **No issues**
-
-## 6. Alex Eye (Pi) 🚨 DOWN
-- **Status:** UNREACHABLE
-- **Attempted hosts:**
-  - `bowen@192.168.1.200` — No route to host
-  - `pi@alex-eye.local` — Name or service not known
-- **Action failed:** Cannot restart via SSH (network unreachable)
-- **Manual intervention required:** Check Pi power/network connectivity
 
 ---
 
-## Disk Space (main host)
-- `/` (nvme0n1p2): 541G used / 937G total (61%) — 349G available ✅
-- `/media/DATA`: Not mounted
-- `/data2`: Not mounted
+## ⚠️ Components DOWN
+
+### 5. **Alex Eye (Pi)**
+- **Status:** DOWN ❌
+- **Error:** SSH connection failed — "No route to host"
+- **Host:** pi@192.168.1.100
+- **Diagnosis:** Network unreachable or device offline
+- **Action required:** Manual intervention needed
+
+---
+
+## 📁 Missing Components (Not Configured)
+
+### 6. **Shield** (workspace-shield)
+- **Status:** NOT CONFIGURED
+- **File:** access-control.json missing
+- **Note:** Shield not yet deployed
+
+### 7. **Herald** (workspace-herald)
+- **Status:** NOT CONFIGURED
+- **File:** herald-state.json missing
+- **Note:** Herald not yet deployed
 
 ---
 
 ## Summary
 
-| Component | Status |
-|---|---:|
-| Sentinel | ✅ OK |
-| Quant | ✅ OK |
-| Shield | ⚠️ MISSING |
-| Herald | ✅ OK |
-| EvoClaw Hub | ✅ OK |
-| Alex Eye (Pi) | 🚨 DOWN |
+**UP:** 4/4 active components
+**DOWN:** 1 (Alex Eye Pi — requires manual intervention)
+**NOT DEPLOYED:** 2 (Shield, Herald)
 
-**Critical:** Alex Eye (Pi) is unreachable — requires manual power/network check.
-**Warning:** Shield workspace not initialized.
+**Immediate action needed:**
+- Investigate Alex Eye Pi connectivity (network, power, device status)
