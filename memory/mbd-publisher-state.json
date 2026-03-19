@@ -1,7 +1,7 @@
 {
   "lastRun": "2026-03-19T00:00:00+11:00",
-  "last_backup": "2026-03-18",
-  "topic_index": 7,
+  "last_backup": "2026-03-19",
+  "topic_index": 8,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -200,6 +200,18 @@
       "coverGenerated": true,
       "folder": "2026-03-18_懒人理财经_AI钱包管家让你躺着月入过万",
       "title": "懒人理财经_AI钱包管家让你躺着月入过万",
+      "wordCount": 3800,
+      "note": "MbD Chinese backup. Awaiting publish instruction from owner."
+    },
+    "mbd-daily-2026-03-19": {
+      "name": "AI副业指南_零基础用AI打造你的第一条被动收入流水线",
+      "status": "backed_up",
+      "category": "副业/AI",
+      "date": "2026-03-19",
+      "githubBacked": true,
+      "coverGenerated": true,
+      "folder": "2026-03-19_AI副业指南_零基础用AI打造你的第一条被动收入流水线",
+      "title": "AI副业指南_零基础用AI打造你的第一条被动收入流水线",
       "wordCount": 3800,
       "note": "MbD Chinese backup. Awaiting publish instruction from owner."
     },

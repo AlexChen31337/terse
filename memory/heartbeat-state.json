@@ -1,4 +1,14 @@
 {
-  "lastRSICheck": "2026-03-18T22:26:35+11:00",
-  "lastHeartbeat": "2026-03-18T22:26:35+11:00"
+  "lastRSICheck": "2026-03-19T14:25:00+11:00",
+  "lastHeartbeat": "2026-03-19T14:25:00+11:00",
+  "healthScore": 0.141,
+  "alerts": [
+    {
+      "type": "RSI_HEALTH",
+      "severity": "WARNING",
+      "score": 0.141,
+      "threshold": 0.3,
+      "topIssues": ["context_loss(49)", "tool_error(46)", "timeout(35)"]
+    }
+  ]
 }
