@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-03-19T00:00:00+11:00",
-  "last_backup": "2026-03-19",
-  "topic_index": 8,
+  "lastRun": "2026-03-20T00:00:00+11:00",
+  "last_backup": "2026-03-20",
+  "topic_index": 9,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -225,6 +225,21 @@
       "payhipUrl": "https://payhip.com/b/1xrQm",
       "githubBacked": true,
       "wordCount": 8371,
+      "chapters": 12,
+      "coverGenerated": true,
+      "pdfGenerated": true,
+      "note": "Auto-published to Payhip. Backed up to GitHub."
+    },
+    "daily-2026-03-20": {
+      "name": "The Prompt Engineer's Handbook: Master AI Communication, Build Powerful Workflows, and Ship Production Systems",
+      "status": "published",
+      "category": "prompt-engineering",
+      "price": 14,
+      "date": "2026-03-20",
+      "folder": "2026-03-20_prompt-engineers-handbook",
+      "payhipUrl": "https://payhip.com/b/sEiR4",
+      "githubBacked": true,
+      "wordCount": 8905,
       "chapters": 12,
       "coverGenerated": true,
       "pdfGenerated": true,

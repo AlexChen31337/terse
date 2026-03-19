@@ -1,30 +1,30 @@
-# 🔬 Nightly Research: Crypto & DeFi
+# 🔬 Nightly Research: Developer Tools
 
-> Generated: 2026-03-19 00:00 AEST | Track: crypto (2 of 3)
+> Generated: 2026-03-20 00:00 AEST | Track: devtools (3 of 3)
 
 ---
 
 ## 📄 Top Papers (arXiv)
 
-1. **[Unifying Optimization and Dynamics to Parallelize Sequential Computation: A Guide to Parallel Newton Methods for Breaking Sequential Bottlenecks](http://arxiv.org/abs/2603.16850v1)**
-   > Massively parallel hardware (GPUs) and long sequence data have made parallel algorithms essential for machine learning at scale. Yet dynamical systems, like recurrent neural networks and Markov chain …
-   _Authors: Xavier Gonzalez | Categories: math.NA, cs.AI, cs.DC, math.DS, math.OC | Published: 2026-03-17_
+1. **[CodeGreen: Towards Improving Precision and Portability in Software Energy Measurement](http://arxiv.org/abs/2603.17924v1)**
+   > Accurate software energy measurement is critical for optimizing energy, yet existing profilers force a trade-off between measurement accuracy and overhead due to tight coupling with supported specific…
+   _Authors: Saurabhsingh Rajput, Tushar Sharma | Categories: cs.SE | Published: 2026-03-18_
 
-2. **[ODIN-Based CPU-GPU Architecture with Replay-Driven Simulation and Emulation](http://arxiv.org/abs/2603.16812v1)**
-   > Integration of CPU and GPU technologies is a key enabler for modern AI and graphics workloads, combining control-oriented processing with massive parallel compute capability. As systems evolve toward …
-   _Authors: Nij Dorairaj, Debabrata Chatterjee, Hong Wang | Categories: cs.DC, cs.AI, cs.AR | Published: 2026-03-17_
+2. **[In Perfect Harmony: Orchestrating Causality in Actor-Based Systems](http://arxiv.org/abs/2603.17909v1)**
+   > Runtime verification has gained popularity as a lightweight approach for increasing assurance in systems under scrutiny. Performing runtime checks enables dynamic monitoring and alerts for unexpected …
+   _Authors: Vladyslav Mikytiv, Bernardo Toninho, Carla Ferreira | Categories: cs.SE, cs.LO | Published: 2026-03-18_
 
-3. **[Persistent Device Identity for Network Access Control in the Era of MAC Address Randomization: A RADIUS-Based Framework](http://arxiv.org/abs/2603.16745v1)**
-   > Modern operating systems increasingly randomize Media Access Control (MAC) addresses to protect user privacy, fundamentally disrupting Network Access Control (NAC) systems that have relied on MAC addr…
-   _Authors: Premanand Seralathan | Categories: cs.NI, cs.CR | Published: 2026-03-17_
+3. **[scicode-lint: Detecting Methodology Bugs in Scientific Python Code with LLM-Generated Patterns](http://arxiv.org/abs/2603.17893v1)**
+   > Methodology bugs in scientific Python code produce plausible but incorrect results that traditional linters and static analysis tools cannot detect. Several research groups have built ML-specific lint…
+   _Authors: Sergey V. Samsonau | Categories: cs.SE, cs.AI, cs.LG | Published: 2026-03-18_
 
-4. **[Ember: A Serverless Peer-to-Peer End-to-End Encrypted Messaging System over an IPv6 Mesh Network](http://arxiv.org/abs/2603.16735v1)**
-   > This paper presents Ember, a serverless peer-to-peer messaging system providing end-to-end encrypted communication over a decentralised IPv6 mesh network. Ember operates without central servers, enfor…
-   _Authors: Hamish Alsop, Leandros Maglaras, Naghmeh Moradpoor | Categories: cs.CR | Published: 2026-03-17_
+4. **[ArchBench: Benchmarking Generative-AI for Software Architecture Tasks](http://arxiv.org/abs/2603.17833v1)**
+   > Benchmarks for large language models (LLMs) have progressed from snippet-level function generation to repository-level issue resolution, yet they overwhelmingly target implementation correctness. Soft…
+   _Authors: Bassam Adnan, Aviral Gupta, Sreemaee Akshathala | Categories: cs.SE | Published: 2026-03-18_
 
-5. **[Looking for (Genomic) Needles in a Haystack: Sparsity-Driven Search for Identifying Correlated Genetic Mutations in Cancer](http://arxiv.org/abs/2603.16721v1)**
-   > Cancer typically arises not from a single genetic mutation (i.e., hit) but from multi-hit combinations that accumulate within cells. However, enumerating multi-hit combinations becomes exponentially m…
-   _Authors: Ritvik Prabhu, Emil Vatai, Bernard Moussad | Categories: cs.DC | Published: 2026-03-17_
+5. **[CodeScout: An Effective Recipe for Reinforcement Learning of Code Search Agents](http://arxiv.org/abs/2603.17829v1)**
+   > A prerequisite for coding agents to perform tasks on large repositories is code localization - the identification of relevant files, classes, and functions to work on. While repository-level code loca…
+   _Authors: Lintang Sutawika, Aditya Bharat Soni, Bharath Sriraam R R | Categories: cs.SE, cs.AI, cs.CL | Published: 2026-03-18_
 
 _(up to 5 items)_
 
@@ -32,20 +32,20 @@ _(up to 5 items)_
 
 ## 🔥 Trending Repos (GitHub)
 
-1. **[OpenZeppelin/openzeppelin-contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)** — ⭐ 3 | 📈 +3 today | Solidity
-   > OpenZeppelin Contracts is a library for secure smart contract development.
+1. **[farion1231/cc-switch](https://github.com/farion1231/cc-switch)** — ⭐ 595 | 📈 +595 today | Rust
+   > A cross-platform desktop All-in-One assistant tool for Claude Code, Codex, OpenCode, openclaw &amp; Gemini CLI.
 
-2. **[euler-xyz/euler-vault-kit](https://github.com/euler-xyz/euler-vault-kit)** — ⭐ 2 | 📈 +2 today | Solidity
-   > Build lending vaults which connect through Ethereum Vault Connector
+2. **[sxyazi/yazi](https://github.com/sxyazi/yazi)** — ⭐ 163 | 📈 +163 today | Rust
+   > 💥 Blazing fast terminal file manager written in Rust, based on async I/O.
 
-3. **[tempoxyz/tempo](https://github.com/tempoxyz/tempo)** — ⭐ 2 | 📈 +2 today | Rust
-   > the blockchain for payments
+3. **[DaKheera47/job-ops](https://github.com/DaKheera47/job-ops)** — ⭐ 131 | 📈 +131 today | TypeScript
+   > job-ops: DevOps principles applied to job hunting. A self-hosted pipeline to track, analyze, and assist your application process
 
-4. **[transmissions11/solmate](https://github.com/transmissions11/solmate)** — ⭐ 1 | 📈 +1 today | Solidity
-   > Modern, opinionated, and gas optimized building blocks for smart contract development.
+4. **[entireio/cli](https://github.com/entireio/cli)** — ⭐ 38 | 📈 +38 today | Go
+   > Entire is a new developer platform that hooks into your git workflow to capture AI agent sessions on every push, unifying your code with its context and reasoning.
 
-5. **[The-Web3-Compass/30-days-of-solidity-submissions](https://github.com/The-Web3-Compass/30-days-of-solidity-submissions)** — Solidity
-   > The offical repo for submitting contracts for the 30 days of solidity
+5. **[containerd/containerd](https://github.com/containerd/containerd)** — ⭐ 7 | 📈 +7 today | Go
+   > An open and reliable container runtime
 
 _(up to 5 items)_
 
@@ -53,20 +53,20 @@ _(up to 5 items)_
 
 ## 🗞️ Hacker News Highlights
 
-1. **[Microsoft's 'unhackable' Xbox One has been hacked by 'Bliss'](https://www.tomshardware.com/video-games/console-gaming/microsofts-unhackable-xbox-one-has-been-hacked-by-bliss-the-2013-console-finally-fell-to-voltage-glitching-allowing-the-loading-of-unsigned-code-at-every-level)** — 729 pts, 273 comments
-   > _tomshardware.com_
+1. **[Despite doubts, federal cyber experts approved Microsoft cloud service](https://www.propublica.org/article/microsoft-cloud-fedramp-cybersecurity-government)** — 467 pts, 213 comments
+   > _propublica.org_
 
-2. **[A Decade of Slug](https://terathon.com/blog/decade-slug.html)** — 668 pts, 64 comments
-   > _terathon.com_
+2. **[Afroman found not liable in defamation case brought by Ohio cops who raided home](https://nypost.com/2026/03/18/us-news/afroman-found-not-liable-in-bizarre-ohio-defamation-case/)** — 443 pts, 119 comments
+   > _nypost.com_
 
-3. **[Mistral AI Releases Forge](https://mistral.ai/news/forge)** — 586 pts, 143 comments
-   > _mistral.ai_
+3. **[Cook: A simple CLI for orchestrating Claude Code](https://rjcorwin.github.io/cook/)** — 249 pts, 70 comments
+   > _rjcorwin.github.io_
 
-4. **[Rob Pike's 5 Rules of Programming](https://www.cs.unc.edu/~stotts/COMP590-059-f24/robsrules.html)** — 318 pts, 156 comments
-   > _cs.unc.edu_
+4. **[Mozilla to launch free built-in VPN in upcoming Firefox 149](https://cyberinsider.com/mozilla-to-launch-free-built-in-vpn-in-upcoming-firefox-149/)** — 204 pts, 132 comments
+   > _cyberinsider.com_
 
-5. **[JPEG Compression](https://www.sophielwang.com/blog/jpeg)** — 297 pts, 73 comments
-   > _sophielwang.com_
+5. **[Measuring progress toward AGI: A cognitive framework](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/measuring-agi-cognitive-framework/)** — 129 pts, 203 comments
+   > _blog.google_
 
 _(up to 5 items)_
 
@@ -83,4 +83,4 @@ _(up to 5 items)_
 
 ---
 
-_Next track: Developer Tools | Archive: memory/autoresearch-archive.md_
+_Next track: AI & Agents | Archive: memory/autoresearch-archive.md_
