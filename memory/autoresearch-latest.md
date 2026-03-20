@@ -1,30 +1,30 @@
-# 🔬 Nightly Research: Developer Tools
+# 🔬 Nightly Research: AI & Agents
 
-> Generated: 2026-03-20 00:00 AEST | Track: devtools (3 of 3)
+> Generated: 2026-03-21 00:00 AEST | Track: ai (1 of 3)
 
 ---
 
 ## 📄 Top Papers (arXiv)
 
-1. **[CodeGreen: Towards Improving Precision and Portability in Software Energy Measurement](http://arxiv.org/abs/2603.17924v1)**
-   > Accurate software energy measurement is critical for optimizing energy, yet existing profilers force a trade-off between measurement accuracy and overhead due to tight coupling with supported specific…
-   _Authors: Saurabhsingh Rajput, Tushar Sharma | Categories: cs.SE | Published: 2026-03-18_
+1. **[FinTradeBench: A Financial Reasoning Benchmark for LLMs](http://arxiv.org/abs/2603.19225v1)**
+   > Real-world financial decision-making is a challenging problem that requires reasoning over heterogeneous signals, including company fundamentals derived from regulatory filings and trading signals com…
+   _Authors: Yogesh Agrawal, Aniruddha Dutta, Md Mahadi Hasan | Categories: cs.CE, cs.AI, cs.CL, cs.IR, q-fin.CP | Published: 2026-03-19_
 
-2. **[In Perfect Harmony: Orchestrating Causality in Actor-Based Systems](http://arxiv.org/abs/2603.17909v1)**
-   > Runtime verification has gained popularity as a lightweight approach for increasing assurance in systems under scrutiny. Performing runtime checks enables dynamic monitoring and alerts for unexpected …
-   _Authors: Vladyslav Mikytiv, Bernardo Toninho, Carla Ferreira | Categories: cs.SE, cs.LO | Published: 2026-03-18_
+2. **[F2LLM-v2: Inclusive, Performant, and Efficient Embeddings for a Multilingual World](http://arxiv.org/abs/2603.19223v1)**
+   > We present F2LLM-v2, a new family of general-purpose, multilingual embedding models in 8 distinct sizes ranging from 80M to 14B. Trained on a newly curated composite of 60 million publicly available h…
+   _Authors: Ziyin Zhang, Zihan Liao, Hang Yu | Categories: cs.CL, cs.AI | Published: 2026-03-19_
 
-3. **[scicode-lint: Detecting Methodology Bugs in Scientific Python Code with LLM-Generated Patterns](http://arxiv.org/abs/2603.17893v1)**
-   > Methodology bugs in scientific Python code produce plausible but incorrect results that traditional linters and static analysis tools cannot detect. Several research groups have built ML-specific lint…
-   _Authors: Sergey V. Samsonau | Categories: cs.SE, cs.AI, cs.LG | Published: 2026-03-18_
+3. **[Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation](http://arxiv.org/abs/2603.19220v1)**
+   > We introduce Nemotron-Cascade 2, an open 30B MoE model with 3B activated parameters that delivers best-in-class reasoning and strong agentic capabilities. Despite its compact size, its mathematical an…
+   _Authors: Zhuolin Yang, Zihan Liu, Yang Chen | Categories: cs.CL, cs.AI, cs.LG | Published: 2026-03-19_
 
-4. **[ArchBench: Benchmarking Generative-AI for Software Architecture Tasks](http://arxiv.org/abs/2603.17833v1)**
-   > Benchmarks for large language models (LLMs) have progressed from snippet-level function generation to repository-level issue resolution, yet they overwhelmingly target implementation correctness. Soft…
-   _Authors: Bassam Adnan, Aviral Gupta, Sreemaee Akshathala | Categories: cs.SE | Published: 2026-03-18_
+4. **[NavTrust: Benchmarking Trustworthiness for Embodied Navigation](http://arxiv.org/abs/2603.19229v1)**
+   > There are two major categories of embodied navigation: Vision-Language Navigation (VLN), where agents navigate by following natural language instructions; and Object-Goal Navigation (OGN), where agent…
+   _Authors: Huaide Jiang, Yash Chaudhary, Yuping Wang | Categories: cs.RO, cs.AI, cs.CV, cs.LG, eess.SY | Published: 2026-03-19_
 
-5. **[CodeScout: An Effective Recipe for Reinforcement Learning of Code Search Agents](http://arxiv.org/abs/2603.17829v1)**
-   > A prerequisite for coding agents to perform tasks on large repositories is code localization - the identification of relevant files, classes, and functions to work on. While repository-level code loca…
-   _Authors: Lintang Sutawika, Aditya Bharat Soni, Bharath Sriraam R R | Categories: cs.SE, cs.AI, cs.CL | Published: 2026-03-18_
+5. **[DriveTok: 3D Driving Scene Tokenization for Unified Multi-View Reconstruction and Understanding](http://arxiv.org/abs/2603.19219v1)**
+   > With the growing adoption of vision-language-action models and world models in autonomous driving systems, scalable image tokenization becomes crucial as the interface for the visual modality. However…
+   _Authors: Dong Zhuo, Wenzhao Zheng, Sicheng Zuo | Categories: cs.CV, cs.LG | Published: 2026-03-19_
 
 _(up to 5 items)_
 
@@ -32,20 +32,20 @@ _(up to 5 items)_
 
 ## 🔥 Trending Repos (GitHub)
 
-1. **[farion1231/cc-switch](https://github.com/farion1231/cc-switch)** — ⭐ 595 | 📈 +595 today | Rust
+1. **[langchain-ai/open-swe](https://github.com/langchain-ai/open-swe)** — ⭐ 640 | 📈 +640 today | Python
+   > An Open-Source Asynchronous Coding Agent
+
+2. **[farion1231/cc-switch](https://github.com/farion1231/cc-switch)** — ⭐ 587 | 📈 +587 today | Rust
    > A cross-platform desktop All-in-One assistant tool for Claude Code, Codex, OpenCode, openclaw &amp; Gemini CLI.
 
-2. **[sxyazi/yazi](https://github.com/sxyazi/yazi)** — ⭐ 163 | 📈 +163 today | Rust
-   > 💥 Blazing fast terminal file manager written in Rust, based on async I/O.
+3. **[TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents)** — ⭐ 371 | 📈 +371 today | Python
+   > TradingAgents: Multi-Agents LLM Financial Trading Framework
 
-3. **[DaKheera47/job-ops](https://github.com/DaKheera47/job-ops)** — ⭐ 131 | 📈 +131 today | TypeScript
-   > job-ops: DevOps principles applied to job hunting. A self-hosted pipeline to track, analyze, and assist your application process
+4. **[sponsors/vas3k](https://github.com/sponsors/vas3k)** — ⭐ 136 | 📈 +136 today | TypeScript
+   > Self-hosted AI accounting app. LLM analyzer for receipts, invoices, transactions with custom prompts and categories
 
-4. **[entireio/cli](https://github.com/entireio/cli)** — ⭐ 38 | 📈 +38 today | Go
-   > Entire is a new developer platform that hooks into your git workflow to capture AI agent sessions on every push, unifying your code with its context and reasoning.
-
-5. **[containerd/containerd](https://github.com/containerd/containerd)** — ⭐ 7 | 📈 +7 today | Go
-   > An open and reliable container runtime
+5. **[sponsors/vllm-project](https://github.com/sponsors/vllm-project)** — ⭐ 109 | 📈 +109 today | Python
+   > A framework for efficient model inference with omni-modality models
 
 _(up to 5 items)_
 
@@ -53,20 +53,20 @@ _(up to 5 items)_
 
 ## 🗞️ Hacker News Highlights
 
-1. **[Despite doubts, federal cyber experts approved Microsoft cloud service](https://www.propublica.org/article/microsoft-cloud-fedramp-cybersecurity-government)** — 467 pts, 213 comments
-   > _propublica.org_
+1. **[Astral to Join OpenAI](https://astral.sh/blog/openai)** — 1405 pts, 857 comments
+   > _astral.sh_
 
-2. **[Afroman found not liable in defamation case brought by Ohio cops who raided home](https://nypost.com/2026/03/18/us-news/afroman-found-not-liable-in-bizarre-ohio-defamation-case/)** — 443 pts, 119 comments
-   > _nypost.com_
+2. **[Google details new 24-hour process to sideload unverified Android apps](https://arstechnica.com/gadgets/2026/03/google-details-new-24-hour-process-to-sideload-unverified-android-apps/)** — 987 pts, 1056 comments
+   > _arstechnica.com_
 
-3. **[Cook: A simple CLI for orchestrating Claude Code](https://rjcorwin.github.io/cook/)** — 249 pts, 70 comments
-   > _rjcorwin.github.io_
+3. **[Push events into a running session with channels](https://code.claude.com/docs/en/channels)** — 365 pts, 214 comments
+   > _code.claude.com_
 
-4. **[Mozilla to launch free built-in VPN in upcoming Firefox 149](https://cyberinsider.com/mozilla-to-launch-free-built-in-vpn-in-upcoming-firefox-149/)** — 204 pts, 132 comments
-   > _cyberinsider.com_
+4. **[Scaling Karpathy's Autoresearch: What Happens When the Agent Gets a GPU Cluster](https://blog.skypilot.co/scaling-autoresearch/)** — 207 pts, 88 comments
+   > _blog.skypilot.co_
 
-5. **[Measuring progress toward AGI: A cognitive framework](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/measuring-agi-cognitive-framework/)** — 129 pts, 203 comments
-   > _blog.google_
+5. **[NanoGPT Slowrun: 10x Data Efficiency with Infinite Compute](https://qlabs.sh/10x)** — 159 pts, 41 comments
+   > _qlabs.sh_
 
 _(up to 5 items)_
 
@@ -83,4 +83,4 @@ _(up to 5 items)_
 
 ---
 
-_Next track: AI & Agents | Archive: memory/autoresearch-archive.md_
+_Next track: Crypto & DeFi | Archive: memory/autoresearch-archive.md_

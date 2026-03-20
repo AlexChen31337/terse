@@ -1,13 +1,7 @@
 {
-  "lastRSICheck": "2026-03-20T14:25:00",
-  "lastHeartbeat": "2026-03-20T14:25:00",
-  "healthScore": 0.143,
-  "alerts": ["low_rsi_health"],
-  "lastBlogCheck": "2026-03-20T14:25:00",
-  "newArticles": 1,
-  "releases": {
-    "claw-chain": ["v0.6.0 (2026-02-27)", "v0.6.1 (2026-03-05)"],
-    "evoclaw": ["v0.6.0 (2026-02-27)"]
-  },
-  "openPRs": 0
+  "lastHeartbeat": "2026-03-20T22:26:26.000000",
+  "lastRSICheck": "2026-03-20T22:26:26.000000",
+  "healthScore": 0.146,
+  "activeTask": null,
+  "alertThreshold": 0.3
 }

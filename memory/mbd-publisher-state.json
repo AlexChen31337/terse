@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-03-20T00:00:00+11:00",
+  "lastRun": "2026-03-21T00:00:00+11:00",
   "last_backup": "2026-03-20",
-  "topic_index": 9,
+  "topic_index": 10,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -241,6 +241,21 @@
       "githubBacked": true,
       "wordCount": 8905,
       "chapters": 12,
+      "coverGenerated": true,
+      "pdfGenerated": true,
+      "note": "Auto-published to Payhip. Backed up to GitHub."
+    },
+    "daily-2026-03-21": {
+      "name": "The Ethical AI Playbook: How Builders, Founders, and Teams Navigate the New Rules of Artificial Intelligence",
+      "status": "published",
+      "category": "ethical-ai",
+      "price": 14,
+      "date": "2026-03-21",
+      "folder": "2026-03-21_ethical-ai-playbook",
+      "payhipUrl": "https://payhip.com/b/75sHb",
+      "githubBacked": true,
+      "wordCount": 10000,
+      "chapters": 13,
       "coverGenerated": true,
       "pdfGenerated": true,
       "note": "Auto-published to Payhip. Backed up to GitHub."
