@@ -1,22 +1,3 @@
 {
-  "lastHeartbeat": "2026-03-21T14:25:00+11:00",
-  "lastRSICheck": "1774063573",
-  "blogStatus": {
-    "hackerNewsNew": 1,
-    "bitcoinMagazineNew": 0,
-    "lastScan": "2026-03-21T13:25:00+11:00"
-  },
-  "githubStatus": {
-    "evoclawLatestRelease": "v0.6.1",
-    "clawChainReleases": 0,
-    "openPRs": 0
-  },
-  "rsiHealth": {
-    "healthScore": 0.153,
-    "outcomes7d": 164,
-    "successRate": 0.34,
-    "topIssues": ["context_loss", "timeout", "tool_error"]
-  },
-  "activeTask": null,
-  "alertsRaised": []
+  "lastRSICheck": "2026-03-21T21:26:33.943212"
 }
