@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-03-21T00:00:00+11:00",
-  "last_backup": "2026-03-20",
-  "topic_index": 10,
+  "lastRun": "2026-03-21T09:06:00+11:00",
+  "last_backup": "2026-03-21",
+  "topic_index": 11,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -244,6 +244,18 @@
       "coverGenerated": true,
       "pdfGenerated": true,
       "note": "Auto-published to Payhip. Backed up to GitHub."
+    },
+    "mbd-daily-2026-03-21": {
+      "name": "赛博朋克副业_AI雇佣兵时代你的数字技能值多少钱",
+      "status": "backed_up",
+      "category": "副业/科技",
+      "date": "2026-03-21",
+      "githubBacked": true,
+      "coverGenerated": true,
+      "folder": "2026-03-21_赛博朋克副业_AI雇佣兵时代你的数字技能值多少钱",
+      "title": "赛博朋克副业_AI雇佣兵时代你的数字技能值多少钱",
+      "wordCount": 3900,
+      "note": "MbD Chinese backup. Awaiting publish instruction from owner."
     },
     "daily-2026-03-21": {
       "name": "The Ethical AI Playbook: How Builders, Founders, and Teams Navigate the New Rules of Artificial Intelligence",
