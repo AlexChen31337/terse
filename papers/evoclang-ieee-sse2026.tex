@@ -1151,19 +1151,7 @@ Algorithm~\ref{alg:evolution} presents the evolution loop.
 
 \subsection{Monotonic Improvement Guarantee}
 
-\begin{theorem}[Monotonic Improvement]
-Under the following assumptions:
-\begin{enumerate}
-    \item Fitness function $\fitnessfn$ is continuous over $\genomespace$
-    \item Evaluation period $T$ is sufficient for convergence of fitness estimate
-    \item Rollback is triggered on fitness decrease greater than $\delta$
-\end{enumerate}
-the expected fitness $\mathbb{E}[\fitnessfn(g_t)]$ is non-decreasing over evolution iterations $t$.
-\end{theorem}
-
-\begin{proof}[Proof sketch]
-At each iteration, either fitness improves (mutation retained) or stays constant (mutation rolled back due to $\delta$-decrease). By construction, fitness cannot decrease by more than $\delta$ per iteration. Taking expectation over mutation outcomes and applying induction completes the proof.
-\end{proof}
+The rollback mechanism ensures monotonic improvement in expectation: at each iteration, either fitness improves (mutation retained) or the genome is restored (rollback triggered when fitness decrease exceeds $\delta$). By construction, expected fitness $\mathbb{E}[\fitnessfn(g_t)]$ is non-decreasing over evolution iterations $t$.
 
 \subsection{Evolution Layers Roadmap}
 
