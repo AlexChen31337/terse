@@ -1,75 +1,63 @@
 # Midnight Health Check Report
-**Date:** 2026-03-22 00:00 AEDT
-**Time:** 2026-03-21 13:00 UTC
+**Date:** 2026-03-23 12:00 AM AEDT (2026-03-22 13:00 UTC)
+**Status:** ⚠️ 1 DOWN
 
----
+## Component Status
 
-## 🟢 Sentinel (workspace-sentinel)
-**Status:** ACTIVE
-- Last price check: 2026-03-21 12:46 UTC
-- Last Fear & Greed: 12 (Extreme Fear)
-- Alerts in last 24h: 11 alerts (BTC price thresholds, HYPE movements, FNG extreme fear)
-- State file: Intact, recent data
+| Component | Status | Notes |
+|-----------|--------|-------|
+| **Sentinel** | ✅ OK | Last price check: 2026-03-22 11:18 UTC. Alerts active (BTC price, Fear & Greed) |
+| **Quant** | ✅ OK | Active, AlphaStrike service running, no open positions, account $112.22 USDC |
+| **Shield** | ⚠️ NOT FOUND | access-control.json missing - workspace may not be initialized |
+| **Herald** | ✅ OK | State loaded, no recent activity |
+| **EvoClaw Hub** | ✅ OK | Running, 2 agents registered |
+| **AlphaStrike** | ✅ OK | systemd service active |
+| **Alex Eye (Pi)** | 🚨 DOWN | SSH connection failed - host key verification |
 
----
+## Details
 
-## 🟢 Quant (workspace-quant)
-**Status:** ACTIVE
-- Account value: $112.22 USDC
-- Open positions: None
-- All signals: HOLD (BTC, ETH, SOL)
-- AlphaStrike service: **ACTIVE** (systemd)
-  - Last log: 2026-03-22 00:00:15 (candles buffered)
-  - BTC: 440 candles, ETH: 319, SOL: 331
-- Circuit breakers: CLEAR
-- Consecutive losses: 0
+### Sentinel (workspace-sentinel)
+- **State:** Loaded successfully
+- **Last checks:** Prices (2026-03-22 11:18 UTC), Fear & Greed (2026-03-22 11:18 UTC)
+- **Recent alerts:** BTC price thresholds, Fear & Greed category changes
+- **Prices tracked:** BTC $68,551, ETH $2,081.55, SOL $87.08, HYPE $38.17
 
----
+### Quant (workspace-quant)
+- **Status:** ACTIVE (v4)
+- **AlphaStrike:** Service running (systemd)
+- **Signals:** All HOLD (BTC/ETH/SOL all at 40% confidence, oversold)
+- **Positions:** None open
+- **Account value:** $112.22 USDC
+- **Circuit breakers:** CLEAR
+- **Spot holdings:** UBTC 0.0153, HYPE 1.226 (long-term holds)
 
-## 🟡 Shield (workspace-shield)
-**Status:** MINIMAL
-- access-control.json: **NOT FOUND** (minimal deployment)
-- No pending approvals to check
-- Note: Shield may be in passive/standby mode
+### Shield (workspace-shield)
+- **Status:** ⚠️ access-control.json not found
+- **Action:** Workspace may need initialization
 
----
+### Herald (workspace-herald)
+- **Status:** State loaded
+- **Activity:** No recent posts or outreach
 
-## 🟢 Herald (workspace-herald)
-**Status:** IDLE
-- State file: Intact
-- No recent posts or outreach activity
-- All metrics at zero (expected for dormant marketing agent)
+### EvoClaw Hub
+- **Status:** ✅ Running
+- **Agents:** 2 registered
+- **Endpoint:** http://localhost:8420
 
----
+### AlphaStrike Service
+- **Status:** ✅ active (systemd user service)
+- **User:** bowen
 
-## 🟢 EvoClaw Hub (localhost:8420)
-**Status:** UP
-- Agents registered: 2
-  - alex-eye (Pi Camera) — idle, no errors
-  - alex-hub (Desktop) — idle, no errors
-- Hub responding normally
+### Alex Eye (Pi)
+- **Status:** 🚨 DOWN
+- **Error:** Host key verification failed
+- **Action needed:** Manual SSH key update or reconnection
 
----
-
-## 🔴 Alex Eye (Pi Camera at 192.168.1.100)
-**Status:** DOWN
-- SSH check: **No route to host**
-- Pi appears offline or network unreachable
-- Action required: Check Pi power/network connection
-
----
-
-## 🟢 Disk Space
-- / (root): 63% used (334G free of 937G)
-- /media/DATA: Not mounted
-- /data2: Not mounted
-- Adequate space available
-
----
+## Disk Space
+- **Root (/):** 64% used (561G/937G) - OK
+- **DATA mounts:** Not showing separately (may be unmounted or same filesystem)
 
 ## Summary
-- **UP:** Sentinel, Quant, AlphaStrike, Herald, EvoClaw Hub, Disk
-- **DOWN:** Alex Eye (Pi) — network unreachable
-- **MINIMAL:** Shield (config not found)
-
-**Recommendation:** Investigate Pi connectivity — may need power cycle or network check.
+- **UP:** 6 components
+- **DOWN:** 1 component (Alex Eye Pi)
+- **Action required:** Pi SSH connection needs manual intervention

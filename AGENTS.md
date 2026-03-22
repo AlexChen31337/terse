@@ -5,6 +5,16 @@ This folder is home. Treat it that way.
 ## MbD Publish Rule (NON-NEGOTIABLE — re-hardened 2026-03-13)
 **NEVER publish to MbD via API.** Workflow is: write content → save to `bowen31337/mbd-book-ideas` repo → STOP. No API calls, no drafts, no publish. Wait for explicit "publish to MbD" instruction from Bowen.
 
+## Cover Image Rule (NON-NEGOTIABLE — hardened 2026-03-22)
+**EVERY blog post, article, or MbD content piece MUST have a cover image before being considered complete.**
+- Generate cover via ZImage (ComfyUI on GPU server peter@10.0.0.44, port 8188)
+- Use ZImage workflow defaults: 768×1024, negative prompt MUST include `text, letters, numbers, words, characters, fonts, typography, logo, title, subtitle, caption, label, sign, writing, watermark`
+- Upload to catbox.moe (fallback: imgbb) and embed URL in the content file
+- For dev.to: upload image and set as cover_image before publishing
+- For MbD: embed image URL at top of content markdown
+- For Payhip: cover image is already mandatory (separate workflow)
+- **No cover = not done. Do not push to repo or publish without a cover image.**
+
 ## Daily Book Auto-Publish to Payhip (NON-NEGOTIABLE — 2026-03-16)
 **AUTO-PUBLISH daily books to Payhip immediately after generation. No pause, no asking Bowen.**
 Workflow: write → cover → PDF → push to `bowen31337/mbd-book-ideas` → **publish to Payhip** → notify Bowen with live URL.

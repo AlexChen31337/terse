@@ -1,4 +1,25 @@
 {
-  "lastRSICheck": "2026-03-22T13:25:00+11:00",
-  "lastRun": "2026-03-22T13:25:00+11:00"
+  "lastHeartbeat": "2026-03-22T22:26:30.000000+11:00",
+  "lastRSICheck": "2026-03-22T22:26:30.000000+11:00",
+  "healthScore": 0.16,
+  "alerts": [],
+  "blogStatus": {
+    "lastScan": "2026-03-22T22:26:30.000000+11:00",
+    "newArticles": 2,
+    "sources": ["Hacker News"]
+  },
+  "githubStatus": {
+    "clawchainReleases": ["v0.6.0", "v0.6.1"],
+    "evoclawReleases": ["v0.6.0"],
+    "openPRs": {
+      "claw-chain": 1,
+      "evoclaw": 0
+    }
+  },
+  "rsiIssues": {
+    "context_loss": 62,
+    "timeout": 53,
+    "tool_error": 46,
+    "healthScore": 0.16
+  }
 }
