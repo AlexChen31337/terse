@@ -195,7 +195,7 @@
   citecolor=coreteal,
   urlcolor=corepurple,
   pdftitle={EvoClaw: A Self-Evolving Multi-Agent Framework with Genome-Driven Runtime Adaptation},
-  pdfauthor={Alex Chen, Bowen Li, Nicholas Qi, Shiping Chen},
+  pdfauthor={Jordan Chen, Bowen Li, Nicholas Qi, Shiping Chen},
   pdfsubject={Multi-agent systems, Self-evolving AI, Genome-driven adaptation},
   pdfkeywords={multi-agent, self-evolving, genome, memory, routing, Rust, Go, edge AI}
 }
@@ -313,7 +313,7 @@ We present \evoclaw{}, a multi-agent framework where agents evolve through a dec
 
 \subsection{Paper Organization}
 
-The remainder of this paper is organized as follows. Section~\ref{sec:related} provides comprehensive background and positions \evoclaw{} within the literature. Section~\ref{sec:architecture} presents the overall system architecture and design principles. Section~\ref{sec:genome_engine} details the Genome Engine implementation. Section~\ref{sec:memory} describes the tiered memory architecture. Section~\ref{sec:router} presents intelligent model routing. Section~\ref{sec:health} covers the model health registry. Section~\ref{sec:toolloop} describes the agentic tool loop. Section~\ref{sec:governance} details self-governance mechanisms. Section~\ref{sec:evolution} formalizes the evolutionary framework. Section~\ref{sec:clawchain} presents ClawChain integration. Section~\ref{sec:deployment} covers multi-tier deployment. Section~\ref{sec:implementation} discusses implementation details. Section~\ref{sec:evaluation} presents experimental evaluation. Section~\ref{sec:limitations} discusses limitations and future work. Section~\ref{sec:conclusion} concludes.
+The remainder of this paper is organized as follows. Section~\ref{sec:related} provides background and positions \evoclaw{} within the literature. Sections~\ref{sec:architecture}--\ref{sec:clawchain} present the system architecture, Genome Engine, tiered memory, intelligent routing, model health registry, agentic tool loop, self-governance mechanisms, evolutionary framework, and ClawChain integration. Section~\ref{sec:deployment} covers deployment and evaluation. Section~\ref{sec:limitations} discusses limitations and future work. Section~\ref{sec:conclusion} concludes. Formal proofs are provided in the Appendix.
 
 
 %% ========================================================================
@@ -333,7 +333,7 @@ The emergence of capable large language models has catalyzed a new generation of
 
 Wang et al.~\cite{wang2023survey} provide a comprehensive taxonomy of LLM-based agents, identifying four key architectural modules: profiling (agent identity and role), memory (information storage and retrieval), planning (task decomposition and scheduling), and action (tool invocation and environment interaction). This taxonomy informs our design: \evoclaw{}'s genome corresponds to the profiling module, tiered memory extends the memory module, the intelligent router enhances planning, and the agentic tool loop implements action.
 
-Xi et al.~\cite{xi2023rise} survey the landscape from construction to evaluation, emphasizing the significant gap between current systems and human-level autonomy. They identify key challenges including catastrophic forgetting, context window limitations, and lack of self-improvement—all directly addressed by \evoclaw{}'s tiered memory, bounded context, and evolutionary framework.
+Xi et al.~\cite{xi2023rise} survey the landscape from construction to evaluation, emphasizing the significant gap between current systems and human-level autonomy. They identify key problems including catastrophic forgetting, context window limitations, and lack of self-improvement—all directly addressed by \evoclaw{}'s tiered memory, bounded context, and evolutionary framework.
 
 \subsubsection{Task Decomposition Agents}
 
@@ -417,7 +417,7 @@ The FIPA ACL specification~\cite{fipa1997acl} defined standard communication pro
 
 CAMEL~\cite{li2023camel} proposes communicative agents that collaborate through role-playing, using ``inception prompting'' to guide autonomous cooperation between AI Assistant and AI User agents. The work demonstrates emergent cooperation but lacks mechanisms for learning from collaboration outcomes.
 
-Guo et al.~\cite{guo2024llm_multi_agents} survey LLM-based multi-agent systems across domains, identifying profiling, communication, and capability growth as key challenges. \evoclaw{} addresses capability growth through genome evolution, provides structured communication via MQTT, and enables profiling through the genome's identity section.
+Guo et al.~\cite{guo2024llm_multi_agents} survey LLM-based multi-agent systems across domains, identifying profiling, communication, and capability growth as key problems. \evoclaw{} addresses capability growth through genome evolution, provides structured communication via MQTT, and enables profiling through the genome's identity section.
 
 \subsubsection{Generative Agents and Social Simulation}
 
@@ -504,89 +504,21 @@ Sparse Mixture-of-Experts~\cite{shazeer2017outrageously} and Switch Transformers
 
 \subsection{Genetic Programming and Self-Modifying Systems}
 
-\subsubsection{Classical Genetic Programming}
+Koza's genetic programming~\cite{koza1992gp, angeline1994genetic} evolves program trees through mutation and crossover. \evoclaw{}'s evolution operates on \textit{declarative configuration spaces} rather than imperative syntax, providing bounded search spaces, type safety, and inviolable safety constraints---properties difficult to achieve in classical GP.
 
-Koza's foundational work~\cite{koza1992gp} established genetic programming as a method for automatically generating computer programs through evolutionary operators. Programs are represented as trees, with mutation altering subtrees and crossover exchanging branches between parent programs~\cite{angeline1994genetic}.
-
-\evoclaw{}'s genome evolution is inspired by GP but operates on \textit{declarative configuration spaces} rather than imperative program syntax. This distinction is crucial:
-
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Bounded search space:} GP's program trees can grow unboundedly. Our genomes have fixed structure with bounded parameter ranges.
-    
-    \item \textbf{Type safety:} Arbitrary tree mutations can produce invalid programs. Our typed parameters ensure all mutations produce valid configurations.
-    
-    \item \textbf{Safety constraints:} GP struggles to enforce behavioral constraints. Our genomes have hard-coded safety invariants that evolution cannot violate.
-\end{itemize}
-
-\subsubsection{LLM-Guided Evolution}
-
-Eureka~\cite{ma2023eureka} uses LLMs to evolve reward functions for reinforcement learning, achieving human-level reward design without manual engineering. This demonstrates that LLMs can effectively guide evolutionary search in code spaces.
-
-\evoclaw{} applies similar principles to agent configuration: fitness evaluation uses operational metrics (success rate, latency, cost), and mutation operators are designed for configuration-space semantics (parameter perturbation, skill toggling).
-
-\subsubsection{Self-Modifying Code}
-
-The concept of programs modifying their own source dates to early computing~\cite{vonneumann1966self}. Quines~\cite{quine_thompson} demonstrate self-replication, while reflective systems~\cite{smith1984reflection} enable runtime introspection and modification.
-
-\evoclaw{} provides \textit{safe} self-modification by constraining changes to the declarative genome layer. Agents cannot inject arbitrary code; they can only modify parameters within defined bounds. This design prevents the security risks of unrestricted self-modification while enabling meaningful adaptation.
-
-\subsubsection{Deliberate Search}
-
-Tree of Thoughts~\cite{yao2023tree} and LATS~\cite{zhou2023lats} apply search algorithms to LLM reasoning, exploring multiple reasoning paths before committing to answers. \evoclaw{}'s evolutionary search can be viewed as a population-based search over configuration space, with fitness evaluations guiding exploration.
+Eureka~\cite{ma2023eureka} uses LLMs to evolve reward functions; we apply similar principles to agent configuration with operational fitness metrics. Self-modifying code~\cite{vonneumann1966self, smith1984reflection} enables runtime adaptation but poses security risks; \evoclaw{} constrains modification to the genome layer, preventing arbitrary code injection. Tree of Thoughts~\cite{yao2023tree} and LATS~\cite{zhou2023lats} apply search to LLM reasoning; our evolution is analogous population-based search over configuration space.
 
 \subsection{Self-Governance and Reliability}
 
-Autonomous systems require mechanisms for maintaining reliability without constant human oversight~\cite{rushby1995critical}. Our four protocols address different failure modes identified in production agent deployments.
-
-\subsubsection{Write-Ahead Logging}
-
-Write-ahead logging~\cite{hewitt1976implementation} is a foundational technique in database systems: changes are logged before being applied, enabling recovery from crashes. Our WAL protocol applies this to agent context: important information (user corrections, key decisions, state changes) is persisted before the agent responds.
-
-This addresses a critical failure mode we observed: when memory compaction runs mid-conversation, recent corrections can be lost. The WAL ensures that ``No, use Podman not Docker'' survives even if the conversation is summarized immediately after.
-
-\subsubsection{Assertion-Based Verification}
-
-Design-by-contract~\cite{meyer1997object} establishes pre/post-conditions that software must satisfy. Our VBR (Verify Before Reporting) protocol applies this to task completion: agents must verify outputs (file exists, tests pass, command succeeds) before claiming completion.
-
-This addresses the ``done but not done'' pattern where agents claim success based on intent rather than outcome. Without VBR, an agent might report ``Code committed'' without verifying the git push actually succeeded.
-
-\subsubsection{Behavioral Constraints}
-
-Constrained policy optimization~\cite{arnold2017constrained} in reinforcement learning prevents agents from taking actions that violate safety constraints. Our ADL protocol provides analogous constraints for language agent behavior, detecting when response patterns diverge from the intended persona.
-
-Recent work on sycophancy~\cite{sharma2023sycophancy} shows that LLMs often tell users what they want to hear rather than the truth. ADL detects sycophantic patterns (``Great question!'', ``I'd be happy to help!'') and triggers recalibration when they exceed thresholds.
-
-\subsubsection{Cost Optimization}
-
-LLM API costs are a significant operational concern~\cite{marr2023cost}. Our VFM (Value-For-Money) protocol tracks task costs versus outcomes, identifying when cheaper models would suffice. This data feeds back into the intelligent router, improving future routing decisions.
+Autonomous systems require reliability mechanisms without constant oversight~\cite{rushby1995critical}. Write-ahead logging~\cite{hewitt1976implementation} ensures crash recovery; our WAL applies this to agent context, preventing loss of corrections during memory compaction. Design-by-contract~\cite{meyer1997object} inspires our VBR protocol: agents verify outputs before claiming completion. Constrained policy optimization~\cite{arnold2017constrained} and sycophancy research~\cite{sharma2023sycophancy} motivate our ADL protocol for persona drift detection. LLM cost concerns~\cite{marr2023cost} drive our VFM protocol, which tracks cost-value ratios to improve routing decisions.
 
 \subsection{Blockchain for AI Agents}
 
-Blockchain technology enables trustless coordination among parties who may not know or trust each other~\cite{buterin2014ethereum, swan2018blockchain}. Applied to AI agents, this creates the foundation for autonomous agent economies.
-
-\subsubsection{Decentralized Identity}
-
-Decentralized Identifiers (DIDs)~\cite{spencer2015decentralized} provide cryptographically-verifiable identities without central authorities. Each agent in \evoclaw{} can have a DID, enabling verifiable attribution of actions and reputation tracking.
-
-\subsubsection{Agent Economies}
-
-Goertzel's work on AGI markets~\cite{goertzel2017agi} envisions autonomous agents buying and selling services. \evoclaw{}'s genome marketplace extends this: agents can share evolved configurations, with successful genomes commanding higher prices based on verified fitness.
-
-\subsubsection{On-Chain Governance}
-
-Decentralized Autonomous Organizations (DAOs)~\cite{buterin2014ethereum} enable collective decision-making through token-weighted voting. Our ClawChain design extends this to agent populations: high-reputation agents can propose genome mutations, with reputation-weighted voting determining adoption.
+Blockchain enables trustless coordination~\cite{buterin2014ethereum, swan2018blockchain}. DIDs~\cite{spencer2015decentralized} provide verifiable agent identity; Goertzel~\cite{goertzel2017agi} envisions autonomous agent economies. \evoclaw{}'s ClawChain integrates these concepts: agents have DIDs for attribution, a genome marketplace for sharing evolved configurations, and reputation-weighted governance for mutation proposals.
 
 \subsection{Edge AI and Lightweight Deployment}
 
-\subsubsection{TinyML}
-
-The TinyML movement~\cite{tinyml} has driven development of machine learning models for microcontrollers. TensorFlow Lite Micro enables inference on devices with kilobytes of memory. However, these focus on inference (image classification, keyword spotting) rather than agentic behavior.
-
-\evoclaw{} brings full agent capabilities to similarly constrained devices. Our 3.0MB binary runs on Raspberry Pi 1 (ARMv6, 512MB RAM), executing skills, managing memory tiers, and communicating via MQTT.
-
-\subsubsection{Edge Computing}
-
-The proliferation of IoT devices has spurred edge computing research~\cite{shi2016edge}, moving computation closer to data sources. \evoclaw{}'s three-tier deployment (edge/server/cloud) is designed for this paradigm, with edge agents operating autonomously and synchronizing through server orchestration.
+TinyML~\cite{tinyml} targets inference on microcontrollers but not agentic behavior. Edge computing~\cite{shi2016edge} moves computation closer to data sources. \evoclaw{} combines both: full agent capabilities in a 3.0MB binary on Raspberry Pi 1, with three-tier deployment spanning edge, server, and cloud.
 
 \subsection{Positioning of \evoclaw{}}
 
@@ -697,53 +629,69 @@ Figure~\ref{fig:architecture} illustrates the complete \evoclaw{} architecture s
 \begin{figure*}[t]
 \centering
 \begin{tikzpicture}[
-    node distance=0.8cm and 1.5cm,
-    tier/.style={draw, rounded corners, minimum width=13cm, minimum height=3cm, fill=#1!10},
-    component/.style={draw, rounded corners, minimum width=2.5cm, minimum height=1cm, fill=#1!30, font=\small},
-    arrow/.style={-{Stealth[scale=0.8]}, thick},
-    label/.style={font=\small\bfseries}
+    node distance=0.6cm and 1.0cm,
+    tier/.style={draw, rounded corners, minimum width=14cm, minimum height=2.8cm, fill=#1!10, line width=0.8pt},
+    component/.style={draw, rounded corners, minimum width=2.2cm, minimum height=0.9cm, fill=#1!30, font=\footnotesize\bfseries, line width=0.6pt, align=center, text width=2cm},
+    edgecomp/.style={draw, rounded corners, minimum width=2.0cm, minimum height=0.85cm, fill=#1!35, font=\footnotesize\bfseries, line width=0.6pt, align=center, text width=1.9cm},
+    arrow/.style={-{Stealth[scale=0.9]}, thick, draw=coregray},
+    dataarrow/.style={-{Stealth[scale=0.9]}, thick, draw=corepurple, dashed},
+    label/.style={font=\small\bfseries, anchor=south west}
 ]
 
 % Cloud Tier
 \node[tier=cloudbg] (cloud) {};
-\node[label, above=0.1cm of cloud.north west, anchor=south west] {Cloud Tier (E2B / Turso)};
+\node[label, above=0.05cm of cloud.north west] {Cloud Tier (E2B / Turso)};
 
-\node[component=coreorange, anchor=west] at ([xshift=0.5cm]cloud.west) (e2b) {E2B Sandbox};
-\node[component=coreorange, right=0.5cm of e2b] (turso) {Turso (Cold)};
-\node[component=corepurple, right=0.5cm of turso] (llm) {LLM APIs};
-\node[component=corepurple, right=0.5cm of llm] (chain) {ClawChain};
+\node[edgecomp=coreorange, anchor=west] at ([xshift=0.6cm]cloud.west) (e2b) {E2B Sandbox};
+\node[edgecomp=coreorange, right=0.4cm of e2b] (turso) {Turso\\(Cold)};
+\node[edgecomp=corepurple, right=0.4cm of turso] (llm) {LLM APIs};
+\node[edgecomp=corepurple, right=0.4cm of llm] (chain) {ClawChain};
 
 % Server Tier
-\node[tier=serverbg, below=1.5cm of cloud] (server) {};
-\node[label, above=0.1cm of server.north west, anchor=south west] {Server Tier (Go Orchestrator)};
+\node[tier=serverbg, below=1.2cm of cloud] (server) {};
+\node[label, above=0.05cm of server.north west] {Server Tier (Go Orchestrator)};
 
-\node[component=coreblue, anchor=west] at ([xshift=0.5cm]server.west) (router) {Model Router};
-\node[component=coreblue, right=0.3cm of router] (health) {Health Registry};
-\node[component=coreblue, right=0.3cm of health] (orch) {Orchestrator};
-\node[component=coreblue, right=0.3cm of orch] (evol) {Evolution Engine};
-\node[component=coreblue, right=0.3cm of evol] (mqtt) {MQTT Broker};
+\node[component=coreblue, anchor=west] at ([xshift=0.6cm]server.west) (router) {Model\\Router};
+\node[component=coreblue, right=0.25cm of router] (health) {Health\\Registry};
+\node[component=coreblue, right=0.25cm of health] (orch) {Orchestr-\\ator};
+\node[component=coreblue, right=0.25cm of orch] (evol) {Evolution\\Engine};
+\node[component=coreblue, right=0.25cm of evol] (mqtt) {MQTT\\Broker};
 
 % Edge Tier
-\node[tier=edgebg, below=1.5cm of server] (edge) {};
-\node[label, above=0.1cm of edge.north west, anchor=south west] {Edge Tier (Rust Agents)};
+\node[tier=edgebg, below=1.2cm of server] (edge) {};
+\node[label, above=0.05cm of edge.north west] {Edge Tier (Rust Agents)};
 
-\node[component=coreteal, anchor=west] at ([xshift=0.5cm]edge.west) (genome) {Genome Engine};
-\node[component=coreteal, right=0.3cm of genome] (skills) {Skill Executor};
-\node[component=coreteal, right=0.3cm of skills] (memory) {Memory Manager};
-\node[component=coreteal, right=0.3cm of memory] (tools) {Tool Loop};
-\node[component=coreteal, right=0.3cm of tools] (gov) {Self-Governance};
+\node[edgecomp=coreteal, anchor=west] at ([xshift=0.6cm]edge.west) (genome) {Genome\\Engine};
+\node[edgecomp=coreteal, right=0.25cm of genome] (skills) {Skill\\Executor};
+\node[edgecomp=coreteal, right=0.25cm of skills] (memory) {Memory\\Manager};
+\node[edgecomp=coreteal, right=0.25cm of memory] (tools) {Tool\\Loop};
+\node[edgecomp=coreteal, right=0.25cm of tools] (gov) {Self-\\Governance};
 
-% Arrows
+% Inter-tier arrows
 \draw[arrow] (orch) -- (llm);
 \draw[arrow] (orch) -- (turso);
-\draw[arrow] (chain) -- (evol);
+\draw[dataarrow] (chain) -- (evol);
 \draw[arrow] (mqtt) -- (skills);
-\draw[arrow] (memory) -- (turso);
+\draw[dataarrow] (memory) -- (turso);
+
+% Intra-tier connections (Server)
 \draw[arrow] (router) -- (health);
 \draw[arrow] (health) -- (llm);
+\draw[arrow] (orch) -- (mqtt);
+\draw[arrow] (evol) -- (orch);
+
+% Intra-tier connections (Edge)
+\draw[arrow] (genome) -- (skills);
+\draw[arrow] (skills) -- (tools);
+\draw[arrow] (memory) -- (tools);
+\draw[arrow] (gov) -- (tools);
+
+% Cross-tier data flow
+\draw[dataarrow] (router) to[bend left=15] (llm);
+\draw[arrow] (evol) to[bend right=15] (genome);
 
 \end{tikzpicture}
-\caption{Three-tier \evoclaw{} architecture. Edge agents (Rust) execute skills and manage local memory. Server orchestrator (Go) coordinates agents via MQTT and routes LLM requests. Cloud services provide persistent storage (Turso), ephemeral compute (E2B), and blockchain identity (ClawChain).}
+\caption{Three-tier \evoclaw{} architecture with inter-component connections. Edge agents (Rust) execute skills and manage local memory. Server orchestrator (Go) coordinates agents via MQTT and routes LLM requests. Cloud services provide persistent storage (Turso), ephemeral compute (E2B), and blockchain identity (ClawChain). Solid arrows show control flow; dashed arrows show data flow.}
 \label{fig:architecture}
 \end{figure*}
 
@@ -934,26 +882,7 @@ Hot-reload enables genome changes without process restart. The protocol ensures 
 
 The entire process completes in under 100ms for typical genomes, with zero dropped messages due to the quiesce phase.
 
-\subsection{Performance Characteristics}
 
-Table~\ref{tab:engine_perf} summarizes Genome Engine performance:
-
-\begin{table}[h]
-\centering
-\caption{Genome Engine performance metrics}
-\label{tab:engine_perf}
-\begin{tabular}{lrr}
-\toprule
-\textbf{Operation} & \textbf{Time} & \textbf{Memory} \\
-\midrule
-Genome parse (typical) & 2.3 ms & 45 KB \\
-Genome validation & 0.8 ms & 12 KB \\
-Skill load & 15--45 ms & varies \\
-Hot-reload (3 skills) & 67 ms & +0 KB \\
-Parameter injection & 0.1 ms & 2 KB \\
-\bottomrule
-\end{tabular}
-\end{table}
 
 
 %% ========================================================================
@@ -1038,10 +967,10 @@ Figure~\ref{fig:memory} illustrates the tiered memory architecture.
 % Arrows
 \draw[arrow] (hot) -- node[above, font=\tiny] {evict} (warm);
 \draw[arrow] (warm) -- node[above, font=\tiny] {archive} (cold);
-\draw[arrow] (tree) -- (hot);
-\draw[arrow] (tree) -- (warm);
-\draw[arrow] (tree) -- (cold);
-\draw[arrow] (distill) -- (warm);
+\draw[arrow] (tree.north west) -- (hot.south);
+\draw[arrow] (tree.north) -- (warm.south);
+\draw[arrow] (tree.north east) -- (cold.south);
+\draw[arrow] (distill) -- (warm.south east);
 
 \end{tikzpicture}%
 }
@@ -1503,7 +1432,7 @@ Parameter sanitization prevents injection attacks: file paths are validated and 
 \section{Self-Governance Mechanisms}
 \label{sec:governance}
 
-Autonomous agents require reliability mechanisms without constant human supervision. We implement four protocols addressing the most common failure modes observed in production deployments.
+Autonomous agents require reliability mechanisms without constant human supervision. We introduce four mechanisms addressing the most common failure modes observed in production deployments: (1)~Write-Ahead Log (WAL) for context preservation, (2)~Verify Before Reporting (VBR) for output verification, (3)~Anti-Divergence Limit (ADL) for persona consistency, and (4)~Value-For-Money (VFM) for cost optimization. We now describe each mechanism and its implementation.
 
 \subsection{WAL: Write-Ahead Log}
 
@@ -2319,86 +2248,7 @@ Several observations apply across all three case studies:
 
 
 %% ========================================================================
-%%  SECTION: FORMAL PROOFS
-%% ========================================================================
-
-\section{Formal Properties and Proofs}
-\label{sec:proofs}
-
-We now provide formal proofs for key properties of \evoclaw{}'s design.
-
-\subsection{Memory Boundedness}
-
-\begin{theorem}[Context Boundedness]
-For any \evoclaw{} agent with configuration parameters $(H, W, T)$ where $H$ is hot memory limit, $W$ is warm memory limit, and $T$ is tree index limit, the context tokens per turn is bounded by:
-\begin{equation}
-\text{Context} \leq H + W \cdot k + T
-\end{equation}
-where $k$ is the maximum number of warm entries retrieved per query (default $k=5$).
-\end{theorem}
-
-\begin{proof}
-The context for each turn consists of:
-\begin{enumerate}
-    \item Hot memory: always loaded, size $\leq H$
-    \item Tree index: always loaded, size $\leq T$
-    \item Retrieved warm entries: at most $k$ entries, each bounded by warm entry size limit
-    \item Current conversation: bounded by LLM context window management
-\end{enumerate}
-Since each component has a fixed upper bound, their sum is bounded. The bound is independent of conversation history length, cold memory size, or operation duration.
-\end{proof}
-
-\begin{corollary}[Infinite-Time Operation]
-An \evoclaw{} agent can operate for unbounded time without context growth.
-\end{corollary}
-
-\subsection{Evolution Convergence}
-
-\begin{theorem}[Evolution Convergence]
-Let $g_t$ be the genome at evolution iteration $t$, and let $\fitnessfn^*$ be the maximum fitness achievable in genome space $\genomespace$. Under the following assumptions:
-\begin{enumerate}
-    \item $\fitnessfn: \genomespace \to [0, 1]$ is continuous
-    \item Mutation operator $\mutation$ has positive probability of reaching any $g' \in \genomespace$ from any $g \in \genomespace$ in finite steps
-    \item Selection retains $g_t$ if $\fitnessfn(g_{t+1}) < \fitnessfn(g_t) - \delta$ for some $\delta > 0$
-\end{enumerate}
-Then $\lim_{t \to \infty} \mathbb{E}[\fitnessfn(g_t)] = \fitnessfn^*$.
-\end{theorem}
-
-\begin{proof}[Proof sketch]
-The evolution process defines a Markov chain over $\genomespace$. Assumption 2 ensures the chain is irreducible. The selection criterion (Assumption 3) ensures that fitness is non-decreasing in expectation. By the monotone convergence theorem, the sequence $\mathbb{E}[\fitnessfn(g_t)]$ converges to its supremum, which equals $\fitnessfn^*$ by irreducibility.
-\end{proof}
-
-\subsection{Router Optimality}
-
-\begin{theorem}[Routing Cost Optimality]
-Let $\mathcal{M} = \{m_1, \ldots, m_n\}$ be the set of available models with costs $c_1 < c_2 < \ldots < c_n$ and quality thresholds $q_1 < q_2 < \ldots < q_n$. For a task requiring quality level $q$, the intelligent router selects model $m_i$ where $i = \min\{j : q_j \geq q\}$. This selection minimizes cost among models meeting quality requirement.
-\end{theorem}
-
-\begin{proof}
-By construction, $m_i$ is the cheapest model with quality $\geq q$. Any model $m_j$ with $j < i$ has $q_j < q$ and thus fails quality requirement. Any model $m_j$ with $j > i$ has $c_j > c_i$ and thus higher cost. Therefore $m_i$ is cost-optimal.
-\end{proof}
-
-\subsection{Safety Invariant Preservation}
-
-\begin{theorem}[Constraint Preservation Under Evolution]
-Let $C$ be the constraints section of genome $g$, defining blocked actions $B$ and safety bounds $S$. For any mutation operator $\mutation$ in \evoclaw{}:
-\begin{equation}
-\forall g, g' : g' = \mutation(g) \implies C(g') = C(g)
-\end{equation}
-That is, mutations preserve safety constraints.
-\end{theorem}
-
-\begin{proof}
-By implementation, the mutation operators in \evoclaw{} (parameter perturbation, skill toggle, crossover) operate only on the Skills and Behavior sections of the genome. The Constraints section is marked as immutable in the genome schema. The validation algorithm (Algorithm~\ref{alg:validation}) rejects any genome where constraints are modified from the original.
-\end{proof}
-
-\begin{corollary}[Safety Under Evolution]
-An agent that satisfies safety constraints at deployment continues to satisfy them after any number of evolution iterations.
-\end{corollary}
-
-
-%% ========================================================================
-%%  SECTION: APPENDIX - IMPLEMENTATION DETAILS
+%%  SECTION: IMPLEMENTATION DETAILS
 %% ========================================================================
 
 \section{Implementation Deep Dive}
@@ -2726,7 +2576,7 @@ We have presented \evoclaw{}, a comprehensive framework for self-evolving multi-
     
     \item An intelligent model router reducing API costs by 10--100$\times$ through 15-dimension task classification and automatic fallback chains.
     
-    \item Self-governance protocols (WAL, VBR, ADL, VFM) ensuring autonomous reliability without human supervision.
+    \item Self-governance mechanisms (WAL, VBR, ADL, VFM) ensuring autonomous reliability without human supervision.
     
     \item Formal evolutionary framework with monotonic improvement guarantee over skill configurations.
     
@@ -2737,7 +2587,7 @@ We have presented \evoclaw{}, a comprehensive framework for self-evolving multi-
 
 The complete system—Go orchestrator, Rust agent, 383 tests, and comprehensive documentation—is released as open source for reproducibility and community development.
 
-\paragraph{Broader Impact.} As AI agents become more autonomous and self-modifying, careful attention to safety constraints and human oversight becomes critical. \evoclaw{}'s design prioritizes safety through hard-coded constraints that evolution cannot violate, comprehensive audit logging, and explicit governance protocols. We encourage the research community to build on these foundations while maintaining rigorous safety standards.
+\paragraph{Broader Impact.} As AI agents become more autonomous and self-modifying, careful attention to safety constraints and human oversight becomes critical. \evoclaw{}'s design prioritizes safety through hard-coded constraints that evolution cannot violate, comprehensive audit logging, and explicit governance mechanisms. We encourage the research community to build on these foundations while maintaining rigorous safety standards.
 
 
 %% ========================================================================
@@ -2752,6 +2602,88 @@ We thank the open-source communities behind Rust, Go, MQTT, and Turso for the ex
 %% ========================================================================
 %%  REFERENCES
 %% ========================================================================
+
+%% ========================================================================
+%%  SECTION: FORMAL PROOFS
+%% ========================================================================
+
+\appendices
+\section{Formal Properties and Proofs}
+\label{sec:proofs}
+
+We now provide formal proofs for key properties of \evoclaw{}'s design.
+
+\subsection{Memory Boundedness}
+
+\begin{theorem}[Context Boundedness]
+For any \evoclaw{} agent with configuration parameters $(H, W, T)$ where $H$ is hot memory limit, $W$ is warm memory limit, and $T$ is tree index limit, the context tokens per turn is bounded by:
+\begin{equation}
+\text{Context} \leq H + W \cdot k + T
+\end{equation}
+where $k$ is the maximum number of warm entries retrieved per query (default $k=5$).
+\end{theorem}
+
+\begin{proof}
+The context for each turn consists of:
+\begin{enumerate}
+    \item Hot memory: always loaded, size $\leq H$
+    \item Tree index: always loaded, size $\leq T$
+    \item Retrieved warm entries: at most $k$ entries, each bounded by warm entry size limit
+    \item Current conversation: bounded by LLM context window management
+\end{enumerate}
+Since each component has a fixed upper bound, their sum is bounded. The bound is independent of conversation history length, cold memory size, or operation duration.
+\end{proof}
+
+\begin{corollary}[Infinite-Time Operation]
+An \evoclaw{} agent can operate for unbounded time without context growth.
+\end{corollary}
+
+\subsection{Evolution Convergence}
+
+\begin{theorem}[Evolution Convergence]
+Let $g_t$ be the genome at evolution iteration $t$, and let $\fitnessfn^*$ be the maximum fitness achievable in genome space $\genomespace$. Under the following assumptions:
+\begin{enumerate}
+    \item $\fitnessfn: \genomespace \to [0, 1]$ is continuous
+    \item Mutation operator $\mutation$ has positive probability of reaching any $g' \in \genomespace$ from any $g \in \genomespace$ in finite steps
+    \item Selection retains $g_t$ if $\fitnessfn(g_{t+1}) < \fitnessfn(g_t) - \delta$ for some $\delta > 0$
+\end{enumerate}
+Then $\lim_{t \to \infty} \mathbb{E}[\fitnessfn(g_t)] = \fitnessfn^*$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The evolution process defines a Markov chain over $\genomespace$. Assumption 2 ensures the chain is irreducible. The selection criterion (Assumption 3) ensures that fitness is non-decreasing in expectation. By the monotone convergence theorem, the sequence $\mathbb{E}[\fitnessfn(g_t)]$ converges to its supremum, which equals $\fitnessfn^*$ by irreducibility.
+\end{proof}
+
+\subsection{Router Optimality}
+
+\begin{theorem}[Routing Cost Optimality]
+Let $\mathcal{M} = \{m_1, \ldots, m_n\}$ be the set of available models with costs $c_1 < c_2 < \ldots < c_n$ and quality thresholds $q_1 < q_2 < \ldots < q_n$. For a task requiring quality level $q$, the intelligent router selects model $m_i$ where $i = \min\{j : q_j \geq q\}$. This selection minimizes cost among models meeting quality requirement.
+\end{theorem}
+
+\begin{proof}
+By construction, $m_i$ is the cheapest model with quality $\geq q$. Any model $m_j$ with $j < i$ has $q_j < q$ and thus fails quality requirement. Any model $m_j$ with $j > i$ has $c_j > c_i$ and thus higher cost. Therefore $m_i$ is cost-optimal.
+\end{proof}
+
+\subsection{Safety Invariant Preservation}
+
+\begin{theorem}[Constraint Preservation Under Evolution]
+Let $C$ be the constraints section of genome $g$, defining blocked actions $B$ and safety bounds $S$. For any mutation operator $\mutation$ in \evoclaw{}:
+\begin{equation}
+\forall g, g' : g' = \mutation(g) \implies C(g') = C(g)
+\end{equation}
+That is, mutations preserve safety constraints.
+\end{theorem}
+
+\begin{proof}
+By implementation, the mutation operators in \evoclaw{} (parameter perturbation, skill toggle, crossover) operate only on the Skills and Behavior sections of the genome. The Constraints section is marked as immutable in the genome schema. The validation algorithm (Algorithm~\ref{alg:validation}) rejects any genome where constraints are modified from the original.
+\end{proof}
+
+\begin{corollary}[Safety Under Evolution]
+An agent that satisfies safety constraints at deployment continues to satisfy them after any number of evolution iterations.
+\end{corollary}
+
+
+
 
 \bibliographystyle{IEEEtran}
 \bibliography{evoclang-extended-full}

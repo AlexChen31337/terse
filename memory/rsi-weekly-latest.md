@@ -1,53 +1,102 @@
-# RSI Weekly Report — 2026-03-15
-
-## Executive Summary
-- **Health Score:** 0.134 (CRITICAL — below 0.3 threshold)
-- **Outcomes Analyzed:** 148 (7-day window)
-- **Success Rate:** 31%
-- **Avg Quality:** 2.16/5
-- **Patterns Detected:** 4
-- **Proposals Generated:** 4 (all previously deployed)
-- **Critical Alerts:** ✅ Health score < 0.3 — ALERT REQUIRED
+# RSI Weekly Report
+**Generated:** 2026-03-22 03:00 AEDT (2026-03-21 16:00 UTC)
+**Analysis Period:** 7 days (162 outcomes logged)
 
 ---
 
-## Top Failure Patterns
+## Health Score: 0.155 / 1.0 ⚠️
 
-### 🔴 Pattern #1: tool_error (Severity: 1.236)
-- **Context:** `tool_call` tasks
-- **Frequency:** 61 occurrences
+**Status:** Critical - Immediate action required
+**Overall Success Rate:** 35%
+**Average Quality:** 2.24/5
+
+---
+
+## Top Failure Patterns (7 days)
+
+### 1. [0.963 severity] Timeout in tool_call tasks
+- **Occurrences:** 52
 - **Failure Rate:** 100%
-- **Status:** Repair proposals already deployed
+- **Impact:** CRITICAL - Tasks failing entirely due to timeouts
 
-### 🟡 Pattern #2: context_loss (Severity: 0.622)
-- **Context:** `session_management` tasks
-- **Frequency:** 46 occurrences
-- **Failure Rate:** 0% (non-fatal but degrading)
-- **Status:** Repair proposals already deployed
-
-### 🟡 Pattern #3: tool_validation_error (Severity: 0.568)
-- **Context:** `tool_call` tasks
-- **Frequency:** 21 occurrences
+### 2. [0.704 severity] Tool errors in tool_call tasks
+- **Occurrences:** 38
 - **Failure Rate:** 100%
-- **Status:** Repair proposals already deployed
+- **Impact:** HIGH - Tools failing during execution
+
+### 3. [0.679 severity] Context loss in session_management
+- **Occurrences:** 55
+- **Failure Rate:** 0%
+- **Impact:** MEDIUM - Degraded performance but tasks complete
 
 ---
 
-## Proposals Status
-- **Previously Deployed:** 4 proposals (all auto-approved)
-- **New Proposals:** 0 (all patterns already addressed)
-- **Awaiting Review:** 0
+## Issue Breakdown (7 days)
+
+| Issue Type | Count | % of Total |
+|------------|-------|------------|
+| context_loss | 55 | 34% |
+| timeout | 52 | 32% |
+| tool_error | 38 | 23% |
+| Other | 17 | 11% |
+
+**Total:** 162 logged outcomes
 
 ---
 
-## Health Trend
-⚠️ **CRITICAL** — Health score 0.134 is well below the 0.3 threshold. This indicates systemic issues with tool reliability and session management. The 31% success rate over 7 days is concerning and needs attention.
+## Proposals Generated
+
+This cycle generated 5 proposals, all previously deployed:
+- db32089a (already deployed)
+- b9e26a71 (already deployed)
+- 60126e7f (already deployed)
+- 15c31c37 (already deployed)
+- 84a2e40b (already deployed)
+
+**Auto-deployed this cycle:** 0
+**Total deployed all-time:** 24
 
 ---
 
-## Recommended Actions
-1. **URGENT:** Investigate tool_error pattern — 61/61 failures in tool_call tasks
-2. Review context_loss mitigation — 46 instances in session_management
-3. Audit tool_validation pipeline — 21/21 failures indicate validation logic issues
+## Recommendations
 
-Generated: 2026-03-15 03:00 AEDT
+### IMMEDIATE (Today)
+1. **Investigate timeout root cause** - 52 timeout failures in tool_call tasks is unacceptable
+   - Check which tools are timing out
+   - Review timeout configurations
+   - Consider increasing timeouts or fixing slow operations
+
+2. **Fix tool_error cascade** - 38 tool errors suggest brittle error handling
+   - Audit recent tool changes
+   - Add defensive wrappers around unreliable tools
+   - Implement retry logic for transient failures
+
+3. **Context loss mitigation** - 55 occurrences suggests memory/compaction issues
+   - Verify WAL is working correctly
+   - Check compaction settings
+   - Ensure active_task.py is being used for multi-step work
+
+### SHORT-TERM (This Week)
+- Review the 5 deployed proposals to verify they're actually working
+- Consider running RSI cycle daily until health score > 0.5
+- Audit tool_call patterns for systemic issues
+
+---
+
+## Next Actions
+
+```bash
+# Run daily cycle until health improves
+uv run python skills/rsi-loop/scripts/rsi_cli.py cycle --days 1
+
+# Check specific tool errors
+uv run python skills/rsi-loop/scripts/rsi_cli.py patterns
+
+# View proposals
+ls skills/rsi-loop/data/proposals/
+```
+
+---
+
+**Report stored at:** `memory/rsi-weekly-latest.md`
+**Next scheduled:** 2026-03-29 03:00 AEDT

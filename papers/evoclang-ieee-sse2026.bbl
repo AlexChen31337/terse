@@ -64,10 +64,6 @@ G.~Wang, Z.~Xia, C.~Xie, L.~Chen, M.~Ku, Y.~Wang, P.~Zhang, Y.~Zhang
 C.~Packer, H.~Kim, Z.~Wen, S.~Qiu, W.~Han, J.~Cheng, H.~He \emph{et~al.},
   ``Memgpt: Towards llms as operating systems,'' in \emph{NeurIPS}, 2023.
 
-\bibitem{silberschatz2014operating}
-A.~Silberschatz, P.~B. Galvin, and G.~Gagne, \emph{Operating System
-  Concepts}.\hskip 1em plus 0.5em minus 0.4em\relax Pearson, 2014.
-
 \bibitem{shinn2024reflexion}
 N.~Shinn, F.~Cassano, A.~Gopinak, K.~Shao \emph{et~al.}, ``Reflexion: Language
   agents with verbal reinforcement learning,'' in \emph{NeurIPS}, 2024.
@@ -96,16 +92,9 @@ T.~Schick, H.~Schütze, and M.~Arora, ``Toolformer: Language models can teach
 F.~Shiming \emph{et~al.}, ``Gorilla: Large language model connected with
   massive apis,'' \emph{arXiv preprint arXiv:2307.16702}, 2023.
 
-\bibitem{openai2023function}
-OpenAI, ``Openai function calling,'' 2023.
-
 \bibitem{yang2024sweagent}
 Y.~Yang \emph{et~al.}, ``Swe-agent: Computer control enables software
   engineering agents,'' in \emph{NeurIPS}, 2024.
-
-\bibitem{lamar2023lamin}
-S.~Lamar \emph{et~al.}, ``Lamin: Parameter-efficient fine-tuning for continual
-  learning,'' \emph{arXiv preprint arXiv:2309.12640}, 2023.
 
 \bibitem{wooldridge2009introduction}
 M.~Wooldridge, \emph{An Introduction to MultiAgent Systems}.\hskip 1em plus
@@ -114,10 +103,6 @@ M.~Wooldridge, \emph{An Introduction to MultiAgent Systems}.\hskip 1em plus
 \bibitem{durfee1999distributed}
 E.~H. Durfee and V.~Lesser, ``Distributed problem solving,'' \emph{Distributed
   Artificial Intelligence}, 1999.
-
-\bibitem{rosenschein1994rules}
-J.~S. Rosenschein and G.~Zlotkin, ``Rules of encounter,'' \emph{Distributed
-  Artificial Intelligence}, 1994.
 
 \bibitem{fipa1997acl}
 FIPA, ``Fipa acl message structure,'' in \emph{Foundation for Intelligent
@@ -167,10 +152,6 @@ Y.~Wang \emph{et~al.}, ``Kgr-agents: Knowledge graph reasoning for multi-agent
 \bibitem{rae2019compressive}
 J.~Rae \emph{et~al.}, ``The compressive transformer,'' in \emph{NeurIPS}, 2019.
 
-\bibitem{wu2023scaling}
-Y.~Wu \emph{et~al.}, ``Scaling laws for retrieval,'' \emph{arXiv preprint
-  arXiv:2306.14052}, 2023.
-
 \bibitem{vectifyai_pageindex}
 VectifyAI, ``Pageindex: O(log n) retrieval for llm agents,'' 2024.
 
@@ -194,14 +175,6 @@ L.~Zheng \emph{et~al.}, ``Distserve: Scalable and fast inference serving for
 Y.~Kwon \emph{et~al.}, ``Efficient memory attention for long-context
   transformers,'' in \emph{ICLR}, 2023.
 
-\bibitem{shazeer2017outrageously}
-N.~Shazeer \emph{et~al.}, ``Outrageously large neural networks: The
-  sparsely-gated mixture-of-experts layer,'' in \emph{ICLR}, 2017.
-
-\bibitem{fedus2022switch}
-W.~Fedus \emph{et~al.}, ``Switch transformers: Scaling to trillion parameter
-  models,'' in \emph{NeurIPS}, 2022.
-
 \bibitem{koza1992gp}
 J.~R. Koza, \emph{Genetic Programming: On the Programming of Computers by Means
   of Natural Selection}.\hskip 1em plus 0.5em minus 0.4em\relax MIT Press,
@@ -222,18 +195,6 @@ J.~Von~Neumann, ``Theory of self-reproducing automata,'' \emph{IEEE Annals of
 \bibitem{smith1984reflection}
 B.~C. Smith, ``Reflection and semantics in lisp,'' in \emph{POPL}, 1984.
 
-\bibitem{yao2023tree}
-S.~Yao \emph{et~al.}, ``Tree of thoughts: Deliberate problem solving with large
-  language models,'' in \emph{NeurIPS}, 2023.
-
-\bibitem{zhou2023lats}
-Y.~Zhou \emph{et~al.}, ``Language agent tree search: Solving math with
-  recursive reasoning,'' in \emph{ICLR}, 2023.
-
-\bibitem{rushby1995critical}
-J.~Rushby, ``Critical system properties: What have we learned?'' \emph{IEEE
-  Computer}, 1995.
-
 \bibitem{hewitt1976implementation}
 C.~Hewitt \emph{et~al.}, ``Implementation of out-of-core virtual memory,'' in
   \emph{SOSP}, 1976.
@@ -242,10 +203,6 @@ C.~Hewitt \emph{et~al.}, ``Implementation of out-of-core virtual memory,'' in
 B.~Meyer, \emph{Object-Oriented Software Construction}.\hskip 1em plus 0.5em
   minus 0.4em\relax Prentice Hall, 1997.
 
-\bibitem{arnold2017constrained}
-S.~Arnold \emph{et~al.}, ``Constrained policy optimization,'' \emph{ICML},
-  2017.
-
 \bibitem{sharma2023sycophancy}
 A.~Sharma \emph{et~al.}, ``Sycophancy in large language models,'' \emph{arXiv
   preprint arXiv:2310.13548}, 2023.
@@ -253,13 +210,6 @@ A.~Sharma \emph{et~al.}, ``Sycophancy in large language models,'' \emph{arXiv
 \bibitem{marr2023cost}
 B.~Marr \emph{et~al.}, ``Cost optimization for llm systems,'' \emph{arXiv
   preprint arXiv:2305.14342}, 2023.
-
-\bibitem{buterin2014ethereum}
-V.~Buterin, ``Ethereum: A next-generation smart contract and decentralized
-  application platform,'' \emph{Bitcoin Magazine}, 2014.
-
-\bibitem{swan2018blockchain}
-M.~Swan, ``Blockchain: Blueprint for a new economy,'' 2018.
 
 \bibitem{spencer2015decentralized}
 B.~Spencer \emph{et~al.}, ``Decentralized identifiers (dids),'' \emph{W3C

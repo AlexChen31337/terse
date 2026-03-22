@@ -11,50 +11,48 @@ Database file #1: evoclang-extended-full.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-Warning--empty journal in openai2023function
 Warning--empty journal in vectifyai_pageindex
-Warning--empty journal in swan2018blockchain
 
 Done.
-You've used 65 entries,
+You've used 52 entries,
             4087 wiz_defined-function locations,
-            1088 strings with 14687 characters,
-and the built_in function-call counts, 27756 in all, are:
-= -- 2051
-> -- 582
+            1038 strings with 13385 characters,
+and the built_in function-call counts, 22637 in all, are:
+= -- 1665
+> -- 488
 < -- 9
-+ -- 289
-- -- 142
-* -- 1131
-:= -- 4778
-add.period$ -- 130
-call.type$ -- 65
-change.case$ -- 61
++ -- 243
+- -- 119
+* -- 930
+:= -- 3869
+add.period$ -- 104
+call.type$ -- 52
+change.case$ -- 49
 chr.to.int$ -- 21
-cite$ -- 68
-duplicate$ -- 2473
-empty$ -- 2985
-format.name$ -- 191
-if$ -- 6367
+cite$ -- 53
+duplicate$ -- 2004
+empty$ -- 2431
+format.name$ -- 159
+if$ -- 5199
 int.to.chr$ -- 0
-int.to.str$ -- 65
-missing$ -- 464
-newline$ -- 218
-num.names$ -- 65
-pop$ -- 1280
+int.to.str$ -- 52
+missing$ -- 381
+newline$ -- 179
+num.names$ -- 52
+pop$ -- 1048
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2179
+skip$ -- 1774
 stack$ -- 0
-substring$ -- 109
-swap$ -- 1282
+substring$ -- 97
+swap$ -- 1050
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 65
-warning$ -- 3
-while$ -- 69
-width$ -- 67
-write$ -- 537
-(There were 3 warnings)
+type$ -- 52
+warning$ -- 1
+while$ -- 56
+width$ -- 54
+write$ -- 436
+(There was 1 warning)

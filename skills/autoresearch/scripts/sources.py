@@ -497,28 +497,33 @@ async def _fetch_hn_items_all(ids: list[int], client) -> list[dict]:
 # ─── Web narratives fetcher (Brave Search API) ────────────────────────────────
 
 async def fetch_web_narratives(config: TrackConfig, client) -> list[SourceItem]:
-    """Search for fresh narratives via Brave Search API."""
-    api_key = os.environ.get("BRAVE_API_KEY", "")
-    if not api_key:
-        print("[autoresearch] INFO  web: no BRAVE_API_KEY set — skipping web narratives", file=sys.stderr)
-        return []
+    """Search for fresh narratives via Brave Search API (primary) or openclaw web_search (fallback).
 
+    Primary: BRAVE_API_KEY env var → direct Brave REST API
+    Fallback: openclaw web_search subprocess (uses agent's native Brave integration)
+    """
+    api_key = os.environ.get("BRAVE_API_KEY", "")
+
+    if api_key:
+        # Primary: direct Brave API
+        return await _fetch_web_brave_direct(config, client, api_key)
+
+    # Fallback: openclaw native web_search via subprocess helper
+    print("[autoresearch] INFO  web: no BRAVE_API_KEY — trying openclaw native web_search", file=sys.stderr)
+    return await _fetch_web_native(config)
+
+
+async def _fetch_web_brave_direct(config: TrackConfig, client, api_key: str) -> list[SourceItem]:
+    """Fetch via direct Brave Search API (requires BRAVE_API_KEY)."""
     all_items: list[SourceItem] = []
     seen_urls: set[str] = set()
-
     headers = {
         "X-Subscription-Token": api_key,
         "Accept": "application/json",
     }
-
     for query in config.web_queries:
-        params = {
-            "q": query,
-            "count": 5,
-            "freshness": "pd",  # past day
-        }
+        params = {"q": query, "count": 5, "freshness": "pd"}
         try:
-            print(f"[autoresearch] INFO  web: Brave search for '{query}'", file=sys.stderr)
             resp = await client.get(
                 "https://api.search.brave.com/res/v1/web/search",
                 headers=headers,
@@ -528,35 +533,77 @@ async def fetch_web_narratives(config: TrackConfig, client) -> list[SourceItem]:
             resp.raise_for_status()
             data = resp.json()
         except Exception as exc:
-            print(f"[autoresearch] WARN  web: Brave search failed for '{query}': {exc}", file=sys.stderr)
+            print(f"[autoresearch] WARN  web: Brave direct failed for '{query}': {exc}", file=sys.stderr)
             continue
-
-        web_results = data.get("web", {}).get("results", [])
-        for rank, result in enumerate(web_results):
+        for rank, result in enumerate(data.get("web", {}).get("results", [])):
             url = result.get("url", "")
             if not url or url in seen_urls:
                 continue
             seen_urls.add(url)
-
             title = result.get("title", "Untitled")
             snippet = result.get("description", "")
-            score = max(0.1, 1.0 - rank * 0.15)  # decaying by position
-
             all_items.append(SourceItem(
                 title=title,
                 url=url,
                 source="web",
                 summary=snippet[:200] + "…" if len(snippet) > 200 else snippet,
-                score=round(score, 4),
+                score=round(max(0.1, 1.0 - rank * 0.15), 4),
                 date=result.get("page_age", None),
                 metadata={"snippet": snippet},
             ))
-
         if len(all_items) >= config.max_items_per_source:
             break
+    result = all_items[:5]
+    print(f"[autoresearch] INFO  web: returning {len(result)} items (direct)", file=sys.stderr)
+    return result
+
+
+async def _fetch_web_native(config: TrackConfig) -> list[SourceItem]:
+    """Fallback: call openclaw's native web_search via a helper script."""
+    import subprocess
+    helper = Path(__file__).parent / "web_search_helper.py"
+    if not helper.exists():
+        print("[autoresearch] WARN  web: web_search_helper.py not found — skipping", file=sys.stderr)
+        return []
+
+    all_items: list[SourceItem] = []
+    seen_urls: set[str] = set()
+    queries = config.web_queries[:2]  # limit to 2 queries for the native path
+
+    for query in queries:
+        try:
+            proc = await asyncio.create_subprocess_exec(
+                sys.executable, str(helper), query,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+            )
+            stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout=30.0)
+            if proc.returncode != 0:
+                print(f"[autoresearch] WARN  web: helper failed for '{query}': {stderr.decode()[:200]}", file=sys.stderr)
+                continue
+            items = json.loads(stdout.decode())
+            for rank, item in enumerate(items):
+                url = item.get("url", "")
+                if not url or url in seen_urls:
+                    continue
+                seen_urls.add(url)
+                all_items.append(SourceItem(
+                    title=item.get("title", "Untitled"),
+                    url=url,
+                    source="web",
+                    summary=item.get("snippet", "")[:200],
+                    score=round(max(0.1, 1.0 - rank * 0.15), 4),
+                    metadata={"snippet": item.get("snippet", "")},
+                ))
+            if len(all_items) >= config.max_items_per_source:
+                break
+        except asyncio.TimeoutError:
+            print(f"[autoresearch] WARN  web: helper timed out for '{query}'", file=sys.stderr)
+        except Exception as exc:
+            print(f"[autoresearch] WARN  web: helper error for '{query}': {exc}", file=sys.stderr)
 
     result = all_items[:5]
-    print(f"[autoresearch] INFO  web: returning {len(result)} items", file=sys.stderr)
+    print(f"[autoresearch] INFO  web: returning {len(result)} items (native fallback)", file=sys.stderr)
     return result
 
 
