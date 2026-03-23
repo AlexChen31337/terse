@@ -1,86 +1,55 @@
 # RSI Loop Health Check Report
-**Date:** 2026-03-22 03:00 AEDT (2026-03-21 16:00 UTC)
-**Health Score:** 0.155 (CRITICAL - below 0.3 threshold)
-**Tests:** 32/32 PASSED ✅
+**Date:** 2026-03-23 03:00 AEDT / 2026-03-22 16:00 UTC
+**Trigger:** Nightly cron job
 
-## Executive Summary
-The RSI loop system is experiencing **critical degradation** with a health score of 0.155 (threshold: 0.3). Only 35% of tasks succeeded over the past 7 days, with systemic failures in the `tool_call` task category.
+## Health Score: 0.163 / 1.0 ⚠️
 
-## Metrics
-- **Outcomes logged (7d):** 162
-- **Success rate:** 35% (57 successful / 162 total)
-- **Average quality:** 2.24/5
-- **Patterns detected:** 5
-- **Proposals:** 24 deployed, 0 awaiting review
+### Outcomes (7 days)
+- **Total logged:** 178
+- **Success rate:** 36%
+- **Avg quality:** 2.27/5
+- **Issues detected:** 162
 
-## Top Failure Patterns
+### Top Failure Patterns
+1. **context_loss** (63 occurrences) — session resets, compaction events
+2. **timeout** (54 occurrences) — long-running operations exceeded limits
+3. **tool_error** (45 occurrences) — tool invocation failures
 
-### 1. [0.963] timeout in tool_call tasks
-- **Occurrences:** 52
-- **Failure rate:** 100%
-- **Impact:** CRITICAL — Every timeout in tool_call results in failure
-- **Likely causes:** Tool execution timeout too low, slow model responses, network latency
+### Patterns Detected (5)
+1. `[0.912]` In 'tool_call' tasks, 'timeout' occurs 55x with 100% failure rate
+2. `[0.762]` In 'tool_call' tasks, 'tool_error' occurs 46x with 100% failure rate
+3. `[0.707]` In 'session_management' tasks, 'context_loss' occurs 64x with 0% failure rate
+4. `[0.618]` In 'tool_call' tasks, 'tool_validation_error' occurs 11x with 100% failure rate
+5. `[0.556]` In 'tool_call' tasks, 'unknown' occurs 32x with 81% failure rate
 
-### 2. [0.704] tool_error in tool_call tasks
-- **Occurrences:** 38
-- **Failure rate:** 100%
-- **Impact:** CRITICAL — Every tool error results in failure
-- **Likely causes:** Invalid tool parameters, missing tool availability, API errors
+### Proposals
+- **Draft:** 0
+- **Approved:** 0
+- **Deployed:** 24 (all current proposals already deployed)
 
-### 3. [0.679] context_loss in session_management tasks
-- **Occurrences:** 55
-- **Failure rate:** 0% (non-fatal but degrading experience)
-- **Impact:** HIGH — Context loss requires recovery and task restart
-- **Likely causes:** Session compaction, long-running tasks, memory pressure
+### Cycle Results
+- Full RSI cycle completed successfully
+- 5 proposals generated (all already deployed)
+- 0 new proposals requiring deployment
+- Auto-fix phase checked 3 deployed fixes
 
-### 4. [0.607] tool_validation_error in tool_call tasks
-- **Occurrences:** 22
-- **Failure rate:** 100%
-- **Impact:** HIGH — Invalid tool parameters prevent execution
-- **Likely causes:** Incorrect parameter generation by models, schema mismatches
+### Test Results
+- **Tests run:** 32
+- **Passed:** 32 ✅
+- **Failed:** 0
+- **Duration:** 1.04s
 
-### 5. [0.518] rate_limit in external_api tasks
-- **Occurrences:** 15
-- **Failure rate:** 100%
-- **Impact:** MEDIUM — External API throttling
-- **Likely causes:** High request volume, API quota limits
+### Assessment
+**CRITICAL:** Health score (0.163) is below the 0.3 threshold.
 
-## RSI Cycle Status
-- **Auto-fix proposals:** 5 generated, 5 already deployed
-- **Deployed proposals:** 24 total
-- **Cycle execution:** ✅ SUCCESS (all phases completed)
+**Primary concerns:**
+1. High failure rate in 'tool_call' tasks (55+46+11 = 112 timeout/tool_error/validation failures)
+2. 64 context_loss events indicating session instability
+3. Low overall success rate (36%) and quality (2.27/5)
 
-## Test Results
-```
-32 passed in 1.06s
-- test_auto_observe.py: 20 tests PASSED
-- test_auto_fix.py: 12 tests PASSED
-```
+**Recommendation:** Bowen should review the deployed fixes and consider deeper architectural improvements to tool_call reliability and session persistence.
 
-## Recommendations (Priority Order)
-
-### URGENT — Fix tool_call failure cascade
-1. **Investigate timeout configuration:** Review `tool_call` task timeout settings
-2. **Add retry logic:** Implement exponential backoff for transient tool errors
-3. **Improve error messages:** Log full tool_error details for root cause analysis
-4. **Tool availability checks:** Pre-validate tool availability before calling
-
-### HIGH — Improve session management
-1. **Session persistence:** Reduce context loss frequency through better WAL usage
-2. **Long-running task handling:** Delegate >2min tasks to sub-agents (AGENTS.md rule)
-3. **Memory optimization:** Review compaction settings
-
-### MEDIUM — API rate limiting
-1. **Request throttling:** Implement queue-based rate limiting
-2. **Quota monitoring:** Track API usage and warn before limits
-3. **Fallback models:** Route to alternative providers when rate limited
-
-## Next Actions
-1. Review recent `tool_call` failures: `uv run python skills/rsi-loop/scripts/rsi_cli.py log --filter tool_call`
-2. Check timeout settings in agent config
-3. Implement retry logic for tool_call tasks
-4. Monitor health score daily via cron job
-
-## Generated By
-RSI Loop Health Check Cron Job
-`8cc932c5-64f8-4a10-9ed7-0beef8c63ba2`
+### Next Steps
+1. Review deployed proposal details: `uv run python skills/rsi-loop/scripts/rsi_cli.py proposals`
+2. Investigate tool_call timeout root causes
+3. Consider session hardening to reduce context_loss events

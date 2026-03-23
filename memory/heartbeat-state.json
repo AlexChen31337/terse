@@ -1,25 +1,15 @@
 {
-  "lastHeartbeat": "2026-03-22T22:26:30.000000+11:00",
-  "lastRSICheck": "2026-03-22T22:26:30.000000+11:00",
-  "healthScore": 0.16,
-  "alerts": [],
-  "blogStatus": {
-    "lastScan": "2026-03-22T22:26:30.000000+11:00",
-    "newArticles": 2,
-    "sources": ["Hacker News"]
+  "lastRSICheck": "2026-03-23T12:25:00+11:00",
+  "rsiHealthScore": 0.164,
+  "ghFailuresHandled": 3,
+  "lastCIStatus": {
+    "claw-chain": "PR #73 OPEN - RUSTSEC-2026-0049 ignored (pending merge)",
+    "claw-chain": "PR #72 OPEN - NPoS version alignment fix"
   },
-  "githubStatus": {
-    "clawchainReleases": ["v0.6.0", "v0.6.1"],
-    "evoclawReleases": ["v0.6.0"],
-    "openPRs": {
-      "claw-chain": 1,
-      "evoclaw": 0
-    }
-  },
-  "rsiIssues": {
-    "context_loss": 62,
-    "timeout": 53,
-    "tool_error": 46,
-    "healthScore": 0.16
+  "blogWatcher": {
+    "lastScan": "2026-03-23T12:25:00+11:00",
+    "newArticles": 3,
+    "source": "Hacker News",
+    "alertSent": false
   }
 }
