@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-03-23T00:01:00+11:00",
-  "last_backup": "2026-03-23",
-  "topic_index": 13,
+  "lastRun": "2026-03-24T00:01:00+11:00",
+  "last_backup": "2026-03-24",
+  "topic_index": 14,
   "drafts": {
     "1085514": {
       "name": "\u8d5b\u535a\u670b\u514b\u526f\u4e1a\uff1a\u5f53AI\u6210\u4e3a\u4f60\u7684\u8d5a\u94b1\u5916\u6302",
@@ -298,6 +298,21 @@
       "githubBacked": true,
       "wordCount": 8998,
       "chapters": 12,
+      "coverGenerated": true,
+      "pdfGenerated": true,
+      "note": "Auto-published to Payhip. Backed up to GitHub."
+    },
+    "daily-2026-03-24": {
+      "name": "The Creator's AI Playbook: Build an Audience, Monetize Your Expertise, and Grow a Digital Business with Artificial Intelligence",
+      "status": "published",
+      "category": "creator-economy-ai",
+      "price": 14,
+      "date": "2026-03-24",
+      "folder": "2026-03-24_creators-ai-playbook",
+      "payhipUrl": "https://payhip.com/b/iZNuB",
+      "githubBacked": true,
+      "wordCount": 7083,
+      "chapters": 13,
       "coverGenerated": true,
       "pdfGenerated": true,
       "note": "Auto-published to Payhip. Backed up to GitHub."

@@ -1,15 +1,4 @@
 {
-  "lastRSICheck": "2026-03-23T12:25:00+11:00",
-  "rsiHealthScore": 0.164,
-  "ghFailuresHandled": 3,
-  "lastCIStatus": {
-    "claw-chain": "PR #73 OPEN - RUSTSEC-2026-0049 ignored (pending merge)",
-    "claw-chain": "PR #72 OPEN - NPoS version alignment fix"
-  },
-  "blogWatcher": {
-    "lastScan": "2026-03-23T12:25:00+11:00",
-    "newArticles": 3,
-    "source": "Hacker News",
-    "alertSent": false
-  }
+  "lastHeartbeat": "2026-03-23T21:27:00",
+  "lastRSICheck": "2026-03-23T21:27:00"
 }

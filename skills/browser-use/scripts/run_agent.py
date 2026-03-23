@@ -196,11 +196,44 @@ class CloudCodeGemini:
         return self.invoke(messages, **kwargs)
 
     # Async interface
-    async def ainvoke(self, messages, **kwargs):
+    async def ainvoke(self, messages, *args, **kwargs):
         from langchain_core.messages import AIMessage
+        output_format = kwargs.get('output_format', None)
         loop = asyncio.get_event_loop()
         text = await loop.run_in_executor(None, self._call_api, messages)
+        if output_format is not None:
+            # browser-use 0.12.x expects response.completion to be a parsed Pydantic model
+            return await loop.run_in_executor(None, self._parse_structured, text, output_format)
         return AIMessage(content=text)
+
+    def _parse_structured(self, text: str, schema):
+        """Parse JSON response into structured output with .completion attribute."""
+        import re as _re
+        # Strip markdown code fences
+        cleaned = text.strip()
+        if cleaned.startswith("```"):
+            cleaned = _re.sub(r'^```[a-z]*\n?', '', cleaned)
+            cleaned = _re.sub(r'\n?```$', '', cleaned)
+            cleaned = cleaned.strip()
+        try:
+            parsed = json.loads(cleaned)
+        except json.JSONDecodeError:
+            # Try to extract JSON from text
+            match = _re.search(r'\{.*\}', cleaned, _re.DOTALL)
+            if match:
+                parsed = json.loads(match.group())
+            else:
+                raise
+        if hasattr(schema, 'model_validate'):
+            completion = schema.model_validate(parsed)
+        else:
+            completion = parsed
+
+        class _Resp:
+            pass
+        r = _Resp()
+        r.completion = completion
+        return r
 
     # LangChain _generate required for BaseChatModel subclasses
     def _generate(self, messages, stop=None, run_manager=None, **kwargs):
@@ -248,7 +281,7 @@ class _StructuredOutputAdapter:
             return self._schema.model_validate(parsed)
         return parsed
 
-    async def ainvoke(self, messages, **kwargs):
+    async def ainvoke(self, messages, *args, **kwargs):
         loop = asyncio.get_event_loop()
         return await loop.run_in_executor(None, self.invoke, messages, kwargs)
 

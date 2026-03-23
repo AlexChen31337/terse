@@ -1,6 +1,6 @@
 {
-  "current_track_index": 0,
-  "last_run": "2026-03-22T14:00:11.031316+00:00",
+  "current_track_index": 1,
+  "last_run": "2026-03-23T14:00:09.439940+00:00",
   "last_tracks": [
     "ai",
     "crypto",
@@ -10,6 +10,7 @@
     "devtools",
     "ai",
     "crypto",
-    "devtools"
+    "devtools",
+    "ai"
   ]
 }
