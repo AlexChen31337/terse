@@ -1,36 +1,16 @@
-# Nightly Health Check Report
-**Generated:** 2026-03-24 00:14 AEDT
+# Nightly Health Check — 2026-03-25 12:05 AEDT
 
-## System Status Summary
-✅ **ALL SYSTEMS OPERATIONAL**
+## Services
+- **AlphaStrike:** ✅ active
+- **EvoClaw hub:** ✅ 2 agents
+- **GPU server:** ✅ online
+  - RTX 3090: 38 MiB / 24576 MiB
+  - RTX 3080: 15 MiB / 10240 MiB
+  - RTX 2070 SUPER: 6 MiB / 8192 MiB
 
----
+## Resources
+- **Skills:** 61
+- **Memory files:** 181
 
-## Component Status
-
-### 1. AlphaStrike Service
-- **Status:** ✅ active
-- **Details:** Running normally
-
-### 2. EvoClaw Hub
-- **Status:** ✅ UP
-- **Active Agents:** 2
-
-### 3. GPU Server (peter@10.0.0.44)
-- **Status:** ✅ ONLINE
-- **GPUs Detected:** 3
-  - RTX 3090: 38 MiB / 24576 MiB (0.2% used)
-  - RTX 3080: 15 MiB / 10240 MiB (0.1% used)
-  - RTX 2070 SUPER: 6 MiB / 8192 MiB (0.1% used)
-
-### 4. OpenClaw Workspace
-- **Skills Installed:** 61
-- **Memory Files:** 177
-
----
-
-## Notes
-- All GPUs showing minimal memory usage (idle state)
-- AlphaStrike service running without issues
-- EvoClaw hub responding normally with 2 registered agents
-- Memory archives growing steadily (177 daily notes)
+## Summary
+All systems operational. No alerts.

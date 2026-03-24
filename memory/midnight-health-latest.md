@@ -1,63 +1,100 @@
 # Midnight Health Check Report
-**Date:** 2026-03-23 12:00 AM AEDT (2026-03-22 13:00 UTC)
-**Status:** ⚠️ 1 DOWN
+**Generated:** 2026-03-25 00:00:04 AEDT (UTC+11:00)
+**Status:** 🚨 CRITICAL ISSUES DETECTED
+
+## Summary
+- ✅ **PASS**: 2/6 components
+- ❌ **FAIL**: 2/6 components
+- ⚠️ **WARN**: 0/6 components
+- ❓ **UNKNOWN**: 2/6 components
+
+---
 
 ## Component Status
 
-| Component | Status | Notes |
-|-----------|--------|-------|
-| **Sentinel** | ✅ OK | Last price check: 2026-03-22 11:18 UTC. Alerts active (BTC price, Fear & Greed) |
-| **Quant** | ✅ OK | Active, AlphaStrike service running, no open positions, account $112.22 USDC |
-| **Shield** | ⚠️ NOT FOUND | access-control.json missing - workspace may not be initialized |
-| **Herald** | ✅ OK | State loaded, no recent activity |
-| **EvoClaw Hub** | ✅ OK | Running, 2 agents registered |
-| **AlphaStrike** | ✅ OK | systemd service active |
-| **Alex Eye (Pi)** | 🚨 DOWN | SSH connection failed - host key verification |
+### 1. Sentinel ✅ PASS
+**Workspace:** `/home/bowen/.openclaw/workspace-sentinel`
+- **State File:** OK
+- **Last Checks:**
+  - Prices: `1774356355` (~2026-03-24 22:59 AEDT)
+  - Fear & Greed: `1774356355` (~2026-03-24 22:59 AEDT)
+- **Recent Alerts:** 13 alerts logged (last 24h)
+- **Market Data:** BTC $70,870.5, ETH $2,160.75, SOL $91.62
+- **Fear & Greed:** Extreme Fear (11)
+- **Status:** Monitoring active, checks current
 
-## Details
+### 2. Quant ✅ PASS
+**Workspace:** `/home/bowen/.openclaw/workspace-quant`
+- **State File:** OK
+- **Status:** ACTIVE (version 4)
+- **AlphaStrike Service:** ✅ **RUNNING** (systemd --user active)
+- **Account Value:** $112.22 USDC
+- **Open Positions:** 0
+- **Signals (2026-03-24 22:20 AEDT):**
+  - BTC: HOLD (MACD falling, conf 0.0)
+  - ETH: HOLD (MACD falling, conf 0.0)
+  - SOL: HOLD (MACD falling, conf 0.0)
+- **Last Checks:** 2026-03-24T11:20:26+00:00
+- **Circuit Breakers:** Clear
+- **Status:** Trading bot active, no positions
 
-### Sentinel (workspace-sentinel)
-- **State:** Loaded successfully
-- **Last checks:** Prices (2026-03-22 11:18 UTC), Fear & Greed (2026-03-22 11:18 UTC)
-- **Recent alerts:** BTC price thresholds, Fear & Greed category changes
-- **Prices tracked:** BTC $68,551, ETH $2,081.55, SOL $87.08, HYPE $38.17
+### 3. Shield ❓ UNKNOWN
+**Access Control:** `/home/bowen/.openclaw/access-control.json`
+- **State File:** ❌ **NOT FOUND**
+- **Status:** Shield state file missing — agent may not be initialized
+- **Pending Approvals:** Cannot check (no state file)
 
-### Quant (workspace-quant)
-- **Status:** ACTIVE (v4)
-- **AlphaStrike:** Service running (systemd)
-- **Signals:** All HOLD (BTC/ETH/SOL all at 40% confidence, oversold)
-- **Positions:** None open
-- **Account value:** $112.22 USDC
-- **Circuit breakers:** CLEAR
-- **Spot holdings:** UBTC 0.0153, HYPE 1.226 (long-term holds)
+### 4. Herald ⚠️ WARN
+**Workspace:** `/home/bowen/.openclaw/workspace-herald`
+- **State File:** OK
+- **Activity:** No posts, outreach, or metrics tracked
+- **Last Checks:** All zeros (Twitter, Moltbook, Analytics)
+- **Status:** Agent initialized but **INACTIVE** — no recent activity
 
-### Shield (workspace-shield)
-- **Status:** ⚠️ access-control.json not found
-- **Action:** Workspace may need initialization
+### 5. EvoClaw Hub ❌ FAIL
+**Service:** `evoclaw-hub.service` (systemd --user)
+- **API Check:** ❌ **DOWN** (`curl http://localhost:8420/api/agents` failed)
+- **Service Status:** ❌ **NOT RUNNING** (systemd shows inactive)
+- **Agent Registration:** Cannot verify (hub down)
+- **Systemd Status:** "Failed to connect to bus: No medium found"
+- **Action Required:** Restart hub service
+  ```bash
+  systemctl --user start evoclaw-hub.service
+  ```
 
-### Herald (workspace-herald)
-- **Status:** State loaded
-- **Activity:** No recent posts or outreach
+### 6. Alex Eye (Pi) ❌ FAIL
+**Host:** pi@192.168.1.200
+- **SSH Check:** ❌ **DOWN** (No route to host)
+- **Network Error:** `ssh: connect to host 192.168.1.200 port 22: No route to host`
+- **Uptime:** Cannot check
+- **Action Required:**
+  1. Verify Pi is powered on
+  2. Check network connectivity (ping 192.168.1.200)
+  3. Restart if needed
 
-### EvoClaw Hub
-- **Status:** ✅ Running
-- **Agents:** 2 registered
-- **Endpoint:** http://localhost:8420
+---
 
-### AlphaStrike Service
-- **Status:** ✅ active (systemd user service)
-- **User:** bowen
+## Critical Actions Required
 
-### Alex Eye (Pi)
-- **Status:** 🚨 DOWN
-- **Error:** Host key verification failed
-- **Action needed:** Manual SSH key update or reconnection
+### Immediate (Tonight)
+1. **Restart EvoClaw Hub:**
+   ```bash
+   export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+   systemctl --user start evoclaw-hub.service
+   systemctl --user status evoclaw-hub.service
+   curl -s http://localhost:8420/api/agents
+   ```
 
-## Disk Space
-- **Root (/):** 64% used (561G/937G) - OK
-- **DATA mounts:** Not showing separately (may be unmounted or same filesystem)
+2. **Check Alex Eye (Pi):**
+   - Ping `192.168.1.200`
+   - If unreachable, physically inspect Pi
+   - Restart if needed
 
-## Summary
-- **UP:** 6 components
-- **DOWN:** 1 component (Alex Eye Pi)
-- **Action required:** Pi SSH connection needs manual intervention
+### Soon (24-48h)
+3. **Initialize Shield Agent:** Create `access-control.json` if Shield is deployed
+4. **Wake Herald Agent:** Check if Herald has scheduled tasks or why it's inactive
+
+---
+
+## Recovery Log
+- **2026-03-25 00:00 AEDT:** Health check run — Hub and Pi down

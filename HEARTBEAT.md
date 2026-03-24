@@ -6,8 +6,9 @@
 export PATH="$PATH:$(go env GOPATH)/bin"
 blogwatcher scan 2>&1
 ```
-Working feeds: Bitcoin Magazine, Hacker News ✅
+Working feeds: Bitcoin Magazine, Hacker News, Anthropic News, OpenAI News ✅
 Alert only if 3+ new articles and at least one is clearly relevant (AI models, crypto, agent tech).
+Note: Anthropic Research Blog has no standalone RSS — monitored via web_search in Nightly Autoresearch cron (1AM Sydney, queries 'Anthropic research blog latest' + 'site:anthropic.com/research' on every run).
 
 ### GitHub intelligence (gh CLI)
 ```bash
