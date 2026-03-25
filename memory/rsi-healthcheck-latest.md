@@ -1,44 +1,49 @@
 # RSI Loop Health Check Report
-**Date:** 2026-03-24 (3:00 AM AEDT)
-**Run ID:** cron-8cc932c5
+**Date:** 2026-03-25 03:00 AEDT
+**Trigger:** Cron nightly health check
 
-## Status Summary
-| Metric | Value | Status |
-|--------|-------|--------|
-| Health Score | 0.151 | ⚠️ Low (< 0.3 threshold) |
-| 7-Day Outcomes | 189 | - |
-| Success Rate | 34% | ⚠️ Needs improvement |
-| Avg Quality | 2.22/5 | ⚠️ Below target |
-| Patterns Detected | 5 | ⚠️ Action needed |
-| Proposals | 0 new (all deployed) | ✅ |
+## System Status
+- **Health Score:** 0.133 / 1.0 ⚠️
+- **Outcomes (7d):** 225 logged
+- **Success Rate:** 31%
+- **Average Quality:** 2.13/5
 
-## Top Failure Patterns (7 days)
-1. **[0.878] timeout in 'tool_call'** — 55 occurrences, 100% failure rate
-2. **[0.734] tool_error in 'tool_call'** — 46 occurrences, 100% failure rate
-3. **[0.681] context_loss in 'session_management'** — 64 occurrences, 0% failure rate
+## Top Failure Patterns (Last 7 Days)
+1. **context_loss** (70 occurrences) - 31.1%
+2. **timeout** (60 occurrences) - 26.7%
+3. **tool_error** (55 occurrences) - 24.4%
+4. **tool_validation_error** (37 occurrences) - 16.4%
 
-## RSI Cycle Results
-- Full cycle completed: ✅
-- Proposals generated: 5 (all already deployed)
-- Auto-approved: 0 (no new proposals)
-- Awaiting review: 0
+## Detected Patterns
+- [0.800] In 'tool_call' tasks, 'timeout' occurs 60x with 100% failure rate
+- [0.733] In 'tool_call' tasks, 'tool_error' occurs 55x with 100% failure rate
+- [0.658] In 'tool_call' tasks, 'tool_validation_error' occurs 37x with 100% failure rate
+
+## Proposals Status
+- Draft: 0
+- Approved: 0
+- Deployed: 24 (all current proposals already deployed)
+
+## Auto-Fix Attempts
+This cycle generated 5 proposals, all already deployed:
+- db32089a: Address 'timeout' in 'tool_call' tasks
+- b9e26a71: Address 'tool_error' in 'tool_call' tasks
+- 15c31c37: Address 'tool_validation_error' in 'tool_call' tasks
 
 ## Test Results
-- **32/32 tests passed** in 1.05s ✅
+✅ **All 32 tests passed** (4.09s)
 - test_auto_observe.py: 20/20 passed
 - test_auto_fix.py: 12/12 passed
 
 ## Analysis
-Health score (0.151) is **below the 0.3 alert threshold**, but this is due to legacy failure patterns from the past 7 days. The RSI system has already:
-- Detected all 5 patterns
-- Generated and deployed 5 fix proposals
-- Tests are all passing
+**Critical Issue:** Health score (0.133) is significantly below the 0.3 threshold. The system is experiencing high failure rates in tool_call tasks, with timeouts and tool errors being the dominant failure modes.
 
-**No immediate action required** — the system is self-healing. The health score will improve as new outcomes without these patterns are logged.
+**Root Cause:** The patterns suggest infrastructure or API reliability issues affecting tool execution, particularly around timeouts and validation errors.
 
-## Recommendation
-Continue normal operations. The RSI loop is functioning correctly:
-1. Pattern detection ✅
-2. Proposal generation ✅
-3. Auto-deployment ✅
-4. Test coverage ✅
+**Recommendation:** Review tool execution infrastructure, timeout configurations, and API reliability. Consider implementing circuit breakers or retry logic for failing tool calls.
+
+## Next Steps
+1. Investigate root cause of tool_call timeouts
+2. Review and increase timeout thresholds if appropriate
+3. Implement better error recovery for tool_validation_error
+4. Consider adding monitoring/alerting for health score drops

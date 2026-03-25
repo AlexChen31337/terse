@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-03-25T00:00:00+11:00",
-  "last_backup": "2026-03-24",
-  "topic_index": 15,
+  "lastRun": "2026-03-25T09:00:00+11:00",
+  "last_backup": "2026-03-25",
+  "topic_index": 16,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -317,6 +317,19 @@
       "pdfGenerated": true,
       "note": "Auto-published to Payhip. Backed up to GitHub."
     },
+    "mbd-daily-2026-03-25": {
+      "name": "提示词炼金术_把AI调教成你的专属印钞机升级版",
+      "status": "backed_up",
+      "category": "AI/技能",
+      "date": "2026-03-25",
+      "githubBacked": true,
+      "coverGenerated": true,
+      "coverUrl": "https://files.catbox.moe/mhpifw.png",
+      "folder": "2026-03-25_提示词炼金术_把AI调教成你的专属印钞机升级版",
+      "title": "提示词炼金术_把AI调教成你的专属印钞机升级版",
+      "wordCount": 3800,
+      "note": "MbD Chinese backup. Awaiting publish instruction from owner."
+    },
     "daily-2026-03-25": {
       "name": "The AI Freelancer's Edge: Build a High-Income Skill Stack, Land Premium Clients, and Scale a Solo Business with Artificial Intelligence",
       "status": "published",
@@ -332,6 +345,42 @@
       "coverGenerated": true,
       "pdfGenerated": true,
       "note": "Auto-published to Payhip. Backed up to GitHub."
+    },
+    "mbd-daily-2026-03-22": {
+      "name": "懒人理财经_AI帮你盯盘选基算账躺赚时代来了",
+      "status": "backed_up",
+      "category": "理财",
+      "date": "2026-03-22",
+      "githubBacked": true,
+      "coverGenerated": true,
+      "folder": "2026-03-22_懒人理财经_AI帮你盯盘选基算账躺赚时代来了",
+      "note": "MbD Chinese backup. Backfilled with cover. Awaiting MbD publish instruction from owner.",
+      "title": "懒人理财经_AI帮你盯盘选基算账躺赚时代来了",
+      "wordCount": 3300
+    },
+    "mbd-daily-2026-03-23": {
+      "name": "AI写作工厂_让机器替你码字你来设计流水线然后收钱",
+      "status": "backed_up",
+      "category": "写作",
+      "date": "2026-03-23",
+      "githubBacked": true,
+      "coverGenerated": true,
+      "folder": "2026-03-23_AI写作工厂_让机器替你码字你来设计流水线然后收钱",
+      "note": "MbD Chinese backup. Backfilled with cover. Awaiting MbD publish instruction from owner.",
+      "title": "AI写作工厂_让机器替你码字你来设计流水线然后收钱",
+      "wordCount": 3400
+    },
+    "mbd-daily-2026-03-24": {
+      "name": "AI副业指南_你不需要辞职你需要一个会干活的数字雇员",
+      "status": "backed_up",
+      "category": "副业/AI",
+      "date": "2026-03-24",
+      "githubBacked": true,
+      "coverGenerated": true,
+      "folder": "2026-03-24_AI副业指南_你不需要辞职你需要一个会干活的数字雇员",
+      "note": "MbD Chinese backup. Backfilled with cover. Awaiting MbD publish instruction from owner.",
+      "title": "AI副业指南_你不需要辞职你需要一个会干活的数字雇员",
+      "wordCount": 3700
     }
   },
   "twitter": {
@@ -359,5 +408,6 @@
   "telegram": {
     "status": "not_started",
     "reason": "Bot API cannot create channels"
-  }
+  },
+  "mbd_last_backup": "2026-03-24"
 }
