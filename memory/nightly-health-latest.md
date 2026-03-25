@@ -1,16 +1,24 @@
-# Nightly Health Check — 2026-03-25 12:05 AEDT
+# Nightly Health Check Report
+**Date:** 2026-03-26 00:05 AEDT (2026-03-25 13:05 UTC)
 
-## Services
-- **AlphaStrike:** ✅ active
-- **EvoClaw hub:** ✅ 2 agents
-- **GPU server:** ✅ online
-  - RTX 3090: 38 MiB / 24576 MiB
-  - RTX 3080: 15 MiB / 10240 MiB
-  - RTX 2070 SUPER: 6 MiB / 8192 MiB
+## System Status
 
-## Resources
-- **Skills:** 61
-- **Memory files:** 181
+| Component | Status | Details |
+|-----------|--------|---------|
+| **AlphaStrike** | ✅ Active | Running (systemd user service) |
+| **EvoClaw Hub** | ✅ UP | 2 agents connected |
+| **GPU Server** | ✅ Online | 3 GPUs available |
+| **ClawMemory** | ⚠️ Restarted | Was DOWN, successfully restarted |
+| **Skills** | ✅ OK | 72 skills installed |
+| **Memory Files** | ✅ OK | 184 daily notes |
+
+## GPU Status
+- **GPU 0 (RTX 3090):** 13.8GB / 24GB used (57%)
+- **GPU 1 (RTX 3080):** 18MB / 10GB used (0.2%)
+- **GPU 2 (RTX 2070 SUPER):** 9MB / 8GB used (0.1%)
+
+## Action Taken
+ClawMemory was down and has been automatically restarted. All services now operational.
 
 ## Summary
-All systems operational. No alerts.
+**Overall:** ✅ All systems healthy after auto-restart

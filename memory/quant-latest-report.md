@@ -1,9 +1,9 @@
 # Quant Report
-_2026-03-25T03:19:03.990106+00:00_
+_2026-03-25T15:18:56.809369+00:00_
 
 📊 **[Quant] AlphaStrike V2 Paper Trading Update**
 
-⏸  BTC HOLD conf=0% — ADX 6 too low
+⏸  BTC HOLD conf=0% — Model agreement 0% < 60%
 ⏸  ETH HOLD conf=0% — signal_is_hold
 ⏸  SOL HOLD conf=0% — signal_is_hold
 
