@@ -348,8 +348,22 @@ That's it. The router decides. You execute. No guessing, no overriding.
 - **REASONING** (proofs, formal logic, deep analysis) → `nvidia-nim/moonshotai/kimi-k2-thinking` ($1/M, 1T MoE specialist)
 - **CRITICAL** (security, production, strategic planning) → `anthropic/claude-opus-4-6` ($5/M) ONLY
 
-⚠️ **Bowen's rule:** Opus is reserved for critical thinking and planning ONLY. Never use Opus for routine coding, docs, or monitoring tasks.
-⚠️ **Bowen's rule (NON-NEGOTIABLE):** Use `anthropic-proxy-1/claude-sonnet-4-6` for ALL coding tasks. Fallback: `anthropic/claude-sonnet-4-6` (OAuth). NO OTHER MODELS. Do not route coding tasks to Llama, GLM, MiniMax, or DeepSeek regardless of router output. If the router suggests anything else for coding, OVERRIDE immediately.
+## 🧠 Model Quality Rule (NON-NEGOTIABLE — hardened 2026-03-26)
+
+**For ANY task involving writing, thinking, planning, architecting, or coding: use the BEST model.**
+
+| Task type | Required model |
+|-----------|----------------|
+| Writing (books, articles, content, emails) | `anthropic/claude-opus-4-6` |
+| Planning, architecture, design decisions | `anthropic/claude-opus-4-6` |
+| Coding (new features, PR review, bug fixes) | `anthropic/claude-opus-4-6` |
+| Research, analysis, synthesis | `anthropic/claude-opus-4-6` |
+| Monitoring, health checks, status, heartbeat | `anthropic-proxy-6/glm-4.7` or `ollama/qwen3.5:4b` |
+| Config sync, WAL replay, simple scripts | `ollama/qwen3.5:4b` |
+
+**Bowen's explicit rule:** Never compromise quality for cost on creative/technical/intellectual work.
+**Cheap models = monitoring ONLY.** Never use GLM/qwen/llama for anything that requires real thinking.
+
 ⚠️ **CRITICAL: NEVER use GLM-4.7 for coding tasks.** Smaller context window (128k) + weaker code editing = failed edits, whitespace mismatches, incomplete work. Learned from ci-fix-evoclaw failure (2026-02-28): GLM-4.7 read 135k tokens, ran out of context, failed to add `#[ignore]` to Rust tests.
 
 ℹ️ **Why no "IGNORE router" anymore:** The router was fixed (v2.0) to use real capability signals (parameter count, context window, reasoning flag) instead of cost-only. DeepSeek V3.2 ($0.40/M, 274B) now correctly routes to COMPLEX. The router output is now trustworthy — use spawn_helper directly without manual overrides.
