@@ -208,6 +208,12 @@ bash scripts/agent-lint.sh
 4. **Run `bash scripts/agent-lint.sh` locally.** Failures include fix instructions.
 5. **For complex tasks** (multiple packages, new APIs, migrations), create an execution
    plan using `docs/EXECUTION_PLAN_TEMPLATE.md` before writing code.
+6. **Log every task outcome to RSI loop** (if installed). After completing any task:
+   ```bash
+   uv run python ~/.openclaw/workspace/skills/rsi-loop/scripts/rsi_cli.py log \\
+     --task <type> --success <true|false> --quality <1-5> --issue "<what went wrong>"
+   ```
+   This feeds the self-improvement loop. Omit `--issue` on success.
 
 ---
 
