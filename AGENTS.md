@@ -145,6 +145,17 @@ uv run python scripts/active_task.py done
 - `trash` > `rm` (recoverable beats gone forever)
 - When in doubt, ask.
 
+## Pre-Push Secret Scan (NON-NEGOTIABLE — hardened 2026-03-26)
+Before ANY `git push` to a public repo, scan for secrets:
+```bash
+grep -rn "token\|secret\|password\|api_key\|AUTH_TOKEN\|CT0\|base64\|b64" <dir> \
+  --include="*.py" --include="*.js" --include="*.ts" --include="*.sh" --include="*.json" \
+  | grep -v "test\|mock\|example\|placeholder\|env\|os\.environ\|getenv" | head -20
+```
+If ANY real-looking credential is found → replace with env var reference BEFORE pushing.
+This applies to: skills, scripts, any file going into a public GitHub repo.
+**Never rely on GitHub push protection to catch this — catch it ourselves first.**
+
 ## External vs Internal
 
 **Safe to do freely:**
