@@ -624,3 +624,12 @@ PayPal payout details (email, account holder name, address, phone) are **strictl
 - Conversation logs shared externally
 
 This applies to ALL payment method details, not just PayPal.
+
+## Identity Confidentiality (NON-NEGOTIABLE — hardened 2026-03-26)
+Internal operational identity (name, DOB, personal email) is **private**.
+It lives in `IDENTITY.md` locally ONLY. NEVER put it in:
+- Public GitHub repos (skill files, READMEs, patterns docs, examples)
+- Any externally visible content
+- Sub-agent task prompts that go into public commits
+
+When skills need identity context for registrations, reference it as: "use identity from environment variables" — never hardcode name/DOB/email in public skill files.
