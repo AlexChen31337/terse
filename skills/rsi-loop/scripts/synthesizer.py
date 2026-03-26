@@ -22,6 +22,13 @@ try:
 except ImportError:
     _GENE_REGISTRY_AVAILABLE = False
 
+# RSI v2 — Lineage tracking
+try:
+    from lineage import LineageStore, ProposalNode
+    _LINEAGE_AVAILABLE = True
+except ImportError:
+    _LINEAGE_AVAILABLE = False
+
 # Event logger + stagnation detection (Phase 2 & 3)
 try:
     from event_logger import log_event, load_events, get_recent_innovation_targets
@@ -372,6 +379,42 @@ def generate_proposals_heuristic(patterns: list, max_proposals: int = 5) -> list
             }
 
         proposals.append(proposal)
+
+    # === INTEGRATION HOOK: RSI v2 lineage ===
+    if _LINEAGE_AVAILABLE:
+        try:
+            store = LineageStore()
+            for p in proposals:
+                issue = p.get("pattern", {}).get("issue", "")
+                task_type = p.get("pattern", {}).get("task_type", "")
+                category = p.get("pattern", {}).get("category", "")
+                action_type = p.get("action_type", "")
+
+                # Find most recent deployed ancestor for this issue
+                similar = store.find_similar(issue=issue, task_type=task_type)
+                parent_id = None
+                for s in reversed(similar):  # most recent first
+                    if s.outcome == "deployed":
+                        parent_id = s.id
+                        break
+
+                p["parent_id"] = parent_id
+
+                # Record in lineage
+                node = ProposalNode(
+                    id=p["id"],
+                    parent_id=parent_id,
+                    task_type=task_type,
+                    issue=issue,
+                    category=category,
+                    proposal_text=p.get("title", ""),
+                    action_type=action_type,
+                    mutation_type=p.get("mutation_type", mutation_type),
+                    outcome="pending",
+                )
+                store.append(node)
+        except Exception as e:
+            print(f"[LINEAGE] Warning: could not record lineage: {e}")
 
     return proposals
 

@@ -28,6 +28,13 @@ try:
 except ImportError:
     _EVENT_LOGGER_AVAILABLE = False
 
+# RSI v2 — Critique phase
+try:
+    from critique import CritiqueAgent
+    _CRITIQUE_AVAILABLE = True
+except ImportError:
+    _CRITIQUE_AVAILABLE = False
+
 SKILL_DIR = Path(__file__).parent.parent
 DATA_DIR = SKILL_DIR / "data"
 PROPOSALS_DIR = DATA_DIR / "proposals"
@@ -452,6 +459,12 @@ def deploy_proposal(proposal_id: str, dry_run: bool = False, force_core: bool = 
 
     if not dry_run and "ERROR" not in result and "MANUAL" not in result and "BLOCKED" not in result:
         mark_deployed(p, notes=result[:200])
+        # === INTEGRATION HOOK: RSI v2 lineage outcome update ===
+        try:
+            from lineage import LineageStore
+            LineageStore().update_outcome(p["id"], "deployed", result[:200])
+        except Exception:
+            pass
         # Log EvolutionEvent for non-gene deploys
         if _EVENT_LOGGER_AVAILABLE and action_type != "apply_gene":
             log_event(
@@ -541,6 +554,35 @@ def main():
                 synthesizer.save_proposals([p])
                 auto_approved.append(p)
                 print(f"  Auto-approved: {p['id']} ({effort}min)")
+
+        # Step 3.5: Critique phase (RSI v2)
+        if _CRITIQUE_AVAILABLE:
+            print(f"\nStep 3.5: Running critique on {len(auto_approved)} proposals...")
+            critic = CritiqueAgent()
+            critique_passed = []
+            for p in auto_approved:
+                result = critic.critique(p)
+                if result.verdict == "approve":
+                    critique_passed.append(p)
+                    print(f"  ✓ {p['id']}: approved — {result.reason[:80]}")
+                elif result.verdict == "reject":
+                    # Update proposal status to rejected
+                    p["status"] = "rejected"
+                    synthesizer.save_proposals([p])
+                    # Update lineage
+                    try:
+                        from lineage import LineageStore
+                        LineageStore().update_outcome(p["id"], "rejected", result.reason[:200])
+                    except Exception:
+                        pass
+                    print(f"  ✗ {p['id']}: REJECTED — {result.reason[:80]}")
+                else:  # defer
+                    p["status"] = "draft"  # back to draft for manual review
+                    synthesizer.save_proposals([p])
+                    print(f"  ⏸ {p['id']}: DEFERRED — {result.reason[:80]}")
+            auto_approved = critique_passed
+        else:
+            print("\n(Critique module not available — skipping critique phase)")
 
         # Step 4: Deploy auto-approved
         print(f"\nStep 4: Deploying {len(auto_approved)} auto-approved proposals...")

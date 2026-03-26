@@ -352,6 +352,24 @@ Examples:
     # personality (Phase 3 — PersonalityState)
     sub.add_parser("personality", help="Show current PersonalityState with bias")
 
+    # === RSI v2 subcommands ===
+
+    # lineage
+    lineage_p = sub.add_parser("lineage", help="Show proposal lineage tree")
+    lineage_p.add_argument("--node", help="Show lineage for specific proposal ID")
+    lineage_p.add_argument("--format", choices=["tree", "json", "flat"], default="tree")
+
+    # kb
+    kb_p = sub.add_parser("kb", help="Query or update knowledge base")
+    kb_sub = kb_p.add_subparsers(dest="kb_cmd")
+    kb_query_p = kb_sub.add_parser("query", help="Query KB for relevant entries")
+    kb_query_p.add_argument("--issue", default="")
+    kb_query_p.add_argument("--task-type", default="")
+    kb_query_p.add_argument("--category", default="")
+    kb_query_p.add_argument("--top", type=int, default=3)
+    kb_sub.add_parser("update", help="Update KB from lineage history")
+    kb_sub.add_parser("stats", help="Show KB statistics")
+
     args = parser.parse_args()
 
     if args.cmd == "status":
@@ -475,6 +493,108 @@ Examples:
     elif args.cmd == "personality":
         sys.path.insert(0, str(SCRIPTS_DIR))
         cmd_personality(args)
+
+    elif args.cmd == "lineage":
+        sys.path.insert(0, str(SCRIPTS_DIR))
+        from lineage import LineageStore
+        store = LineageStore()
+
+        if args.node:
+            node = store.get_node(args.node)
+            if not node:
+                print(f"Node '{args.node}' not found in lineage.")
+                sys.exit(1)
+            ancestors = store.get_ancestors(args.node)
+            descendants = store.get_descendants(args.node)
+
+            print(f"\n=== Lineage for {args.node} ===\n")
+            print(f"Node: {node.id} | {node.issue} | {node.outcome}")
+            print(f"  Proposal: {node.proposal_text[:80]}")
+            print(f"  Parent: {node.parent_id or '(root)'}")
+            print(f"  Timestamp: {node.timestamp[:19]}")
+
+            if ancestors:
+                print(f"\nAncestors ({len(ancestors)}):")
+                for a in ancestors:
+                    print(f"  ← {a.id}: {a.proposal_text[:60]} [{a.outcome}]")
+
+            if descendants:
+                print(f"\nDescendants ({len(descendants)}):")
+                for d in descendants:
+                    print(f"  → {d.id}: {d.proposal_text[:60]} [{d.outcome}]")
+        else:
+            # Show full tree
+            tree = store.get_lineage_tree()
+            all_nodes = {n.id: n for n in store.load_all()}
+            roots = tree.get("__roots__", [])
+
+            if not all_nodes:
+                print("No lineage data yet. Run a cycle to generate proposals.")
+                sys.exit(0)
+
+            if args.format == "json":
+                print(json.dumps(tree, indent=2))
+            elif args.format == "flat":
+                print(f"\n{'ID':<12} {'PARENT':<12} {'ISSUE':<20} {'OUTCOME':<12} {'TITLE'}")
+                print("─" * 90)
+                for n in all_nodes.values():
+                    print(f"{n.id:<12} {(n.parent_id or '-'):<12} "
+                          f"{n.issue:<20} {n.outcome:<12} {n.proposal_text[:40]}")
+            else:  # tree format
+                print(f"\n=== Proposal Lineage Tree ({len(all_nodes)} nodes) ===\n")
+
+                def print_tree(node_id: str, indent: int = 0):
+                    node = all_nodes.get(node_id)
+                    if not node:
+                        return
+                    prefix = "  " * indent + ("├─ " if indent > 0 else "")
+                    outcome_icon = {"deployed": "✓", "rejected": "✗", "pending": "…", "superseded": "→"}.get(node.outcome, "?")
+                    print(f"{prefix}[{outcome_icon}] {node.id}: {node.proposal_text[:50]} ({node.issue})")
+                    children = tree.get(node_id, [])
+                    for child_id in children:
+                        print_tree(child_id, indent + 1)
+
+                for root_id in roots:
+                    print_tree(root_id)
+
+                # Show orphaned nodes (parent_id set but parent not in lineage)
+                orphans = [n for n in all_nodes.values()
+                           if n.parent_id and n.parent_id not in all_nodes and n.id not in roots]
+                if orphans:
+                    print(f"\nOrphaned nodes ({len(orphans)}):")
+                    for o in orphans:
+                        print(f"  [?] {o.id}: {o.proposal_text[:50]} (parent {o.parent_id} missing)")
+
+    elif args.cmd == "kb":
+        sys.path.insert(0, str(SCRIPTS_DIR))
+        if not args.kb_cmd:
+            kb_p.print_help()
+        elif args.kb_cmd == "query":
+            from kb_manager import kb_query_cli
+            results = kb_query_cli(
+                issue=args.issue,
+                task_type=args.task_type,
+                category=args.category,
+                top_k=args.top,
+            )
+            if not results:
+                print("No matching KB entries found.")
+            else:
+                print(f"\nTop {len(results)} KB results:\n")
+                for r in results:
+                    print(f"  [{r['score']:.1f}] {r['reference']}")
+        elif args.kb_cmd == "update":
+            from kb_manager import kb_update_cli
+            stats = kb_update_cli()
+            print(f"KB updated: {stats['added']} added, {stats['updated']} updated")
+        elif args.kb_cmd == "stats":
+            from kb_manager import KBManager
+            kb = KBManager()
+            for kind, label in [("failure", "Failure"), ("success", "Success"), ("anti", "Anti")]:
+                entries = kb._parse_entries(kb._get_filepath(kind))
+                print(f"  {label} patterns: {len(entries)}")
+                for e in entries[:3]:
+                    print(f"    - {e.id}: {e.title[:60]} ({e.occurrences} occurrences)")
 
     else:
         parser.print_help()
