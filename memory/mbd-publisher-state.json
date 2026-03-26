@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-03-25T09:00:00+11:00",
+  "lastRun": "2026-03-26T09:00:00+11:00",
   "last_backup": "2026-03-25",
-  "topic_index": 16,
+  "topic_index": 17,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -381,6 +381,18 @@
       "note": "MbD Chinese backup. Backfilled with cover. Awaiting MbD publish instruction from owner.",
       "title": "AI副业指南_你不需要辞职你需要一个会干活的数字雇员",
       "wordCount": 3700
+    },
+    "mbd-daily-2026-03-26": {
+      "name": "AI职场生存手册_当机器人成为你的同事竞争对手和救命稻草",
+      "status": "backed_up",
+      "category": "职场/AI",
+      "date": "2026-03-26",
+      "githubBacked": true,
+      "coverGenerated": true,
+      "folder": "2026-03-26_AI职场生存手册_当机器人成为你的同事竞争对手和救命稻草",
+      "title": "AI职场生存手册_当机器人成为你的同事竞争对手和救命稻草",
+      "wordCount": 4200,
+      "note": "MbD Chinese backup. Awaiting publish instruction from owner."
     }
   },
   "twitter": {
@@ -409,5 +421,5 @@
     "status": "not_started",
     "reason": "Bot API cannot create channels"
   },
-  "mbd_last_backup": "2026-03-24"
+  "mbd_last_backup": "2026-03-26"
 }

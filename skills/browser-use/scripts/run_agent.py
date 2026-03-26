@@ -90,6 +90,14 @@ class CloudCodeGemini:
         return "cloud-code-gemini"
 
     @property
+    def provider(self) -> str:
+        return "google"
+
+    @property
+    def model(self) -> str:
+        return self.model_name
+
+    @property
     def _identifying_params(self):
         return {"model_name": self.model_name}
 
@@ -352,7 +360,11 @@ def stealth_session(
         except Exception as e:
             print(f"[stealth_session] Warning: post-start patch failed: {e}")
 
-    session.start = _patched_start
+    try:
+        object.__setattr__(session, "start", _patched_start)
+    except Exception:
+        # Last resort: wrap via subclass-style approach won't work, skip patch silently
+        pass
     return session
 
 
