@@ -23,11 +23,11 @@
 3. ✅ **Author block updated to IJCAI format**:
    ```latex
    \author{
-   Alex Chen$^1$ \quad Bowen Li$^1$ \quad Nicholas Qi$^1$ \\
+   A. Chen$^1$ \quad A. Author$^1$ \quad Nicholas Qi$^1$ \\
    \affiliations
    $^1$Independent Researchers \\
    \emails
-   \{alex.chen31337@gmail.com, bowen31337@outlook.com, nicholas68663@gmail.com\}
+   \{author@example.com, bowen31337@outlook.com, nicholas68663@gmail.com\}
    }
    ```
 

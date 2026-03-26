@@ -46,23 +46,23 @@
 - **Old format (NeurIPS):**
   ```latex
   \author{
-    Alex Chen\thanks{Equal contribution...} \quad A. Author...
+    A. Chen\thanks{Equal contribution...} \quad A. Author...
     Independent Researchers \\
-    \texttt{alex.chen31337@gmail.com} ...
+    \texttt{author@example.com} ...
   }
   ```
   
 - **New format (IJCAI):**
   ```latex
   \author{
-  Alex Chen$^1$
+  A. Chen$^1$
   \and
   A. Author$^1$\and
   Nicholas Qi$^1$\\
   \affiliations
   $^1$Independent Researchers\\
   \emails
-  alex.chen31337@gmail.com,
+  author@example.com,
   author@example.com,
   nicholas68663@gmail.com
   }
