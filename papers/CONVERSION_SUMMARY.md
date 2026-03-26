@@ -27,7 +27,7 @@
    \affiliations
    $^1$Independent Researchers \\
    \emails
-   \{author@example.com, bowen31337@outlook.com, nicholas68663@gmail.com\}
+   \{author@example.com, author@example.com, coauthor@example.com\}
    }
    ```
 

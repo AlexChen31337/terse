@@ -44,23 +44,23 @@ def convert_neurips_to_ijcai(input_file, output_file):
     
     # 7. Convert author block to IJCAI format
     old_author = r'''\\author\{
-  Alex Chen\\thanks\{Equal contribution\. Correspondence: \\texttt\{bowen31337@outlook\.com\}\} \\quad Bowen Li\\footnotemark\[1\] \\quad Nicholas Qi\\footnotemark\[1\] \\\\\[0\.3em\]
+  A. Chen\\thanks\{Equal contribution\. Correspondence: \\texttt\{bowen31337@outlook\.com\}\} \\quad A. Author\\footnotemark\[1\] \\quad Nicholas Qi\\footnotemark\[1\] \\\\\[0\.3em\]
   Independent Researchers \\\\
   \\texttt\{alex\.chen31337@gmail\.com\} \\quad \\texttt\{bowen31337@outlook\.com\} \\quad \\texttt\{nicholas68663@gmail\.com\} \\\\
   \\texttt\{github\.com/clawinfra/evoclaw\}
 \}'''
     
     new_author = r'''\\author{
-Alex Chen$^1$
+A. Chen$^1$
 \\and
-Bowen Li$^1$\\and
+A. Author$^1$\\and
 Nicholas Qi$^1$\\\\
 \\affiliations
 $^1$Independent Researchers\\\\
 \\emails
 alex.chen31337@gmail.com,
-bowen31337@outlook.com,
-nicholas68663@gmail.com
+author@example.com,
+coauthor@example.com
 }'''
     
     content = re.sub(old_author, new_author, content, flags=re.DOTALL)
