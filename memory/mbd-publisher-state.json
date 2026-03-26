@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-03-26T09:00:00+11:00",
-  "last_backup": "2026-03-25",
-  "topic_index": 17,
+  "lastRun": "2026-03-27T00:01:00+11:00",
+  "last_backup": "2026-03-27",
+  "topic_index": 18,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -393,6 +393,21 @@
       "title": "AI职场生存手册_当机器人成为你的同事竞争对手和救命稻草",
       "wordCount": 4200,
       "note": "MbD Chinese backup. Awaiting publish instruction from owner."
+    },
+    "daily-2026-03-27": {
+      "name": "The AI Data Scientist: Master Data Analysis, Build Predictive Models, and Automate Insights with Artificial Intelligence",
+      "status": "published",
+      "category": "ai-data-science",
+      "price": 14,
+      "date": "2026-03-27",
+      "folder": "2026-03-27_ai-data-scientist",
+      "payhipUrl": "https://payhip.com/b/1GTLH",
+      "githubBacked": true,
+      "wordCount": 8500,
+      "chapters": 13,
+      "coverGenerated": true,
+      "pdfGenerated": true,
+      "note": "Auto-published to Payhip. Backed up to GitHub."
     }
   },
   "twitter": {

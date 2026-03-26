@@ -1,6 +1,8 @@
 {
-  "last_uid": 2163,
-  "quarantined": ["zhuzhushiwojia"],
+  "last_uid": 2351,
+  "quarantined": [
+    "zhuzhushiwojia"
+  ],
   "approved_senders": [],
-  "notes": "initialized 2026-03-25T22:09:16Z"
+  "notes": "updated 2026-03-26T09:14:00Z"
 }

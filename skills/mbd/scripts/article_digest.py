@@ -46,7 +46,7 @@ from mbd_client import MbDClient, MbDError, format_datetime  # noqa: E402
 SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = 587
 SMTP_USER = os.environ.get("SMTP_USER", "alex.chen31337@gmail.com")
-SMTP_PASS = os.environ.get("SMTP_PASS", "itmkayyivszmbpaw")
+SMTP_PASS = os.environ.get("SMTP_PASS", "")
 DIGEST_TO = os.environ.get("DIGEST_TO", "bowen31337@outlook.com")
 
 DEVTO_USER = "alexchen31337"
