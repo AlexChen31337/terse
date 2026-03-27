@@ -1,7 +1,7 @@
 {
   "lastRun": "2026-03-27T00:01:00+11:00",
   "last_backup": "2026-03-27",
-  "topic_index": 18,
+  "topic_index": 19,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -408,6 +408,18 @@
       "coverGenerated": true,
       "pdfGenerated": true,
       "note": "Auto-published to Payhip. Backed up to GitHub."
+    },
+    "mbd-daily-2026-03-27": {
+      "name": "AI恋爱教练_当算法开始比你更懂爱情这件小事",
+      "status": "backed_up",
+      "category": "情感/AI",
+      "date": "2026-03-27",
+      "githubBacked": true,
+      "coverGenerated": true,
+      "folder": "2026-03-27_AI恋爱教练_当算法开始比你更懂爱情这件小事",
+      "title": "AI恋爱教练_当算法开始比你更懂爱情这件小事",
+      "wordCount": 4200,
+      "note": "MbD Chinese backup. Awaiting publish instruction from owner."
     }
   },
   "twitter": {
@@ -436,5 +448,5 @@
     "status": "not_started",
     "reason": "Bot API cannot create channels"
   },
-  "mbd_last_backup": "2026-03-26"
+  "mbd_last_backup": "2026-03-27"
 }

@@ -52,6 +52,9 @@ QUARANTINE_PATTERNS = [
 # ── Known irrelevant senders (route to seen-but-quiet bucket) ───────────────
 NOISE_SENDERS = {
     "notifications@github.com",  # handled separately — only surface if actionable
+    "jobalerts-noreply@linkedin.com",  # LinkedIn job alerts — always noise
+    "linkedin@e.linkedin.com",         # LinkedIn marketing emails
+    "noreply@linkedin.com",            # LinkedIn notifications
 }
 
 # ── Relevance signals (if present → surface to Bowen) ───────────────────────

@@ -1,8 +1,12 @@
 {
-  "lastRSICheck": "2026-03-26T19:25:00+11:00",
-  "lastHeartbeat": "2026-03-26T19:25:00+11:00",
-  "blogwatcherNewArticles": 3,
-  "rsiHealthScore": 0.126,
-  "alerts": [],
-  "nextHeartbeat": "2026-03-26T23:25:00+11:00"
+  "lastRSICheck": "2026-03-27T14:27:26.687020",
+  "lastHeartbeat": "2026-03-27T14:27:26.687005",
+  "blogwatcherNewArticles": 0,
+  "rsiHealthScore": 0.12,
+  "alerts": [
+    "RSI health score 0.122 (< 0.3 threshold)",
+    "Gmail CI monitoring broken (gcloud not installed)",
+    "tool_error pattern: 61x in 7d in tool_call tasks"
+  ],
+  "nextHeartbeat": "2026-03-27T18:27:26.687022"
 }
