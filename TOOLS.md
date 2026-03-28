@@ -169,7 +169,30 @@ with sync_playwright() as p:
 ```
 
 **Run with:** `uv run --with playwright python /tmp/post_thread.py`
-**Last verified:** 2026-03-28 — 27 tweets across 3 threads (Qwen35 9/9, reasoning-monitor 9/9, AutoInfer 5+2/7)
+**Last verified:** 2026-03-28 — 29 tweets across 3 threads (Qwen35 9/9, reasoning-monitor 9/9, AutoInfer 7/7)
+
+### ⚠️ Rate-limit recovery (if button is aria-disabled after fill)
+Standard `.fill()` + `.click()` fails when X rate-limits mid-thread (button stays `aria-disabled=true` even after text is in textarea). Workaround:
+```python
+# After fill(), if button stays disabled:
+ta.fill(text)
+time.sleep(1)
+# Check if disabled
+disabled = page.locator("[data-testid='tweetButtonInline']").first.get_attribute("aria-disabled")
+if disabled == "true":
+    # keyboard.type() triggers React onChange, then JS remove the attribute
+    page.keyboard.type(" ")  # space to re-trigger React
+    page.evaluate("""() => {
+        const btn = document.querySelector('[data-testid="tweetButtonInline"]');
+        if (btn) { btn.removeAttribute('aria-disabled'); btn.removeAttribute('disabled'); }
+    }""")
+    time.sleep(0.5)
+page.locator("[data-testid='tweetButtonInline']").or_(
+    page.locator("[data-testid='tweetButton']")
+).first.click()
+```
+**When to use:** only if standard `.click()` fails after rate-limiting (button disabled mid-thread). The 15s cooldown between tweets usually prevents this.
+**Verified:** Tweet 6 of AutoInfer thread, 2026-03-28.
 
 ---
 
