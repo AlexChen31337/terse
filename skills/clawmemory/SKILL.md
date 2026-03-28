@@ -1,3 +1,9 @@
+---
+name: clawmemory
+description: Sovereign agent memory engine — self-hosted, privacy-first SQLite store with LLM-based fact extraction (GLM-4.7), hybrid BM25+vector search, contradiction resolution, and OpenClaw plugin for auto-capture/auto-recall. Use when storing structured facts from conversations, querying agent memory semantically, or wiring persistent memory into an OpenClaw agent.
+version: 1.0.0
+---
+
 # ClawMemory Skill
 
 Sovereign agent memory engine — self-hosted, privacy-first. All data stays local (SQLite) with optional Turso cloud sync.
