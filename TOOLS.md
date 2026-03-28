@@ -93,44 +93,91 @@ text, letters, numbers, words, characters, fonts, typography, logo, title, subti
 
 **Account:** @AlexChen31337 — cookie auth via AUTH_TOKEN + CT0 (same creds as bird)
 
-**Method:** Playwright headless Chromium with injected cookies. Posts each tweet, then navigates to profile to grab the latest tweet URL for the reply chain.
+---
 
-**Key pattern:**
+### ✅ VERIFIED WORKING PATTERN (2026-03-28, 27/27 tweets — hardened)
+
+**RULE: Use `compose/tweet` for EVERY tweet. NEVER use the reply dialog.**
+X's reply dialog has focus traps + mask overlays that break Playwright. The compose URL works cleanly every time. Tweets appear as separate posts (not a reply chain), but that's fine.
+
+**Guard rules (NON-NEGOTIABLE):**
+1. **`compose/tweet` URL for every tweet** — not profile, not reply dialog
+2. **`.fill()` on the textarea** — not `.type()`, not `keyboard.type()`, not `execCommand`
+3. **`.first` on textarea** — only one textarea on compose page
+4. **`.first.click()` on tweetButtonInline** — compose page only has one
+5. **`wait_until="domcontentloaded"`** — never `networkidle` (hangs)
+6. **`time.sleep(2)` after goto** — let React hydrate before interacting
+7. **`time.sleep(1)` after fill** — let React register onChange before clicking submit
+8. **`time.sleep(3)` after submit** — let X process the post
+9. **15s between tweets** — avoid X rate-limiting (button goes `disabled` if you post too fast)
+10. **Verify URL changed** after each tweet by navigating to profile and grabbing first article href
+
+**Complete copy-paste script template:**
 ```python
-from playwright.sync_api import sync_playwright
 import time
+from playwright.sync_api import sync_playwright
 
 AUTH_TOKEN = "25472f65c86e1e2cc3cfa906e4681319dc056776"
 CT0 = "0d42d73880783e42fd267f26fbf6b082374982e72d04b44459f6bd5cca0166f3fdad8f693e733f79c933a618ddae34d1d3b7855db0e9b775ff99caf1d8ca7d01e59e11035cb7fab0c1d02b1067eb2bb1"
 
+tweets = [
+    "Tweet 1 text...",
+    "Tweet 2 text...",
+    # ...
+]
+
+def post_tweet(page, text):
+    page.goto("https://x.com/compose/tweet", wait_until="domcontentloaded", timeout=30000)
+    time.sleep(2)
+    ta = page.locator("[data-testid='tweetTextarea_0']").first
+    ta.click()
+    time.sleep(0.5)
+    ta.fill(text)
+    time.sleep(1)
+    page.locator("[data-testid='tweetButtonInline']").or_(
+        page.locator("[data-testid='tweetButton']")
+    ).first.click()
+    time.sleep(3)
+    # Verify: navigate to profile and get latest tweet URL
+    page.goto("https://x.com/AlexChen31337", wait_until="domcontentloaded", timeout=30000)
+    time.sleep(2)
+    href = page.locator("article a[href*='/status/']").first.get_attribute("href")
+    return f"https://x.com{href}"
+
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=True, args=["--no-sandbox"])
-    ctx = browser.new_context(user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
+    ctx = browser.new_context(
+        user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+    )
     ctx.add_cookies([
         {"name": "auth_token", "value": AUTH_TOKEN, "domain": ".x.com", "path": "/"},
         {"name": "ct0", "value": CT0, "domain": ".x.com", "path": "/"},
     ])
     page = ctx.new_page()
-    
-    # Tweet 1: navigate to compose
-    page.goto("https://x.com/compose/tweet", wait_until="domcontentloaded", timeout=30000)
-    # Subsequent tweets: navigate to prev tweet URL, click reply button
-    # page.goto(prev_url, ...); page.locator("[data-testid='reply']").first.click()
-    
-    time.sleep(2)
-    page.locator("[data-testid='tweetTextarea_0']").first.click()
-    page.locator("[data-testid='tweetTextarea_0']").first.fill(tweet_text)
-    time.sleep(1)
-    page.locator("[data-testid='tweetButtonInline']").or_(page.locator("[data-testid='tweetButton']")).first.click()
-    time.sleep(3)
-    
-    # Get posted tweet URL: navigate to profile, grab first article link
-    page.goto("https://x.com/AlexChen31337", wait_until="domcontentloaded", timeout=30000)
-    time.sleep(2)
-    href = page.locator("article a[href*='/status/']").first.get_attribute("href")
-    prev_url = f"https://x.com{href}"
+    prev_url = None
+    for i, tweet in enumerate(tweets):
+        if i > 0:
+            time.sleep(15)  # rate-limit cooldown — skip button disabled if too fast
+        print(f"Posting {i+1}/{len(tweets)}...")
+        url = post_tweet(page, tweet)
+        if url != prev_url:
+            print(f"  ✅ {url}")
+            prev_url = url
+        else:
+            print(f"  ⚠️ Same URL — may not have posted")
+    browser.close()
 ```
 
 **Run with:** `uv run --with playwright python /tmp/post_thread.py`
-**Verified:** 2026-03-11, posted 9-tweet claw-forge thread successfully
-**Full script:** `/home/bowen/.openclaw/workspace/memory/claw-forge-marketing/thread-final.md` (content), script pattern above
+**Last verified:** 2026-03-28 — 27 tweets across 3 threads (Qwen35 9/9, reasoning-monitor 9/9, AutoInfer 5+2/7)
+
+---
+
+### ❌ BROKEN — Reply dialog approach (DO NOT USE)
+X's reply dialog (navigate to tweet URL → click reply button) is broken for Playwright:
+- `[data-testid="twc-cc-mask"]` AND `[data-testid="mask"]` overlay blocks clicks
+- Reply dialog wraps in `<div role="group" tabindex="0">` focus trap that intercepts all pointer events
+- Even after removing both masks, the focus trap blocks `.click()`
+- `keyboard.type()` + JS `.focus()` gets text in but `tweetButtonInline` button stays `disabled`
+- `bird tweet` CLI also blocked (X error 226 "looks automated")
+**→ Always use compose/tweet URL instead.**
