@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-03-27T00:01:00+11:00",
-  "last_backup": "2026-03-27",
-  "topic_index": 20,
+  "lastRun": "2026-03-29T00:02:00+11:00",
+  "last_backup": "2026-03-29",
+  "topic_index": 21,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -439,6 +439,20 @@
       "title": "懒人理财经_AI帮你管钱你只管花钱就好",
       "wordCount": 4200,
       "note": "MbD Chinese backup. Awaiting publish instruction from owner."
+    },
+    "daily-2026-03-29": {
+      "name": "The AI Product Manager: Build Better Products Faster with Artificial Intelligence",
+      "status": "backed_up",
+      "category": "ai-product-management",
+      "price": 14,
+      "date": "2026-03-29",
+      "folder": "2026-03-29_ai-product-manager",
+      "githubBacked": true,
+      "wordCount": 8908,
+      "chapters": 12,
+      "coverGenerated": true,
+      "pdfGenerated": true,
+      "note": "Backed up to GitHub. Payhip login blocked by reCAPTCHA v3 - needs manual publish or fresh cookies."
     }
   },
   "twitter": {

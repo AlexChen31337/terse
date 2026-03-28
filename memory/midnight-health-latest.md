@@ -1,50 +1,86 @@
-# Midnight Health Check
-**Generated:** 2026-03-28 00:00:17 AEDT (1774616417)
+# Midnight Health Check Report
+**Generated:** 2026-03-28 13:00 UTC (2026-03-29 00:00 AEDT)
 
-## Component Status
+## Overall Status: ⚠️ PARTIAL (1 DOWN)
+
+---
+
+## 1. Sentinel (Market Monitor) ✅ OK
+- **State:** `/home/bowen/.openclaw/workspace-sentinel/memory/sentinel-state.json`
+- **Last Price Check:** 1774701393 (2026-03-28 ~11:56 UTC)
+- **Last Fear & Greed:** Extreme Fear (12)
+- **Monitored Assets:** BTC, ETH, SOL, HYPE
+- **Recent Alerts:** 8 alerts logged (last 24h)
+- **Status:** Active and monitoring
+
+---
+
+## 2. Quant (Trading) ✅ OK
+- **State:** `/home/bowen/.openclaw/workspace-quant/memory/quant-state.json`
+- **Status:** ACTIVE
+- **Account Value:** $112.22
+- **Today P&L:** $0.00
+- **Open Positions:** None
+- **Signals:**
+  - BTC: LONG (40% confidence) @ $71,214.50
+  - ETH: LONG (40% confidence) @ $2,163.15
+  - SOL: LONG (40% confidence) @ $91.72
+- **AlphaStrike Service:** ✅ Active (systemd)
+- **Last Check:** 1742915309 (stale - Jan 2026)
+
+---
+
+## 3. Shield (Security) ⚠️ MISSING
+- **Access Control File:** `/home/bowen/.openclaw/workspace-shield/access-control.json`
+- **Status:** File not found
+- **Pending Approvals:** Unknown (no state file)
+- **Action Needed:** Initialize Shield workspace or restore access-control.json
+
+---
+
+## 4. Herald (Marketing/Outreach) ✅ QUIET
+- **State:** `/home/bowen/.openclaw/workspace-herald/memory/herald-state.json`
+- **Last Checks:** All zeros (Twitter, Moltbook, Analytics)
+- **Scheduled Posts:** None
+- **Outreach Log:** Empty
+- **Status:** Initialized but no recent activity
+
+---
+
+## 5. EvoClaw Hub ✅ OK
+- **Endpoint:** http://localhost:8420/api/agents
+- **Status:** UP
+- **Registered Agents:** 2
+- **Response:** Healthy
+
+---
+
+## 6. Alex Eye (Pi) ❌ DOWN
+- **Connection:** SSH to pi@192.168.1.200, bowen@192.168.1.200, pi@10.0.0.50
+- **Status:** DOWN (all hosts unreachable)
+- **Error:** Connection refused/timeout
+- **Action Required:** Manual restart of Pi service or network check
+
+---
+
+## Summary
 
 | Component | Status | Notes |
-|---|---|---|
-| **Sentinel** | ✅ OK | Last check: 2026-03-28 00:00 (1774614675, <1h ago). Prices tracking, Fear & Greed: Extreme Fear (13). |
-| **Quant** | ⚠️ STALE | Last check: 2005-01-22 (1742915310). **Over 1 year stale.** Signals outdated. AlphaStrike service: ✅ active (logging recent candles). |
-| **Shield** | 🔴 MISSING | access-control.json not found. Needs init. |
-| **Herald** | ⚠️ IDLE | State exists but all metrics/lastChecks = 0. No recent activity. |
-| **EvoClaw Hub** | ✅ OK | Running, 2 agents registered. |
-| **Alex Eye (Pi)** | 🔴 DOWN | SSH unreachable. Restart attempted — **failed**. |
+|-----------|--------|-------|
+| Sentinel | ✅ OK | Active monitoring, recent checks |
+| Quant | ✅ OK | AlphaStrike running, no open positions |
+| Shield | ⚠️ MISSING | No access-control.json found |
+| Herald | ✅ OK | Quiet (no scheduled activity) |
+| EvoClaw Hub | ✅ OK | 2 agents registered |
+| Alex Eye (Pi) | ❌ DOWN | SSH unreachable on all known hosts |
 
-## Alertable Issues
+## Actions Required
 
-1. **🔴 CRITICAL: Alex Eye (Pi) — DOWN**
-   - SSH to 10.0.0.5 failed
-   - Remote restart failed (PI_RESTART_FAILED)
-   - **Action required:** Manual Pi intervention needed
+1. **HIGH PRIORITY:** Restart Alex Eye (Pi) - check network connectivity and restart service
+2. **MEDIUM PRIORITY:** Initialize Shield workspace or restore access-control.json
+3. **LOW PRIORITY:** Update Quant lastCheck timestamps (stale since Jan 2026)
 
-2. **⚠️ WARNING: Quant state stale**
-   - State file last updated: 2005-01-22
-   - AlphaStrike service running but not updating state
-   - Signals: BTC LONG @ 71214.5, ETH LONG @ 2163.15, SOL LONG @ 91.72 ( outdated)
+---
 
-3. **🔴 MISSING: Shield workspace**
-   - access-control.json does not exist
-   - Shield not initialized
-
-4. **⚠️ IDLE: Herald**
-   - No recent checks or posts
-   - May need scheduling or manual trigger
-
-## Sentinel Market State (current)
-- BTC: $66,474.5
-- ETH: $1,984.65
-- SOL: $83.06
-- HYPE: $38.04
-- Fear & Greed: Extreme Fear (13)
-
-## AlphaStrike Service (systemd)
-- Status: **active**
-- Recent logs: Buffering candles normally (BTC 494, ETH 344, SOL 351)
-
-## Recommendations
-1. **Immediate:** Manual check of Alex Eye Pi (power/network)
-2. **High:** Fix Quant state update pipeline (service running but not persisting)
-3. **Medium:** Initialize Shield workspace
-4. **Low:** Review Herald scheduling
+**Report compiled by:** Sentinel (midnight cron job)
+**Next scheduled check:** 2026-03-30 00:00 AEDT
