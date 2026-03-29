@@ -1,86 +1,103 @@
-# Midnight Health Check Report
-**Generated:** 2026-03-28 13:00 UTC (2026-03-29 00:00 AEDT)
-
-## Overall Status: ⚠️ PARTIAL (1 DOWN)
-
----
-
-## 1. Sentinel (Market Monitor) ✅ OK
-- **State:** `/home/bowen/.openclaw/workspace-sentinel/memory/sentinel-state.json`
-- **Last Price Check:** 1774701393 (2026-03-28 ~11:56 UTC)
-- **Last Fear & Greed:** Extreme Fear (12)
-- **Monitored Assets:** BTC, ETH, SOL, HYPE
-- **Recent Alerts:** 8 alerts logged (last 24h)
-- **Status:** Active and monitoring
-
----
-
-## 2. Quant (Trading) ✅ OK
-- **State:** `/home/bowen/.openclaw/workspace-quant/memory/quant-state.json`
-- **Status:** ACTIVE
-- **Account Value:** $112.22
-- **Today P&L:** $0.00
-- **Open Positions:** None
-- **Signals:**
-  - BTC: LONG (40% confidence) @ $71,214.50
-  - ETH: LONG (40% confidence) @ $2,163.15
-  - SOL: LONG (40% confidence) @ $91.72
-- **AlphaStrike Service:** ✅ Active (systemd)
-- **Last Check:** 1742915309 (stale - Jan 2026)
-
----
-
-## 3. Shield (Security) ⚠️ MISSING
-- **Access Control File:** `/home/bowen/.openclaw/workspace-shield/access-control.json`
-- **Status:** File not found
-- **Pending Approvals:** Unknown (no state file)
-- **Action Needed:** Initialize Shield workspace or restore access-control.json
-
----
-
-## 4. Herald (Marketing/Outreach) ✅ QUIET
-- **State:** `/home/bowen/.openclaw/workspace-herald/memory/herald-state.json`
-- **Last Checks:** All zeros (Twitter, Moltbook, Analytics)
-- **Scheduled Posts:** None
-- **Outreach Log:** Empty
-- **Status:** Initialized but no recent activity
-
----
-
-## 5. EvoClaw Hub ✅ OK
-- **Endpoint:** http://localhost:8420/api/agents
-- **Status:** UP
-- **Registered Agents:** 2
-- **Response:** Healthy
-
----
-
-## 6. Alex Eye (Pi) ❌ DOWN
-- **Connection:** SSH to pi@192.168.1.200, bowen@192.168.1.200, pi@10.0.0.50
-- **Status:** DOWN (all hosts unreachable)
-- **Error:** Connection refused/timeout
-- **Action Required:** Manual restart of Pi service or network check
+# Midnight Health Report
+**Generated:** 2026-03-30 00:00 AEDT (Australia/Sydney)
 
 ---
 
 ## Summary
 
 | Component | Status | Notes |
-|-----------|--------|-------|
-| Sentinel | ✅ OK | Active monitoring, recent checks |
-| Quant | ✅ OK | AlphaStrike running, no open positions |
-| Shield | ⚠️ MISSING | No access-control.json found |
-| Herald | ✅ OK | Quiet (no scheduled activity) |
-| EvoClaw Hub | ✅ OK | 2 agents registered |
-| Alex Eye (Pi) | ❌ DOWN | SSH unreachable on all known hosts |
-
-## Actions Required
-
-1. **HIGH PRIORITY:** Restart Alex Eye (Pi) - check network connectivity and restart service
-2. **MEDIUM PRIORITY:** Initialize Shield workspace or restore access-control.json
-3. **LOW PRIORITY:** Update Quant lastCheck timestamps (stale since Jan 2026)
+|---|---|---|
+| Sentinel | ✅ OK | Active, last check ~24h ago |
+| AlphaStrike | ✅ RUNNING | Cycle 54 at 23:59 |
+| Quant State | ⚠️ STALE | FearHarvester last run 2026-02-27 (31 days ago) |
+| Shield | ✅ OK | State clean, no blocked attempts |
+| Herald | ✅ OK | Idle, no active campaigns |
+| EvoClaw Hub | 🔴 DOWN | MQTT broker (mosquitto) not installed — hub fails to start |
+| Alex Eye (Pi) | 🔴 UNREACHABLE | No response on .local or known IPs |
 
 ---
 
-**Report compiled by:** Sentinel (midnight cron job)
-**Next scheduled check:** 2026-03-30 00:00 AEDT
+## 1. Sentinel
+
+- **State:** Active
+- **Last Price Check:** timestamp 1774788362 (~24h ago)
+- **Last Prices:** BTC $66,714 | ETH $1,998 | SOL $82.22 | HYPE $39.18
+- **Fear & Greed:** Extreme Fear (9/100) — unchanged since last check
+- **Recent Alerts Fired:** btc_65000, btc_60000, hype_25, hype_30 (all fired ~18–24h ago)
+- **No new alerts in last 24h** — market appears stable at low levels
+
+---
+
+## 2. Quant / AlphaStrike
+
+- **AlphaStrike Service:** ✅ `active` (systemd user service)
+- **Last Log:** Cycle 54 at 23:59:58 — Balance $10,000 | 0 positions | 0 trades
+- **Account Value (state):** $112.22 (Hyperliquid paper account)
+- **Open Positions:** None
+- **Last Signals:** BTC/ETH/SOL all LONG @ confidence 0.4 (dated 2026-03-26)
+- **⚠️ FearHarvester:** Last run **2026-02-27** — 31 days stale. Not running.
+
+---
+
+## 3. Shield
+
+- **access-control.json:** Not found at workspace-shield root (file not configured yet)
+- **shield-state.json:** Clean — 0 blocked attempts, no active alerts
+- **Status:** No issues detected; shield workspace minimal
+
+---
+
+## 4. Herald
+
+- **State:** Idle
+- **Last Posts:** None recorded
+- **Scheduled Posts:** 0
+- **Outreach Log:** Empty
+- **Status:** Dormant, no active campaigns
+
+---
+
+## 5. EvoClaw Hub
+
+- **Status:** 🔴 DOWN (failed to restart)
+- **Root Cause:** `mosquitto` MQTT broker is not installed — hub requires it on `localhost:1883`
+- **Port 8420:** Closed
+- **Restart attempt:** Failed (exit code 1 — MQTT connect refused)
+- **Fix required:** `sudo apt install mosquitto` — requires elevated permissions / manual action
+
+---
+
+## 6. Alex Eye (Pi)
+
+- **Status:** 🔴 UNREACHABLE
+- **Tried:** `alex-eye.local`, `raspberrypi.local`, IPs 10.0.0.50–52, 10.0.0.100, 192.168.1.50
+- **All timed out / no response**
+- **Action required:** Manual check / power cycle
+
+---
+
+## Disk
+
+| Filesystem | Size | Used | Avail | Use% | Mount |
+|---|---|---|---|---|---|
+| /dev/nvme0n1p2 | 937G | 540G | 350G | 61% | / |
+| /media/DATA | N/A | — | — | — | not mounted |
+| /data2 | N/A | — | — | — | not mounted |
+
+**Note:** /media/DATA and /data2 not accessible at check time.
+
+---
+
+## Actions Taken
+
+- Attempted `systemctl --user start evoclaw-hub.service` → **failed** (MQTT dependency)
+- Attempted SSH to Pi on all known addresses → **all unreachable**
+- Telegam alert sent to Bowen for Hub + Pi
+
+---
+
+## Action Items for Bowen
+
+1. **EvoClaw Hub:** Run `sudo apt install mosquitto && sudo systemctl enable --now mosquitto` to restore hub
+2. **Alex Eye Pi:** Check power/network — Pi unreachable on all addresses
+3. **FearHarvester:** Investigate why it stopped running (last: 2026-02-27) — may need cron restart or service fix
