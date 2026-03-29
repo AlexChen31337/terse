@@ -82,6 +82,12 @@ text, letters, numbers, words, characters, fonts, typography, logo, title, subti
 - Steps: 20, CFG: 3.5, sampler: euler, scheduler: simple
 - Cover size: 768×1024
 
+## Autoresearch Hardware Rules (NON-NEGOTIABLE)
+- **Nemotron-Cascade-2-30B-A3B autoresearch: RTX 3070 8GB ONLY** — same hardware as Qwen, apples-to-apples
+- **NO GPU server (10.0.0.44) for autoresearch** — even though 42GB VRAM available there
+- **Nemotron IQ2_XXS is 17GB** → always CPU-only on XPS (exceeds 8GB VRAM)
+- **Qwen3.5-35B all-time best:** 29.899 tok/s (IQ2_XXS, n_gpu=27, phase 12)
+
 ## Intelligent Router
 
 - **Config path:** `~/.openclaw/workspace/skills/intelligent-router/config.json`

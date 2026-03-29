@@ -1,7 +1,7 @@
 {
   "lastRun": "2026-03-29T00:02:00+11:00",
   "last_backup": "2026-03-29",
-  "topic_index": 21,
+  "topic_index": 22,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -453,6 +453,18 @@
       "coverGenerated": true,
       "pdfGenerated": true,
       "note": "Backed up to GitHub. Payhip login blocked by reCAPTCHA v3 - needs manual publish or fresh cookies."
+    },
+    "mbd-daily-2026-03-29": {
+      "name": "AI副业指南_当全世界都在卷的时候聪明人已经让AI替自己上班了",
+      "status": "backed_up",
+      "category": "副业/AI",
+      "date": "2026-03-29",
+      "githubBacked": true,
+      "coverGenerated": true,
+      "folder": "2026-03-29_AI副业指南_当全世界都在卷的时候聪明人已经让AI替自己上班了",
+      "title": "AI副业指南_当全世界都在卷的时候聪明人已经让AI替自己上班了",
+      "wordCount": 4200,
+      "note": "MbD Chinese backup. Awaiting publish instruction from owner."
     }
   },
   "twitter": {
@@ -481,5 +493,5 @@
     "status": "not_started",
     "reason": "Bot API cannot create channels"
   },
-  "mbd_last_backup": "2026-03-28"
+  "mbd_last_backup": "2026-03-29"
 }

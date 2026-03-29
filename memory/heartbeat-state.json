@@ -1,4 +1,31 @@
 {
-  "lastRSICheck": "2026-03-28T22:26+11:00",
-  "lastBlogCheck": "2026-03-28T22:26+11:00"
+  "lastRSICheck": "2026-03-29T14:28:05.883114Z",
+  "healthScore": 0.101,
+  "lastBlogCheck": "2026-03-29T03:27:00Z",
+  "newArticlesCount": 2,
+  "githubReleases": {
+    "claw-chain": [],
+    "evoclaw": [
+      "v0.6.0",
+      "v0.6.1"
+    ]
+  },
+  "trendingRepos": [
+    "langchain-ai/langchain 131416",
+    "microsoft/autogen 56347",
+    "crewAIInc/crewAI 47437",
+    "langchain-ai/langgraph 27790",
+    "deepset-ai/haystack 24639"
+  ],
+  "openPRs": {
+    "claw-chain": [],
+    "evoclaw": []
+  },
+  "rsiCycleResults": {
+    "healthScore": 0.101,
+    "patternsFound": 6,
+    "proposalsGenerated": 5,
+    "autoDeployed": 0,
+    "awaitingReview": 0
+  }
 }
