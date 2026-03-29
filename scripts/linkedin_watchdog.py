@@ -92,12 +92,45 @@ def classify_message(sender: str, preview: str) -> str:
     return "ask"
 
 
+def make_llm():
+    """Return a browser-use compatible LLM using GLM-4.7 via proxy-6 (Anthropic format).
+
+    Falls back to langchain_openai if langchain_anthropic is unavailable.
+    Gemini key is BANNED — never use google.generativeai here.
+    """
+    # proxy-6 GLM-4.7 via Anthropic-compatible SDK
+    base_url = "https://api.z.ai/api/anthropic"
+    api_key = "5798a068323e4e06be0ffd76b36ede2c.wBE6lE4v0bULJVSz"
+
+    try:
+        from langchain_anthropic import ChatAnthropic
+        return ChatAnthropic(
+            model="glm-4.7",
+            anthropic_api_key=api_key,
+            anthropic_api_url=base_url,
+            max_tokens=4096,
+        )
+    except ImportError:
+        pass
+
+    # Fallback: openai-compat endpoint
+    try:
+        from langchain_openai import ChatOpenAI
+        return ChatOpenAI(
+            model="glm-4.7",
+            openai_api_key=api_key,
+            openai_api_base=base_url + "/v1",
+            max_tokens=4096,
+        )
+    except ImportError:
+        raise RuntimeError("Neither langchain_anthropic nor langchain_openai available. "
+                           "Run: uv pip install langchain-anthropic")
+
+
 async def check_linkedin():
     try:
-        import sys as _sys
-        _sys.path.insert(0, str(WORKSPACE / "skills/browser-use/scripts"))
-        from run_agent import stealth_session, gemini_llm
-        from browser_use import Agent
+        from browser_use import Agent, BrowserSession
+        from playwright.async_api import async_playwright
     except ImportError as e:
         print(f"[linkedin_watchdog] browser-use import failed: {e}", file=sys.stderr)
         return []
@@ -117,8 +150,8 @@ Go to LinkedIn and check messages for Alex Chen.
 6. Return ONLY the JSON array, nothing else.
 """
 
-    llm = gemini_llm()
-    session = stealth_session(inject_cookies=None)
+    llm = make_llm()
+    session = BrowserSession(headless=True)
 
     agent = Agent(
         task=task,
