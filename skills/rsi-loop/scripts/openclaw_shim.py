@@ -198,7 +198,7 @@ ISSUE_META = {
     "tool_not_found": {"task_type": "tool_call", "success": False, "quality": 1},
     "tool_error": {"task_type": "tool_call", "success": False, "quality": 2},
     "session_reset": {"task_type": "session_management", "success": False, "quality": 1},
-    "context_loss": {"task_type": "session_management", "success": True, "quality": 3},
+    "context_loss": {"task_type": "session_management", "success": True, "quality": 4},  # compaction is expected, not a failure
     "model_fallback": {"task_type": "model_routing", "success": False, "quality": 3},
     "rate_limit": {"task_type": "api_call", "success": False, "quality": 2},
     "timeout": {"task_type": "tool_call", "success": False, "quality": 2},
@@ -212,7 +212,7 @@ def load_shim_state() -> dict:
     if SHIM_STATE_FILE.exists():
         with open(SHIM_STATE_FILE) as f:
             return json.load(f)
-    return {"last_scan_ts": 0, "last_scan_iso": "", "events_logged": 0}
+    return {"last_scan_ts": 0, "last_scan_iso": "", "events_logged": 0, "file_offsets": {}}
 
 
 def save_shim_state(state: dict):
@@ -233,19 +233,26 @@ def parse_since(since_str: str) -> float:
     return now - (value * multiplier.get(unit, 3600))
 
 
-def scan_session_file(log_file: Path, is_active: bool = False) -> list[tuple[str, str, str]]:
-    """Scan a single session JSONL file. Returns [(issue_type, detail, timestamp), ...].
+def scan_session_file(log_file: Path, is_active: bool = False,
+                      start_line: int = 0) -> tuple[list[tuple[str, str, str]], int]:
+    """Scan a single session JSONL file. Returns (hits, lines_read).
 
     Args:
         log_file: Path to the JSONL session log.
         is_active: True if this is the currently active session. Used to suppress
                    false positives from in-flight user messages at end-of-file.
+        start_line: Line offset to start from (for incremental scanning — avoids
+                    re-counting historical events on every cron run).
     """
     hits = []
+    lines_read = 0
     try:
         entries: list[dict] = []
         with open(log_file) as f:
+            for _ in range(start_line):
+                f.readline()  # skip already-scanned lines
             for line in f:
+                lines_read += 1
                 line = line.strip()
                 if not line:
                     continue
@@ -321,7 +328,7 @@ def scan_session_file(log_file: Path, is_active: bool = False) -> list[tuple[str
 
     except Exception as e:
         print(f"Error scanning {log_file}: {e}", file=sys.stderr)
-    return hits
+    return hits, lines_read
 
 
 def aggregate_hits(all_hits: dict[str, list[tuple[str, str, str]]]) -> list[dict]:
@@ -373,13 +380,63 @@ def aggregate_hits(all_hits: dict[str, list[tuple[str, str, str]]]) -> list[dict
     return events[:MAX_EVENTS_PER_SCAN]
 
 
-def scan_session_logs(since_ts: float) -> list[dict]:
-    """Scan OpenClaw session JSONL files for structural errors, return aggregated events."""
+def _is_cron_or_bench_session(log_file: Path) -> bool:
+    """Return True if this session log belongs to a cron agent or bench subagent.
+
+    Cron sessions generate intentional exec SIGTERMs (long-running bench, background jobs).
+    Counting these as 'tool_call failures' is noise, not signal.
+
+    Heuristic: scan the first 20 lines for cron/subagent indicators.
+    """
+    _CRON_INDICATORS = (
+        "cron:",      # session key pattern for cron agents
+        "heartbeat",  # heartbeat sessions
+        "subagent",   # subagent sessions
+    )
+    # Check session key in filename (OpenClaw uses agent:main:cron:UUID format)
+    name = log_file.stem.lower()
+    for indicator in _CRON_INDICATORS:
+        if indicator in name:
+            return True
+
+    # Peek at first few lines for cron-like content
+    try:
+        with open(log_file) as f:
+            head = ""
+            for _ in range(20):
+                head += f.readline()
+        head_lower = head.lower()
+        # Cron agents usually start with a heartbeat prompt or HEARTBEAT_OK
+        if "heartbeat" in head_lower or "cron" in head_lower:
+            return True
+        # RSI shim scanner session (self-referential) — skip
+        if "rsi" in head_lower and "shim" in head_lower:
+            return True
+        # Bench/autoresearch sessions running llama-bench
+        if "llama-bench" in head_lower or "autoresearch" in head_lower or "bench.py" in head_lower:
+            return True
+    except Exception:
+        pass
+
+    return False
+
+
+def scan_session_logs(since_ts: float, file_offsets: dict | None = None) -> tuple[list[dict], dict]:
+    """Scan OpenClaw session JSONL files for structural errors, return (events, updated_offsets).
+
+    Uses per-file line offsets to avoid re-scanning already-processed lines.
+    This prevents a single long-running session from polluting the health score
+    on every cron run.
+    """
+    if file_offsets is None:
+        file_offsets = {}
+
     if not OPENCLAW_SESSION_DIR.exists():
         print(f"Session dir not found: {OPENCLAW_SESSION_DIR}", file=sys.stderr)
-        return []
+        return [], file_offsets
 
     all_hits: dict[str, list[tuple[str, str, str]]] = {}
+    new_offsets = dict(file_offsets)  # copy to update
 
     # Determine which file is the active session (most recently modified, within last 5 min)
     active_cutoff = time.time() - 300  # 5 minutes
@@ -403,12 +460,21 @@ def scan_session_logs(since_ts: float) -> list[dict]:
         except OSError:
             continue
 
+        # ── Skip cron/bench/subagent sessions — they generate expected SIGTERMs ──
+        # Cron sessions: their exec tool calls time out intentionally (bench, background jobs).
+        # Logging these as "tool_call failures" poisons the health score with noise.
+        if _is_cron_or_bench_session(log_file):
+            continue
+
         is_active = (log_file == active_file)
-        hits = scan_session_file(log_file, is_active=is_active)
+        # Incremental scan: only read new lines since last scan
+        start_line = file_offsets.get(log_file.name, 0)
+        hits, lines_read = scan_session_file(log_file, is_active=is_active, start_line=start_line)
+        new_offsets[log_file.name] = start_line + lines_read
         if hits:
             all_hits[log_file.name] = hits
 
-    return aggregate_hits(all_hits)
+    return aggregate_hits(all_hits), new_offsets
 
 
 def scan_gateway_logs(since_ts: float) -> list[dict]:
@@ -481,7 +547,10 @@ def cmd_scan(args):
     print(f"Scanning since: {since_iso}")
 
     events = []
-    events.extend(scan_session_logs(since_ts))
+    file_offsets = state.get("file_offsets", {})
+    session_events, updated_offsets = scan_session_logs(since_ts, file_offsets)
+    state["file_offsets"] = updated_offsets
+    events.extend(session_events)
     events.extend(scan_gateway_logs(since_ts))
 
     if not events:
