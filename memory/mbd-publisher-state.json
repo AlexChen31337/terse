@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-03-29T00:02:00+11:00",
+  "lastRun": "2026-03-30T09:01:00+11:00",
   "last_backup": "2026-03-29",
-  "topic_index": 22,
+  "topic_index": 23,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -465,6 +465,18 @@
       "title": "AI副业指南_当全世界都在卷的时候聪明人已经让AI替自己上班了",
       "wordCount": 4200,
       "note": "MbD Chinese backup. Awaiting publish instruction from owner."
+    },
+    "mbd-daily-2026-03-30": {
+      "name": "提示词炼金术_用一句话指挥AI把它调教成你的专属印钞机2026终极版",
+      "status": "backed_up",
+      "category": "AI/技能",
+      "date": "2026-03-30",
+      "githubBacked": true,
+      "coverGenerated": false,
+      "folder": "2026-03-30_提示词炼金术_用一句话指挥AI把它调教成你的专属印钞机2026终极版",
+      "title": "提示词炼金术_用一句话指挥AI把它调教成你的专属印钞机2026终极版",
+      "wordCount": 4500,
+      "note": "MbD Chinese backup. No cover (ComfyUI unreachable). Awaiting publish instruction from owner."
     }
   },
   "twitter": {
@@ -493,5 +505,5 @@
     "status": "not_started",
     "reason": "Bot API cannot create channels"
   },
-  "mbd_last_backup": "2026-03-29"
+  "mbd_last_backup": "2026-03-30"
 }

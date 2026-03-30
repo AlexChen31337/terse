@@ -93,44 +93,58 @@ def classify_message(sender: str, preview: str) -> str:
 
 
 def make_llm():
-    """Return a browser-use compatible LLM using GLM-4.7 via proxy-6 (Anthropic format).
+    """Return a browser-use compatible LLM.
 
-    Falls back to langchain_openai if langchain_anthropic is unavailable.
-    Gemini key is BANNED — never use google.generativeai here.
+    Uses ChatOpenAI with Groq free tier (llama-3.3-70b-versatile) — no API key needed beyond Groq.
+    Fallback: z.ai GLM-4.7 via OpenAI-compat.
+    browser-use 0.1.x requires structured output; Groq supports it.
     """
-    # proxy-6 GLM-4.7 via Anthropic-compatible SDK
-    base_url = "https://api.z.ai/api/anthropic"
-    api_key = "5798a068323e4e06be0ffd76b36ede2c.wBE6lE4v0bULJVSz"
+    import os
 
-    try:
-        from langchain_anthropic import ChatAnthropic
-        return ChatAnthropic(
-            model="glm-4.7",
-            anthropic_api_key=api_key,
-            anthropic_api_url=base_url,
-            max_tokens=4096,
-        )
-    except ImportError:
-        pass
+    # Primary: Groq free tier (llama-3.3-70b-versatile) — fast and supports structured output
+    groq_key = os.environ.get("GROQ_API_KEY", "")
+    if not groq_key:
+        # Read from openclaw memory files if available
+        import json
+        try:
+            cfg_path = os.path.expanduser("~/.openclaw/workspace/memory/api-keys.json")
+            if os.path.exists(cfg_path):
+                keys = json.loads(open(cfg_path).read())
+                groq_key = keys.get("GROQ_API_KEY", "")
+        except Exception:
+            pass
 
-    # Fallback: openai-compat endpoint
-    try:
-        from langchain_openai import ChatOpenAI
+    # Fallback: z.ai OpenAI-compat endpoint with known key
+    z_ai_key = "5798a068323e4e06be0ffd76b36ede2c.wBE6lE4v0bULJVSz"
+    z_ai_base = "https://api.z.ai/api/openai/v1"
+
+    from langchain_openai import ChatOpenAI
+    if groq_key:
         return ChatOpenAI(
-            model="glm-4.7",
-            openai_api_key=api_key,
-            openai_api_base=base_url + "/v1",
+            model="llama-3.3-70b-versatile",
+            openai_api_key=groq_key,
+            openai_api_base="https://api.groq.com/openai/v1",
             max_tokens=4096,
         )
-    except ImportError:
-        raise RuntimeError("Neither langchain_anthropic nor langchain_openai available. "
-                           "Run: uv pip install langchain-anthropic")
+    # Fallback: z.ai OpenAI-compat (GLM-4.7)
+    return ChatOpenAI(
+        model="glm-4.7",
+        openai_api_key=z_ai_key,
+        openai_api_base=z_ai_base,
+        max_tokens=4096,
+    )
 
 
 async def check_linkedin():
     try:
-        from browser_use import Agent, BrowserSession
-        from playwright.async_api import async_playwright
+        from browser_use import Agent
+        # BrowserSession was added in 0.2.x; use Browser/BrowserConfig for 0.1.x
+        try:
+            from browser_use import BrowserSession
+            _use_browser_session = True
+        except ImportError:
+            from browser_use import Browser, BrowserConfig
+            _use_browser_session = False
     except ImportError as e:
         print(f"[linkedin_watchdog] browser-use import failed: {e}", file=sys.stderr)
         return []
@@ -151,14 +165,22 @@ Go to LinkedIn and check messages for Alex Chen.
 """
 
     llm = make_llm()
-    session = BrowserSession(headless=True)
-
-    agent = Agent(
-        task=task,
-        llm=llm,
-        browser_session=session,
-        sensitive_data={"linkedin_password": LINKEDIN_PASSWORD},
-    )
+    if _use_browser_session:
+        session = BrowserSession(headless=True)
+        agent = Agent(
+            task=task,
+            llm=llm,
+            browser_session=session,
+            sensitive_data={"linkedin_password": LINKEDIN_PASSWORD},
+        )
+    else:
+        browser = Browser(config=BrowserConfig(headless=True))
+        agent = Agent(
+            task=task,
+            llm=llm,
+            browser=browser,
+            sensitive_data={"linkedin_password": LINKEDIN_PASSWORD},
+        )
 
     try:
         history = await agent.run(max_steps=20)
