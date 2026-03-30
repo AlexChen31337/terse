@@ -1,5 +1,6 @@
 # Midnight Health Report
-**Generated:** 2026-03-30 00:00 AEDT (Australia/Sydney)
+**Generated:** 2026-03-31 00:00 AEDT (2026-03-30 13:00 UTC)
+**Run by:** Sentinel (cron job)
 
 ---
 
@@ -7,97 +8,62 @@
 
 | Component | Status | Notes |
 |---|---|---|
-| Sentinel | ✅ OK | Active, last check ~24h ago |
-| AlphaStrike | ✅ RUNNING | Cycle 54 at 23:59 |
-| Quant State | ⚠️ STALE | FearHarvester last run 2026-02-27 (31 days ago) |
-| Shield | ✅ OK | State clean, no blocked attempts |
-| Herald | ✅ OK | Idle, no active campaigns |
-| EvoClaw Hub | 🔴 DOWN | MQTT broker (mosquitto) not installed — hub fails to start |
-| Alex Eye (Pi) | 🔴 UNREACHABLE | No response on .local or known IPs |
+| Sentinel | ✅ OK | 1 alert in last 24h |
+| Quant State | ⚠️ STALE | Last check 2026-03-26 (5 days ago) |
+| AlphaStrike | 🔴 DOWN | WorkDir missing: `/media/DATA/tmp/alphastrike-v2` |
+| Shield | ⚠️ MISSING | `access-control.json` not found |
+| Herald | ✅ OK | No activity (fresh state) |
+| EvoClaw Hub (:8420) | 🔴 DOWN | MQTT broker (mosquitto) not running |
+| Alex Eye (Pi) | 🔴 DOWN | SSH unreachable (alexeye.local / raspberrypi.local) |
 
 ---
 
 ## 1. Sentinel
-
-- **State:** Active
-- **Last Price Check:** timestamp 1774788362 (~24h ago)
-- **Last Prices:** BTC $66,714 | ETH $1,998 | SOL $82.22 | HYPE $39.18
-- **Fear & Greed:** Extreme Fear (9/100) — unchanged since last check
-- **Recent Alerts Fired:** btc_65000, btc_60000, hype_25, hype_30 (all fired ~18–24h ago)
-- **No new alerts in last 24h** — market appears stable at low levels
-
----
+- **Status:** ✅ OK
+- **Last prices:** BTC $67,887 | ETH $2,073 | SOL $84.53 | HYPE $38.25
+- **Fear & Greed:** Extreme Fear (8)
+- **Last price check:** Recent (within normal window)
+- **Alerts last 24h:** 1 — `btc_67500` at 22:17
 
 ## 2. Quant / AlphaStrike
-
-- **AlphaStrike Service:** ✅ `active` (systemd user service)
-- **Last Log:** Cycle 54 at 23:59:58 — Balance $10,000 | 0 positions | 0 trades
-- **Account Value (state):** $112.22 (Hyperliquid paper account)
-- **Open Positions:** None
-- **Last Signals:** BTC/ETH/SOL all LONG @ confidence 0.4 (dated 2026-03-26)
-- **⚠️ FearHarvester:** Last run **2026-02-27** — 31 days stale. Not running.
-
----
+- **Quant state:** ⚠️ STALE — last check was 2026-03-26T01:21 UTC (5 days ago, signals outdated)
+- **Account value:** $112.22 | Today P&L: $0.00 | Open positions: 0
+- **AlphaStrike service:** 🔴 DOWN
+  - Error: `Failed to spawn 'start' task: No such file or directory`
+  - Root cause: WorkDir `/media/DATA/tmp/alphastrike-v2` does not exist
+  - `/media/DATA` IS mounted (shows data) but `tmp/alphastrike-v2` directory is missing
+  - The directory may have been deleted or never recreated after a reboot
 
 ## 3. Shield
-
-- **access-control.json:** Not found at workspace-shield root (file not configured yet)
-- **shield-state.json:** Clean — 0 blocked attempts, no active alerts
-- **Status:** No issues detected; shield workspace minimal
-
----
+- **Status:** ⚠️ MISSING
+- `access-control.json` not found at `/home/bowen/.openclaw/workspace-shield/`
+- No pending approvals detected (file absent)
 
 ## 4. Herald
+- **Status:** ✅ OK (idle)
+- State: empty/fresh (no posts, no outreach, no alerts)
 
-- **State:** Idle
-- **Last Posts:** None recorded
-- **Scheduled Posts:** 0
-- **Outreach Log:** Empty
-- **Status:** Dormant, no active campaigns
-
----
-
-## 5. EvoClaw Hub
-
-- **Status:** 🔴 DOWN (failed to restart)
-- **Root Cause:** `mosquitto` MQTT broker is not installed — hub requires it on `localhost:1883`
-- **Port 8420:** Closed
-- **Restart attempt:** Failed (exit code 1 — MQTT connect refused)
-- **Fix required:** `sudo apt install mosquitto` — requires elevated permissions / manual action
-
----
+## 5. EvoClaw Hub (:8420)
+- **Status:** 🔴 DOWN — restart failed
+- Root cause: MQTT broker (mosquitto) not running (inactive/not installed)
+- Error: `connect: connection refused` on `tcp://0.0.0.0:1883`
+- `evoclaw-hub.service` is enabled but failed
+- **Fix needed:** Start mosquitto service or configure EvoClaw to skip MQTT
 
 ## 6. Alex Eye (Pi)
-
-- **Status:** 🔴 UNREACHABLE
-- **Tried:** `alex-eye.local`, `raspberrypi.local`, IPs 10.0.0.50–52, 10.0.0.100, 192.168.1.50
-- **All timed out / no response**
-- **Action required:** Manual check / power cycle
-
----
-
-## Disk
-
-| Filesystem | Size | Used | Avail | Use% | Mount |
-|---|---|---|---|---|---|
-| /dev/nvme0n1p2 | 937G | 540G | 350G | 61% | / |
-| /media/DATA | N/A | — | — | — | not mounted |
-| /data2 | N/A | — | — | — | not mounted |
-
-**Note:** /media/DATA and /data2 not accessible at check time.
+- **Status:** 🔴 DOWN
+- SSH unreachable at `alexeye.local` and `raspberrypi.local`
+- Cannot restart remotely — requires physical check or network investigation
 
 ---
 
 ## Actions Taken
-
-- Attempted `systemctl --user start evoclaw-hub.service` → **failed** (MQTT dependency)
-- Attempted SSH to Pi on all known addresses → **all unreachable**
-- Telegam alert sent to Bowen for Hub + Pi
+- Attempted `systemctl --user restart evoclaw-hub.service` → FAILED (MQTT dependency)
+- Telegram alert sent to Bowen (2069029798) for all DOWN components
 
 ---
 
-## Action Items for Bowen
-
-1. **EvoClaw Hub:** Run `sudo apt install mosquitto && sudo systemctl enable --now mosquitto` to restore hub
-2. **Alex Eye Pi:** Check power/network — Pi unreachable on all addresses
-3. **FearHarvester:** Investigate why it stopped running (last: 2026-02-27) — may need cron restart or service fix
+## Disk Status
+- `/`: 560G used / 937G total (63%) — OK
+- `/media/DATA`: mounted, has content (playwright profiles, clawd dir)
+- `/data2`: not mounted / not present

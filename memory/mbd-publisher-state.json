@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-03-30T09:01:00+11:00",
+  "lastRun": "2026-03-31T00:15:00+11:00",
   "last_backup": "2026-03-29",
-  "topic_index": 23,
+  "topic_index": 24,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -477,6 +477,22 @@
       "title": "提示词炼金术_用一句话指挥AI把它调教成你的专属印钞机2026终极版",
       "wordCount": 4500,
       "note": "MbD Chinese backup. No cover (ComfyUI unreachable). Awaiting publish instruction from owner."
+    },
+    "daily-2026-03-31": {
+      "name": "The AI Marketing Machine: Build a Revenue-Generating Content Engine with Artificial Intelligence",
+      "status": "published",
+      "category": "ai-marketing",
+      "price": 14,
+      "date": "2026-03-31",
+      "folder": "2026-03-31_ai-marketing-machine",
+      "payhipUrl": "https://payhip.com/b/xcpEz",
+      "coverUrl": "fallback-cover-en-current",
+      "githubBacked": true,
+      "wordCount": 9941,
+      "chapters": 13,
+      "coverGenerated": false,
+      "pdfGenerated": true,
+      "note": "Auto-published to Payhip. Backed up to GitHub. ComfyUI unreachable - used fallback cover."
     }
   },
   "twitter": {

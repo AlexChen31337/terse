@@ -1,15 +1,21 @@
-# Nightly Health Check — 2026-03-30 00:06 AEDT
+# Nightly Health Check
+**Date:** 2026-03-31 00:06 AEDT (2026-03-30 13:06 UTC)
 
-| Component     | Status                                         |
-|---------------|------------------------------------------------|
-| AlphaStrike   | ✅ active                                      |
-| EvoClaw Hub   | 🔴 DOWN (no response on :8420)                 |
-| GPU Server    | ✅ online — RTX 3090: 38/24576 MiB · RTX 3080: 15/10240 MiB · RTX 2070 SUPER: 6/8192 MiB |
-| ClawMemory    | ✅ v0.1.0 · facts=20                           |
-| Skills count  | 74                                             |
-| Memory files  | 192                                            |
+## Results
+
+| Component       | Status         | Detail                          |
+|-----------------|----------------|---------------------------------|
+| AlphaStrike     | 🔴 DOWN        | service state: activating/DOWN  |
+| EvoClaw Hub     | 🔴 DOWN        | http://localhost:8420 unreachable |
+| GPU Server      | 🔴 offline     | ssh peter@10.0.0.44 timed out   |
+| ClawMemory      | 🟢 OK          | v0.1.0, facts=313               |
+| Skills Count    | 🟢 74          | ~/.openclaw/workspace/skills/   |
+| Memory Files    | 🟢 194         | ~/.openclaw/workspace/memory/   |
 
 ## Summary
-- ⚠️ **EvoClaw Hub DOWN** — `curl http://localhost:8420/api/agents` returned no response. EvoClaw hub process may have crashed or not started.
-- All other services nominal.
-- GPU server idle (minimal VRAM usage across all 3 GPUs).
+- **3 issues detected:** AlphaStrike DOWN, EvoClaw Hub DOWN, GPU Server offline
+- ClawMemory healthy with 313 active facts
+- Workspace: 74 skills, 194 memory files
+
+## Actions Taken
+- Alert sent to Bowen via Telegram
