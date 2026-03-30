@@ -1,32 +1,51 @@
-# 🔬 Nightly Research: AI & Agents
+# 🔬 Nightly Research: Crypto & DeFi
 
-> Generated: 2026-03-30 00:00 AEST | Track: ai (1 of 3)
+> Generated: 2026-03-31 00:00 AEST | Track: crypto (2 of 3)
 
 ---
 
 ## 📄 Top Papers (arXiv)
 
-_No items found for this source._
+1. **[Hardware-Agnostic and Insightful Efficiency Metrics for Accelerated Systems: Definition and Implementation within TALP](http://arxiv.org/abs/2603.26576v1)**
+   > The increasing adoption of heterogeneous platforms that combine CPUs with accelerators such as GPUs in high-performance computing (HPC) introduces new challenges for performance analysis and optimizat…
+   _Authors: Ghazal Rahimi, Victor Lopez, Marc Clascà | Categories: cs.DC, cs.PF | Published: 2026-03-27_
 
+2. **[Evolution-Based Timed Opacity under a Universal Observation Model](http://arxiv.org/abs/2603.26573v1)**
+   > Existing literature on timed opacity uses specific definitions for restricted subclasses of timed automata or limited observation models. This lack of a unified definition makes it difficult to establ…
+   _Authors: Zhe Zhang, Martijn Goorden, Michel Reniers | Categories: cs.FL, cs.CR | Published: 2026-03-27_
+
+3. **[Reentrancy Detection in the Age of LLMs](http://arxiv.org/abs/2603.26497v1)**
+   > Reentrancy remains one of the most critical classes of vulnerabilities in Ethereum smart contracts, yet widely used detection tools and datasets continue to reflect outdated patterns and obsolete Soli…
+   _Authors: Dalila Ressi, Alvise Spanò, Matteo Rizzo | Categories: cs.CR, cs.SE | Published: 2026-03-27_
+
+4. **[Machine Learning Transferability for Malware Detection](http://arxiv.org/abs/2603.26632v1)**
+   > Malware continues to be a predominant operational risk for organizations, especially when obfuscation techniques are used to evade detection. Despite the ongoing efforts in the development of Machine …
+   _Authors: César Vieira, João Vitorino, Eva Maia | Categories: cs.CR, cs.AI, cs.LG | Published: 2026-03-27_
+
+5. **[Rough volatility dynamics in commodity markets](http://arxiv.org/abs/2603.26514v1)**
+   > In this paper, we develop a general rough volatility model for commodities that provides an automatic calibration of the initial term structure of the futures prices and an appropriate treatment of th…
+   _Authors: Roberto Daluiso, Héctor Folgar-Cameán, Andrea Pallavicini | Categories: q-fin.PR, q-fin.CP | Published: 2026-03-27_
+
+_(up to 5 items)_
 
 ---
 
 ## 🔥 Trending Repos (GitHub)
 
-1. **[mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill)** — ⭐ 1,680 | 📈 +1680 today | Python
-   > AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary
+1. **[OpenZeppelin/openzeppelin-contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)** — ⭐ 6 | 📈 +6 today | Solidity
+   > OpenZeppelin Contracts is a library for secure smart contract development.
 
-2. **[sponsors/luongnv89](https://github.com/sponsors/luongnv89)** — ⭐ 1,121 | 📈 +1121 today | Python
-   > A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.
+2. **[aave-dao/aave-v3-origin](https://github.com/aave-dao/aave-v3-origin)** — ⭐ 1 | 📈 +1 today | Solidity
+   > Aave v3.6 protocol
 
-3. **[shareAI-lab/learn-claude-code](https://github.com/shareAI-lab/learn-claude-code)** — ⭐ 912 | 📈 +912 today | TypeScript
-   > Bash is all you need - A nano claude code–like 「agent harness」, built from 0 to 1
+3. **[ProjectOpenSea/seaport](https://github.com/ProjectOpenSea/seaport)** — ⭐ 1 | 📈 +1 today | Solidity
+   > Seaport is a marketplace protocol for safely and efficiently buying and selling NFTs.
 
-4. **[sponsors/Yeachan-Heo](https://github.com/sponsors/Yeachan-Heo)** — ⭐ 858 | 📈 +858 today | TypeScript
-   > Teams-first Multi-agent orchestration for Claude Code
+4. **[Uniswap/v4-core](https://github.com/Uniswap/v4-core)** — Solidity
+   > 🦄 🦄 🦄 🦄 Core smart contracts of Uniswap v4
 
-5. **[onyx-dot-app/onyx](https://github.com/onyx-dot-app/onyx)** — ⭐ 582 | 📈 +582 today | Python
-   > Open Source AI Platform - AI Chat with advanced features that works with every LLM
+5. **[smartcontractkit/chainlink-brownie-contracts](https://github.com/smartcontractkit/chainlink-brownie-contracts)** — Solidity
+   > A repository for automatically using the latest chainlink repo from the core chainlink repo.
 
 _(up to 5 items)_
 
@@ -34,20 +53,20 @@ _(up to 5 items)_
 
 ## 🗞️ Hacker News Highlights
 
-1. **[AI overly affirms users asking for personal advice](https://news.stanford.edu/stories/2026/03/ai-advice-sycophantic-models-research)** — 692 pts, 547 comments
-   > _news.stanford.edu_
+1. **[ChatGPT won't let you type until Cloudflare reads your React state](https://www.buchodi.com/chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state-i-decrypted-the-program-that-does-it/)** — 782 pts, 501 comments
+   > _buchodi.com_
 
-2. **[Go hard on agents, not on your filesystem](https://jai.scs.stanford.edu/)** — 602 pts, 312 comments
-   > _jai.scs.stanford.edu_
+2. **[The curious case of retro demo scene graphics](https://www.datagubbe.se/aipixels/)** — 259 pts, 60 comments
+   > _datagubbe.se_
 
-3. **[Iran-linked hackers breach FBI director's personal email](https://www.reuters.com/world/us/iran-linked-hackers-claim-breach-of-fbi-directors-personal-email-doj-official-2026-03-27/)** — 435 pts, 520 comments
-   > _reuters.com_
+3. **[I use excalidraw to manage my diagrams for my blog](https://blog.lysk.tech/excalidraw-frame-export/)** — 147 pts, 69 comments
+   > _blog.lysk.tech_
 
-4. **[CERN uses ultra-compact AI models on FPGAs for real-time LHC data filtering](https://theopenreader.org/Journalism:CERN_Uses_Tiny_AI_Models_Burned_into_Silicon_for_Real-Time_LHC_Data_Filtering)** — 316 pts, 144 comments
-   > _theopenreader.org_
+4. **[Ghostmoon.app – The Swiss Army Knife for your macOS menu bar](https://www.mgrunwald.com/ghostmoon/)** — 86 pts, 76 comments
+   > _mgrunwald.com_
 
-5. **[Further human + AI + proof assistant work on Knuth's "Claude Cycles" problem](https://twitter.com/BoWang87/status/2037648937453232504)** — 228 pts, 155 comments
-   > _twitter.com_
+5. **[Hamilton-Jacobi-Bellman Equation: Reinforcement Learning and Diffusion Models](https://dani2442.github.io/posts/continuous-rl/)** — 83 pts, 21 comments
+   > _dani2442.github.io_
 
 _(up to 5 items)_
 
@@ -57,7 +76,7 @@ _(up to 5 items)_
 
 | Source | Items Found | Items Used | Status |
 |--------|------------|------------|--------|
-| arXiv | 0 | 0 | ❌ failed |
+| arXiv | 5 | 5 | ✅ |
 | GitHub Trending | 5 | 5 | ✅ |
 | Hacker News | 5 | 5 | ✅ |
 | Web Search | 0 | 0 | ⏭️ skipped |
@@ -66,22 +85,24 @@ _(up to 5 items)_
 
 ## 🌐 Web Highlights
 
-### Anthropic
-- **Claude Opus 4.6 security research** — Found 500 critical vulnerabilities autonomously; Anthropic advancing safety research around interpretability and robustness (Fortune, Feb 2026)
-- **Safety policy update** — Anthropic adjusted its core safety stance amid intensifying industry competition (CNN, Feb 2026)
-- **New 2026 safety initiatives** — Focused on enhancing security & robustness of advanced models; expanding international safety standards work
+### Anthropic (week of 2026-03-30)
+- **Anthropic Science Blog launched** — New blog documenting AI-driven research progress and human-AI collaboration in scientific work (anthropic.com, 2026-03-24)
+- **Economic Index: AI Skills Gap widening** — Anthropic's 25 March 2026 report shows early AI adopters are accelerating away from laggards — quantified gap, not just anecdotal
+- **"Mythos" model leaked** — Anthropic confirmed testing a new model more capable than anything released so far, after a data leak revealed its existence (Fortune, 2026-03-26)
+- **New safety research initiatives 2026** — Focused on security and robustness amid rapid industry advancements and evolving regulations
 
-### OpenAI
-- **GPT-5.4 & GPT-5.4 Pro released** (March 9, 2026) — Unified frontier reasoning, coding, and agentic workflows with 1M-token context and native computer-use (Medium/NLPlanet)
-- **GPT-5.3 Instant** (March 3, 2026) — Smoother everyday conversations; available on ChatGPT and API
-- **Full model wave**: GPT-5.4, Gemini 3.1 Pro, Claude Opus 4.6, Llama 4 — all shipped in Q1 2026
+### OpenAI (week of 2026-03-30)
+- **GPT-5.2 shipped + ChatGPT app ecosystem launched** — 2026 roadmap includes AI safety research push and hints at "what's next"
+- **Extra $10B funding secured** — CFO Sarah Friar confirmed additional raise; total round record-setting (CNBC, 2026-03-24)
+- **Fully automated AI researcher** — OpenAI refocusing resources to build a fully autonomous AI researcher capable of independent scientific work (MIT Tech Review, 2026-03-20)
+- **2026 IPO targeting $1T valuation** — Anticipation building despite ongoing copyright litigation
 
-### AI Agent Frameworks (Track-Specific)
-- **Multi-agent orchestration is the dominant paradigm** — LangGraph, AutoGen, CrewAI, Claude Teams, Microsoft Agent Framework RC all gaining production traction (Medium, 2026)
-- **Nature paper**: Multi-agent AI systems need transparency — "Principal Investigator" LLM assembles agent teams for research; calls for governance frameworks
-- **The agentic shift**: "The era of the single all-knowing AI model is over" — collaboration-first multi-agent architectures replacing monolithic systems
-- **Top repos trending today**: Claude Code agent harnesses, multi-agent orchestration frameworks, bash-minimal agent runtimes — all reflect developer rush to build on agentic primitives
+### DeFi × AI Agents (crypto track supplement)
+- **Agentic DeFi surge** — Autonomous AI agents commanding on-chain capital in 2026; projections toward a "trillion-agent economy by 2027" (cryptollia.com)
+- **AI + Blockchain convergence** — LLMs + reinforcement learning + direct blockchain node connectivity; agents evolved beyond simple if/then bots into autonomous decision-making systems
+- **Protocol-Owned Intelligence** — AI agents becoming primary users AND governors of DeFi protocols — structural shift, not just tooling (cryptonium.cloud)
+- **zkML as the trust layer** — Zero-knowledge ML emerging as key technology enabling verifiable AI agent decisions on-chain
 
 ---
 
-_Next track: Crypto & DeFi | Archive: memory/autoresearch-archive.md_
+_Next track: Developer Tools | Archive: memory/autoresearch-archive.md_
