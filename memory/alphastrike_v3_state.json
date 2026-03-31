@@ -1,5 +1,16 @@
 {
   "positions": {},
-  "closed_trades": [],
-  "equity": 1000.0
+  "closed_trades": [
+    {
+      "coin": "ETH",
+      "side": "LONG",
+      "entry": 2068.0,
+      "exit": 2055.4,
+      "pnl_pct": -3.05,
+      "pnl_usd": -3.05,
+      "reason": "STOP_LOSS",
+      "closed_at": "2026-03-31T08:08:23.635243+00:00"
+    }
+  ],
+  "equity": 996.953578336557
 }
