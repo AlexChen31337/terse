@@ -1,6 +1,7 @@
 {
-  "lastRSICheck": "2026-03-30T08:19:02Z",
-  "lastRSSCheck": "2026-03-30T11:17:00Z",
-  "heartbeatCycle": "2026-03-30T11:17:00Z",
-  "lastClawChainRelease": "v0.6.1"
+  "lastRSICheck": "2026-03-31T01:20:35Z",
+  "lastRSSCheck": "2026-03-31T00:19:25Z",
+  "heartbeatCycle": "2026-03-31T00:19:25Z",
+  "lastClawChainRelease": "v0.6.1",
+  "lastRSIAlert": "2026-03-30T21:19:25Z"
 }
