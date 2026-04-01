@@ -1,8 +1,8 @@
 {
   "lastRun": "2026-03-31T09:00:00+11:00",
   "last_backup": "2026-03-29",
-  "mbd_last_backup": "2026-03-31",
-  "topic_index": 25,
+  "mbd_last_backup": "2026-04-01",
+  "topic_index": 26,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -488,6 +488,18 @@
       "coverGenerated": false,
       "folder": "2026-03-30_提示词炼金术_用一句话指挥AI把它调教成你的专属印钞机2026终极版",
       "title": "提示词炼金术_用一句话指挥AI把它调教成你的专属印钞机2026终极版",
+      "wordCount": 4500,
+      "note": "MbD Chinese backup. No cover (ComfyUI unreachable). Awaiting publish instruction from owner."
+    },
+    "mbd-daily-2026-04-01": {
+      "name": "AI恋爱教练_当算法开始比你更懂爱情这件事",
+      "status": "backed_up",
+      "category": "情感/AI",
+      "date": "2026-04-01",
+      "githubBacked": true,
+      "coverGenerated": false,
+      "folder": "2026-04-01_AI恋爱教练_当算法开始比你更懂爱情这件事",
+      "title": "AI恋爱教练_当算法开始比你更懂爱情这件事",
       "wordCount": 4500,
       "note": "MbD Chinese backup. No cover (ComfyUI unreachable). Awaiting publish instruction from owner."
     },
