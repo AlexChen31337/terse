@@ -1,0 +1,27 @@
+[autoresearch] INFO  14:00:18 State loaded: track_index=2, last_run=2026-03-30T14:00:18.374242+00:00
+[autoresearch] INFO  14:00:18 Track from rotation: devtools
+[autoresearch] INFO  14:00:18 Track config loaded: Developer Tools
+[autoresearch] INFO  14:00:18 Starting fetch for track 'devtools' at 2026-04-02T14:00:18.485035+00:00
+[autoresearch] INFO  arXiv: fetching categories ['cs.SE', 'cs.PL']
+[autoresearch] INFO  GitHub trending: fetching https://github.com/trending/rust
+[autoresearch] INFO  HN: fetching top stories
+[autoresearch] INFO  web: no BRAVE_API_KEY — trying openclaw native web_search
+[autoresearch] INFO  web: returning 0 items (native fallback)
+[autoresearch] INFO  HN: scanning top 60 stories
+[autoresearch] INFO  GitHub trending: fetching https://github.com/trending/go
+[autoresearch] INFO  GitHub trending: fetching https://github.com/trending/typescript
+[autoresearch] INFO  HN: fetched 60 story details
+[autoresearch] INFO  HN: 17 stories match keywords
+[autoresearch] INFO  HN: returning 5 items
+[autoresearch] INFO  GitHub trending: fetching https://github.com/trending/python
+[autoresearch] INFO  GitHub trending: 55 total repos found
+[autoresearch] INFO  GitHub trending: returning 5 items
+[autoresearch] INFO  arXiv: got 25 entries
+[autoresearch] INFO  arXiv: returning 5 items
+[autoresearch] INFO  14:00:27 Fetch complete: 15 total items (arXiv=5, GitHub=5, HN=5, web=0)
+[autoresearch] INFO  14:00:27 Building report…
+[autoresearch] INFO  14:00:27 Report built (4889 chars)
+[autoresearch] INFO  14:00:27 Wrote latest report to /home/bowen/.openclaw/workspace/memory/autoresearch-latest.md
+[autoresearch] INFO  14:00:27 Appended to archive: /home/bowen/.openclaw/workspace/memory/autoresearch-archive.md
+[autoresearch] INFO  14:00:27 State advanced: next track index = 0
+[autoresearch] INFO  14:00:27 Pipeline complete — exit 0

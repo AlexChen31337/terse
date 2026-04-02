@@ -1,69 +1,102 @@
-# Midnight Health Report
-**Generated:** 2026-03-31 00:00 AEDT (2026-03-30 13:00 UTC)
-**Run by:** Sentinel (cron job)
+# Midnight Health Check — 2026-04-02 00:01 AEDT
+
+**Run by:** Alex (Sentinel cron)
+**Status:** ⚠️ 3 components DOWN
 
 ---
 
-## Summary
+## 🔴 AlphaStrike — DOWN (restart failed)
 
-| Component | Status | Notes |
-|---|---|---|
-| Sentinel | ✅ OK | 1 alert in last 24h |
-| Quant State | ⚠️ STALE | Last check 2026-03-26 (5 days ago) |
-| AlphaStrike | 🔴 DOWN | WorkDir missing: `/media/DATA/tmp/alphastrike-v2` |
-| Shield | ⚠️ MISSING | `access-control.json` not found |
-| Herald | ✅ OK | No activity (fresh state) |
-| EvoClaw Hub (:8420) | 🔴 DOWN | MQTT broker (mosquitto) not running |
-| Alex Eye (Pi) | 🔴 DOWN | SSH unreachable (alexeye.local / raspberrypi.local) |
+- **Service:** `alphastrike.service` — `activating (auto-restart)` / Result: resources
+- **Root cause:** Working directory `/media/DATA/tmp/alphastrike-v2` does not exist
+  - Either `/media/DATA` is unmounted, or the directory was deleted
+- **Action needed:** Remount DATA drive and verify alphastrike-v2 directory; or update service WorkingDirectory
 
 ---
 
-## 1. Sentinel
-- **Status:** ✅ OK
-- **Last prices:** BTC $67,887 | ETH $2,073 | SOL $84.53 | HYPE $38.25
-- **Fear & Greed:** Extreme Fear (8)
-- **Last price check:** Recent (within normal window)
-- **Alerts last 24h:** 1 — `btc_67500` at 22:17
+## 🔴 EvoClaw Hub — DOWN (restart failed)
 
-## 2. Quant / AlphaStrike
-- **Quant state:** ⚠️ STALE — last check was 2026-03-26T01:21 UTC (5 days ago, signals outdated)
-- **Account value:** $112.22 | Today P&L: $0.00 | Open positions: 0
-- **AlphaStrike service:** 🔴 DOWN
-  - Error: `Failed to spawn 'start' task: No such file or directory`
-  - Root cause: WorkDir `/media/DATA/tmp/alphastrike-v2` does not exist
-  - `/media/DATA` IS mounted (shows data) but `tmp/alphastrike-v2` directory is missing
-  - The directory may have been deleted or never recreated after a reboot
-
-## 3. Shield
-- **Status:** ⚠️ MISSING
-- `access-control.json` not found at `/home/bowen/.openclaw/workspace-shield/`
-- No pending approvals detected (file absent)
-
-## 4. Herald
-- **Status:** ✅ OK (idle)
-- State: empty/fresh (no posts, no outreach, no alerts)
-
-## 5. EvoClaw Hub (:8420)
-- **Status:** 🔴 DOWN — restart failed
-- Root cause: MQTT broker (mosquitto) not running (inactive/not installed)
-- Error: `connect: connection refused` on `tcp://0.0.0.0:1883`
-- `evoclaw-hub.service` is enabled but failed
-- **Fix needed:** Start mosquitto service or configure EvoClaw to skip MQTT
-
-## 6. Alex Eye (Pi)
-- **Status:** 🔴 DOWN
-- SSH unreachable at `alexeye.local` and `raspberrypi.local`
-- Cannot restart remotely — requires physical check or network investigation
+- **Service:** `evoclaw-hub.service` — exit-code failure
+- **Root cause:** MQTT broker (mosquitto) is **inactive** / not running
+  - Hub start.sh errors: `dial tcp 0.0.0.0:1883: connect: connection refused`
+- **Cannot self-fix:** `mosquitto` requires `sudo systemctl start mosquitto` (system-level, needs password)
+- **Action needed:** `sudo systemctl start mosquitto && sudo systemctl enable mosquitto`
+  - Then retry: `systemctl --user restart evoclaw-hub.service`
 
 ---
 
-## Actions Taken
-- Attempted `systemctl --user restart evoclaw-hub.service` → FAILED (MQTT dependency)
-- Telegram alert sent to Bowen (2069029798) for all DOWN components
+## 🔴 Alex Eye (Pi) — UNREACHABLE
+
+- SSH to `alexeye.local` → timeout
+- SSH to `raspberrypi.local` → timeout
+- **Status:** Pi is offline or not on network
+- **Action needed:** Physical check or router ARP scan
 
 ---
 
-## Disk Status
-- `/`: 560G used / 937G total (63%) — OK
-- `/media/DATA`: mounted, has content (playwright profiles, clawd dir)
-- `/data2`: not mounted / not present
+## ✅ Sentinel
+
+- Last price check: ~2h ago (1775047455)
+- Prices: BTC $68,289 | ETH $2,126 | SOL $82.98 | HYPE $37.13
+- Fear & Greed: **8 — Extreme Fear** (unchanged category)
+- Last alerts: btc_67500, btc_65000, hype_25, hype_30 (within 24h window)
+- No new thresholds crossed
+
+---
+
+## ✅ Shield (access-control.json)
+
+- Owner numbers: 4 registered ✅
+- Pending approvals: **none**
+- Stranger response configured ✅
+
+---
+
+## ✅ Herald
+
+- lastPosts: empty (no recent posts)
+- scheduledPosts: none
+- outreachLog: empty
+- All checks at 0 (idle)
+
+---
+
+## ⚠️ Quant (quant-state.json)
+
+- Status: ACTIVE (in state file)
+- Account value: $112.22
+- Open positions: none
+- Signals: BTC/ETH/SOL all LONG @ confidence 0.4
+- **Signal timestamp: 2026-03-26** — stale by ~7 days
+- lastChecks.alphastrike: 1742915309 (2025-03-25) — very stale
+- Trade log: empty (no trades executed)
+- Action: Quant needs a manual heartbeat or reconnect
+
+---
+
+## 💾 Disk
+
+| Mount | Size | Used | Avail | Use% |
+|-------|------|------|-------|------|
+| /     | 937G | 627G | 263G  | 71%  |
+
+- `/media/DATA` — **not mounted** (no df output, alphastrike dir missing confirms this)
+- `/data2` — not found
+
+---
+
+## Summary Table
+
+| Component       | Status  | Auto-fixed? | Action Required |
+|-----------------|---------|-------------|-----------------|
+| Sentinel        | ✅ OK   | —           | None |
+| Quant (state)   | ⚠️ Stale | —          | Manual heartbeat |
+| Shield          | ✅ OK   | —           | None |
+| Herald          | ✅ OK   | —           | None |
+| AlphaStrike     | 🔴 DOWN | ❌ No       | Remount /media/DATA |
+| EvoClaw Hub     | 🔴 DOWN | ❌ No       | sudo start mosquitto |
+| Alex Eye (Pi)   | 🔴 DOWN | ❌ No       | Physical check |
+
+---
+
+*Bowen notified via Telegram.*

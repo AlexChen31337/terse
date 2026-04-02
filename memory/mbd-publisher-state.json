@@ -1,8 +1,8 @@
 {
-  "lastRun": "2026-03-31T09:00:00+11:00",
+  "lastRun": "2026-04-03T00:07:00+11:00",
   "last_backup": "2026-03-29",
-  "mbd_last_backup": "2026-04-01",
-  "topic_index": 26,
+  "mbd_last_backup": "2026-04-02",
+  "topic_index": 28,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -503,6 +503,18 @@
       "wordCount": 4500,
       "note": "MbD Chinese backup. No cover (ComfyUI unreachable). Awaiting publish instruction from owner."
     },
+    "mbd-daily-2026-04-02": {
+      "name": "懒人理财经_AI时代你的钱包不需要你亲自看管",
+      "status": "backed_up",
+      "category": "理财",
+      "date": "2026-04-02",
+      "githubBacked": true,
+      "coverGenerated": false,
+      "folder": "2026-04-02_懒人理财经_AI时代你的钱包不需要你亲自看管",
+      "title": "懒人理财经_AI时代你的钱包不需要你亲自看管",
+      "wordCount": 4500,
+      "note": "MbD Chinese backup. No cover (GPU server unreachable). Awaiting publish instruction from owner."
+    },
     "daily-2026-03-31": {
       "name": "The AI Marketing Machine: Build a Revenue-Generating Content Engine with Artificial Intelligence",
       "status": "published",
@@ -518,6 +530,21 @@
       "coverGenerated": false,
       "pdfGenerated": true,
       "note": "Auto-published to Payhip. Backed up to GitHub. ComfyUI unreachable - used fallback cover."
+    },
+    "daily-2026-04-03": {
+      "name": "The AI Writing Factory: Build a Complete Content Production Pipeline from Idea to Published Book",
+      "status": "backed_up",
+      "category": "ai-writing-content-production",
+      "price": 14,
+      "date": "2026-04-03",
+      "folder": "2026-04-03_ai-writing-factory",
+      "payhipUrl": null,
+      "githubBacked": true,
+      "wordCount": 7418,
+      "chapters": 12,
+      "coverGenerated": true,
+      "pdfGenerated": true,
+      "note": "Book written, PDF generated, cover generated (PIL fallback), pushed to GitHub. Payhip publish blocked by reCAPTCHA v2 - needs manual publish."
     }
   },
   "twitter": {
@@ -545,6 +572,5 @@
   "telegram": {
     "status": "not_started",
     "reason": "Bot API cannot create channels"
-  },
-  "mbd_last_backup": "2026-03-30"
+  }
 }

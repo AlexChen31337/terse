@@ -1,21 +1,12 @@
-# Nightly Health Check
-**Date:** 2026-03-31 00:06 AEDT (2026-03-30 13:06 UTC)
+# Nightly Health Check — 2026-04-03 00:05 AEDT
 
-## Results
+| # | Component | Status |
+|---|-----------|--------|
+| 1 | AlphaStrike V3 | ✅ OK |
+| 2 | EvoClaw Hub (localhost:8420) | 🚨 DOWN |
+| 3 | GPU Server (10.0.0.44) | ⚠️ offline (SSH timeout) |
+| 4 | ClawMemory (127.0.0.1:7437) | ✅ v0.1.0, 2268 facts |
+| 5 | Skills count | 75 |
+| 6 | Memory files | 203 |
 
-| Component       | Status         | Detail                          |
-|-----------------|----------------|---------------------------------|
-| AlphaStrike     | 🔴 DOWN        | service state: activating/DOWN  |
-| EvoClaw Hub     | 🔴 DOWN        | http://localhost:8420 unreachable |
-| GPU Server      | 🔴 offline     | ssh peter@10.0.0.44 timed out   |
-| ClawMemory      | 🟢 OK          | v0.1.0, facts=313               |
-| Skills Count    | 🟢 74          | ~/.openclaw/workspace/skills/   |
-| Memory Files    | 🟢 194         | ~/.openclaw/workspace/memory/   |
-
-## Summary
-- **3 issues detected:** AlphaStrike DOWN, EvoClaw Hub DOWN, GPU Server offline
-- ClawMemory healthy with 313 active facts
-- Workspace: 74 skills, 194 memory files
-
-## Actions Taken
-- Alert sent to Bowen via Telegram
+**Issues:** EvoClaw hub unresponsive. GPU server unreachable (likely asleep/off).

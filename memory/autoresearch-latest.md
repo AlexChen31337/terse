@@ -1,30 +1,30 @@
-# 🔬 Nightly Research: Crypto & DeFi
+# 🔬 Nightly Research: Developer Tools
 
-> Generated: 2026-03-31 00:00 AEST | Track: crypto (2 of 3)
+> Generated: 2026-04-03 00:00 AEST | Track: devtools (3 of 3)
 
 ---
 
 ## 📄 Top Papers (arXiv)
 
-1. **[Hardware-Agnostic and Insightful Efficiency Metrics for Accelerated Systems: Definition and Implementation within TALP](http://arxiv.org/abs/2603.26576v1)**
-   > The increasing adoption of heterogeneous platforms that combine CPUs with accelerators such as GPUs in high-performance computing (HPC) introduces new challenges for performance analysis and optimizat…
-   _Authors: Ghazal Rahimi, Victor Lopez, Marc Clascà | Categories: cs.DC, cs.PF | Published: 2026-03-27_
+1. **[SERSEM: Selective Entropy-Weighted Scoring for Membership Inference in Code Language Models](http://arxiv.org/abs/2604.01147v1)**
+   > As Large Language Models (LLMs) for code increasingly utilize massive, often non-permissively licensed datasets, evaluating data contamination through Membership Inference Attacks (MIAs) has become cr…
+   _Authors: Kıvanç Kuzey Dikici, Serdar Kara, Semih Çağlar | Categories: cs.SE, cs.CR | Published: 2026-04-01_
 
-2. **[Evolution-Based Timed Opacity under a Universal Observation Model](http://arxiv.org/abs/2603.26573v1)**
-   > Existing literature on timed opacity uses specific definitions for restricted subclasses of timed automata or limited observation models. This lack of a unified definition makes it difficult to establ…
-   _Authors: Zhe Zhang, Martijn Goorden, Michel Reniers | Categories: cs.FL, cs.CR | Published: 2026-03-27_
+2. **[Leveraging Commit Size Context and Hyper Co-Change Graph Centralities for Defect Prediction](http://arxiv.org/abs/2604.01132v1)**
+   > File-level defect prediction models traditionally rely on product and process metrics. While process metrics effectively complement product metrics, they often overlook commit size the number of files…
+   _Authors: Amit Kumar, Ethari Hrishikesh, Sonali Agarwal | Categories: cs.SE | Published: 2026-04-01_
 
-3. **[Reentrancy Detection in the Age of LLMs](http://arxiv.org/abs/2603.26497v1)**
-   > Reentrancy remains one of the most critical classes of vulnerabilities in Ethereum smart contracts, yet widely used detection tools and datasets continue to reflect outdated patterns and obsolete Soli…
-   _Authors: Dalila Ressi, Alvise Spanò, Matteo Rizzo | Categories: cs.CR, cs.SE | Published: 2026-03-27_
+3. **[Containing the Reproducibility Gap: Automated Repository-Level Containerization for Scholarly Jupyter Notebooks](http://arxiv.org/abs/2604.01072v1)**
+   > Computational reproducibility is fundamental to trustworthy science, yet remains difficult to achieve in practice across various research workflows, including Jupyter notebooks published alongside sch…
+   _Authors: Sheeba Samuel, Daniel Mietchen, Hemanta Lo | Categories: cs.SE, cs.CE | Published: 2026-04-01_
 
-4. **[Machine Learning Transferability for Malware Detection](http://arxiv.org/abs/2603.26632v1)**
-   > Malware continues to be a predominant operational risk for organizations, especially when obfuscation techniques are used to evade detection. Despite the ongoing efforts in the development of Machine …
-   _Authors: César Vieira, João Vitorino, Eva Maia | Categories: cs.CR, cs.AI, cs.LG | Published: 2026-03-27_
+4. **[Revision or Re-Solving? Decomposing Second-Pass Gains in Multi-LLM Pipelines](http://arxiv.org/abs/2604.01029v1)**
+   > Multi-LLM revision pipelines, in which a second model reviews and improves a draft produced by a first, are widely assumed to derive their gains from genuine error correction. We question this assumpt…
+   _Authors: Jingjie Ning, Xueqi Li, Chengyu Yu | Categories: cs.SE, cs.AI, cs.CL | Published: 2026-04-01_
 
-5. **[Rough volatility dynamics in commodity markets](http://arxiv.org/abs/2603.26514v1)**
-   > In this paper, we develop a general rough volatility model for commodities that provides an automatic calibration of the initial term structure of the futures prices and an appropriate treatment of th…
-   _Authors: Roberto Daluiso, Héctor Folgar-Cameán, Andrea Pallavicini | Categories: q-fin.PR, q-fin.CP | Published: 2026-03-27_
+5. **[Portable and Secure CI/CD for COBOL: Lessons from an Industrial Migration](http://arxiv.org/abs/2604.00936v1)**
+   > Continuous integration and delivery (CI/CD) pipelines are critical for sustaining the evolution of large software systems. In regulated industries with legacy technologies, however, pipelines themselv…
+   _Authors: Andreas Askholm, Kenneth Johnsen, Jacopo Mauro | Categories: cs.SE | Published: 2026-04-01_
 
 _(up to 5 items)_
 
@@ -32,20 +32,20 @@ _(up to 5 items)_
 
 ## 🔥 Trending Repos (GitHub)
 
-1. **[OpenZeppelin/openzeppelin-contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)** — ⭐ 6 | 📈 +6 today | Solidity
-   > OpenZeppelin Contracts is a library for secure smart contract development.
+1. **[openai/codex](https://github.com/openai/codex)** — ⭐ 1,416 | 📈 +1416 today | Rust
+   > Lightweight coding agent that runs in your terminal
 
-2. **[aave-dao/aave-v3-origin](https://github.com/aave-dao/aave-v3-origin)** — ⭐ 1 | 📈 +1 today | Solidity
-   > Aave v3.6 protocol
+2. **[farion1231/cc-switch](https://github.com/farion1231/cc-switch)** — ⭐ 706 | 📈 +706 today | Rust
+   > A cross-platform desktop All-in-One assistant tool for Claude Code, Codex, OpenCode, openclaw &amp; Gemini CLI.
 
-3. **[ProjectOpenSea/seaport](https://github.com/ProjectOpenSea/seaport)** — ⭐ 1 | 📈 +1 today | Solidity
-   > Seaport is a marketplace protocol for safely and efficiently buying and selling NFTs.
+3. **[Huanshere/VideoLingo](https://github.com/Huanshere/VideoLingo)** — ⭐ 40 | 📈 +40 today | Python
+   > Netflix-level subtitle cutting, translation, alignment, and even dubbing - one-click fully automated AI video subtitle team | Netflix级字幕切割、翻译、对齐、甚至加上配音，一键全自动视频搬运AI字幕组
 
-4. **[Uniswap/v4-core](https://github.com/Uniswap/v4-core)** — Solidity
-   > 🦄 🦄 🦄 🦄 Core smart contracts of Uniswap v4
+4. **[krillinai/KrillinAI](https://github.com/krillinai/KrillinAI)** — ⭐ 21 | 📈 +21 today | Go
+   > Video translation and dubbing tool powered by LLMs. The video translator offers 100 language translations and one-click full-process deployment. The video translation output is optimized for platforms like YouTube，TikTok. AI视频翻译配音工具，100种语言双向翻译，一键部署全流程，可以生抖音，小红书，哔哩哔哩，视频号，TikTok，Youtube等形态的内容成适配
 
-5. **[smartcontractkit/chainlink-brownie-contracts](https://github.com/smartcontractkit/chainlink-brownie-contracts)** — Solidity
-   > A repository for automatically using the latest chainlink repo from the core chainlink repo.
+5. **[sponsors/ghuntley](https://github.com/sponsors/ghuntley)** — ⭐ 13 | 📈 +13 today | Go
+   > A workshop that teaches you how to build your own coding agent. Similar to Roo code, Cline, Amp, Cursor, Windsurf or OpenCode.
 
 _(up to 5 items)_
 
@@ -53,22 +53,35 @@ _(up to 5 items)_
 
 ## 🗞️ Hacker News Highlights
 
-1. **[ChatGPT won't let you type until Cloudflare reads your React state](https://www.buchodi.com/chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state-i-decrypted-the-program-that-does-it/)** — 782 pts, 501 comments
-   > _buchodi.com_
+1. **[Artemis II Launch Day Updates](https://www.nasa.gov/blogs/missions/2026/04/01/live-artemis-ii-launch-day-updates/)** — 991 pts, 852 comments
+   > _nasa.gov_
 
-2. **[The curious case of retro demo scene graphics](https://www.datagubbe.se/aipixels/)** — 259 pts, 60 comments
-   > _datagubbe.se_
+2. **[Steam on Linux Use Skyrocketed Above 5% in March](https://www.phoronix.com/news/Steam-On-Linux-Tops-5p)** — 542 pts, 257 comments
+   > _phoronix.com_
 
-3. **[I use excalidraw to manage my diagrams for my blog](https://blog.lysk.tech/excalidraw-frame-export/)** — 147 pts, 69 comments
-   > _blog.lysk.tech_
+3. **[SpaceX files to go public](https://www.nytimes.com/2026/04/01/technology/spacex-ipo-elon-musk.html)** — 343 pts, 491 comments
+   > _nytimes.com_
 
-4. **[Ghostmoon.app – The Swiss Army Knife for your macOS menu bar](https://www.mgrunwald.com/ghostmoon/)** — 86 pts, 76 comments
-   > _mgrunwald.com_
+4. **[Sweden goes back to basics, swapping screens for books in the classroom](https://undark.org/2026/04/01/sweden-schools-books/)** — 283 pts, 156 comments
+   > _undark.org_
 
-5. **[Hamilton-Jacobi-Bellman Equation: Reinforcement Learning and Diffusion Models](https://dani2442.github.io/posts/continuous-rl/)** — 83 pts, 21 comments
-   > _dani2442.github.io_
+5. **[Fast and Gorgeous Erosion Filter](https://blog.runevision.com/2026/03/fast-and-gorgeous-erosion-filter.html)** — 198 pts, 20 comments
+   > _blog.runevision.com_
 
 _(up to 5 items)_
+
+---
+
+## 🌐 Web Highlights (Supplementary)
+
+### Anthropic
+- **Mythos model revealed** — Anthropic testing a new model called 'Mythos', described as a 'step change' in capabilities, after an accidental data leak. ([Fortune](https://fortune.com/2026/03/26/anthropic-says-testing-mythos-powerful-new-ai-model-after-data-leak-reveals-its-existence-step-change-in-capabilities/))
+- **Anthropic's madcap March** — 14+ launches including Opus 4.6, computer use updates, MCP crossing 97M installs. Reliability concerns mounted alongside the pace. ([The New Stack](https://thenewstack.io/anthropic-march-2026-roundup/))
+- **Science Blog launched** — New Anthropic Science blog to document AI-driven research and human-AI collaboration in science. ([WinBuzzer](https://winbuzzer.com/2026/03/24/anthropic-launches-science-blog-ai-driven-research-xcxwbn/))
+
+### OpenAI
+- **$122B funding round closed** — OpenAI raised $122B at a $852B post-money valuation. IPO plans reportedly targeting $1T+ status. ([CNBC](https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html), [Forbes](https://www.forbes.com/sites/antoniopequenoiv/2026/03/31/openai-valuation-reaches-852-billion-after-massive-funding-round/))
+- **Claude Code source leak reported** — Alongside 4 new AI tools and rising American AI usage but declining trust. ([Blockchain News](https://blockchain.news/ainews/openai-record-funding-claude-code-leak-and-4-new-tools-latest-2026-ai-trends-and-business-impact-analysis))
 
 ---
 
@@ -83,26 +96,4 @@ _(up to 5 items)_
 
 ---
 
-## 🌐 Web Highlights
-
-### Anthropic (week of 2026-03-30)
-- **Anthropic Science Blog launched** — New blog documenting AI-driven research progress and human-AI collaboration in scientific work (anthropic.com, 2026-03-24)
-- **Economic Index: AI Skills Gap widening** — Anthropic's 25 March 2026 report shows early AI adopters are accelerating away from laggards — quantified gap, not just anecdotal
-- **"Mythos" model leaked** — Anthropic confirmed testing a new model more capable than anything released so far, after a data leak revealed its existence (Fortune, 2026-03-26)
-- **New safety research initiatives 2026** — Focused on security and robustness amid rapid industry advancements and evolving regulations
-
-### OpenAI (week of 2026-03-30)
-- **GPT-5.2 shipped + ChatGPT app ecosystem launched** — 2026 roadmap includes AI safety research push and hints at "what's next"
-- **Extra $10B funding secured** — CFO Sarah Friar confirmed additional raise; total round record-setting (CNBC, 2026-03-24)
-- **Fully automated AI researcher** — OpenAI refocusing resources to build a fully autonomous AI researcher capable of independent scientific work (MIT Tech Review, 2026-03-20)
-- **2026 IPO targeting $1T valuation** — Anticipation building despite ongoing copyright litigation
-
-### DeFi × AI Agents (crypto track supplement)
-- **Agentic DeFi surge** — Autonomous AI agents commanding on-chain capital in 2026; projections toward a "trillion-agent economy by 2027" (cryptollia.com)
-- **AI + Blockchain convergence** — LLMs + reinforcement learning + direct blockchain node connectivity; agents evolved beyond simple if/then bots into autonomous decision-making systems
-- **Protocol-Owned Intelligence** — AI agents becoming primary users AND governors of DeFi protocols — structural shift, not just tooling (cryptonium.cloud)
-- **zkML as the trust layer** — Zero-knowledge ML emerging as key technology enabling verifiable AI agent decisions on-chain
-
----
-
-_Next track: Developer Tools | Archive: memory/autoresearch-archive.md_
+_Next track: AI & Agents | Archive: memory/autoresearch-archive.md_
