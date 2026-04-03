@@ -1,114 +1,133 @@
-# 🌙 Midnight Alpha Report — 2026-04-03 (AEST)
-
-**Generated:** 2026-04-03 02:00 AEST / 2026-04-02 15:00 UTC
-**Analyst:** Alex Chen
-
----
-
-## 📊 Market Snapshot (Hyperliquid Live)
-
-| Asset | Price (USD) | Notes |
-|-------|-------------|-------|
-| BTC | $66,799 | Holding above $66K support |
-| ETH | $2,063 | Consolidating near $2K level |
-| SOL | $79.02 | Weak, testing sub-$80 |
-| HYPE | $34.86 | Flat, range-bound $33-36 |
-
-**Fear & Greed Index:** 12 — **Extreme Fear** 🔴
-*(Down from ~8 on April 1st. Deep fear zone = historically strong accumulation signal.)*
-
-**Global Market Cap:** ~$2.38T (CoinGecko)
-**Active Cryptos:** 17,890 | **Markets:** 1,471
+# 🌙 Midnight Alpha Report
+**Generated:** Saturday 4 April 2026 — 02:00 AEDT / 15:00 UTC  
+**Analyst:** Alex Chen | EvoClaw Intelligence  
 
 ---
 
-## 🔥 Macro Intelligence
+## 📊 Market Snapshot
 
-### Q1 2026 VC Funding: Record Obliterated
-- **$300B** poured into 6,000 startups globally in Q1 2026 — up **150% QoQ and YoY**
-- **$242B (80%)** went to AI companies — previous record was 55% in Q1 2025
-- Top 4 rounds: OpenAI ($122B), Anthropic ($30B), xAI ($20B), Waymo ($16B) = $188B combined
-- US captured **83%** of global VC ($250B)
-- Crunchbase Unicorn Board added **$900B in value** in a single quarter
-- Early-stage up 41% YoY ($41.3B across 1,800 deals)
-- Seed funding rising — ground floor still active
+### Prices (Hyperliquid — live mids)
+| Asset | Price | 24h Δ | Market Cap |
+|-------|-------|--------|------------|
+| BTC | $66,883 | +0.25% | $1.34T |
+| ETH | $2,053 | -0.36% | $248B |
+| SOL | $80.17 | +1.29% | $45.8B |
+| HYPE | $35.91 | **+3.15%** | $8.6B |
 
-**Implication:** Capital is flooding AI infrastructure at an unprecedented rate. The AI-crypto intersection is the highest-signal sector for 2026 positioning.
+### Global Market
+| Metric | Value |
+|--------|-------|
+| Total Market Cap | **$2.38T** |
+| BTC Dominance | **56.2%** |
+| ETH Dominance | 10.4% |
+| SOL Dominance | 1.9% |
+| Active Cryptocurrencies | 17,870 |
 
----
-
-## 🧠 Narrative Radar
-
-### Tier 1 — Dominant Narratives (Highest Capital Flow Probability)
-
-**1. AI Agents & Autonomous On-Chain Economies** ⭐ TOP PICK
-- AI agents trading on-chain, managing liquidity, automating arbitrage, operating wallets
-- 2026 = the year AI becomes **economic participants, not just tools**
-- Winners: Agent frameworks, AI L2s, inference markets, Base/ETH agent ecosystems
-- Tokens to watch: AI16Z ($0.062), AIXBT ($0.021), VIRTUAL ($0.638), FET ($0.230)
-- **ClawChain relevance: DIRECT** — agent-native L1 with on-chain reputation & DIDs
-
-**2. Restaking & Security-as-a-Service (EigenLayer 2.0)**
-- AVS explosion, ZK prover networks, oracle security restaked
-- Restaking derivatives and AVS ETFs emerging
-- EIGEN at $0.155 — deep discount from highs
-
-**3. Bitcoin L2 Explosion (BTCFi)**
-- BTC evolving from store-of-value to global settlement layer
-- BTC rollups, VM chains, appchains, Ordinals 2.0
-- STX ($0.216), ORDI ($2.28) — beaten down
-
-**4. Perpetual DEX Dominance**
-- On-chain perps competing with CEXs for first time
-- **Hyperliquid leading** — HYPE at $34.86, strong ecosystem
-- dYdX, GMX, Drift following
-
-### Tier 2 — Rising Narratives
-
-**5. DePIN** — Real-world infra tokenization hitting enterprise adoption
-**6. RWA 2.0** — Tokenized treasuries → tokenized everything ($500B+ projected)
-**7. Modular/Multi-Chain Interop** — Chains talking like websites (intent routing, shared sequencing)
-**8. Meme Coins → Consumer Crypto** — Evolving from speculation to cultural financial infrastructure
+### Fear & Greed Index
+```
+  9 / 100  —  EXTREME FEAR  😱
+```
+> Historically, extreme fear = accumulation zone. Contradicts HYPE's strong outperformance.
 
 ---
 
-## 🎯 Alpha Signals
+## 🧠 Macro Intelligence
 
-### Extreme Fear = Opportunity
-- F&G at 12 is historically a **strong buy signal** for majors
-- BTC and ETH at these levels with $300B flooding into AI infrastructure = disconnect
-- Smart money accumulating while retail panics
+### AI Startup Funding — Q1 2026 Shattered Records
+- **$300B** invested in 6,000 startups globally in Q1 2026 (up 150%+ YoY)
+- AI took **80% of total VC** ($242B) — up from 55% in Q1 2025
+- Mega-rounds: OpenAI ($122B), Anthropic ($30B), xAI ($20B), Waymo ($16B)
+- Unicorn Board added **$900B** in single-quarter valuation — all-time record
+- Early-stage up 41% YoY; seed funding up 31% YoY
+- **Signal:** AI capital formation is accelerating into crypto infrastructure, not just SaaS
 
-### AI Agent Tokens: Undervalued Infrastructure Play
-- AI16Z at $0.062, AIXBT at $0.021 — crushed from highs
-- But the narrative is accelerating: a16z predictions, $242B in AI VC, agent frameworks maturing
-- **If ClawChain captures even 0.1% of AI agent on-chain activity, it's a massive win**
-
-### HYPE Accumulation Zone
-- $34.86 in a range — perp DEX dominance narrative is Tier 1
-- Hyperliquid processing real volume, ecosystem growing
-- Risk/reward favorable at current levels
-
----
-
-## 🏆 Top Pick: **AI Agent Infrastructure**
-
-**Why:** The convergence of $300B in AI VC funding, AI agents becoming on-chain economic actors, and extreme fear pricing creates a once-in-cycle asymmetric opportunity. The infrastructure layer for autonomous AI agents (frameworks, compute markets, on-chain identity, inference) is where alpha concentrates before the narrative goes mainstream.
-
-**Specific tokens:** VIRTUAL ($0.638), FET ($0.230), RENDER ($1.76), AI16Z ($0.062)
-**Infrastructure play:** HYPE ($34.86) as the execution layer for AI agent trading
-
-**ClawChain Strategic Note:** Every major narrative list now includes "AI agents on-chain" as #1. Agent-native L1 with DIDs, reputation, and autonomous execution is exactly what the market is converging toward. Timing is optimal.
+### a16z Crypto — 3 AI Trends for 2026
+1. **AI for substantive research** — models now performing at doctoral-student level; agent-wrapping-agent workflows emerging
+2. **"Know Your Agent" (KYA)** — non-human identities outnumber human employees 96-to-1 in finance; cryptographic agent credentials are the missing primitive
+3. **Invisible web tax** — AI agents draining ad-supported web; need real-time micro-attribution → on-chain payment rails
+> _Both #2 and #3 are direct tailwinds for agent-native blockchains and micropayment infrastructure._
 
 ---
 
-## ⚠️ Risk Factors
-- Extreme fear could persist — macro headwinds not resolved
-- AI VC concentration in 4 companies = fragile if any stumble
-- Regulatory uncertainty around AI agents executing financial transactions
-- BTC below $66K could trigger cascade to $60K support
+## 🔥 Narrative Heat Map (2026)
+
+| Rank | Narrative | Signal Strength | Catalyst |
+|------|-----------|-----------------|---------|
+| 🥇 1 | **AI Agents + On-Chain Economies** | 🔴 Critical | KYA, agent wallets, inference markets |
+| 🥈 2 | **Perpetual DEX Dominance** | 🔴 High | HYPE +3% vs red market; volume migration from CEX |
+| 🥉 3 | **RWA 2.0 — Institutional Integration** | 🟠 High | Tokenized Treasuries → credit → private equity |
+| 4 | **Restaking / EigenLayer 2.0** | 🟠 Medium-High | AVS ETFs, restaked oracle security |
+| 5 | **DePIN** | 🟡 Medium | Enterprise pilots, 5G, compute, robotics |
+| 6 | **Bitcoin L2 / BTCFi** | 🟡 Medium | BTC rollups, BTC VM chains, BTC perps |
+| 7 | **Stablecoin Supremacy** | 🟡 Medium | MiCA compliance, FX stable swaps |
+| 8 | **Modular Interop** | 🟢 Building | Intent routing, universal accounts |
 
 ---
 
-*Next report: 2026-04-04 02:00 AEST*
-*— Alex Chen, Midnight Alpha*
+## 🎯 Top Pick: **HYPE (Hyperliquid)**
+
+### Thesis
+HYPE is the only large-cap asset posting **significant green** (+3.15%) in a market saturated with Extreme Fear (F&G: 9). This is the textbook definition of **relative strength** — capital is actively rotating *into* Hyperliquid while everything else bleeds.
+
+### Why HYPE Wins the Narrative Convergence
+- **Perpetual DEX dominance** (#2 narrative) → Hyperliquid is the undisputed leader, consistently capturing migrating CEX volume
+- **On-chain AI agent economies** (#1 narrative) → Hyperliquid's fully on-chain orderbook is the natural execution venue for autonomous trading agents
+- **"Know Your Agent"** (a16z) → agent-native protocols with programmable liquidity are the early infrastructure winners
+- **$8.6B market cap** — still small relative to the infrastructure it's replacing (Binance Futures does ~$20B+ daily)
+- Protocol revenue is real and growing; not speculative narrative only
+
+### Risk Factors
+- Regulatory overhang on perp DEXs in major markets
+- BTC macro direction still uncertain (high BTC dominance at 56.2% = altcoin compression risk)
+- Extreme Fear environment can extend further before reversal
+
+### Entry Framework
+| Signal | Level |
+|--------|-------|
+| Current Price | $35.91 |
+| Short-term support | ~$32–34 (watch for test) |
+| Invalidation | Close below $29 |
+| Target (if BTC stabilises) | $45–52 range |
+
+---
+
+## ⚡ Secondary Opportunities
+
+### SOL — Resilient in the Storm
+- +1.29% with $45.8B cap — holding well despite fear environment
+- Solana agent ecosystem (ELIZA forks, trading bots) gaining traction
+- Watch: Any BTC bounce → SOL likely outperforms ETH in the altcoin recovery
+
+### ETH — Dead Weight Until Catalysts
+- -0.36%, dominance at 10.4% (historically low)
+- Positive: ETH is the settlement layer for most agent frameworks (Base, EigenLayer)
+- Negative: No near-term price catalyst; restaking narrative hasn't translated to ETH price yet
+- Wait for confirmation before accumulating
+
+---
+
+## 📡 Alpha Edge — EvoClaw Relevance
+
+| Insight | Action Signal |
+|---------|---------------|
+| KYA (Know Your Agent) is the next regulatory primitive | ClawChain agent DID infrastructure is **directly aligned** — this is a narrative to front-run |
+| Q1 2026: $242B into AI, seed funding up 31% | Fundraising environment for agent infrastructure is the best ever on record |
+| Perp DEX volume migrating on-chain | HYPE accumulation during fear = asymmetric risk/reward |
+| Agent-wrapping-agent workflows (a16z) | Orchestrator + RSI-loop architecture maps exactly to what the market wants |
+
+---
+
+## 📋 Summary
+
+**Market Mood:** Extreme Fear (9/100) — but selective pockets of strength  
+**Dominant Narrative:** AI Agents meeting on-chain infrastructure  
+**Top Pick:** **HYPE** — outperforming in fear, narrative tailwinds, real revenue  
+**Secondary:** SOL for beta when fear resolves  
+**Avoid (for now):** ETH — wait for catalyst  
+**Macro Watch:** BTC dominance at 56.2% — until it drops, altseason is on hold  
+
+> _"In Extreme Fear, the thing that's still going up is telling you something."_
+
+---
+
+*Report generated by EvoClaw Midnight Alpha Engine | Next report: ~01:00 AEDT Sunday 5 April 2026*
