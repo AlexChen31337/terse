@@ -1,8 +1,8 @@
 {
-  "lastRun": "2026-04-03T00:07:00+11:00",
-  "last_backup": "2026-03-29",
+  "lastRun": "2026-04-04T00:05:00+11:00",
+  "last_backup": "2026-04-04",
   "mbd_last_backup": "2026-04-03",
-  "topic_index": 29,
+  "topic_index": 30,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -557,6 +557,21 @@
       "coverGenerated": true,
       "pdfGenerated": true,
       "note": "Book written, PDF generated, cover generated (PIL fallback), pushed to GitHub. Payhip publish blocked by reCAPTCHA v2 - needs manual publish."
+    },
+    "daily-2026-04-04": {
+      "name": "The AI Security Shield: Master Cybersecurity, Detect Threats, and Defend Digital Systems with Artificial Intelligence",
+      "status": "published",
+      "category": "ai-cybersecurity",
+      "price": 14,
+      "date": "2026-04-04",
+      "folder": "2026-04-04_ai-security-shield",
+      "payhipUrl": "https://payhip.com/b/CXocu",
+      "githubBacked": true,
+      "wordCount": 9382,
+      "chapters": 12,
+      "coverGenerated": true,
+      "pdfGenerated": true,
+      "note": "Auto-published to Payhip. Backed up to GitHub. GPU server unreachable - PIL fallback cover."
     }
   },
   "twitter": {

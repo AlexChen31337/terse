@@ -25,3 +25,29 @@
 [autoresearch] INFO  14:00:27 Appended to archive: /home/bowen/.openclaw/workspace/memory/autoresearch-archive.md
 [autoresearch] INFO  14:00:27 State advanced: next track index = 0
 [autoresearch] INFO  14:00:27 Pipeline complete — exit 0
+[autoresearch] INFO  14:00:15 State loaded: track_index=0, last_run=2026-04-02T14:00:27.125314+00:00
+[autoresearch] INFO  14:00:15 Track from rotation: ai
+[autoresearch] INFO  14:00:15 Track config loaded: AI & Agents
+[autoresearch] INFO  14:00:15 Starting fetch for track 'ai' at 2026-04-03T14:00:15.776586+00:00
+[autoresearch] INFO  arXiv: fetching categories ['cs.AI', 'cs.MA', 'cs.CL', 'cs.LG']
+[autoresearch] INFO  GitHub trending: fetching https://github.com/trending/python
+[autoresearch] INFO  HN: fetching top stories
+[autoresearch] INFO  web: no BRAVE_API_KEY — trying openclaw native web_search
+[autoresearch] INFO  web: returning 0 items (native fallback)
+[autoresearch] INFO  HN: scanning top 60 stories
+[autoresearch] INFO  arXiv: got 25 entries
+[autoresearch] INFO  arXiv: returning 5 items
+[autoresearch] INFO  GitHub trending: fetching https://github.com/trending/rust
+[autoresearch] INFO  GitHub trending: fetching https://github.com/trending/typescript
+[autoresearch] INFO  HN: fetched 60 story details
+[autoresearch] INFO  HN: 15 stories match keywords
+[autoresearch] INFO  HN: returning 5 items
+[autoresearch] INFO  GitHub trending: 34 total repos found
+[autoresearch] INFO  GitHub trending: returning 5 items
+[autoresearch] INFO  14:00:18 Fetch complete: 15 total items (arXiv=5, GitHub=5, HN=5, web=0)
+[autoresearch] INFO  14:00:18 Building report…
+[autoresearch] INFO  14:00:18 Report built (4324 chars)
+[autoresearch] INFO  14:00:18 Wrote latest report to /home/bowen/.openclaw/workspace/memory/autoresearch-latest.md
+[autoresearch] INFO  14:00:18 Appended to archive: /home/bowen/.openclaw/workspace/memory/autoresearch-archive.md
+[autoresearch] INFO  14:00:18 State advanced: next track index = 1
+[autoresearch] INFO  14:00:18 Pipeline complete — exit 0

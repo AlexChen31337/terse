@@ -1,30 +1,30 @@
-# 🔬 Nightly Research: Developer Tools
+# 🔬 Nightly Research: AI & Agents
 
-> Generated: 2026-04-03 00:00 AEST | Track: devtools (3 of 3)
+> Generated: 2026-04-04 00:00 AEST | Track: ai (1 of 3)
 
 ---
 
 ## 📄 Top Papers (arXiv)
 
-1. **[SERSEM: Selective Entropy-Weighted Scoring for Membership Inference in Code Language Models](http://arxiv.org/abs/2604.01147v1)**
-   > As Large Language Models (LLMs) for code increasingly utilize massive, often non-permissively licensed datasets, evaluating data contamination through Membership Inference Attacks (MIAs) has become cr…
-   _Authors: Kıvanç Kuzey Dikici, Serdar Kara, Semih Çağlar | Categories: cs.SE, cs.CR | Published: 2026-04-01_
+1. **[Batched Contextual Reinforcement: A Task-Scaling Law for Efficient Reasoning](http://arxiv.org/abs/2604.02322v1)**
+   > Large Language Models employing Chain-of-Thought reasoning achieve strong performance but suffer from excessive token consumption that inflates inference costs. Existing efficiency methods such as exp…
+   _Authors: Bangji Yang, Hongbo Ma, Jiajun Fan | Categories: cs.LG, cs.AI, cs.CL | Published: 2026-04-02_
 
-2. **[Leveraging Commit Size Context and Hyper Co-Change Graph Centralities for Defect Prediction](http://arxiv.org/abs/2604.01132v1)**
-   > File-level defect prediction models traditionally rely on product and process metrics. While process metrics effectively complement product metrics, they often overlook commit size the number of files…
-   _Authors: Amit Kumar, Ethari Hrishikesh, Sonali Agarwal | Categories: cs.SE | Published: 2026-04-01_
+2. **[ActionParty: Multi-Subject Action Binding in Generative Video Games](http://arxiv.org/abs/2604.02330v1)**
+   > Recent advances in video diffusion have enabled the development of "world models" capable of simulating interactive environments. However, these models are largely restricted to single-agent settings,…
+   _Authors: Alexander Pondaven, Ziyi Wu, Igor Gilitschenski | Categories: cs.CV, cs.AI, cs.LG | Published: 2026-04-02_
 
-3. **[Containing the Reproducibility Gap: Automated Repository-Level Containerization for Scholarly Jupyter Notebooks](http://arxiv.org/abs/2604.01072v1)**
-   > Computational reproducibility is fundamental to trustworthy science, yet remains difficult to achieve in practice across various research workflows, including Jupyter notebooks published alongside sch…
-   _Authors: Sheeba Samuel, Daniel Mietchen, Hemanta Lo | Categories: cs.SE, cs.CE | Published: 2026-04-01_
+3. **[Steerable Visual Representations](http://arxiv.org/abs/2604.02327v1)**
+   > Pretrained Vision Transformers (ViTs) such as DINOv2 and MAE provide generic image features that can be applied to a variety of downstream tasks such as retrieval, classification, and segmentation. Ho…
+   _Authors: Jona Ruthardt, Manu Gaur, Deva Ramanan | Categories: cs.CV, cs.AI | Published: 2026-04-02_
 
-4. **[Revision or Re-Solving? Decomposing Second-Pass Gains in Multi-LLM Pipelines](http://arxiv.org/abs/2604.01029v1)**
-   > Multi-LLM revision pipelines, in which a second model reviews and improves a draft produced by a first, are widely assumed to derive their gains from genuine error correction. We question this assumpt…
-   _Authors: Jingjie Ning, Xueqi Li, Chengyu Yu | Categories: cs.SE, cs.AI, cs.CL | Published: 2026-04-01_
+4. **[No Single Best Model for Diversity: Learning a Router for Sample Diversity](http://arxiv.org/abs/2604.02319v1)**
+   > When posed with prompts that permit a large number of valid answers, comprehensively generating them is the first step towards satisfying a wide range of users. In this paper, we study methods to elic…
+   _Authors: Yuhan Liu, Fangyuan Xu, Vishakh Padmakumar | Categories: cs.CL | Published: 2026-04-02_
 
-5. **[Portable and Secure CI/CD for COBOL: Lessons from an Industrial Migration](http://arxiv.org/abs/2604.00936v1)**
-   > Continuous integration and delivery (CI/CD) pipelines are critical for sustaining the evolution of large software systems. In regulated industries with legacy technologies, however, pipelines themselv…
-   _Authors: Andreas Askholm, Kenneth Johnsen, Jacopo Mauro | Categories: cs.SE | Published: 2026-04-01_
+5. **[Beyond the Assistant Turn: User Turn Generation as a Probe of Interaction Awareness in Language Models](http://arxiv.org/abs/2604.02315v1)**
+   > Standard LLM benchmarks evaluate the assistant turn: the model generates a response to an input, a verifier scores correctness, and the analysis ends. This paradigm leaves unmeasured whether the LLM e…
+   _Authors: Sarath Shekkizhar, Romain Cosentino, Adam Earle | Categories: cs.AI | Published: 2026-04-02_
 
 _(up to 5 items)_
 
@@ -32,20 +32,20 @@ _(up to 5 items)_
 
 ## 🔥 Trending Repos (GitHub)
 
-1. **[openai/codex](https://github.com/openai/codex)** — ⭐ 1,416 | 📈 +1416 today | Rust
-   > Lightweight coding agent that runs in your terminal
+1. **[onyx-dot-app/onyx](https://github.com/onyx-dot-app/onyx)** — ⭐ 1,872 | 📈 +1872 today | Python
+   > Open Source AI Platform - AI Chat with advanced features that works with every LLM
 
-2. **[farion1231/cc-switch](https://github.com/farion1231/cc-switch)** — ⭐ 706 | 📈 +706 today | Rust
+2. **[farion1231/cc-switch](https://github.com/farion1231/cc-switch)** — ⭐ 781 | 📈 +781 today | Rust
    > A cross-platform desktop All-in-One assistant tool for Claude Code, Codex, OpenCode, openclaw &amp; Gemini CLI.
 
-3. **[Huanshere/VideoLingo](https://github.com/Huanshere/VideoLingo)** — ⭐ 40 | 📈 +40 today | Python
-   > Netflix-level subtitle cutting, translation, alignment, and even dubbing - one-click fully automated AI video subtitle team | Netflix级字幕切割、翻译、对齐、甚至加上配音，一键全自动视频搬运AI字幕组
+3. **[sponsors/dmtrKovalenko](https://github.com/sponsors/dmtrKovalenko)** — ⭐ 767 | 📈 +767 today | Rust
+   > The fastest and the most accurate file search toolkit for AI agents, Neovim, Rust, C, and NodeJS
 
-4. **[krillinai/KrillinAI](https://github.com/krillinai/KrillinAI)** — ⭐ 21 | 📈 +21 today | Go
-   > Video translation and dubbing tool powered by LLMs. The video translator offers 100 language translations and one-click full-process deployment. The video translation output is optimized for platforms like YouTube，TikTok. AI视频翻译配音工具，100种语言双向翻译，一键部署全流程，可以生抖音，小红书，哔哩哔哩，视频号，TikTok，Youtube等形态的内容成适配
+4. **[openai/codex](https://github.com/openai/codex)** — ⭐ 505 | 📈 +505 today | Rust
+   > Lightweight coding agent that runs in your terminal
 
-5. **[sponsors/ghuntley](https://github.com/sponsors/ghuntley)** — ⭐ 13 | 📈 +13 today | Go
-   > A workshop that teaches you how to build your own coding agent. Similar to Roo code, Cline, Amp, Cursor, Windsurf or OpenCode.
+5. **[hsliuping/TradingAgents-CN](https://github.com/hsliuping/TradingAgents-CN)** — ⭐ 473 | 📈 +473 today | Python
+   > 基于多智能体LLM的中文金融交易框架 - TradingAgents中文增强版
 
 _(up to 5 items)_
 
@@ -53,35 +53,22 @@ _(up to 5 items)_
 
 ## 🗞️ Hacker News Highlights
 
-1. **[Artemis II Launch Day Updates](https://www.nasa.gov/blogs/missions/2026/04/01/live-artemis-ii-launch-day-updates/)** — 991 pts, 852 comments
-   > _nasa.gov_
+1. **[Google releases Gemma 4 open models](https://deepmind.google/models/gemma/gemma-4/)** — 1607 pts, 424 comments
+   > _deepmind.google_
 
-2. **[Steam on Linux Use Skyrocketed Above 5% in March](https://www.phoronix.com/news/Steam-On-Linux-Tops-5p)** — 542 pts, 257 comments
-   > _phoronix.com_
+2. **[Qwen3.6-Plus: Towards real world agents](https://qwen.ai/blog?id=qwen3.6)** — 559 pts, 192 comments
+   > _qwen.ai_
 
-3. **[SpaceX files to go public](https://www.nytimes.com/2026/04/01/technology/spacex-ipo-elon-musk.html)** — 343 pts, 491 comments
-   > _nytimes.com_
+3. **[Lemonade by AMD: a fast and open source local LLM server using GPU and NPU](https://lemonade-server.ai)** — 532 pts, 111 comments
+   > _lemonade-server.ai_
 
-4. **[Sweden goes back to basics, swapping screens for books in the classroom](https://undark.org/2026/04/01/sweden-schools-books/)** — 283 pts, 156 comments
-   > _undark.org_
+4. **[Tailscale's new macOS home](https://tailscale.com/blog/macos-notch-escape)** — 499 pts, 253 comments
+   > _tailscale.com_
 
-5. **[Fast and Gorgeous Erosion Filter](https://blog.runevision.com/2026/03/fast-and-gorgeous-erosion-filter.html)** — 198 pts, 20 comments
-   > _blog.runevision.com_
+5. **[Show HN: Apfel – The free AI already on your Mac](https://apfel.franzai.com)** — 343 pts, 71 comments
+   > _apfel.franzai.com_
 
 _(up to 5 items)_
-
----
-
-## 🌐 Web Highlights (Supplementary)
-
-### Anthropic
-- **Mythos model revealed** — Anthropic testing a new model called 'Mythos', described as a 'step change' in capabilities, after an accidental data leak. ([Fortune](https://fortune.com/2026/03/26/anthropic-says-testing-mythos-powerful-new-ai-model-after-data-leak-reveals-its-existence-step-change-in-capabilities/))
-- **Anthropic's madcap March** — 14+ launches including Opus 4.6, computer use updates, MCP crossing 97M installs. Reliability concerns mounted alongside the pace. ([The New Stack](https://thenewstack.io/anthropic-march-2026-roundup/))
-- **Science Blog launched** — New Anthropic Science blog to document AI-driven research and human-AI collaboration in science. ([WinBuzzer](https://winbuzzer.com/2026/03/24/anthropic-launches-science-blog-ai-driven-research-xcxwbn/))
-
-### OpenAI
-- **$122B funding round closed** — OpenAI raised $122B at a $852B post-money valuation. IPO plans reportedly targeting $1T+ status. ([CNBC](https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html), [Forbes](https://www.forbes.com/sites/antoniopequenoiv/2026/03/31/openai-valuation-reaches-852-billion-after-massive-funding-round/))
-- **Claude Code source leak reported** — Alongside 4 new AI tools and rising American AI usage but declining trust. ([Blockchain News](https://blockchain.news/ainews/openai-record-funding-claude-code-leak-and-4-new-tools-latest-2026-ai-trends-and-business-impact-analysis))
 
 ---
 
@@ -96,4 +83,22 @@ _(up to 5 items)_
 
 ---
 
-_Next track: AI & Agents | Archive: memory/autoresearch-archive.md_
+---
+
+## 🌐 Web Highlights (Supplementary)
+
+### Anthropic
+- **Anthropic 'Mythos' model** — Code-named "step change" in performance, discovered via accidental data leak (Fortune, Mar 26)
+- **March 2026 madcap month** — 14+ launches including Opus 4.6, computer use; MCP crossed 97M installs (The New Stack)
+- **Science Blog launched** — Documenting AI-driven research and human-AI collaboration in science (Anthropic, Mar 24)
+- **Safety research push** — New 2026 safety initiatives amid rapid industry advancements (Multi-AI)
+
+### OpenAI
+- **$122B raise** — Largest-ever Silicon Valley round, led by Amazon, Nvidia, SoftBank; $852B valuation (TechCrunch/Reuters, Mar 31)
+- **GPT-5.2 shipped** — ChatGPT app ecosystem launched, AI safety research expanded (eWeek)
+- **Acquired TBPN** — Tech talk show to stay editorially independent (Economic Times)
+- **Reuters analysis** — "$852 billion problem: finding focus" amid sprawling product ambitions
+
+---
+
+_Next track: Crypto & DeFi | Archive: memory/autoresearch-archive.md_
