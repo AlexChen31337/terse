@@ -55,6 +55,10 @@ NOISE_SENDERS = {
     "jobalerts-noreply@linkedin.com",  # LinkedIn job alerts — always noise
     "linkedin@e.linkedin.com",         # LinkedIn marketing emails
     "noreply@linkedin.com",            # LinkedIn notifications
+    "messages-noreply@linkedin.com",   # LinkedIn job/message nudges
+    "updates-noreply@linkedin.com",    # LinkedIn feed update digests
+    "jobs-listings@linkedin.com",       # LinkedIn job listing digests
+    "no-reply@substack.com",            # Substack account emails
 }
 
 # ── Relevance signals (if present → surface to Bowen) ───────────────────────
@@ -126,6 +130,10 @@ def classify_email(email):
     # Hard quarantine
     if matches_any(combined, QUARANTINE_PATTERNS):
         return "quarantine", f"spam/bot pattern in: {sender[:60]}"
+
+    # Noise senders — always skip (except GitHub which has special handling)
+    if any(ns in sender for ns in NOISE_SENDERS) and "notifications@github.com" not in sender:
+        return "noise", f"known noise sender: {sender[:60]}"
 
     # GitHub notifications — only surface if about our repos
     if "notifications@github.com" in sender:

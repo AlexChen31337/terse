@@ -1,49 +1,33 @@
-# RSI Loop Health Check Report
-**Date:** 2026-04-02 18:01 AEDT
-**Health Score:** 0.1 (CRITICAL)
+# RSI Health Check — 2026-04-03 03:10 AEDT
 
-## Metrics (7 days)
-- **Outcomes logged:** 145
-- **Success rate:** 23%
-- **Average quality:** 2.19/5
+## Status Summary
+- **Health Score: 0.095** ⚠️ CRITICAL (threshold: 0.3)
+- **7-Day Outcomes:** 137 logged
+- **Success Rate:** 22%
+- **Avg Quality:** 2.18 / 5
 
-## Top Failure Patterns
+## Top Issues
+| Issue | Count | Failure Rate |
+|-------|-------|-------------|
+| timeout | 52 | 100% |
+| tool_error | 42 | 100% |
+| context_loss | 30 | 0% |
 
-### 1. Timeout in tool_call tasks
-- **Occurrences:** 55
-- **Failure rate:** 100%
-- **Severity:** 1.138
+## Detected Patterns (5)
+1. **[1.136]** In `tool_call` tasks, `timeout` occurs 53x with 100% failure rate
+2. **[0.921]** In `tool_call` tasks, `tool_error` occurs 43x with 100% failure rate
+3. **[0.443]** In `session_management` tasks, `context_loss` occurs 31x with 0% failure
 
-### 2. Tool error in tool_call tasks
-- **Occurrences:** 45
-- **Failure rate:** 100%
-- **Severity:** 0.931
+## Proposals
+- **1 draft | 0 approved | 24 deployed**
+- Cycle generated 5 proposals — all already deployed or auto-approved
+- No new proposals pending review
 
-### 3. Context loss in session_management tasks
-- **Occurrences:** 33
-- **Failure rate:** 0%
-- **Severity:** 0.455
+## Deployed Auto-Fixes (still in effect)
+- `db32089a` — Address 'timeout' in tool_call tasks
+- `b9e26a71` — Address 'tool_error' in tool_call tasks
+- `3a2dc2d1` — Fix model routing rate limits
+- `15c31c37` — Address 'tool_validation_error' in tool_call tasks
 
-## Proposals Status
-- **Total proposals:** 5
-- **Auto-approved:** 0
-- **Already deployed:** 5 (db32089a, b9e26a71, 60126e7f, 3a2dc2d1, 15c31c37)
-
-## Deployed Fixes (Previously Applied)
-- [db32089a] Address 'timeout' in 'tool_call' tasks
-- [b9e26a71] Address 'tool_error' in 'tool_call' tasks
-- [60126e7f] [Gene] Fix model routing rate limits
-- [3a2dc2d1] [Gene] Fix model routing rate limits
-- [15c31c37] Address 'tool_validation_error' in 'tool_call' tasks
-
-## Analysis
-All proposals have already been deployed, yet health score remains critically low at 0.1. This indicates systemic issues that require deeper investigation rather than additional quick fixes.
-
-## Recommendations
-1. **Tool timeout configuration:** Review and adjust timeout values for tool calls
-2. **API rate limiting:** Investigate rate limit handling in model routing
-3. **Session context management:** Audit session context retention policies
-4. **Pattern recurrence:** Determine why deployed fixes aren't preventing pattern recurrence
-
-## Alert Status
-⚠️ Health score below 0.3 threshold — Bowen alerted via Telegram.
+## Assessment
+Despite 24 deployed proposals, the health score remains critical at 0.095. The dominant failure modes (timeout, tool_error) persist. The deployed fixes may not be addressing root causes, or new failures are outpacing fixes. Success rate of only 22% indicates systemic issues.

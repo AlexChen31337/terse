@@ -1,8 +1,8 @@
 {
   "lastRun": "2026-04-03T00:07:00+11:00",
   "last_backup": "2026-03-29",
-  "mbd_last_backup": "2026-04-02",
-  "topic_index": 28,
+  "mbd_last_backup": "2026-04-03",
+  "topic_index": 29,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -530,6 +530,18 @@
       "coverGenerated": false,
       "pdfGenerated": true,
       "note": "Auto-published to Payhip. Backed up to GitHub. ComfyUI unreachable - used fallback cover."
+    },
+    "mbd-daily-2026-04-03": {
+      "name": "AI副业指南_2026年聪明人早已让机器替自己赚钱了",
+      "status": "backed_up",
+      "category": "副业/AI",
+      "date": "2026-04-03",
+      "githubBacked": true,
+      "coverGenerated": false,
+      "folder": "2026-04-03_AI副业指南_2026年聪明人早已让机器替自己赚钱了",
+      "title": "AI副业指南_2026年聪明人早已让机器替自己赚钱了",
+      "wordCount": 5800,
+      "note": "MbD Chinese backup. No cover (GPU server unreachable). Awaiting publish instruction from owner."
     },
     "daily-2026-04-03": {
       "name": "The AI Writing Factory: Build a Complete Content Production Pipeline from Idea to Published Book",
