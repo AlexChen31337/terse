@@ -1,30 +1,30 @@
-# 🔬 Nightly Research: AI & Agents
+# 🔬 Nightly Research: Crypto & DeFi
 
-> Generated: 2026-04-04 00:00 AEST | Track: ai (1 of 3)
+> Generated: 2026-04-05 00:00 AEST | Track: crypto (2 of 3)
 
 ---
 
 ## 📄 Top Papers (arXiv)
 
-1. **[Batched Contextual Reinforcement: A Task-Scaling Law for Efficient Reasoning](http://arxiv.org/abs/2604.02322v1)**
-   > Large Language Models employing Chain-of-Thought reasoning achieve strong performance but suffer from excessive token consumption that inflates inference costs. Existing efficiency methods such as exp…
-   _Authors: Bangji Yang, Hongbo Ma, Jiajun Fan | Categories: cs.LG, cs.AI, cs.CL | Published: 2026-04-02_
+1. **[APEX: Agent Payment Execution with Policy for Autonomous Agent API Access](http://arxiv.org/abs/2604.02023v1)**
+   > Autonomous agents are moving beyond simple retrieval tasks to become economic actors that invoke APIs, sequence workflows, and make real-time decisions. As this shift accelerates, API providers need r…
+   _Authors: Mohd Safwan Uddin, Mohammed Mouzam, Mohammed Imran | Categories: cs.CR, cs.AI | Published: 2026-04-02_
 
-2. **[ActionParty: Multi-Subject Action Binding in Generative Video Games](http://arxiv.org/abs/2604.02330v1)**
-   > Recent advances in video diffusion have enabled the development of "world models" capable of simulating interactive environments. However, these models are largely restricted to single-agent settings,…
-   _Authors: Alexander Pondaven, Ziyi Wu, Igor Gilitschenski | Categories: cs.CV, cs.AI, cs.LG | Published: 2026-04-02_
+2. **[PARD-SSM: Probabilistic Cyber-Attack Regime Detection via Variational Switching State-Space Models](http://arxiv.org/abs/2604.02299v1)**
+   > Modern adversarial campaigns unfold as sequences of behavioural phases - Reconnaissance, Lateral Movement, Intrusion, and Exfiltration - each often indistinguishable from legitimate traffic when viewe…
+   _Authors: Prakul Sunil Hiremath, PeerAhammad M Bagawan, Sahil Bhekane | Categories: cs.CR | Published: 2026-04-02_
 
-3. **[Steerable Visual Representations](http://arxiv.org/abs/2604.02327v1)**
-   > Pretrained Vision Transformers (ViTs) such as DINOv2 and MAE provide generic image features that can be applied to a variety of downstream tasks such as retrieval, classification, and segmentation. Ho…
-   _Authors: Jona Ruthardt, Manu Gaur, Deva Ramanan | Categories: cs.CV, cs.AI | Published: 2026-04-02_
+3. **[What can be computed in average anonymous networks?](http://arxiv.org/abs/2604.02192v1)**
+   > We study what deterministic distributed algorithms can compute on random input graphs in extremely weak models of distributed computing: all nodes are anonymous, and in each communication round, nodes…
+   _Authors: Joel Rybicki, Oleg Verbitsky, Maksim Zhukovskii | Categories: cs.DC | Published: 2026-04-02_
 
-4. **[No Single Best Model for Diversity: Learning a Router for Sample Diversity](http://arxiv.org/abs/2604.02319v1)**
-   > When posed with prompts that permit a large number of valid answers, comprehensively generating them is the first step towards satisfying a wide range of users. In this paper, we study methods to elic…
-   _Authors: Yuhan Liu, Fangyuan Xu, Vishakh Padmakumar | Categories: cs.CL | Published: 2026-04-02_
+4. **[A Practical Two-Stage Framework for GPU Resource and Power Prediction in Heterogeneous HPC Systems](http://arxiv.org/abs/2604.02158v1)**
+   > Efficient utilization of GPU resources and power has become critical with the growing demand for GPUs in high-performance computing (HPC). In this paper, we analyze GPU utilization and GPU memory util…
+   _Authors: Beste Oztop, Dhruva Kulkarni, Zhengji Zhao | Categories: cs.DC, cs.LG, cs.PF | Published: 2026-04-02_
 
-5. **[Beyond the Assistant Turn: User Turn Generation as a Probe of Interaction Awareness in Language Models](http://arxiv.org/abs/2604.02315v1)**
-   > Standard LLM benchmarks evaluate the assistant turn: the model generates a response to an input, a verifier scores correctness, and the analysis ends. This paradigm leaves unmeasured whether the LLM e…
-   _Authors: Sarath Shekkizhar, Romain Cosentino, Adam Earle | Categories: cs.AI | Published: 2026-04-02_
+5. **[AEGIS: Adversarial Entropy-Guided Immune System -- Thermodynamic State Space Models for Zero-Day Network Evasion Detection](http://arxiv.org/abs/2604.02149v1)**
+   > As TLS 1.3 encryption limits traditional Deep Packet Inspection (DPI), the security community has pivoted to Euclidean Transformer-based classifiers (e.g., ET-BERT) for encrypted traffic analysis. How…
+   _Authors: Vickson Ferrel | Categories: cs.CR, cs.LG | Published: 2026-04-02_
 
 _(up to 5 items)_
 
@@ -32,20 +32,20 @@ _(up to 5 items)_
 
 ## 🔥 Trending Repos (GitHub)
 
-1. **[onyx-dot-app/onyx](https://github.com/onyx-dot-app/onyx)** — ⭐ 1,872 | 📈 +1872 today | Python
-   > Open Source AI Platform - AI Chat with advanced features that works with every LLM
+1. **[OpenZeppelin/openzeppelin-contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)** — ⭐ 3 | 📈 +3 today | Solidity
+   > OpenZeppelin Contracts is a library for secure smart contract development.
 
-2. **[farion1231/cc-switch](https://github.com/farion1231/cc-switch)** — ⭐ 781 | 📈 +781 today | Rust
-   > A cross-platform desktop All-in-One assistant tool for Claude Code, Codex, OpenCode, openclaw &amp; Gemini CLI.
+2. **[transmissions11/solmate](https://github.com/transmissions11/solmate)** — ⭐ 1 | 📈 +1 today | Solidity
+   > Modern, opinionated, and gas optimized building blocks for smart contract development.
 
-3. **[sponsors/dmtrKovalenko](https://github.com/sponsors/dmtrKovalenko)** — ⭐ 767 | 📈 +767 today | Rust
-   > The fastest and the most accurate file search toolkit for AI agents, Neovim, Rust, C, and NodeJS
+3. **[Uniswap/v4-core](https://github.com/Uniswap/v4-core)** — ⭐ 1 | 📈 +1 today | Solidity
+   > 🦄 🦄 🦄 🦄 Core smart contracts of Uniswap v4
 
-4. **[openai/codex](https://github.com/openai/codex)** — ⭐ 505 | 📈 +505 today | Rust
-   > Lightweight coding agent that runs in your terminal
+4. **[succinctlabs/sp1-contracts](https://github.com/succinctlabs/sp1-contracts)** — ⭐ 1 | 📈 +1 today | Solidity
+   > Smart contracts for onchain verification of SP1.
 
-5. **[hsliuping/TradingAgents-CN](https://github.com/hsliuping/TradingAgents-CN)** — ⭐ 473 | 📈 +473 today | Python
-   > 基于多智能体LLM的中文金融交易框架 - TradingAgents中文增强版
+5. **[aave-dao/aave-helpers](https://github.com/aave-dao/aave-helpers)** — Solidity
+   > No description available.
 
 _(up to 5 items)_
 
@@ -53,20 +53,20 @@ _(up to 5 items)_
 
 ## 🗞️ Hacker News Highlights
 
-1. **[Google releases Gemma 4 open models](https://deepmind.google/models/gemma/gemma-4/)** — 1607 pts, 424 comments
-   > _deepmind.google_
+1. **[Artemis II crew take “spectacular” image of Earth](https://www.bbc.com/news/articles/ce8jzr423p9o)** — 855 pts, 293 comments
+   > _bbc.com_
 
-2. **[Qwen3.6-Plus: Towards real world agents](https://qwen.ai/blog?id=qwen3.6)** — 559 pts, 192 comments
-   > _qwen.ai_
+2. **[Tell HN: Anthropic no longer allowing Claude Code subscriptions to use OpenClaw](https://news.ycombinator.com/item?id=47633396)** — 838 pts, 651 comments
+   > HN discussion (651 comments)
 
-3. **[Lemonade by AMD: a fast and open source local LLM server using GPU and NPU](https://lemonade-server.ai)** — 532 pts, 111 comments
-   > _lemonade-server.ai_
+3. **[iNaturalist](https://www.inaturalist.org/)** — 468 pts, 111 comments
+   > _inaturalist.org_
 
-4. **[Tailscale's new macOS home](https://tailscale.com/blog/macos-notch-escape)** — 499 pts, 253 comments
-   > _tailscale.com_
+4. **[OpenClaw privilege escalation vulnerability](https://nvd.nist.gov/vuln/detail/CVE-2026-33579)** — 440 pts, 212 comments
+   > _nvd.nist.gov_
 
-5. **[Show HN: Apfel – The free AI already on your Mac](https://apfel.franzai.com)** — 343 pts, 71 comments
-   > _apfel.franzai.com_
+5. **[Simple self-distillation improves code generation](https://arxiv.org/abs/2604.01193)** — 199 pts, 46 comments
+   > _arxiv.org_
 
 _(up to 5 items)_
 
@@ -83,22 +83,20 @@ _(up to 5 items)_
 
 ---
 
----
-
 ## 🌐 Web Highlights (Supplementary)
 
-### Anthropic
-- **Anthropic 'Mythos' model** — Code-named "step change" in performance, discovered via accidental data leak (Fortune, Mar 26)
-- **March 2026 madcap month** — 14+ launches including Opus 4.6, computer use; MCP crossed 97M installs (The New Stack)
-- **Science Blog launched** — Documenting AI-driven research and human-AI collaboration in science (Anthropic, Mar 24)
-- **Safety research push** — New 2026 safety initiatives amid rapid industry advancements (Multi-AI)
+### AI & Agents
+- **Anthropic launches Science Blog** — New blog about AI and science, documenting collaborations with external researchers and practical AI workflows for scientists. (anthropic.com)
+- **Anthropic Fellows alignment research** — New paper on arXiv from fellows program led by @tomjiralerspong, supervised by @TrentonBricken. (blockchain.news)
+- **OpenAI raises $122B at $852B valuation** — Record round led by Amazon, Nvidia, SoftBank. $3B from retail investors. IPO approaching. (CNBC, TechCrunch)
 
-### OpenAI
-- **$122B raise** — Largest-ever Silicon Valley round, led by Amazon, Nvidia, SoftBank; $852B valuation (TechCrunch/Reuters, Mar 31)
-- **GPT-5.2 shipped** — ChatGPT app ecosystem launched, AI safety research expanded (eWeek)
-- **Acquired TBPN** — Tech talk show to stay editorially independent (Economic Times)
-- **Reuters analysis** — "$852 billion problem: finding focus" amid sprawling product ambitions
+### Crypto & DeFi
+- **Drift Protocol exploited for $285M** — Largest DeFi hack of 2026. Solana-based futures DEX drained on April 1. Circle accused of failing to freeze USDC promptly. (defi-planet.com, ainvest.com)
+- **Q1 DeFi hacks totaled $168.6M across 34 protocols** — Down significantly from Q1 2025. (Cointelegraph)
+- **Crypto market drops 2.4% to $2.38T** — Fear & Greed Index hits 9 (extreme fear). BTC/ETH falling. (coingabbar.com)
+- **BTC 50% drawdown = market maturity** — Fidelity frames reduced volatility vs past cycles as positive signal. (defi-planet.com)
+- **SOL down 71% from peak** — Risk appetite uneven outside BTC. (defi-planet.com)
 
 ---
 
-_Next track: Crypto & DeFi | Archive: memory/autoresearch-archive.md_
+_Next track: Developer Tools | Archive: memory/autoresearch-archive.md_
