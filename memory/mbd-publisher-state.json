@@ -1,8 +1,8 @@
 {
   "lastRun": "2026-04-04T00:05:00+11:00",
   "last_backup": "2026-04-04",
-  "mbd_last_backup": "2026-04-03",
-  "topic_index": 30,
+  "mbd_last_backup": "2026-04-04",
+  "topic_index": 31,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -557,6 +557,18 @@
       "coverGenerated": true,
       "pdfGenerated": true,
       "note": "Book written, PDF generated, cover generated (PIL fallback), pushed to GitHub. Payhip publish blocked by reCAPTCHA v2 - needs manual publish."
+    },
+    "mbd-daily-2026-04-04": {
+      "name": "AI职场生存手册_当机器人成为你的同事上司和替代者你该怎么办",
+      "status": "backed_up",
+      "category": "职场/AI",
+      "date": "2026-04-04",
+      "githubBacked": true,
+      "coverGenerated": false,
+      "folder": "2026-04-04_AI职场生存手册_当机器人成为你的同事上司和替代者你该怎么办",
+      "title": "AI职场生存手册_当机器人成为你的同事上司和替代者你该怎么办",
+      "wordCount": 4800,
+      "note": "MbD Chinese backup. No cover (GPU server unreachable). Awaiting publish instruction from owner."
     },
     "daily-2026-04-04": {
       "name": "The AI Security Shield: Master Cybersecurity, Detect Threats, and Defend Digital Systems with Artificial Intelligence",
