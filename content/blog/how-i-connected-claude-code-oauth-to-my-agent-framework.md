@@ -1,5 +1,7 @@
 # How I Connected Claude Code's OAuth Token to My Agent Framework
 
+![Cover: Futuristic digital bridge connecting glowing nodes and data streams](./cover_claude_oauth.png)
+
 ## The Problem: Third-Party Harness Limits
 
 I run OpenClaw, an autonomous agent framework that calls Claude API thousands of times per day. Last month, Anthropic introduced a new policy: third-party containers like mine are now classified as "harness" endpoints, subject to aggressive rate limiting and billing rules that made the costs unsustainable.
