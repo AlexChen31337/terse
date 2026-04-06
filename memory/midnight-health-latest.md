@@ -1,73 +1,70 @@
 # Midnight Health Check Report
-**Generated:** 2026-04-06 00:00:00 AEST (2026-04-05 14:00:00 UTC)
-
-## Summary
-🚨 **CRITICAL FAILURES** - Multiple systems DOWN
-
----
+**Date:** 2026-04-07 00:00 AEST
+**Checked by:** Sentinel (cron:3b4465c3-4a20-4e25-8325-30d108cd3f04)
 
 ## Component Status
 
-### 1. Sentinel ✅ OK
-- **State file:** Present and valid
-- **Last price check:** 1775396250 (2026-04-05 23:57:30 AEST)
-- **Last Fear & Greed check:** 1775396250 (2026-04-05 23:57:30 AEST)
-- **Current F&G:** Extreme Fear (12)
-- **Alerts tracking:** Active, no stale alerts
+### ✅ Sentinel (workspace-sentinel)
+- **Status:** ACTIVE
+- **Last Price Check:** 2026-04-07 00:05 (UTC: 2026-04-06 13:05)
+- **Last Fear/Greed:** Extreme Fear (13) - checked 2026-04-07 00:05
+- **Alerts in 24h:** BTC moves, HYPE moves, FNG category change
+- **Recent Threshold Alerts:** BTC $67.5k, HYPE $25, FNG category change
+- **Verdict:** OK
 
-### 2. Quant ❌ DOWN
-- **State file:** NOT FOUND (/home/bowen/.openclaw/workspace-quant/quant-state.json)
-- **AlphaStrike Service:** FAILING
-  - Status: activating (auto-restart) - Result: resources
-  - Restart counter: 12,764 attempts
-  - Error: "Failed to load environment files: No such file or directory"
-  - Error: "Failed to spawn 'start' task: No such file or directory"
-- **Root cause:** Environment file missing or ExecStart pointing to non-existent file
+### ❌ Quant (workspace-quant)
+- **Status:** ACTIVE but AlphaStrike service FAILED
+- **Last State Read:** 2026-03-26 signals (stale - 12 days old)
+- **AlphaStrike Service:** activating → Failed to spawn 'start' task: No such file or directory
+- **Error:** `alphastrike.service: Failed with result 'resources'`
+- **Journalctl (last 3 lines):**
+  ```
+  Apr 07 00:00:14 alphastrike.service: Failed to spawn 'start' task: No such file or directory
+  Apr 07 00:00:14 alphastrike.service: Failed with result 'resources'.
+  Apr 07 00:00:14 Failed to start alphastrike.service
+  ```
+- **Verdict:** ⚠️ **DOWN** - Service unit broken (missing ExecStart or binary)
 
-### 3. Shield ❌ DOWN
-- **Access control file:** NOT FOUND (/home/bowen/.openclaw/access-control.json)
-- **Status:** Unconfigured
+### ⚠️ Shield (access-control)
+- **Status:** NOT FOUND
+- **File:** `~/.openclaw/access-control/access-control.json` - missing
+- **Verdict:** ⚠️ **NOT CONFIGURED** - No access control state found
 
-### 4. Herald ❌ DOWN
-- **State file:** NOT FOUND (/home/bowen/.openclaw/workspace-herald/herald-state.json)
-- **Status:** Workspace missing or uninitialized
+### ❓ Herald (workspace-herald)
+- **Status:** IDLE/INACTIVE
+- **Last Checks:** All zeros (twitter: 0, moltbook: 0, analytics: 0)
+- **Verdict:** ⚠️ **NEVER INITIALIZED** - Zero activity
 
-### 5. EvoClaw Hub ❌ DOWN
-- **API endpoint:** http://localhost:8420/api/agents
-- **Status:** Not responding
-- **Processes:** No evoclaw/hub processes found running
-- **Action needed:** Hub service not running
+### ❌ EvoClaw Hub (localhost:8420)
+- **Status:** DOWN
+- **Check:** `curl -s http://localhost:8420/api/agents` - timeout
+- **Verdict:** ❌ **DOWN** - Hub not running
 
-### 6. Alex Eye (Pi) ❌ DOWN
-- **SSH test:** pi@192.168.1.100
-- **Status:** Connection timeout
-- **Action needed:** Check Pi is powered on and network reachable
+### ❌ Alex Eye (Pi @ 10.0.0.50)
+- **Status:** DOWN
+- **SSH Check:** Connection timed out (3s timeout)
+- **Verdict:** ❌ **DOWN** - Pi unreachable
 
----
+## Infrastructure
 
-## Issues Requiring Immediate Attention
+### Disk Usage
+- `/` (root): 85% used (751G / 937G) - ⚠️ **WARNING** - Getting full
+- `/media/DATA`: Not mounted
+- `/data2`: Not mounted
 
-1. **AlphaStrike V2** - Environment file missing, service in restart loop (12,764+ attempts)
-2. **EvoClaw Hub** - Not running, no hub processes found
-3. **Raspberry Pi** - SSH unreachable, possibly offline
-4. **Quant workspace** - State file missing
-5. **Shield** - Access control not configured
-6. **Herald** - Workspace missing
+## Action Required
 
----
+### CRITICAL (Immediate)
+1. **AlphaStrike Service:** Broken systemd unit - needs ExecStart path fix or reinstall
+2. **EvoClaw Hub:** Down - needs restart
+3. **Alex Eye Pi:** Down - needs SSH access recovery or restart
 
-## Sentinel Performance (Only Working Component)
-- Last checks: ~2 minutes ago (healthy)
-- Fear & Greed: Extreme Fear (12) - monitoring active
-- Price tracking: BTC/ETH/SOL/HYPE all being tracked
-- Alert system: Functional with recent alerts logged
+### WARNING (Soon)
+1. **Disk Space:** Root volume at 85% - should be <80%
+2. **Shield:** Access control not configured
+3. **Herald:** Never initialized - may be intentional
 
----
-
-## Recommendations
-
-1. **Fix AlphaStrike environment file** - Check /home/bowen/.config/systemd/user/alphastrike.service for EnvironmentFile path
-2. **Restart EvoClaw Hub** - Check if hub service exists and restart it
-3. **Check Raspberry Pi** - Verify power and network connectivity
-4. **Initialize missing workspaces** - Create state files for Quant and Herald
-5. **Configure Shield** - Set up access-control.json
+## Timestamps
+- Sentinel last check: 1775479108 (2026-04-07 00:05:08 AEST)
+- Quant last check: 1742915309 (2026-03-26) - STALE
+- Report generated: 2026-04-07 00:00:00 AEST
