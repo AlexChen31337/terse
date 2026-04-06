@@ -31,6 +31,16 @@ htmlcov/
 .venv/
 uv.lock
 
+# Large binary files
+*.gguf
+*.safetensors
+clawmemory.db
+clawmemory.db-wal
+clawmemory.db-shm
+*.db
+*.db-wal
+*.db-shm
+
 # Node
 node_modules/
 
