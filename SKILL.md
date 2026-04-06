@@ -1,98 +1,96 @@
-# Caveman Skill
+# Terse Skill
 
 > 🪨 why use many token when few token do trick
 
-Compressed output mode for Claude Code / Codex agents. Cuts ~65–75% of output tokens by stripping filler words, pleasantries, articles, and hedging — while keeping code, technical terms, and error messages verbatim.
+Compressed output mode for sub-agents. Cuts ~65–75% of output tokens by stripping filler words, pleasantries, articles, and hedging — while keeping code, technical terms, and error messages verbatim.
 
 Based on: https://github.com/JuliusBrussee/caveman
 
 ---
 
-## When to Use
+## ⛔ HARD EXCLUSION RULES — NEVER USE terse FOR:
 
-Use this skill when spawning sub-agents for:
-- Code tasks (debug, refactor, explain)
-- Short Q&A, lookup, summarize
-- Any task where brevity > polish
+These task types require full expressive output. Applying terse here **degrades quality**:
 
-**Don't use for:**
-- Final user-facing content (blog posts, emails, MbD articles)
-- Payhip book generation
-- Any output Bowen will read directly without editing
+- **Planning** — strategic plans, roadmaps, sprint planning, milestone design
+- **Critical thinking** — risk analysis, security audits, trade-off evaluations, incident response
+- **Solution architecture** — system design, API contracts, data models, infrastructure decisions
+- **Article/writing** — blog posts, MbD content, Payhip books, tweets, emails, any user-facing prose
+- **Bowen-facing communication** — main session replies, status updates to Bowen
+- **Code review** — PR reviews, architecture reviews, design doc feedback
+- **Prompt engineering** — system prompts, skill instructions, agent personas
+
+**If in doubt: DON'T compress.** Full output is always safer than compressed output.
+
+---
+
+## ✅ APPROVED USE CASES:
+
+Terse is safe and beneficial for these **internal, non-critical** sub-agent tasks:
+
+- **Code implementation** — debug, refactor, fix bugs, write functions
+- **Lookups & queries** — "what does this function do", "find the config for X"
+- **File operations** — "list logs", "check disk space", "grep for X"
+- **Health checks & monitoring** — cron job status, service checks, log parsing
+- **CI/CD steps** — build, test, lint, deploy (non-decision parts)
+- **Data extraction** — parse JSON, extract fields, transform data
+- **Internal agent handoffs** — tool-to-tool communication where no human reads output
+- **Quick summaries** — "summarize this URL/file" for internal context (NOT for Bowen)
 
 ---
 
 ## Compression Levels
 
-### Lite (default)
-- Drop filler phrases ("I'd be happy to", "Great question", "In conclusion")
-- Drop redundant hedging ("it might be", "you could potentially")
-- Keep full sentences, just cleaner
+### Lite
+Drop filler phrases, hedging. Keep full sentences.
 
-**System prefix:**
-```
-Be concise. Skip filler phrases, pleasantries, and unnecessary hedging. Keep technical terms and code verbatim.
-```
+**Prefix:** `Be concise. Skip filler phrases, pleasantries, and unnecessary hedging. Keep technical terms and code verbatim.`
 
-### Full
-- Drop articles (a, an, the) where meaning is clear
-- Drop "I" subject where implicit
-- Use fragment sentences for steps/lists
-- Code blocks and error messages: always verbatim
+### Full (default)
+Omit articles, use fragments, bare imperatives. Code/errors verbatim.
 
-**System prefix:**
-```
-CAVEMAN MODE: Omit articles, filler, pleasantries. Use fragments. Steps as bare imperatives. Keep code/errors verbatim. No apologies. No "I". Just signal.
-```
+**Prefix:** `CAVEMAN MODE: Omit articles, filler, pleasantries. Use fragments. Steps as bare imperatives. Keep code/errors verbatim. No apologies. No "I". Just signal.`
 
 ### Ultra
-- Maximum compression — every non-essential word dropped
-- 1-3 word labels for concepts
-- Numbered steps with no prose
-- Reserved for: internal agent notes, tool-to-tool handoffs
+Max compress. Labels only. No sentences. Code verbatim.
 
-**System prefix:**
-```
-ULTRA CAVEMAN: Max compress. Drop ALL non-essential words. Labels only. No sentences. Keep code verbatim.
-```
+**Prefix:** `ULTRA CAVEMAN: Max compress. Drop ALL non-essential words. Labels only. No sentences. Keep code verbatim.`
 
 ---
 
-## Benchmarks (from repo)
+## How to Apply in sessions_spawn
 
-| Task | Normal tokens | Caveman tokens | Saved |
-|------|--------------|----------------|-------|
-| React re-render bug | 1180 | 159 | 87% |
-| PostgreSQL pool setup | 2347 | 380 | 84% |
-| Git rebase conflict | 891 | 374 | 58% |
-| Average | — | — | **~65–75%** |
-
-March 2026 paper finding: brevity constraints improved accuracy by 26pp (less hedging = more direct answers).
-
----
-
-## How to Use
-
-### In sessions_spawn
 ```python
+# ✅ GOOD: internal code task
 sessions_spawn(
-    task="[CAVEMAN FULL]\n\nExplain why this Go function leaks goroutines:\n\n```go\n...\n```",
-    model="CC-Sonnet46"  # or any model
+    task="CAVEMAN MODE: Omit articles, filler, pleasantries. Use fragments. Steps as bare imperatives. Keep code/errors verbatim. No apologies. No \"I\". Just signal.\n\nFix the goroutine leak in internal/server/pool.go",
+    model="CC-Sonnet46"
+)
+
+# ❌ BAD: planning task — DO NOT apply terse
+sessions_spawn(
+    task="Design the v0.7.0 architecture for EvoClaw. Consider the Phase 3 requirements...",
+    model="CC-Opus46"
 )
 ```
 
 ### Via helper script
 ```bash
-uv run python ~/.openclaw/workspace/skills/caveman/scripts/caveman_prompt.py --level full "your task here"
+uv run python ~/.openclaw/workspace/skills/terse/scripts/caveman_prompt.py --level full "your task here"
 ```
 
-### Manual prefix
-Prepend to any sub-agent task prompt:
-```
-CAVEMAN MODE: Omit articles, filler, pleasantries. Use fragments. Steps as bare imperatives. Keep code/errors verbatim. No apologies. No "I". Just signal.
+---
 
-[your actual task here]
-```
+## Benchmarks (from caveman repo)
+
+| Task | Normal tokens | Terse tokens | Saved |
+|------|--------------|--------------|-------|
+| React re-render bug | 1180 | 159 | 87% |
+| PostgreSQL pool setup | 2347 | 380 | 84% |
+| Git rebase conflict | 891 | 374 | 58% |
+| **Average** | — | — | **~65–75%** |
+
+March 2026 paper: brevity constraints improved accuracy by 26pp.
 
 ---
 
@@ -100,22 +98,25 @@ CAVEMAN MODE: Omit articles, filler, pleasantries. Use fragments. Steps as bare 
 
 | Level | Best model | Why |
 |-------|-----------|-----|
-| Lite | Any | Minimal instruction overhead |
+| Lite | Any | Minimal overhead |
 | Full | Sonnet 4.6 | Follows compression well, still accurate |
 | Ultra | Haiku 4.5 | Cheap + short = ultra-efficient |
 
-For coding tasks: Full + Sonnet 4.6 is the sweet spot.
-
 ---
 
-## Integration with Other Skills
+## Integration
 
-- **orchestrator**: Pass caveman prefix in Builder task prompts
-- **clawmemory**: Captured facts are already terse; no change needed
-- **knowledge-base**: Search results → caveman summary → save tokens in context
+- **orchestrator**: Apply terse to Builder steps only (NOT Planner or Reviewer)
+- **clawmemory**: Already terse by design; no change needed
+- **knowledge-base**: Search → terse summary → save context tokens
 
 ---
 
 ## Files
 - `SKILL.md` — this file
 - `scripts/caveman_prompt.py` — helper to generate prefixed prompts
+
+---
+
+## Repo
+https://github.com/AlexChen31337/terse
