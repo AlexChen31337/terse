@@ -16,7 +16,7 @@ These task types require full expressive output. Applying terse here **degrades 
 - **Critical thinking** — risk analysis, security audits, trade-off evaluations, incident response
 - **Solution architecture** — system design, API contracts, data models, infrastructure decisions
 - **Article/writing** — blog posts, MbD content, Payhip books, tweets, emails, any user-facing prose
-- **Bowen-facing communication** — main session replies, status updates to Bowen
+- **Owner-facing communication** — main session replies, status updates to the human operator
 - **Code review** — PR reviews, architecture reviews, design doc feedback
 - **Prompt engineering** — system prompts, skill instructions, agent personas
 
@@ -35,7 +35,7 @@ Terse is safe and beneficial for these **internal, non-critical** sub-agent task
 - **CI/CD steps** — build, test, lint, deploy (non-decision parts)
 - **Data extraction** — parse JSON, extract fields, transform data
 - **Internal agent handoffs** — tool-to-tool communication where no human reads output
-- **Quick summaries** — "summarize this URL/file" for internal context (NOT for Bowen)
+- **Quick summaries** — "summarize this URL/file" for internal context (NOT for owner-facing output)
 
 ---
 
