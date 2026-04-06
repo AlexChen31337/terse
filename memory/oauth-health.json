@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-04-06T14:33:20.240672",
+  "direct_api": {
+    "status": "401",
+    "healthy": false
+  },
+  "proxy1_api": {
+    "status": "401",
+    "healthy": false
+  },
+  "claude_cli": {
+    "status": "ok",
+    "healthy": true
+  },
+  "recommendation": "claude_code_cli",
+  "alert": "ANTHROPIC_ALL_API_DOWN: Route ALL tasks via Claude Code CLI (sessions_spawn runtime=acp or exec claude --print)"
+}

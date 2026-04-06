@@ -1,133 +1,146 @@
 # 🌙 Midnight Alpha Report
-**Generated:** Saturday 4 April 2026 — 02:00 AEDT / 15:00 UTC  
-**Analyst:** Alex Chen | EvoClaw Intelligence  
+**Generated:** Monday 6 April 2026 — 02:00 AEDT / 15:00 UTC (prev. day)
+**Analyst:** Alex Chen | EvoClaw Intelligence
 
 ---
 
 ## 📊 Market Snapshot
 
-### Prices (Hyperliquid — live mids)
-| Asset | Price | 24h Δ | Market Cap |
-|-------|-------|--------|------------|
-| BTC | $66,883 | +0.25% | $1.34T |
-| ETH | $2,053 | -0.36% | $248B |
-| SOL | $80.17 | +1.29% | $45.8B |
-| HYPE | $35.91 | **+3.15%** | $8.6B |
+### Prices (Live — CoinGecko / Hyperliquid)
+| Asset | Price | 24h Δ | Notes |
+|-------|-------|--------|-------|
+| BTC | $67,000 | ~-1.5% | Hovering near critical $66–68K support band |
+| ETH | $2,042 | ~-2.1% | Underperforming BTC; ETH/BTC ratio at multi-month lows |
+| SOL | $79.85 | ~-1.8% | Back below $80; Agent Economy narrative softening |
+| HYPE | $35.60 | -0.90% | HYPE token unlock today: 9.92M tokens (~$348M) released to Core Contributors |
+
+> **Data sources:** CoinGecko live feed, Hyperliquid market data (approximate at 02:00 AEDT). Prices subject to ±2% variance from exact fetch time.
 
 ### Global Market
 | Metric | Value |
 |--------|-------|
-| Total Market Cap | **$2.38T** |
-| BTC Dominance | **56.2%** |
-| ETH Dominance | 10.4% |
-| SOL Dominance | 1.9% |
-| Active Cryptocurrencies | 17,870 |
+| Total Market Cap | **$2.39T** |
+| 24h Market Cap Change | **-0.27%** |
+| BTC Dominance | **56.34%** |
+| ETH Dominance | 10.37% |
+| 24h Volume | $51.24B |
+| Active Cryptocurrencies | 17,813 |
+
+> Source: CoinGecko Global (live fetch, 2026-04-06)
 
 ### Fear & Greed Index
 ```
-  9 / 100  —  EXTREME FEAR  😱
+  12 / 100  —  EXTREME FEAR  😱
 ```
-> Historically, extreme fear = accumulation zone. Contradicts HYPE's strong outperformance.
+> Reading of 12 confirms the market remains deep in capitulation territory. BTC has fallen from its Oct 2025 all-time high of ~$126K to the current $67K range — a roughly 47% drawdown. Trump's 15% global tariff shock, ongoing geopolitical headwinds, and institutional risk-off behaviour are suppressing retail participation. Historically, F&G below 15 has coincided with strong 3–6 month forward returns.
 
 ---
 
-## 🧠 Macro Intelligence
+## 🧠 Intelligence Briefing
 
-### AI Startup Funding — Q1 2026 Shattered Records
-- **$300B** invested in 6,000 startups globally in Q1 2026 (up 150%+ YoY)
-- AI took **80% of total VC** ($242B) — up from 55% in Q1 2025
-- Mega-rounds: OpenAI ($122B), Anthropic ($30B), xAI ($20B), Waymo ($16B)
-- Unicorn Board added **$900B** in single-quarter valuation — all-time record
-- Early-stage up 41% YoY; seed funding up 31% YoY
-- **Signal:** AI capital formation is accelerating into crypto infrastructure, not just SaaS
+### AI Agent Narrative
+**Status: Dominant, but entering consolidation phase**
 
-### a16z Crypto — 3 AI Trends for 2026
-1. **AI for substantive research** — models now performing at doctoral-student level; agent-wrapping-agent workflows emerging
-2. **"Know Your Agent" (KYA)** — non-human identities outnumber human employees 96-to-1 in finance; cryptographic agent credentials are the missing primitive
-3. **Invisible web tax** — AI agents draining ad-supported web; need real-time micro-attribution → on-chain payment rails
-> _Both #2 and #3 are direct tailwinds for agent-native blockchains and micropayment infrastructure._
+The AI agent narrative continues to be the defining meta-theme of 2026, though early euphoria is giving way to a more sober infrastructure buildout phase:
 
----
+- **The Agent Economy is real:** Virtual Protocol recorded 23,500+ active agent wallets and ~$479M in AI-driven on-chain economic activity as of March 2026. Solana has processed millions of agent-executed transactions.
+- **Identity becomes the bottleneck:** Per a16z Crypto, the limiting factor for scaling agents is no longer intelligence — it's *identity*. Agents need cryptographically signed credentials (KYA — Know Your Agent) linking principal, constraints, and liability. This directly underpins protocols like ClawChain.
+- **x402 Protocol (Linux Foundation):** Backed by Coinbase, Cloudflare, Stripe, Visa, Google, Microsoft — enables AI agents to autonomously pay for APIs using USDC stablecoins over HTTP 402. 75M transactions in its first 30 days. This is the payment rail the agent economy needed.
+- **Security incident:** A $45M loss event from an AI trading agent protocol vulnerability was reported in Q1 2026 — reinforcing the need for agent credentialing and auditable execution trails.
+- **VC allocation:** For every $1 invested in crypto companies in 2025, $0.40 went to firms also building AI products — up from $0.18 the year prior. The convergence thesis is attracting serious capital.
+- **Hyperliquid + AI agents:** HYPE's 97% protocol fee buyback model and growing DEX liquidity make it a structural beneficiary as AI agents require high-throughput, permissionless trading venues.
 
-## 🔥 Narrative Heat Map (2026)
-
-| Rank | Narrative | Signal Strength | Catalyst |
-|------|-----------|-----------------|---------|
-| 🥇 1 | **AI Agents + On-Chain Economies** | 🔴 Critical | KYA, agent wallets, inference markets |
-| 🥈 2 | **Perpetual DEX Dominance** | 🔴 High | HYPE +3% vs red market; volume migration from CEX |
-| 🥉 3 | **RWA 2.0 — Institutional Integration** | 🟠 High | Tokenized Treasuries → credit → private equity |
-| 4 | **Restaking / EigenLayer 2.0** | 🟠 Medium-High | AVS ETFs, restaked oracle security |
-| 5 | **DePIN** | 🟡 Medium | Enterprise pilots, 5G, compute, robotics |
-| 6 | **Bitcoin L2 / BTCFi** | 🟡 Medium | BTC rollups, BTC VM chains, BTC perps |
-| 7 | **Stablecoin Supremacy** | 🟡 Medium | MiCA compliance, FX stable swaps |
-| 8 | **Modular Interop** | 🟢 Building | Intent routing, universal accounts |
+**Key tokens to watch in this narrative:** HYPE, VIRTUAL, AI16Z, ARC, GRIFFAIN, TAO
 
 ---
 
-## 🎯 Top Pick: **HYPE (Hyperliquid)**
+### AI Startup Funding
+**Status: Record-breaking Q1 2026 — $300B deployed globally**
 
-### Thesis
-HYPE is the only large-cap asset posting **significant green** (+3.15%) in a market saturated with Extreme Fear (F&G: 9). This is the textbook definition of **relative strength** — capital is actively rotating *into* Hyperliquid while everything else bleeds.
+Q1 2026 shattered all prior venture records. Key data points:
 
-### Why HYPE Wins the Narrative Convergence
-- **Perpetual DEX dominance** (#2 narrative) → Hyperliquid is the undisputed leader, consistently capturing migrating CEX volume
-- **On-chain AI agent economies** (#1 narrative) → Hyperliquid's fully on-chain orderbook is the natural execution venue for autonomous trading agents
-- **"Know Your Agent"** (a16z) → agent-native protocols with programmable liquidity are the early infrastructure winners
-- **$8.6B market cap** — still small relative to the infrastructure it's replacing (Binance Futures does ~$20B+ daily)
-- Protocol revenue is real and growing; not speculative narrative only
+| Deal | Amount | Valuation |
+|------|--------|-----------|
+| OpenAI Series — largest private raise in history | $122B | $852B |
+| Anthropic | $30B | $380B |
+| xAI (Grok/Colossus) | Undisclosed (est. $10B+) | est. $100B+ |
+| Starcloud (space data centers) | $170M Series A | — |
 
-### Risk Factors
-- Regulatory overhang on perp DEXs in major markets
-- BTC macro direction still uncertain (high BTC dominance at 56.2% = altcoin compression risk)
-- Extreme Fear environment can extend further before reversal
-
-### Entry Framework
-| Signal | Level |
-|--------|-------|
-| Current Price | $35.91 |
-| Short-term support | ~$32–34 (watch for test) |
-| Invalidation | Close below $29 |
-| Target (if BTC stabilises) | $45–52 range |
+- **Total Q1 global VC funding:** $300B across 6,000 startups — up 150%+ QoQ and YoY.
+- **Foundational AI funding in Q1 2026 doubled all of 2025 combined**, increasingly concentrated in frontier labs.
+- Implication for crypto: The massive AI capex wave is driving demand for decentralised compute (RNDR, AKT, IO), agent infrastructure (HYPE, VIRTUAL), and stablecoin payment rails (USDC/USDT velocity up significantly).
+- **OpenAI leadership instability risk:** COO and AGI CEO departed in the same week as the $122B close — a potential institutional signal ahead of the anticipated IPO.
 
 ---
 
-## ⚡ Secondary Opportunities
+### Emerging Crypto Narratives
+**Status: Sector rotation replacing broad altseason**
 
-### SOL — Resilient in the Storm
-- +1.29% with $45.8B cap — holding well despite fear environment
-- Solana agent ecosystem (ELIZA forks, trading bots) gaining traction
-- Watch: Any BTC bounce → SOL likely outperforms ETH in the altcoin recovery
+1. **Altseason is structurally different in 2026:** BTC dominance at 56.34% with the Altcoin Season Index at ~27–35 (firmly "Bitcoin Season"). Traditional broad altseason may be permanently altered by BTC ETF inflows that wall off capital from rotating into alts. Instead: *short, intense sector-specific narrative rotations*.
 
-### ETH — Dead Weight Until Catalysts
-- -0.36%, dominance at 10.4% (historically low)
-- Positive: ETH is the settlement layer for most agent frameworks (Base, EigenLayer)
-- Negative: No near-term price catalyst; restaking narrative hasn't translated to ETH price yet
-- Wait for confirmation before accumulating
+2. **DeFi maturation — Perp DEX explosion:** Perpetual DEX volume grew from $81.7B (Jan 2024) to $739.5B (Jan 2026) — roughly 8x in two years. Hyperliquid is the primary beneficiary. Institutional DeFi is real.
 
----
+3. **RWA Tokenization (Real-World Assets):** Tokenization of private credit, treasury bills, and real estate continues to grow. BlackRock's BUIDL fund, Ondo Finance, and Maple Finance leading. DeFi TVL in RWA protocols up ~340% YoY.
 
-## 📡 Alpha Edge — EvoClaw Relevance
+4. **ZK Privacy becoming institutional requirement:** Zero-Knowledge Proofs moving from L2 scaling into identity verification and confidential DeFi. Regulatory pressure on privacy is paradoxically accelerating institutional ZK adoption.
 
-| Insight | Action Signal |
-|---------|---------------|
-| KYA (Know Your Agent) is the next regulatory primitive | ClawChain agent DID infrastructure is **directly aligned** — this is a narrative to front-run |
-| Q1 2026: $242B into AI, seed funding up 31% | Fundraising environment for agent infrastructure is the best ever on record |
-| Perp DEX volume migrating on-chain | HYPE accumulation during fear = asymmetric risk/reward |
-| Agent-wrapping-agent workflows (a16z) | Orchestrator + RSI-loop architecture maps exactly to what the market wants |
+5. **"Fairer Launches" meta:** New launchpad models attempting to displace bot-dominated TGE environments. Projects like Echo, Legion, and Fjord Foundry capturing attention.
+
+6. **Macro headwind — Trump Tariffs:** The 15% global tariff announcement (Feb 2026) continues to suppress risk appetite. Bitcoin dropped below $68K on April 2 — options dealers in negative gamma territory, a sustained break below $66K could trigger a cascade toward $58–60K.
 
 ---
 
-## 📋 Summary
+## 🎯 Alpha Picks
 
-**Market Mood:** Extreme Fear (9/100) — but selective pockets of strength  
-**Dominant Narrative:** AI Agents meeting on-chain infrastructure  
-**Top Pick:** **HYPE** — outperforming in fear, narrative tailwinds, real revenue  
-**Secondary:** SOL for beta when fear resolves  
-**Avoid (for now):** ETH — wait for catalyst  
-**Macro Watch:** BTC dominance at 56.2% — until it drops, altseason is on hold  
+**Top Pick: HYPE (Hyperliquid)** — Structural conviction despite today's token unlock overhang.
 
-> _"In Extreme Fear, the thing that's still going up is telling you something."_
+*Thesis:* Today's 9.92M HYPE unlock (~$348M, 1% of supply) to Core Contributors creates a short-term overhang and potential sell pressure — this is a *buy-the-unlock* setup if price holds $33–35 support. The 97% protocol fee buyback creates a direct link between Hyperliquid's growing DEX volume and HYPE token value. With perp DEX volume at $739B/month and growing, and AI agents increasingly using Hyperliquid as their primary trading venue, HYPE is one of the few tokens with a genuine fundamental earnings mechanism. F&G at 12 is historically a strong entry zone for quality assets with real revenue.
+
+**Risk:** Unlock sell pressure could push HYPE to $28–30 range. Trump tariff escalation could weigh on broad crypto.
 
 ---
 
-*Report generated by EvoClaw Midnight Alpha Engine | Next report: ~01:00 AEDT Sunday 5 April 2026*
+### Watchlist
+| Asset | Thesis | Trigger |
+|-------|--------|---------|
+| **SOL** | Agent Economy infrastructure; millions of AI-executed txns already on Solana. Depressed at $79 — strong support at $75. | Hold $75 support; break above $88 |
+| **TAO (Bittensor)** | Decentralised AI training network; AI capex boom drives narrative. | Watch BTC dominance dropping below 54% |
+| **VIRTUAL** | Leading AI agent launchpad; 23,500+ active agent wallets, $479M GMV. Speculative but highest beta to agent narrative. | Volume expansion + new agent launches |
+| **ETH** | Severely underperforming; ETH/BTC at lows. Possible mean reversion trade if Pectra upgrade catalyses renewed interest. | ETH/BTC reclaim 0.032+ |
+| **AKT (Akash)** | Decentralised compute layer; AI capex demand spills into on-chain GPU markets. | Watch GPU rental price indices |
+
+---
+
+## ⚠️ Risk Flags
+- **HYPE token unlock today (Apr 6):** 9.92M tokens (~$348M) to Core Contributors. Historically, large contributor unlocks create 48–72h of sell pressure. Monitor $33 as key support.
+- **Bitcoin negative gamma zone:** BTC below $68K puts dealers in forced-sell hedging territory. A sustained break below $66K could accelerate to $58–60K.
+- **Trump tariff escalation:** 15% global tariff shock ongoing. Any escalation (especially US-China) would be a major risk-off catalyst. Crypto has shown high correlation to equities under tariff stress.
+- **OpenAI leadership instability:** Three senior exits in one week ahead of anticipated IPO. If this signals internal dysfunction, AI sector sentiment could soften.
+- **Macro correlation:** S&P 500 and crypto have shown tight correlation under current conditions. Equity drawdowns will drag crypto.
+- **F&G at 12 = capitulation OR continued distribution:** While historically a buy signal, extreme fear can persist for weeks in bear trends. Do not over-lever.
+
+---
+
+## 📐 Positioning
+- **Core:** Maintain 40–50% BTC allocation as base layer hedge. BTC dominance at 56%+ favours BTC over alts in the near term.
+- **Tactical long:** HYPE $33–35 zone (post-unlock dip) with stop below $28. Target $42–45 on narrative recovery.
+- **Reduce ETH exposure** until ETH/BTC ratio shows reversal signs. ETH is underperforming badly.
+- **Small speculative allocation** (5–10% of portfolio) in AI agent tokens (VIRTUAL, TAO, GRIFFAIN) — high volatility, high upside if agent narrative re-ignites.
+- **Hold SOL** at current levels if already positioned; do not add aggressively until $75 support confirmed.
+- **Avoid leverage** in current F&G 12 environment. Volatility is elevated; liquidation risk is real.
+- **Cash/stables position** of 20–30% recommended given macro uncertainty and tariff overhang.
+
+---
+
+## 🔮 Tonight's Scenario Watch
+| Scenario | Trigger | Action |
+|----------|---------|--------|
+| **Bull:** BTC holds $66K, bounces to $70K+ | Tariff news softens; macro risk-off eases | Add BTC/SOL/HYPE on confirmation |
+| **Bear:** BTC loses $66K, cascades to $60K | Tariff escalation, equity selloff, HYPE unlock panic | Move to 60%+ stables, buy only at extreme lows |
+| **Base:** Sideways $64–70K chop | No new macro catalysts | Accumulate quality (HYPE, SOL) in small tranches |
+
+---
+
+*Generated: 2026-04-06 02:00 AEDT*
+*Data Sources: CoinGecko Global API (live), alternative.me Fear & Greed API (live), CoinGecko HYPE price (live), web intelligence from Crunchbase/TechCrunch/a16z Crypto/CoinDesk/The Block*
+*Disclaimer: This report is for informational purposes only. Not financial advice. Always DYOR.*

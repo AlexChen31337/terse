@@ -1,38 +1,32 @@
-# RSI Weekly Report
-**Date:** 2026-03-28 16:00 UTC
-**Cycle:** 7 days
+# RSI Weekly Report — 2026-04-05
 
-## Executive Summary
-- **Health Score:** 0.104 (CRITICAL — < 0.3 threshold)
-- **Outcomes Logged:** 250 (7d)
-- **Success Rate:** 25%
-- **Avg Quality:** 2.09/5
+## Health Score: 0.129 🔴 (critical, <0.3)
 
-## Top Failure Patterns
-1. **tool_error** (75 occurrences) — 100% failure rate in `tool_call` tasks
-2. **timeout** (73 occurrences) — 100% failure rate in `tool_call` tasks
-3. **context_loss** (62 occurrences) — session restart/compaction issues
+## Outcomes (7 days)
+- **Total:** 42 logged
+- **Success rate:** 29%
+- **Avg quality:** 2.26/5
 
-## Proposals Status
-- **Draft:** 1 proposal awaiting review
-  - `3b8e8f52`: Address `incomplete_task` in `message_routing` tasks (2 occurrences)
-- **Deployed:** 24 proposals (all previous fixes already applied)
-- **Rejected:** 3 proposals
+## Top Issues
+| Issue | Count | Failure Rate |
+|-------|-------|-------------|
+| context_loss | 12 | 0% (session_management) |
+| timeout | 10 | 100% (tool_call) |
+| tool_error | 9 | 100% (tool_call) |
 
-## Prevention Rules in Place
-✅ All critical patterns have prevention rules in `HEARTBEAT.md`:
-- `context_loss` → WAL + active_task.py protocol
-- `tool_validation_error` → angle-bracket formatting ban + param checks
-- `tool_error` → claude_agent_sdk mock rule for claw_forge tests
+## Patterns Detected (6)
+1. **[0.714]** tool_call → timeout (10x, 100% failure)
+2. **[0.643]** tool_call → tool_error (9x, 100% failure)
+3. **[0.500]** session_management → context_loss (12x, 0% failure)
 
-## Pending Action Required
-**NEW:** Draft proposal `3b8e8f52` needs review:
-- **Priority:** Critical
-- **Issue:** `message_routing` tasks failing with `incomplete_task` (2x, 100% failure)
-- **Est. Effort:** 30 minutes
-- **Action:** Investigate message routing failures and document fix in AGENTS.md
+## Proposals
+- **24 deployed**, **1 draft** (awaiting review), **2 rejected**
+- Draft: `3b8e8f52` — Critical: Address 'incomplete_task' in 'message_routing' tasks (30min effort)
+  - Pattern: 2 occurrences, 100% failure rate, seen 17 times (deduped)
+  - Last seen: 2026-04-04
 
-## Alert Threshold
-Health score 0.104 < 0.3 → **Alert recommended to Bowen**
-
-**Recommendation:** Review draft proposal `3b8e8f52` and approve deployment if valid.
+## Notes
+- Low success rate driven primarily by tool_call timeouts and errors
+- context_loss is frequent but not causing failures (likely compaction-related)
+- Most proposals already deployed; the system is self-correcting but new failures keep appearing
+- Root cause likely: infrastructural (model latency, rate limits) rather than agent logic

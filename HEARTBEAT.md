@@ -29,6 +29,40 @@ Run tests + lint locally before ANY push. Never push "I think it's fine".
 - **tool_error:** Mock `claude_agent_sdk` in subagent test tasks.
 - **context_loss:** Check active_task.py resume. Log WAL before long tasks.
 
+## Anthropic OAuth Health & Claude Code Routing
+
+Cron fires every 15 min (active hours) via `ANTHROPIC_HEALTH_CHECK` system event.
+
+**On health check event:**
+1. Run `bash /home/bowen/.openclaw/workspace/scripts/check_anthropic_health.sh`
+2. Read `memory/oauth-health.json` for result
+3. Act on `alert` field:
+
+| Alert | Action |
+|-------|--------|
+| `null` | HEARTBEAT_OK — log silently |
+| `OAUTH_EXPIRED` | Notify Bowen. Fallback `anthropic-proxy-1/` is active. No action needed. |
+| `ALL_API_DOWN` | **Immediately**: route ALL Anthropic tasks through Claude Code CLI |
+| `TOTAL_OUTAGE` | Alert Bowen urgently via **Telegram only** (never WhatsApp). Suggest re-auth: `openclaw auth` |
+
+**⚠️ All notifications: Telegram only. Never push to WhatsApp channel.**
+
+**Claude Code CLI routing (when API is down):**
+```bash
+# For quick tasks
+claude --print --permission-mode bypassPermissions 'your task here'
+
+# For coding/sub-agent tasks (ACP harness)
+sessions_spawn(runtime="acp", agentId="claude-code", task="your task")
+```
+
+**Re-auth fix (when OAuth expired):**
+```bash
+openclaw auth  # Re-links the Anthropic OAuth token
+```
+After re-auth: Claude Code CLI's fresh token is in `~/.claude/.credentials.json`.
+Two OAuth tokens = two quotas: OpenClaw direct API + Claude Code Pro subscription.
+
 ## Agent Report Handling
 - **[NightlyHealth]:** All green → log silently. Issue → notify Bowen concisely.
 - **[MidnightAlpha]:** Always surface teaser to Bowen.

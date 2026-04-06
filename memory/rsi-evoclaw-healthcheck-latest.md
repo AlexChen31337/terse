@@ -1,52 +1,38 @@
 # RSI Loop Health Check — EvoClaw Core
 
-**Date:** 2026-04-04 03:30 AEDT (2026-04-03 16:30 UTC)
-**Repo:** clawinfra/evoclaw (main branch)
+**Date:** 2026-04-06 03:30 AM AEDT (2026-04-05 17:30 UTC)
+**Commit:** latest main (last push 2026-03-26)
 
-## Status: ✅ HEALTHY
+## RSI Package (`internal/rsi/`)
 
-## `internal/rsi/` Package
+| File | Lines | Description |
+|------|-------|-------------|
+| `observer.go` | 265 | Outcome recording & storage |
+| `analyzer.go` | 426 | Pattern detection, health scoring, cross-source correlation |
+| `fixer.go` | 157 | Safe/unsafe fix categorization & application |
+| `loop.go` | 157 | Main RSI loop orchestration |
+| `types.go` | 146 | Core types & config |
+| `loop_test.go` | 617 | Test suite |
+| **Total** | **1768** | |
 
-| File | Size |
-|------|------|
-| analyzer.go | 10.7 KB |
-| fixer.go | 4.1 KB |
-| loop.go | 3.4 KB |
-| loop_test.go | 15.4 KB |
-| observer.go | 7.3 KB |
-| types.go | 5.0 KB |
-
-## Go Tests — 19/19 PASS (0.005s)
+## Test Results
 
 ```
-TestOutcomeRecording              PASS
-TestOutcomeMaxTrim                PASS
-TestRecordFromAgent               PASS
-TestRecordToolCall                PASS
-TestPatternDetection              PASS
-TestRecurrenceDetection           PASS
-TestHealthScore                   PASS
-TestSafeVsUnsafeFixCategorization PASS
-TestApplyIfSafe                   PASS
-TestDetectIssues                  PASS
-TestLoopCreation                  PASS
-TestCrossSourceCorrelation        PASS
-TestAutoFixDisabled               PASS
-TestLoopRunCycle                  PASS
-TestFixerAllCategories            PASS
-TestSuggestAction                 PASS
-TestCategorizeIssue               PASS
-TestTokenOverlap                  PASS
-TestRSILoop_RecordsTrajectoryOnOutcome PASS
+19/19 PASS — 0.006s
 ```
 
-## CI Status — ✅ GREEN (5/5 recent runs pass)
+Tests cover: outcome recording, pattern detection, recurrence detection, health scoring, fix categorization, auto-fix toggle, loop run cycle, trajectory recording, cross-source correlation, token overlap, issue categorization, action suggestion.
 
-Latest commit: `feat(loop): PreCompletionHook + LoopDetectionHook middleware (#28 #29)` — 2026-03-26
-- CI (push): ✅ 14m21s
-- Agent Harness Lint (push): ✅ 1m28s
+## CI Status
 
-## Notes
-- No test failures, no CI failures.
-- Package has been stable since the hooks middleware merge on Mar 25-26.
-- Next check: 2026-04-05 03:30 AEDT.
+- **CI** (main): ✅ success (2026-03-26)
+- **Agent Harness Lint** (main): ✅ success (2026-03-26)
+- No recent failures.
+
+## `go vet`
+
+Clean — no warnings or errors.
+
+## Summary
+
+🟢 **Healthy.** RSI package present, 19/19 tests pass, CI green on main. No changes since 2026-03-26. No issues detected.

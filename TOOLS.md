@@ -35,3 +35,31 @@
 ## Autoresearch Hardware
 - Nemotron/Qwen autoresearch: RTX 3070 8GB ONLY (not GPU server)
 - Qwen3.5-35B best: 29.899 tok/s (IQ2_XXS, n_gpu=27, phase 12)
+
+## Local Inference Stack (Dell XPS RTX 3070)
+- **llama.cpp:** Built at `/tmp/llama.cpp/build/bin/` with CUDA+FA (arch 86)
+- **Ollama v0.20.0:** Installed, `ollama run gemma4:26b` (~1.5 tok/s CPU-heavy)
+- **Models registered in Ollama:**
+  - `gemma4:26b` (17GB MoE)
+  - `opus-qwen35:q3km` (15.6GB MoE, 3.5 tok/s)
+  - `opus-qwen9b:q5km` (6.1GB dense,25+ tok/s full GPU)
+- **Custom GGUFs (proper tokenizer):**
+  - `/data/models/qwen9b-opus-Q5_K_M.gguf` (llama.cpp, 5.0s with <tool_call>tag)
+  - `/data/models/qwen9b-opus-distilled-Q5_K_M.gguf` (broken tokenizer)
+- **Prompt template for thinking models:** must `<tool_call>tag after `<|im_start|>assistant\n` in prompt
+- **CUDA 12.0** installed via `nvidia-cuda-toolkit`
+- **GPU server (10.0.0.30):** RTX 3090 + 3080 + 2070S = 42GB total
+- **Dell XPS sudo:** `bowen@2025` (encrypted at `memory/encrypted/local-sudo.enc`)
+
+## Knowledge Base Skill
+- **Skill dir:** `~/.openclaw/workspace/skills/knowledge-base/`
+- **Repo:** https://github.com/AlexChen31337/llm-knowledge-base
+- **Scripts:** ingest.py, compile.py, lint.py, search.py, serve.py
+- **Status:** ✅ Wired into workspace
+
+## Gemma 4 26B-A4B (Local)
+- **Ollama v0.20.0:** `ollama run gemma4:26b` works (fixed tokenizer), ~1.5 tok/s CPU-heavy
+- **llama.cpp:** Built at `/tmp/llama.cpp/build/bin/` with CUDA+FA (arch 86)
+- **⚠️ Unsloth GGUFs broken** (bad tokenizer → garbage output). Wait for re-upload or use ggml-org official.
+- **GPU server (10.0.0.30):** 3090 24GB = full Q4_K_M fits in VRAM. Ideal for fast inference.
+- **Dell XPS sudo:** `bowen@2025` (encrypted at `memory/encrypted/local-sudo.enc`)

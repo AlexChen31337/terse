@@ -1,10 +1,10 @@
 {
-  "last_uid": 2761,
+  "last_uid": 2781,
   "quarantined": [
     "zhuzhushiwojia",
     "Rakesh Jha",
     "sungdark"
   ],
   "approved_senders": [],
-  "notes": "updated 2026-03-27T03:18:49.199490+00:00 \u2014 UIDs 2495-2605 all spam/quarantined (zhuzhushiwojia bots + LinkedIn noise)"
+  "notes": "updated 2026-04-05T10:44:04.939835+00:00 \u2014 scanned 1 UIDs (UID 2775: LinkedIn noise, auto-quarantined)"
 }

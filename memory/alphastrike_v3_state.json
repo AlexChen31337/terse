@@ -1,12 +1,5 @@
 {
-  "positions": {
-    "BTC": {
-      "side": "SHORT",
-      "entry_price": 66909.0,
-      "size_usd": 99.6953578336557,
-      "opened_at": "2026-04-03T12:11:10.470992+00:00"
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "coin": "ETH",
@@ -17,7 +10,17 @@
       "pnl_usd": -3.05,
       "reason": "STOP_LOSS",
       "closed_at": "2026-03-31T08:08:23.635243+00:00"
+    },
+    {
+      "coin": "BTC",
+      "side": "SHORT",
+      "entry": 66909.0,
+      "exit": 67298.0,
+      "pnl_pct": -2.91,
+      "pnl_usd": -2.9,
+      "reason": "STOP_LOSS",
+      "closed_at": "2026-04-04T16:11:16.633919+00:00"
     }
   ],
-  "equity": 996.953578336557
+  "equity": 994.0555007836649
 }

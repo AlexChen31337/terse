@@ -1,0 +1,1 @@
+/tmp/llm-knowledge-base/templates/compile_article.md

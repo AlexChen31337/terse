@@ -6,5 +6,9 @@
   {
     "ts": "2026-04-04T01:38:36.052615+00:00",
     "message": "\ud83d\udcec **Inbox alert \u2014 2 actionable email(s):**\n\n\ud83d\udce7 [2026-04-04] From: \"Alex Chen\" <notifications@github.com>\nSubject: [clawinfra/clawchain-python-sdk] Run failed: CI - main (30ff571)\nPreview: [clawinfra/clawchain-python-sdk] CI workflow run  Repository: clawinfra/clawchain-python-sdk Workflow: CI Duration: 19.0 seconds Finished: 2026-04-04 01:08:07 UTC  View results: https://github.com/cla...\nUID: 2755\n\n\ud83d\udce7 [2026-04-04] From: \"Alex Chen\" <notifications@github.com>\nSubject: [clawinfra/clawchain-python-sdk] Run failed: CI - main (2bd8081)\nPreview: [clawinfra/clawchain-python-sdk] CI workflow run  Repository: clawinfra/clawchain-python-sdk Workflow: CI Duration: 13.0 seconds Finished: 2026-04-04 01:07:05 UTC  View results: https://github.com/cla...\nUID: 2754\n\nReply with: `reply <uid> <your message>` OR `ignore <uid>` to dismiss."
+  },
+  {
+    "ts": "2026-04-04T12:39:06.503739+00:00",
+    "message": "\ud83d\udcec **Inbox alert \u2014 1 actionable email(s):**\n\n\ud83d\udce7 [2026-04-04] From: \"GitGuardian\" <security@getgitguardian.com>\nSubject: [AlexChen31337/openclaw-skills] SMTP credentials exposed on GitHub\nPreview: GitGuardian has detected the following SMTP credentials exposed within your GitHub account.  Details  - Secret type: SMTP credentials [https://github.com/AlexChen31337/openclaw-skills/commit/b2735f57c...\nUID: 2771\n\nReply with: `reply <uid> <your message>` OR `ignore <uid>` to dismiss."
   }
 ]

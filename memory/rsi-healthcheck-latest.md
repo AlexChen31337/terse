@@ -1,33 +1,30 @@
-# RSI Health Check — 2026-04-04 03:10 AEDT
+# RSI Health Check — 2026-04-06 03:11 AEDT
 
-## Status Summary
-- **Health Score: 0.089** ⚠️ CRITICAL (threshold: 0.3)
-- **Outcomes (7d):** 102 logged
-- **Success Rate:** 21%
-- **Avg Quality:** 2.16/5
+## Status
+- **Health Score: 0.296** ⚠️ (below 0.3 threshold)
+- **Outcomes (7d):** 9 logged | Success: 56% | Avg quality: 2.67/5
+- **Patterns:** 3 detected | Analyzed: 2026-04-05
+- **Proposals:** 1 draft | 0 approved | 24 deployed
 
 ## Top Issues
-| Issue | Count | Failure Rate |
-|-------|-------|-------------|
-| timeout | 39 | 100% |
-| tool_error | 30 | 100% |
-| context_loss | 21 | 0% |
+1. **context_loss** (5 occurrences) — session_management tasks, 0% failure rate (recovered but recurrent)
+2. **incomplete_task** (2 occurrences) — message_routing tasks, 100% failure rate
+3. **tool_validation_error** (1 occurrence) — tool_call tasks, 100% failure rate
 
-## Detected Patterns (5)
-1. **[1.167]** `tool_call` → `timeout` occurs 42x, 100% failure
-2. **[0.861]** `tool_call` → `tool_error` occurs 31x, 100% failure
-3. **[0.407]** `session_management` → `context_loss` occurs 22x
+## Pattern Details
+| Confidence | Domain | Pattern | Count | Fail Rate |
+|------------|--------|---------|-------|-----------|
+| 0.889 | message_routing | incomplete_task | 2 | 100% |
+| 0.556 | session_management | context_loss | 5 | 0% |
+| 0.444 | tool_call | tool_validation_error | 1 | 100% |
 
-## RSI Cycle Result
-- Proposals generated: 5
+## Cycle Results
+- Proposals generated: 3
 - Auto-deployed: 0 (all already deployed)
-- Awaiting review: 0
+- Awaiting review: 1
+- Auto-fix: `[15c31c37] Address 'tool_validation_error' in 'tool_call' tasks`
 
-## Deployed Proposals (not yet effective)
-- `db32089a` — Address 'timeout' in tool_call tasks
-- `b9e26a71` — Address 'tool_error' in tool_call tasks
-- `3a2dc2d1` — Fix model routing rate limits
-- `15c31c37` — Address 'tool_validation_error' in tool_call tasks
-
-## Assessment
-Health remains critical despite all proposals being deployed. The 21% success rate is driven by persistent timeouts and tool errors in tool_call tasks. Deployed fixes haven't moved the needle yet — may need manual investigation of root causes (proxy/API reliability, model routing configuration).
+## Action Required
+- Health score < 0.3 — **Bowen notified**
+- Main concern: context_loss is the most frequent issue (5x in 7 days)
+- incomplete_task in message_routing has 100% fail rate (2x) — needs investigation
