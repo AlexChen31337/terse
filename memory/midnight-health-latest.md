@@ -1,70 +1,92 @@
 # Midnight Health Check Report
-**Date:** 2026-04-07 00:00 AEST
-**Checked by:** Sentinel (cron:3b4465c3-4a20-4e25-8325-30d108cd3f04)
+**Date:** 2026-04-08 00:00:00 AEST
+**Trigger:** Midnight Agent Health Check (cron:3b4465c3)
+
+## Executive Summary
+🚨 **3 CRITICAL FAILURES** — EvoClaw Hub DOWN, AlphaStrike DOWN, Alex Eye (Pi) DOWN
+
+---
 
 ## Component Status
 
-### ✅ Sentinel (workspace-sentinel)
+### 1. ✅ Sentinel — UP
+- **State File:** Found and readable
+- **Last Price Check:** 1744054820 (2026-04-07 ~23:00 UTC)
+- **Prices Monitored:** BTC $68,394.5, ETH $2,079.05, SOL $79.01, HYPE $36.053
+- **Fear & Greed:** 11 (Extreme Fear)
+- **Last Alert:** prices (1744054820)
+- **Status:** Operational
+
+### 2. ⚠️ Quant — PARTIAL
+- **State File:** Found and readable
 - **Status:** ACTIVE
-- **Last Price Check:** 2026-04-07 00:05 (UTC: 2026-04-06 13:05)
-- **Last Fear/Greed:** Extreme Fear (13) - checked 2026-04-07 00:05
-- **Alerts in 24h:** BTC moves, HYPE moves, FNG category change
-- **Recent Threshold Alerts:** BTC $67.5k, HYPE $25, FNG category change
-- **Verdict:** OK
+- **Today P&L:** $0.00
+- **Account Value:** $112.22
+- **Open Positions:** None
+- **Signals:** LONG BTC/ETH/SOL (confidence 0.4, dated 2026-03-26)
+- **⚠️ AlphaStrike Service:** **DOWN** — Failed to start
+- **⚠️ FearHarvester:** No recent run data
 
-### ❌ Quant (workspace-quant)
-- **Status:** ACTIVE but AlphaStrike service FAILED
-- **Last State Read:** 2026-03-26 signals (stale - 12 days old)
-- **AlphaStrike Service:** activating → Failed to spawn 'start' task: No such file or directory
-- **Error:** `alphastrike.service: Failed with result 'resources'`
-- **Journalctl (last 3 lines):**
-  ```
-  Apr 07 00:00:14 alphastrike.service: Failed to spawn 'start' task: No such file or directory
-  Apr 07 00:00:14 alphastrike.service: Failed with result 'resources'.
-  Apr 07 00:00:14 Failed to start alphastrike.service
-  ```
-- **Verdict:** ⚠️ **DOWN** - Service unit broken (missing ExecStart or binary)
+**AlphaStrike Failure Details:**
+```
+Status: inactive (dead)
+Last Start Attempt: Failed with "resources" error
+Error: alphastrike.service: Failed to load environment files: No such file or directory
+Environment File Missing: /media/DATA/tmp/alphastrike-v2/.env
+Run Script Missing: /media/DATA/tmp/alphastrike-v2/run_trading.py
+Working Directory: Appears missing or inaccessible
+```
+**Note:** /media/DATA disk is mounted (72% used, 251G free)
 
-### ⚠️ Shield (access-control)
-- **Status:** NOT FOUND
-- **File:** `~/.openclaw/access-control/access-control.json` - missing
-- **Verdict:** ⚠️ **NOT CONFIGURED** - No access control state found
+### 3. ⚠️ Shield — PARTIAL
+- **Access Control File:** **MISSING** — `/home/bowen/.openclaw/workspace-shield/access-control.json`
+- **Pending Approvals:** Cannot check (state file missing)
+- **Status:** Shield workspace exists but access-control.json not found
 
-### ❓ Herald (workspace-herald)
-- **Status:** IDLE/INACTIVE
-- **Last Checks:** All zeros (twitter: 0, moltbook: 0, analytics: 0)
-- **Verdict:** ⚠️ **NEVER INITIALIZED** - Zero activity
+### 4. ✅ Herald — UP
+- **State File:** Found and readable
+- **Last Posts:** None recorded
+- **Scheduled Posts:** None
+- **Metrics:** Empty
+- **Status:** Operational (no active campaigns)
 
-### ❌ EvoClaw Hub (localhost:8420)
-- **Status:** DOWN
-- **Check:** `curl -s http://localhost:8420/api/agents` - timeout
-- **Verdict:** ❌ **DOWN** - Hub not running
+### 5. 🚨 EvoClaw Hub — DOWN
+- **Endpoint:** http://localhost:8420/api/agents
+- **Status:** Connection refused / timeout
+- **Agent Registration:** Cannot verify
+- **Restart Attempted:** Not yet — process not found in ps aux
+- **Action Required:** Start EvoClaw Hub service
 
-### ❌ Alex Eye (Pi @ 10.0.0.50)
-- **Status:** DOWN
-- **SSH Check:** Connection timed out (3s timeout)
-- **Verdict:** ❌ **DOWN** - Pi unreachable
+### 6. 🚨 Alex Eye (Pi) — DOWN
+- **Host:** pi@192.168.1.100
+- **SSH Status:** Connection timeout (5s)
+- **Status:** Unreachable
+- **Restart Attempted:** Cannot reach via SSH
+- **Action Required:** Physical check or network diagnostics
 
-## Infrastructure
+---
 
-### Disk Usage
-- `/` (root): 85% used (751G / 937G) - ⚠️ **WARNING** - Getting full
-- `/media/DATA`: Not mounted
-- `/data2`: Not mounted
+## Critical Actions Required
 
-## Action Required
+### Immediate (Tonight)
+1. **EvoClaw Hub:** Restart hub service on localhost:8420
+2. **AlphaStrike:** Investigate missing /media/DATA/tmp/alphastrike-v2 directory and .env file
+3. **Alex Eye (Pi):** Verify Pi is powered on and network is reachable
 
-### CRITICAL (Immediate)
-1. **AlphaStrike Service:** Broken systemd unit - needs ExecStart path fix or reinstall
-2. **EvoClaw Hub:** Down - needs restart
-3. **Alex Eye Pi:** Down - needs SSH access recovery or restart
+### High Priority
+4. **Shield:** Restore access-control.json or verify Shield workspace setup
+5. **Quant:** Run FearHarvester manually to refresh signals (last from 2026-03-26)
 
-### WARNING (Soon)
-1. **Disk Space:** Root volume at 85% - should be <80%
-2. **Shield:** Access control not configured
-3. **Herald:** Never initialized - may be intentional
+---
 
-## Timestamps
-- Sentinel last check: 1775479108 (2026-04-07 00:05:08 AEST)
-- Quant last check: 1742915309 (2026-03-26) - STALE
-- Report generated: 2026-04-07 00:00:00 AEST
+## Alerts Sent
+- **To Bowen:** Pending (this report)
+- **Via Telegram:** Will send critical failure summary
+
+## Next Health Check
+2026-04-09 00:00:00 AEST (24 hours)
+
+---
+
+**Generated by:** Sentinel (cron:3b4465c3-4a20-4e25-8325-30d108cd3f04)
+**Report Saved:** /home/bowen/.openclaw/workspace/memory/midnight-health-latest.md

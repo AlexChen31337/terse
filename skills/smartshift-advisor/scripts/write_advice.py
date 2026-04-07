@@ -9,12 +9,26 @@ import json
 import sys
 from datetime import datetime, timezone
 
-ADVICE_FILE = "/tmp/smartshift-advice.json"
+ADVICE_FILE = "/ha-smartshift/.ai_advice.json"
+BMS_FLOOR_FILE = "/ha-smartshift/.bms_floor.json"
 
 # Safety bounds — deterministic script also enforces these
+# discharge_floor lower bound is dynamically read from BMS detection
+
+def get_bms_floor() -> float:
+    """Read auto-detected BMS floor from inverter behavior cache."""
+    try:
+        with open(BMS_FLOOR_FILE) as f:
+            data = json.load(f)
+        if data.get("source") == "bms_detection" and data.get("soc_min"):
+            return float(data["soc_min"])
+    except (FileNotFoundError, json.JSONDecodeError, KeyError):
+        pass
+    return 5.0  # fallback
+
 BOUNDS = {
     "export_threshold": (3.0, 30.0),
-    "discharge_floor": (5.0, 60.0),
+    "discharge_floor": (get_bms_floor(), 60.0),
     "confidence": (0.0, 1.0),
 }
 
