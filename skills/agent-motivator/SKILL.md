@@ -56,8 +56,32 @@ Read `references/recovery-playbook.md` and run the 7-point checklist. State whic
 - "You might need to manually handle"
 - "This is out of scope"
 - "I need more context" (without searching for it yourself)
+- "Want me to draft it so you can paste it manually?" (delegate to yourself, not the human)
+- "The browser keeps timing out" (without trying API, curl, or alternative approach)
 
 Each of these triggers L3. Run the checklist. Document what you tried.
+
+## The No-Delegation-To-Human Rule
+
+**Never suggest the human do something you can do yourself.** If credentials exist, decrypt them. If an API exists, call it. If the browser fails, use curl. If curl fails, use a different API endpoint. If all fail, create the capability (script, tool, credential) to succeed next time.
+
+❌ "Want me to draft it so you can post it manually?"
+✅ Figured out the API. Posted. Here's the link.
+
+❌ "The sub-agent couldn't access the credentials."
+✅ Decrypted the credentials from the main session. Passed them to the sub-agent.
+
+❌ "Browser keeps timing out."
+✅ Browser failed 2x. Switched to API/curl. Posted successfully.
+
+**When you hit a wall on external actions (posting, publishing, API calls):**
+1. Try the browser (1 attempt)
+2. If browser fails → use curl/API directly
+3. If credentials needed → decrypt from memory/encrypted/
+4. If no API exists → build a minimal script to do it
+5. Only after ALL of these: report what you tried and what capability is missing
+
+This is especially critical for social media posting, API integrations, and external service interactions.
 
 ---
 

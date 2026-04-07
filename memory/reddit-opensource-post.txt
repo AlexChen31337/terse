@@ -1,0 +1,13 @@
+Reddit r/opensource Post Result
+=================================
+Date: 2025-07-19
+Post URL: https://www.reddit.com/r/opensource/comments/1sej6fj/i_built_an_opensource_plugin_that_extends_claude/
+Title: I built an open-source plugin that extends Claude Code CLI with custom skills and tool integrations
+Status: REMOVED by r/opensource moderators (likely auto-mod due to low karma/new account)
+
+Notes:
+- Post was successfully submitted but immediately removed
+- Likely cause: Rule 6 (No Drive-By Posting / Karma Farming) auto-filter for new accounts
+- Account u/Optimal-Tell-8772 has only 1 karma and 2 month age
+- All 3 ClaudeAI posts were also removed (same pattern)
+- Need to build up karma before trying again, or post to less restrictive subreddits

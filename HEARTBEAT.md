@@ -31,9 +31,9 @@ Run tests + lint locally before ANY push. Never push "I think it's fine".
 
 ## Anthropic OAuth Health & Claude Code Routing
 
-Cron fires every 15 min (active hours) via `ANTHROPIC_HEALTH_CHECK` system event.
+Cron fires every 4 hours in an **isolated** session (GLM-4.7) — NOT main session.
 
-**On health check event:**
+**On health check event (isolated cron handles this automatically):**
 1. Run `bash /home/bowen/.openclaw/workspace/scripts/check_anthropic_health.sh`
 2. Read `memory/oauth-health.json` for result
 3. Act on `alert` field:
