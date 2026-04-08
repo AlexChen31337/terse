@@ -1,8 +1,8 @@
 {
   "lastRun": "2026-04-05T09:10:00+11:00",
   "last_backup": "2026-04-04",
-  "mbd_last_backup": "2026-04-07",
-  "topic_index": 7,
+  "mbd_last_backup": "2026-04-08",
+  "topic_index": 9,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -653,6 +653,33 @@
       "title": "AI写作工厂",
       "wordCount": 4200,
       "note": "MbD Chinese backup. No cover (GPU server unreachable). Awaiting publish instruction from owner."
+    },
+    "mbd-daily-2026-04-08": {
+      "name": "AI副业指南_2026年你还在用体力赚钱AI已经替聪明人上了三个班",
+      "status": "backed_up",
+      "category": "副业/AI",
+      "date": "2026-04-08",
+      "githubBacked": true,
+      "coverGenerated": false,
+      "folder": "2026-04-08_AI副业指南_2026年你还在用体力赚钱AI已经替聪明人上了三个班",
+      "title": "AI副业指南_2026年你还在用体力赚钱AI已经替聪明人上了三个班",
+      "wordCount": 4900,
+      "note": "MbD Chinese backup. No cover (GPU server unreachable). Awaiting publish instruction from owner."
+    },
+    "daily-2026-04-08": {
+      "name": "The AI Education Revolution: Transform Learning, Teach Smarter, and Build the Future of Knowledge with Artificial Intelligence",
+      "status": "published",
+      "category": "ai-education",
+      "price": 14,
+      "date": "2026-04-08",
+      "folder": "2026-04-08_ai-education-revolution",
+      "payhipUrl": "https://payhip.com/b/f167F",
+      "githubBacked": true,
+      "wordCount": 8700,
+      "chapters": 12,
+      "coverGenerated": true,
+      "pdfGenerated": true,
+      "note": "Auto-published to Payhip. Backed up to GitHub."
     }
   },
   "twitter": {
@@ -681,5 +708,5 @@
     "status": "not_started",
     "reason": "Bot API cannot create channels"
   },
-  "last_published": "2026-04-07"
+  "last_published": "2026-04-08"
 }

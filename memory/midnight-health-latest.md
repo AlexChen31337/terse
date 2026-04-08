@@ -1,92 +1,122 @@
 # Midnight Health Check Report
-**Date:** 2026-04-08 00:00:00 AEST
-**Trigger:** Midnight Agent Health Check (cron:3b4465c3)
+**Generated:** 2026-04-09 00:00 AEST (2026-04-08 14:00 UTC)
+**Status:** 🚨 CRITICAL FAILURES DETECTED
+
+---
 
 ## Executive Summary
-🚨 **3 CRITICAL FAILURES** — EvoClaw Hub DOWN, AlphaStrike DOWN, Alex Eye (Pi) DOWN
+- ✅ **2/6** components healthy
+- ❌ **4/6** components DOWN or CRITICAL
+- **Action Required:** IMMEDIATE
 
 ---
 
 ## Component Status
 
-### 1. ✅ Sentinel — UP
-- **State File:** Found and readable
-- **Last Price Check:** 1744054820 (2026-04-07 ~23:00 UTC)
-- **Prices Monitored:** BTC $68,394.5, ETH $2,079.05, SOL $79.01, HYPE $36.053
-- **Fear & Greed:** 11 (Extreme Fear)
-- **Last Alert:** prices (1744054820)
-- **Status:** Operational
+### 1. ✅ Sentinel — HEALTHY
+- **State File:** Loaded
+- **Last Checks:**
+  - Prices: 1775649697 (timestamp appears future/invalid, check clock)
+  - Health: 1744056000 (2025-01-16, stale)
+  - Polymarket: Never checked
+- **Last Alerts:**
+  - Prices: 1744054820
+  - Midnight-health: 1744056000
+- **Market Data Snapshot:**
+  - BTC: $71,681.50
+  - ETH: $2,247.35
+  - SOL: $84.39
+  - Fear & Greed: 17 (Extreme Fear)
+- **Concern:** Health check timestamp stale (Jan 2025)
 
-### 2. ⚠️ Quant — PARTIAL
-- **State File:** Found and readable
-- **Status:** ACTIVE
-- **Today P&L:** $0.00
+### 2. ⚠️ Quant — DEGRADED
+- **State File:** Loaded
+- **Status:** ACTIVE but signals stale
+- **Last Checks:**
+  - AlphaStrike: 1742915309 (2025-03-24, **11+ days stale**)
+  - Positions: 1742915310
 - **Account Value:** $112.22
 - **Open Positions:** None
-- **Signals:** LONG BTC/ETH/SOL (confidence 0.4, dated 2026-03-26)
-- **⚠️ AlphaStrike Service:** **DOWN** — Failed to start
-- **⚠️ FearHarvester:** No recent run data
+- **Signals:**
+  - BTC: LONG (0.4 confidence) — stale
+  - ETH: LONG (0.4 confidence) — stale
+  - SOL: LONG (0.4 confidence) — stale
+- **Concern:** No active trading data for 11+ days
 
-**AlphaStrike Failure Details:**
-```
-Status: inactive (dead)
-Last Start Attempt: Failed with "resources" error
-Error: alphastrike.service: Failed to load environment files: No such file or directory
-Environment File Missing: /media/DATA/tmp/alphastrike-v2/.env
-Run Script Missing: /media/DATA/tmp/alphastrike-v2/run_trading.py
-Working Directory: Appears missing or inaccessible
-```
-**Note:** /media/DATA disk is mounted (72% used, 251G free)
+### 3. ❌ AlphaStrike — CRITICAL DOWN
+- **Service Status:** Failed (auto-restart loop, 2856+ restart attempts)
+- **Error:** `Failed to load environment files: No such file or directory`
+- **Root Cause:**
+  - Working directory: `/media/DATA/tmp/alphastrike-v2` — **MISSING**
+  - `.env` file: **MISSING**
+  - `run_trading.py`: **MISSING**
+- **Processes:** None running
+- **Action Required:** Recreate AlphaStrike V2 environment
 
-### 3. ⚠️ Shield — PARTIAL
-- **Access Control File:** **MISSING** — `/home/bowen/.openclaw/workspace-shield/access-control.json`
-- **Pending Approvals:** Cannot check (state file missing)
-- **Status:** Shield workspace exists but access-control.json not found
+### 4. ✅ Shield — HEALTHY
+- **State File:** Loaded
+- **Access Control:** No pending approvals
+- **Blocked Attempts:** None
+- **Last Audit:** Never
+- **Config Hash:** null
+- **Status:** Passive but functional
 
-### 4. ✅ Herald — UP
-- **State File:** Found and readable
-- **Last Posts:** None recorded
+### 5. ✅ Herald — IDLE
+- **State File:** Loaded
+- **Last Posts:** None
 - **Scheduled Posts:** None
+- **Outreach Log:** Empty
 - **Metrics:** Empty
-- **Status:** Operational (no active campaigns)
+- **Last Checks:** All zeros (never checked)
+- **Status:** Inactive but no errors
 
-### 5. 🚨 EvoClaw Hub — DOWN
-- **Endpoint:** http://localhost:8420/api/agents
-- **Status:** Connection refused / timeout
-- **Agent Registration:** Cannot verify
-- **Restart Attempted:** Not yet — process not found in ps aux
-- **Action Required:** Start EvoClaw Hub service
+### 6. ❌ EvoClaw Hub — CRITICAL DOWN
+- **Service Status:** Failed since 2026-04-04 (5 days ago)
+- **Error:** MQTT broker connection refused (`tcp://0.0.0.0:1883`)
+- **Last Log:** 2026-04-05 00:05:12
+- **Root Cause:** MQTT broker not running
+- **API Endpoint:** `http://localhost:8420/api/agents` — DOWN
+- **Action Required:** Start MQTT broker, restart EvoClaw Hub
 
-### 6. 🚨 Alex Eye (Pi) — DOWN
+### 7. ❌ Alex Eye (Pi) — CRITICAL DOWN
+- **SSH Status:** Connection timed out
 - **Host:** pi@192.168.1.100
-- **SSH Status:** Connection timeout (5s)
-- **Status:** Unreachable
-- **Restart Attempted:** Cannot reach via SSH
-- **Action Required:** Physical check or network diagnostics
+- **Uptime:** Unreachable
+- **Action Required:** Physical check of Pi device
 
 ---
 
-## Critical Actions Required
+## Critical Issues Requiring Immediate Action
 
-### Immediate (Tonight)
-1. **EvoClaw Hub:** Restart hub service on localhost:8420
-2. **AlphaStrike:** Investigate missing /media/DATA/tmp/alphastrike-v2 directory and .env file
-3. **Alex Eye (Pi):** Verify Pi is powered on and network is reachable
+### Priority 1: AlphaStrike Recovery
+1. Locate or recreate `/media/DATA/tmp/alphastrike-v2/` directory
+2. Restore `.env` file from backup
+3. Verify `run_trading.py` exists
+4. Restart service: `systemctl --user restart alphastrike.service`
 
-### High Priority
-4. **Shield:** Restore access-control.json or verify Shield workspace setup
-5. **Quant:** Run FearHarvester manually to refresh signals (last from 2026-03-26)
+### Priority 2: EvoClaw Hub Recovery
+1. Start MQTT broker: `systemctl start mosquitto` (or equivalent)
+2. Restart hub: `systemctl --user restart evoclaw-hub.service`
+3. Verify: `curl -s http://localhost:8420/api/agents`
 
----
-
-## Alerts Sent
-- **To Bowen:** Pending (this report)
-- **Via Telegram:** Will send critical failure summary
-
-## Next Health Check
-2026-04-09 00:00:00 AEST (24 hours)
+### Priority 3: Alex Eye (Pi) Recovery
+1. Physical check of Pi device
+2. Verify network connectivity
+3. Restart if needed: `ssh pi@192.168.1.100 "sudo reboot"`
 
 ---
 
-**Generated by:** Sentinel (cron:3b4465c3-4a20-4e25-8325-30d108cd3f04)
-**Report Saved:** /home/bowen/.openclaw/workspace/memory/midnight-health-latest.md
+## Recommendations
+
+1. **Set up health monitoring alerts** for all services
+2. **Create backups** of AlphaStrike environment files
+3. **Document MQTT broker dependency** for EvoClaw Hub
+4. **Add Pi monitoring** to infrastructure checks
+5. **Review Sentinel health check scheduling** (timestamps stale)
+
+---
+
+## System Clock Warning
+**Detected timestamp anomaly:** Sentinel `lastChecks.prices` shows future timestamp (1775649697). Verify system time synchronization.
+
+**Next health check:** 2026-04-10 00:00 AEST

@@ -2104,3 +2104,213 @@ _(up to 5 items)_
 ---
 
 _Next track: Developer Tools | Archive: memory/autoresearch-archive.md_
+
+
+---
+
+<!-- autoresearch:devtools:2026-04-08 -->
+
+# 🔬 Nightly Research: Developer Tools
+
+> Generated: 2026-04-09 01:02 AEST | Track: devtools (3 of 3)
+
+---
+
+## 📄 Top Papers (arXiv)
+
+_No items found for this source._
+
+
+---
+
+## 🔥 Trending Repos (GitHub)
+
+1. **[sponsors/abhigyanpatwari](https://github.com/sponsors/abhigyanpatwari)** — ⭐ 981 | 📈 +981 today | TypeScript
+   > GitNexus: The Zero-Server Code Intelligence Engine - GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a GitHub repo or ZIP file, and get an interactive knowledge graph wit a built in Graph RAG Agent. Perfect for code exploration
+
+2. **[tobi/qmd](https://github.com/tobi/qmd)** — ⭐ 743 | 📈 +743 today | TypeScript
+   > mini cli search engine for your docs, knowledge bases, meeting notes, whatever. Tracking current sota approaches while being all local
+
+3. **[farion1231/cc-switch](https://github.com/farion1231/cc-switch)** — ⭐ 691 | 📈 +691 today | Rust
+   > A cross-platform desktop All-in-One assistant tool for Claude Code, Codex, OpenCode, openclaw &amp; Gemini CLI.
+
+4. **[moeru-ai/airi](https://github.com/moeru-ai/airi)** — ⭐ 255 | 📈 +255 today | TypeScript
+   > 💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.
+
+5. **[superset-sh/superset](https://github.com/superset-sh/superset)** — ⭐ 192 | 📈 +192 today | TypeScript
+   > Code Editor for the AI Agents Era - Run an army of Claude Code, Codex, etc. on your machine
+
+_(up to 5 items)_
+
+---
+
+## 🗞️ Hacker News Highlights
+
+1. **[Sam Altman may control our future – can he be trusted?](https://www.newyorker.com/magazine/2026/04/13/sam-altman-may-control-our-future-can-he-be-trusted)** — 2043 pts, 865 comments
+   > _newyorker.com_
+
+2. **[Lunar Flyby](https://www.nasa.gov/gallery/lunar-flyby/)** — 857 pts, 207 comments
+   > _nasa.gov_
+
+3. **[Revision Demoparty 2026: Razor1911 [video]](https://www.youtube.com/watch?v=Lw4W9V57SKs&t=5716s)** — 261 pts, 90 comments
+   > _youtube.com_
+
+4. **[Google open-sources experimental agent orchestration testbed Scion](https://www.infoq.com/news/2026/04/google-agent-testbed-scion/)** — 221 pts, 55 comments
+   > _infoq.com_
+
+5. **[Running out of disk space in production](https://alt-romes.github.io/posts/2026-04-01-running-out-of-disk-space-on-launch.html)** — 214 pts, 117 comments
+   > _alt-romes.github.io_
+
+_(up to 5 items)_
+
+---
+
+## 📊 Source Summary
+
+| Source | Items Found | Items Used | Status |
+|--------|------------|------------|--------|
+| arXiv | 0 | 0 | ❌ failed |
+| GitHub Trending | 5 | 5 | ✅ |
+| Hacker News | 5 | 5 | ✅ |
+| Web Search | 0 | 0 | ⏭️ skipped |
+
+---
+
+_Next track: AI & Agents | Archive: memory/autoresearch-archive.md_
+
+
+---
+
+<!-- autoresearch:ai:2026-04-08 -->
+
+# 🔬 Nightly Research: AI & Agents
+
+> Generated: 2026-04-09 01:03 AEST | Track: ai (1 of 3)
+
+---
+
+## 📄 Top Papers (arXiv)
+
+_No items found for this source._
+
+
+---
+
+## 🔥 Trending Repos (GitHub)
+
+1. **[aaif-goose/goose](https://github.com/aaif-goose/goose)** — ⭐ 997 | 📈 +997 today | Rust
+   > an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM
+
+2. **[farion1231/cc-switch](https://github.com/farion1231/cc-switch)** — ⭐ 691 | 📈 +691 today | Rust
+   > A cross-platform desktop All-in-One assistant tool for Claude Code, Codex, OpenCode, openclaw &amp; Gemini CLI.
+
+3. **[TheCraigHewitt/seomachine](https://github.com/TheCraigHewitt/seomachine)** — ⭐ 645 | 📈 +645 today | Python
+   > A specialized Claude Code workspace for creating long-form, SEO-optimized blog content for any business. This system helps you research, write, analyze, and optimize content that ranks well and serves your target audience.
+
+4. **[sponsors/atilaahmettaner](https://github.com/sponsors/atilaahmettaner)** — ⭐ 438 | 📈 +438 today | Python
+   > Advanced TradingView MCP Server for AI-powered market analysis. Real-time crypto &amp; stock screening, technical indicators, Bollinger Band intelligence, and candlestick patterns. Works with Claude Desktop &amp; AI assistants. Multi-exchange support (Binance, KuCoin, Bybit+). Open source trading toolkit.
+
+5. **[microsoft/BitNet](https://github.com/microsoft/BitNet)** — ⭐ 435 | 📈 +435 today | Python
+   > Official inference framework for 1-bit LLMs
+
+_(up to 5 items)_
+
+---
+
+## 🗞️ Hacker News Highlights
+
+1. **[Project Glasswing: Securing critical software for the AI era](https://www.anthropic.com/glasswing)** — 1409 pts, 728 comments
+   > _anthropic.com_
+
+2. **[System Card: Claude Mythos Preview [pdf]](https://www-cdn.anthropic.com/53566bf5440a10affd749724787c8913a2ae0841.pdf)** — 774 pts, 569 comments
+   > _www-cdn.anthropic.com_
+
+3. **[GLM-5.1: Towards Long-Horizon Tasks](https://z.ai/blog/glm-5.1)** — 577 pts, 233 comments
+   > _z.ai_
+
+4. **[Google open-sources experimental agent orchestration testbed Scion](https://www.infoq.com/news/2026/04/google-agent-testbed-scion/)** — 221 pts, 55 comments
+   > _infoq.com_
+
+5. **[Rescuing old printers with an in-browser Linux VM bridged to WebUSB over USB/IP](https://printervention.app/details)** — 220 pts, 93 comments
+   > _printervention.app_
+
+_(up to 5 items)_
+
+---
+
+## 📊 Source Summary
+
+| Source | Items Found | Items Used | Status |
+|--------|------------|------------|--------|
+| arXiv | 0 | 0 | ❌ failed |
+| GitHub Trending | 5 | 5 | ✅ |
+| Hacker News | 5 | 5 | ✅ |
+| Web Search | 0 | 0 | ⏭️ skipped |
+
+---
+
+_Next track: Crypto & DeFi | Archive: memory/autoresearch-archive.md_
+
+
+---
+
+<!-- autoresearch:crypto:2026-04-08 -->
+
+# 🔬 Nightly Research: Crypto & DeFi
+
+> Generated: 2026-04-09 01:03 AEST | Track: crypto (2 of 3)
+
+---
+
+## 📄 Top Papers (arXiv)
+
+_No items found for this source._
+
+
+---
+
+## 🔥 Trending Repos (GitHub)
+
+1. **[OpenZeppelin/openzeppelin-contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)** — ⭐ 3 | 📈 +3 today | Solidity
+   > OpenZeppelin Contracts is a library for secure smart contract development.
+
+2. **[smartcontractkit/chainlink-evm](https://github.com/smartcontractkit/chainlink-evm)** — ⭐ 1 | 📈 +1 today | Solidity
+   > No description available.
+
+3. **[ethereum/ERCs](https://github.com/ethereum/ERCs)** — Solidity
+   > The Ethereum Request for Comment repository
+
+4. **[succinctlabs/sp1-contracts](https://github.com/succinctlabs/sp1-contracts)** — Solidity
+   > Smart contracts for onchain verification of SP1.
+
+5. **[transmissions11/solmate](https://github.com/transmissions11/solmate)** — Solidity
+   > Modern, opinionated, and gas optimized building blocks for smart contract development.
+
+_(up to 5 items)_
+
+---
+
+## 🗞️ Hacker News Highlights
+
+1. **[Bitcoin and quantum computing](https://nehanarula.org/2026/04/03/bitcoin-and-quantum-computing.html)** — 156 pts, 118 comments
+   > _nehanarula.org_
+
+2. **[Iran demands Bitcoin fees for ships passing Hormuz during ceasefire](https://www.ft.com/content/02aefac4-ea62-48db-9326-c0da373b11b8)** — 11 pts, 5 comments
+   > _ft.com_
+
+_(up to 5 items)_
+
+---
+
+## 📊 Source Summary
+
+| Source | Items Found | Items Used | Status |
+|--------|------------|------------|--------|
+| arXiv | 0 | 0 | ❌ failed |
+| GitHub Trending | 5 | 5 | ✅ |
+| Hacker News | 2 | 2 | ⚠️ partial |
+| Web Search | 0 | 0 | ⏭️ skipped |
+
+---
+
+_Next track: Developer Tools | Archive: memory/autoresearch-archive.md_
