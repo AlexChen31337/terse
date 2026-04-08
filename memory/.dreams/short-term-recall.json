@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-08T01:45:59.037Z",
+  "entries": {
+    "memory:memory/2026-04-06.md:213:242": {
+      "key": "memory:memory/2026-04-06.md:213:242",
+      "path": "memory/2026-04-06.md",
+      "startLine": 213,
+      "endLine": 242,
+      "source": "memory",
+      "snippet": "Bowen reported XML leakage from `claude-code-cli` provider not fixed after v1 (error passthrough only). Investigated deeply and found the real issue: when tool calls are extracted, the `content` field still contained XML remnants. ### Changes Made to `/home/bowen/.openclaw/extensions/claude-code/dist/server.js` 1. **Aggressive XML cleanup** — after `extractToolCalls()` finds tool calls, all remaining XML markup (`<invoke>`, `<parameter>`, `<function_calls>`, `<tool_call>`, `<invoke>`, `<parameter>`) is stripped from the content field 2. **`isCliError()` function** — blocks CLI errors (\"Invalid API key\", \"Rate limit\", etc.) from leaking to chat 3. **Format 3 regex** — handles mixed `antml:in",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.3708598079889299,
+      "maxScore": 0.3708598079889299,
+      "firstRecalledAt": "2026-04-08T01:45:59.037Z",
+      "lastRecalledAt": "2026-04-08T01:45:59.037Z",
+      "queryHashes": [
+        "8d248632f1de"
+      ],
+      "recallDays": [
+        "2026-04-08"
+      ],
+      "conceptTags": [
+        "claude-code-cli",
+        "home/bowen",
+        "function-calls",
+        "tool-call",
+        "bowen",
+        "reported",
+        "xml",
+        "leakage"
+      ]
+    }
+  }
+}

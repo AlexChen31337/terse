@@ -3,7 +3,7 @@
 ## SSH Hosts
 
 ### GPU Server
-- **Host:** `peter@10.0.0.44` | **Key:** `~/.ssh/id_ed25519_alexchen`
+- **Host:** `peter@10.0.0.30` | **Key:** `~/.ssh/id_ed25519_alexchen`
 - **Sudo:** `peter@2025` | **GPUs:** 3090 (24GB), 3080 (10GB), 2070S (8GB) = 42GB total
 - **RAM:** 16GB + 256GB swap on /data2 | **Storage:** /data (SSD), /data2 (916GB HDD)
 - **ComfyUI:** `/data2/comfyui/ComfyUI/` port 8188, output at `/data2/comfyui/ComfyUI/output/`

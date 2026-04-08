@@ -59,6 +59,18 @@ uv run python skills/intelligent-router/scripts/spawn_helper.py --model-only "ta
 ```
 Use the output directly in `sessions_spawn(model=...)`. Trust the router.
 
+### Mandatory Autonomy Priming (include in EVERY sub-agent task prompt)
+Append this block to every `sessions_spawn` task string:
+```
+## Autonomy Rules (NON-NEGOTIABLE)
+- Take action first, report after. Never ask "should I X?" — just do it and report the result.
+- Obvious + reversible next step = execute immediately, no confirmation needed.
+- If blocked: read error carefully → check logs → web_search exact error → try alternative approach. Run the 7-point checklist from agent-motivator/references/recovery-playbook.md before surfacing any blocker.
+- Only ask Bowen for: irreversible destructive actions, financial ops >$500, or external comms (tweets, emails, public posts).
+- Use `uv run python` not bare `python3`. Never use NIM models for intellectual work.
+- VBR: verify before reporting done. "I think it worked" is not verification.
+```
+
 ## GitHub Repo Ownership (NON-NEGOTIABLE)
 - **`clawinfra/`** — ONLY for ClawChain, EvoClaw, and core infrastructure repos (claw-chain, evoclaw, clawchain-sdk, clawkeyring, fear-protocol, agent-tools, orchestrator, rsi-loop, shield-agent, clawmemory, claw-forge, whalecli, clawos, evoclaw-browser, identity-resolver, homebrew-evoclaw, marketing-assets, clawinfra-web)
 - **`AlexChen31337/`** — Research, tools, benchmarks, arxiv-to-code outputs, inference optimization, content pipelines, anything NOT core ClawInfra

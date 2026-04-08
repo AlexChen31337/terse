@@ -43,7 +43,7 @@ v0.6.0 released. Phase 2 + SKILLRL shipped. **Next:** v0.6.1 (merge PRs #22+#23)
 Service: miner_scheduler.service. Daytime + sunny only (Kellyville).
 
 ## 🔧 Infrastructure
-- **GPU Server:** peter@10.0.0.44 (RTX 3090 24GB + 3080 10GB + 2070S 8GB, 16GB RAM + 256GB swap)
+- **GPU Server:** peter@10.0.0.30 (RTX 3090 24GB + 3080 10GB + 2070S 8GB, 16GB RAM + 256GB swap)
 - **ClawChain VPS:** 135.181.157.121 (Hetzner). Block explorer on port 3000.
 - **Foundry Agent:** workspace-foundry, CI/CD + PR review, GLM-4.7
 
