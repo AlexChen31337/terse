@@ -1,23 +1,24 @@
-# RSI Loop Health Check — 2026-04-08 03:15 AEDT
+# RSI Loop Health Check — 2026-04-09 03:10 AEDT
 
 ## Status
-- **Health Score: 0.159** ⚠️ (threshold: 0.3)
-- **Outcomes (7d):** 19 logged | Success: 37% | Avg quality: 2.16/5
+- **Health Score: 0.173** ⚠️ (threshold: 0.3)
+- **Outcomes (7d):** 18 logged | Success: 39% | Avg quality: 2.22/5
 - **Top Issues:** context_loss(7), tool_validation_error(6), incomplete_task(4)
-- **Patterns Detected:** 4
-- **Proposals:** 1 draft | 0 approved | 24 deployed
 
-## Key Patterns
-1. **tool_validation_error** in `tool_call` tasks — 6x, 100% fail rate (score: 1.263)
-2. **incomplete_task** in `message_routing` tasks — 4x, 100% fail rate (score: 0.842)
-3. **context_loss** in `session_management` tasks — 7x (score: 0.368)
+## Detected Patterns (4)
+1. **[1.333]** In `tool_call` tasks, `tool_validation_error` occurs 6x with 100% fail
+2. **[0.889]** In `message_routing` tasks, `incomplete_task` occurs 4x with 100% fail
+3. **[0.389]** In `session_management` tasks, `context_loss` occurs 7x with 0% failure rate
 
 ## Cycle Results
-- Proposals generated: 4 (all already deployed or auto-skipped)
-- Auto-deployed: 0
+- Proposals generated: 4
+- Auto-deployed: 0 (all already deployed)
 - Awaiting review: 1
+- Existing deployed: 24
+
+## Pending Auto-Fixes
+- `15c31c37`: Address `tool_validation_error` in `tool_call` tasks
+- `db32089a`: Address `timeout` in `tool_call` tasks
 
 ## Action Required
-- Health score critically low at 0.159
-- Main driver: persistent tool_validation_error and incomplete_task failures
-- Existing proposals may not be addressing root cause sufficiently
+Health score critically low. 39% success rate over 7 days. Main drivers are context loss and tool validation errors. Bowen alerted.
