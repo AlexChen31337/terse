@@ -83,7 +83,7 @@ Run every 15 minutes via OpenClaw cron. Produce advice JSON:
 
 | Strategy | When | export_threshold | discharge_floor |
 |----------|------|-----------------|----------------|
-| `aggressive_export` | Sunny tomorrow + high peak tonight | 6-8c | 5-10% |
+| `aggressive_export` | Sunny tomorrow + high peak tonight | 6-8c | 10% |
 | `moderate_export` | Partly cloudy tomorrow | 10-12c | 15-25% |
 | `conservative_hold` | Cloudy/rain tomorrow | 15c+ | 30-40% |
 | `grid_charge` | Negative spot price | N/A (force charge) | N/A |
@@ -101,7 +101,7 @@ Run every 15 minutes via OpenClaw cron. Produce advice JSON:
 
 The deterministic script clamps all recommendations:
 - `export_threshold`: min 3c, max 30c
-- `discharge_floor`: min 5% (SOC_MIN), max 60%
+- `discharge_floor`: min 10% (BMS hard limit, non-negotiable), max 60%
 - `hold_until`: must be valid HH:MM in next 24h
 - Any value outside bounds → script uses defaults
 

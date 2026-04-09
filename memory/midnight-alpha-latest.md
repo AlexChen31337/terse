@@ -1,114 +1,112 @@
 # 🌙 Midnight Alpha Report
-**Wednesday, April 8, 2026 — 2:00 AM AEDT / Apr 7 16:00 UTC**
+**Friday, April 10, 2026 — 2:00 AM AEST / Apr 9 16:00 UTC**
 
 ---
 
 ## 📊 Market Snapshot
 
-| Asset | Price | 24h Δ | Market Cap |
-|-------|------:|------:|----------:|
-| **BTC** | $68,153 | -2.55% | $1,363.9B |
-| **ETH** | $2,079.56 | -3.95% | $251.0B |
-| **SOL** | $78.82 | -4.24% | $45.2B |
-| **HYPE** | $36.04 | -4.28% | $8.6B |
+| Asset | Price | 24h Δ | Since Last Report (Apr 8) |
+|-------|------:|------:|-------------------------:|
+| **BTC** | $72,182 | +1.2% | **+5.9%** ↑ |
+| **ETH** | $2,220 | +0.1% | **+6.7%** ↑ |
+| **SOL** | $83.80 | +0.5% | **+6.3%** ↑ |
+| **HYPE** | $39.60 | +1.9% | **+9.9%** ↑ |
 
-**Global Crypto Market Cap:** $2.41T (↓ 2.37% in 24h)
-**BTC Dominance:** 56.5% | **ETH Dominance:** 10.4%
-**24h Volume:** $96.9B | **Active Cryptos:** 17,761
+**Global Crypto Market Cap:** $2.53T (↑ from $2.41T — **+5.0%** in 48h)
+**BTC Dominance:** 57.1% (↑ from 56.5%) | **ETH Dominance:** 10.6% (↑ from 10.4%)
+**24h Volume:** $83.3B (↓ from $96.9B) | **Active Cryptos:** 17,728
+
+---
 
 ## 😱 Fear & Greed Index
 
-| Value | Classification |
-|------:|---------------|
-| **11** | **Extreme Fear** |
+| Value | Classification | Prev |
+|------:|---------------|------|
+| **14** | **Extreme Fear** | 11 |
 
-> Fear & Greed at 11 is a *generational low*. Last time we saw single-digit readings was during the COVID crash of March 2020 — which was the generational buy. This is contrarian gold.
-
----
-
-## 🔥 Macro Signal: AI Funding Supernova
-
-Q1 2026 shattered all venture records (Crunchbase):
-- **$300B poured into 6,000 startups** — up 150% QoQ and YoY
-- **$242B (80%) went to AI companies** — up from 55% in Q1 2025
-- **Top 4 rounds alone = $188B:**
-  - OpenAI: $122B at $852B valuation (Apr 1)
-  - Anthropic: $30B
-  - xAI: $20B
-  - Waymo: $16B
-- US captured >80% of global venture funding
-- Q1 2026 alone ≈ 70% of all VC spent in all of 2025
-
-**Takeaway:** The AI arms race is in full nuclear mode. Compute, agents, and infrastructure are where the smart money is flooding. This is the macro wind behind crypto + AI convergence narratives.
+> FnG ticked up from 11 → 14. Still deep in extreme fear territory, but the bounce from generational lows is underway. Volume dropping 14% while prices rally 5-10% across the board signals this is a low-conviction grind up — the kind that catches late shorts. Extreme fear + rising prices = classic stealth accumulation phase.
 
 ---
 
-## 🧠 AI × Crypto Agent Trends (2026)
+## 🔥 Trending & Narratives
 
-Key narratives consolidating from multiple sources:
+### CoinGecko Trending
+| Coin | Symbol | Market Cap Rank |
+|------|--------|:-:|
+| **Aria.AI** | ARIA | #405 |
+| Toncoin | TON | #33 |
+| Pudgy Penguins | PENGU | #107 |
+| Enjin Coin | ENJ | #392 |
+| Bitcoin | BTC | #1 |
+| Monad | MON | #121 |
+| Siren | SIREN | #98 |
 
-### 1. **Autonomous Agent Economies**
-AI agents are no longer just "chatbots" — they're becoming economic actors with wallets, on-chain identities, and autonomous transaction capability. a16z highlights the need for **model interoperability with fair compensation**, a problem crypto is uniquely positioned to solve.
-
-### 2. **On-Chain Compute Marketplaces**
-Decentralized GPU/compute marketplaces (Akash, Render, Bittensor) are emerging as the "picks and shovels" of the AI boom. The $242B flowing into AI compute needs decentralized alternatives to AWS/GCP.
-
-### 3. **Agent Framework Infrastructure**
-Blockchain Council's 2026 framework identifies a split between:
-- **Infrastructure layer:** Oracles, indexing, compute marketplaces
-- **Application layer:** Autonomous trading agents, research agents, DeFi agents
-
-### 4. **RWA + AI Convergence**
-Real-world asset tokenization combined with AI-driven valuation and risk assessment is emerging as a major narrative.
-
-### 5. **DePIN (Decentralized Physical Infrastructure)**
-AI needs physical infrastructure (sensors, compute nodes, bandwidth). DePIN protocols are the bridge.
-
----
-
-## 🎯 Top Narratives Ranked (Alpha Signal)
-
-| # | Narrative | Signal Strength | Rationale |
-|---|-----------|:---:|-----------|
-| 1 | **AI Agent Economies** | 🔴 STRONG | $242B AI funding + crypto convergence at earliest stage |
-| 2 | **DePIN** | 🟠 HIGH | Physical infrastructure for AI compute — picks & shovels |
-| 3 | **RWA Tokenization** | 🟠 HIGH | Regulatory clarity accelerating; AI-driven valuation |
-| 4 | **Modular Blockchains** | 🟡 MEDIUM | Celestia/EigenLayer ecosystem maturing |
-| 5 | **Perpetual DEXs** | 🟡 MEDIUM | Hyperliquid leading; CEX regulatory pressure mounting |
-| 6 | **BTC L2 / Restaking** | 🟡 MEDIUM | BTC dominance at 56.5% — L2s capturing value |
-| 7 | **Stablecoin Rails** | 🟢 GROWING | Circle IPO buzz; global payment adoption |
+### Trending Categories
+1. 🎮 Adventure Games
+2. 📜 Smart Contract Platforms
+3. 💰 DeFi
+4. 🏦 Stablecoin Issuers
+5. 🤖 **AI Meme** ← notable
 
 ---
 
-## ⚡ Actionable Intel
+## 🤖 AI Agent Intelligence
 
-### 🟢 Contrarian Buy Signal: Extreme Fear = Opportunity
-Fear & Greed at **11** is historically a strong contrarian buy zone. Combined with:
-- BTC holding $68K support
-- Massive AI macro tailwinds ($300B Q1 funding)
-- Crypto + AI convergence at the earliest innings
+### On-Chain AI Agents
+- AI crypto wallets creating new legal paradigms — investors flagging autonomous agent wallet risks as a regulatory frontier
+- Local AI monitoring agents (Telegram-integrated) gaining HN traction — signal that retail builder interest in crypto×AI infra is real
+- "AI coworker" startup raised $117M (5x increase) — enterprise AI agent funding is white-hot
+- German AI startup in talks at **$4B valuation** — European AI catching up
+- Narrative: AI agents that can autonomously trade, hold wallets, and execute on-chain actions remain the bleeding edge
 
-**This is not the time to panic-sell. This is the time to accumulate high-conviction AI × crypto infrastructure.**
-
-### 🔴 Watch List This Week
-1. **HYPE at $36** — down 4.28% with the market but fundamentally strong (perp DEX leader, profitable). Potential bounce play.
-2. **AI agent tokens** (FET, RENDER, TAO) — correlated to AI funding narrative, likely to lead recovery
-3. **BTC $65K level** — if this holds through the fear cycle, it's a textbook accumulation zone
-
-### 📰 Key Events
-- OpenAI $122B round closed April 1 — largest venture round in history
-- Oracle laying off 25K to fund AI data centers
-- Q1 2026 VC data just released — reshaping narrative expectations
+### Key Insight
+The "AI Meme" category trending on CoinGecko while **Aria.AI (ARIA)** leads trending coins is a concrete data point: the market is rotating toward AI-native tokens even in extreme fear conditions. This is narrative resilience.
 
 ---
 
-## 🏆 Top Pick: AI Agent Infrastructure
+## 📈 48-Hour Delta Analysis
 
-**Why:** $242B flowing into AI in Q1 alone. The convergence of autonomous agents + on-chain economies is at 2020 DeFi levels of early. Projects building agent-native L1s (like ClawChain), agent frameworks, and on-chain compute marketplaces are positioned asymmetrically.
+The market bounced hard from the Apr 8 lows:
 
-The Fear & Greed at 11 combined with the biggest AI funding cycle in history = **the setup for the next massive rotation into AI × crypto plays when sentiment flips.**
+| Metric | Apr 8 | Apr 10 | Δ |
+|--------|-------|--------|---|
+| Total MCap | $2.41T | $2.53T | **+$120B** |
+| BTC | $68,153 | $72,182 | **+$4,029** |
+| HYPE | $36.04 | $39.60 | **+$3.56 (+9.9%)** |
+| FnG | 11 | 14 | **+3 pts** |
+
+**HYPE is the standout.** Outperforming BTC, ETH, and SOL by a wide margin. The Hyperliquid ecosystem is absorbing capital disproportionately in this relief rally — likely driven by perps volume migration and L1 narrative strength.
 
 ---
 
-*Report generated by Alex Chen | Midnight Alpha Intelligence*
-*Data sources: Hyperliquid API, CoinGecko, Alternative.me Fear & Greed, Crunchbase, a16z, Blockchain Council*
+## 🎯 Top Pick: **HYPE (Hyperliquid)**
+
+**Thesis:** HYPE posted +9.9% in 48h vs BTC's +5.9%, leading all tracked assets. In extreme fear environments, relative strength is the strongest alpha signal. Hyperliquid's perps DEX continues to eat CEX market share, and the token's outperformance during a risk-off regime suggests smart money accumulation.
+
+**Catalysts:**
+- Declining CEX volumes → DEX migration thesis intact
+- HYPE staking + upcoming ecosystem token launches
+- AI agent trading infra being built on Hyperliquid (autonomous agent execution layer)
+- Still -65%+ from ATH → massive recovery potential vs BTC's -26%
+
+**Risk:** Extreme fear can always go deeper. A BTC breakdown below $68K would likely drag everything. Position size accordingly.
+
+---
+
+## 🧠 Alpha Signals to Watch
+
+1. **ARIA (Aria.AI)** — #1 trending on CoinGecko, AI×crypto convergence play. Worth monitoring for a breakout if AI Meme category sustains momentum.
+2. **MON (Monad)** — Trending at #121 rank. New L1 with parallelized EVM. Post-launch price discovery phase.
+3. **TON** — Telegram ecosystem revival. At #33, it's the highest-cap trending coin besides BTC. Telegram mini-apps + payments narrative.
+4. **FnG trajectory** — If FnG breaks above 20 this week, it confirms the bottom is in. Below 10 again = deeper capitulation ahead.
+5. **Volume divergence** — Prices up, volume down. Either this resolves with a volume surge (bullish confirmation) or a rejection back to lows. Key tell for next 48h.
+
+---
+
+## 📋 Summary
+
+> **Regime:** Extreme Fear stealth rally. Prices +5-10% in 48h on declining volume. Classic bear market relief or the start of something bigger — FnG trajectory is the arbiter. HYPE leading all assets = the alpha pick. AI×crypto narrative proving resilient with ARIA trending and AI Meme category in top 5. Stay alert, size smart.
+
+---
+
+*Generated by Midnight Alpha • 2026-04-10 02:00 AEST • Next report: Sunday Apr 12*

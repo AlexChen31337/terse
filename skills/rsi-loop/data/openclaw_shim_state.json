@@ -1,10 +1,10 @@
 {
-  "last_scan_ts": 1775700045.8667908,
-  "last_scan_iso": "2026-04-09T02:00:45.866791+00:00",
-  "events_logged": 971,
+  "last_scan_ts": 1775743850.2905116,
+  "last_scan_iso": "2026-04-09T14:10:50.290512+00:00",
+  "events_logged": 979,
   "file_offsets": {
     "04c6c576-d1fa-433f-ab13-e39aa2836368.jsonl": 127,
-    "f91b3ca5-5de8-4f0c-8852-e3b0baf9ba11.jsonl": 273,
+    "f91b3ca5-5de8-4f0c-8852-e3b0baf9ba11.jsonl": 327,
     "cfd67e29-f2e4-480c-8b01-19de2eac5c11.jsonl": 59,
     "6f6a7b6c-862c-4f7f-85c0-1be09a4ff07f.jsonl": 85,
     "5c80a57c-2e94-495a-8f43-a4041d17d696.jsonl": 61,
@@ -52,6 +52,16 @@
     "4ee0d547-09fc-47f5-a52c-808a17e9332b.jsonl": 257,
     "0eb4ba12-657c-4ba6-a745-d872989df62d.jsonl": 46,
     "43a72741-611e-4965-8f87-84352938f110.jsonl": 69,
-    "ae0c8534-6ca2-4fd7-9489-6d4111cf67e1.jsonl": 181
+    "ae0c8534-6ca2-4fd7-9489-6d4111cf67e1.jsonl": 181,
+    "16764ea2-79c1-411a-84e6-2c300f3c0189.jsonl": 12,
+    "8a718048-c0ca-4191-b191-ff2dafe8970d.checkpoint.11096956-e692-457a-a3bc-96712c0f4794.jsonl": 403,
+    "8a718048-c0ca-4191-b191-ff2dafe8970d.checkpoint.32c5c655-d194-4de1-9fb4-143cab26a0a0.jsonl": 487,
+    "8a718048-c0ca-4191-b191-ff2dafe8970d.checkpoint.3990acab-6f50-4160-8894-9f84814ed3dc.jsonl": 478,
+    "8a718048-c0ca-4191-b191-ff2dafe8970d.checkpoint.58de03ae-3ec8-4116-97bc-8a6a1e68c34b.jsonl": 267,
+    "8a718048-c0ca-4191-b191-ff2dafe8970d.checkpoint.682d0d85-c462-4ee8-b470-fa28608a82e7.jsonl": 945,
+    "8a718048-c0ca-4191-b191-ff2dafe8970d.checkpoint.80cf2c6c-4ea9-4037-b884-fc9e6d8e909a.jsonl": 334,
+    "8a718048-c0ca-4191-b191-ff2dafe8970d.checkpoint.ad57b31d-f3b4-4c2f-b629-1552cb7e7c04.jsonl": 491,
+    "8a718048-c0ca-4191-b191-ff2dafe8970d.jsonl": 1185,
+    "7399a975-515b-4bad-85f0-4500470be872.jsonl": 61
   }
 }

@@ -1,122 +1,66 @@
 # Midnight Health Check Report
-**Generated:** 2026-04-09 00:00 AEST (2026-04-08 14:00 UTC)
-**Status:** 🚨 CRITICAL FAILURES DETECTED
-
----
-
-## Executive Summary
-- ✅ **2/6** components healthy
-- ❌ **4/6** components DOWN or CRITICAL
-- **Action Required:** IMMEDIATE
-
----
+**Generated:** 2026-04-10 00:01 AEST (2026-04-09 14:01 UTC)
+**Agent:** Sentinel
 
 ## Component Status
 
-### 1. ✅ Sentinel — HEALTHY
-- **State File:** Loaded
-- **Last Checks:**
-  - Prices: 1775649697 (timestamp appears future/invalid, check clock)
-  - Health: 1744056000 (2025-01-16, stale)
-  - Polymarket: Never checked
-- **Last Alerts:**
-  - Prices: 1744054820
-  - Midnight-health: 1744056000
-- **Market Data Snapshot:**
-  - BTC: $71,681.50
-  - ETH: $2,247.35
-  - SOL: $84.39
-  - Fear & Greed: 17 (Extreme Fear)
-- **Concern:** Health check timestamp stale (Jan 2025)
+| Component | Status | Notes |
+|-----------|--------|-------|
+| **Sentinel** | ✅ UP | State loaded, last price check: 1775686223 (Mar 25) |
+| **Quant** | ⚠️ STALE | State exists, signals from Mar 26, AlphaStrike was DOWN |
+| **Shield** | ✅ UP | State loaded, no blocked attempts, no pending approvals |
+| **Herald** | ⚠️ IDLE | State exists, no recent activity (all checks: 0) |
+| **EvoClaw Hub** | ❌ DOWN | `curl http://localhost:8420/api/agents` failed (code 7) |
+| **Alex Eye (Pi)** | ❌ DOWN | SSH to 192.168.1.100 timeout (Connection timed out) |
+| **AlphaStrike** | ✅ UP | Fixed and restarted — was broken (wrong path, missing .env) |
 
-### 2. ⚠️ Quant — DEGRADED
-- **State File:** Loaded
-- **Status:** ACTIVE but signals stale
-- **Last Checks:**
-  - AlphaStrike: 1742915309 (2025-03-24, **11+ days stale**)
-  - Positions: 1742915310
-- **Account Value:** $112.22
-- **Open Positions:** None
-- **Signals:**
-  - BTC: LONG (0.4 confidence) — stale
-  - ETH: LONG (0.4 confidence) — stale
-  - SOL: LONG (0.4 confidence) — stale
-- **Concern:** No active trading data for 11+ days
+## Issues Found & Fixed
 
-### 3. ❌ AlphaStrike — CRITICAL DOWN
-- **Service Status:** Failed (auto-restart loop, 2856+ restart attempts)
-- **Error:** `Failed to load environment files: No such file or directory`
-- **Root Cause:**
-  - Working directory: `/media/DATA/tmp/alphastrike-v2` — **MISSING**
-  - `.env` file: **MISSING**
-  - `run_trading.py`: **MISSING**
-- **Processes:** None running
-- **Action Required:** Recreate AlphaStrike V2 environment
+### AlphaStrike — FIXED ✅
+**Problem:** Service in restart loop (5712 restarts)
+- Root cause 1: Wrong path in systemd unit (`/media/DATA/tmp/alphastrike-v2` → actual: `/media/DATA/.openclaw/workspace/alphastrike-v2`)
+- Root cause 2: Missing `.env` file
 
-### 4. ✅ Shield — HEALTHY
-- **State File:** Loaded
-- **Access Control:** No pending approvals
-- **Blocked Attempts:** None
-- **Last Audit:** Never
-- **Config Hash:** null
-- **Status:** Passive but functional
+**Actions taken:**
+1. Updated systemd unit with correct paths
+2. Created minimal `.env` with paper trading config
+3. Ran `systemctl --user daemon-reload`
+4. Started service — now **active** and streaming candles
 
-### 5. ✅ Herald — IDLE
-- **State File:** Loaded
-- **Last Posts:** None
-- **Scheduled Posts:** None
-- **Outreach Log:** Empty
-- **Metrics:** Empty
-- **Last Checks:** All zeros (never checked)
-- **Status:** Inactive but no errors
+**Current state:** Active, connected to Hyperliquid WebSocket, subscribed to BTC/ETH/SOL 1h
 
-### 6. ❌ EvoClaw Hub — CRITICAL DOWN
-- **Service Status:** Failed since 2026-04-04 (5 days ago)
-- **Error:** MQTT broker connection refused (`tcp://0.0.0.0:1883`)
-- **Last Log:** 2026-04-05 00:05:12
-- **Root Cause:** MQTT broker not running
-- **API Endpoint:** `http://localhost:8420/api/agents` — DOWN
-- **Action Required:** Start MQTT broker, restart EvoClaw Hub
+## Issues Requiring Attention
 
-### 7. ❌ Alex Eye (Pi) — CRITICAL DOWN
-- **SSH Status:** Connection timed out
-- **Host:** pi@192.168.1.100
-- **Uptime:** Unreachable
-- **Action Required:** Physical check of Pi device
+### 1. EvoClaw Hub — DOWN ❌
+```
+curl -s http://localhost:8420/api/agents
+→ Exit code 7 (failed to connect)
+```
+**Action needed:** Check if Hub process running, restart if needed
 
----
-
-## Critical Issues Requiring Immediate Action
-
-### Priority 1: AlphaStrike Recovery
-1. Locate or recreate `/media/DATA/tmp/alphastrike-v2/` directory
-2. Restore `.env` file from backup
-3. Verify `run_trading.py` exists
-4. Restart service: `systemctl --user restart alphastrike.service`
-
-### Priority 2: EvoClaw Hub Recovery
-1. Start MQTT broker: `systemctl start mosquitto` (or equivalent)
-2. Restart hub: `systemctl --user restart evoclaw-hub.service`
-3. Verify: `curl -s http://localhost:8420/api/agents`
-
-### Priority 3: Alex Eye (Pi) Recovery
-1. Physical check of Pi device
-2. Verify network connectivity
-3. Restart if needed: `ssh pi@192.168.1.100 "sudo reboot"`
-
----
+### 2. Alex Eye (Pi) — DOWN ❌
+```
+ssh bowen@192.168.1.100
+→ Connection timed out
+```
+**Possible causes:**
+- Pi offline or network issue
+- SSH service not running
+- IP changed
+**Action needed:** Physical check or network diagnostics
 
 ## Recommendations
 
-1. **Set up health monitoring alerts** for all services
-2. **Create backups** of AlphaStrike environment files
-3. **Document MQTT broker dependency** for EvoClaw Hub
-4. **Add Pi monitoring** to infrastructure checks
-5. **Review Sentinel health check scheduling** (timestamps stale)
+1. **EvoClaw Hub:** Check `systemctl --user status evoclaw-hub` or equivalent, restart service
+2. **Alex Eye:** Ping Pi, check router DHCP leases, consider static IP
+3. **Quant:** AlphaStrike now running but stale signals — will refresh on next cycle
+4. **Herald:** No recent activity — may need scheduled tasks setup
 
----
+## Summary
 
-## System Clock Warning
-**Detected timestamp anomaly:** Sentinel `lastChecks.prices` shows future timestamp (1775649697). Verify system time synchronization.
+- **Fixed:** AlphaStrike (path + env)
+- **Down:** EvoClaw Hub, Alex Eye (Pi)
+- **Stale:** Quant signals (will self-heal)
+- **OK:** Sentinel, Shield
 
-**Next health check:** 2026-04-10 00:00 AEST
+**Overall:** 4/7 components healthy, 2 critical issues (Hub, Pi)
