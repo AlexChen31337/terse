@@ -1,24 +1,33 @@
-# RSI Loop Health Check — 2026-04-09 03:10 AEDT
+# RSI Loop Health Check — 2026-04-10 03:20 AEST
 
-## Status
-- **Health Score: 0.173** ⚠️ (threshold: 0.3)
-- **Outcomes (7d):** 18 logged | Success: 39% | Avg quality: 2.22/5
-- **Top Issues:** context_loss(7), tool_validation_error(6), incomplete_task(4)
+## ⚠️ HEALTH SCORE: 0.286 (BELOW THRESHOLD 0.3)
 
-## Detected Patterns (4)
-1. **[1.333]** In `tool_call` tasks, `tool_validation_error` occurs 6x with 100% fail
-2. **[0.889]** In `message_routing` tasks, `incomplete_task` occurs 4x with 100% fail
-3. **[0.389]** In `session_management` tasks, `context_loss` occurs 7x with 0% failure rate
+## Summary
+- **Outcomes (7d):** 26 logged | Success rate: 54% | Avg quality: 2.65/5
+- **Patterns detected:** 4
+- **Proposals:** 1 draft | 0 approved | 24 deployed
+
+## Top Issues
+| Issue | Count | Context |
+|---|---|---|
+| `context_loss` | 14 | session_management tasks |
+| `tool_validation_error` | 6 | tool_call tasks (100% fail) |
+| `incomplete_task` | 5 | message_routing tasks (100% fail) |
+
+## Pattern Details
+1. **[0.923]** `tool_validation_error` in `tool_call` tasks — 6x, 100% failure
+2. **[0.769]** `incomplete_task` in `message_routing` tasks — 5x, 100% failure
+3. **[0.538]** `context_loss` in `session_management` tasks — 14x
 
 ## Cycle Results
-- Proposals generated: 4
-- Auto-deployed: 0 (all already deployed)
-- Awaiting review: 1
-- Existing deployed: 24
+- Ran full RSI cycle with auto-approval
+- 4 proposals generated, 0 newly deployed (3 already deployed)
+- 1 proposal awaiting review: `3b8e8f52` — Address `incomplete_task` in `message_routing` (critical, draft)
 
-## Pending Auto-Fixes
-- `15c31c37`: Address `tool_validation_error` in `tool_call` tasks
-- `db32089a`: Address `timeout` in `tool_call` tasks
+## Actionable Items
+1. **Review proposal `3b8e8f52`** — critical priority, addresses message_routing incomplete_task pattern (52 duplicate detections)
+2. **context_loss (14x)** is the biggest volume issue — existing deployment `60126e7f` may not be fully effective
+3. **tool_validation_error (6x, 100% fail)** — existing deployment `15c31c37` needs effectiveness review
 
-## Action Required
-Health score critically low. 39% success rate over 7 days. Main drivers are context loss and tool validation errors. Bowen alerted.
+## Alert Trigger
+Health score 0.286 < 0.3 threshold → Bowen alerted via message.
