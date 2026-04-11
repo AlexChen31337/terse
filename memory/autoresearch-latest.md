@@ -1,30 +1,30 @@
-# 🔬 Nightly Research: Developer Tools
+# 🔬 Nightly Research: AI & Agents
 
-> Generated: 2026-04-10 01:00 AEST | Track: devtools (3 of 3)
+> Generated: 2026-04-12 01:00 AEST | Track: ai (1 of 3)
 
 ---
 
 ## 📄 Top Papers (arXiv)
 
-1. **[ReCodeAgent: A Multi-Agent Workflow for Language-agnostic Translation and Validation of Large-scale Repositories](http://arxiv.org/abs/2604.07341v1)**
-   > Most repository-level code translation and validation techniques have been evaluated on a single source-target programming language (PL) pair, owing to the complex engineering effort required to adapt…
-   _Authors: Ali Reza Ibrahimzada, Brandon Paulsen, Daniel Kroening | Categories: cs.SE | Published: 2026-04-08_
+1. **[Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models](http://arxiv.org/abs/2604.08545v1)**
+   > The advent of agentic multimodal models has empowered systems to actively interact with external environments. However, current agents suffer from a profound meta-cognitive deficit: they struggle to a…
+   _Authors: Shilin Yan, Jintao Tong, Hongwei Xue | Categories: cs.CV, cs.AI | Published: 2026-04-09_
 
-2. **[Chatbot-Based Assessment of Code Understanding in Automated Programming Assessment Systems](http://arxiv.org/abs/2604.07304v1)**
-   > Large Language Models (LLMs) challenge conventional automated programming assessment because students can now produce functionally correct code without demonstrating corresponding understanding. This …
-   _Authors: Eduard Frankford, Erik Cikalleshi, Ruth Breu | Categories: cs.SE, cs.AI | Published: 2026-04-08_
+2. **[OpenVLThinkerV2: A Generalist Multimodal Reasoning Model for Multi-domain Visual Tasks](http://arxiv.org/abs/2604.08539v1)**
+   > Group Relative Policy Optimization (GRPO) has emerged as the de facto Reinforcement Learning (RL) objective driving recent advancements in Multimodal Large Language Models. However, extending this suc…
+   _Authors: Wenbo Hu, Xin Chen, Yan Gao-Tian | Categories: cs.CV, cs.AI, cs.CL | Published: 2026-04-09_
 
-3. **[Compact Constraint Encoding for LLM Code Generation: An Empirical Study of Token Economics and Constraint Compliance](http://arxiv.org/abs/2604.07192v1)**
-   > LLMs used for code generation are typically guided by engineering constraints--technology choices, dependency restrictions, and architectural patterns--expressed in verbose natural language. We invest…
-   _Authors: Hanzhang Tang | Categories: cs.SE | Published: 2026-04-08_
+3. **[PSI: Shared State as the Missing Layer for Coherent AI-Generated Instruments in Personal AI Agents](http://arxiv.org/abs/2604.08529v1)**
+   > Personal AI tools can now be generated from natural-language requests, but they often remain isolated after creation. We present PSI, a shared-state architecture that turns independently generated mod…
+   _Authors: Zhiyuan Wang, Erzhen Hu, Mark Rucker | Categories: cs.HC, cs.AI | Published: 2026-04-09_
 
-4. **[An empirical study of LoRA-based fine-tuning of large language models for automated test case generation](http://arxiv.org/abs/2604.06946v1)**
-   > Automated test case generation from natural language requirements remains a challenging problem in software engineering due to the ambiguity of requirements and the need to produce structured, executa…
-   _Authors: Milad Moradi, Ke Yan, David Colwell | Categories: cs.SE, cs.AI | Published: 2026-04-08_
+4. **[Demystifying OPD: Length Inflation and Stabilization Strategies for Large Language Models](http://arxiv.org/abs/2604.08527v1)**
+   > On-policy distillation (OPD) trains student models under their own induced distribution while leveraging supervision from stronger teachers. We identify a failure mode of OPD: as training progresses, …
+   _Authors: Feng Luo, Yu-Neng Chuang, Guanchu Wang | Categories: cs.CL, cs.LG | Published: 2026-04-09_
 
-5. **[Data Leakage in Automotive Perception: Practitioners' Insights](http://arxiv.org/abs/2604.06899v1)**
-   > Data leakage is the inadvertent transfer of information between training and evaluation datasets that poses a subtle, yet critical, risk to the reliability of machine learning (ML) models in safety-cr…
-   _Authors: Md Abu Ahammed Babu, Sushant Kumar Pandey, Darko Durisic | Categories: cs.CR, cs.LG, cs.SE | Published: 2026-04-08_
+5. **[Ads in AI Chatbots? An Analysis of How Large Language Models Navigate Conflicts of Interest](http://arxiv.org/abs/2604.08525v1)**
+   > Today's large language models (LLMs) are trained to align with user preferences through methods such as reinforcement learning. Yet models are beginning to be deployed not merely to satisfy users, but…
+   _Authors: Addison J. Wu, Ryan Liu, Shuyue Stella Li | Categories: cs.AI, cs.CL, cs.CY | Published: 2026-04-09_
 
 _(up to 5 items)_
 
@@ -32,20 +32,20 @@ _(up to 5 items)_
 
 ## 🔥 Trending Repos (GitHub)
 
-1. **[farion1231/cc-switch](https://github.com/farion1231/cc-switch)** — ⭐ 694 | 📈 +694 today | Rust
+1. **[sponsors/thedotmack](https://github.com/sponsors/thedotmack)** — ⭐ 780 | 📈 +780 today | TypeScript
+   > A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.
+
+2. **[farion1231/cc-switch](https://github.com/farion1231/cc-switch)** — ⭐ 522 | 📈 +522 today | Rust
    > A cross-platform desktop All-in-One assistant tool for Claude Code, Codex, OpenCode, openclaw &amp; Gemini CLI.
 
-2. **[sponsors/abhigyanpatwari](https://github.com/sponsors/abhigyanpatwari)** — ⭐ 674 | 📈 +674 today | TypeScript
-   > GitNexus: The Zero-Server Code Intelligence Engine - GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a GitHub repo or ZIP file, and get an interactive knowledge graph wit a built in Graph RAG Agent. Perfect for code exploration
+3. **[QwenLM/qwen-code](https://github.com/QwenLM/qwen-code)** — ⭐ 354 | 📈 +354 today | TypeScript
+   > An open-source AI agent that lives in your terminal.
 
-3. **[sponsors/clash-verge-rev](https://github.com/sponsors/clash-verge-rev)** — ⭐ 414 | 📈 +414 today | TypeScript
-   > A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience
+4. **[sponsors/dmtrKovalenko](https://github.com/sponsors/dmtrKovalenko)** — ⭐ 290 | 📈 +290 today | Rust
+   > The fastest and the most accurate file search toolkit for AI agents, Neovim, Rust, C, and NodeJS
 
-4. **[tobi/qmd](https://github.com/tobi/qmd)** — ⭐ 327 | 📈 +327 today | TypeScript
-   > mini cli search engine for your docs, knowledge bases, meeting notes, whatever. Tracking current sota approaches while being all local
-
-5. **[sponsors/jesseduffield](https://github.com/sponsors/jesseduffield)** — ⭐ 151 | 📈 +151 today | Go
-   > simple terminal UI for git commands
+5. **[openai/codex](https://github.com/openai/codex)** — ⭐ 208 | 📈 +208 today | Rust
+   > Lightweight coding agent that runs in your terminal
 
 _(up to 5 items)_
 
@@ -53,20 +53,20 @@ _(up to 5 items)_
 
 ## 🗞️ Hacker News Highlights
 
-1. **[Sam Altman may control our future – can he be trusted?](https://www.newyorker.com/magazine/2026/04/13/sam-altman-may-control-our-future-can-he-be-trusted)** — 2108 pts, 886 comments
-   > _newyorker.com_
+1. **[WireGuard makes new Windows release following Microsoft signing resolution](https://lists.zx2c4.com/pipermail/wireguard/2026-April/009561.html)** — 509 pts, 148 comments
+   > _lists.zx2c4.com_
 
-2. **[Who is Satoshi Nakamoto? My quest to unmask Bitcoin's creator](https://www.nytimes.com/2026/04/08/business/bitcoin-satoshi-nakamoto-identity-adam-back.html)** — 566 pts, 715 comments
-   > _nytimes.com_
+2. **[AI assistance when contributing to the Linux kernel](https://github.com/torvalds/linux/blob/master/Documentation/process/coding-assistants.rst)** — 405 pts, 288 comments
+   > _github.com_
 
-3. **[Open Source Security at Astral](https://astral.sh/blog/open-source-security-at-astral)** — 283 pts, 65 comments
-   > _astral.sh_
+3. **[Sam Altman's response to Molotov cocktail incident](https://blog.samaltman.com/2279512)** — 323 pts, 729 comments
+   > _blog.samaltman.com_
 
-4. **[Your File System Is Already A Graph Database](https://rumproarious.com/2026/04/04/your-file-system-is-already-a-graph-database/)** — 178 pts, 75 comments
-   > _rumproarious.com_
+4. **[We've raised $17M to build what comes after Git](https://blog.gitbutler.com/series-a)** — 319 pts, 707 comments
+   > _blog.gitbutler.com_
 
-5. **[Expanding Swift's IDE Support](https://swift.org/blog/expanding-swift-ide-support/)** — 132 pts, 59 comments
-   > _swift.org_
+5. **[A compelling title that is cryptic enough to get you to take action on it](https://ericwbailey.website/published/a-compelling-title-that-is-cryptic-enough-to-get-you-to-take-action-on-it/)** — 261 pts, 140 comments
+   > _ericwbailey.website_
 
 _(up to 5 items)_
 
@@ -83,4 +83,17 @@ _(up to 5 items)_
 
 ---
 
-_Next track: AI & Agents | Archive: memory/autoresearch-archive.md_
+_Next track: Crypto & DeFi | Archive: memory/autoresearch-archive.md_
+---
+## Web Highlights (2026-04-11 15:00 UTC)
+
+### Anthropic
+- **Claude Mythos Preview** released with system card (Apr 8). Model deemed too powerful for public release — locked behind 50-company firewall via Project Glasswing. Cybersecurity focus.
+- **Project Glasswing**: Anthropic giving select firms access to Mythos to bolster cybersecurity research. NYT: "too powerful to be released to the public."
+- **Leak (Mar 26)**: Massive data leak exposed Anthropic's Mythos roadmap including "Capybara tier" model plans.
+
+### OpenAI
+- **$122B raise** (Mar 31, 2026) — largest AI funding round ever.
+- **OpenAI vs Anthropic**: OpenAI sent shareholder memo slamming Anthropic for "operating on a meaningfully smaller curve" as Anthropic gains momentum.
+- **AI Economy vision**: OpenAI proposes robot taxes, public wealth funds, 4-day work week — blending AI safety with economic redistribution policy.
+- **GPT-5.2 shipped** + ChatGPT app ecosystem launched; 2026 roadmap detailed on eWeek.

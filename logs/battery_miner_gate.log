@@ -1,0 +1,680 @@
+2026-04-11 19:18:13,848 [INFO] === battery_miner_gate starting ===
+2026-04-11 19:18:13,849 [INFO] START threshold: SOC >= 100%  |  STOP threshold: SOC < 95%
+2026-04-11 19:18:13,849 [INFO] Poll interval: 60s  |  Log: /home/bowen/.openclaw/workspace/logs/battery_miner_gate.log
+2026-04-11 19:18:13,849 [INFO] Loaded state: {'miner_running': None, 'last_soc': None, 'last_action': None}
+2026-04-11 19:18:17,252 [INFO] Battery SOC: 71%  (miner_running=None)
+2026-04-11 19:18:17,252 [INFO] SOC=71 < 95 - attempting to STOP miner
+2026-04-11 19:18:18,241 [INFO] Miner STOPPED (rc=0)
+2026-04-11 19:19:19,903 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:20:22,282 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:21:25,394 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:22:28,358 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:23:32,457 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:24:34,384 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:25:37,176 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:26:40,777 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:27:42,513 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:28:44,557 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:29:46,502 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:30:48,575 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:31:54,675 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:32:56,570 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:33:58,836 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:35:03,643 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:36:06,980 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:37:10,324 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:38:12,357 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:39:14,827 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:40:18,127 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:41:21,813 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:41:59,713 [INFO] === battery_miner_gate starting ===
+2026-04-11 19:41:59,714 [INFO] START threshold: SOC >= 100%  |  STOP threshold: SOC < 95%
+2026-04-11 19:41:59,714 [INFO] Poll interval: 60s  |  Log: /home/bowen/.openclaw/workspace/logs/battery_miner_gate.log
+2026-04-11 19:41:59,714 [INFO] HA integration: http://localhost:8123
+2026-04-11 19:41:59,714 [INFO] Loaded state: {'miner_running': False, 'last_soc': 71, 'last_action': 'stopped@2026-04-11T19:18:18.241504'}
+2026-04-11 19:42:01,696 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:42:07,854 [INFO] Pushed state to HA: soc=71 gate=idle gpus=3
+2026-04-11 19:43:13,120 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:43:13,789 [INFO] Pushed state to HA: soc=71 gate=idle gpus=3
+2026-04-11 19:44:15,595 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:44:16,469 [INFO] Pushed state to HA: soc=71 gate=idle gpus=3
+2026-04-11 19:45:18,353 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:45:19,470 [INFO] Pushed state to HA: soc=71 gate=idle gpus=3
+2026-04-11 19:46:21,864 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:46:22,518 [INFO] Pushed state to HA: soc=71 gate=idle gpus=3
+2026-04-11 19:47:25,646 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:47:26,312 [INFO] Pushed state to HA: soc=71 gate=idle gpus=3
+2026-04-11 19:48:28,312 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:48:29,099 [INFO] Pushed state to HA: soc=71 gate=idle gpus=3
+2026-04-11 19:49:32,277 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:49:32,921 [INFO] Pushed state to HA: soc=71 gate=idle gpus=3
+2026-04-11 19:50:35,002 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:50:35,654 [INFO] Pushed state to HA: soc=71 gate=idle gpus=3
+2026-04-11 19:51:37,860 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:51:38,636 [INFO] Pushed state to HA: soc=71 gate=idle gpus=3
+2026-04-11 19:52:42,007 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:52:42,837 [INFO] Pushed state to HA: soc=71 gate=idle gpus=3
+2026-04-11 19:53:44,642 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:53:45,452 [INFO] Pushed state to HA: soc=71 gate=idle gpus=3
+2026-04-11 19:54:47,601 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:54:48,279 [INFO] Pushed state to HA: soc=71 gate=idle gpus=3
+2026-04-11 19:55:50,075 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:55:50,947 [INFO] Pushed state to HA: soc=71 gate=idle gpus=3
+2026-04-11 19:56:52,729 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-11 19:56:53,505 [INFO] Pushed state to HA: soc=71 gate=idle gpus=3
+2026-04-11 19:57:57,146 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 19:57:57,823 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 19:59:00,425 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 19:59:01,203 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:00:05,412 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:00:06,133 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:01:08,015 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:01:08,753 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:02:15,486 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:02:16,202 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:03:21,611 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:03:22,310 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:04:27,622 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:04:28,281 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:05:30,391 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:05:31,051 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:06:32,831 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:06:33,575 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:07:35,555 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:07:36,484 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:08:39,730 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:08:40,378 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:09:43,714 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:09:44,437 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:10:49,178 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:10:49,826 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:11:51,869 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:11:56,693 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:13:00,425 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:13:01,105 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:14:02,976 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:14:03,683 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:15:07,090 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:15:08,015 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:16:10,450 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:16:11,050 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:17:12,986 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:17:13,834 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:18:16,072 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:18:16,904 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:19:20,818 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:19:21,768 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:20:25,665 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:20:26,464 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:21:28,892 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:21:29,572 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:22:31,644 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:22:32,424 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:23:34,521 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:23:35,233 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:24:37,191 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:24:37,952 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:25:39,934 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:25:40,626 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:26:42,943 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:26:43,681 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:27:45,399 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:27:46,209 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:28:48,042 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:28:48,722 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:29:52,792 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-11 20:29:53,450 [INFO] Pushed state to HA: soc=70 gate=idle gpus=3
+2026-04-11 20:30:55,081 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:30:55,748 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:32:01,476 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:32:02,051 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:33:05,557 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:33:06,173 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:34:09,818 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:34:10,516 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:35:12,466 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:35:13,127 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:36:15,153 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:36:15,918 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:37:18,922 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:37:19,602 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:38:23,084 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:38:23,807 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:39:25,689 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:39:26,478 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:40:28,650 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:40:29,351 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:41:32,463 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:41:33,141 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:42:36,567 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:42:37,345 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:43:41,391 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:43:42,062 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:44:44,001 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:44:44,707 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:45:46,824 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:45:47,461 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:46:49,624 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:46:50,279 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:47:52,986 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:47:53,741 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:48:58,009 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:48:58,634 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:50:03,431 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:50:04,132 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:51:06,928 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:51:07,538 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:52:11,556 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:52:12,338 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:53:15,588 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:53:16,459 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:54:19,487 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:54:20,240 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:55:25,219 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:55:25,892 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:56:28,003 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:56:28,682 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:57:30,739 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:57:31,451 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:58:33,529 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:58:34,204 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 20:59:37,040 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 20:59:37,683 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 21:00:39,714 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 21:00:40,463 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 21:01:42,800 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-11 21:01:43,630 [INFO] Pushed state to HA: soc=69 gate=idle gpus=3
+2026-04-11 21:02:47,296 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:02:47,950 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:03:50,212 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:03:51,051 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:04:56,786 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:04:57,535 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:06:02,257 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:06:03,022 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:07:04,941 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:07:05,694 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:08:07,702 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:08:08,378 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:09:11,818 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:09:12,513 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:10:17,654 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:10:18,308 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:11:20,893 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:11:21,794 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:12:25,350 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:12:26,147 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:13:28,265 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:13:28,978 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:14:32,743 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:14:33,386 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:15:35,541 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:15:36,251 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:16:40,184 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:16:40,924 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:17:42,984 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:17:43,676 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:18:45,975 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:18:46,538 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:19:49,620 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:19:50,080 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:20:52,053 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:20:52,575 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:21:54,893 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:21:55,327 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:22:57,272 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:22:57,781 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:23:59,969 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:24:00,396 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:25:04,151 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:25:04,680 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:26:06,458 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:26:06,978 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:27:17,078 [ERROR] Inverter API unreachable: <urlopen error _ssl.c:999: The handshake operation timed out>
+2026-04-11 21:27:17,078 [WARNING] Could not read SOC - skipping this cycle
+2026-04-11 21:28:18,780 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:28:19,308 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:29:22,832 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:29:23,242 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:30:26,632 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:30:27,090 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:31:29,069 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:31:29,534 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:32:31,741 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:32:32,320 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:33:34,308 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:33:34,823 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:34:38,680 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-11 21:34:39,254 [INFO] Pushed state to HA: soc=68 gate=idle gpus=3
+2026-04-11 21:35:42,270 [INFO] Battery SOC: 67%  (miner_running=False)
+2026-04-11 21:35:42,890 [INFO] Pushed state to HA: soc=67 gate=idle gpus=3
+2026-04-11 21:36:44,507 [INFO] Battery SOC: 67%  (miner_running=False)
+2026-04-11 21:36:45,092 [INFO] Pushed state to HA: soc=67 gate=idle gpus=3
+2026-04-11 21:37:47,404 [INFO] Battery SOC: 67%  (miner_running=False)
+2026-04-11 21:37:47,883 [INFO] Pushed state to HA: soc=67 gate=idle gpus=3
+2026-04-11 21:38:51,396 [INFO] Battery SOC: 66%  (miner_running=False)
+2026-04-11 21:38:51,765 [INFO] Pushed state to HA: soc=66 gate=idle gpus=3
+2026-04-11 21:39:53,469 [INFO] Battery SOC: 66%  (miner_running=False)
+2026-04-11 21:39:53,956 [INFO] Pushed state to HA: soc=66 gate=idle gpus=3
+2026-04-11 21:40:57,194 [INFO] Battery SOC: 66%  (miner_running=False)
+2026-04-11 21:40:57,796 [INFO] Pushed state to HA: soc=66 gate=idle gpus=3
+2026-04-11 21:42:00,034 [INFO] Battery SOC: 65%  (miner_running=False)
+2026-04-11 21:42:00,581 [INFO] Pushed state to HA: soc=65 gate=idle gpus=3
+2026-04-11 21:43:04,991 [INFO] Battery SOC: 65%  (miner_running=False)
+2026-04-11 21:43:05,481 [INFO] Pushed state to HA: soc=65 gate=idle gpus=3
+2026-04-11 21:44:07,490 [INFO] Battery SOC: 65%  (miner_running=False)
+2026-04-11 21:44:07,949 [INFO] Pushed state to HA: soc=65 gate=idle gpus=3
+2026-04-11 21:45:11,259 [INFO] Battery SOC: 64%  (miner_running=False)
+2026-04-11 21:45:11,699 [INFO] Pushed state to HA: soc=64 gate=idle gpus=3
+2026-04-11 21:46:14,893 [INFO] Battery SOC: 64%  (miner_running=False)
+2026-04-11 21:46:15,398 [INFO] Pushed state to HA: soc=64 gate=idle gpus=3
+2026-04-11 21:47:17,196 [INFO] Battery SOC: 64%  (miner_running=False)
+2026-04-11 21:47:17,670 [INFO] Pushed state to HA: soc=64 gate=idle gpus=3
+2026-04-11 21:48:19,810 [INFO] Battery SOC: 63%  (miner_running=False)
+2026-04-11 21:48:20,337 [INFO] Pushed state to HA: soc=63 gate=idle gpus=3
+2026-04-11 21:49:22,291 [INFO] Battery SOC: 63%  (miner_running=False)
+2026-04-11 21:49:22,923 [INFO] Pushed state to HA: soc=63 gate=idle gpus=3
+2026-04-11 21:50:27,877 [INFO] Battery SOC: 63%  (miner_running=False)
+2026-04-11 21:50:28,373 [INFO] Pushed state to HA: soc=63 gate=idle gpus=3
+2026-04-11 21:51:31,672 [INFO] Battery SOC: 62%  (miner_running=False)
+2026-04-11 21:51:32,159 [INFO] Pushed state to HA: soc=62 gate=idle gpus=3
+2026-04-11 21:52:34,085 [INFO] Battery SOC: 62%  (miner_running=False)
+2026-04-11 21:52:34,588 [INFO] Pushed state to HA: soc=62 gate=idle gpus=3
+2026-04-11 21:53:38,326 [INFO] Battery SOC: 62%  (miner_running=False)
+2026-04-11 21:53:38,888 [INFO] Pushed state to HA: soc=62 gate=idle gpus=3
+2026-04-11 21:54:42,407 [INFO] Battery SOC: 61%  (miner_running=False)
+2026-04-11 21:54:43,004 [INFO] Pushed state to HA: soc=61 gate=idle gpus=3
+2026-04-11 21:55:45,437 [INFO] Battery SOC: 61%  (miner_running=False)
+2026-04-11 21:55:45,892 [INFO] Pushed state to HA: soc=61 gate=idle gpus=3
+2026-04-11 21:56:48,879 [INFO] Battery SOC: 61%  (miner_running=False)
+2026-04-11 21:56:49,359 [INFO] Pushed state to HA: soc=61 gate=idle gpus=3
+2026-04-11 21:57:51,325 [INFO] Battery SOC: 60%  (miner_running=False)
+2026-04-11 21:57:51,854 [INFO] Pushed state to HA: soc=60 gate=idle gpus=3
+2026-04-11 21:58:55,072 [INFO] Battery SOC: 60%  (miner_running=False)
+2026-04-11 21:58:55,584 [INFO] Pushed state to HA: soc=60 gate=idle gpus=3
+2026-04-11 21:59:59,231 [INFO] Battery SOC: 60%  (miner_running=False)
+2026-04-11 21:59:59,750 [INFO] Pushed state to HA: soc=60 gate=idle gpus=3
+2026-04-11 22:01:03,324 [INFO] Battery SOC: 59%  (miner_running=False)
+2026-04-11 22:01:03,768 [INFO] Pushed state to HA: soc=59 gate=idle gpus=3
+2026-04-11 22:02:09,824 [INFO] Battery SOC: 59%  (miner_running=False)
+2026-04-11 22:02:10,350 [INFO] Pushed state to HA: soc=59 gate=idle gpus=3
+2026-04-11 22:03:12,325 [INFO] Battery SOC: 59%  (miner_running=False)
+2026-04-11 22:03:13,089 [INFO] Pushed state to HA: soc=59 gate=idle gpus=3
+2026-04-11 22:04:14,795 [INFO] Battery SOC: 58%  (miner_running=False)
+2026-04-11 22:04:15,187 [INFO] Pushed state to HA: soc=58 gate=idle gpus=3
+2026-04-11 22:05:17,131 [INFO] Battery SOC: 58%  (miner_running=False)
+2026-04-11 22:05:17,534 [INFO] Pushed state to HA: soc=58 gate=idle gpus=3
+2026-04-11 22:06:19,384 [INFO] Battery SOC: 58%  (miner_running=False)
+2026-04-11 22:06:19,974 [INFO] Pushed state to HA: soc=58 gate=idle gpus=3
+2026-04-11 22:07:23,016 [INFO] Battery SOC: 57%  (miner_running=False)
+2026-04-11 22:07:23,465 [INFO] Pushed state to HA: soc=57 gate=idle gpus=3
+2026-04-11 22:08:25,652 [INFO] Battery SOC: 57%  (miner_running=False)
+2026-04-11 22:08:26,102 [INFO] Pushed state to HA: soc=57 gate=idle gpus=3
+2026-04-11 22:09:28,156 [INFO] Battery SOC: 57%  (miner_running=False)
+2026-04-11 22:09:28,609 [INFO] Pushed state to HA: soc=57 gate=idle gpus=3
+2026-04-11 22:10:30,591 [INFO] Battery SOC: 56%  (miner_running=False)
+2026-04-11 22:10:31,022 [INFO] Pushed state to HA: soc=56 gate=idle gpus=3
+2026-04-11 22:11:40,369 [INFO] Battery SOC: 56%  (miner_running=False)
+2026-04-11 22:11:40,914 [INFO] Pushed state to HA: soc=56 gate=idle gpus=3
+2026-04-11 22:12:44,288 [INFO] Battery SOC: 56%  (miner_running=False)
+2026-04-11 22:12:44,890 [INFO] Pushed state to HA: soc=56 gate=idle gpus=3
+2026-04-11 22:13:46,850 [INFO] Battery SOC: 55%  (miner_running=False)
+2026-04-11 22:13:47,390 [INFO] Pushed state to HA: soc=55 gate=idle gpus=3
+2026-04-11 22:14:50,845 [INFO] Battery SOC: 55%  (miner_running=False)
+2026-04-11 22:14:51,337 [INFO] Pushed state to HA: soc=55 gate=idle gpus=3
+2026-04-11 22:15:53,459 [INFO] Battery SOC: 55%  (miner_running=False)
+2026-04-11 22:15:53,824 [WARNING] HA push failed for sensor.battery_soc: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,824 [WARNING] HA push failed for sensor.miner_gate_status: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,824 [WARNING] HA push failed for sensor.miner_service_status: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,824 [WARNING] HA push failed for sensor.gpu_temp: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,825 [WARNING] HA push failed for sensor.gpu_util: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,825 [WARNING] HA push failed for sensor.gpu_fan: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,825 [WARNING] HA push failed for sensor.gpu_power: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,825 [WARNING] HA push failed for sensor.gpu_vram_used: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,825 [WARNING] HA push failed for sensor.gpu_vram_total: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,825 [WARNING] HA push failed for sensor.gpu_temp_1: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,826 [WARNING] HA push failed for sensor.gpu_util_1: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,826 [WARNING] HA push failed for sensor.gpu_fan_1: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,826 [WARNING] HA push failed for sensor.gpu_power_1: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,826 [WARNING] HA push failed for sensor.gpu_vram_used_1: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,826 [WARNING] HA push failed for sensor.gpu_vram_total_1: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,826 [WARNING] HA push failed for sensor.gpu_temp_2: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,827 [WARNING] HA push failed for sensor.gpu_util_2: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,827 [WARNING] HA push failed for sensor.gpu_fan_2: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,827 [WARNING] HA push failed for sensor.gpu_power_2: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,827 [WARNING] HA push failed for sensor.gpu_vram_used_2: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,827 [WARNING] HA push failed for sensor.gpu_vram_total_2: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:15:53,827 [INFO] Pushed state to HA: soc=55 gate=idle gpus=3
+2026-04-11 22:16:55,947 [INFO] Battery SOC: 54%  (miner_running=False)
+2026-04-11 22:16:56,403 [INFO] Pushed state to HA: soc=54 gate=idle gpus=3
+2026-04-11 22:17:58,801 [INFO] Battery SOC: 54%  (miner_running=False)
+2026-04-11 22:17:59,306 [INFO] Pushed state to HA: soc=54 gate=idle gpus=3
+2026-04-11 22:19:01,282 [INFO] Battery SOC: 54%  (miner_running=False)
+2026-04-11 22:19:01,683 [INFO] Pushed state to HA: soc=54 gate=idle gpus=3
+2026-04-11 22:20:06,253 [INFO] Battery SOC: 53%  (miner_running=False)
+2026-04-11 22:20:06,788 [INFO] Pushed state to HA: soc=53 gate=idle gpus=3
+2026-04-11 22:21:08,462 [INFO] Battery SOC: 53%  (miner_running=False)
+2026-04-11 22:21:09,010 [INFO] Pushed state to HA: soc=53 gate=idle gpus=3
+2026-04-11 22:22:12,200 [INFO] Battery SOC: 53%  (miner_running=False)
+2026-04-11 22:22:12,709 [INFO] Pushed state to HA: soc=53 gate=idle gpus=3
+2026-04-11 22:23:15,999 [INFO] Battery SOC: 52%  (miner_running=False)
+2026-04-11 22:23:16,696 [INFO] Pushed state to HA: soc=52 gate=idle gpus=3
+2026-04-11 22:24:20,983 [INFO] Battery SOC: 52%  (miner_running=False)
+2026-04-11 22:24:21,550 [INFO] Pushed state to HA: soc=52 gate=idle gpus=3
+2026-04-11 22:25:23,656 [INFO] Battery SOC: 52%  (miner_running=False)
+2026-04-11 22:25:24,101 [INFO] Pushed state to HA: soc=52 gate=idle gpus=3
+2026-04-11 22:26:27,352 [INFO] Battery SOC: 51%  (miner_running=False)
+2026-04-11 22:26:27,791 [INFO] Pushed state to HA: soc=51 gate=idle gpus=3
+2026-04-11 22:27:29,497 [INFO] Battery SOC: 51%  (miner_running=False)
+2026-04-11 22:27:29,982 [INFO] Pushed state to HA: soc=51 gate=idle gpus=3
+2026-04-11 22:28:32,145 [INFO] Battery SOC: 51%  (miner_running=False)
+2026-04-11 22:28:32,644 [INFO] Pushed state to HA: soc=51 gate=idle gpus=3
+2026-04-11 22:29:35,790 [INFO] Battery SOC: 50%  (miner_running=False)
+2026-04-11 22:29:36,316 [INFO] Pushed state to HA: soc=50 gate=idle gpus=3
+2026-04-11 22:30:38,457 [INFO] Battery SOC: 50%  (miner_running=False)
+2026-04-11 22:30:39,013 [INFO] Pushed state to HA: soc=50 gate=idle gpus=3
+2026-04-11 22:31:43,576 [INFO] Battery SOC: 50%  (miner_running=False)
+2026-04-11 22:31:44,110 [INFO] Pushed state to HA: soc=50 gate=idle gpus=3
+2026-04-11 22:32:47,339 [INFO] Battery SOC: 49%  (miner_running=False)
+2026-04-11 22:32:47,798 [INFO] Pushed state to HA: soc=49 gate=idle gpus=3
+2026-04-11 22:33:51,560 [INFO] Battery SOC: 49%  (miner_running=False)
+2026-04-11 22:33:52,085 [INFO] Pushed state to HA: soc=49 gate=idle gpus=3
+2026-04-11 22:34:55,724 [INFO] Battery SOC: 49%  (miner_running=False)
+2026-04-11 22:34:56,229 [INFO] Pushed state to HA: soc=49 gate=idle gpus=3
+2026-04-11 22:35:59,381 [INFO] Battery SOC: 49%  (miner_running=False)
+2026-04-11 22:35:59,905 [INFO] Pushed state to HA: soc=49 gate=idle gpus=3
+2026-04-11 22:37:03,390 [INFO] Battery SOC: 49%  (miner_running=False)
+2026-04-11 22:37:03,942 [INFO] Pushed state to HA: soc=49 gate=idle gpus=3
+2026-04-11 22:38:06,106 [INFO] Battery SOC: 49%  (miner_running=False)
+2026-04-11 22:38:06,584 [INFO] Pushed state to HA: soc=49 gate=idle gpus=3
+2026-04-11 22:39:08,686 [INFO] Battery SOC: 49%  (miner_running=False)
+2026-04-11 22:39:09,052 [INFO] Pushed state to HA: soc=49 gate=idle gpus=3
+2026-04-11 22:40:12,280 [INFO] Battery SOC: 48%  (miner_running=False)
+2026-04-11 22:40:12,719 [INFO] Pushed state to HA: soc=48 gate=idle gpus=3
+2026-04-11 22:41:17,161 [INFO] Battery SOC: 48%  (miner_running=False)
+2026-04-11 22:41:17,667 [INFO] Pushed state to HA: soc=48 gate=idle gpus=3
+2026-04-11 22:42:21,140 [INFO] Battery SOC: 48%  (miner_running=False)
+2026-04-11 22:42:21,500 [INFO] Pushed state to HA: soc=48 gate=idle gpus=3
+2026-04-11 22:43:23,548 [INFO] Battery SOC: 48%  (miner_running=False)
+2026-04-11 22:43:24,095 [INFO] Pushed state to HA: soc=48 gate=idle gpus=3
+2026-04-11 22:44:25,869 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-11 22:44:26,269 [INFO] Pushed state to HA: soc=47 gate=idle gpus=3
+2026-04-11 22:45:28,388 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-11 22:45:28,830 [INFO] Pushed state to HA: soc=47 gate=idle gpus=3
+2026-04-11 22:46:31,076 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-11 22:46:31,519 [WARNING] HA push failed for sensor.battery_soc: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,520 [WARNING] HA push failed for sensor.miner_gate_status: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,521 [WARNING] HA push failed for sensor.miner_service_status: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,522 [WARNING] HA push failed for sensor.gpu_temp: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,523 [WARNING] HA push failed for sensor.gpu_util: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,523 [WARNING] HA push failed for sensor.gpu_fan: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,523 [WARNING] HA push failed for sensor.gpu_power: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,524 [WARNING] HA push failed for sensor.gpu_vram_used: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,524 [WARNING] HA push failed for sensor.gpu_vram_total: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,524 [WARNING] HA push failed for sensor.gpu_temp_1: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,524 [WARNING] HA push failed for sensor.gpu_util_1: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,524 [WARNING] HA push failed for sensor.gpu_fan_1: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,524 [WARNING] HA push failed for sensor.gpu_power_1: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,525 [WARNING] HA push failed for sensor.gpu_vram_used_1: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,525 [WARNING] HA push failed for sensor.gpu_vram_total_1: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,525 [WARNING] HA push failed for sensor.gpu_temp_2: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,525 [WARNING] HA push failed for sensor.gpu_util_2: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,525 [WARNING] HA push failed for sensor.gpu_fan_2: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,526 [WARNING] HA push failed for sensor.gpu_power_2: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,526 [WARNING] HA push failed for sensor.gpu_vram_used_2: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,526 [WARNING] HA push failed for sensor.gpu_vram_total_2: <urlopen error [Errno 111] Connection refused>
+2026-04-11 22:46:31,526 [INFO] Pushed state to HA: soc=47 gate=idle gpus=3
+2026-04-11 22:47:33,537 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-11 22:47:34,011 [INFO] Pushed state to HA: soc=46 gate=idle gpus=3
+2026-04-11 22:48:37,564 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-11 22:48:37,992 [INFO] Pushed state to HA: soc=46 gate=idle gpus=3
+2026-04-11 22:49:40,693 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-11 22:49:41,124 [INFO] Pushed state to HA: soc=46 gate=idle gpus=3
+2026-04-11 22:50:43,706 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-11 22:50:44,215 [INFO] Pushed state to HA: soc=45 gate=idle gpus=3
+2026-04-11 22:51:46,441 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-11 22:51:46,931 [INFO] Pushed state to HA: soc=45 gate=idle gpus=3
+2026-04-11 22:52:50,287 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-11 22:52:50,696 [INFO] Pushed state to HA: soc=45 gate=idle gpus=3
+2026-04-11 22:53:52,853 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-11 22:53:53,348 [INFO] Pushed state to HA: soc=44 gate=idle gpus=3
+2026-04-11 22:54:58,434 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-11 22:54:58,978 [INFO] Pushed state to HA: soc=44 gate=idle gpus=3
+2026-04-11 22:56:02,895 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-11 22:56:03,350 [INFO] Pushed state to HA: soc=43 gate=idle gpus=3
+2026-04-11 22:57:06,088 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-11 22:57:06,738 [INFO] Pushed state to HA: soc=43 gate=idle gpus=3
+2026-04-11 22:58:09,858 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-11 22:58:10,281 [INFO] Pushed state to HA: soc=43 gate=idle gpus=3
+2026-04-11 22:59:13,392 [INFO] Battery SOC: 42%  (miner_running=False)
+2026-04-11 22:59:13,825 [INFO] Pushed state to HA: soc=42 gate=idle gpus=3
+2026-04-11 23:00:17,384 [INFO] Battery SOC: 42%  (miner_running=False)
+2026-04-11 23:00:17,803 [INFO] Pushed state to HA: soc=42 gate=idle gpus=3
+2026-04-11 23:01:19,810 [INFO] Battery SOC: 42%  (miner_running=False)
+2026-04-11 23:01:20,392 [INFO] Pushed state to HA: soc=42 gate=idle gpus=3
+2026-04-11 23:02:22,367 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-11 23:02:23,111 [INFO] Pushed state to HA: soc=41 gate=idle gpus=3
+2026-04-11 23:03:25,433 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-11 23:03:25,913 [INFO] Pushed state to HA: soc=41 gate=idle gpus=3
+2026-04-11 23:04:28,362 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-11 23:04:28,763 [INFO] Pushed state to HA: soc=41 gate=idle gpus=3
+2026-04-11 23:05:31,320 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-11 23:05:31,815 [INFO] Pushed state to HA: soc=40 gate=idle gpus=3
+2026-04-11 23:06:35,488 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-11 23:06:35,923 [INFO] Pushed state to HA: soc=40 gate=idle gpus=3
+2026-04-11 23:07:39,948 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-11 23:07:40,500 [INFO] Pushed state to HA: soc=39 gate=idle gpus=3
+2026-04-11 23:08:44,048 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-11 23:08:44,523 [INFO] Pushed state to HA: soc=39 gate=idle gpus=3
+2026-04-11 23:09:47,089 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-11 23:09:47,515 [INFO] Pushed state to HA: soc=39 gate=idle gpus=3
+2026-04-11 23:10:50,657 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-11 23:10:51,059 [INFO] Pushed state to HA: soc=38 gate=idle gpus=3
+2026-04-11 23:11:53,152 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-11 23:11:53,562 [INFO] Pushed state to HA: soc=38 gate=idle gpus=3
+2026-04-11 23:12:56,249 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-11 23:12:56,734 [INFO] Pushed state to HA: soc=37 gate=idle gpus=3
+2026-04-11 23:13:59,206 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-11 23:13:59,832 [INFO] Pushed state to HA: soc=37 gate=idle gpus=3
+2026-04-11 23:15:03,843 [INFO] Battery SOC: 36%  (miner_running=False)
+2026-04-11 23:15:04,250 [INFO] Pushed state to HA: soc=36 gate=idle gpus=3
+2026-04-11 23:16:07,311 [INFO] Battery SOC: 36%  (miner_running=False)
+2026-04-11 23:16:07,751 [INFO] Pushed state to HA: soc=36 gate=idle gpus=3
+2026-04-11 23:17:09,613 [INFO] Battery SOC: 36%  (miner_running=False)
+2026-04-11 23:17:10,105 [INFO] Pushed state to HA: soc=36 gate=idle gpus=3
+2026-04-11 23:18:13,370 [INFO] Battery SOC: 35%  (miner_running=False)
+2026-04-11 23:18:13,778 [INFO] Pushed state to HA: soc=35 gate=idle gpus=3
+2026-04-11 23:19:15,624 [INFO] Battery SOC: 35%  (miner_running=False)
+2026-04-11 23:19:16,205 [INFO] Pushed state to HA: soc=35 gate=idle gpus=3
+2026-04-11 23:20:19,845 [INFO] Battery SOC: 34%  (miner_running=False)
+2026-04-11 23:20:20,555 [INFO] Pushed state to HA: soc=34 gate=idle gpus=3
+2026-04-11 23:21:22,596 [INFO] Battery SOC: 34%  (miner_running=False)
+2026-04-11 23:21:23,428 [INFO] Pushed state to HA: soc=34 gate=idle gpus=3
+2026-04-11 23:22:25,662 [INFO] Battery SOC: 34%  (miner_running=False)
+2026-04-11 23:22:26,097 [INFO] Pushed state to HA: soc=34 gate=idle gpus=3
+2026-04-11 23:23:28,341 [INFO] Battery SOC: 34%  (miner_running=False)
+2026-04-11 23:23:28,777 [INFO] Pushed state to HA: soc=34 gate=idle gpus=3
+2026-04-11 23:24:30,717 [INFO] Battery SOC: 34%  (miner_running=False)
+2026-04-11 23:24:31,145 [INFO] Pushed state to HA: soc=34 gate=idle gpus=3
+2026-04-11 23:25:33,188 [INFO] Battery SOC: 34%  (miner_running=False)
+2026-04-11 23:25:33,843 [INFO] Pushed state to HA: soc=34 gate=idle gpus=3
+2026-04-11 23:26:35,838 [INFO] Battery SOC: 34%  (miner_running=False)
+2026-04-11 23:26:36,664 [INFO] Pushed state to HA: soc=34 gate=idle gpus=3
+2026-04-11 23:27:40,712 [INFO] Battery SOC: 34%  (miner_running=False)
+2026-04-11 23:27:41,218 [INFO] Pushed state to HA: soc=34 gate=idle gpus=3
+2026-04-11 23:28:44,168 [INFO] Battery SOC: 33%  (miner_running=False)
+2026-04-11 23:28:44,706 [INFO] Pushed state to HA: soc=33 gate=idle gpus=3
+2026-04-11 23:29:48,879 [INFO] Battery SOC: 33%  (miner_running=False)
+2026-04-11 23:29:49,330 [INFO] Pushed state to HA: soc=33 gate=idle gpus=3
+2026-04-11 23:30:52,540 [INFO] Battery SOC: 32%  (miner_running=False)
+2026-04-11 23:30:53,035 [INFO] Pushed state to HA: soc=32 gate=idle gpus=3
+2026-04-11 23:31:55,181 [INFO] Battery SOC: 32%  (miner_running=False)
+2026-04-11 23:31:55,649 [INFO] Pushed state to HA: soc=32 gate=idle gpus=3
+2026-04-11 23:32:58,409 [INFO] Battery SOC: 31%  (miner_running=False)
+2026-04-11 23:32:58,905 [INFO] Pushed state to HA: soc=31 gate=idle gpus=3
+2026-04-11 23:34:00,864 [INFO] Battery SOC: 31%  (miner_running=False)
+2026-04-11 23:34:01,341 [INFO] Pushed state to HA: soc=31 gate=idle gpus=3
+2026-04-11 23:35:06,465 [INFO] Battery SOC: 30%  (miner_running=False)
+2026-04-11 23:35:07,105 [INFO] Pushed state to HA: soc=30 gate=idle gpus=3
+2026-04-11 23:36:10,048 [INFO] Battery SOC: 30%  (miner_running=False)
+2026-04-11 23:36:10,522 [INFO] Pushed state to HA: soc=30 gate=idle gpus=3
+2026-04-11 23:37:14,213 [INFO] Battery SOC: 29%  (miner_running=False)
+2026-04-11 23:37:14,713 [INFO] Pushed state to HA: soc=29 gate=idle gpus=3
+2026-04-11 23:38:16,907 [INFO] Battery SOC: 29%  (miner_running=False)
+2026-04-11 23:38:17,308 [INFO] Pushed state to HA: soc=29 gate=idle gpus=3
+2026-04-11 23:39:19,549 [INFO] Battery SOC: 28%  (miner_running=False)
+2026-04-11 23:39:20,204 [INFO] Pushed state to HA: soc=28 gate=idle gpus=3
+2026-04-11 23:40:24,011 [INFO] Battery SOC: 28%  (miner_running=False)
+2026-04-11 23:40:24,733 [INFO] Pushed state to HA: soc=28 gate=idle gpus=3
+2026-04-11 23:41:26,932 [INFO] Battery SOC: 27%  (miner_running=False)
+2026-04-11 23:41:27,593 [INFO] Pushed state to HA: soc=27 gate=idle gpus=3
+2026-04-11 23:42:30,015 [INFO] Battery SOC: 27%  (miner_running=False)
+2026-04-11 23:42:30,917 [INFO] Pushed state to HA: soc=27 gate=idle gpus=3
+2026-04-11 23:43:33,503 [INFO] Battery SOC: 26%  (miner_running=False)
+2026-04-11 23:43:34,149 [INFO] Pushed state to HA: soc=26 gate=idle gpus=3
+2026-04-11 23:44:36,956 [INFO] Battery SOC: 26%  (miner_running=False)
+2026-04-11 23:44:37,647 [INFO] Pushed state to HA: soc=26 gate=idle gpus=3
+2026-04-11 23:45:39,783 [INFO] Battery SOC: 26%  (miner_running=False)
+2026-04-11 23:45:40,467 [INFO] Pushed state to HA: soc=26 gate=idle gpus=3
+2026-04-11 23:46:42,333 [INFO] Battery SOC: 26%  (miner_running=False)
+2026-04-11 23:46:43,087 [INFO] Pushed state to HA: soc=26 gate=idle gpus=3
+2026-04-11 23:47:46,794 [INFO] Battery SOC: 26%  (miner_running=False)
+2026-04-11 23:47:47,430 [INFO] Pushed state to HA: soc=26 gate=idle gpus=3
+2026-04-11 23:48:51,025 [INFO] Battery SOC: 26%  (miner_running=False)
+2026-04-11 23:48:51,701 [INFO] Pushed state to HA: soc=26 gate=idle gpus=3
+2026-04-11 23:49:57,054 [INFO] Battery SOC: 26%  (miner_running=False)
+2026-04-11 23:49:57,877 [INFO] Pushed state to HA: soc=26 gate=idle gpus=3
+2026-04-11 23:51:01,969 [INFO] Battery SOC: 25%  (miner_running=False)
+2026-04-11 23:51:02,673 [INFO] Pushed state to HA: soc=25 gate=idle gpus=3
+2026-04-11 23:52:05,603 [INFO] Battery SOC: 25%  (miner_running=False)
+2026-04-11 23:52:06,090 [INFO] Pushed state to HA: soc=25 gate=idle gpus=3
+2026-04-11 23:53:07,975 [INFO] Battery SOC: 24%  (miner_running=False)
+2026-04-11 23:53:08,641 [INFO] Pushed state to HA: soc=24 gate=idle gpus=3
+2026-04-11 23:54:10,416 [INFO] Battery SOC: 24%  (miner_running=False)
+2026-04-11 23:54:11,012 [INFO] Pushed state to HA: soc=24 gate=idle gpus=3
+2026-04-11 23:55:18,192 [INFO] Battery SOC: 24%  (miner_running=False)
+2026-04-11 23:55:18,932 [INFO] Pushed state to HA: soc=24 gate=idle gpus=3
+2026-04-11 23:56:21,868 [INFO] Battery SOC: 24%  (miner_running=False)
+2026-04-11 23:56:22,570 [INFO] Pushed state to HA: soc=24 gate=idle gpus=3
+2026-04-11 23:57:25,864 [INFO] Battery SOC: 23%  (miner_running=False)
+2026-04-11 23:57:26,619 [INFO] Pushed state to HA: soc=23 gate=idle gpus=3
+2026-04-11 23:58:30,361 [INFO] Battery SOC: 23%  (miner_running=False)
+2026-04-11 23:58:31,128 [INFO] Pushed state to HA: soc=23 gate=idle gpus=3
+2026-04-11 23:59:33,600 [INFO] Battery SOC: 23%  (miner_running=False)
+2026-04-11 23:59:34,305 [INFO] Pushed state to HA: soc=23 gate=idle gpus=3
+2026-04-12 00:00:37,769 [INFO] Battery SOC: 22%  (miner_running=False)
+2026-04-12 00:00:38,508 [INFO] Pushed state to HA: soc=22 gate=idle gpus=3
+2026-04-12 00:01:42,029 [INFO] Battery SOC: 22%  (miner_running=False)
+2026-04-12 00:01:42,704 [INFO] Pushed state to HA: soc=22 gate=idle gpus=3
+2026-04-12 00:02:45,110 [INFO] Battery SOC: 22%  (miner_running=False)
+2026-04-12 00:02:45,870 [INFO] Pushed state to HA: soc=22 gate=idle gpus=3
+2026-04-12 00:03:47,848 [INFO] Battery SOC: 22%  (miner_running=False)
+2026-04-12 00:03:48,639 [INFO] Pushed state to HA: soc=22 gate=idle gpus=3
+2026-04-12 00:04:50,858 [INFO] Battery SOC: 21%  (miner_running=False)
+2026-04-12 00:04:51,544 [INFO] Pushed state to HA: soc=21 gate=idle gpus=3
+2026-04-12 00:05:53,197 [INFO] Battery SOC: 21%  (miner_running=False)
+2026-04-12 00:05:53,988 [INFO] Pushed state to HA: soc=21 gate=idle gpus=3
+2026-04-12 00:06:57,938 [INFO] Battery SOC: 21%  (miner_running=False)
+2026-04-12 00:06:58,715 [INFO] Pushed state to HA: soc=21 gate=idle gpus=3
+2026-04-12 00:08:00,604 [INFO] Battery SOC: 20%  (miner_running=False)
+2026-04-12 00:08:01,058 [INFO] Pushed state to HA: soc=20 gate=idle gpus=3
+2026-04-12 00:09:03,790 [INFO] Battery SOC: 20%  (miner_running=False)
+2026-04-12 00:09:04,618 [INFO] Pushed state to HA: soc=20 gate=idle gpus=3
+2026-04-12 00:10:08,147 [INFO] Battery SOC: 20%  (miner_running=False)
+2026-04-12 00:10:08,573 [INFO] Pushed state to HA: soc=20 gate=idle gpus=3
+2026-04-12 00:11:10,846 [INFO] Battery SOC: 19%  (miner_running=False)
+2026-04-12 00:11:11,497 [INFO] Pushed state to HA: soc=19 gate=idle gpus=3
+2026-04-12 00:12:15,078 [INFO] Battery SOC: 19%  (miner_running=False)
+2026-04-12 00:12:15,777 [INFO] Pushed state to HA: soc=19 gate=idle gpus=3
+2026-04-12 00:13:18,153 [INFO] Battery SOC: 18%  (miner_running=False)
+2026-04-12 00:13:18,693 [INFO] Pushed state to HA: soc=18 gate=idle gpus=3
+2026-04-12 00:14:20,632 [INFO] Battery SOC: 18%  (miner_running=False)
+2026-04-12 00:14:21,373 [INFO] Pushed state to HA: soc=18 gate=idle gpus=3
+2026-04-12 00:15:23,591 [INFO] Battery SOC: 18%  (miner_running=False)
+2026-04-12 00:15:24,351 [INFO] Pushed state to HA: soc=18 gate=idle gpus=3
+2026-04-12 00:16:26,153 [INFO] Battery SOC: 18%  (miner_running=False)
+2026-04-12 00:16:26,772 [INFO] Pushed state to HA: soc=18 gate=idle gpus=3
+2026-04-12 00:17:29,907 [INFO] Battery SOC: 17%  (miner_running=False)
+2026-04-12 00:17:30,614 [INFO] Pushed state to HA: soc=17 gate=idle gpus=3
+2026-04-12 00:18:33,599 [INFO] Battery SOC: 17%  (miner_running=False)
+2026-04-12 00:18:34,350 [INFO] Pushed state to HA: soc=17 gate=idle gpus=3
+2026-04-12 00:19:37,804 [INFO] Battery SOC: 17%  (miner_running=False)
+2026-04-12 00:19:38,505 [INFO] Pushed state to HA: soc=17 gate=idle gpus=3
+2026-04-12 00:20:40,472 [INFO] Battery SOC: 16%  (miner_running=False)
+2026-04-12 00:20:41,180 [INFO] Pushed state to HA: soc=16 gate=idle gpus=3
+2026-04-12 00:21:43,499 [INFO] Battery SOC: 16%  (miner_running=False)
+2026-04-12 00:21:44,298 [INFO] Pushed state to HA: soc=16 gate=idle gpus=3
+2026-04-12 00:22:48,171 [INFO] Battery SOC: 16%  (miner_running=False)
+2026-04-12 00:22:48,875 [INFO] Pushed state to HA: soc=16 gate=idle gpus=3
+2026-04-12 00:23:50,891 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:23:51,678 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:24:53,765 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:24:54,395 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:25:56,541 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:25:57,340 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:27:00,228 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:27:00,897 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:28:03,303 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:28:03,702 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:29:06,186 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:29:07,215 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:30:11,084 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:30:11,749 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:31:15,724 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:31:16,388 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:32:18,393 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:32:19,157 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:33:22,953 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:33:23,649 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:34:29,166 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:34:29,823 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:35:32,954 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:35:33,814 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:36:37,575 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:36:38,209 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:37:41,170 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:37:41,906 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:38:45,367 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:38:46,024 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:39:49,821 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:39:50,543 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:40:52,242 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:40:52,898 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:41:55,008 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:41:55,713 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:42:57,993 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:42:58,904 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:44:01,173 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:44:01,554 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:45:06,255 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:45:06,945 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:46:09,465 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:46:09,889 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:47:11,946 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:47:12,610 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:48:14,715 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:48:15,364 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:49:18,065 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:49:18,776 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:50:23,728 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:50:24,420 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:51:26,721 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:51:27,374 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:52:29,698 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:52:30,354 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:53:32,469 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:53:33,126 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:54:35,030 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:54:35,792 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:55:38,979 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:55:39,694 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:56:41,942 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:56:42,662 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:57:44,984 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:57:45,648 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:58:49,088 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:58:49,795 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 00:59:53,323 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 00:59:53,947 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3
+2026-04-12 01:00:59,003 [INFO] Battery SOC: 15%  (miner_running=False)
+2026-04-12 01:00:59,698 [INFO] Pushed state to HA: soc=15 gate=idle gpus=3

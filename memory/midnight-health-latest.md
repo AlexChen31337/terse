@@ -1,82 +1,67 @@
 # Midnight Health Check Report
-**Generated:** 2026-04-11 00:00:15 AEST (2026-04-10 14:00:15 UTC)
+**Generated:** 2026-04-12 00:00:00 AEST (2026-04-11 14:00:00 UTC)
 
-## Component Status Summary
-
-| Component | Status | Details | Action Taken |
-|-----------|--------|---------|--------------|
-| **Sentinel** | ✅ UP | Last price check: 2026-03-26, Last health check: 2025-04-07 (old) | None |
-| **Quant** | ⚠️ RESTARTED | AlphaStrike was crashing (TypeError: float vs Decimal), now active | Restarted successfully |
-| **Shield** | ✅ UP | No pending approvals, no blocked attempts | None |
-| **Herald** | ⚠️ STALE | No posts or activity recorded (never initialized?) | None |
-| **EvoClaw Hub** | ❌ DOWN | localhost:8420 unreachable, no hub process running | **Failed to restart** |
-| **Alex Eye (Pi)** | ❌ DOWN | SSH hostname 'alex-eye' cannot resolve | **Network issue** |
+## Executive Summary
+**Status:** ⚠️ 2 ISSUES FOUND
+- Alex Eye (Pi): DOWN - SSH unreachable
+- Shield: MISSING - access-control.json not found
 
 ---
 
-## Detailed Findings
+## Component Status
 
-### 1. Sentinel (workspace-sentinel)
-- **State file:** `/home/bowen/.openclaw/workspace-sentinel/memory/sentinel-state.json`
-- **Last checks:**
-  - Prices: 2026-03-26 (stale)
-  - Polymarket: Never checked (0)
-  - Health: 2025-04-07 (very stale)
-- **Alerts:** Last recorded alerts were for prices and HYPE movement
-- **Status:** Functional but stale data
+### 1. Sentinel ✅ UP
+- **State File:** `/home/bowen/.openclaw/workspace-sentinel/memory/sentinel-state.json`
+- **Last Price Check:** 1775902854 (2026-04-12 01:00:54 UTC)
+- **Last Health Check:** 1744056000 (2025-12-19)
+- **Last Alert:** HYPE_move at 1744280400
+- **Monitored Assets:** BTC, ETH, SOL, HYPE
+- **Fear & Greed:** 15 (Extreme Fear)
+- **Status:** Operational
 
-### 2. Quant (workspace-quant)
-- **State file:** `/home/bowen/.openclaw/workspace-quant/memory/quant-state.json`
-- **AlphaStrike service:** Was crashing with `TypeError: unsupported operand type(s) for -: 'float' and 'decimal.Decimal'`
-- **Error:** Main process exiting repeatedly since midnight
-- **Action taken:** Restarted via `systemctl --user restart alphastrike.service`
-- **Current status:** ✅ Active after restart
-- **Recommendation:** Investigate the Decimal type mismatch in trading logic
+### 2. Quant ⚠️ STALE
+- **State File:** `/home/bowen/.openclaw/workspace-quant/memory/quant-state.json`
+- **Status:** ACTIVE
+- **Account Value:** $112.22
+- **Today P&L:** $0.00
+- **Open Positions:** None
+- **Signals:** LONG BTC/ETH/SOL (confidence 0.4)
+- **Last Alphastrike Check:** 1742915309 (2025-01-23) ⚠️ STALE
+- **Alphastrike Service:** ✅ ACTIVE (systemd)
 
-### 3. Shield (workspace-shield)
-- **State file:** `/home/bowen/.openclaw/workspace-shield/memory/shield-state.json`
-- **Access control:** No `access-control.json` found (using state file instead)
-- **Status:** No blocked attempts, no pending approvals
-- **Last checks:** All zero (never ran checks?)
+### 3. Shield ❌ MISSING
+- **State File:** `/home/bowen/.openclaw/workspace-shield/access-control.json`
+- **Error:** File not found
+- **Action Required:** Initialize Shield workspace
 
-### 4. Herald (workspace-herald)
-- **State file:** `/home/bowen/.openclaw/workspace-herald/memory/herald-state.json`
-- **Status:** Empty — no posts, scheduled posts, or outreach
-- **Likely:** Never initialized or no activity yet
+### 4. Herald ⚠️ IDLE
+- **State File:** `/home/bowen/.openclaw/workspace-herald/memory/herald-state.json`
+- **Status:** No posts, no outreach, no metrics
+- **Last Checks:** All zero (never run)
+- **Action Required:** Initialize Herald scheduling
 
-### 5. EvoClaw Hub
-- **Endpoint:** `http://localhost:8420/api/agents`
-- **Status:** ❌ DOWN — Connection refused
-- **Process check:** No hub process found running
-- **Action attempted:** Restart failed (no clear restart mechanism found)
-- **Recommendation:** Manual intervention required — check if hub is installed/configured
+### 5. EvoClaw Hub ✅ UP
+- **Endpoint:** http://localhost:8420/api/agents
+- **Status:** HUB_UP
+- **Agents Registered:** Connected and responding
+- **Status:** Operational
 
-### 6. Alex Eye (Pi)
-- **Hostname:** `alex-eye`
-- **Status:** ❌ DOWN — DNS resolution failed
-- **Error:** `ssh: Could not resolve hostname alex-eye: Temporary failure in name resolution`
-- **Possible causes:**
-  - Pi is offline
-  - DNS/hostname not configured in `/etc/hosts` or mDNS
-  - Network segment unreachable
-- **Recommendation:** Check Pi power, network, or use IP address directly
+### 6. Alex Eye (Pi) ❌ DOWN
+- **Host:** pi@10.0.0.50
+- **Status:** SSH_UNREACHABLE
+- **Action Required:** Manual intervention - check Pi connectivity
 
 ---
 
-## Critical Issues Requiring Attention
+## Alerts in Last 24h
+- **HYPE Move:** 2025-02-09 04:00:00 UTC (historical)
+- **Prices:** 2025-01-15 21:27:00 UTC (historical)
 
-1. **EvoClaw Hub** — Completely down, no auto-restart available
-2. **Alex Eye (Pi)** — Network unreachable, may be offline
-3. **AlphaStrike** — Type error causing crashes (band-aid: restarted, root cause remains)
+## Critical Actions Required
+1. **Alex Eye (Pi):** Check Pi power/network, restart if needed
+2. **Shield:** Initialize workspace and access-control.json
+3. **Herald:** Set up content scheduling and automation
+4. **Quant:** Investigate stale Alphastrike check timestamp
 
-## Recommendations
-
-1. **EvoClaw Hub:** Determine correct startup command/service and add auto-restart
-2. **Alex Eye:** Verify Pi is online, check network connectivity, consider adding static DNS entry
-3. **AlphaStrike:** Fix `Decimal` vs `float` type handling in trading logic
-4. **Sentinel:** Update stale health check timestamps
-5. **Herald:** Initialize if intended for use, or decommission if unused
-
----
-
-**Report by:** Sentinel (cron job 3b4465c3-4a20-4e25-8325-30d108cd3f04)
+## Recommendation
+Schedule follow-up health check in 6 hours to verify Alex Eye recovery.

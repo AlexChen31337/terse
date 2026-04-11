@@ -1,8 +1,8 @@
 {
   "lastRun": "2026-04-05T09:10:00+11:00",
   "last_backup": "2026-04-04",
-  "mbd_last_backup": "2026-04-09",
-  "topic_index": 10,
+  "mbd_last_backup": "2026-04-11",
+  "topic_index": 11,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -691,6 +691,18 @@
       "folder": "2026-04-09_AI职场生存手册",
       "title": "AI职场生存手册_当机器人成为你的同事上司和替代者你该怎么办",
       "wordCount": 4800,
+      "note": "MbD Chinese backup. No cover (GPU server unreachable). Awaiting publish instruction from owner."
+    },
+    "mbd-daily-2026-04-11": {
+      "name": "赛博朋克副业_当你的数字分身开始替你赚外快",
+      "status": "backed_up",
+      "category": "副业/科技",
+      "date": "2026-04-11",
+      "githubBacked": true,
+      "coverGenerated": false,
+      "folder": "2026-04-11_赛博朋克副业_当你的数字分身开始替你赚外快",
+      "title": "赛博朋克副业_当你的数字分身开始替你赚外快",
+      "wordCount": 4500,
       "note": "MbD Chinese backup. No cover (GPU server unreachable). Awaiting publish instruction from owner."
     }
   },

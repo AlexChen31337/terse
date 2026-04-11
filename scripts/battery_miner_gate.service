@@ -1,0 +1,19 @@
+[Unit]
+Description=Battery-gated Miner Controller
+Documentation=file:///home/bowen/.openclaw/workspace/scripts/battery_miner_gate.py
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/bowen/.local/bin/uv run python /home/bowen/.openclaw/workspace/scripts/battery_miner_gate.py
+WorkingDirectory=/home/bowen/.openclaw/workspace
+Restart=on-failure
+RestartSec=30s
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=battery-miner-gate
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=default.target
