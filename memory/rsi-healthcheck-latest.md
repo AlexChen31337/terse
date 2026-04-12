@@ -1,32 +1,33 @@
-# RSI Loop Health Check — 2026-04-11 03:10 AEDT
+# RSI Loop Health Check Report
+**Date:** 2026-04-12 03:10 AEDT (2026-04-11 17:10 UTC)
 
-## Status Summary
-- **Health Score: 0.286** ⚠️ BELOW THRESHOLD (< 0.3)
-- **7-day outcomes:** 26 logged
-- **Success rate:** 54%
-- **Avg quality:** 2.65/5
+## Status
+- **Health Score:** 0.274 ⚠️ (below 0.3 threshold)
+- **7-Day Outcomes:** 21 logged
+- **Success Rate:** 52%
+- **Avg Quality:** 2.62/5
 
 ## Top Issues
 | Issue | Count | Fail Rate |
 |-------|-------|-----------|
-| context_loss | 14 | 0% fail (recoverable) |
-| tool_validation_error | 6 | 100% fail |
-| incomplete_task | 5 | 100% fail |
+| context_loss | 11 | 0% |
+| tool_validation_error | 6 | 100% |
+| incomplete_task | 3 | 100% |
 
 ## Patterns Detected (4)
-1. **[0.923]** `tool_call` tasks → `tool_validation_error` 6x, 100% fail
-2. **[0.769]** `message_routing` tasks → `incomplete_task` 5x, 100% fail
-3. **[0.538]** `session_management` tasks → `context_loss` 14x, 0% failure
+1. **[1.143]** In `tool_call` tasks, `tool_validation_error` occurs 6x with 100% fail
+2. **[0.571]** In `message_routing` tasks, `incomplete_task` occurs 3x with 100% fail
+3. **[0.524]** In `session_management` tasks, `context_loss` occurs 11x with 0% failure
 
-## Proposals
-- **Draft:** 1
-- **Approved:** 0
-- **Deployed:** 24
-- **Auto-deployed this cycle:** 0 (all existing proposals already deployed)
+## Cycle Result
+- Proposals generated: 4
+- Auto-deployed: 0 (all already deployed)
+- Awaiting review: 1
+- Deployed to date: 24
 
-## Cycle Actions
-- 4 proposals generated, 0 new auto-deployed
-- 2 proposals noted as already addressing top issues
+## Pending Proposals
+- `15c31c37` — Address `tool_validation_error` in `tool_call` tasks (already deployed)
+- `db32089a` — Address `timeout` in `tool_call` tasks (already deployed)
 
 ## Alert
-⚠️ Health score 0.286 is below 0.3 threshold — Bowen notified.
+Telegram alert sent to Bowen (health score < 0.3).

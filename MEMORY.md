@@ -40,7 +40,15 @@ v0.6.0 released. Phase 2 + SKILLRL shipped. **Next:** v0.6.1 (merge PRs #22+#23)
 - **HL address:** `0x64e830dd7af93431c898ea9e4c375c6706bd0fc5`
 
 ## ⛏️ RVN Miner (GPU server)
-Service: miner_scheduler.service. Daytime + sunny only (Kellyville).
+- **Controller:** HA automation (sole controller). `miner_scheduler.service` is **masked**.
+- **Script:** `miner_ctl.sh` at `/home/peter/Documents/miner/miner_ctl.sh`
+  - `start` → stops llama services → starts miner on all 3 GPUs
+  - `stop` → stops miner → restarts llama services
+- **HA shell_commands:** `miner_start/stop/status` → SSH → `miner_ctl.sh`
+- **SOC thresholds:** configurable via HA dashboard sliders (`input_number.miner_soc_start/stop`)
+- **Stats polling:** `gpu-stats-poll.timer` (user systemd, 60s) → `poll_gpu_stats.sh` → `.gpu_stats.json`
+- **Hashrate:** ~68 MH/s total (23 + 29 + 17 MH/s across 3 GPUs)
+- **Pool:** rvn.2miners.com:6060 | **Wallet:** RDj3qggPLQM3EsP3fXdm7h72xPBrsZUQyV.rigone
 
 ## 🔧 Infrastructure
 - **GPU Server:** peter@10.0.0.30 (RTX 3090 24GB + 3080 10GB + 2070S 8GB, 16GB RAM + 256GB swap)

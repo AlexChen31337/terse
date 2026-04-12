@@ -1,33 +1,33 @@
 {
-  "miner_running": false,
-  "last_soc": 14,
-  "last_action": "stopped@2026-04-11T19:18:18.241504",
+  "miner_running": true,
+  "last_soc": 100,
+  "last_action": "already_active@2026-04-12T13:11:43.304513",
   "gpu_stats": [
     {
       "name": "NVIDIA GeForce RTX 3090",
-      "temp_c": 47.0,
-      "util_pct": 0.0,
-      "fan_pct": 0.0,
-      "power_w": 23.47,
-      "vram_used_mb": 18190.0,
+      "temp_c": 73.0,
+      "util_pct": 100.0,
+      "fan_pct": 65.0,
+      "power_w": 339.4,
+      "vram_used_mb": 6446.0,
       "vram_total_mb": 24576.0
     },
     {
       "name": "NVIDIA GeForce RTX 3080",
-      "temp_c": 45.0,
-      "util_pct": 0.0,
-      "fan_pct": 0.0,
-      "power_w": 21.72,
-      "vram_used_mb": 15.0,
+      "temp_c": 75.0,
+      "util_pct": 100.0,
+      "fan_pct": 73.0,
+      "power_w": 294.51,
+      "vram_used_mb": 5865.0,
       "vram_total_mb": 10240.0
     },
     {
       "name": "NVIDIA GeForce RTX 2070 SUPER",
-      "temp_c": 27.0,
+      "temp_c": 39.0,
       "util_pct": 0.0,
       "fan_pct": 24.0,
-      "power_w": 6.4,
-      "vram_used_mb": 6.0,
+      "power_w": 7.7,
+      "vram_used_mb": 6491.0,
       "vram_total_mb": 8192.0
     }
   ]
