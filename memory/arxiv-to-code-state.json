@@ -1,0 +1,23 @@
+{
+  "processed_ids": [
+    "2604.08539",
+    "2604.08545"
+  ],
+  "repos_created": [
+    {
+      "arxiv_id": "2604.08545",
+      "repo": "AlexChen31337/arxiv-260408545-act-wisely-cultivating-meta-cognitive-tool-use-in-agentic-mu",
+      "title": "Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models",
+      "description": "Implementation of Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models (arXiv:2604.08545) https://arxiv.org/abs/2604.08545",
+      "created_at": "2026-04-12T09:43:40.182121+00:00"
+    },
+    {
+      "arxiv_id": "2604.08539",
+      "repo": "AlexChen31337/arxiv-260408539-openvlthinkerv2-a-generalist-multimodal-reasoning-model-for",
+      "title": "OpenVLThinkerV2: A Generalist Multimodal Reasoning Model for Multi-domain Visual Tasks",
+      "description": "Implementation of OpenVLThinkerV2: A Generalist Multimodal Reasoning Model for Multi-domain Visual Tasks (arXiv:2604.08539) https://arxiv.org/abs/2604.08539",
+      "created_at": "2026-04-12T09:43:46.065489+00:00"
+    }
+  ],
+  "last_run": "2026-04-12T09:43:46.065502+00:00"
+}

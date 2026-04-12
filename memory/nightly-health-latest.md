@@ -1,13 +1,20 @@
 # Nightly Health Check
-**Date:** 2026-04-12 00:05 AEST (2026-04-11 14:05 UTC)
+**Date:** 2026-04-13 00:05 AEST (2026-04-12 14:05 UTC)
 
-| # | Component | Status | Detail |
-|---|-----------|--------|--------|
-| 1 | AlphaStrike V3 | ✅ OK | `/tmp/alphastrike-v3/repo/scripts/paper_trade_v3.py` present |
-| 2 | EvoClaw Hub | 🚨 DOWN | `localhost:8420/api/agents` unreachable |
-| 3 | GPU Server | ⚠️ Offline | `peter@10.0.0.44` SSH failed (ConnectTimeout) |
-| 4 | ClawMemory | ✅ OK | v0.2.0, 6,785 active facts |
-| 5 | Skills | ✅ OK | 79 skills installed |
-| 6 | Memory Files | ✅ OK | 246 `.md` files in memory/ |
+| Component | Status |
+|-----------|--------|
+| AlphaStrike V3 | ✅ OK |
+| EvoClaw Hub (localhost:8420) | 🔴 DOWN |
+| GPU Server (peter@10.0.0.44) | 🔴 offline |
+| ClawMemory (localhost:7437) | ✅ v0.2.0 facts=6938 |
+| Skills count | 79 |
+| Memory files | 248 |
 
-**Alerts:** EvoClaw hub DOWN → Telegram alert sent to Bowen.
+## Details
+- **AlphaStrike V3:** `/tmp/alphastrike-v3/repo/scripts/paper_trade_v3.py` — present ✅
+- **EvoClaw Hub:** Not responding on port 8420 🔴
+- **GPU Server:** SSH to `peter@10.0.0.44` timed out (offline or wrong IP — TOOLS.md lists 10.0.0.30)
+- **ClawMemory:** Running v0.2.0 with 6,938 active facts ✅
+
+## Action
+Telegram alert sent to Bowen for EvoClaw=DOWN and GPU=offline.

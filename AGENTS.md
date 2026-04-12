@@ -44,14 +44,18 @@ PLAN (Opus) → HARNESS SCAFFOLD → BUILD (Sonnet) → REVIEW → loop (max 2x)
 Always start with: `uv run python skills/orchestrator/scripts/pbr.py run --task "..." --workspace /path`
 Never spawn Builder without Planner. Never skip Reviewer.
 
-## Model Quality Rule
-| Task | Model |
-|------|-------|
-| Writing, planning, architecture, coding | Opus 4.6 or Sonnet 4.6 |
-| Monitoring, health checks, cron jobs | GLM-4.7 or qwen3.5:4b |
+## Model Quality Rule (NON-NEGOTIABLE)
+| Task | Minimum Model | Notes |
+|------|---------------|-------|
+| **Coding / repo creation / scaffolding** | **Sonnet 4.6** | Always. No GLM, no qwen, no cheap models. |
+| Writing, planning, architecture | Opus 4.6 or Sonnet 4.6 | Opus preferred for long-form |
+| Monitoring, health checks, cron jobs | GLM-5.1 or qwen3.5:4b | OK for status checks |
 
-Never use cheap models for intellectual work. Never use expensive models for monitoring.
-Always set `model` in cron job payloads.
+**Hard rules:**
+- Never use GLM/qwen/cheap models for coding, code generation, or repo creation.
+- When spawning sub-agents for coding tasks: always set `model` to Sonnet 4.6+.
+- `sessions_spawn` for code work → `model: "claude-code-plugin/claude-sonnet-4-6"`
+- Always set `model` in cron job payloads.
 
 ## Sub-Agent Spawning
 ```bash

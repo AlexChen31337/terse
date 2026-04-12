@@ -1,8 +1,8 @@
 {
   "lastRun": "2026-04-05T09:10:00+11:00",
   "last_backup": "2026-04-04",
-  "mbd_last_backup": "2026-04-11",
-  "topic_index": 11,
+  "mbd_last_backup": "2026-04-12",
+  "topic_index": 12,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -704,6 +704,18 @@
       "title": "赛博朋克副业_当你的数字分身开始替你赚外快",
       "wordCount": 4500,
       "note": "MbD Chinese backup. No cover (GPU server unreachable). Awaiting publish instruction from owner."
+    },
+    "mbd-daily-2026-04-12": {
+      "name": "mbd-daily-2026-04-12",
+      "status": "backed_up",
+      "category": "AI副业指南",
+      "date": "2026-04-12",
+      "githubBacked": true,
+      "coverGenerated": false,
+      "folder": "2026-04-12_AI副业指南_把你的专业知识变成AI自动贩卖机",
+      "title": "AI副业指南_把你的专业知识变成AI自动贩卖机",
+      "wordCount": 4800,
+      "note": "第12期AI副业指南：把你的专业知识变成AI自动贩卖机。10章，涵盖知识金矿定位、AI工具栈选择、定价策略、获客路径和90天行动计划。"
     }
   },
   "twitter": {

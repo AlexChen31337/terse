@@ -206,7 +206,7 @@
       "notes": "Auto-discovered 2026-03-06T08:01:58.351851"
     },
     {
-      "id": "glm-4.7",
+      "id": "glm-5.1",
       "alias": "GLM-4.7-(z.ai-Key-2)",
       "tier": "MEDIUM",
       "provider": "anthropic-proxy-4",
@@ -278,7 +278,7 @@
       "notes": "Auto-discovered 2026-03-06T08:02:01.625442"
     },
     {
-      "id": "glm-4.7",
+      "id": "glm-5.1",
       "alias": "GLM-4.7-(z.ai-Key-1)",
       "tier": "MEDIUM",
       "provider": "anthropic-proxy-6",
@@ -396,8 +396,8 @@
     "blocked_reason": "ollama-gpu-server binds to 127.0.0.1 by default \u2014 unreachable over LAN. GLM-4.7 removed from MEDIUM/COMPLEX fallback chains (2026-02-28): 135k tokens, failed Rust test fix, weak code editing. Use Sonnet 4.6 for ALL coding tasks.",
     "enforce_model_in_cron": true,
     "cron_safe_tiers": {
-      "SIMPLE": "anthropic-proxy-6/glm-4.7",
-      "SIMPLE_alt": "anthropic-proxy-4/glm-4.7"
+      "SIMPLE": "anthropic-proxy-6/glm-5.1",
+      "SIMPLE_alt": "anthropic-proxy-4/glm-5.1"
     }
   },
   "tiers": {
@@ -429,8 +429,8 @@
         "nvidia-nim/meta/llama-4-maverick-17b-128e-instruct",
         "nvidia-nim/z-ai/glm4.7",
         "nvidia-nim/meta/llama-3.2-11b-vision-instruct",
-        "anthropic-proxy-4/glm-4.7",
-        "anthropic-proxy-6/glm-4.7"
+        "anthropic-proxy-4/glm-5.1",
+        "anthropic-proxy-6/glm-5.1"
       ],
       "use_for": [
         "code fixes",
