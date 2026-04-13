@@ -1,12 +1,5 @@
 {
-  "positions": {
-    "SOL": {
-      "side": "LONG",
-      "entry_price": 81.951,
-      "size_usd": 101.66682698142566,
-      "opened_at": "2026-04-13T09:01:10.463483+00:00"
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "coin": "ETH",
@@ -47,7 +40,17 @@
       "pnl_usd": 10.67,
       "reason": "TAKE_PROFIT",
       "closed_at": "2026-04-09T16:59:05.577156+00:00"
+    },
+    {
+      "coin": "SOL",
+      "side": "LONG",
+      "entry": 81.951,
+      "exit": 83.326,
+      "pnl_pct": 8.39,
+      "pnl_usd": 8.53,
+      "reason": "TAKE_PROFIT",
+      "closed_at": "2026-04-13T16:59:10.438568+00:00"
     }
   ],
-  "equity": 1016.6682698142565
+  "equity": 1025.1972619619705
 }

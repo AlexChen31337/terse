@@ -1,6 +1,6 @@
 {
   "miner_running": false,
-  "last_soc": 10,
+  "last_soc": 9,
   "last_action": "already_inactive@2026-04-13T17:02:52.314668",
   "gpu_stats": [
     {
@@ -8,7 +8,7 @@
       "temp_c": 48.0,
       "util_pct": 0.0,
       "fan_pct": 0.0,
-      "power_w": 23.22,
+      "power_w": 23.49,
       "vram_used_mb": 38.0,
       "vram_total_mb": 24576.0
     },
@@ -17,16 +17,16 @@
       "temp_c": 42.0,
       "util_pct": 0.0,
       "fan_pct": 0.0,
-      "power_w": 14.24,
+      "power_w": 14.35,
       "vram_used_mb": 15.0,
       "vram_total_mb": 10240.0
     },
     {
       "name": "NVIDIA GeForce RTX 2070 SUPER",
-      "temp_c": 27.0,
+      "temp_c": 26.0,
       "util_pct": 0.0,
       "fan_pct": 24.0,
-      "power_w": 6.72,
+      "power_w": 7.41,
       "vram_used_mb": 6405.0,
       "vram_total_mb": 8192.0
     }
