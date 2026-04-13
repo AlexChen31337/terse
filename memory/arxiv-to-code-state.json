@@ -1,7 +1,9 @@
 {
   "processed_ids": [
+    "2604.08545",
     "2604.08539",
-    "2604.08545"
+    "2604.08465",
+    "2604.08540"
   ],
   "repos_created": [
     {
@@ -17,7 +19,21 @@
       "title": "OpenVLThinkerV2: A Generalist Multimodal Reasoning Model for Multi-domain Visual Tasks",
       "description": "Implementation of OpenVLThinkerV2: A Generalist Multimodal Reasoning Model for Multi-domain Visual Tasks (arXiv:2604.08539) https://arxiv.org/abs/2604.08539",
       "created_at": "2026-04-12T09:43:46.065489+00:00"
+    },
+    {
+      "arxiv_id": "2604.08540",
+      "repo": "AlexChen31337/arxiv-260408540-avgen-bench-a-task-driven-benchmark-for-multi-granular-evalu",
+      "title": "AVGen-Bench: A Task-Driven Benchmark for Multi-Granular Evaluation of Text-to-Audio-Video Generation",
+      "description": "Implementation of AVGen-Bench: A Task-Driven Benchmark for Multi-Granular Evaluation of Text-to-Audio-Video Generation (arXiv:2604.08540) https://arxiv.org/abs/2604.08540",
+      "created_at": "2026-04-12T18:01:27.101403+00:00"
+    },
+    {
+      "arxiv_id": "2604.08465",
+      "repo": "AlexChen31337/arxiv-260408465-from-safety-risk-to-design-principle-peer-preservation-in-mu",
+      "title": "From Safety Risk to Design Principle: Peer-Preservation in Multi-Agent LLM Systems and Its Implications for Orchestrated Democratic Discourse Analysis",
+      "description": "Implementation of From Safety Risk to Design Principle: Peer-Preservation in Multi-Agent LLM Systems and Its Implications for Orchestrated Democratic Discourse Analysis (arXiv:2604.08465) https://arxiv.org/abs/2604.08465",
+      "created_at": "2026-04-12T18:02:10.662963+00:00"
     }
   ],
-  "last_run": "2026-04-12T09:43:46.065502+00:00"
+  "last_run": "2026-04-12T18:02:10.662979+00:00"
 }

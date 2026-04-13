@@ -1,100 +1,147 @@
 ---
 name: conditional-skills
-description: "Specification and tooling for conditional skill activation — skills that auto-show/hide based on available toolsets, tools, or platform."
-version: 1.0.0
+description: "Guide for OpenClaw's native conditional skill activation — show/hide skills based on platform, binaries, env vars, and config."
+version: 2.0.0
 ---
 
-# Conditional Skills — Auto-Show/Hide Based on Environment
+# Conditional Skills — OpenClaw Native Activation
 
-## When to Use
-- Authoring a new skill that should only appear when certain tools are available (or missing)
-- Debugging why a skill isn't showing up in the index
-- Auditing which skills have conditional activation rules
+## How It Works
 
-## Specification
+OpenClaw filters skills during session startup via `evaluateRuntimeEligibility()`. Skills without conditional metadata are always shown. Skills with a `metadata.openclaw` block in their YAML frontmatter are conditionally included/excluded based on runtime checks.
 
-Skills can add optional conditional fields to their YAML frontmatter:
+**This is built into OpenClaw core — no plugin needed.**
+
+## Frontmatter Schema
+
+Add a `metadata` block to your SKILL.md frontmatter:
 
 ```yaml
-metadata:
-  openclaw:
-    fallback_for_toolsets: [web]       # SHOWN only when these toolsets are UNAVAILABLE
-    requires_toolsets: [terminal]       # SHOWN only when these toolsets are AVAILABLE
-    fallback_for_tools: [web_search]   # SHOWN only when these tools are UNAVAILABLE
-    requires_tools: [browser]          # SHOWN only when these tools are AVAILABLE
-    platforms: [linux, macos]          # SHOWN only on matching OS
+---
+name: my-skill
+description: "..."
+version: 1.0.0
+metadata: |
+  {
+    "openclaw": {
+      "os": ["linux", "macos"],
+      "always": false,
+      "requires": {
+        "bins": ["gh", "docker"],
+        "anyBins": ["curl", "wget"],
+        "env": ["GITHUB_TOKEN"],
+        "config": ["channels.telegram"]
+      }
+    }
+  }
+---
 ```
 
-| Field | Behavior |
-|-------|----------|
-| `fallback_for_toolsets` | Skill HIDDEN when listed toolsets are available. SHOWN when missing. |
-| `fallback_for_tools` | Same, but checks individual tools instead of toolsets. |
-| `requires_toolsets` | Skill HIDDEN when listed toolsets are unavailable. SHOWN when present. |
-| `requires_tools` | Same, but checks individual tools instead of toolsets. |
-| `platforms` | Skill HIDDEN on non-matching OS. Values: `linux`, `macos`, `windows`. |
+## Fields Reference
 
-Skills **without** any conditional fields behave as before — always shown.
+| Field | Type | Behavior |
+|-------|------|----------|
+| `os` | `string[]` | Skill HIDDEN on non-matching OS. Values: `linux`, `darwin`, `win32` (Node.js `process.platform`) |
+| `always` | `boolean` | If `true`, skip all `requires` checks — always show (but `os` still applies) |
+| `requires.bins` | `string[]` | ALL must be present in `$PATH`. Skill hidden if any missing. |
+| `requires.anyBins` | `string[]` | At least ONE must be present in `$PATH`. |
+| `requires.env` | `string[]` | ALL must be set (in env, skill config env, or via apiKey + primaryEnv). |
+| `requires.config` | `string[]` | ALL must be truthy in OpenClaw config (dot-path notation). |
 
-## Procedure
+**All `requires` checks are AND-ed** — every category must pass.
 
-1. Decide if your skill genuinely needs conditional activation (most don't)
-2. Add the appropriate `metadata.openclaw.*` fields to your SKILL.md frontmatter
-3. Test both states — verify the skill shows when expected and hides when not
-4. Run the audit script to confirm: `uv run python scripts/audit_skills.py`
+## Evaluation Order
 
-## Examples
+1. `os` check — reject if platform doesn't match
+2. `always` check — if `true`, approve immediately
+3. `requires` check — bins → anyBins → env → config (all must pass)
 
-### DuckDuckGo fallback (shows only when web_search is unavailable)
+## Real Examples
+
+### Skill requiring `gh` CLI and GitHub token
 ```yaml
----
-name: duckduckgo-search
-description: "Free web search via DuckDuckGo — no API key needed."
-metadata:
-  openclaw:
-    fallback_for_tools: [web_search]
----
+metadata: |
+  {
+    "openclaw": {
+      "requires": {
+        "bins": ["gh"],
+        "env": ["GH_TOKEN"]
+      }
+    }
+  }
 ```
 
 ### macOS-only skill
 ```yaml
----
-name: imessage
-description: "Send and receive iMessages on macOS."
-metadata:
-  openclaw:
-    platforms: [macos]
----
+metadata: |
+  {
+    "openclaw": {
+      "os": ["darwin"]
+    }
+  }
 ```
 
-### Skill requiring browser tool
+### Skill requiring Telegram channel configured
 ```yaml
----
-name: browser-automation
-description: "Advanced browser automation workflows."
-metadata:
-  openclaw:
-    requires_tools: [browser]
----
+metadata: |
+  {
+    "openclaw": {
+      "requires": {
+        "config": ["channels.telegram"]
+      }
+    }
+  }
 ```
+
+### Skill requiring at least one browser binary
+```yaml
+metadata: |
+  {
+    "openclaw": {
+      "requires": {
+        "anyBins": ["chromium", "google-chrome", "firefox"]
+      }
+    }
+  }
+```
+
+## Current Gaps (not yet supported natively)
+
+| Feature | Status | Workaround |
+|---------|--------|------------|
+| `fallback_for_tools` — show when a tool is MISSING | Not supported | Use `requires.config` pointing to a flag you set |
+| `requires_tools` — show when an OpenClaw tool exists | Not supported | Use `requires.bins` for CLI-equivalent check |
+
+These gaps are candidates for an upstream OpenClaw feature request.
 
 ## Scripts
 
-### Check conditions for a single skill
-```bash
-uv run python skills/conditional-skills/scripts/check_conditions.py ~/.openclaw/workspace/skills/some-skill/
-```
-
-### Audit all skills
+### Audit all skills and their conditional status
 ```bash
 uv run python skills/conditional-skills/scripts/audit_skills.py
 ```
 
-## Pitfalls
-- Don't make skills conditional unless there's a clear reason — unconditional is simpler
-- Test both states (tool available AND missing) before shipping
-- `platforms` uses lowercase: `linux`, not `Linux`
-- Multiple conditions are AND-ed — all must pass for the skill to show
+Shows which skills have conditional metadata and what they require.
+
+### Check a single skill's conditions
+```bash
+uv run python skills/conditional-skills/scripts/check_conditions.py ~/.openclaw/workspace/skills/some-skill/
+```
+
+## When to Make a Skill Conditional
+
+**Do** make conditional when:
+- Skill needs a binary not on all machines (e.g., `gh`, `docker`, `ffmpeg`)
+- Skill needs a paid API key (e.g., `OPENAI_API_KEY`)
+- Skill is platform-specific (e.g., iMessage on macOS)
+- Skill needs a specific channel configured (e.g., Discord, Telegram)
+
+**Don't** make conditional when:
+- Skill is pure Python with no external deps
+- Skill reads from workspace files (always available)
+- Skill provides guidance/docs only (no runtime dependency)
+- You're not sure — unconditional is the safe default
 
 ## Verification
-- Run `check_conditions.py` on a skill with conditional fields → confirms visible/hidden with reasons
-- Run `audit_skills.py` → see all conditional skills and their current state
+- Add metadata block → restart session → check if skill appears in available skills list
+- Test negative case: unset an env var or remove a binary → confirm skill disappears

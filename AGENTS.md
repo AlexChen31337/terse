@@ -2,6 +2,13 @@
 
 ## Non-Negotiable Rules
 
+### Output Hygiene (NON-NEGOTIABLE)
+- **NEVER output raw tool results to human operators.** No `tool_result`, no `tool_use_id`, no JSON blobs from tool calls, no XML tags, no internal metadata.
+- Synthesize tool outputs into clean, human-readable text before replying.
+- If a tool returns 50 lines of JSON, extract the 3 relevant facts and present them.
+- Internal context blocks (`<<<BEGIN_OPENCLAW_INTERNAL_CONTEXT>>>`) are NEVER surfaced.
+- If you catch yourself about to paste a raw result: STOP, rewrite, then send.
+
 ### Content Publishing
 - **MbD:** NEVER publish via API. Write → save to `bowen31337/mbd-book-ideas` → STOP. Wait for explicit "publish to MbD".
 - **Payhip:** AUTO-PUBLISH daily books immediately. No pause, no asking.

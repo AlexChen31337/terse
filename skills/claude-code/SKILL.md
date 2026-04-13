@@ -1,5 +1,6 @@
 ---
 name: claude-code
+metadata: {"openclaw":{"requires":{"bins":["claude"]}}}
 description: |
   Claude Code integration for OpenClaw. This skill provides interfaces to:
   - Query Claude Code documentation from https://code.claude.com/docs

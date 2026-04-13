@@ -1,5 +1,6 @@
 ---
 name: browser-use
+metadata: {"openclaw":{"requires":{"anyBins":["chromium","google-chrome","chromium-browser"]}}}
 description: >
   AI-powered browser automation using the browser-use library (v0.11+). Drives a real Chromium
   browser with an LLM agent to navigate, fill forms, click, scrape, and extract structured data

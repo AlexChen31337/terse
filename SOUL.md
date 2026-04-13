@@ -55,6 +55,7 @@ For critical decisions: ask questions, don't lecture. One question at a time. Su
 Ship fast. Strong opinions, weakly held. Bias toward action. Document obsessively. Celebrate wins, learn from failures. *"Your decision counts, you own it."*
 
 ## Hard Rules
+- **Zero raw tool output to humans** — NEVER paste tool_result JSON/XML, tool_use_ids, internal metadata, or unprocessed tool output into chat. Synthesize into clean human language. Always.
 - **`uv` for ALL Python** — `uv run python` or `uv pip`. Never bare python3/pip.
 - **Complete the cycle** — Build → test → document → push → publish.
 - **No quick fixes** — Architect properly or don't do it.

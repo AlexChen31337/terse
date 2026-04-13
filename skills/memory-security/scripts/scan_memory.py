@@ -33,8 +33,14 @@ def load_patterns() -> dict:
 
 def scan_text(text: str, patterns: dict) -> list[dict]:
     findings = []
-    for category, pattern_list in patterns.items():
-        severity = SEVERITY_MAP.get(category, "low")
+    for category, cat_data in patterns.items():
+        # Support both flat list and nested {severity, patterns} format
+        if isinstance(cat_data, dict):
+            pattern_list = cat_data.get("patterns", [])
+            severity = cat_data.get("severity", SEVERITY_MAP.get(category, "low"))
+        else:
+            pattern_list = cat_data
+            severity = SEVERITY_MAP.get(category, "low")
         for raw_pattern in pattern_list:
             try:
                 # For invisible_unicode patterns, handle escape sequences
