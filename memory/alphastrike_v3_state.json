@@ -1,5 +1,12 @@
 {
-  "positions": {},
+  "positions": {
+    "SOL": {
+      "side": "LONG",
+      "entry_price": 81.951,
+      "size_usd": 101.66682698142566,
+      "opened_at": "2026-04-13T09:01:10.463483+00:00"
+    }
+  },
   "closed_trades": [
     {
       "coin": "ETH",
