@@ -1,79 +1,133 @@
 #!/usr/bin/env python3
-"""Fetch current + forecast Amber Electric prices for SmartShift advisor."""
+"""
+Fetch current and forecast Amber Electric prices.
+Outputs JSON: {current_buy, current_feedin, forecast_next4h, descriptor, negspot}
+Falls back to time-of-day estimates if API key not configured.
+"""
 import json
 import os
 import sys
+from datetime import datetime, timezone
 import urllib.request
+import urllib.error
 
-API_KEY = os.environ.get("AMBER_API_KEY", "")
-SITE_ID = os.environ.get("AMBER_SITE_ID", "")
+SKILL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CONFIG_PATH = os.path.join(SKILL_DIR, "config.json")
+
+
+def load_config():
+    try:
+        with open(CONFIG_PATH) as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def fetch_amber_prices(api_key: str, site_id: str) -> dict:
+    """Fetch live prices from Amber API v1."""
+    base = "https://api.amber.com.au/v1"
+    headers = {"Authorization": f"Bearer {api_key}", "accept": "application/json"}
+
+    def get(url):
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            return json.loads(resp.read())
+
+    # Get current prices
+    current = get(f"{base}/sites/{site_id}/prices/current?next=4&previous=0&resolution=30")
+
+    buy_now = None
+    feedin_now = None
+    forecast_buys = []
+    forecast_feedins = []
+
+    for interval in current:
+        channel = interval.get("channelType", "")
+        price = interval.get("perKwh", 0)
+        itype = interval.get("type", "")
+
+        if itype == "CurrentInterval":
+            if channel == "general":
+                buy_now = price
+            elif channel == "feedIn":
+                feedin_now = price
+        elif itype == "ForecastInterval":
+            if channel == "general":
+                forecast_buys.append(price)
+            elif channel == "feedIn":
+                forecast_feedins.append(price)
+
+    return {
+        "current_buy": round(buy_now or 0, 2),
+        "current_feedin": round(feedin_now or 0, 2),
+        "forecast_buy_next4h": [round(p, 2) for p in forecast_buys[:8]],
+        "forecast_feedin_next4h": [round(p, 2) for p in forecast_feedins[:8]],
+        "negspot": (buy_now or 0) < 0,
+        "high_feedin": (feedin_now or 0) > 15,
+        "source": "amber_api",
+    }
+
+
+def time_of_day_estimate() -> dict:
+    """Fallback: estimate prices based on Sydney time-of-day patterns."""
+    now = datetime.now()
+    hour = now.hour
+
+    # Sydney Amber rough patterns (c/kWh):
+    # Peak: 7-9am, 5-9pm (~25-45c buy, 3-8c feedin)
+    # Solar: 10am-3pm (~18-25c buy, 5-12c feedin, sometimes higher)
+    # Off-peak: rest (~18-22c buy, 3-6c feedin)
+
+    if 7 <= hour < 9:
+        buy = 35.0
+        feedin = 5.0
+        descriptor = "morning_peak"
+    elif 10 <= hour < 15:
+        buy = 22.0
+        feedin = 8.0
+        descriptor = "solar_shoulder"
+    elif 15 <= hour < 17:
+        buy = 25.0
+        feedin = 6.0
+        descriptor = "late_afternoon"
+    elif 17 <= hour < 21:
+        buy = 38.0
+        feedin = 4.0
+        descriptor = "evening_peak"
+    else:
+        buy = 20.0
+        feedin = 3.0
+        descriptor = "off_peak"
+
+    return {
+        "current_buy": buy,
+        "current_feedin": feedin,
+        "forecast_buy_next4h": [buy] * 8,
+        "forecast_feedin_next4h": [feedin] * 8,
+        "negspot": False,
+        "high_feedin": feedin > 15,
+        "descriptor": descriptor,
+        "source": "time_estimate_no_api_key",
+    }
+
 
 def main():
-    if not API_KEY:
-        # Try loading from ha-smartshift .env
-        env_file = "/home/bowen/ha-smartshift/.env"
-        if os.path.exists(env_file):
-            with open(env_file) as f:
-                for line in f:
-                    line = line.strip()
-                    if line.startswith("AMBER_API_KEY="):
-                        globals()["API_KEY"] = line.split("=", 1)[1].strip().strip('"')
-                    elif line.startswith("AMBER_SITE_ID="):
-                        globals()["SITE_ID"] = line.split("=", 1)[1].strip().strip('"')
+    config = load_config()
+    amber_cfg = config.get("amber", {})
+    api_key = amber_cfg.get("api_key", "") or os.environ.get("AMBER_API_KEY", "")
+    site_id = amber_cfg.get("site_id", "") or os.environ.get("AMBER_SITE_ID", "")
 
-    api_key = API_KEY or globals().get("API_KEY", "")
-    site_id = SITE_ID or globals().get("SITE_ID", "")
+    if api_key and site_id:
+        try:
+            result = fetch_amber_prices(api_key, site_id)
+        except Exception as e:
+            result = time_of_day_estimate()
+            result["error"] = str(e)
+    else:
+        result = time_of_day_estimate()
 
-    if not api_key or not site_id:
-        print(json.dumps({"error": "AMBER_API_KEY or AMBER_SITE_ID not set"}))
-        sys.exit(1)
+    print(json.dumps(result))
 
-    # Fetch current + next 144 intervals (12 hours of 5-min intervals)
-    url = f"https://api.amber.com.au/v1/sites/{site_id}/prices/current?next=144&previous=0"
-    req = urllib.request.Request(
-        url,
-        headers={"Authorization": f"Bearer {api_key}", "Accept": "application/json"},
-    )
-    with urllib.request.urlopen(req, timeout=15) as resp:
-        data = json.loads(resp.read())
-
-    result = {"current": {}, "forecast_buy": [], "forecast_earn": []}
-
-    for item in data:
-        ch = item.get("channelType", "")
-        typ = item.get("type", "")
-        entry = {
-            "time": item.get("nemTime", ""),
-            "perKwh": item.get("perKwh"),
-            "spotPerKwh": item.get("spotPerKwh"),
-            "descriptor": item.get("descriptor", ""),
-            "spikeStatus": item.get("spikeStatus", ""),
-        }
-
-        if typ == "CurrentInterval":
-            if ch == "general":
-                result["current"]["buy"] = entry
-            elif ch == "feedIn":
-                result["current"]["earn"] = {**entry, "earn_ckwh": round(-entry["perKwh"], 2)}
-        elif typ == "ForecastInterval":
-            if ch == "general":
-                result["forecast_buy"].append(entry)
-            elif ch == "feedIn":
-                result["forecast_earn"].append({**entry, "earn_ckwh": round(-entry["perKwh"], 2)})
-
-    # Summary stats
-    earns = [e["earn_ckwh"] for e in result["forecast_earn"]]
-    if earns:
-        result["summary"] = {
-            "max_earn_ckwh": max(earns),
-            "min_earn_ckwh": min(earns),
-            "avg_earn_ckwh": round(sum(earns) / len(earns), 2),
-            "intervals_above_10c": sum(1 for e in earns if e >= 10),
-            "intervals_above_15c": sum(1 for e in earns if e >= 15),
-            "forecast_hours": round(len(earns) * 5 / 60, 1),
-        }
-
-    print(json.dumps(result, indent=2))
 
 if __name__ == "__main__":
     main()
