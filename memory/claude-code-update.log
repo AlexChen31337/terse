@@ -1,8 +1,0 @@
-[2026-04-05T10:24:22+10:00] check start: current version=2.1.66
-[2026-04-05T10:24:54+10:00] update output: Current version: 2.1.66
-Checking for updates to latest version...
-Successfully updated from 2.1.66 to version 2.1.92
-[2026-04-05T10:24:54+10:00] update rc: 0
-[2026-04-05T10:24:54+10:00] new version: 2.1.92
-[2026-04-05T10:24:54+10:00] version changed: 2.1.66 -> 2.1.92, restarting shim
-[2026-04-05T10:24:59+10:00] shim health after restart: {"status": "ok", "backend": "claude-code-cli"}

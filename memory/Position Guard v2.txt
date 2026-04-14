@@ -1,1 +1,0 @@
-Position Guard v2 which auto-discovers new positions from Simmer API and applies default SL/TP presets

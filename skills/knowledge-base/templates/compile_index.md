@@ -1,1 +1,0 @@
-/tmp/llm-knowledge-base/templates/compile_index.md

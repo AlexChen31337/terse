@@ -1,1 +1,0 @@
-/tmp/llm-knowledge-base/scripts/search.py

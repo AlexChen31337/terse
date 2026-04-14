@@ -1,1 +1,0 @@
-SL/TP levels: Check SL/TP levels

@@ -1,5 +1,0 @@
-{
-  "tags": ["rust", "lsp", "development", "substrate", "coding"],
-  "summary": "Rust development environment with rust-analyzer LSP for agent coding",
-  "readme": "SKILL.md"
-}

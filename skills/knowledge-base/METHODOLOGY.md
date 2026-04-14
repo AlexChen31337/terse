@@ -1,1 +1,0 @@
-/tmp/llm-knowledge-base/METHODOLOGY.md

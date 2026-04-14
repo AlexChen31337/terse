@@ -1,7 +1,0 @@
-{
-  "paused_at": "2026-02-27T23:02:25.539155+00:00",
-  "reason": "\ud83d\udea8 CIRCUIT BREAKER TRIGGERED: portfolio $0.00 vs HWM $6.46 = -100.0% drawdown (threshold: -15%)",
-  "portfolio_value": 0,
-  "high_water_mark": 6.46,
-  "drawdown_pct": -1.0
-}

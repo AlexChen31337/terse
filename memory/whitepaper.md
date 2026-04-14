@@ -1,1 +1,0 @@
-The white paper of ClawChain will conclude all the topics we have discussed so far, including the token economy, trading skills, and community growth.

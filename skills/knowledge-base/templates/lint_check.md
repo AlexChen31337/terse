@@ -1,1 +1,0 @@
-/tmp/llm-knowledge-base/templates/lint_check.md
