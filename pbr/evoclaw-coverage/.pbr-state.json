@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "task": "Boost test coverage for EvoClaw (clawinfra/evoclaw) api package from 73% to 85%+ and cmd/evoclaw from 62.3% to 85%+. Existing test files: api/coverage_boost_test.go, api/comprehensive_test.go, api/error_paths_test.go, api/server_test.go, api/genome_test.go, api/memory_test.go. cmd/evoclaw has main_test.go. Add missing tests for: api/terminal.go (handleTerminalPage), api/scheduler.go endpoints, api/chat.go edge cases, api/dashboard.go, api/firewall.go, cmd/evoclaw/gateway.go, cmd/evoclaw/signals_unix.go, cmd/evoclaw/systemd.go, cmd/evoclaw/launchd.go. Use Go table-driven tests, mock interfaces (no real network/disk), httptest.NewRecorder. All new tests must pass with go test ./... Branch feat/coverage-boost, PR. gh CLI as AlexChen31337.",
+  "workspace": "/home/bowen/.openclaw/workspace/pbr/evoclaw-coverage",
+  "created_at": "2026-02-25T04:29:25.671696+00:00",
+  "current_phase": "build",
+  "config": {
+    "models": {
+      "plan": "anthropic/claude-opus-4-6",
+      "build": "anthropic/claude-sonnet-4-6",
+      "review": "anthropic/claude-sonnet-4-6"
+    },
+    "timeout": 1800,
+    "retries": 1
+  },
+  "phases": {
+    "plan": {
+      "name": "plan",
+      "status": "completed",
+      "started_at": "2026-02-25T04:29:25.671944+00:00",
+      "completed_at": "2026-02-25T04:32:57.207196+00:00",
+      "duration_seconds": 211.535252,
+      "artifacts": [],
+      "attempt": 1,
+      "error": null
+    },
+    "build": {
+      "name": "build",
+      "status": "running",
+      "started_at": "2026-02-25T04:32:57.270766+00:00",
+      "completed_at": null,
+      "duration_seconds": null,
+      "artifacts": [],
+      "attempt": 1,
+      "error": null
+    },
+    "review": {
+      "name": "review",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "duration_seconds": null,
+      "artifacts": [],
+      "attempt": 0,
+      "error": null
+    }
+  }
+}

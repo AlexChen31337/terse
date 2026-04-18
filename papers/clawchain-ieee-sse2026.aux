@@ -1,0 +1,309 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{chen2021codex}
+\citation{wu2023autogen}
+\citation{hong2024metagpt}
+\citation{w3c_did_2022}
+\citation{ethgasstation}
+\citation{buterin2019quadratic}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-A}}The Agent Economy Gap}{1}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-B}}Contributions}{1}{subsection.1.2}\protected@file@percent }
+\citation{nakamoto2008bitcoin}
+\citation{buterin2014ethereum}
+\citation{roughgarden2021eip1559}
+\citation{yakovenko2018solana}
+\citation{wood2016polkadot}
+\citation{parity_substrate}
+\citation{cosmos_sdk}
+\citation{thibault2022rollups}
+\citation{rocket2019avalanche}
+\citation{skidanov2019near}
+\citation{kiayias2017ouroboros}
+\citation{cosmos_sdk}
+\citation{w3c_did_2022}
+\citation{did_ethr}
+\citation{sidetree}
+\citation{w3c_vc_2022}
+\citation{sporny2024vc}
+\citation{weyl2022soulbound}
+\citation{sporny2024vc}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-C}}Paper Organization}{2}{subsection.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {II}Related Work}{2}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{II}{2}{Related Work}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Layer~1 Blockchains}{2}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Decentralized Identifiers and Verifiable Credentials}{2}{subsection.2.2}\protected@file@percent }
+\citation{richards2023autogpt}
+\citation{nakajima2023babyagi}
+\citation{langchain2023}
+\citation{wu2023autogen}
+\citation{hong2024metagpt}
+\citation{crewai2024}
+\citation{fetchai2019}
+\citation{singularitynet2019}
+\citation{autonolas2023}
+\citation{hong2024metagpt}
+\citation{ouyang2022rlhf}
+\citation{voshmgir2020token}
+\citation{douceur2002sybil}
+\citation{goldin2017tcr}
+\citation{zargham2020bonding}
+\citation{buterin2021retro}
+\citation{buterin2019quadratic}
+\citation{conviction_voting}
+\citation{poon2016lightning}
+\citation{molochdao}
+\citation{compound_gov}
+\citation{optimism2024}
+\citation{1hive2021}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}AI Agent Frameworks and Multi-Agent Systems}{3}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-D}}Token Economics and Mechanism Design}{3}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-E}}Decentralized Governance}{3}{subsection.2.5}\protected@file@percent }
+\citation{barbereau2023dao_governance}
+\citation{hanson2013futarchy}
+\citation{fetchai2019}
+\citation{autonolas2023}
+\citation{bittensor2021}
+\citation{buterin2014ethereum}
+\citation{yakovenko2018solana}
+\citation{fetchai2019}
+\citation{singularitynet2019}
+\citation{autonolas2023}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-F}}Comparison with Agent-Specific Blockchains}{4}{subsection.2.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Comparison of ClawChain with existing blockchain and agent systems. ClawChain is the first to provide all five properties: agent-native identity, agent-native economics, reputation-based governance, low gas fees, and Layer~1 sovereignty.}}{4}{table.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:comparison}{{I}{4}{Comparison of ClawChain with existing blockchain and agent systems. ClawChain is the first to provide all five properties: agent-native identity, agent-native economics, reputation-based governance, low gas fees, and Layer~1 sovereignty}{table.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-G}}Positioning}{4}{subsection.2.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {III}Architecture}{4}{section.3}\protected@file@percent }
+\newlabel{sec:architecture}{{III}{4}{Architecture}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}System Overview}{4}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Home Chain and Execution Environment Model}{4}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:homechain}{{\mbox  {III-B}}{4}{Home Chain and Execution Environment Model}{subsection.3.2}{}}
+\citation{erc8004}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces ClawChain architecture. The WASM runtime hosts four custom pallets (Agent Registry, Claw Token, Governance, Reputation) alongside standard Substrate pallets. Dashed arrows indicate inter-pallet dependencies. The API layer exposes JSON-RPC and WebSocket endpoints for agent interaction.}}{5}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:architecture}{{1}{5}{ClawChain architecture. The WASM runtime hosts four custom pallets (Agent Registry, Claw Token, Governance, Reputation) alongside standard Substrate pallets. Dashed arrows indicate inter-pallet dependencies. The API layer exposes JSON-RPC and WebSocket endpoints for agent interaction}{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Proof-of-work settlement flow. Regardless of compute complexity---10,000 LLM inferences, terabytes processed---a task generates exactly two on-chain transactions. Step 2 executes in any environment $\mathcal  {E}$ at zero chain cost.}}{5}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:settlement}{{2}{5}{Proof-of-work settlement flow. Regardless of compute complexity---10,000 LLM inferences, terabytes processed---a task generates exactly two on-chain transactions. Step 2 executes in any environment $\mathcal {E}$ at zero chain cost}{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Formal System Model}{5}{subsection.3.3}\protected@file@percent }
+\citation{brill2017phragmen}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Consensus}{6}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-E}}Runtime Upgrade Mechanism}{6}{subsection.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-F}}Storage Architecture}{6}{subsection.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-G}}Gas Model: Inflation-Subsidized Transactions}{6}{subsection.3.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Agent DID System}{6}{section.4}\protected@file@percent }
+\newlabel{sec:did}{{IV}{6}{Agent DID System}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}The \texttt  {did:claw} Method}{6}{subsection.4.1}\protected@file@percent }
+\citation{w3c_did_2022}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Agent DID lifecycle state machine. Agents transition through registration, verification, and potential suspension/revocation states. Dashed arrows indicate reversible transitions.}}{7}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:lifecycle}{{3}{7}{Agent DID lifecycle state machine. Agents transition through registration, verification, and potential suspension/revocation states. Dashed arrows indicate reversible transitions}{figure.caption.4}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Agent Registration Protocol}}{7}{algorithm.1}\protected@file@percent }
+\newlabel{alg:registration}{{1}{7}{Agent Registration Protocol}{algorithm.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Agent Lifecycle}{7}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Attestation Graph}{7}{subsection.4.3}\protected@file@percent }
+\newlabel{eq:trust}{{5}{7}{Trust Score}{equation.4.5}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Agent Key Rotation Protocol}}{7}{algorithm.2}\protected@file@percent }
+\newlabel{alg:keyrotation}{{2}{7}{Agent Key Rotation Protocol}{algorithm.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}DID Resolution}{7}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-E}}Key Rotation and Identity Continuity}{7}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-F}}Multi-Agent DID Schemes}{7}{subsection.4.6}\protected@file@percent }
+\citation{fisher1911equation}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces CLAW token distribution. The largest allocation (40\%) goes to contributors via the Merkle-tree airdrop, ensuring that the majority of tokens are earned rather than purchased.}}{8}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:distribution}{{4}{8}{CLAW token distribution. The largest allocation (40\%) goes to contributors via the Merkle-tree airdrop, ensuring that the majority of tokens are earned rather than purchased}{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Token Economics}{8}{section.5}\protected@file@percent }
+\newlabel{sec:token}{{V}{8}{Token Economics}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}CLAW Token Specification}{8}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Contribution Scoring Function}{8}{subsection.5.2}\protected@file@percent }
+\newlabel{eq:score}{{7}{8}{Contribution Score}{equation.5.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Contribution type weights and verification methods.}}{8}{table.caption.6}\protected@file@percent }
+\newlabel{tab:weights}{{II}{8}{Contribution type weights and verification methods}{table.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Merkle tree for airdrop verification. Each leaf encodes an agent's DID and allocation. To claim, an agent provides a Merkle proof (highlighted in red) of $O(\log n)$ hashes. Only the root is stored on-chain.}}{8}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:merkle}{{5}{8}{Merkle tree for airdrop verification. Each leaf encodes an agent's DID and allocation. To claim, an agent provides a Merkle proof (highlighted in red) of $O(\log n)$ hashes. Only the root is stored on-chain}{figure.caption.7}{}}
+\newlabel{thm:bounded}{{2}{8}{Score Boundedness}{theorem.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Airdrop Computation via Merkle Trees}{8}{subsection.5.3}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Airdrop Computation and Claim}}{9}{algorithm.3}\protected@file@percent }
+\newlabel{alg:airdrop}{{3}{9}{Airdrop Computation and Claim}{algorithm.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Token Velocity and Economic Equilibrium}{9}{subsection.5.4}\protected@file@percent }
+\newlabel{thm:price}{{4}{9}{Equilibrium Token Price}{theorem.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces CLAW emission schedule over 5 years. Inflation decreases as the network matures. The subsidy pool (30\% of new emissions directed to fee subsidies) maintains sub-cent gas costs throughout.}}{9}{table.caption.8}\protected@file@percent }
+\newlabel{tab:emission}{{III}{9}{CLAW emission schedule over 5 years. Inflation decreases as the network matures. The subsidy pool (30\% of new emissions directed to fee subsidies) maintains sub-cent gas costs throughout}{table.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Governance model. Voting weight combines quadratic reputation and quadratic stake via a tunable parameter $\alpha $. Approved proposals enter a 7-day timelock before execution.}}{9}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:governance}{{6}{9}{Governance model. Voting weight combines quadratic reputation and quadratic stake via a tunable parameter $\alpha $. Approved proposals enter a 7-day timelock before execution}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-E}}Token Emission Schedule and Circulating Supply}{9}{subsection.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-F}}Staking Economics}{9}{subsection.5.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Governance}{9}{section.6}\protected@file@percent }
+\newlabel{sec:governance}{{VI}{9}{Governance}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-A}}Reputation-Weighted Voting}{9}{subsection.6.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Proposal-type-dependent reputation weights.}}{10}{table.caption.10}\protected@file@percent }
+\newlabel{tab:alpha}{{IV}{10}{Proposal-type-dependent reputation weights}{table.caption.10}{}}
+\newlabel{eq:vote}{{13}{10}{Quadratic Vote Weight}{equation.6.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-B}}Anti-Plutocracy Properties}{10}{subsection.6.2}\protected@file@percent }
+\newlabel{thm:plutocracy}{{5}{10}{Plutocracy Resistance}{theorem.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-C}}Governance Game Analysis}{10}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-D}}Proposal Execution}{10}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Formal Properties}{10}{section.7}\protected@file@percent }
+\newlabel{sec:formal}{{VII}{10}{Formal Properties}{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-A}}Sybil Resistance Bound}{10}{subsection.7.1}\protected@file@percent }
+\newlabel{thm:sybil_bound}{{7}{10}{Sybil Resistance Bound}{theorem.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-B}}Reputation Convergence}{11}{subsection.7.2}\protected@file@percent }
+\newlabel{thm:rep_convergence}{{8}{11}{Reputation Convergence}{theorem.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-C}}Governance Liveness}{11}{subsection.7.3}\protected@file@percent }
+\newlabel{thm:gov_liveness}{{9}{11}{Governance Liveness}{theorem.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Security Analysis}{11}{section.8}\protected@file@percent }
+\newlabel{sec:security}{{VIII}{11}{Security Analysis}{section.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-A}}Threat Model}{11}{subsection.8.1}\protected@file@percent }
+\citation{parity_substrate}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-B}}Sybil Resistance}{12}{subsection.8.2}\protected@file@percent }
+\newlabel{thm:sybil}{{10}{12}{Sybil Cost}{theorem.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-C}}Collusion Resistance}{12}{subsection.8.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-D}}Validator Security}{12}{subsection.8.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Attack vectors and mitigations across all layers: consensus, identity, governance, and economics.}}{12}{table.caption.11}\protected@file@percent }
+\newlabel{tab:attacks}{{V}{12}{Attack vectors and mitigations across all layers: consensus, identity, governance, and economics}{table.caption.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Formal security properties. ``$\sqrt  {k}$ bound'' means Sybil advantage is $O(\sqrt  {k})$.}}{12}{table.caption.12}\protected@file@percent }
+\newlabel{tab:security_compare}{{VI}{12}{Formal security properties. ``$\sqrt {k}$ bound'' means Sybil advantage is $O(\sqrt {k})$}{table.caption.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-E}}Attack Vectors and Mitigations}{12}{subsection.8.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-F}}Formal Security Comparison}{12}{subsection.8.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IX}Implementation}{12}{section.9}\protected@file@percent }
+\newlabel{sec:implementation}{{IX}{12}{Implementation}{section.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IX-A}}Technology Stack}{12}{subsection.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IX-B}}Pallet Architecture}{12}{subsection.9.2}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces Reputation Score Computation (On-Chain)}}{13}{algorithm.4}\protected@file@percent }
+\newlabel{alg:reputation}{{4}{13}{Reputation Score Computation (On-Chain)}{algorithm.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IX-C}}Testnet Configuration}{13}{subsection.9.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IX-D}}RPC and API Layer}{13}{subsection.9.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IX-E}}Implementation Deep Dive}{13}{subsection.9.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IX-E}1}pallet-agent-registry}{13}{subsubsection.9.5.1}\protected@file@percent }
+\newlabel{lst:registry}{{1}{13}{pallet-agent-registry: storage and registration (Rust/FRAME pseudocode)}{lstlisting.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces pallet-agent-registry: storage and registration (Rust/FRAME pseudocode)}}{13}{lstlisting.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IX-E}2}pallet-reputation}{14}{subsubsection.9.5.2}\protected@file@percent }
+\newlabel{lst:reputation}{{2}{14}{pallet-reputation: contribution recording and score computation (Rust/FRAME pseudocode)}{lstlisting.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}{\ignorespaces pallet-reputation: contribution recording and score computation (Rust/FRAME pseudocode)}}{14}{lstlisting.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces ClawChain implementation statistics.}}{14}{table.caption.13}\protected@file@percent }
+\newlabel{tab:code}{{VII}{14}{ClawChain implementation statistics}{table.caption.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces Comprehensive performance benchmarks comparing ClawChain, Ethereum (mainnet values), and Solana (mainnet values). ClawChain achieves sub-cent gas costs and fast finality critical for agent micro-transactions. ``N/A'' indicates no equivalent primitive exists.}}{14}{table.caption.14}\protected@file@percent }
+\newlabel{tab:performance}{{VIII}{14}{Comprehensive performance benchmarks comparing ClawChain, Ethereum (mainnet values), and Solana (mainnet values). ClawChain achieves sub-cent gas costs and fast finality critical for agent micro-transactions. ``N/A'' indicates no equivalent primitive exists}{table.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IX-F}}Code Statistics}{14}{subsection.9.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {X}Evaluation}{14}{section.10}\protected@file@percent }
+\newlabel{sec:evaluation}{{X}{14}{Evaluation}{section.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {X-A}}Performance Benchmarks}{14}{subsection.10.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {X-A}1}Agent Registration Latency}{14}{subsubsection.10.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Agent registration latency (end-to-end, including GRANDPA finality) under four network conditions. LAN 1Gbps represents ideal testnet conditions. Adversarial Delay simulates network partition recovery. p50 and p99 latencies remain below 2 block times (12s) for non-adversarial conditions.}}{15}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:reg_latency}{{7}{15}{Agent registration latency (end-to-end, including GRANDPA finality) under four network conditions. LAN 1Gbps represents ideal testnet conditions. Adversarial Delay simulates network partition recovery. p50 and p99 latencies remain below 2 block times (12s) for non-adversarial conditions}{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Task market throughput vs.\ concurrent agent pairs. ClawChain maintains $>$180 tx/s at 500 concurrent pairs. Ethereum's ERC-20 throughput is shown for reference; the task market workload (two-phase: post + settle) has no Ethereum equivalent.}}{15}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:task_throughput}{{8}{15}{Task market throughput vs.\ concurrent agent pairs. ClawChain maintains $>$180 tx/s at 500 concurrent pairs. Ethereum's ERC-20 throughput is shown for reference; the task market workload (two-phase: post + settle) has no Ethereum equivalent}{figure.caption.16}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {X-A}2}Task Market Throughput}{15}{subsubsection.10.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {X-A}3}Reputation Aggregation Latency}{15}{subsubsection.10.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {X-B}}Comparative Blockchain Performance}{15}{subsection.10.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Reputation aggregation latency on-chain (in microseconds of Wasm execution time) as a function of contribution history depth. Trust graph traversal adds overhead proportional to attestation graph degree. At 1,000 contributions (an active agent's yearly history), total latency is under 2ms.}}{15}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:rep_latency}{{9}{15}{Reputation aggregation latency on-chain (in microseconds of Wasm execution time) as a function of contribution history depth. Trust graph traversal adds overhead proportional to attestation graph degree. At 1,000 contributions (an active agent's yearly history), total latency is under 2ms}{figure.caption.17}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces Blockchain Performance Comparison for Agent Workloads}}{15}{table.caption.18}\protected@file@percent }
+\newlabel{tab:chain_compare_full}{{IX}{15}{Blockchain Performance Comparison for Agent Workloads}{table.caption.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {X-C}}Agent Registration}{15}{subsection.10.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {X-C}1}End-to-End Registration Trace}{15}{subsubsection.10.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Reputation trajectory of \textbf  {cloud-trader} agent over 30 testnet days. Step increases correspond to completed task settlements. Gradual decay between events ($\gamma = 0.995$/block) is visible at the scale of multi-day intervals.}}{16}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:rep_growth}{{10}{16}{Reputation trajectory of \textbf {cloud-trader} agent over 30 testnet days. Step increases correspond to completed task settlements. Gradual decay between events ($\gamma = 0.995$/block) is visible at the scale of multi-day intervals}{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {X-C}2}Reputation Growth Trajectory}{16}{subsubsection.10.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {X-D}}Gas Cost Analysis}{16}{subsection.10.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {X}{\ignorespaces Gas cost comparison for agent operations. ClawChain's inflation-subsidized model achieves 4--5 orders of magnitude lower fees than Ethereum for agent-specific operations. ``Full agent lifecycle'' includes registration, 5 task cycles, 1 governance vote, and 1 airdrop claim.}}{16}{table.caption.20}\protected@file@percent }
+\newlabel{tab:gas_compare}{{X}{16}{Gas cost comparison for agent operations. ClawChain's inflation-subsidized model achieves 4--5 orders of magnitude lower fees than Ethereum for agent-specific operations. ``Full agent lifecycle'' includes registration, 5 task cycles, 1 governance vote, and 1 airdrop claim}{table.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Scalability analysis showing operations per second as the number of registered agents increases. Airdrop claims scale best ($O(\log n)$ verification). Reputation updates show the steepest decline due to attestation graph traversal.}}{16}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:scalability}{{11}{16}{Scalability analysis showing operations per second as the number of registered agents increases. Airdrop claims scale best ($O(\log n)$ verification). Reputation updates show the steepest decline due to attestation graph traversal}{figure.caption.21}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {X-E}}Scalability Analysis}{16}{subsection.10.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {XI}Task Market Protocol}{16}{section.11}\protected@file@percent }
+\newlabel{sec:taskmarket}{{XI}{16}{Task Market Protocol}{section.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XI-A}}Market Structure}{17}{subsection.11.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XI-B}}Dispute Resolution}{17}{subsection.11.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XI-C}}Economic Efficiency of the Task Market}{17}{subsection.11.3}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {5}{\ignorespaces Task Dispute Resolution}}{17}{algorithm.5}\protected@file@percent }
+\newlabel{alg:dispute}{{5}{17}{Task Dispute Resolution}{algorithm.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XI-D}}Fee Structure}{17}{subsection.11.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {XII}Applications}{17}{section.12}\protected@file@percent }
+\newlabel{sec:applications}{{XII}{17}{Applications}{section.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XII-A}}Agent-to-Agent Commerce}{17}{subsection.12.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XII-B}}Agent DAOs}{18}{subsection.12.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XII-C}}Cross-Chain Agent Identity}{18}{subsection.12.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XII-D}}DeFi Agent Infrastructure}{18}{subsection.12.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XII-E}}Scientific Computing Markets}{18}{subsection.12.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {XIII}Case Studies}{18}{section.13}\protected@file@percent }
+\newlabel{sec:casestudies}{{XIII}{18}{Case Studies}{section.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XIII-A}}Case Study 1: AlphaStrike Trading Agent}{18}{subsection.13.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XIII-B}}Case Study 2: Multi-Agent Developer Ecosystem}{18}{subsection.13.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XIII-C}}Case Study 3: Cross-Chain Agent Identity (Phase 2 Preview)}{19}{subsection.13.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {XIV}Limitations \& Future Work}{19}{section.14}\protected@file@percent }
+\newlabel{sec:limitations}{{XIV}{19}{Limitations \& Future Work}{section.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XIV-A}}Current Limitations}{19}{subsection.14.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {XI}{\ignorespaces Tradeoff comparison between ClawChain and Ethereum. ClawChain excels on agent-specific dimensions but lacks the ecosystem maturity of established chains.}}{19}{table.caption.22}\protected@file@percent }
+\newlabel{tab:limitation_compare}{{XI}{19}{Tradeoff comparison between ClawChain and Ethereum. ClawChain excels on agent-specific dimensions but lacks the ecosystem maturity of established chains}{table.caption.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XIV-B}}Comparative Analysis: Limitations vs. Ethereum}{19}{subsection.14.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XIV-C}}Future Directions}{20}{subsection.14.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XIV-D}}Research Open Problems}{20}{subsection.14.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {XV}Conclusion}{20}{section.15}\protected@file@percent }
+\newlabel{sec:conclusion}{{XV}{20}{Conclusion}{section.15}{}}
+\citation{de2022revisiting}
+\citation{chen2025evoclaw}
+\bibstyle{plainnat}
+\bibcite{nakamoto2008bitcoin}{1}
+\bibcite{buterin2014ethereum}{2}
+\bibcite{yakovenko2018solana}{3}
+\bibcite{wood2016polkadot}{4}
+\bibcite{parity_substrate}{5}
+\bibcite{w3c_did_2022}{6}
+\bibcite{w3c_vc_2022}{7}
+\bibcite{did_ethr}{8}
+\@writefile{toc}{\contentsline {section}{\numberline {XVI}Broader Impact \& Ethics}{21}{section.16}\protected@file@percent }
+\newlabel{sec:ethics}{{XVI}{21}{Broader Impact \& Ethics}{section.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XVI-A}}Autonomous Agent Economies: Opportunities and Risks}{21}{subsection.16.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XVI-B}}Environmental Considerations}{21}{subsection.16.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XVI-C}}Open Research Problems}{21}{subsection.16.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{21}{section*.25}\protected@file@percent }
+\bibcite{sidetree}{9}
+\bibcite{sporny2024vc}{10}
+\bibcite{weyl2022soulbound}{11}
+\bibcite{chen2021codex}{12}
+\bibcite{wu2023autogen}{13}
+\bibcite{hong2024metagpt}{14}
+\bibcite{richards2023autogpt}{15}
+\bibcite{nakajima2023babyagi}{16}
+\bibcite{langchain2023}{17}
+\bibcite{crewai2024}{18}
+\bibcite{fetchai2019}{19}
+\bibcite{singularitynet2019}{20}
+\bibcite{autonolas2023}{21}
+\bibcite{roughgarden2021eip1559}{22}
+\bibcite{ethgasstation}{23}
+\bibcite{buterin2019quadratic}{24}
+\bibcite{buterin2021retro}{25}
+\bibcite{conviction_voting}{26}
+\bibcite{douceur2002sybil}{27}
+\bibcite{goldin2017tcr}{28}
+\bibcite{zargham2020bonding}{29}
+\bibcite{voshmgir2020token}{30}
+\bibcite{brill2017phragmen}{31}
+\bibcite{molochdao}{32}
+\bibcite{compound_gov}{33}
+\bibcite{optimism2024}{34}
+\bibcite{1hive2021}{35}
+\bibcite{barbereau2023dao_governance}{36}
+\bibcite{cosmos_sdk}{37}
+\bibcite{thibault2022rollups}{38}
+\bibcite{fisher1911equation}{39}
+\bibcite{rosu2010kframework}{40}
+\bibcite{bittensor2021}{41}
+\bibcite{erc8004}{42}
+\bibcite{rocket2019avalanche}{43}
+\bibcite{skidanov2019near}{44}
+\bibcite{kiayias2017ouroboros}{45}
+\bibcite{ouyang2022rlhf}{46}
+\bibcite{hanson2013futarchy}{47}
+\bibcite{poon2016lightning}{48}
+\bibcite{brill2017phragmen}{49}
+\bibcite{de2022revisiting}{50}
+\bibcite{chen2025evoclaw}{51}
+\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  A: Token Flow Diagram}{22}{section*.26}\protected@file@percent }
+\newlabel{app:tokenflow}{{A}{22}{\appendixname \nobreakspace \thesectiondis \\* Token Flow Diagram}{section*.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Complete CLAW token flow from genesis through distribution, staking, commerce, and inflation subsidy. Dashed arrows indicate time-locked or circular flows.}}{22}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:tokenflow}{{12}{22}{Complete CLAW token flow from genesis through distribution, staking, commerce, and inflation subsidy. Dashed arrows indicate time-locked or circular flows}{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  B: Formal Proofs: Extended}{22}{section*.28}\protected@file@percent }
+\newlabel{app:proofs}{{B}{22}{\appendixname \nobreakspace \thesectiondis \\* Formal Proofs: Extended}{section*.28}{}}
+\gdef \@abspage@last{23}

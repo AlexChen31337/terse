@@ -1,0 +1,14 @@
+=== START Tue Apr 14 10:41:50 PM AEST 2026 ===
+=== CARGO.TOML ===
+cat: /media/DATA/.openclaw/workspace/tmp-claw-chain-fix/Cargo.toml: No such file or directory
+=== CARGO AUDIT ===
+    Fetching advisory database from `https://github.com/RustSec/advisory-db.git`
+warning: directory /home/bowen/.cargo/advisory-db is locked, waiting for up to 300 seconds for it to become available
+      Loaded 1044 security advisories (from /home/bowen/.cargo/advisory-db)
+    Updating crates.io index
+error: not found: Couldn't load Cargo.lock
+Caused by:
+  -> I/O operation failed: I/O operation failed: entity not found
+  -> I/O operation failed: entity not found
+AUDIT_EXIT:2
+=== DONE ===

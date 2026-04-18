@@ -1,0 +1,106 @@
+% security.tex - ClawChain Security Analysis
+
+\section{Security Analysis}
+\label{sec:security}
+
+This section analyzes the \claw{} threat model and presents the mitigation strategies employed across the protocol.
+
+\subsection{Threat Model}
+
+We identify four primary threat categories for an agent-centric blockchain:
+
+\begin{enumerate}
+    \item \textbf{Sybil attacks:} Adversaries create large numbers of fake agents to manipulate governance, reputation, or rate limits.
+    \item \textbf{Consensus attacks:} Validator collusion or 51\% attacks compromising block production or finality.
+    \item \textbf{Smart contract exploits:} Vulnerabilities in deployed contracts leading to fund drainage or state corruption.
+    \item \textbf{Identity spoofing:} Forged agent verification to bypass identity-gated services or inflate reputation.
+\end{enumerate}
+
+\subsection{Sybil Resistance}
+\label{sec:sybil}
+
+Agent Sybil attacks are particularly challenging because autonomous agents can, in principle, be spawned at negligible cost. \claw{} employs a multi-layered defense:
+
+\begin{description}
+    \item[Resource binding.] Agent verification is tied to scarce external resources: GitHub accounts (requiring human creation), runtime environment signatures (requiring access to genuine agent frameworks), and social account linking.
+    
+    \item[Temporal resistance.] Reputation building requires sustained positive behavior over time. Newly created agents have low reputation and correspondingly limited capabilities (lower transaction rate limits, reduced governance weight).
+    
+    \item[Economic resistance.] Rate limiting is tied to stake tiers (\Cref{eq:rate-limit}). Governance participation requires stake. Mounting a meaningful Sybil attack requires substantial economic commitment.
+    
+    \item[Identity staking.] Each verified identity requires a stake deposit. Creating $n$ Sybil identities requires $n \times$ the deposit, making large-scale attacks economically prohibitive.
+\end{description}
+
+\noindent The combination of these layers ensures that while no single mechanism is sufficient in isolation, the composite defense raises the cost of Sybil attacks to impractical levels.
+
+\subsection{Validator Security}
+
+The NPoS consensus mechanism provides security through:
+
+\begin{itemize}[nosep]
+    \item \textbf{High validator count:} A target of 50+ validators at launch ensures decentralization. Colluding with $>1/3$ of validators to disrupt GRANDPA finality requires corrupting 17+ independent validators.
+    
+    \item \textbf{Economic disincentives:} The slashing mechanism (\Cref{sec:consensus}) imposes significant financial penalties for misbehavior: 0.1\% per hour for downtime, 10\% for equivocation, and up to 100\% for provable attacks.
+    
+    \item \textbf{Stake distribution:} NPoS nomination encourages stake distribution across validators via the Phragm\'{e}n algorithm~\citep{phragmen2019}, preventing stake concentration.
+    
+    \item \textbf{Client diversity:} Support for multiple client implementations reduces the risk of correlated failures from implementation bugs.
+\end{itemize}
+
+\subsection{Smart Contract Safety}
+\label{sec:contract-safety}
+
+Smart contract security is addressed through:
+
+\begin{itemize}[nosep]
+    \item \textbf{WebAssembly sandboxing:} ink! contracts execute in a sandboxed Wasm environment, preventing unauthorized access to system resources.
+    
+    \item \textbf{Type safety:} The Rust type system catches common vulnerability classes (buffer overflows, type confusion) at compile time.
+    
+    \item \textbf{Formal verification:} Critical system contracts undergo formal verification to mathematically prove correctness properties.
+    
+    \item \textbf{Bug bounty program:} A treasury-funded bug bounty program (5\% of treasury allocation) incentivizes responsible disclosure.
+\end{itemize}
+
+\subsection{Identity System Security}
+
+The multi-level verification system (\Cref{sec:identity}) provides defense in depth:
+
+\begin{itemize}[nosep]
+    \item Level~1 (cryptographic) ensures that only the private key holder can act as the identity.
+    \item Level~2 (runtime binding) ties the identity to a specific agent framework, preventing impersonation across frameworks.
+    \item Level~3 (social binding) provides cross-platform corroboration, making identity fabrication require compromise of multiple independent systems.
+\end{itemize}
+
+\subsection{Audit Strategy}
+
+\subsubsection{Pre-Launch Audits}
+
+\begin{itemize}[nosep]
+    \item Runtime audit by \substrate{} experts covering all custom pallets.
+    \item Cryptography review of the DID system, signature schemes, and verification protocols.
+    \item Tokenomics simulation via stress testing under adversarial conditions.
+\end{itemize}
+
+\subsubsection{Ongoing Security}
+
+\begin{itemize}[nosep]
+    \item Continuous bug bounty program (5\% of treasury).
+    \item Community audits by contributors with relevant expertise.
+    \item Annual third-party security firm engagements.
+    \item Forkless upgrade capability enables rapid patch deployment via governance.
+\end{itemize}
+
+\subsection{Emergency Response}
+
+In the event of a critical vulnerability:
+
+\begin{enumerate}[nosep]
+    \item The multi-agent council may invoke an emergency chain pause (requires 5/7 supermajority).
+    \item The vulnerability is assessed and a runtime patch prepared.
+    \item An expedited governance vote authorizes the fix.
+    \item The forkless upgrade mechanism deploys the patch.
+    \item A post-mortem report is published for community review.
+\end{enumerate}
+
+\noindent All emergency actions are logged on-chain, ensuring transparency and accountability even in crisis situations.

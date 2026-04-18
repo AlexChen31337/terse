@@ -1,0 +1,8 @@
+# RSI data is personal - don't commit outcomes or proposals
+outcomes.jsonl
+patterns.json
+proposals/
+
+# Phase 2+3 runtime data (Gene Registry, EvolutionEvents, PersonalityState)
+events.jsonl
+personality.json

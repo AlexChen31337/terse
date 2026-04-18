@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "task": "Implement ADR-001 PoA bootstrap for ClawChain (clawinfra/claw-chain repo, issue #28). Add public_testnet_config() to node/src/chain_spec.rs with 3 SR25519/ED25519 authority keys (Validator1/2/3, expandable to 7-10), ChainType::Live, chain ID 'clawchain_testnet_public', proper token distribution (1M CLAW stash per validator, 20% treasury), sudo account, and PoS transition path comments. Wire it in node/src/command.rs as --chain testnet. Also: create /etc/systemd/system/clawchain-node.service on VPS root@135.181.157.121 (SSH key ~/.ssh/id_ed25519_alexchen), stop the raw process, enable service with --chain local (testnet binary needs rebuild), verify blocks. Push branch feat/poa-bootstrap, open PR linking #28. Use gh CLI (authenticated as AlexChen31337). Clone to /tmp/claw-chain-poa. Cargo clippy clean required.",
+  "workspace": "/home/bowen/.openclaw/workspace/pbr/poa-bootstrap",
+  "created_at": "2026-02-25T03:55:53.674815+00:00",
+  "current_phase": "plan",
+  "config": {
+    "models": {
+      "plan": "anthropic/claude-opus-4-6",
+      "build": "anthropic/claude-sonnet-4-6",
+      "review": "anthropic/claude-sonnet-4-6"
+    },
+    "timeout": 1800,
+    "retries": 1
+  },
+  "phases": {
+    "plan": {
+      "name": "plan",
+      "status": "running",
+      "started_at": "2026-02-25T03:55:53.675142+00:00",
+      "completed_at": null,
+      "duration_seconds": null,
+      "artifacts": [],
+      "attempt": 1,
+      "error": null
+    },
+    "build": {
+      "name": "build",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "duration_seconds": null,
+      "artifacts": [],
+      "attempt": 0,
+      "error": null
+    },
+    "review": {
+      "name": "review",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "duration_seconds": null,
+      "artifacts": [],
+      "attempt": 0,
+      "error": null
+    }
+  }
+}

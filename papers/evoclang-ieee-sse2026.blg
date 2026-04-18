@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: evoclang-ieee-sse2026.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: evoclang-extended-full.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in vectifyai_pageindex
+
+Done.
+You've used 52 entries,
+            4087 wiz_defined-function locations,
+            1038 strings with 13385 characters,
+and the built_in function-call counts, 22637 in all, are:
+= -- 1665
+> -- 488
+< -- 9
++ -- 243
+- -- 119
+* -- 930
+:= -- 3869
+add.period$ -- 104
+call.type$ -- 52
+change.case$ -- 49
+chr.to.int$ -- 21
+cite$ -- 53
+duplicate$ -- 2004
+empty$ -- 2431
+format.name$ -- 159
+if$ -- 5199
+int.to.chr$ -- 0
+int.to.str$ -- 52
+missing$ -- 381
+newline$ -- 179
+num.names$ -- 52
+pop$ -- 1048
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1774
+stack$ -- 0
+substring$ -- 97
+swap$ -- 1050
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 52
+warning$ -- 1
+while$ -- 56
+width$ -- 54
+write$ -- 436
+(There was 1 warning)

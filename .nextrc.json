@@ -1,0 +1,216 @@
+{
+  "$schema": "https://json.schemastore.org/nextrc.json",
+  "_comment": "Non-standard companion config for tooling / scaffolding. Runtime config lives in next.config.ts.",
+
+  "project": {
+    "name": "nextjs-app",
+    "framework": "nextjs",
+    "version": "15.x",
+    "language": "typescript",
+    "packageManager": "npm"
+  },
+
+  "experimental": {
+    "compiler": {
+      "styledComponents": true,
+      "removeConsole": {
+        "production": true,
+        "excludeLevels": ["warn", "error"]
+      },
+      "emotion": false,
+      "reactRefresh": true
+    },
+    "turbopack": true,
+    "ppr": false,
+    "typedRoutes": true,
+    "reactCompiler": false,
+    "serverActions": {
+      "enabled": true,
+      "bodySizeLimit": "2mb"
+    },
+    "optimizePackageImports": [
+      "lucide-react",
+      "zustand",
+      "@radix-ui/react-icons",
+      "date-fns",
+      "lodash-es"
+    ],
+    "parallelServerCompiles": true,
+    "parallelServerBuildTraces": true,
+    "cssChunking": "strict"
+  },
+
+  "devServer": {
+    "port": 3000,
+    "hostname": "localhost",
+    "https": false,
+    "hot": true,
+    "hmr": {
+      "overlay": true,
+      "reconnectInterval": 2000
+    },
+    "proxy": {
+      "/api": {
+        "target": "http://localhost:8080",
+        "changeOrigin": true,
+        "secure": false
+      },
+      "/ws": {
+        "target": "ws://localhost:8080",
+        "ws": true
+      }
+    },
+    "headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+    }
+  },
+
+  "optimization": {
+    "swcMinify": true,
+    "splitChunks": {
+      "chunks": "all",
+      "minSize": 20000,
+      "maxSize": 244000,
+      "cacheGroups": {
+        "framework": {
+          "name": "framework",
+          "test": "(?<!node_modules.*)[\\\\/]node_modules[\\\\/](react|react-dom|scheduler|prop-types|use-subscription)[\\\\/]",
+          "priority": 40,
+          "enforce": true
+        },
+        "lib": {
+          "name": "lib",
+          "test": "[\\\\/]node_modules[\\\\/]",
+          "priority": 30,
+          "minChunks": 1,
+          "reuseExistingChunk": true
+        },
+        "commons": {
+          "name": "commons",
+          "minChunks": 2,
+          "priority": 20
+        }
+      }
+    },
+    "treeShaking": true,
+    "usedExports": true,
+    "sideEffects": true,
+    "moduleIds": "deterministic",
+    "runtimeChunk": "single"
+  },
+
+  "images": {
+    "formats": ["avif", "webp"],
+    "minimumCacheTTL": 2592000,
+    "dangerouslyAllowSVG": false,
+    "contentSecurityPolicy": "default-src 'none'; script-src 'none'; sandbox;",
+    "unoptimized": false
+  },
+
+  "caching": {
+    "staticAssets": {
+      "maxAge": 31536000,
+      "immutable": true
+    },
+    "apiRoutes": {
+      "revalidate": 0
+    },
+    "pages": {
+      "staleWhileRevalidate": 60
+    }
+  },
+
+  "security": {
+    "headers": {
+      "xFrameOptions": "DENY",
+      "xContentTypeOptions": "nosniff",
+      "referrerPolicy": "strict-origin-when-cross-origin",
+      "strictTransportSecurity": "max-age=63072000; includeSubDomains; preload",
+      "permissionsPolicy": "camera=(), microphone=(), geolocation=()"
+    },
+    "csp": {
+      "enabled": true,
+      "directives": {
+        "defaultSrc": ["'self'"],
+        "scriptSrc": ["'self'", "'unsafe-eval'", "'unsafe-inline'", "https://apis.google.com"],
+        "styleSrc": ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+        "fontSrc": ["'self'", "https://fonts.gstatic.com"],
+        "imgSrc": ["'self'", "data:", "blob:", "https:"],
+        "connectSrc": ["'self'", "https://*.firebaseio.com", "https://*.googleapis.com", "wss://*.firebaseio.com"],
+        "frameSrc": ["'none'"]
+      }
+    }
+  },
+
+  "plugins": {
+    "tailwindcss": {
+      "enabled": true,
+      "version": "4.x",
+      "config": "./tailwind.config.ts"
+    },
+    "postcss": {
+      "enabled": true,
+      "plugins": ["tailwindcss", "autoprefixer"]
+    },
+    "svgr": {
+      "enabled": true,
+      "options": {
+        "typescript": true,
+        "dimensions": false,
+        "svgo": true
+      }
+    },
+    "bundleAnalyzer": {
+      "enabled": false,
+      "envVar": "ANALYZE",
+      "openAnalyzer": false
+    },
+    "firebaseAdmin": {
+      "enabled": true,
+      "credentialsEnvVar": "FIREBASE_SERVICE_ACCOUNT"
+    }
+  },
+
+  "env": {
+    "required": [
+      "NEXT_PUBLIC_FIREBASE_API_KEY",
+      "NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN",
+      "NEXT_PUBLIC_FIREBASE_PROJECT_ID",
+      "NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET",
+      "NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID",
+      "NEXT_PUBLIC_FIREBASE_APP_ID"
+    ],
+    "optional": [
+      "NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID",
+      "FIREBASE_SERVICE_ACCOUNT",
+      "NEXTAUTH_SECRET",
+      "NEXTAUTH_URL",
+      "API_URL",
+      "ALLOWED_ORIGINS",
+      "ANALYZE"
+    ]
+  },
+
+  "build": {
+    "output": "standalone",
+    "reactStrictMode": true,
+    "poweredByHeader": false,
+    "generateBuildId": "git-commit-sha",
+    "distDir": ".next",
+    "cleanDistDir": true,
+    "compress": true,
+    "productionBrowserSourceMaps": false,
+    "eslint": {
+      "ignoreDuringBuilds": false
+    },
+    "typescript": {
+      "ignoreBuildErrors": false
+    }
+  },
+
+  "telemetry": {
+    "disabled": true,
+    "comment": "Disable Next.js telemetry: run `npx next telemetry disable`"
+  }
+}

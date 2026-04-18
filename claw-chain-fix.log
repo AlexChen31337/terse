@@ -1,0 +1,4 @@
+=== STARTING RUSTSEC FIX Tue Apr 14 10:41:50 PM AEST 2026 ===
+Step 1: Clone
+Cloning into '/media/DATA/.openclaw/workspace/tmp-claw-chain-fix'...
+fatal: Unable to create '/media/DATA/.openclaw/workspace/tmp-claw-chain-fix/.git/shallow.lock': No such file or directory

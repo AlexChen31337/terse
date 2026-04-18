@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-04-18T20:01:21.805024",
+  "direct_api": {
+    "status": "401",
+    "healthy": false
+  },
+  "proxy1_api": {
+    "status": "200",
+    "healthy": true
+  },
+  "claude_cli": {
+    "status": "ok",
+    "healthy": true
+  },
+  "recommendation": "proxy1",
+  "alert": "ANTHROPIC_OAUTH_EXPIRED: Direct OAuth down, proxy-1 active (fallback working)"
+}

@@ -1,0 +1,102 @@
+# whalecli — Unified Skill Spec example
+#
+# This skill.toml demonstrates the Unified Skill Specification format.
+# It is consumed by:
+#   • ClawHub   — indexes [skill], [skill.compat], [skill.tags]
+#   • EvoClaw   — reads [tools.*] via ParseToolsTOML; [genome] drives evolution
+#   • OpenClaw  — ignores this file at runtime (reads SKILL.md instead)
+#
+# Spec: docs/architecture/unified-skill-spec.md
+
+[skill]
+name        = "whalecli"
+version     = "1.0.0"
+description = "Agent-native whale wallet tracker — track large crypto wallet movements, score whale activity, detect accumulation/distribution patterns, stream real-time alerts."
+author      = "Alex Chen <alex.chen31337@gmail.com>"
+license     = "MIT"
+repository  = "https://github.com/clawinfra/whalecli"
+homepage    = "https://pypi.org/project/whalecli/"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Runtime compatibility
+# ─────────────────────────────────────────────────────────────────────────────
+[skill.compat]
+openclaw = true    # SKILL.md is the primary agent guidance
+evoclaw  = true    # [tools.*] expose scan/check/stream to EvoClaw agents
+clawhub  = true    # publishable to ClawHub
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Categorisation
+# ─────────────────────────────────────────────────────────────────────────────
+[skill.tags]
+tags = ["crypto", "trading", "onchain", "whale", "eth", "btc", "signals"]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Python dependencies
+# ─────────────────────────────────────────────────────────────────────────────
+[skill.deps]
+python   = ">=3.11"
+packages = ["whalecli>=1.0"]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# EvoClaw-specific metadata
+# (must mirror SKILL.md frontmatter: metadata.evoclaw)
+# ─────────────────────────────────────────────────────────────────────────────
+[skill.evoclaw]
+permissions = ["network"]           # outbound HTTP to Etherscan, Mempool.space
+env         = ["ETHERSCAN_API_KEY"] # required; BLOCKCHAIN_API_KEY optional
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Tool definitions — exposed to EvoClaw agents as callable tools
+# OpenClaw ignores these sections.
+#
+# Command format: "uv run python scripts/<file>.py <subcommand>"
+# This runs the script inside uv's venv without needing compiled binaries.
+# ─────────────────────────────────────────────────────────────────────────────
+
+[tools.scan]
+command      = "uv run python scripts/whale_scan.py scan"
+description  = "Run a one-shot whale scan on ETH/BTC chains. Returns JSON with wallet scores, directions (accumulating/distributing), and alert count."
+args         = ["--chain", "ETH", "--hours", "24"]
+env          = ["ETHERSCAN_API_KEY"]
+timeout_secs = 60
+
+[tools.check]
+command      = "uv run python scripts/whale_scan.py check"
+description  = "Quick bullish/bearish/neutral signal check. Returns a single-line signal + JSON summary. Faster than full scan."
+args         = ["--chain", "ETH", "--hours", "4"]
+env          = ["ETHERSCAN_API_KEY"]
+timeout_secs = 30
+
+[tools.stream]
+command      = "uv run python scripts/whale_scan.py stream"
+description  = "Stream real-time whale alerts as JSONL (one JSON event per line). Runs indefinitely until terminated. Events: stream_start, whale_alert, whale_activity, heartbeat, stream_end."
+args         = ["--chain", "ETH", "--interval", "60"]
+env          = ["ETHERSCAN_API_KEY"]
+timeout_secs = 86400    # 24h max — agent should restart if needed
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Evolutionary parameters (EvoClaw only — OpenClaw ignores this section)
+#
+# EvoClaw's genome engine can mutate these parameters within their bounds
+# to optimise whale signal quality (measured by downstream bet outcomes).
+#
+# Each param: { value = default, min = lower, max = upper, type = "int"|"float"|"bool" }
+# ─────────────────────────────────────────────────────────────────────────────
+[genome]
+weight  = 0.7      # SkillGenome.Weight — how much the agent relies on whale signals
+enabled = true
+
+[genome.params]
+# Scan configuration
+scan_hours       = { value = 24,  min = 1,   max = 168,  type = "int"   }
+# Minimum score to consider a wallet "active"
+score_threshold  = { value = 70,  min = 40,  max = 95,   type = "int"   }
+# Score that triggers an alert
+alert_threshold  = { value = 75,  min = 50,  max = 95,   type = "int"   }
+# Streaming poll interval (seconds)
+poll_interval_secs = { value = 60, min = 30, max = 3600, type = "int"   }
+# Minimum USD net flow to count (log10 scale input)
+min_flow_usd     = { value = 100000.0, min = 10000.0, max = 10000000.0, type = "float" }
+# Require whale-peer correlation before alerting
+require_correlation = { value = false, min = false, max = true, type = "bool" }

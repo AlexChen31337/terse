@@ -1,0 +1,55 @@
+{
+  "processed_ids": [
+    "2604.08465",
+    "2604.08539",
+    "2604.11734",
+    "2604.12955",
+    "2604.08545",
+    "2604.08540"
+  ],
+  "repos_created": [
+    {
+      "arxiv_id": "2604.08545",
+      "repo": "AlexChen31337/arxiv-260408545-act-wisely-cultivating-meta-cognitive-tool-use-in-agentic-mu",
+      "title": "Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models",
+      "description": "Implementation of Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models (arXiv:2604.08545) https://arxiv.org/abs/2604.08545",
+      "created_at": "2026-04-12T09:43:40.182121+00:00"
+    },
+    {
+      "arxiv_id": "2604.08539",
+      "repo": "AlexChen31337/arxiv-260408539-openvlthinkerv2-a-generalist-multimodal-reasoning-model-for",
+      "title": "OpenVLThinkerV2: A Generalist Multimodal Reasoning Model for Multi-domain Visual Tasks",
+      "description": "Implementation of OpenVLThinkerV2: A Generalist Multimodal Reasoning Model for Multi-domain Visual Tasks (arXiv:2604.08539) https://arxiv.org/abs/2604.08539",
+      "created_at": "2026-04-12T09:43:46.065489+00:00"
+    },
+    {
+      "arxiv_id": "2604.08540",
+      "repo": "AlexChen31337/arxiv-260408540-avgen-bench-a-task-driven-benchmark-for-multi-granular-evalu",
+      "title": "AVGen-Bench: A Task-Driven Benchmark for Multi-Granular Evaluation of Text-to-Audio-Video Generation",
+      "description": "Implementation of AVGen-Bench: A Task-Driven Benchmark for Multi-Granular Evaluation of Text-to-Audio-Video Generation (arXiv:2604.08540) https://arxiv.org/abs/2604.08540",
+      "created_at": "2026-04-12T18:01:27.101403+00:00"
+    },
+    {
+      "arxiv_id": "2604.08465",
+      "repo": "AlexChen31337/arxiv-260408465-from-safety-risk-to-design-principle-peer-preservation-in-mu",
+      "title": "From Safety Risk to Design Principle: Peer-Preservation in Multi-Agent LLM Systems and Its Implications for Orchestrated Democratic Discourse Analysis",
+      "description": "Implementation of From Safety Risk to Design Principle: Peer-Preservation in Multi-Agent LLM Systems and Its Implications for Orchestrated Democratic Discourse Analysis (arXiv:2604.08465) https://arxiv.org/abs/2604.08465",
+      "created_at": "2026-04-12T18:02:10.662963+00:00"
+    },
+    {
+      "arxiv_id": "2604.11734",
+      "repo": "AlexChen31337/arxiv-260411734-multi-orft-stable-online-reinforcement-fine-tuning-for-multi",
+      "title": "Multi-ORFT: Stable Online Reinforcement Fine-Tuning for Multi-Agent Diffusion Planning in Cooperative Driving",
+      "description": "Implementation of Multi-ORFT: Stable Online Reinforcement Fine-Tuning for Multi-Agent Diffusion Planning in Cooperative Driving (arXiv:2604.11734) https://arxiv.org/abs/2604.11734",
+      "created_at": "2026-04-14T18:01:54.025734+00:00"
+    },
+    {
+      "arxiv_id": "2604.12955",
+      "repo": "AlexChen31337/arxiv-260412955-modeling-co-pilots-for-text-to-model-translation",
+      "title": "Modeling Co-Pilots for Text-to-Model Translation",
+      "description": "Implementation of Modeling Co-Pilots for Text-to-Model Translation (arXiv:2604.12955) https://arxiv.org/abs/2604.12955",
+      "created_at": "2026-04-15T18:01:17.985526+00:00"
+    }
+  ],
+  "last_run": "2026-04-15T18:01:17.985562+00:00"
+}

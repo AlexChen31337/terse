@@ -1,0 +1,1 @@
+Position Guard -- SL/TP Monitor: The Position Guard -- SL/TP Monitor is a subagent that monitors and controls the stop-loss and take-profit levels for a trading position. It is responsible for adjusting the levels based on market conditions and ensuring that the position is closed when the stop-loss or take-profit level is reached.

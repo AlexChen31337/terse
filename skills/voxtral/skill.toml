@@ -1,0 +1,60 @@
+[skill]
+name = "voxtral"
+version = "0.1.0"
+description = "Voice conversation loop using Faster-Whisper, gTTS, and SadTalker"
+author = "EvoClaw"
+requires_gpu = true
+
+[dependencies]
+python = ">=3.11"
+packages = [
+    "faster-whisper",
+    "gtts",
+    "sounddevice",
+    "soundfile",
+    "pydub",
+    "numpy"
+]
+
+[config]
+whisper_model = "base"  # Options: tiny, base, small, medium, large-v3
+device = "cuda"
+compute_type = "float16"
+sadtalker_path = "/data/ai-stack/sadtalker"
+output_dir = "/tmp/voxtral_output"
+
+[[tools]]
+name = "voice_conversation"
+description = "Start a voice conversation loop with microphone input, transcription, LLM processing, and talking head video output"
+parameters = [
+    { name = "turns", type = "integer", description = "Number of conversation turns", default = 3 },
+    { name = "record_duration", type = "integer", description = "Recording duration per turn (seconds)", default = 5 },
+    { name = "avatar_image", type = "string", description = "Path to avatar image for video generation", required = false },
+    { name = "llm_endpoint", type = "string", description = "LLM API endpoint URL", required = false }
+]
+
+[[tools]]
+name = "transcribe_audio"
+description = "Transcribe an audio file using Faster-Whisper with CUDA acceleration"
+parameters = [
+    { name = "audio_path", type = "string", description = "Path to audio file", required = true },
+    { name = "language", type = "string", description = "Language code (e.g., 'en')", default = "en" }
+]
+
+[[tools]]
+name = "text_to_speech"
+description = "Convert text to speech audio file using gTTS"
+parameters = [
+    { name = "text", type = "string", description = "Text to convert to speech", required = true },
+    { name = "output_path", type = "string", description = "Output audio file path", required = true },
+    { name = "language", type = "string", description = "Language code", default = "en" }
+]
+
+[[tools]]
+name = "generate_talking_head"
+description = "Generate a talking head video from audio and avatar image using SadTalker"
+parameters = [
+    { name = "audio_path", type = "string", description = "Path to audio file", required = true },
+    { name = "avatar_image", type = "string", description = "Path to avatar/source image", required = true },
+    { name = "output_path", type = "string", description = "Output video file path", required = true }
+]

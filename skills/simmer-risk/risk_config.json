@@ -1,0 +1,68 @@
+{
+  "version": "2.0",
+  "updated": "2026-02-25",
+  "portfolio": {
+    "hl_perp_usdc": 105.85,
+    "hl_spot_ubtc_usd": 1005.25,
+    "hl_spot_hype_usd": 33.49,
+    "hl_spot_usdc": 0.37,
+    "simmer_usdc": 21.59,
+    "total_usd": 1166.55,
+    "active_trading_usd": 6.46,
+    "note": "UBTC + HYPE are long-term holds. Active trading = HL perp + Simmer only."
+  },
+  "profit_targets": {
+    "daily_target_usd": 5.0,
+    "daily_target_pct": 0.4,
+    "daily_stop_loss_usd": -3.0,
+    "daily_stop_loss_pct": -2.5,
+    "weekly_target_usd": 25.0,
+    "monthly_target_usd": 100.0,
+    "note": "Hit daily target \u2192 stop all new positions. Hit stop loss \u2192 flat immediately, no trading rest of day."
+  },
+  "position_limits": {
+    "max_positions_simmer": 3,
+    "max_position_pct_simmer": 0.25,
+    "max_leverage_hl_perp": 3,
+    "max_single_trade_pct": 0.1,
+    "min_edge_simmer_pct": 5.0,
+    "min_confidence_alphastrike": 0.7,
+    "note": "No HL perp trade > 10% of active capital. No Simmer bet without 5%+ edge."
+  },
+  "circuit_breakers": {
+    "portfolio_drawdown_pct": -5.0,
+    "consecutive_losses": 3,
+    "action": "pause_all_trading",
+    "notify_alex": true
+  },
+  "compounding": {
+    "reinvest_pct_below_500": 100,
+    "reinvest_pct_above_500": 70,
+    "withdraw_pct_above_500": 30,
+    "threshold_usd": 500,
+    "note": "Active trading capital target. UBTC/HYPE managed separately as long holds."
+  },
+  "long_holds": {
+    "ubtc": {
+      "action": "hold",
+      "stop_loss_usd": 50000,
+      "note": "Long-term BTC hold. Do NOT trade unless Bowen explicitly instructs."
+    },
+    "hype": {
+      "action": "hold",
+      "stop_loss_usd": 15.0,
+      "note": "HYPE long hold. Alert if drops below $15."
+    }
+  },
+  "state": {
+    "trading_paused": false,
+    "today_pnl_usd": 0.0,
+    "today_trades": 0,
+    "consecutive_losses": 0,
+    "high_water_mark": 6.46,
+    "session_start_active": 127.44,
+    "last_updated": "2026-02-28"
+  },
+  "high_water_mark": 6.46,
+  "trading_paused": true
+}

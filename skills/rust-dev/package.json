@@ -1,0 +1,8 @@
+{
+  "name": "rust-dev",
+  "version": "1.0.0",
+  "description": "Rust development with LSP support for agent coding",
+  "keywords": ["rust", "lsp", "coding", "substrate", "blockchain"],
+  "author": "AlexChen31337",
+  "license": "MIT"
+}
