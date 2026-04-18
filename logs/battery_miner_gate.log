@@ -22936,3 +22936,603 @@
 2026-04-19 01:00:26,847 [ERROR] Stop command failed - will retry next cycle
 2026-04-19 01:00:29,920 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
 2026-04-19 01:00:29,931 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:01:33,400 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:01:33,400 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:01:39,550 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:01:39,550 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:01:42,622 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:01:42,625 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:02:44,687 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:02:44,687 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:02:50,848 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:02:50,848 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:02:53,920 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:02:53,932 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:03:55,720 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:03:55,720 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:04:01,888 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:04:01,888 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:04:04,959 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:04:04,965 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:05:08,269 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:05:08,270 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:05:14,464 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:05:14,464 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:05:17,534 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:05:17,537 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:06:21,150 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:06:21,150 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:06:27,296 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:06:27,296 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:06:30,368 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:06:30,378 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:07:32,808 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:07:32,808 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:07:38,016 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:07:38,016 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:07:41,087 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:07:41,089 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:08:42,971 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:08:42,971 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:08:49,119 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:08:49,119 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:08:52,192 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:08:52,202 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:09:54,310 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:09:54,310 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:10:00,478 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:10:00,478 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:10:03,550 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:10:03,553 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:11:05,504 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:11:05,504 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:11:11,646 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:11:11,646 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:11:14,720 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:11:14,725 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:12:19,258 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:12:19,259 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:12:25,440 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:12:25,441 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:12:28,510 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:12:28,513 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:13:30,263 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:13:30,263 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:13:36,416 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:13:36,416 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:13:39,486 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:13:39,489 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:14:41,262 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:14:41,262 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:14:47,392 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:14:47,393 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:14:50,464 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:14:50,472 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:15:52,158 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:15:52,158 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:15:58,302 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:15:58,302 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:16:01,375 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:16:01,379 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:17:03,387 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:17:03,387 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:17:09,534 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:17:09,534 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:17:12,606 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:17:12,609 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:18:14,753 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:18:14,753 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:18:18,080 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:18:18,080 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:18:21,152 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:18:21,162 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:19:23,028 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:19:23,029 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:19:29,182 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:19:29,182 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:19:32,256 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:19:32,267 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:20:34,346 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:20:34,346 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:20:40,478 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:20:40,478 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:20:43,550 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:20:43,553 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:21:45,214 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:21:45,214 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:21:51,392 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:21:51,392 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:21:54,464 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:21:54,466 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:22:56,361 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:22:56,362 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:23:02,494 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:23:02,494 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:23:05,566 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:23:05,569 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:24:07,847 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:24:07,847 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:24:13,983 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:24:13,983 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:24:17,056 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:24:17,066 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:25:19,045 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:25:19,046 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:25:25,215 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:25:25,215 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:25:28,288 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:25:28,299 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:26:33,279 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:26:33,279 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:26:39,454 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:26:39,454 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:26:42,526 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:26:42,529 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:27:44,544 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:27:44,544 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:27:50,688 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:27:50,688 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:27:53,759 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:27:53,761 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:28:57,306 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:28:57,306 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:29:03,455 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:29:03,455 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:29:06,526 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:29:06,529 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:30:08,504 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:30:08,504 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:30:14,686 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:30:14,687 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:30:17,758 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:30:17,761 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:31:21,383 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:31:21,383 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:31:27,518 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:31:27,518 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:31:30,590 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:31:30,593 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:32:32,339 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:32:32,339 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:32:38,494 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:32:38,494 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:32:41,566 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:32:41,568 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:33:45,099 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:33:45,100 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:33:51,264 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:33:51,265 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:33:54,336 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:33:54,347 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:34:56,425 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:34:56,425 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:35:02,624 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:35:02,624 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:35:05,696 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:35:05,706 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:36:09,603 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:36:09,603 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:36:15,776 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:36:15,777 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:36:18,847 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:36:18,855 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:37:20,735 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:37:20,735 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:37:26,880 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:37:26,880 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:37:29,951 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:37:29,956 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:38:32,217 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:38:32,217 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:38:38,368 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:38:38,368 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:38:41,438 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:38:41,440 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:39:43,489 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:39:43,489 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:39:49,664 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:39:49,664 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:39:52,736 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:39:52,747 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:40:56,922 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:40:56,922 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:41:03,071 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:41:03,071 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:41:06,144 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:41:06,155 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:42:09,200 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:42:09,201 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:42:15,392 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:42:15,392 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:42:18,464 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:42:18,475 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:43:23,150 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:43:23,150 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:43:29,311 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:43:29,311 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:43:32,384 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:43:32,395 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:44:34,512 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:44:34,512 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:44:40,670 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:44:40,670 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:44:43,744 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:44:43,755 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:45:45,939 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:45:45,940 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:45:52,096 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:45:52,096 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:45:55,167 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:45:55,170 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:46:57,306 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:46:57,307 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:47:03,456 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:47:03,456 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:47:06,526 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:47:06,529 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:48:09,849 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:48:09,849 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:48:13,088 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:48:13,088 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:48:16,160 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:48:16,171 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:49:18,175 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:49:18,175 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:49:24,320 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:49:24,320 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:49:27,392 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:49:27,403 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:50:30,946 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:50:30,947 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:50:37,088 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:50:37,089 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:50:40,160 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:50:40,171 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:51:42,509 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:51:42,509 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:51:48,639 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:51:48,639 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:51:51,712 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:51:51,722 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:52:55,112 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:52:55,112 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:53:01,280 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:53:01,280 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:53:04,352 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:53:04,363 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:54:06,159 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:54:06,160 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:54:12,320 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:54:12,320 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:54:15,392 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:54:15,402 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:55:17,826 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:55:17,826 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:55:24,000 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:55:24,000 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:55:27,072 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:55:27,082 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:56:29,274 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:56:29,274 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:56:35,422 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:56:35,423 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:56:38,494 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:56:38,497 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:57:43,118 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:57:43,118 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:57:48,064 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:57:48,064 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:57:51,136 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:57:51,146 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 01:58:53,221 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 01:58:53,221 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 01:58:59,360 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 01:58:59,360 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 01:59:02,430 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 01:59:02,433 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:00:05,083 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:00:05,083 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:00:11,232 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:00:11,232 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:00:14,304 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:00:14,314 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:01:16,009 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:01:16,009 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:01:22,144 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:01:22,144 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:01:25,215 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:01:25,220 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:02:27,319 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:02:27,319 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:02:33,502 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:02:33,502 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:02:36,574 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:02:36,577 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:03:38,430 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:03:38,430 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:03:44,606 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:03:44,606 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:03:47,680 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:03:47,690 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:04:51,096 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:04:51,097 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:04:57,248 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:04:57,248 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:05:00,318 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:05:00,320 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:06:02,330 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:06:02,330 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:06:08,478 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:06:08,478 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:06:11,550 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:06:11,553 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:07:13,692 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:07:13,692 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:07:19,839 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:07:19,839 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:07:22,912 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:07:22,923 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:08:25,216 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:08:25,216 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:08:31,392 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:08:31,392 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:08:34,464 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:08:34,472 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:09:37,476 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:09:37,476 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:09:43,647 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:09:43,647 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:09:46,720 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:09:46,731 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:10:48,269 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:10:48,269 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:10:54,432 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:10:54,433 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:10:57,502 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:10:57,505 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:12:00,456 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:12:00,456 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:12:06,622 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:12:06,622 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:12:09,696 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:12:09,702 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:13:12,021 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:13:12,021 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:13:18,174 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:13:18,174 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:13:21,248 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:13:21,258 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:14:24,178 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:14:24,179 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:14:30,368 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:14:30,368 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:14:33,440 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:14:33,450 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:15:35,377 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:15:35,377 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:15:41,534 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:15:41,534 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:15:44,606 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:15:44,609 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:16:46,420 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:16:46,421 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:16:52,574 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:16:52,574 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:16:55,648 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:16:55,654 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:17:57,839 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:17:57,839 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:18:03,040 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:18:03,040 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:18:06,112 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:18:06,122 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:19:09,487 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:19:09,487 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:19:15,616 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:19:15,616 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:19:18,688 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:19:18,698 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:20:20,648 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:20:20,648 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:20:26,784 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:20:26,784 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:20:29,855 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:20:29,863 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:21:33,472 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:21:33,472 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:21:39,614 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:21:39,614 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:21:42,689 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:21:42,700 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:22:44,516 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:22:44,516 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:22:50,654 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:22:50,655 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:22:53,728 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:22:53,739 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:23:57,246 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:23:57,246 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:24:03,423 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:24:03,424 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:24:06,494 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:24:06,497 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:25:09,623 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:25:09,624 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:25:15,807 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:25:15,808 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:25:18,880 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:25:18,890 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:26:20,734 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:26:20,734 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:26:26,912 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:26:26,912 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:26:29,983 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:26:29,991 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:27:31,644 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:27:31,644 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:27:37,823 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:27:37,823 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:27:40,896 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:27:40,907 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:28:44,951 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:28:44,951 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:28:51,104 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:28:51,104 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:28:54,176 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:28:54,187 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:29:57,279 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:29:57,279 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:30:03,424 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:30:03,424 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:30:06,494 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:30:06,497 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:31:11,934 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:31:11,934 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:31:18,110 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:31:18,110 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:31:21,184 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:31:21,195 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:32:23,168 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:32:23,168 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:32:29,342 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:32:29,342 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:32:32,416 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:32:32,418 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:33:34,157 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:33:34,157 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:33:40,320 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:33:40,320 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:33:43,392 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:33:43,403 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:34:45,563 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:34:45,563 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:34:51,744 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:34:51,744 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:34:54,815 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:34:54,819 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:35:56,590 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:35:56,590 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:36:02,720 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:36:02,721 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:36:05,792 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:36:05,804 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:37:07,696 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:37:07,696 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:37:13,888 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:37:13,888 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:37:16,959 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:37:16,965 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:38:18,932 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:38:18,932 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:38:23,072 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:38:23,073 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:38:26,144 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:38:26,155 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:39:29,433 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:39:29,433 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:39:35,582 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:39:35,582 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:39:38,655 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:39:38,661 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:40:40,437 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:40:40,437 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:40:46,622 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:40:46,622 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:40:49,696 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:40:49,706 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:41:51,654 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:41:51,654 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:41:57,792 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:41:57,792 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:42:00,864 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:42:00,875 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:43:02,798 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:43:02,799 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:43:08,958 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:43:08,959 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:43:12,032 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:43:12,043 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:44:14,266 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:44:14,266 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:44:20,448 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:44:20,449 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:44:23,519 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:44:23,522 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:45:27,821 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:45:27,821 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:45:33,983 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:45:33,983 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:45:37,056 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:45:37,067 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:46:40,943 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:46:40,944 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:46:47,137 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:46:47,138 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:46:50,208 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:46:50,213 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:47:52,192 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:47:52,192 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:47:58,048 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:47:58,048 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:48:01,120 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:48:01,131 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:49:02,831 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:49:02,832 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:49:09,024 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:49:09,024 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:49:12,096 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:49:12,107 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:50:14,030 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:50:14,030 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:50:20,192 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:50:20,192 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:50:23,264 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:50:23,275 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:51:25,301 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:51:25,301 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:51:31,487 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:51:31,487 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:51:34,558 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:51:34,561 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:52:36,238 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:52:36,238 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:52:42,398 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:52:42,398 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:52:45,470 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:52:45,473 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:53:50,087 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:53:50,087 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:53:56,257 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:53:56,257 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:53:59,328 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:53:59,339 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:55:02,753 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:55:02,753 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:55:08,896 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:55:08,896 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:55:11,967 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:55:11,971 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:56:13,617 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:56:13,617 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:56:19,807 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:56:19,808 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:56:22,878 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:56:22,883 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:57:24,719 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:57:24,719 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:57:30,912 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:57:30,913 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:57:33,984 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:57:33,995 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:58:36,055 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:58:36,055 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:58:42,206 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:58:42,207 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:58:45,280 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:58:45,291 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0
+2026-04-19 02:59:48,959 [INFO] Battery SOC: 19%  (miner_running=True)
+2026-04-19 02:59:48,959 [INFO] SOC=19 < 95 - attempting to STOP miner
+2026-04-19 02:59:55,104 [ERROR] Failed to stop miner: rc=255 stdout='' stderr='ssh: connect to host 10.0.0.30 port 22: No route to host'
+2026-04-19 02:59:55,105 [ERROR] Stop command failed - will retry next cycle
+2026-04-19 02:59:58,176 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-19 02:59:58,187 [INFO] Pushed state to HA: soc=19 gate=mining gpus=0

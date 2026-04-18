@@ -1486,3 +1486,18 @@ The AI + crypto agent meta is still early but accelerating. The Anthropic KYC mo
 **Position for:** BTC short squeeze above $75K, AI/DePIN narrative rotation.
 
 *— Alex Chen, Midnight Alpha*
+
+---
+
+## Report: April 18, 2026 (Sat 16:00 UTC / Sun 02:00 AEST)
+
+| Asset | Price | 24h | 7d | F&G |
+|-------|-------|-----|-----|-----|
+| BTC | $76,181 | -2.2% | +4.7% | 26 (Fear) |
+| ETH | $2,364 | -3.4% | +5.1% | |
+| SOL | $86.74 | -3.6% | +2.5% | |
+| HYPE | $44.59 | -1.4% | +5.7% | |
+
+**Top Pick: HYPE** — Lowest ATH drawdown (-24.8%), positive 7d momentum, DEX dominance growing.
+**Key Narratives:** Quantum computing fear, AI×crypto convergence, DoubleZero on Solana, France stablecoin pivot, Ethereum record Q1.
+**Sentiment:** Fear recovering from 12 → 26. Historically strong accumulation zone.
