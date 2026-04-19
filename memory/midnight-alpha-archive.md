@@ -1501,3 +1501,20 @@ The AI + crypto agent meta is still early but accelerating. The Anthropic KYC mo
 **Top Pick: HYPE** — Lowest ATH drawdown (-24.8%), positive 7d momentum, DEX dominance growing.
 **Key Narratives:** Quantum computing fear, AI×crypto convergence, DoubleZero on Solana, France stablecoin pivot, Ethereum record Q1.
 **Sentiment:** Fear recovering from 12 → 26. Historically strong accumulation zone.
+
+---
+
+## 🌙 2026-04-20 (Sun) 02:00 AEST
+
+| Asset | Price | 24h | 7d | Notes |
+|-------|-------|-----|-----|-------|
+| BTC | $75,841 | -0.45% | — | RHODL says cycle correction, not top |
+| ETH | $2,330 | -1.42% | — | Dragged by DeFi contagion fears |
+| SOL | $86.28 | -0.44% | — | wXRP live expands DeFi reach |
+| HYPE | $43.40 | -2.60% | — | $10.3B mcap, on-chain perps leader |
+
+**Fear & Greed:** 27 (Fear) — up from 16 last week, 11 last month. Recovery in progress.
+**Global MCap:** $2.64T (-0.78%) | BTC Dom: 57.54%
+**Top Pick: BTC** — Contrarian buy signal as fear recovers. $77K breakout = momentum trigger. Alt carnage (RAVE -90%) driving flight to quality. Geopolitical tailwind (Hormuz open).
+**Key Narratives:** Kelp DAO $292M hack (biggest 2026 exploit), RaveDAO -90% crash, CFTC AI adoption, France euro stablecoin push, Strait of Hormuz de-escalation.
+**Sentiment:** Exiting extreme fear zone. Accumulation phase.
