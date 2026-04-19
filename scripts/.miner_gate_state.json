@@ -1,6 +1,6 @@
 {
-  "miner_running": true,
-  "last_soc": 19,
-  "last_action": "started@2026-04-18T12:20:14.265260",
+  "miner_running": false,
+  "last_soc": 100,
+  "last_action": "already_inactive@2026-04-19T10:15:38.475957",
   "gpu_stats": []
 }
