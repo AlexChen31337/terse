@@ -1,64 +1,61 @@
-# Midnight Health Check — 2026-04-19 00:00 AEST
+# 🌙 Midnight Health Check — 2026-04-20 00:00 AEST
 
-## Summary
+## 1. Sentinel ✅ OK
+- **State**: Loaded, last price check active
+- **Last prices**: BTC $74,975 | ETH $2,306 | SOL $84.58 | HYPE $42.97
+- **Fear & Greed**: 27 (Fear)
+- **Alerts in last 24h**: `eth_sol_move` timestamped — price movement alert fired
+- **Polymarket**: No recent checks (lastChecks.polymarket = 0)
 
-| Component | Status | Notes |
-|-----------|--------|-------|
-| **Sentinel** | ✅ OK | State file present, last price check 2026-04-17. Last alert: eth_sol_move |
-| **Quant** | ⚠️ Stale | FearHarvester last run: 2026-02-27 (53 days ago). Quant state last active: 2026-03-25 |
-| **AlphaStrike** | ✅ ACTIVE | Cycle 10199, $10K balance, 0 positions, paper trading. Last log 23:59 |
-| **Shield** | ✅ OK | No blocked attempts, no pending approvals. Clean state |
-| **Herald** | ✅ OK | No scheduled posts, clean state |
-| **EvoClaw Hub** | ✅ OK | 2 agents registered: alex-eye, alex-hub |
-| **Alex Eye (Pi)** | 🔴 DOWN | Unreachable — DNS fails for alexeye.local, raspberrypi.local; 10.0.0.50 times out |
-| **Disk** | ⚠️ 74% | / and /media/DATA on same partition, 240GB free. /data2 not mounted |
+## 2. Quant ⚠️ STALE
+- **State file**: Exists but last signal check was **2026-03-26** (25 days ago)
+- **Signals**: BTC LONG (0.4), ETH LONG (0.4), SOL LONG (0.4) — all stale
+- **Account value**: $112.22, no open positions, no trades logged
+- **AlphaStrike service**: ✅ ACTIVE — Cycle 11639 running at 00:00
+  - BTC: $75,629 | ETH: $2,357.9 | SOL: $86.26
+  - Last signal: BTC SHORT blocked (model agreement 0% < 60%)
+  - Running normally, paper trading
 
-## Detail
+## 3. Shield ✅ OK
+- **access-control.json**: Not found (not yet created in sentinel workspace)
+- **Pending approvals**: None (no file = no pending)
 
-### Sentinel
-- Last prices: BTC $76,349 | ETH $2,363 | SOL $87.18 | HYPE $44.67
-- Fear & Greed: 26 (Fear)
-- Last alert within 24h: eth_sol_move
-- No critical thresholds crossed
+## 4. Herald ✅ OK (Idle)
+- **State file**: Exists, all zeros
+- **Last posts**: None
+- **Scheduled posts**: None
+- **Outreach log**: Empty
+- **Status**: Idle, no activity
 
-### Quant
-- FearHarvester state from 2026-02-27 — **stale 53 days**
-- Quant state shows signals from 2026-03-25 — also stale
-- Account value: $112.22 (paper), 0 open positions
-- BTC/ETH/SOL signals: LONG (confidence 0.4)
-- Simmer: SDK not found
+## 5. EvoClaw Hub ✅ OK (Low Activity)
+- **Endpoint**: localhost:8420 responding
+- **Registered agents**: 2
+  - `alex-eye` (Pi Camera) — idle, 0 messages, 0 actions
+  - `alex-hub` (Desktop Hub) — idle, 0 messages, 0 actions
+- **Note**: Both agents registered since Feb 17 but have zero activity. Hub is UP but agents are dormant.
 
-### AlphaStrike
-- Systemd service: **active**
-- Cycle 10199 running, last log at 23:59
-- Balance: $10,000.00 | Positions: 0 | Trades: 0
-- BTC buffered: 255 candles | ETH: 238 | SOL: 223
+## 6. Alex Eye (Pi) 🚨 DOWN
+- **alexeye.local**: DNS resolution failed
+- **10.0.0.50**: No route to host
+- **raspberrypi**: DNS resolution failed
+- **ARP scan**: No Pi MAC on local network
+- **Verdict**: Pi is physically offline / not on network. Cannot remote restart.
+- **Action needed**: Bowen must physically check Pi (power, network cable, SD card)
 
-### Shield
-- No access-control.json found (workspace exists but config empty)
-- No blocked attempts recorded
-- No pending approvals
+## 7. Infrastructure Summary
 
-### Herald
-- No posts, no outreach, no scheduled content
-- Clean state, idle
-
-### EvoClaw Hub (port 8420)
-- **UP** — responding normally
-- 2 agents: alex-eye (idle), alex-hub (idle)
-- Both started 2026-02-17, no heartbeats recorded
-
-### Alex Eye (Pi)
-- **DOWN** — cannot resolve hostname, cannot connect via IP
-- Likely offline or network disconnected
-- No known IP in local config
-- Restart not possible remotely — physical access or Wake-on-LAN needed
-
-### Disk
-- /dev/nvme0n1p2: 937G total, 650G used, 240G free (74%)
-- /data2: **not mounted** (may be offline disk)
+| Component | Status | Details |
+|-----------|--------|---------|
+| Sentinel | ✅ | Active, monitoring |
+| AlphaStrike | ✅ | Running, cycle 11639 |
+| EvoClaw Hub | ✅ | UP, 2 agents registered (dormant) |
+| Alex Eye Pi | 🚨 DOWN | Not on network |
+| Disk (/) | ✅ | 74% used (239G free) |
+| /media/DATA | ✅ | Mounted (same partition) |
+| /data2 | ⚠️ | Not mounted / not present |
+| Quant signals | ⚠️ | 25 days stale |
 
 ## Action Items
-1. 🔴 **Pi** — needs physical check or alternate access. Possibly powered off.
-2. ⚠️ **Quant** — FearHarvester hasn't run since Feb. May need cron re-enabled.
-3. ⚠️ **/data2** — not mounted. May need `mount /data2` if expected online.
+1. **Pi**: Physically check — power cycle, network connection
+2. **Quant state**: Signals stale since March 26 — FearHarvester not writing updates
+3. **/data2**: Verify if this mount is still needed / re-mount

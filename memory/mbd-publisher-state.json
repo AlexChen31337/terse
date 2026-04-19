@@ -1,8 +1,8 @@
 {
-  "lastRun": "2026-04-05T09:10:00+11:00",
+  "lastRun": "2026-04-19T21:53:00+10:00",
   "last_backup": "2026-04-04",
-  "mbd_last_backup": "2026-04-16",
-  "topic_index": 16,
+  "mbd_last_backup": "2026-04-19",
+  "topic_index": 3,
   "drafts": {
     "1085514": {
       "name": "\u8d5b\u535a\u670b\u514b\u526f\u4e1a\uff1a\u5f53AI\u6210\u4e3a\u4f60\u7684\u8d5a\u94b1\u5916\u6302",
@@ -821,5 +821,17 @@
     "pdfGenerated": true,
     "note": "Book written, PDF generated, cover generated (PIL fallback - GPU servers unreachable), pushed to GitHub. Payhip publish blocked by reCAPTCHA on headless login. Needs manual publish."
   },
-  "last_title": "The Future of Human-AI Collaboration"
+  "last_title": "The Future of Human-AI Collaboration",
+  "mbd-daily-2026-04-19": {
+    "name": "AI\u526f\u4e1a\u6307\u5357_\u7528\u4eba\u5de5\u667a\u80fd\u8d5a\u526f\u4e1a\u94b1\u4ece\u5165\u95e8\u5230\u6708\u5165\u8fc7\u4e07",
+    "status": "backed_up",
+    "category": "\u526f\u4e1a/AI",
+    "date": "2026-04-19",
+    "githubBacked": true,
+    "coverGenerated": false,
+    "folder": "2026-04-19_AI\u526f\u4e1a\u6307\u5357",
+    "title": "AI\u526f\u4e1a\u6307\u5357_\u7528\u4eba\u5de5\u667a\u80fd\u8d5a\u526f\u4e1a\u94b1\u4ece\u5165\u95e8\u5230\u6708\u5165\u8fc7\u4e07",
+    "wordCount": 3500,
+    "note": "MbD Chinese backup. No cover (GPU server unreachable \u2014 no route to host). Awaiting publish instruction from owner."
+  }
 }
