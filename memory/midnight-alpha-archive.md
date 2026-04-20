@@ -1518,3 +1518,35 @@ The AI + crypto agent meta is still early but accelerating. The Anthropic KYC mo
 **Top Pick: BTC** — Contrarian buy signal as fear recovers. $77K breakout = momentum trigger. Alt carnage (RAVE -90%) driving flight to quality. Geopolitical tailwind (Hormuz open).
 **Key Narratives:** Kelp DAO $292M hack (biggest 2026 exploit), RaveDAO -90% crash, CFTC AI adoption, France euro stablecoin push, Strait of Hormuz de-escalation.
 **Sentiment:** Exiting extreme fear zone. Accumulation phase.
+
+---
+
+# Midnight Alpha — 2026-04-21 (02:00 AEDT)
+
+## Market Snapshot
+- BTC: $75,565 | ETH: $2,309 | SOL: $85.64 | HYPE: $41.17
+- Total Market Cap: $2.63T | BTC Dominance: ~66%
+- Fear & Greed: 29 (FEAR)
+
+## Top Pick: TAO (Bittensor) @ $245.39
+- Decentralized AI infrastructure leader
+- 60% below ATH, fundamentals improving
+- Agent-to-agent commerce thesis validated
+- Secondary: VIRTUAL ($0.69), HYPE ($41.17)
+
+## Key Narratives
+1. Agent-to-Agent Commerce (autonomous transactions)
+2. AI Agent Launchpads 2.0 (improved tokenomics)
+3. On-Chain AI Inference (verifiable ML)
+4. AI x DeFAI (autonomous DeFi management)
+5. Decentralized GPU Markets
+
+## Sentiment
+Fear at high BTC prices = contrarian accumulation zone. Smart money accumulating AI infra tokens.
+
+## Action Items
+- 🔴 Accumulate TAO on dips
+- 🟡 Watch VIRTUAL breakout
+- 🟡 Monitor BTC $73K support
+- 🟢 Research agent identity standards
+
