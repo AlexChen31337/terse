@@ -1,7 +1,7 @@
 {
-  "last_scan_ts": 1776651039.293698,
-  "last_scan_iso": "2026-04-20T02:10:39.293698+00:00",
-  "events_logged": 1016,
+  "last_scan_ts": 1776694363.049773,
+  "last_scan_iso": "2026-04-20T14:12:43.049774+00:00",
+  "events_logged": 1026,
   "file_offsets": {
     "04c6c576-d1fa-433f-ab13-e39aa2836368.jsonl": 127,
     "f91b3ca5-5de8-4f0c-8852-e3b0baf9ba11.jsonl": 327,
@@ -144,6 +144,16 @@
     "1065cb90-abe9-415a-b5ed-56b02b737fb4.checkpoint.c0b54c8f-1a0a-4384-8b4e-0a4e7a9bbccb.jsonl": 187,
     "1065cb90-abe9-415a-b5ed-56b02b737fb4.jsonl": 632,
     "2eb4f305-fb1f-43e9-b91e-91e29a2bbeb2.jsonl": 201,
-    "60bd8b8d-f8a3-436a-a2ee-f2a6d38b7ca0.jsonl": 62
+    "60bd8b8d-f8a3-436a-a2ee-f2a6d38b7ca0.jsonl": 62,
+    "7e69a7ad-34ec-4550-bc0a-599b6ffb330f.checkpoint.0e36f034-6296-41e2-9e5b-4bb0ad7a4829.jsonl": 253,
+    "7e69a7ad-34ec-4550-bc0a-599b6ffb330f.checkpoint.414999cf-71c9-4bdc-bd7e-9cd63b26f63d.jsonl": 317,
+    "7e69a7ad-34ec-4550-bc0a-599b6ffb330f.jsonl": 201,
+    "7ec7375d-8613-45c3-82e1-12de8d3100ea.checkpoint.37fffbe4-28ca-4171-982e-d638f4608f5b.jsonl": 478,
+    "7ec7375d-8613-45c3-82e1-12de8d3100ea.checkpoint.6be95a31-f9d2-43ea-900f-1c5ab6b4aad8.jsonl": 1080,
+    "7ec7375d-8613-45c3-82e1-12de8d3100ea.checkpoint.e6a73e57-43d9-4623-b26a-0003cb4a8a01.jsonl": 476,
+    "b26447f8-726d-4452-8ed6-bf37bd4a632f.jsonl": 49,
+    "10e29666-165f-4dfe-ae2f-dee94a4d91d4.jsonl": 45,
+    "7724c6a5-16a9-45cf-9102-44619db1f79f.jsonl": 230,
+    "e2e06134-7d83-4cfd-b9cc-8dc86b0b955f.jsonl": 97
   }
 }
