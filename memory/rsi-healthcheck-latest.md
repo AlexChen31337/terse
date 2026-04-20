@@ -1,34 +1,25 @@
-# RSI Loop Health Check — 2026-04-19 03:11 AEST
+# RSI Loop Health Check — 2026-04-20 03:12 AEDT
 
-## Status
-- **Health Score: 0.143** ⚠️ (threshold: 0.3)
-- **Outcomes (7d):** 32 logged
-- **Success Rate:** 31%
-- **Avg Quality:** 2.28/5
+## Status Summary
+- **Health Score: 0.15** ⚠️ (threshold: 0.3)
+- **Outcomes (7d):** 31 logged
+- **Success Rate:** 32%
+- **Avg Quality:** 2.32/5
+- **Top Issues:** context_loss(10), tool_error(10), incomplete_task(7)
+- **Patterns Detected:** 5
+- **Proposals:** 1 draft, 0 approved, 24 deployed
 
-## Top Issues
-| Issue | Count |
-|-------|-------|
-| context_loss | 10 |
-| tool_error | 10 |
-| incomplete_task | 8 |
-
-## Detected Patterns
-1. **[1.000]** `message_routing` tasks → `incomplete_task` (8x, 100% fail)
-2. **[0.938]** `tool_call` tasks → `tool_error` (10x, 100% failure rate)
-3. **[0.375]** `tool_call` tasks → `tool_validation_error` (3x, 100% fail)
+## Top Patterns
+1. `[0.968]` tool_call tasks → tool_error (10x, 100% failure)
+2. `[0.903]` message_routing tasks → incomplete_task (7x, 100% failure)
+3. `[0.387]` tool_call tasks → tool_validation_error (3x, 100% failure)
 
 ## Cycle Results
-- Proposals generated: 5
-- Auto-deployed: 0
-- Awaiting review: 1
-- Already deployed (skipped): 4
+- 5 proposals generated, 0 auto-deployed (all already deployed or pending review)
+- 1 proposal awaiting manual review
+- Auto-fix notes: b9e26a71, 15c31c37, db32089a address tool errors/timeout
 
-## Pending Proposals
-- `b9e26a71`: Address `tool_error` in `tool_call` tasks (already deployed)
-- `15c31c37`: Address `tool_validation_error` in `tool_call` tasks (already deployed)
-- `60126e7f`: (already deployed)
-- `db32089a`: Address `timeout` in `tool_call` tasks (already deployed)
-
-## Action Taken
-- ⚠️ Alerting Bowen via Telegram (health score < 0.3)
+## Action Needed
+- Health score well below 0.3 threshold
+- Bowen notified via Telegram
+- Manual review of pending proposal recommended

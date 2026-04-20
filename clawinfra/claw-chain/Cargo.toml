@@ -1,0 +1,98 @@
+[workspace]
+members = [
+    "crates/node",
+    "crates/runtime",
+    "crates/consensus",
+    "crates/rpc",
+    "crates/storage",
+    "crates/types",
+    "crates/wasm-executor",
+    "crates/p2p",
+    "crates/crypto",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Alex Chen <alex.chen31337@gmail.com>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/clawinfra/claw-chain"
+
+[workspace.dependencies]
+# Core async runtime
+tokio = { version = "1.44", features = ["full"] }
+tokio-util = "0.7"
+futures = "0.3"
+
+# WASM execution - wasmtime 30.x (migrated from 25.x, resolves RUSTSEC-2024-0438, RUSTSEC-2024-0439, RUSTSEC-2024-0440)
+wasmtime = { version = "30.0", features = ["async", "component-model", "cranelift", "pooling-allocator"] }
+wasmtime-wasi = { version = "30.0" }
+wit-bindgen = "0.37"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+bincode = "2"
+prost = "0.13"
+prost-types = "0.13"
+
+# Cryptography
+ed25519-dalek = { version = "2", features = ["serde"] }
+k256 = { version = "0.13", features = ["ecdsa", "serde"] }
+sha2 = "0.10"
+sha3 = "0.10"
+blake3 = "1"
+rand = "0.8"
+zeroize = { version = "1", features = ["zeroize_derive"] }
+
+# Networking / P2P
+libp2p = { version = "0.54", features = ["tokio", "quic", "tcp", "noise", "yamux", "gossipsub", "kad", "identify"] }
+
+# Storage
+rocksdb = { version = "0.22", features = ["multi-threaded-cf"] }
+redb = "2"
+
+# RPC
+tonic = { version = "0.12", features = ["tls"] }
+tower = "0.5"
+axum = { version = "0.8", features = ["tokio", "http2"] }
+
+# Observability
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+metrics = "0.24"
+opentelemetry = { version = "0.27", features = ["trace", "metrics"] }
+opentelemetry-otlp = { version = "0.27", features = ["grpc-tonic", "trace", "metrics"] }
+opentelemetry_sdk = { version = "0.27", features = ["rt-tokio"] }
+
+# Error handling
+thiserror = "2"
+anyhow = "1"
+
+# Config
+config = "0.15"
+clap = { version = "4", features = ["derive"] }
+toml = "0.8"
+
+# Utilities
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+hex = "0.4"
+base64 = "0.22"
+bytes = "1"
+once_cell = "1"
+parking_lot = "0.12"
+dashmap = "6"
+itertools = "0.13"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = "debuginfo"
+
+[profile.dev]
+opt-level = 0
+debug = true

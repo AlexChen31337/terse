@@ -1,4 +1,4 @@
-# ☀️ Morning Digest — Sunday, April 19, 2026
+# ☀️ Morning Digest — Monday, April 20, 2026
 
 ## 🚨 Urgent / Needs Immediate Attention
 
@@ -125,4 +125,4 @@
 
 ---
 📊 Total: 51 items | Actionable: 40 | Urgent: 1
-Generated: 22:40 UTC+11:00
+Generated: 08:31 UTC+11:00
