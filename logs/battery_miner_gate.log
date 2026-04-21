@@ -35327,3 +35327,1635 @@
 2026-04-21 14:59:09,343 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
 2026-04-21 14:59:09,351 [INFO] Pushed state to HA: soc=68 gate=idle gpus=0
 2026-04-21 15:00:12,965 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-21 15:00:16,030 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:00:16,033 [INFO] Pushed state to HA: soc=68 gate=idle gpus=0
+2026-04-21 15:01:17,583 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-21 15:01:20,672 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:01:20,684 [INFO] Pushed state to HA: soc=68 gate=idle gpus=0
+2026-04-21 15:02:22,425 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-21 15:02:25,504 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:02:25,515 [INFO] Pushed state to HA: soc=68 gate=idle gpus=0
+2026-04-21 15:03:27,248 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-21 15:03:30,334 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:03:30,337 [INFO] Pushed state to HA: soc=68 gate=idle gpus=0
+2026-04-21 15:04:31,945 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-21 15:04:35,038 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:04:35,040 [INFO] Pushed state to HA: soc=69 gate=idle gpus=0
+2026-04-21 15:05:39,264 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-21 15:05:42,366 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:05:42,369 [INFO] Pushed state to HA: soc=69 gate=idle gpus=0
+2026-04-21 15:06:46,556 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-21 15:06:49,632 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:06:49,639 [INFO] Pushed state to HA: soc=69 gate=idle gpus=0
+2026-04-21 15:07:51,354 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-21 15:07:54,464 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:07:54,475 [INFO] Pushed state to HA: soc=69 gate=idle gpus=0
+2026-04-21 15:08:56,292 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-21 15:08:59,358 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:08:59,361 [INFO] Pushed state to HA: soc=69 gate=idle gpus=0
+2026-04-21 15:10:02,741 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-21 15:10:05,854 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:10:05,857 [INFO] Pushed state to HA: soc=70 gate=idle gpus=0
+2026-04-21 15:11:07,568 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-21 15:11:10,624 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:11:10,636 [INFO] Pushed state to HA: soc=70 gate=idle gpus=0
+2026-04-21 15:12:13,741 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-21 15:12:16,798 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:12:16,801 [INFO] Pushed state to HA: soc=70 gate=idle gpus=0
+2026-04-21 15:13:20,177 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-21 15:13:23,294 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:13:23,296 [INFO] Pushed state to HA: soc=70 gate=idle gpus=0
+2026-04-21 15:14:26,991 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-21 15:14:30,047 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:14:30,049 [INFO] Pushed state to HA: soc=70 gate=idle gpus=0
+2026-04-21 15:15:32,056 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-21 15:15:35,134 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:15:35,137 [INFO] Pushed state to HA: soc=70 gate=idle gpus=0
+2026-04-21 15:16:37,106 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-21 15:16:40,222 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:16:40,225 [INFO] Pushed state to HA: soc=71 gate=idle gpus=0
+2026-04-21 15:17:41,851 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-21 15:17:44,926 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:17:44,929 [INFO] Pushed state to HA: soc=71 gate=idle gpus=0
+2026-04-21 15:18:46,464 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-21 15:18:49,568 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:18:49,579 [INFO] Pushed state to HA: soc=71 gate=idle gpus=0
+2026-04-21 15:19:52,804 [INFO] Battery SOC: 72%  (miner_running=False)
+2026-04-21 15:19:55,870 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:19:55,873 [INFO] Pushed state to HA: soc=72 gate=idle gpus=0
+2026-04-21 15:20:57,581 [INFO] Battery SOC: 72%  (miner_running=False)
+2026-04-21 15:21:00,702 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:21:00,705 [INFO] Pushed state to HA: soc=72 gate=idle gpus=0
+2026-04-21 15:22:02,473 [INFO] Battery SOC: 72%  (miner_running=False)
+2026-04-21 15:22:05,536 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:22:05,547 [INFO] Pushed state to HA: soc=72 gate=idle gpus=0
+2026-04-21 15:23:07,536 [INFO] Battery SOC: 72%  (miner_running=False)
+2026-04-21 15:23:10,624 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:23:10,635 [INFO] Pushed state to HA: soc=72 gate=idle gpus=0
+2026-04-21 15:24:12,279 [INFO] Battery SOC: 72%  (miner_running=False)
+2026-04-21 15:24:15,390 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:24:15,393 [INFO] Pushed state to HA: soc=72 gate=idle gpus=0
+2026-04-21 15:25:17,123 [INFO] Battery SOC: 73%  (miner_running=False)
+2026-04-21 15:25:19,967 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:25:19,971 [INFO] Pushed state to HA: soc=73 gate=idle gpus=0
+2026-04-21 15:26:21,939 [INFO] Battery SOC: 73%  (miner_running=False)
+2026-04-21 15:26:24,990 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:26:24,993 [INFO] Pushed state to HA: soc=73 gate=idle gpus=0
+2026-04-21 15:27:26,853 [INFO] Battery SOC: 73%  (miner_running=False)
+2026-04-21 15:27:29,951 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:27:29,954 [INFO] Pushed state to HA: soc=73 gate=idle gpus=0
+2026-04-21 15:28:31,855 [INFO] Battery SOC: 73%  (miner_running=False)
+2026-04-21 15:28:34,912 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:28:34,920 [INFO] Pushed state to HA: soc=73 gate=idle gpus=0
+2026-04-21 15:29:37,731 [INFO] Battery SOC: 73%  (miner_running=False)
+2026-04-21 15:29:39,998 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:29:40,001 [INFO] Pushed state to HA: soc=73 gate=idle gpus=0
+2026-04-21 15:30:43,012 [INFO] Battery SOC: 73%  (miner_running=False)
+2026-04-21 15:30:44,958 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:30:44,961 [INFO] Pushed state to HA: soc=73 gate=idle gpus=0
+2026-04-21 15:31:48,094 [INFO] Battery SOC: 73%  (miner_running=False)
+2026-04-21 15:31:49,982 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:31:49,985 [INFO] Pushed state to HA: soc=73 gate=idle gpus=0
+2026-04-21 15:32:52,623 [INFO] Battery SOC: 73%  (miner_running=False)
+2026-04-21 15:32:54,942 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:32:54,947 [INFO] Pushed state to HA: soc=73 gate=idle gpus=0
+2026-04-21 15:33:57,625 [INFO] Battery SOC: 73%  (miner_running=False)
+2026-04-21 15:33:59,966 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:33:59,969 [INFO] Pushed state to HA: soc=73 gate=idle gpus=0
+2026-04-21 15:35:04,002 [INFO] Battery SOC: 74%  (miner_running=False)
+2026-04-21 15:35:04,990 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:35:04,993 [INFO] Pushed state to HA: soc=74 gate=idle gpus=0
+2026-04-21 15:36:07,295 [INFO] Battery SOC: 74%  (miner_running=False)
+2026-04-21 15:36:09,950 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:36:09,954 [INFO] Pushed state to HA: soc=74 gate=idle gpus=0
+2026-04-21 15:37:13,759 [INFO] Battery SOC: 75%  (miner_running=False)
+2026-04-21 15:37:14,974 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:37:14,977 [INFO] Pushed state to HA: soc=75 gate=idle gpus=0
+2026-04-21 15:38:16,948 [INFO] Battery SOC: 76%  (miner_running=False)
+2026-04-21 15:38:19,998 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:38:20,001 [INFO] Pushed state to HA: soc=76 gate=idle gpus=0
+2026-04-21 15:39:21,977 [INFO] Battery SOC: 76%  (miner_running=False)
+2026-04-21 15:39:24,958 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:39:24,962 [INFO] Pushed state to HA: soc=76 gate=idle gpus=0
+2026-04-21 15:40:26,647 [INFO] Battery SOC: 77%  (miner_running=False)
+2026-04-21 15:40:29,726 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:40:29,729 [INFO] Pushed state to HA: soc=77 gate=idle gpus=0
+2026-04-21 15:41:31,701 [INFO] Battery SOC: 78%  (miner_running=False)
+2026-04-21 15:41:34,814 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:41:34,817 [INFO] Pushed state to HA: soc=78 gate=idle gpus=0
+2026-04-21 15:42:36,796 [INFO] Battery SOC: 78%  (miner_running=False)
+2026-04-21 15:42:39,903 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:42:39,906 [INFO] Pushed state to HA: soc=78 gate=idle gpus=0
+2026-04-21 15:43:41,970 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 15:43:45,054 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:43:45,057 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 15:44:46,911 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 15:44:50,014 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:44:50,017 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 15:45:51,721 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 15:45:54,782 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:45:54,785 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 15:46:56,494 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 15:46:59,616 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:46:59,627 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 15:48:01,567 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 15:48:04,640 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:48:04,651 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 15:49:06,694 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 15:49:09,790 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:49:09,793 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 15:50:13,066 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 15:50:16,160 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:50:16,171 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 15:51:19,301 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 15:51:22,400 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:51:22,411 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 15:52:26,311 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 15:52:29,406 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:52:29,411 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 15:53:33,743 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 15:53:36,798 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:53:36,801 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 15:54:39,636 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 15:54:42,718 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:54:42,721 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 15:55:45,465 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 15:55:48,576 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:55:48,587 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 15:56:50,895 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 15:56:53,982 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:56:53,985 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 15:57:56,633 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 15:57:59,710 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:57:59,713 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 15:59:01,308 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 15:59:04,415 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 15:59:04,420 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 16:00:07,753 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 16:00:10,846 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:00:10,849 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 16:01:14,906 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 16:01:17,982 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:01:17,985 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 16:02:19,944 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 16:02:23,007 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:02:23,009 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 16:03:25,144 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 16:03:28,222 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:03:28,225 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 16:04:30,178 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 16:04:33,247 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:04:33,250 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 16:05:35,224 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 16:05:38,334 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:05:38,336 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 16:06:40,213 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:06:43,294 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:06:43,297 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:07:46,262 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:07:49,342 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:07:49,345 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:08:51,289 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:08:54,366 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:08:54,368 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:09:56,337 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:09:59,392 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:09:59,403 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:11:01,549 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:11:04,671 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:11:04,674 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:12:06,782 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:12:09,886 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:12:09,889 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:13:11,916 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:13:14,974 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:13:14,978 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:14:18,266 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:14:21,342 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:14:21,345 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:15:26,050 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:15:29,118 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:15:29,121 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:16:33,906 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:16:37,022 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:16:37,024 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:17:39,802 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:17:42,878 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:17:42,881 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:18:46,199 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:18:49,310 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:18:49,313 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:19:51,217 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:19:54,334 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:19:54,337 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:20:56,318 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:20:59,424 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:20:59,435 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:22:01,080 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:22:04,191 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:22:04,198 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:23:06,987 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:23:09,982 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:23:09,985 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:24:12,829 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:24:15,902 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:24:15,905 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:25:17,653 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:25:20,734 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:25:20,737 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:26:22,415 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:26:25,504 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:26:25,515 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:27:27,639 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:27:30,718 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:27:30,721 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:28:34,116 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:28:37,214 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:28:37,217 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:29:40,475 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:29:43,584 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:29:43,595 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:30:45,579 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:30:48,671 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:30:48,674 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:31:52,057 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:31:55,166 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:31:55,169 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:32:58,386 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:33:01,472 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:33:01,483 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:34:03,243 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:34:06,302 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:34:06,305 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:35:09,269 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:35:12,350 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:35:12,353 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:36:14,315 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:36:17,375 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:36:17,379 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:37:18,967 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:37:22,078 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:37:22,080 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:38:25,031 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:38:28,128 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:38:28,139 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:39:32,622 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:39:35,710 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:39:35,713 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:40:40,405 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:40:43,488 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:40:43,499 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:41:45,440 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:41:48,512 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:41:48,523 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:42:50,677 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:42:53,790 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:42:53,793 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:43:55,730 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:43:58,814 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:43:58,817 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:45:02,032 [INFO] Battery SOC: 80%  (miner_running=False)
+2026-04-21 16:45:05,118 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:45:05,121 [INFO] Pushed state to HA: soc=80 gate=idle gpus=0
+2026-04-21 16:46:07,670 [INFO] Battery SOC: 79%  (miner_running=False)
+2026-04-21 16:46:10,782 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:46:10,785 [INFO] Pushed state to HA: soc=79 gate=idle gpus=0
+2026-04-21 16:47:12,611 [INFO] Battery SOC: 78%  (miner_running=False)
+2026-04-21 16:47:15,679 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:47:15,683 [INFO] Pushed state to HA: soc=78 gate=idle gpus=0
+2026-04-21 16:48:17,835 [INFO] Battery SOC: 77%  (miner_running=False)
+2026-04-21 16:48:20,894 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:48:20,897 [INFO] Pushed state to HA: soc=77 gate=idle gpus=0
+2026-04-21 16:49:22,660 [INFO] Battery SOC: 76%  (miner_running=False)
+2026-04-21 16:49:25,726 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:49:25,729 [INFO] Pushed state to HA: soc=76 gate=idle gpus=0
+2026-04-21 16:50:27,718 [INFO] Battery SOC: 76%  (miner_running=False)
+2026-04-21 16:50:30,814 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:50:30,817 [INFO] Pushed state to HA: soc=76 gate=idle gpus=0
+2026-04-21 16:51:32,493 [INFO] Battery SOC: 76%  (miner_running=False)
+2026-04-21 16:51:35,584 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:51:35,595 [INFO] Pushed state to HA: soc=76 gate=idle gpus=0
+2026-04-21 16:52:37,635 [INFO] Battery SOC: 76%  (miner_running=False)
+2026-04-21 16:52:40,734 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:52:40,737 [INFO] Pushed state to HA: soc=76 gate=idle gpus=0
+2026-04-21 16:53:42,659 [INFO] Battery SOC: 75%  (miner_running=False)
+2026-04-21 16:53:45,758 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:53:45,761 [INFO] Pushed state to HA: soc=75 gate=idle gpus=0
+2026-04-21 16:54:47,759 [INFO] Battery SOC: 75%  (miner_running=False)
+2026-04-21 16:54:50,846 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:54:50,849 [INFO] Pushed state to HA: soc=75 gate=idle gpus=0
+2026-04-21 16:55:52,807 [INFO] Battery SOC: 75%  (miner_running=False)
+2026-04-21 16:55:55,872 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:55:55,880 [INFO] Pushed state to HA: soc=75 gate=idle gpus=0
+2026-04-21 16:56:57,974 [INFO] Battery SOC: 74%  (miner_running=False)
+2026-04-21 16:57:01,087 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:57:01,092 [INFO] Pushed state to HA: soc=74 gate=idle gpus=0
+2026-04-21 16:58:02,924 [INFO] Battery SOC: 74%  (miner_running=False)
+2026-04-21 16:58:05,982 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:58:05,985 [INFO] Pushed state to HA: soc=74 gate=idle gpus=0
+2026-04-21 16:59:07,686 [INFO] Battery SOC: 74%  (miner_running=False)
+2026-04-21 16:59:10,750 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 16:59:10,753 [INFO] Pushed state to HA: soc=74 gate=idle gpus=0
+2026-04-21 17:00:14,057 [INFO] Battery SOC: 73%  (miner_running=False)
+2026-04-21 17:00:17,121 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:00:17,132 [INFO] Pushed state to HA: soc=73 gate=idle gpus=0
+2026-04-21 17:01:19,798 [INFO] Battery SOC: 73%  (miner_running=False)
+2026-04-21 17:01:19,966 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:01:19,969 [INFO] Pushed state to HA: soc=73 gate=idle gpus=0
+2026-04-21 17:02:22,916 [INFO] Battery SOC: 73%  (miner_running=False)
+2026-04-21 17:02:24,990 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:02:24,993 [INFO] Pushed state to HA: soc=73 gate=idle gpus=0
+2026-04-21 17:03:28,984 [INFO] Battery SOC: 73%  (miner_running=False)
+2026-04-21 17:03:29,950 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:03:29,954 [INFO] Pushed state to HA: soc=73 gate=idle gpus=0
+2026-04-21 17:04:33,210 [INFO] Battery SOC: 72%  (miner_running=False)
+2026-04-21 17:04:36,318 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:04:36,321 [INFO] Pushed state to HA: soc=72 gate=idle gpus=0
+2026-04-21 17:05:38,138 [INFO] Battery SOC: 72%  (miner_running=False)
+2026-04-21 17:05:41,214 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:05:41,217 [INFO] Pushed state to HA: soc=72 gate=idle gpus=0
+2026-04-21 17:06:42,858 [INFO] Battery SOC: 72%  (miner_running=False)
+2026-04-21 17:06:45,920 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:06:45,931 [INFO] Pushed state to HA: soc=72 gate=idle gpus=0
+2026-04-21 17:07:47,678 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-21 17:07:50,750 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:07:50,753 [INFO] Pushed state to HA: soc=71 gate=idle gpus=0
+2026-04-21 17:08:52,363 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-21 17:08:55,456 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:08:55,467 [INFO] Pushed state to HA: soc=71 gate=idle gpus=0
+2026-04-21 17:10:00,978 [INFO] Battery SOC: 71%  (miner_running=False)
+2026-04-21 17:10:04,064 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:10:04,075 [INFO] Pushed state to HA: soc=71 gate=idle gpus=0
+2026-04-21 17:11:07,111 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-21 17:11:10,174 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:11:10,177 [INFO] Pushed state to HA: soc=70 gate=idle gpus=0
+2026-04-21 17:12:11,916 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-21 17:12:15,006 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:12:15,009 [INFO] Pushed state to HA: soc=70 gate=idle gpus=0
+2026-04-21 17:13:16,761 [INFO] Battery SOC: 70%  (miner_running=False)
+2026-04-21 17:13:19,838 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:13:19,841 [INFO] Pushed state to HA: soc=70 gate=idle gpus=0
+2026-04-21 17:14:21,759 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-21 17:14:24,862 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:14:24,865 [INFO] Pushed state to HA: soc=69 gate=idle gpus=0
+2026-04-21 17:15:26,733 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-21 17:15:29,822 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:15:29,825 [INFO] Pushed state to HA: soc=69 gate=idle gpus=0
+2026-04-21 17:16:31,560 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-21 17:16:34,654 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:16:34,657 [INFO] Pushed state to HA: soc=69 gate=idle gpus=0
+2026-04-21 17:17:36,596 [INFO] Battery SOC: 69%  (miner_running=False)
+2026-04-21 17:17:39,678 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:17:39,682 [INFO] Pushed state to HA: soc=69 gate=idle gpus=0
+2026-04-21 17:18:41,301 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-21 17:18:44,382 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:18:44,385 [INFO] Pushed state to HA: soc=68 gate=idle gpus=0
+2026-04-21 17:19:46,217 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-21 17:19:49,278 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:19:49,281 [INFO] Pushed state to HA: soc=68 gate=idle gpus=0
+2026-04-21 17:20:50,910 [INFO] Battery SOC: 68%  (miner_running=False)
+2026-04-21 17:20:53,982 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:20:53,985 [INFO] Pushed state to HA: soc=68 gate=idle gpus=0
+2026-04-21 17:21:56,676 [INFO] Battery SOC: 67%  (miner_running=False)
+2026-04-21 17:21:59,774 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:21:59,777 [INFO] Pushed state to HA: soc=67 gate=idle gpus=0
+2026-04-21 17:23:02,922 [INFO] Battery SOC: 67%  (miner_running=False)
+2026-04-21 17:23:06,014 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:23:06,017 [INFO] Pushed state to HA: soc=67 gate=idle gpus=0
+2026-04-21 17:24:09,407 [INFO] Battery SOC: 67%  (miner_running=False)
+2026-04-21 17:24:12,512 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:24:12,523 [INFO] Pushed state to HA: soc=67 gate=idle gpus=0
+2026-04-21 17:25:15,618 [INFO] Battery SOC: 66%  (miner_running=False)
+2026-04-21 17:25:18,686 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:25:18,689 [INFO] Pushed state to HA: soc=66 gate=idle gpus=0
+2026-04-21 17:26:20,716 [INFO] Battery SOC: 66%  (miner_running=False)
+2026-04-21 17:26:23,774 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:26:23,777 [INFO] Pushed state to HA: soc=66 gate=idle gpus=0
+2026-04-21 17:27:25,394 [INFO] Battery SOC: 66%  (miner_running=False)
+2026-04-21 17:27:28,480 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:27:28,491 [INFO] Pushed state to HA: soc=66 gate=idle gpus=0
+2026-04-21 17:28:30,213 [INFO] Battery SOC: 65%  (miner_running=False)
+2026-04-21 17:28:33,310 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:28:33,313 [INFO] Pushed state to HA: soc=65 gate=idle gpus=0
+2026-04-21 17:29:34,941 [INFO] Battery SOC: 65%  (miner_running=False)
+2026-04-21 17:29:38,014 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:29:38,016 [INFO] Pushed state to HA: soc=65 gate=idle gpus=0
+2026-04-21 17:30:40,284 [INFO] Battery SOC: 65%  (miner_running=False)
+2026-04-21 17:30:43,358 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:30:43,361 [INFO] Pushed state to HA: soc=65 gate=idle gpus=0
+2026-04-21 17:31:46,432 [INFO] Battery SOC: 64%  (miner_running=False)
+2026-04-21 17:31:49,536 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:31:49,547 [INFO] Pushed state to HA: soc=64 gate=idle gpus=0
+2026-04-21 17:32:51,753 [INFO] Battery SOC: 64%  (miner_running=False)
+2026-04-21 17:32:54,814 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:32:54,817 [INFO] Pushed state to HA: soc=64 gate=idle gpus=0
+2026-04-21 17:33:56,441 [INFO] Battery SOC: 64%  (miner_running=False)
+2026-04-21 17:33:59,520 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:33:59,531 [INFO] Pushed state to HA: soc=64 gate=idle gpus=0
+2026-04-21 17:35:02,847 [INFO] Battery SOC: 64%  (miner_running=False)
+2026-04-21 17:35:05,950 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:35:05,954 [INFO] Pushed state to HA: soc=64 gate=idle gpus=0
+2026-04-21 17:36:09,292 [INFO] Battery SOC: 63%  (miner_running=False)
+2026-04-21 17:36:12,384 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:36:12,391 [INFO] Pushed state to HA: soc=63 gate=idle gpus=0
+2026-04-21 17:37:14,000 [INFO] Battery SOC: 63%  (miner_running=False)
+2026-04-21 17:37:17,087 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:37:17,092 [INFO] Pushed state to HA: soc=63 gate=idle gpus=0
+2026-04-21 17:38:20,425 [INFO] Battery SOC: 63%  (miner_running=False)
+2026-04-21 17:38:23,521 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:38:23,532 [INFO] Pushed state to HA: soc=63 gate=idle gpus=0
+2026-04-21 17:39:26,335 [INFO] Battery SOC: 62%  (miner_running=False)
+2026-04-21 17:39:29,438 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:39:29,443 [INFO] Pushed state to HA: soc=62 gate=idle gpus=0
+2026-04-21 17:40:31,322 [INFO] Battery SOC: 62%  (miner_running=False)
+2026-04-21 17:40:34,398 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:40:34,402 [INFO] Pushed state to HA: soc=62 gate=idle gpus=0
+2026-04-21 17:41:36,248 [INFO] Battery SOC: 62%  (miner_running=False)
+2026-04-21 17:41:39,360 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:41:39,370 [INFO] Pushed state to HA: soc=62 gate=idle gpus=0
+2026-04-21 17:42:41,065 [INFO] Battery SOC: 61%  (miner_running=False)
+2026-04-21 17:42:44,128 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:42:44,139 [INFO] Pushed state to HA: soc=61 gate=idle gpus=0
+2026-04-21 17:43:45,968 [INFO] Battery SOC: 61%  (miner_running=False)
+2026-04-21 17:43:49,022 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:43:49,025 [INFO] Pushed state to HA: soc=61 gate=idle gpus=0
+2026-04-21 17:44:50,624 [INFO] Battery SOC: 61%  (miner_running=False)
+2026-04-21 17:44:53,726 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:44:53,729 [INFO] Pushed state to HA: soc=61 gate=idle gpus=0
+2026-04-21 17:45:55,257 [INFO] Battery SOC: 61%  (miner_running=False)
+2026-04-21 17:45:58,366 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:45:58,369 [INFO] Pushed state to HA: soc=61 gate=idle gpus=0
+2026-04-21 17:47:00,431 [INFO] Battery SOC: 60%  (miner_running=False)
+2026-04-21 17:47:03,520 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:47:03,531 [INFO] Pushed state to HA: soc=60 gate=idle gpus=0
+2026-04-21 17:48:05,270 [INFO] Battery SOC: 60%  (miner_running=False)
+2026-04-21 17:48:08,350 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:48:08,353 [INFO] Pushed state to HA: soc=60 gate=idle gpus=0
+2026-04-21 17:49:10,090 [INFO] Battery SOC: 60%  (miner_running=False)
+2026-04-21 17:49:13,184 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:49:13,193 [INFO] Pushed state to HA: soc=60 gate=idle gpus=0
+2026-04-21 17:50:15,474 [INFO] Battery SOC: 59%  (miner_running=False)
+2026-04-21 17:50:18,593 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:50:18,604 [INFO] Pushed state to HA: soc=59 gate=idle gpus=0
+2026-04-21 17:51:22,848 [INFO] Battery SOC: 59%  (miner_running=False)
+2026-04-21 17:51:25,918 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:51:25,921 [INFO] Pushed state to HA: soc=59 gate=idle gpus=0
+2026-04-21 17:52:27,796 [INFO] Battery SOC: 59%  (miner_running=False)
+2026-04-21 17:52:30,878 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:52:30,881 [INFO] Pushed state to HA: soc=59 gate=idle gpus=0
+2026-04-21 17:53:32,578 [INFO] Battery SOC: 58%  (miner_running=False)
+2026-04-21 17:53:35,648 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:53:35,658 [INFO] Pushed state to HA: soc=58 gate=idle gpus=0
+2026-04-21 17:54:38,978 [INFO] Battery SOC: 58%  (miner_running=False)
+2026-04-21 17:54:42,079 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:54:42,083 [INFO] Pushed state to HA: soc=58 gate=idle gpus=0
+2026-04-21 17:55:43,799 [INFO] Battery SOC: 58%  (miner_running=False)
+2026-04-21 17:55:46,910 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:55:46,913 [INFO] Pushed state to HA: soc=58 gate=idle gpus=0
+2026-04-21 17:56:48,951 [INFO] Battery SOC: 57%  (miner_running=False)
+2026-04-21 17:56:52,062 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:56:52,065 [INFO] Pushed state to HA: soc=57 gate=idle gpus=0
+2026-04-21 17:57:53,777 [INFO] Battery SOC: 57%  (miner_running=False)
+2026-04-21 17:57:56,830 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:57:56,833 [INFO] Pushed state to HA: soc=57 gate=idle gpus=0
+2026-04-21 17:58:59,812 [INFO] Battery SOC: 57%  (miner_running=False)
+2026-04-21 17:59:02,878 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 17:59:02,881 [INFO] Pushed state to HA: soc=57 gate=idle gpus=0
+2026-04-21 18:00:05,063 [INFO] Battery SOC: 57%  (miner_running=False)
+2026-04-21 18:00:08,160 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:00:08,171 [INFO] Pushed state to HA: soc=57 gate=idle gpus=0
+2026-04-21 18:01:09,865 [INFO] Battery SOC: 56%  (miner_running=False)
+2026-04-21 18:01:12,926 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:01:12,929 [INFO] Pushed state to HA: soc=56 gate=idle gpus=0
+2026-04-21 18:02:14,784 [INFO] Battery SOC: 56%  (miner_running=False)
+2026-04-21 18:02:17,886 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:02:17,888 [INFO] Pushed state to HA: soc=56 gate=idle gpus=0
+2026-04-21 18:03:20,764 [INFO] Battery SOC: 56%  (miner_running=False)
+2026-04-21 18:03:23,870 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:03:23,873 [INFO] Pushed state to HA: soc=56 gate=idle gpus=0
+2026-04-21 18:04:25,771 [INFO] Battery SOC: 55%  (miner_running=False)
+2026-04-21 18:04:28,830 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:04:28,833 [INFO] Pushed state to HA: soc=55 gate=idle gpus=0
+2026-04-21 18:05:30,674 [INFO] Battery SOC: 55%  (miner_running=False)
+2026-04-21 18:05:33,790 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:05:33,793 [INFO] Pushed state to HA: soc=55 gate=idle gpus=0
+2026-04-21 18:06:35,803 [INFO] Battery SOC: 55%  (miner_running=False)
+2026-04-21 18:06:38,878 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:06:38,880 [INFO] Pushed state to HA: soc=55 gate=idle gpus=0
+2026-04-21 18:07:42,229 [INFO] Battery SOC: 55%  (miner_running=False)
+2026-04-21 18:07:45,310 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:07:45,313 [INFO] Pushed state to HA: soc=55 gate=idle gpus=0
+2026-04-21 18:08:47,290 [INFO] Battery SOC: 54%  (miner_running=False)
+2026-04-21 18:08:50,400 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:08:50,411 [INFO] Pushed state to HA: soc=54 gate=idle gpus=0
+2026-04-21 18:09:51,967 [INFO] Battery SOC: 54%  (miner_running=False)
+2026-04-21 18:09:55,039 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:09:55,042 [INFO] Pushed state to HA: soc=54 gate=idle gpus=0
+2026-04-21 18:10:57,361 [INFO] Battery SOC: 54%  (miner_running=False)
+2026-04-21 18:11:00,448 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:11:00,459 [INFO] Pushed state to HA: soc=54 gate=idle gpus=0
+2026-04-21 18:12:03,322 [INFO] Battery SOC: 53%  (miner_running=False)
+2026-04-21 18:12:06,432 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:12:06,438 [INFO] Pushed state to HA: soc=53 gate=idle gpus=0
+2026-04-21 18:13:08,216 [INFO] Battery SOC: 53%  (miner_running=False)
+2026-04-21 18:13:11,327 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:13:11,334 [INFO] Pushed state to HA: soc=53 gate=idle gpus=0
+2026-04-21 18:14:13,343 [INFO] Battery SOC: 53%  (miner_running=False)
+2026-04-21 18:14:16,415 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:14:16,425 [INFO] Pushed state to HA: soc=53 gate=idle gpus=0
+2026-04-21 18:15:19,279 [INFO] Battery SOC: 52%  (miner_running=False)
+2026-04-21 18:15:22,334 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:15:22,337 [INFO] Pushed state to HA: soc=52 gate=idle gpus=0
+2026-04-21 18:16:24,059 [INFO] Battery SOC: 52%  (miner_running=False)
+2026-04-21 18:16:27,168 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:16:27,179 [INFO] Pushed state to HA: soc=52 gate=idle gpus=0
+2026-04-21 18:17:28,874 [INFO] Battery SOC: 52%  (miner_running=False)
+2026-04-21 18:17:31,934 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:17:31,938 [INFO] Pushed state to HA: soc=52 gate=idle gpus=0
+2026-04-21 18:18:34,696 [INFO] Battery SOC: 52%  (miner_running=False)
+2026-04-21 18:18:37,790 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:18:37,793 [INFO] Pushed state to HA: soc=52 gate=idle gpus=0
+2026-04-21 18:19:40,958 [INFO] Battery SOC: 51%  (miner_running=False)
+2026-04-21 18:19:44,030 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:19:44,033 [INFO] Pushed state to HA: soc=51 gate=idle gpus=0
+2026-04-21 18:20:45,846 [INFO] Battery SOC: 51%  (miner_running=False)
+2026-04-21 18:20:48,926 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:20:48,929 [INFO] Pushed state to HA: soc=51 gate=idle gpus=0
+2026-04-21 18:21:50,561 [INFO] Battery SOC: 51%  (miner_running=False)
+2026-04-21 18:21:53,632 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:21:53,643 [INFO] Pushed state to HA: soc=51 gate=idle gpus=0
+2026-04-21 18:22:55,365 [INFO] Battery SOC: 51%  (miner_running=False)
+2026-04-21 18:22:58,464 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:22:58,475 [INFO] Pushed state to HA: soc=51 gate=idle gpus=0
+2026-04-21 18:24:01,610 [INFO] Battery SOC: 51%  (miner_running=False)
+2026-04-21 18:24:04,702 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:24:04,705 [INFO] Pushed state to HA: soc=51 gate=idle gpus=0
+2026-04-21 18:25:06,708 [INFO] Battery SOC: 51%  (miner_running=False)
+2026-04-21 18:25:09,790 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:25:09,793 [INFO] Pushed state to HA: soc=51 gate=idle gpus=0
+2026-04-21 18:26:13,640 [INFO] Battery SOC: 51%  (miner_running=False)
+2026-04-21 18:26:16,734 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:26:16,737 [INFO] Pushed state to HA: soc=51 gate=idle gpus=0
+2026-04-21 18:27:20,120 [INFO] Battery SOC: 50%  (miner_running=False)
+2026-04-21 18:27:23,230 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:27:23,233 [INFO] Pushed state to HA: soc=50 gate=idle gpus=0
+2026-04-21 18:28:24,871 [INFO] Battery SOC: 50%  (miner_running=False)
+2026-04-21 18:28:27,934 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:28:27,938 [INFO] Pushed state to HA: soc=50 gate=idle gpus=0
+2026-04-21 18:29:29,843 [INFO] Battery SOC: 50%  (miner_running=False)
+2026-04-21 18:29:32,959 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:29:32,962 [INFO] Pushed state to HA: soc=50 gate=idle gpus=0
+2026-04-21 18:30:34,847 [INFO] Battery SOC: 50%  (miner_running=False)
+2026-04-21 18:30:37,920 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:30:37,931 [INFO] Pushed state to HA: soc=50 gate=idle gpus=0
+2026-04-21 18:31:39,746 [INFO] Battery SOC: 49%  (miner_running=False)
+2026-04-21 18:31:42,814 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:31:42,817 [INFO] Pushed state to HA: soc=49 gate=idle gpus=0
+2026-04-21 18:32:45,313 [INFO] Battery SOC: 49%  (miner_running=False)
+2026-04-21 18:32:48,416 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:32:48,427 [INFO] Pushed state to HA: soc=49 gate=idle gpus=0
+2026-04-21 18:33:51,425 [INFO] Battery SOC: 49%  (miner_running=False)
+2026-04-21 18:33:54,528 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:33:54,539 [INFO] Pushed state to HA: soc=49 gate=idle gpus=0
+2026-04-21 18:34:56,590 [INFO] Battery SOC: 48%  (miner_running=False)
+2026-04-21 18:34:59,678 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:34:59,681 [INFO] Pushed state to HA: soc=48 gate=idle gpus=0
+2026-04-21 18:36:01,412 [INFO] Battery SOC: 48%  (miner_running=False)
+2026-04-21 18:36:04,512 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:36:04,522 [INFO] Pushed state to HA: soc=48 gate=idle gpus=0
+2026-04-21 18:37:06,625 [INFO] Battery SOC: 48%  (miner_running=False)
+2026-04-21 18:37:09,726 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:37:09,729 [INFO] Pushed state to HA: soc=48 gate=idle gpus=0
+2026-04-21 18:38:11,670 [INFO] Battery SOC: 48%  (miner_running=False)
+2026-04-21 18:38:14,750 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:38:14,753 [INFO] Pushed state to HA: soc=48 gate=idle gpus=0
+2026-04-21 18:39:16,688 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:39:19,774 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:39:19,777 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:40:24,628 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:40:27,742 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:40:27,745 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:41:30,291 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:41:33,408 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:41:33,419 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:42:38,255 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:42:41,310 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:42:41,313 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:43:43,545 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:43:46,656 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:43:46,663 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:44:48,245 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:44:51,358 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:44:51,361 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:45:53,079 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:45:56,191 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:45:56,197 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:46:58,112 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:47:01,214 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:47:01,217 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:48:04,204 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:48:07,262 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:48:07,265 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:49:09,195 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:49:12,286 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:49:12,289 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:50:13,950 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:50:17,054 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:50:17,057 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:51:19,231 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:51:22,334 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:51:22,337 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:52:24,213 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:52:27,294 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:52:27,297 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:53:29,227 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:53:32,318 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:53:32,321 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:54:34,290 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:54:37,408 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:54:37,419 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:55:39,176 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:55:42,238 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:55:42,241 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:56:44,152 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:56:47,262 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:56:47,265 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:57:48,880 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:57:51,966 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:57:51,971 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:58:53,994 [INFO] Battery SOC: 47%  (miner_running=False)
+2026-04-21 18:58:57,054 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 18:58:57,057 [INFO] Pushed state to HA: soc=47 gate=idle gpus=0
+2026-04-21 18:59:59,222 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:00:02,334 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:00:02,337 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:01:04,116 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:01:07,230 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:01:07,233 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:02:13,032 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:02:16,095 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:02:16,104 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:03:19,332 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:03:22,398 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:03:22,402 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:04:25,583 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:04:28,702 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:04:28,705 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:05:30,682 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:05:33,790 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:05:33,793 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:06:35,691 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:06:38,750 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:06:38,753 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:07:40,581 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:07:43,710 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:07:43,713 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:08:45,571 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:08:48,671 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:08:48,675 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:09:50,591 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:09:53,694 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:09:53,697 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:10:55,854 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:10:58,911 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:10:58,913 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:12:00,887 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:12:03,998 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:12:04,001 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:13:06,051 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:13:09,152 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:13:09,163 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:14:11,491 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:14:14,558 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:14:14,561 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:15:16,478 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:15:19,584 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:15:19,595 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:16:21,390 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:16:24,480 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:16:24,491 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:17:27,520 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:17:30,592 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:17:30,603 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:18:34,804 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:18:37,918 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:18:37,921 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:19:40,444 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:19:43,520 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:19:43,531 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:20:45,268 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:20:48,350 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:20:48,352 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:21:50,761 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:21:53,822 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:21:53,825 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:22:55,412 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:22:58,528 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:22:58,538 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:24:00,299 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:24:03,358 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:24:03,361 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:25:06,366 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:25:09,472 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:25:09,483 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:26:11,724 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:26:14,814 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:26:14,817 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:27:16,714 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:27:19,774 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:27:19,777 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:28:21,294 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:28:24,351 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:28:24,354 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:29:26,345 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:29:29,440 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:29:29,449 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:30:31,194 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:30:34,270 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:30:34,273 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:31:35,987 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:31:39,104 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:31:39,115 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:32:40,685 [INFO] Battery SOC: 46%  (miner_running=False)
+2026-04-21 19:32:43,742 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:32:43,745 [INFO] Pushed state to HA: soc=46 gate=idle gpus=0
+2026-04-21 19:33:45,868 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:33:48,958 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:33:48,961 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:34:52,208 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:34:55,326 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:34:55,329 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:35:59,805 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:36:02,910 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:36:02,913 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:37:05,961 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:37:09,022 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:37:09,025 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:38:12,218 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:38:15,326 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:38:15,329 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:39:20,725 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:39:23,806 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:39:23,809 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:40:26,419 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:40:29,534 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:40:29,537 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:41:32,400 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:41:35,520 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:41:35,531 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:42:39,922 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:42:43,038 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:42:43,041 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:43:44,880 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:43:47,934 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:43:47,937 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:44:49,614 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:44:52,702 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:44:52,705 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:45:55,056 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:45:58,175 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:45:58,179 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:47:01,096 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:47:04,161 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:47:04,172 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:48:06,994 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:48:10,080 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:48:10,091 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:49:13,219 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:49:16,318 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:49:16,321 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:50:21,785 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:50:24,862 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:50:24,865 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:51:26,436 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:51:29,568 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:51:29,579 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:52:31,811 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:52:34,910 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:52:34,913 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:53:37,969 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:53:41,087 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:53:41,092 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:54:44,807 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:54:47,902 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:54:47,905 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:55:50,609 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:55:53,695 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:55:53,698 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:56:56,919 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:56:59,998 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:57:00,001 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:58:02,742 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:58:05,854 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:58:05,857 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 19:59:11,686 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 19:59:14,782 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 19:59:14,785 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 20:00:16,446 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 20:00:19,551 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:00:19,554 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 20:01:21,572 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 20:01:24,702 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:01:24,705 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 20:02:26,436 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 20:02:29,536 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:02:29,547 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 20:03:31,340 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 20:03:34,432 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:03:34,443 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 20:04:36,232 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 20:04:39,326 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:04:39,329 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 20:05:41,906 [INFO] Battery SOC: 45%  (miner_running=False)
+2026-04-21 20:05:44,990 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:05:44,993 [INFO] Pushed state to HA: soc=45 gate=idle gpus=0
+2026-04-21 20:06:47,407 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:06:50,528 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:06:50,539 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:07:52,277 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:07:55,358 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:07:55,360 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:08:56,881 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:08:59,934 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:08:59,937 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:10:03,445 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:10:06,560 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:10:06,571 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:11:08,396 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:11:11,456 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:11:11,467 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:12:13,861 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:12:16,926 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:12:16,931 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:13:20,242 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:13:23,358 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:13:23,361 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:14:25,201 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:14:28,254 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:14:28,257 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:15:30,168 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:15:33,278 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:15:33,281 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:16:34,945 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:16:38,047 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:16:38,053 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:17:41,937 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:17:45,054 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:17:45,057 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:18:46,898 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:18:50,015 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:18:50,018 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:19:51,916 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:19:54,974 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:19:54,977 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:20:56,970 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:21:00,062 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:21:00,066 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:22:01,777 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:22:04,831 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:22:04,834 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:23:06,815 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:23:09,918 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:23:09,921 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:24:11,531 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:24:14,624 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:24:14,636 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:25:16,427 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:25:19,520 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:25:19,531 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:26:21,450 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:26:24,544 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:26:24,555 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:27:26,506 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:27:29,568 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:27:29,579 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:28:31,397 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:28:34,464 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:28:34,474 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:29:37,779 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:29:40,894 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:29:40,897 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:30:44,366 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:30:47,456 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:30:47,467 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:31:49,591 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:31:52,670 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:31:52,674 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:32:55,589 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:32:58,655 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:32:58,661 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:34:03,262 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:34:06,366 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:34:06,368 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:35:11,681 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:35:14,782 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:35:14,785 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:36:16,659 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:36:19,742 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:36:19,745 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:37:22,052 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:37:25,152 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:37:25,163 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:38:27,234 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:38:30,302 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:38:30,305 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:39:32,196 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:39:35,262 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:39:35,265 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:40:38,644 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:40:41,758 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:40:41,761 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:41:44,067 [INFO] Battery SOC: 44%  (miner_running=False)
+2026-04-21 20:41:47,166 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:41:47,169 [INFO] Pushed state to HA: soc=44 gate=idle gpus=0
+2026-04-21 20:42:50,547 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:42:53,663 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:42:53,668 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 20:43:55,411 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:43:58,496 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:43:58,507 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 20:45:00,199 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:45:03,262 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:45:03,265 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 20:46:05,071 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:46:08,161 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:46:08,173 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 20:47:10,147 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:47:13,246 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:47:13,249 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 20:48:16,626 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:48:19,742 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:48:19,745 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 20:49:23,491 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:49:26,560 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:49:26,571 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 20:50:28,630 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:50:31,710 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:50:31,713 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 20:51:33,541 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:51:36,608 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:51:36,618 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 20:52:38,848 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:52:41,950 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:52:41,953 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 20:53:45,067 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:53:48,128 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:53:48,139 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 20:54:51,512 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:54:54,624 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:54:54,636 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 20:55:59,447 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:55:59,966 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:55:59,969 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 20:57:04,463 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:57:07,551 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:57:07,553 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 20:58:09,499 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:58:12,576 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:58:12,586 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 20:59:14,245 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 20:59:17,344 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 20:59:17,355 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 21:00:19,066 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 21:00:22,176 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:00:22,187 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 21:01:25,711 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 21:01:28,798 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:01:28,801 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 21:02:32,975 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 21:02:36,062 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:02:36,066 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 21:03:37,769 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 21:03:40,830 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:03:40,833 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 21:04:42,639 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 21:04:45,726 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:04:45,729 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 21:05:47,591 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 21:05:50,686 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:05:50,689 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 21:06:52,271 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 21:06:55,326 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:06:55,329 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 21:07:57,812 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 21:08:00,926 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:08:00,929 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 21:09:04,108 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 21:09:07,166 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:09:07,170 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 21:10:10,185 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 21:10:13,278 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:10:13,281 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 21:11:17,064 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 21:11:20,160 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:11:20,171 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 21:12:23,143 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 21:12:26,206 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:12:26,209 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 21:13:28,138 [INFO] Battery SOC: 43%  (miner_running=False)
+2026-04-21 21:13:31,230 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:13:31,233 [INFO] Pushed state to HA: soc=43 gate=idle gpus=0
+2026-04-21 21:14:34,214 [INFO] Battery SOC: 42%  (miner_running=False)
+2026-04-21 21:14:37,279 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:14:37,282 [INFO] Pushed state to HA: soc=42 gate=idle gpus=0
+2026-04-21 21:15:40,904 [INFO] Battery SOC: 42%  (miner_running=False)
+2026-04-21 21:15:43,966 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:15:43,969 [INFO] Pushed state to HA: soc=42 gate=idle gpus=0
+2026-04-21 21:16:46,280 [INFO] Battery SOC: 42%  (miner_running=False)
+2026-04-21 21:16:49,374 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:16:49,377 [INFO] Pushed state to HA: soc=42 gate=idle gpus=0
+2026-04-21 21:17:51,523 [INFO] Battery SOC: 42%  (miner_running=False)
+2026-04-21 21:17:54,592 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:17:54,603 [INFO] Pushed state to HA: soc=42 gate=idle gpus=0
+2026-04-21 21:18:54,606 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:18:54,607 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:19:54,610 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:19:54,611 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:20:54,614 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:20:54,614 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:21:54,618 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:21:54,619 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:22:54,622 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:22:54,622 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:23:54,623 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:23:54,623 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:24:54,626 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:24:54,627 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:25:54,630 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:25:54,630 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:26:54,634 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:26:54,635 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:27:54,639 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:27:54,639 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:28:54,642 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:28:54,644 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:29:54,647 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:29:54,648 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:30:54,651 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:30:54,652 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:31:54,654 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:31:54,654 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:32:54,657 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:32:54,657 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:33:54,659 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:33:54,659 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:34:54,661 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:34:54,661 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:35:54,663 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:35:54,663 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:36:54,664 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:36:54,664 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:37:54,666 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:37:54,666 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:38:54,669 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:38:54,670 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:39:54,671 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:39:54,671 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:40:54,673 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:40:54,673 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:41:54,674 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:41:54,674 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:42:54,676 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:42:54,676 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:43:54,677 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:43:54,677 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:44:54,678 [ERROR] Inverter API unreachable: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 21:44:54,679 [WARNING] Could not read SOC - skipping this cycle
+2026-04-21 21:45:57,624 [INFO] Battery SOC: 42%  (miner_running=False)
+2026-04-21 21:46:00,735 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:46:00,738 [INFO] Pushed state to HA: soc=42 gate=idle gpus=0
+2026-04-21 21:47:02,835 [INFO] Battery SOC: 42%  (miner_running=False)
+2026-04-21 21:47:05,950 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:47:05,953 [INFO] Pushed state to HA: soc=42 gate=idle gpus=0
+2026-04-21 21:48:07,750 [INFO] Battery SOC: 42%  (miner_running=False)
+2026-04-21 21:48:10,846 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:48:10,849 [INFO] Pushed state to HA: soc=42 gate=idle gpus=0
+2026-04-21 21:49:14,247 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 21:49:17,342 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:49:17,345 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 21:50:19,494 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 21:50:22,560 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:50:22,571 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 21:51:24,217 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 21:51:27,326 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:51:27,329 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 21:52:29,371 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 21:52:32,480 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:52:32,491 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 21:53:34,081 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 21:53:37,182 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:53:37,186 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 21:54:38,894 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 21:54:41,950 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:54:41,953 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 21:55:45,019 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 21:55:48,128 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:55:48,139 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 21:56:51,051 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 21:56:54,110 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:56:54,112 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 21:57:56,706 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 21:57:59,774 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:57:59,777 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 21:59:01,552 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 21:59:04,670 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 21:59:04,674 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:00:06,881 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:00:09,950 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:00:09,953 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:01:12,670 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:01:15,742 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:01:15,745 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:02:19,144 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:02:22,238 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:02:22,241 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:03:24,358 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:03:27,456 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:03:27,467 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:04:29,602 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:04:32,670 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:04:32,674 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:05:35,288 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:05:38,399 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:05:38,404 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:06:40,315 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:06:43,423 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:06:43,427 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:07:45,232 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:07:48,318 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:07:48,321 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:08:50,378 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:08:53,472 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:08:53,482 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:09:55,528 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:09:58,624 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:09:58,630 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:11:01,846 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:11:04,926 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:11:04,929 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:12:09,094 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:12:12,191 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:12:12,198 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:13:15,579 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:13:18,686 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:13:18,689 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:14:20,517 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:14:23,584 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:14:23,594 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:15:26,231 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:15:29,310 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:15:29,313 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:16:32,438 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:16:35,552 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:16:35,563 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:17:37,110 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:17:40,191 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:17:40,199 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:18:41,799 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:18:44,894 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:18:44,897 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:19:46,534 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:19:49,599 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:19:49,603 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:20:51,868 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:20:54,942 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:20:54,945 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:21:58,206 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:21:59,966 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:21:59,969 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:23:02,439 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:23:04,991 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:23:04,994 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:24:08,138 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:24:09,950 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:24:09,953 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:25:11,580 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:25:14,654 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:25:14,657 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:26:16,763 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:26:19,870 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:26:19,873 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:27:22,946 [INFO] Battery SOC: 41%  (miner_running=False)
+2026-04-21 22:27:26,046 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:27:26,049 [INFO] Pushed state to HA: soc=41 gate=idle gpus=0
+2026-04-21 22:28:27,799 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:28:30,878 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:28:30,881 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:29:33,517 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:29:36,606 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:29:36,608 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:30:39,853 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:30:42,910 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:30:42,913 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:31:45,791 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:31:48,894 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:31:48,896 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:32:50,882 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:32:53,982 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:32:53,985 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:33:55,673 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:33:58,750 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:33:58,753 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:35:02,232 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:35:05,310 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:35:05,313 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:36:07,011 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:36:10,078 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:36:10,082 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:37:12,171 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:37:15,230 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:37:15,233 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:38:19,534 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:38:22,622 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:38:22,625 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:39:25,583 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:39:28,670 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:39:28,674 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:40:31,270 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:40:34,334 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:40:34,337 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:41:35,946 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:41:39,038 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:41:39,041 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:42:40,971 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:42:44,062 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:42:44,065 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:43:45,830 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:43:48,894 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:43:48,897 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:44:50,829 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:44:53,918 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:44:53,921 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:45:58,523 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:46:01,632 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:46:01,644 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:47:06,456 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:47:09,536 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:47:09,547 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:48:13,171 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:48:16,286 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:48:16,289 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:49:18,187 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:49:21,246 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:49:21,249 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:50:22,897 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:50:25,950 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:50:25,953 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:51:28,611 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:51:31,678 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:51:31,682 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:52:34,936 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:52:38,046 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:52:38,049 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:53:39,535 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:53:42,624 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:53:42,635 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:54:45,451 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:54:48,544 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:54:48,554 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:55:50,292 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:55:53,374 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:55:53,377 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:56:54,995 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:56:58,079 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:56:58,083 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:57:59,628 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:58:02,718 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:58:02,721 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 22:59:04,549 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 22:59:07,615 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 22:59:07,619 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 23:00:11,806 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 23:00:14,878 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:00:14,881 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 23:01:16,738 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 23:01:19,838 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:01:19,841 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 23:02:24,631 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 23:02:27,742 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:02:27,745 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 23:03:32,620 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 23:03:35,710 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:03:35,713 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 23:04:37,523 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 23:04:39,966 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:04:39,969 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 23:05:41,777 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 23:05:44,862 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:05:44,865 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 23:06:46,684 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 23:06:49,758 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:06:49,761 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 23:07:51,402 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 23:07:54,464 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:07:54,475 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 23:08:56,350 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 23:08:59,422 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:08:59,427 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 23:10:04,265 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 23:10:07,326 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:10:07,329 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 23:11:10,367 [INFO] Battery SOC: 40%  (miner_running=False)
+2026-04-21 23:11:13,440 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:11:13,451 [INFO] Pushed state to HA: soc=40 gate=idle gpus=0
+2026-04-21 23:12:16,530 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:12:19,617 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:12:19,629 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:13:21,103 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:13:24,191 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:13:24,197 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:14:25,911 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:14:29,022 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:14:29,025 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:15:30,674 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:15:33,790 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:15:33,793 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:16:35,800 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:16:38,878 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:16:38,881 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:17:42,164 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:17:45,246 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:17:45,249 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:18:48,779 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:18:51,870 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:18:51,873 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:19:53,466 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:19:56,577 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:19:56,588 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:20:58,572 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:21:01,662 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:21:01,666 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:22:05,636 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:22:08,734 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:22:08,737 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:23:11,015 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:23:14,080 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:23:14,091 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:24:16,505 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:24:19,616 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:24:19,627 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:25:22,478 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:25:25,600 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:25:25,611 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:26:27,253 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:26:30,366 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:26:30,369 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:27:32,071 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:27:35,136 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:27:35,147 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:28:37,427 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:28:40,544 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:28:40,555 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:29:42,688 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:29:45,758 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:29:45,761 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:30:47,358 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:30:50,462 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:30:50,465 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:31:52,339 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:31:55,423 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:31:55,427 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:32:59,138 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:33:02,238 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:33:02,241 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:34:05,412 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:34:08,480 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:34:08,491 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:35:11,722 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:35:14,782 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:35:14,785 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:36:16,689 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:36:19,806 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:36:19,809 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:37:22,669 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:37:25,726 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:37:25,729 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:38:27,344 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:38:30,431 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:38:30,436 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:39:31,956 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:39:35,070 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:39:35,074 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:40:37,059 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:40:40,160 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:40:40,163 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:41:43,638 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:41:46,718 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:41:46,721 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:42:48,590 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:42:51,678 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:42:51,682 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:43:53,297 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:43:56,382 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:43:56,385 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:44:58,117 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:45:01,214 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:45:01,217 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:46:03,142 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:46:06,238 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:46:06,241 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:47:09,804 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:47:12,862 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:47:12,865 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:48:15,854 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:48:18,910 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:48:18,913 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:49:22,869 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:49:25,982 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:49:25,985 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:50:28,391 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:50:31,455 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:50:31,461 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:51:33,251 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:51:36,350 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:51:36,353 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:52:38,204 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:52:41,310 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:52:41,313 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:53:44,388 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:53:47,486 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:53:47,490 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:54:49,665 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:54:49,950 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:54:49,953 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:55:53,419 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:55:54,974 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:55:54,977 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:56:58,565 [INFO] Battery SOC: 39%  (miner_running=False)
+2026-04-21 23:56:59,934 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:56:59,937 [INFO] Pushed state to HA: soc=39 gate=idle gpus=0
+2026-04-21 23:58:01,828 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-21 23:58:04,894 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:58:04,897 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-21 23:59:06,615 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-21 23:59:09,726 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-21 23:59:09,729 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:00:18,987 [INFO] Battery SOC: 0%  (miner_running=False)
+2026-04-22 00:00:22,046 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:00:22,049 [INFO] Pushed state to HA: soc=0 gate=idle gpus=0
+2026-04-22 00:01:24,035 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:01:27,136 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:01:27,146 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:02:30,289 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:02:33,374 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:02:33,376 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:03:36,404 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:03:39,488 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:03:39,499 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:04:43,035 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:04:46,112 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:04:46,123 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:05:49,197 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:05:52,286 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:05:52,289 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:06:53,832 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:06:56,926 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:06:56,929 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:07:58,689 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:08:01,758 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:08:01,761 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:09:03,406 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:09:06,464 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:09:06,475 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:10:09,430 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:10:12,512 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:10:12,523 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:11:15,668 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:11:18,750 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:11:18,753 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:12:20,329 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:12:23,390 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:12:23,393 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:13:26,103 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:13:29,184 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:13:29,194 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:14:32,300 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:14:35,358 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:14:35,361 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:15:38,810 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:15:41,918 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:15:41,921 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:16:45,085 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:16:48,160 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:16:48,171 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:17:50,413 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:17:53,504 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:17:53,515 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:18:55,446 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:18:58,529 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:18:58,540 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:20:00,037 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:20:03,102 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:20:03,104 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:21:05,748 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:21:08,830 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:21:08,833 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:22:12,047 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:22:15,136 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:22:15,147 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:23:17,059 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:23:20,161 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:23:20,172 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:24:21,941 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:24:25,054 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:24:25,057 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:25:26,869 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:25:29,951 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:25:29,958 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:26:31,793 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:26:34,910 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:26:34,913 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:27:36,598 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:27:39,678 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:27:39,682 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:28:41,536 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:28:44,640 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:28:44,651 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:29:47,798 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:29:50,878 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:29:50,880 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:30:53,297 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:30:56,350 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:30:56,353 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:32:00,822 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:32:03,934 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:32:03,937 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:33:06,553 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:33:09,662 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:33:09,665 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:34:12,247 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:34:15,326 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:34:15,328 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:35:17,109 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:35:20,222 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:35:20,225 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:36:23,460 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:36:26,592 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:36:26,600 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:37:29,410 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:37:32,512 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:37:32,518 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:38:34,510 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:38:37,599 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:38:37,603 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:39:39,459 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:39:42,560 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:39:42,571 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:40:44,215 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:40:47,326 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:40:47,329 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:41:48,875 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:41:51,966 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:41:51,969 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:42:53,616 [INFO] Battery SOC: 38%  (miner_running=False)
+2026-04-22 00:42:56,734 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:42:56,737 [INFO] Pushed state to HA: soc=38 gate=idle gpus=0
+2026-04-22 00:43:58,484 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 00:44:01,568 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:44:01,579 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 00:45:03,919 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 00:45:06,974 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:45:06,977 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 00:46:10,991 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 00:46:14,046 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:46:14,049 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 00:47:17,757 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 00:47:20,862 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:47:20,865 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 00:48:25,238 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 00:48:28,318 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:48:28,321 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 00:49:31,265 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 00:49:34,366 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:49:34,369 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 00:50:38,419 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 00:50:39,966 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:50:39,969 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 00:51:44,511 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 00:51:47,616 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:51:47,622 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 00:52:50,252 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 00:52:53,342 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:52:53,345 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 00:53:56,278 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 00:53:59,390 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:53:59,393 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 00:55:05,959 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 00:55:09,022 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:55:09,024 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 00:56:10,547 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 00:56:13,663 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:56:13,668 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 00:57:15,502 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 00:57:18,560 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:57:18,571 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 00:58:21,869 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 00:58:24,926 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:58:24,929 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 00:59:27,825 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 00:59:30,910 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 00:59:30,912 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 01:00:33,119 [INFO] Battery SOC: 37%  (miner_running=False)
+2026-04-22 01:00:36,192 [WARNING] nvidia-smi failed: rc=255 err=ssh: connect to host 10.0.0.30 port 22: No route to host
+2026-04-22 01:00:36,198 [INFO] Pushed state to HA: soc=37 gate=idle gpus=0
+2026-04-22 01:01:37,899 [INFO] Battery SOC: 37%  (miner_running=False)

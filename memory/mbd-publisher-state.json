@@ -1,8 +1,8 @@
 {
   "lastRun": "2026-04-19T21:53:00+10:00",
   "last_backup": "2026-04-04",
-  "mbd_last_backup": "2026-04-20",
-  "topic_index": 4,
+  "mbd_last_backup": "2026-04-21",
+  "topic_index": 5,
   "drafts": {
     "1085514": {
       "name": "赛博朋克副业：当AI成为你的赚钱外挂",
@@ -774,6 +774,18 @@
       "title": "赛博朋克副业_当霓虹灯照进你的银行账户",
       "wordCount": 4754,
       "note": "MbD Chinese backup. No cover (GPU server connection refused). Awaiting publish instruction from owner."
+    },
+    "mbd-daily-2026-04-21": {
+      "name": "AI恋爱教练_当算法开始比你更懂你的心跳",
+      "status": "backed_up",
+      "category": "情感/AI",
+      "date": "2026-04-21",
+      "githubBacked": true,
+      "coverGenerated": false,
+      "folder": "2026-04-21_AI恋爱教练",
+      "title": "AI恋爱教练_当算法开始比你更懂你的心跳",
+      "wordCount": 4800,
+      "note": "MbD Chinese backup. No cover (GPU server unreachable). Awaiting publish instruction from owner."
     }
   },
   "twitter": {
