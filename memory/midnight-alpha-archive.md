@@ -1550,3 +1550,17 @@ Fear at high BTC prices = contrarian accumulation zone. Smart money accumulating
 - 🟡 Monitor BTC $73K support
 - 🟢 Research agent identity standards
 
+
+---
+
+## Report: 2026-04-21 16:00 UTC (Wed Apr 22, 2:00 AM AEST)
+
+**Market:** BTC $75,835 | ETH $2,310 | SOL $86.09 | HYPE $40.01 | F&G: 33 (Fear) | MCap: $2.64T
+
+**Top Pick:** BTC — Strategy bought $2.54B, overtaking BlackRock. Institutional accumulation at Fear = smart money loading. Japan 80% institutions targeting crypto by 2029.
+
+**Key Events:** KelpDAO exploit ($71M frozen, $14B DeFi exodus) | Iran ceasefire talks → risk-on | OpenAI Codex super-app validates agent economy | 39 EU financial giants demand blockchain fast-track
+
+**Bias:** BTC bullish ($73.5-78K range), ETH neutral, DeFi altcoins avoid near-term.
+
+**Forward:** Trump statements, Iran ceasefire progress, KelpDAO resolution, EU pilot fast-track decisions.
