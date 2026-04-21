@@ -1,0 +1,22 @@
+[
+  {
+    "channel": "github",
+    "subject": "security(audit): comprehensive RUSTSEC ignore list with exposure analysis",
+    "url": "https://api.github.com/repos/clawinfra/claw-chain/pulls/103",
+    "repo": "clawinfra/claw-chain",
+    "reason": "author",
+    "updated": "2026-04-20T04:18:41Z",
+    "verdict": "actionable",
+    "urgent": true
+  },
+  {
+    "channel": "github",
+    "subject": "security: audit + fix pallet-ibc-lite, pallet-anon-messaging, pallet-service-market",
+    "url": "https://api.github.com/repos/clawinfra/claw-chain/pulls/54",
+    "repo": "clawinfra/claw-chain",
+    "reason": "author",
+    "updated": "2026-02-28T05:04:56Z",
+    "verdict": "actionable",
+    "urgent": true
+  }
+]

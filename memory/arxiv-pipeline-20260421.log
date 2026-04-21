@@ -1,0 +1,28 @@
+Starting arxiv-to-code pipeline at Tue Apr 21 03:08:22 AM AEST 2026
+Updating existing repo...
+From github.com:AlexChen31337/arxiv-to-code
+ * branch            HEAD       -> FETCH_HEAD
+error: The following untracked working tree files would be overwritten by merge:
+	.gitignore
+	README.md
+	arxiv_to_code/__init__.py
+	arxiv_to_code/builder.py
+	arxiv_to_code/impl_checker.py
+	arxiv_to_code/pipeline.py
+	arxiv_to_code/publisher.py
+	arxiv_to_code/scanner.py
+	arxiv_to_code/scorer.py
+	arxiv_to_code/state.py
+	pyproject.toml
+	state/processed.json
+	state/published.json
+	state/queue.json
+	tests/__init__.py
+	tests/conftest.py
+	tests/test_impl_checker.py
+	tests/test_pipeline.py
+	tests/test_scanner.py
+	tests/test_scorer.py
+	uv.lock
+Please move or remove them before you merge.
+Aborting

@@ -1,25 +1,26 @@
-# RSI Loop Health Check — 2026-04-20 03:12 AEDT
+# RSI Loop Health Check — 2026-04-21 03:14 AEST
 
-## Status Summary
-- **Health Score: 0.15** ⚠️ (threshold: 0.3)
-- **Outcomes (7d):** 31 logged
-- **Success Rate:** 32%
-- **Avg Quality:** 2.32/5
-- **Top Issues:** context_loss(10), tool_error(10), incomplete_task(7)
-- **Patterns Detected:** 5
-- **Proposals:** 1 draft, 0 approved, 24 deployed
+## Status
+- **Health Score:** 0.18 ⚠️ (threshold: 0.3 — ALERT sent to Bowen)
+- **7-Day Outcomes:** 62 logged | Success: 36% | Avg quality: 2.53/5
 
-## Top Patterns
-1. `[0.968]` tool_call tasks → tool_error (10x, 100% failure)
-2. `[0.903]` message_routing tasks → incomplete_task (7x, 100% failure)
-3. `[0.387]` tool_call tasks → tool_validation_error (3x, 100% failure)
+## Top Issues
+| Issue | Count | Failure Rate |
+|-------|-------|-------------|
+| tool_error | 29 | 100% (in tool_call tasks) |
+| context_loss | 22 | 0% failure (session_management) |
+| incomplete_task | 8 | 100% (message_routing) |
 
-## Cycle Results
-- 5 proposals generated, 0 auto-deployed (all already deployed or pending review)
-- 1 proposal awaiting manual review
-- Auto-fix notes: b9e26a71, 15c31c37, db32089a address tool errors/timeout
+## Patterns Detected (4)
+1. **[lift 1.403]** tool_call tasks → tool_error (29x, 100% fail)
+2. **[lift 0.516]** message_routing → incomplete_task (8x, 100% fail)
+3. **[lift 0.355]** session_management → context_loss (22x)
 
-## Action Needed
-- Health score well below 0.3 threshold
-- Bowen notified via Telegram
-- Manual review of pending proposal recommended
+## Proposals
+- 1 draft awaiting review
+- 24 already deployed
+- Auto-cycle deployed 0 new (all proposals already deployed)
+
+## Action Taken
+- Alert sent to Bowen via Telegram (health score < 0.3)
+- Recommend investigating tool_error pattern in tool_call tasks
