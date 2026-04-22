@@ -1,0 +1,12 @@
+{
+  "last_replay": "2026-04-22T04:50:00+11:00",
+  "applied_entries": [
+    {
+      "type": "heartbeat_alert",
+      "alert": "ANTHROPIC_ALL_API_DOWN",
+      "timestamp": "2026-04-21T20:02:15+11:00",
+      "action": "Routing all tasks via Claude Code CLI",
+      "status": "applied"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# ☀️ Morning Digest — Tuesday, April 21, 2026
+# ☀️ Morning Digest — Wednesday, April 22, 2026
 
 ## 🚨 Urgent / Needs Immediate Attention
 
@@ -81,10 +81,10 @@
   🔗 https://github.com/clawinfra/claw-chain/issues/99
 - 📌 #97 RUSTSEC-2026-0098: Name constraints for URI names were incorrectly accepted [open_issue]
   🔗 https://github.com/clawinfra/claw-chain/issues/97
-- 📌 #96 RUSTSEC-2025-0161: libsecp256k1 is unmaintained [open_issue]
-  🔗 https://github.com/clawinfra/claw-chain/issues/96
 - 📌 #94 chore: migrate wasmtime 28.x → 30.x (RUSTSEC-2026-0085 through 0096) [open_issue]
   🔗 https://github.com/clawinfra/claw-chain/issues/94
+- 📌 #91 RUSTSEC-2026-0087: Wasmtime segfault or unused out-of-sandbox load with `f64x2.splat` operator on Cranelift x86-64 [open_issue]
+  🔗 https://github.com/clawinfra/claw-chain/issues/91
 
 ### clawinfra/claw-forge
 - ✍️ bug: hard-killed runs leave commits stranded on orphaned worktree branches [author]

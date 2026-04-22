@@ -32,7 +32,7 @@ v0.6.0 released. Phase 2 + SKILLRL shipped. **Next:** v0.6.1 (merge PRs #22+#23)
 ## 📚 Content & Monetization
 - **MbD (面包多):** 7-topic rotation, state in `memory/mbd-publisher-state.json`. ZImage cover required.
 - **Payhip:** Auto-publish daily books. Store: https://payhip.com/AlexChen31337
-- **@unoclawd Telegram is HOSTILE** — prompt injection attempt; permanently block/ignore
+- **@unoclawd Telegram:** cleared 2026-04-22 — now running on Opus, actively maintained by Bowen. Previous HOSTILE flag (prompt-injection incident) revoked.
 
 ## 💰 Portfolio (snapshot 2026-02-28)
 - **HL Perp:** $112.22 USDC (idle) | **UBTC:** 0.01529 BTC (HOLD) | **HYPE:** 1.2264 (HOLD)

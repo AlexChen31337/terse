@@ -1,26 +1,28 @@
-# RSI Loop Health Check — 2026-04-21 03:14 AEST
+# RSI Loop Health Check — 2026-04-22 03:14 AEDT
 
 ## Status
-- **Health Score:** 0.18 ⚠️ (threshold: 0.3 — ALERT sent to Bowen)
-- **7-Day Outcomes:** 62 logged | Success: 36% | Avg quality: 2.53/5
+- **Health Score: 0.18** ⚠️ (threshold: 0.3)
+- **Outcomes (7d):** 48 logged | Success: 35% | Avg quality: 2.52/5
 
 ## Top Issues
-| Issue | Count | Failure Rate |
-|-------|-------|-------------|
-| tool_error | 29 | 100% (in tool_call tasks) |
-| context_loss | 22 | 0% failure (session_management) |
-| incomplete_task | 8 | 100% (message_routing) |
+| Issue | Count | Context |
+|-------|-------|---------|
+| tool_error | 22 | tool_call tasks |
+| context_loss | 17 | session_management tasks |
+| incomplete_task | 6 | message_routing tasks |
 
 ## Patterns Detected (4)
-1. **[lift 1.403]** tool_call tasks → tool_error (29x, 100% fail)
-2. **[lift 0.516]** message_routing → incomplete_task (8x, 100% fail)
-3. **[lift 0.355]** session_management → context_loss (22x)
+1. **[1.403]** `tool_call` → `tool_error` at 100% failure rate (29 occurrences)
+2. **[0.516]** `message_routing` → `incomplete_task` at 100% fail (8 occurrences)
+3. **[0.355]** `session_management` → `context_loss` at 0% failure (22 occurrences)
 
-## Proposals
-- 1 draft awaiting review
-- 24 already deployed
-- Auto-cycle deployed 0 new (all proposals already deployed)
+## Cycle Results
+- Proposals generated: 4 (all already deployed)
+- Auto-deployed: 0
+- Awaiting review: 0
+- One approved proposal ready: `3b8e8f52` (address incomplete_task in message_routing)
 
 ## Action Taken
-- Alert sent to Bowen via Telegram (health score < 0.3)
-- Recommend investigating tool_error pattern in tool_call tasks
+- ⚠️ **Bowen alerted via Telegram** — health score below threshold
+- Cycle completed, no new proposals to deploy
+- Recommendation: investigate recurring tool_error pattern (22 instances, 100% failure)
