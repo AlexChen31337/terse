@@ -1564,3 +1564,22 @@ Fear at high BTC prices = contrarian accumulation zone. Smart money accumulating
 **Bias:** BTC bullish ($73.5-78K range), ETH neutral, DeFi altcoins avoid near-term.
 
 **Forward:** Trump statements, Iran ceasefire progress, KelpDAO resolution, EU pilot fast-track decisions.
+
+---
+# Report: 2026-04-22 (Wed) 2:00 AM AEST
+
+## Snapshot
+- BTC: $79,263 | ETH: $2,404 | SOL: $88.25 | HYPE: $41.01
+- Fear&Greed: 32 (Fear) | Market Cap: $2.73T (+3.52%) | BTC Dom: 58.2%
+- 24h Liquidations: $418M (short squeeze)
+
+## Top Pick: HYPE ($41) — Perp DEX with real revenue, accumulating in fear zone
+## Watch: BTC ($80K breakout), ZEC (privacy+AI), PENGU (meme momentum)
+
+## Key Narratives
+1. AI+Crypto convergence — Anthropic/Google compute deals, Block AI restructuring
+2. Institutional adoption — Morgan Stanley ETF, Invesco/Superstate $900M
+3. Quantum threat — Google paper says BTC easier to crack than assumed
+4. Regulatory clarity — Clarity Act progressing
+
+## Regime: Fearful Accumulation (late bear / early bull transition)
