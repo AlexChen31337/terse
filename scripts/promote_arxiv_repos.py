@@ -13,7 +13,7 @@ GITHUB_TOKEN = subprocess.check_output([
 
 TOKEN_DATA = json.loads(GITHUB_TOKEN)
 GITHUB_TOKEN = TOKEN_DATA['accounts']['bowen31337']['token']
-REPO_OWNER = "AlexChen31337"
+REPO_OWNER = "Arxiv-to-code"
 DRY_RUN = "--dry-run" in sys.argv
 
 if DRY_RUN:

@@ -59,7 +59,7 @@ MEDIUM_VALUE_KEYWORDS = [
 
 GIT_USER_EMAIL = "alex.chen31337@gmail.com"
 GIT_USER_NAME = "Alex Chen"
-GH_ORG = "AlexChen31337"
+GH_ORG = "Arxiv-to-code"
 SSH_KEY = Path.home() / ".ssh" / "id_ed25519_alexchen"
 
 

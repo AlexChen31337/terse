@@ -7,7 +7,7 @@ set -euo pipefail
 WORKSPACE="$HOME/.openclaw/workspace"
 SCRIPTS="$WORKSPACE/scripts"
 GITHUB_TOKEN="$("$SCRIPTS/decrypt.sh" github-config.json 2>/dev/null | python3 -c "import sys,json;d=json.load(sys.stdin);print(d['accounts']['bowen31337']['token'])")"
-REPO_OWNER="AlexChen31337"
+REPO_OWNER="Arxiv-to-code"
 TEMP_JSON=$(mktemp)
 
 # Dry run mode
