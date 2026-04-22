@@ -1,0 +1,16 @@
+{
+  "title": "别再让 AI 写玩具代码:生产级软件的智能体工作流",
+  "english_title": "How to Utilize AI Coding Agents to Create Production-Grade Software",
+  "author": "Alex Chen",
+  "date": "2026-04-23",
+  "language": "zh-CN",
+  "target_platform": "MaiMiDuo (mbd.pub)",
+  "word_count": 2037,
+  "pricing_rmb": "9.9-19.9",
+  "category": "AI 工程 / 智能体 / 工程实践",
+  "tags": ["AI 编程", "智能体", "Claude Code", "工程实践", "代码质量", "PBR"],
+  "summary": "把智能体当一支工程师团队来管:PBR 三段式(Plan→Build→Review)、模型分工矩阵、上下文工程、VBR 纪律、四层护栏。一年 80% 生产代码由 Agent 写出来的实战经验,告别玩具代码。",
+  "status": "draft",
+  "ready_for_publish": true,
+  "price_suggestion_rmb": 12.9
+}

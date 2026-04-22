@@ -1,0 +1,20 @@
+ZImage prompt (deferred — GPU server 10.0.0.35 was down on 2026-04-23):
+
+Positive:
+A minimalist cyberpunk book cover, dark navy gradient background (#0f172a to #1e293b),
+abstract geometric circuit patterns in cyan (#22d3ee), three stacked translucent cubes
+representing Plan / Build / Review phases, soft glowing dots, depth of field, professional
+publication cover, vertical 3:4 composition, centered focal point, premium minimalist design,
+clean negative space at top and bottom for title placement.
+
+Negative:
+text, letters, numbers, words, characters, fonts, typography, logo, title, subtitle, caption,
+label, sign, writing, watermark, blurry, low quality, deformed, ugly, extra limbs, cartoon,
+anime, photorealistic faces, people.
+
+Generation params (when GPU back):
+- Model: z_image_turbo_bf16.safetensors
+- CLIP: qwen_3_4b.safetensors (qwen_image)
+- VAE: ae.safetensors
+- Steps 20, CFG 3.5, sampler euler, scheduler simple
+- Resolution: 768 x 1024
