@@ -84,13 +84,6 @@ Append this block to every `sessions_spawn` task string:
 
 ## GitHub Repo Ownership (NON-NEGOTIABLE)
 - **`clawinfra/`** — ONLY for ClawChain, EvoClaw, and core infrastructure repos (claw-chain, evoclaw, clawchain-sdk, clawkeyring, fear-protocol, agent-tools, orchestrator, rsi-loop, shield-agent, clawmemory, claw-forge, whalecli, clawos, evoclaw-browser, identity-resolver, homebrew-evoclaw, marketing-assets, clawinfra-web)
-- **`AlexChen31337/`** — Research, tools, benchmarks, arxiv-to-code outputs, inference optimization, content pipelines, anything NOT core ClawInfra
-- **`bowen31337/`** — Bowen's personal/private repos, forks, books, ha-smartshift
-- **Before `gh repo create`:** check if it belongs to clawinfra. If not → AlexChen31337.
-- ArxivToCode cron output → arxiv-to-code org (never AlexChen31337, never clawinfra)
-
-## GitHub Repo Ownership (NON-NEGOTIABLE)
-- **`clawinfra/`** — ONLY for ClawChain, EvoClaw, and core infrastructure repos (claw-chain, evoclaw, clawchain-sdk, clawkeyring, fear-protocol, agent-tools, orchestrator, rsi-loop, shield-agent, clawmemory, claw-forge, whalecli, clawos, evoclaw-browser, identity-resolver, homebrew-evoclaw, marketing-assets, clawinfra-web)
 - **`AlexChen31337/`** — Research, tools, benchmarks, inference optimization, content pipelines, anything NOT core ClawInfra and NOT arxiv paper replications
 - **`bowen31337/`** — Bowen's personal/private repos, forks, books, ha-smartshift
 - **`Arxiv-to-code/`** — ALL arxiv paper replications, auto-generated daily implementations
