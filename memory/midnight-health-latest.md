@@ -1,72 +1,64 @@
-# Midnight Health Check — 2026-04-22 00:00 AEST
+# Midnight Health Check — 2026-04-23 00:00 AEST
+
+## 1. Sentinel ✅
+- **State**: Loaded, functional
+- **Last price check**: ~1h ago
+- **Alerts in last 24h**: Only midnight-health (24h ago) — quiet night
+- **Tracked prices**: BTC $77,970 | ETH $2,389 | SOL $88.17 | HYPE $40.63
+- **Fear & Greed**: 32 (Fear)
+
+## 2. Quant ⚠️
+- **State**: ACTIVE, account $112.22
+- **Open positions**: 0
+- **AlphaStrike service**: ✅ active (cycle 15959, running smoothly)
+- **Latest signals**: BTC SHORT blocked (confidence 6.6%, model agreement < 60%) — correctly conservative
+- **AlphaStrike logs**: Clean, BTC/ETH/SOL candles buffering normally
+- **FearHarvester**: ❌ NO STATE FILE — never ran or state missing
+- **Signal timestamps**: Stale (2026-03-26, ~28 days old)
+
+## 3. Shield ✅
+- **State file exists**: shield-state.json
+- **Pending approvals**: None
+- **Blocked attempts**: None (empty array)
+- **Last audit**: null — no audit run yet
+
+## 4. Herald ✅
+- **State**: Loaded, no scheduled posts, no outreach activity
+- **All zeros**: Clean slate, no issues
+
+## 5. EvoClaw Hub ✅
+- **Status**: UP, responding
+- **Registered agents**: 2
+  - `alex-eye` (Pi Camera) — idle, 0 messages, 0 actions
+  - `alex-hub` (Desktop Hub) — idle, 0 messages, 0 actions
+- **Note**: Both agents registered but no activity metrics (likely not actively used)
+
+## 6. Alex Eye (Pi) 🚨 DOWN
+- **alexeye.local**: Failed — could not resolve hostname
+- **10.0.0.50**: Failed — No route to host
+- **SSH config**: No Pi entry in ~/.ssh/config
+- **Restart**: NOT POSSIBLE — no remote access path available
+- **Action needed**: Bowen to physically check Pi, verify network connection
+
+## 7. Infrastructure
+- **Disk (/ and /media/DATA)**: 670G/937G used (76%) — OK
+- **/data2**: Not mounted (single partition system)
+- **AlphaStrike**: Running, healthy, cycle 15959
 
 ## Summary
 
 | Component | Status | Notes |
 |-----------|--------|-------|
-| **Sentinel** | ✅ OK | State current, no alerts in last 24h |
-| **Quant** | ✅ OK | AlphaStrike active, FearHarvester stale |
-| **AlphaStrike** | ✅ ACTIVE | systemd service running, cycling normally |
-| **Shield** | ✅ OK | No pending approvals, no blocked attempts |
-| **Herald** | ✅ OK | State initialized, no scheduled posts |
-| **EvoClaw Hub** | ✅ OK | 2 agents registered (alex-eye, alex-hub) |
-| **Alex Eye (Pi)** | 🚨 DOWN | Unreachable on all interfaces, no WoL |
-| **Disk** | ✅ OK | 75% used (227G free), /data2 not mounted |
+| Sentinel | ✅ OK | Quiet night, no alerts |
+| Quant | ⚠️ WARN | AlphaStrike OK, FearHarvester missing |
+| Shield | ✅ OK | No pending items |
+| Herald | ✅ OK | Dormant |
+| EvoClaw Hub | ✅ UP | 2 agents registered |
+| Alex Eye (Pi) | 🚨 DOWN | Unreachable, cannot restart remotely |
+| AlphaStrike | ✅ OK | Active, cycle 15959 |
+| Disk | ✅ OK | 76% used |
 
----
-
-## Sentinel
-
-- Last price check: recent
-- Last known prices: BTC $76,443 | ETH $2,325 | SOL $85.87 | HYPE $40.95
-- Fear & Greed: 33 (Fear)
-- Alerts in last 24h: **None** — all quiet
-
-## Quant / AlphaStrike
-
-- AlphaStrike service: **active** (systemd)
-- Journal: Cycling normally — Cycle 14520, Balance $10,000, 0 positions
-- BTC close: $76,410 | ETH close: $2,312.90 | SOL close: $85.80
-- Quant state signals: BTC LONG (0.4), ETH LONG (0.4), SOL LONG (0.4) — stale from Mar 26
-- Account value: $112.22
-- FearHarvester: **9406h stale** (last run Mar 26 2025) — non-critical, AlphaStrike itself is running fine
-
-## Shield
-
-- No pending approvals
-- No blocked attempts logged
-- No recent audits (lastAudit: null)
-- access-control.json: not found (may not exist yet)
-
-## Herald
-
-- State initialized with empty schedule
-- No posts, no outreach, no metrics
-- All lastChecks at 0 (idle)
-
-## EvoClaw Hub
-
-- **UP** on localhost:8420
-- 2 agents registered:
-  - alex-eye
-  - alex-hub
-
-## Alex Eye (Pi)
-
-- 🚨 **DOWN** — unreachable
-- Tried: pi@10.0.0.45, pi@192.168.1.45, pi@raspberrypi.local, pi@alexeye, pi@alexeye.local
-- No ARP entry (device off network)
-- No WoL tools installed
-- **Requires physical power-on or Bowen intervention**
-
-## Disk
-
-- Root (/): 937G total, 663G used, 227G free (75%)
-- /data2: **Not mounted / directory doesn't exist**
-- /media/DATA: Same as root (not a separate mount)
-
-## Action Items
-
-1. **Alex Eye Pi** — physically offline. Bowen needs to check if it's powered on.
-2. **Quant state stale** — AlphaStrike is running fine but Quant agent state hasn't been updated in ~13 months. Low priority.
-3. **/data2** — previously referenced mount no longer exists. May need cleanup in config references.
+### Items Needing Attention
+1. **Alex Eye Pi**: DOWN — physical check required
+2. **FearHarvester**: No state file — may need initialization
+3. **Quant signals**: 28 days stale — may need investigation
