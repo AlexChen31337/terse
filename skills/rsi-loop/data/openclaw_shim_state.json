@@ -1,7 +1,7 @@
 {
-  "last_scan_ts": 1776867130.2699656,
-  "last_scan_iso": "2026-04-22T14:12:10.269967+00:00",
-  "events_logged": 1037,
+  "last_scan_ts": 1776910379.2895358,
+  "last_scan_iso": "2026-04-23T02:12:59.289536+00:00",
+  "events_logged": 1043,
   "file_offsets": {
     "04c6c576-d1fa-433f-ab13-e39aa2836368.jsonl": 127,
     "f91b3ca5-5de8-4f0c-8852-e3b0baf9ba11.jsonl": 327,
@@ -167,6 +167,10 @@
     "bfd74179-c922-47ed-959e-50e2480b60f6.jsonl": 105,
     "837ffeba-4f94-4d74-ad61-f5d915d0ac62.jsonl": 35,
     "709220e8-b7f6-480d-96e2-fc64b168ba85.jsonl": 13,
-    "711b1803-2321-4706-a398-fe3266efbf2c.jsonl": 21
+    "711b1803-2321-4706-a398-fe3266efbf2c.jsonl": 21,
+    "1f4d37f5-43b2-4233-a5d8-f2491723ca58.jsonl": 201,
+    "96fb67f7-e975-46c1-987b-f29d5b425778.jsonl": 201,
+    "289d6551-22b0-4815-92fc-a754b3fdb74b.jsonl": 201,
+    "ef4bf9ba-d195-4225-9682-97d06b674c6b.jsonl": 201
   }
 }

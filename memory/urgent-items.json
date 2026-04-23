@@ -1,6 +1,16 @@
 [
   {
     "channel": "github",
+    "subject": "security(audit): fix remaining RUSTSEC advisories",
+    "url": "https://api.github.com/repos/clawinfra/claw-chain/pulls/106",
+    "repo": "clawinfra/claw-chain",
+    "reason": "author",
+    "updated": "2026-04-22T00:12:27Z",
+    "verdict": "actionable",
+    "urgent": true
+  },
+  {
+    "channel": "github",
     "subject": "security(audit): comprehensive RUSTSEC ignore list with exposure analysis",
     "url": "https://api.github.com/repos/clawinfra/claw-chain/pulls/103",
     "repo": "clawinfra/claw-chain",

@@ -1,0 +1,6 @@
+{
+  "last_replay": "2026-04-23T08:50:00+11:00",
+  "entries_applied": 1,
+  "last_entry_type": "heartbeat",
+  "summary": "Blogwatcher found 37 new articles (8 from Bitcoin Magazine, 29 from Hacker News). GitHub: no new releases or open PRs in clawinfra repos. OAuth health: direct API healthy, proxy1 still 401"
+}

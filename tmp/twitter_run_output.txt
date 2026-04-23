@@ -1,0 +1,2 @@
+/media/DATA/.openclaw/workspace/.venv/bin/python3: can't open file '/media/DATA/.openclaw/workspace/tmp/post_arxiv_thread.py': [Errno 2] No such file or directory
+EXIT:2

@@ -1,6 +1,9 @@
-# ☀️ Morning Digest — Wednesday, April 22, 2026
+# ☀️ Morning Digest — Thursday, April 23, 2026
 
 ## 🚨 Urgent / Needs Immediate Attention
+
+🐙 **[GITHUB]** security(audit): fix remaining RUSTSEC advisories
+   🔗 https://api.github.com/repos/clawinfra/claw-chain/pulls/106
 
 🐙 **[GITHUB]** security(audit): comprehensive RUSTSEC ignore list with exposure analysis
    🔗 https://api.github.com/repos/clawinfra/claw-chain/pulls/103
@@ -8,7 +11,7 @@
 🐙 **[GITHUB]** security: audit + fix pallet-ibc-lite, pallet-anon-messaging, pallet-service-market
    🔗 https://api.github.com/repos/clawinfra/claw-chain/pulls/54
 
-## 🐙 GitHub — 53 Items
+## 🐙 GitHub — 54 Items
 
 ### bowen31337/dataViz-agent
 - ✍️ bug: notify-change route uses undefined permission 'embeddings:write' — always returns 403 [author]
@@ -53,6 +56,8 @@
   🔗 https://github.com/clawinfra/agent-tools/issues/1
 
 ### clawinfra/claw-chain
+- ✍️ security(audit): fix remaining RUSTSEC advisories [author]
+  🔗 https://api.github.com/repos/clawinfra/claw-chain/pulls/106
 - ✍️ fix(deps): patch yanked core2 v0.4.0 transitive dep [author]
   🔗 https://api.github.com/repos/clawinfra/claw-chain/pulls/104
 - ✍️ security(audit): comprehensive RUSTSEC ignore list with exposure analysis [author]
@@ -131,5 +136,5 @@
   🔗 https://api.github.com/repos/openclaw/openclaw/issues/17919
 
 ---
-📊 Total: 53 items | Actionable: 42 | Urgent: 2
+📊 Total: 54 items | Actionable: 43 | Urgent: 3
 Generated: 08:31 UTC+11:00

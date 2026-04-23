@@ -1,14 +1,15 @@
 {
   "processed_ids": [
-    "2604.08540",
-    "2604.08465",
-    "2604.08539",
-    "2604.11734",
-    "2604.16054",
     "2604.15082",
+    "2604.11734",
+    "2604.08540",
+    "2604.08539",
     "2604.08545",
     "2604.18566",
-    "2604.12955"
+    "2604.12955",
+    "2604.08465",
+    "2604.16054",
+    "2604.19567"
   ],
   "repos_created": [
     {
@@ -73,7 +74,14 @@
       "title": "Benchmarking System Dynamics AI Assistants: Cloud Versus Local LLMs on CLD Extraction and Discussion",
       "description": "Implementation of Benchmarking System Dynamics AI Assistants: Cloud Versus Local LLMs on CLD Extraction and Discussion (arXiv:2604.18566) https://arxiv.org/abs/2604.18566",
       "created_at": "2026-04-21T18:00:31.185493+00:00"
+    },
+    {
+      "arxiv_id": "2604.19567",
+      "repo": "AlexChen31337/arxiv-260419567-multi-modal-reasoning-with-llms-for-visual-semantic-arithmet",
+      "title": "Multi-modal Reasoning with LLMs for Visual Semantic Arithmetic",
+      "description": "Implementation of Multi-modal Reasoning with LLMs for Visual Semantic Arithmetic (arXiv:2604.19567) https://arxiv.org/abs/2604.19567",
+      "created_at": "2026-04-22T18:00:54.121985+00:00"
     }
   ],
-  "last_run": "2026-04-21T18:00:31.185530+00:00"
+  "last_run": "2026-04-22T18:00:54.121997+00:00"
 }

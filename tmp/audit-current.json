@@ -1,0 +1,6 @@
+error: cargo-audit fatal error: parse error: TOML parse error at line 145, column 9
+    |
+145 | deny = ["vulnerability", "unsound", "unmaintained"]
+    |         ^^^^^^^^^^^^^^^
+unknown variant `vulnerability`, expected one of `warnings`, `unmaintained`, `unsound`, `yanked`
+

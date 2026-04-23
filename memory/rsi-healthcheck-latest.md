@@ -1,28 +1,24 @@
-# RSI Loop Health Check — 2026-04-22 03:14 AEDT
+# RSI Loop Health Check — 2026-04-23 03:10 AEST
 
-## Status
-- **Health Score: 0.18** ⚠️ (threshold: 0.3)
-- **Outcomes (7d):** 48 logged | Success: 35% | Avg quality: 2.52/5
+## Status Summary
+- **Health Score:** 0.186 (threshold: 0.3) ⚠️ BELOW THRESHOLD
+- **Outcomes (7d):** 58 logged | Success: 41% | Avg quality: 2.69/5
+- **Top Issues:** tool_error (26), context_loss (24), incomplete_task (5)
+- **Patterns Detected:** 4
+- **Proposals:** 0 draft | 1 approved | 24 deployed
 
-## Top Issues
-| Issue | Count | Context |
-|-------|-------|---------|
-| tool_error | 22 | tool_call tasks |
-| context_loss | 17 | session_management tasks |
-| incomplete_task | 6 | message_routing tasks |
+## Patterns
+1. **[1.418]** In 'tool_call' tasks, 'tool_error' occurs 26x with 100% failure rate
+2. **[0.436]** In 'message_routing' tasks, 'incomplete_task' occurs 6x with 100% fail
+3. **[0.364]** In 'session_management' tasks, 'context_loss' occurs 20x with 0% failure
 
-## Patterns Detected (4)
-1. **[1.403]** `tool_call` → `tool_error` at 100% failure rate (29 occurrences)
-2. **[0.516]** `message_routing` → `incomplete_task` at 100% fail (8 occurrences)
-3. **[0.355]** `session_management` → `context_loss` at 0% failure (22 occurrences)
+## Cycle Result
+- Cycle health score: 0.223
+- Proposals generated: 4 (all already deployed or auto-approved)
+- Auto-deployed: 0 new
+- Ready to deploy: `3b8e8f52` — Address 'incomplete_task' in 'message_routing' tasks
 
-## Cycle Results
-- Proposals generated: 4 (all already deployed)
-- Auto-deployed: 0
-- Awaiting review: 0
-- One approved proposal ready: `3b8e8f52` (address incomplete_task in message_routing)
-
-## Action Taken
-- ⚠️ **Bowen alerted via Telegram** — health score below threshold
-- Cycle completed, no new proposals to deploy
-- Recommendation: investigate recurring tool_error pattern (22 instances, 100% failure)
+## Action Required
+- ⚠️ **ALERT SENT** to Bowen via Telegram — health score below 0.3
+- 41% success rate is concerning — tool_error and context_loss dominate
+- Proposal 3b8e8f52 still awaiting manual deploy approval

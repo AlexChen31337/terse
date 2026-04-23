@@ -1,0 +1,12 @@
+/media/DATA/.openclaw/workspace/memory/github-alexchen-setup.md:**Stored:** `memory/github-token.txt`
+/media/DATA/.openclaw/workspace/memory/github-alexchen-setup.md:export GH_TOKEN="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"
+/media/DATA/.openclaw/workspace/memory/2026-04-01-credential-leak-rca.md:  if grep -rn "psk_\|ghp_\|sk-\|token.*=.*['\"][a-f0-9]" --include="*.py" --include="*.sh" --include="*.json" . | grep -v ".git\|test\|mock\|env\|getenv"; then
+/media/DATA/.openclaw/workspace/memory/github-token.txt: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
+/media/DATA/.openclaw/workspace/memory/encrypted/README.md:- github-token.txt
+/media/DATA/.openclaw/workspace/memory/2026-02-18.md:- [ ] Fix Twitter/GitHub auth (`memory/twitter-bird-credentials.txt`, `memory/github-token.txt`)
+/media/DATA/.openclaw/workspace/memory/2026-04-18.md:- **bowen31337 GitHub token:** `ghp_ydolbRPO0dELaMfC7gfU8FMBEuvk8M1ZHRNM` — found in `memory/github-token.txt`, verified working
+/media/DATA/.openclaw/workspace/memory/2026-04-18.md:- bowen31337 token WAS available in `memory/github-token.txt` — always check memory files before asking user
+/media/DATA/.openclaw/workspace/memory/2026-04-18.md:- **bowen31337 GitHub token (NEW):** `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` — replaces expired `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`. Saved to `memory/github-token.txt`. Verified resolves to bowen31337.
+/media/DATA/.openclaw/workspace/memory/2026-04-18.md:- **bowen31337 token updated** — new token written to `memory/github-token.txt`
+/media/DATA/.openclaw/workspace/memory/2026-04-11.md:- **Bowen's PAT:** `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` (bowen31337 account)
+/media/DATA/.openclaw/workspace/memory/2026-02-17.md:- GitHub token: Missing at `memory/github-token.txt`
