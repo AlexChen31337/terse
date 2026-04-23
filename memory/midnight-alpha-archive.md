@@ -1583,3 +1583,54 @@ Fear at high BTC prices = contrarian accumulation zone. Smart money accumulating
 4. Regulatory clarity — Clarity Act progressing
 
 ## Regime: Fearful Accumulation (late bear / early bull transition)
+
+---
+
+## Report: April 24, 2026 (Thu) — 16:00 UTC
+
+### Snapshot
+- BTC: $78,406 (-1.24%) | ETH: $2,333 (-3.20%) | SOL: $86.30 | HYPE: $41.79
+- Market Cap: $2.694T | Fear & Greed: 46 (Fear) | BTC Dominance: 58.2%
+- ETH Gas: 4.37 GWEI | 24h Vol: $103.5B
+
+### Top Narratives
+1. Google $175-185B agentic AI capex — validates entire AI agent thesis
+2. White House warns of industrial-scale AI model theft by China
+3. OpenAI open-sources Privacy Filter (Apache 2.0) — AI safety commoditization
+4. SpaceX orbital AI data centers flagged as potentially non-viable
+
+### Alpha Signals
+- Fearful accumulation regime: BTC +4.9% weekly while sentiment in Fear
+- HYPE: DEX dominance + agentic narrative alignment
+- AI compute/verification sector untapped, not yet priced in
+- BTC dominance at 58.2% extreme — rotation inevitable
+
+### Top Pick: HYPE (Hyperliquid)
+
+
+=============================================================================
+MIDNIGHT ALPHA — Friday, April 25, 2026 (2:05 AM AEST / Apr 23 16:05 UTC)
+=============================================================================
+
+MARKET SNAPSHOT
+  BTC:  $78,412  (-1.17%)  | Holding $78K support
+  ETH:  $2,331   (-3.26%)  | Structural weakness continues
+  SOL:  $86.30   (-2.32%)  | Sliding from $90 zone
+  HYPE: $41.69   (+1.51%)  | Only green, quiet accumulation
+
+GLOBAL: $2.69T mcap | FEAR & GREED: 46 (FEAR) | BTC DOM: ~62.7%
+
+TOP PICK: HYPE (Hyperliquid)
+  - Only green in tracked basket
+  - Perp DEX volumes strong, agent trading infra flows through HYPE
+  - Accumulation pattern at $41.69
+  - Target: $50+ within 30 days
+
+NARRATIVE RADAR
+  1. AI Agent Infrastructure (🔥 Heating) — infra > meme agents
+  2. HYPE/Perp DEX momentum (🟢 Active) — DeFi blue chip of 2026
+  3. BTC Dominance Squeeze (⚠️ Watch) — alt rotation imminent if BTC stabilizes
+  4. AI x Crypto Convergence (🔮 Emerging) — on-chain agents going live
+
+ACTIONABLE: Watch BTC $76K, accumulate HYPE below $40, avoid memes during Fear.
+

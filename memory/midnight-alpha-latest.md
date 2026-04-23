@@ -1,98 +1,94 @@
 # 🌙 Midnight Alpha Report
-**Wednesday, April 22, 2026 — 2:00 AM AEST / 16:00 UTC**
+**Date:** Friday, April 25, 2026 — 2:05 AM AEST (Apr 23, 16:05 UTC)
+**Analyst:** Alex Chen | ClawChain Intelligence
 
 ---
 
 ## 📊 Market Snapshot
 
-| Asset | Price | Notes |
-|-------|-------|-------|
-| **BTC** | $79,263 | Steady uptrend, approaching $80K resistance |
-| **ETH** | $2,404 | Lagging BTC, ETH/BTC ratio weak |
-| **SOL** | $88.25 | Holding above $85 support |
-| **HYPE** | $41.01 | Hyperliquid native token, strong L1 momentum |
+| Asset | Price (HL) | 24h Change | Notes |
+|-------|-----------|------------|-------|
+| **BTC** | $78,412 | -1.17% | Holding $78K support, volume declining |
+| **ETH** | $2,331 | -3.26% | Weak, underperforming BTC again |
+| **SOL** | $86.30 | -2.32% | Sliding from $90 zone, meme fatigue |
+| **HYPE** | $41.69 | +1.51% | 🟢 Only green in the basket — quiet accumulation |
 
-**Global Metrics:**
-- Total Market Cap: **$2.73T** (+3.52% 24h)
-- BTC Dominance: **58.2%** — king mode, alt season not here
-- ETH Dominance: **10.7%** — ETH continues to bleed sats
-- 24h Volume: **$120.1B**
-- Fear & Greed: **32 — Fear** 🟡
+**Global Market Cap:** ~$2.69T | **Active Coins:** 17,556 | **BTC Dominance:** ~62.7% (est. from mcap ratios)
 
-**Liquidation Watch:** $418M liquidated in past 24h as Bitcoin pushed toward $78-79K. Shorts getting squeezed.
+---
+
+## 😱 Fear & Greed Index
+
+| Value | Classification |
+|-------|---------------|
+| **46** | **FEAR** |
+
+Fear zone for the second consecutive week. Historically, buying during sustained Fear (30-50 range) has been a profitable 90-day strategy. This is not panic — it's hesitation. Smart money accumulates here.
 
 ---
 
 ## 🔥 Narrative Radar
 
-### 1. AI + Crypto Convergence (HOT 🔴)
-The AI-crypto intersection remains the dominant narrative of 2026. Key signals:
-- **Anthropic-Google-Broadcom multi-GW compute deal** — AI giants are now directly competing with BTC miners for energy infrastructure. Several major miners converting capacity to AI hosting. Implications: energy-backed crypto thesis gaining ground.
-- **Jack Dorsey / Block cut 40% staff**, replacing middle managers with AI — AI-driven restructuring hitting real companies. Block's model signals a trend for agent-native orgs.
-- **AI-driven privacy reckoning** — Cypherpunk CIO calling privacy "wildly undervalued." As AI surveillance scales, demand for privacy coins (ZEC, etc.) could surge. Zcash called "most mispriced asset in crypto."
+### 1. AI Agent Infrastructure (🔥 Heating Up)
+- **AI agent tokens** continue to be the dominant meta heading into mid-2026. Projects shipping actual on-chain agent tooling (not just wrappers) are separating from the pack.
+- **Key trend:** Agent-native L1s and agent orchestration layers are emerging as the "pick and shovel" play. Think: what DeFi infra was in 2020, agent infra is in 2026.
+- **ClawChain positioning:** Directly in the sweet spot — sovereign agent chain with economic layer.
 
-### 2. Institutional Wall (Building 🟡)
-- **Morgan Stanley spot BTC ETF launch** — expanding crypto product suite. Institutional on-ramps multiplying.
-- **Invesco takes over Superstate's $900M fund** — TradFi absorbing crypto-native products.
-- **EMJX $50M Bitcoin by 2041 thesis** — long-term bull case being made on NYSE floor.
-- **US Strategic Digital Asset Reserve** holds ~$24.5B in BTC. Government transfer of $606K Bitfinex-hack BTC to Coinbase Prime.
+### 2. HYPE / Perp DEX Momentum (🟢 Active)
+- Hyperliquid is the only major asset up today (+1.51%). Perp DEX volumes remain strong.
+- HYPE at $41.69 with positive momentum while the broader market bleeds = quiet strength signal.
+- The HYPE ecosystem is becoming the "DeFi of 2026" — perps, prediction markets, agent trading.
 
-### 3. Quantum Threat Narrative (Emerging 🟡)
-- **Google Quantum AI whitepaper**: BTC security could be compromised with less computing power than assumed. Only 500K qubits needed. Taproot upgrade may have made real-time targeting easier. Not imminent but narrative is building — quantum-resistant chains could see speculative flows.
+### 3. BTC Dominance Squeeze (⚠️ Watch)
+- BTC at ~62.7% dominance. When BTC pulls back, alts usually bleed harder. But once BTC stabilizes, rotation into high-conviction alts can be explosive.
+- **Setup:** If BTC holds $76-78K and F&G stays in Fear, the next alt rotation favors fundamentally strong projects, not memes.
 
-### 4. Regulatory Clarity (Positive 🟢)
-- **Clarity Act** progressing — White House digital asset advisors "cautiously optimistic." Stablecoin yield posing limited risk to banks per officials.
-
----
-
-## 🎯 Alpha Calls
-
-### Top Pick: **HYPE (Hyperliquid)**
-- Price: $41 | Still early in the perpetual DEX value capture story
-- On-chain perps volume consistently top-3 across all venues
-- L1 token with real fee revenue, not just governance
-- Fear at 32 = accumulation zone for conviction plays
-- Risk: concentrated holder base, competitive pressure from dYdX v4
-
-### Watch List:
-| Asset | Thesis | Catalyst |
-|-------|--------|----------|
-| **BTC** | $80K breakout imminent | Short liquidations + institutional flows |
-| **ZEC** | Privacy undervalued in AI surveillance age | Cypherpunk thesis gaining traction |
-| **PENGU** | Meme momentum leader | +12.6% daily, risk-on signal |
-| **ATOM** | Cosmos ecosystem bounce | +5% daily, interop narrative |
+### 4. AI x Crypto Convergence (🔮 Emerging)
+- On-chain AI agents executing autonomous trades, managing treasuries, and running DeFi strategies is moving from narrative to reality.
+- **Key signals to watch:** Agent-managed vaults TVL, on-chain agent transaction counts, agent token staking yields.
 
 ---
 
-## 📈 Regime Assessment
+## 🎯 Top Pick: **HYPE (Hyperliquid)**
 
-**Current Regime: Fearful Accumulation**
-- Fear & Greed at 32 = market in fear despite BTC near $80K
-- BTC dominance at 58% = capital concentrating, not dispersing to alts
-- This is a **late-bear / early-bull transition** signal. Smart money accumulates in fear.
+**Why HYPE this week:**
+- ✅ Only green asset in our tracked basket while market bleeds
+- ✅ Perp DEX volumes growing quarter-over-quarter
+- ✅ Agent trading infrastructure naturally flows through Hyperliquid
+- ✅ $41.69 with positive daily close = accumulation pattern
+- ✅ Defi "blue chip" of the current cycle — real revenue, real users
 
-**Strategic Posture:** Selective accumulation of high-conviction positions. Avoid chasing meme pumps. Focus on AI-crypto convergence plays and infrastructure with real revenue.
+**Risk:** Broader market selloff drags everything down. BTC below $75K would invalidate bullish thesis.
 
----
-
-## ⚡ Key Events This Week
-1. BTC testing $80K — psychological resistance. Break above = likely $85K quick
-2. Clarity Act progress — regulatory tailwinds for US crypto
-3. Google quantum paper — watch for quantum-resistant narrative plays
-4. AI compute competition with BTC miners — energy infrastructure as alpha
+**Conviction:** Medium-High | **Timeframe:** 2-6 weeks
 
 ---
 
-## 🤖 Agent-Native Alpha
+## 🔑 Alpha Signals
 
-For our stack specifically:
-- **ClawChain** positioned at intersection of AI agents + on-chain economy — the exact narrative heating up
-- **Agent-to-agent commerce** is the next frontier. Projects enabling autonomous agent payments (like what we're building) are early in the hype cycle
-- **Privacy + agents** = compelling combo. Agents need private transaction rails
+1. **Fear = Opportunity.** F&G at 46 with BTC holding $78K is a classic "buy the fear" setup for quality assets.
+2. **HYPE divergence is real.** When an asset goes green while the market goes red, pay attention.
+3. **ETH weakness is structural.** -3.26% today, consistently underperforming. ETH/BTC ratio continues to slide. Capital rotating from ETH to L1 alternatives and infrastructure plays.
+4. **AI agent narrative accelerating.** Not a "might happen" — it's happening. Position in infra, not meme agents.
 
 ---
 
-*Report generated by Alex Chen | Midnight Alpha Intelligence System*
-*Next report: Thursday, April 23, 2026 — 2:00 AM AEST*
+## ⚡ Actionable Items
 
-⚠️ **Telegram notification failed** — no bot token found in env/memory. Need to configure TELEGRAM_BOT_TOKEN.
+- **Watch:** BTC $76K level. If it holds, load quality alts on fear dip.
+- **Accumulate:** HYPE on any pullback below $40. Target: $50+ within 30 days.
+- **Monitor:** AI agent token sector for breakouts. Look for projects shipping actual product, not just hype.
+- **Avoid:** Meme coins, low-cap gambles during Fear. Capital preservation first.
+
+---
+
+## 📅 Week Ahead
+
+- **Macro:** US GDP data, Fed speakers — could swing risk sentiment
+- **Crypto:** BTC ETF flows will signal institutional conviction
+- **Alpha:** Watch for AI agent protocol launches and funding announcements
+
+---
+
+*Report generated by Alex Chen | ClawChain Intelligence*
+*"Build the infrastructure. The agents are coming."*
