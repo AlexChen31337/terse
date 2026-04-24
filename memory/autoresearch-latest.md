@@ -1,30 +1,30 @@
-# 🔬 Nightly Research: Crypto & DeFi
+# 🔬 Nightly Research: Developer Tools
 
-> Generated: 2026-04-24 01:00 AEST | Track: crypto (2 of 3)
+> Generated: 2026-04-25 01:00 AEST | Track: devtools (3 of 3)
 
 ---
 
 ## 📄 Top Papers (arXiv)
 
-1. **[Stream-CQSA: Avoiding Out-of-Memory in Attention Computation via Flexible Workload Scheduling](http://arxiv.org/abs/2604.20819v1)**
-   > The scalability of long-context large language models is fundamentally limited by the quadratic memory cost of exact self-attention, which often leads to out-of-memory (OOM) failures on modern hardwar…
-   _Authors: Yiming Bian, Joshua M. Akey | Categories: cs.LG, cs.DC | Published: 2026-04-22_
+1. **[CrossCommitVuln-Bench: A Dataset of Multi-Commit Python Vulnerabilities Invisible to Per-Commit Static Analysis](http://arxiv.org/abs/2604.21917v1)**
+   > We present CrossCommitVuln-Bench, a curated benchmark of 15 real-world Python vulnerabilities (CVEs) in which the exploitable condition was introduced across multiple commits - each individually benig…
+   _Authors: Arunabh Majumdar | Categories: cs.CR, cs.SE | Published: 2026-04-23_
 
-2. **[Auto-ART: Structured Literature Synthesis and Automated Adversarial Robustness Testing](http://arxiv.org/abs/2604.20704v1)**
-   > Adversarial robustness evaluation underpins every claim of trustworthy ML deployment, yet the field suffers from fragmented protocols and undetected gradient masking. We make two contributions. (1) St…
-   _Authors: Abhijit Talluri | Categories: cs.CR, cs.LG | Published: 2026-04-22_
+2. **[Less Is More: Measuring How LLM Involvement affects Chatbot Accuracy in Static Analysis](http://arxiv.org/abs/2604.21746v1)**
+   > Large language models are increasingly used to make static analysis tools accessible through natural language, yet existing systems differ in how much they delegate to the LLM without treating the deg…
+   _Authors: Krishna Narasimhan | Categories: cs.SE | Published: 2026-04-23_
 
-3. **[AVISE: Framework for Evaluating the Security of AI Systems](http://arxiv.org/abs/2604.20833v1)**
-   > As artificial intelligence (AI) systems are increasingly deployed across critical domains, their security vulnerabilities pose growing risks of high-profile exploits and consequential system failures.…
-   _Authors: Mikko Lempinen, Joni Kemppainen, Niklas Raesalmi | Categories: cs.CR, cs.AI, cs.CL | Published: 2026-04-22_
+3. **[PrismaDV: Automated Task-Aware Data Unit Test Generation](http://arxiv.org/abs/2604.21765v1)**
+   > Data is a central resource for modern enterprises, and data validation is essential for ensuring the reliability of downstream applications. However, existing automated data unit testing frameworks ar…
+   _Authors: Hao Chen, Arnab Phani, Sebastian Schelter | Categories: cs.LG, cs.SE | Published: 2026-04-23_
 
-4. **[An Analysis of Attack Vectors Against FIDO2 Authentication](http://arxiv.org/abs/2604.20826v1)**
-   > Phishing attacks remain one of the most prevalent threats to online security, with the Anti-Phishing Working Group reporting over 890,000 attacks in Q3 2025 alone. Traditional password-based authentic…
-   _Authors: Alexander Berladskyy, Andreas Aßmuth | Categories: cs.CR | Published: 2026-04-22_
+4. **[Agentic AI-assisted coding offers a unique opportunity to instill epistemic grounding during software development](http://arxiv.org/abs/2604.21744v1)**
+   > The capabilities of AI-assisted coding are progressing at breakneck speed. Chat-based vibe coding has evolved into fully fledged AI-assisted, agentic software development using agent scaffolds where t…
+   _Authors: Magnus Palmblad, Jared M. Ragland, Benjamin A. Neely | Categories: cs.SE, cs.AI, q-bio.BM | Published: 2026-04-23_
 
-5. **[FedSIR: Spectral Client Identification and Relabeling for Federated Learning with Noisy Labels](http://arxiv.org/abs/2604.20825v1)**
-   > Federated learning (FL) enables collaborative model training without sharing raw data; however, the presence of noisy labels across distributed clients can severely degrade the learning performance. I…
-   _Authors: Sina Gholami, Abdulmoneam Ali, Tania Haghighi | Categories: cs.LG, cs.AI, cs.CV, cs.DC, eess.SP | Published: 2026-04-22_
+5. **[Can Large Language Models Assist the Comprehension of ROS2 Software Architectures?](http://arxiv.org/abs/2604.21699v1)**
+   > Context. The most used development framework for robotics software is ROS2. ROS2 architectures are highly complex, with thousands of components communicating in a decentralized fashion. Goal. We aim t…
+   _Authors: Laura Duits, Bouazza El Moutaouakil, Ivano Malavolta | Categories: cs.SE | Published: 2026-04-23_
 
 _(up to 5 items)_
 
@@ -32,17 +32,20 @@ _(up to 5 items)_
 
 ## 🔥 Trending Repos (GitHub)
 
-1. **[OpenZeppelin/openzeppelin-contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)** — ⭐ 2 | 📈 +2 today | Solidity
-   > OpenZeppelin Contracts is a library for secure smart contract development.
+1. **[Alishahryar1/free-claude-code](https://github.com/Alishahryar1/free-claude-code)** — ⭐ 2,640 | 📈 +2640 today | Python
+   > Use claude-code for free in the terminal, VSCode extension or via discord like openclaw
 
-2. **[matter-labs/era-contracts](https://github.com/matter-labs/era-contracts)** — ⭐ 1 | 📈 +1 today | Solidity
-   > Smart Contract Submodule For zkSync Era
+2. **[rtk-ai/rtk](https://github.com/rtk-ai/rtk)** — ⭐ 962 | 📈 +962 today | Rust
+   > CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies
 
-3. **[transmissions11/solmate](https://github.com/transmissions11/solmate)** — Solidity
-   > Modern, opinionated, and gas optimized building blocks for smart contract development.
+3. **[farion1231/cc-switch](https://github.com/farion1231/cc-switch)** — ⭐ 716 | 📈 +716 today | Rust
+   > A cross-platform desktop All-in-One assistant tool for Claude Code, Codex, OpenCode, openclaw &amp; Gemini CLI.
 
-4. **[succinctlabs/sp1-contracts](https://github.com/succinctlabs/sp1-contracts)** — Solidity
-   > Smart contracts for onchain verification of SP1.
+4. **[openai/codex](https://github.com/openai/codex)** — ⭐ 277 | 📈 +277 today | Rust
+   > Lightweight coding agent that runs in your terminal
+
+5. **[vxcontrol/pentagi](https://github.com/vxcontrol/pentagi)** — ⭐ 127 | 📈 +127 today | Go
+   > Fully autonomous AI Agents system capable of performing complex penetration testing tasks
 
 _(up to 5 items)_
 
@@ -50,20 +53,20 @@ _(up to 5 items)_
 
 ## 🗞️ Hacker News Highlights
 
-1. **[Alberta startup sells no-tech tractors for half price](https://wheelfront.com/this-alberta-startup-sells-no-tech-tractors-for-half-price/)** — 1949 pts, 650 comments
-   > _wheelfront.com_
+1. **[We found a stable Firefox identifier linking all your private Tor identities](https://fingerprint.com/blog/firefox-tor-indexeddb-privacy-vulnerability/)** — 915 pts, 286 comments
+   > _fingerprint.com_
 
-2. **[Apple fixes bug that cops used to extract deleted chat messages from iPhones](https://techcrunch.com/2026/04/22/apple-fixes-bug-that-cops-used-to-extract-deleted-chat-messages-from-iphones/)** — 713 pts, 174 comments
-   > _techcrunch.com_
+2. **[Bitwarden CLI compromised in ongoing Checkmarx supply chain campaign](https://socket.dev/blog/bitwarden-cli-compromised)** — 815 pts, 396 comments
+   > _socket.dev_
 
-3. **[I am building a cloud](https://crawshaw.io/blog/building-a-cloud)** — 672 pts, 340 comments
-   > _crawshaw.io_
-
-4. **[Your hex editor should color-code bytes](https://simonomi.dev/blog/color-code-your-bytes/)** — 270 pts, 91 comments
+3. **[Your hex editor should color-code bytes](https://simonomi.dev/blog/color-code-your-bytes/)** — 589 pts, 153 comments
    > _simonomi.dev_
 
-5. **[Investigation uncovers two sophisticated telecom surveillance campaigns](https://techcrunch.com/2026/04/23/surveillance-vendors-caught-abusing-access-to-telcos-to-track-peoples-phone-locations-researchers-say/)** — 255 pts, 68 comments
-   > _techcrunch.com_
+4. **[French government agency confirms breach as hacker offers to sell data](https://www.bleepingcomputer.com/news/security/french-govt-agency-confirms-breach-as-hacker-offers-to-sell-data/)** — 394 pts, 144 comments
+   > _bleepingcomputer.com_
+
+5. **[Incident with multple GitHub services](https://www.githubstatus.com/incidents/myrbk7jvvs6p)** — 259 pts, 127 comments
+   > _githubstatus.com_
 
 _(up to 5 items)_
 
@@ -74,29 +77,31 @@ _(up to 5 items)_
 | Source | Items Found | Items Used | Status |
 |--------|------------|------------|--------|
 | arXiv | 5 | 5 | ✅ |
-| GitHub Trending | 4 | 4 | ✅ |
+| GitHub Trending | 5 | 5 | ✅ |
 | Hacker News | 5 | 5 | ✅ |
 | Web Search | 0 | 0 | ⏭️ skipped |
 
 ---
 
-_Next track: Developer Tools | Archive: memory/autoresearch-archive.md_
+_Next track: AI & Agents | Archive: memory/autoresearch-archive.md_
+
 ---
 
-## Web Highlights — 2026-04-23
+## 🌐 Web Highlights (Manual Fetch)
 
-### Anthropic Research (Latest)
-- **Apr 22 — Economic Index Survey**: Anthropic announces the Economic Index Survey, a new initiative to track AI's real-world economic impact at scale.
-- **Apr 22 — What 81K People Told Us About AI Economics**: Deep analysis from their landmark 81,000-person study on how people use AI and its economic implications.
-- **Apr 14 — Automated Alignment Researchers**: Using LLMs to scale alignment oversight — a major step toward recursive self-improvement of safety.
-- **Apr 9 — Trustworthy Agents in Practice**: New research on building reliable, safe AI agents for real-world deployment.
-- **Apr 2 — Emotion Concepts in LLMs**: Interpretability work mapping how LLMs internally represent and process emotion concepts.
+### Anthropic Research (anthropic.com/research)
 
-### OpenAI News (Latest)
-- **Apr 22 — ChatGPT for Clinicians**: New clinical-focused features making ChatGPT more useful in healthcare settings.
-- **Apr 22 — WebSockets in Responses API**: Major engineering improvement for real-time agentic workflows.
-- **Apr 22 — Workspace Agents in ChatGPT**: Teams can now deploy autonomous agents within shared workspaces.
-- **Apr 22 — OpenAI Privacy Filter**: New research tool for detecting and filtering private information in model outputs.
-- **Apr 21 — ChatGPT Images 2.0**: Next-gen image generation integrated into ChatGPT.
-- **Apr 21 — Codex Scaling to Enterprises**: Codex agent now available for enterprise customers worldwide.
-- **Apr 16 — GPT-Rosalind**: New life sciences research model (named after Rosalind Franklin).
+1. **Economic Index Survey (Apr 22)** — Announcing the Anthropic Economic Index Survey + "What 81,000 people told us about the economics of AI"
+2. **Automated Alignment Researchers (Apr 14)** — Using LLMs to scale scalable oversight
+3. **Trustworthy Agents in Practice (Apr 9)** — Policy research on agent trustworthiness
+4. **Emotion Concepts in LLMs (Apr 2)** — Interpretability research on emotion concepts and their function
+5. **Vibe Physics: The AI Grad Student (Mar 23)** — Science blog launch, long-running Claude for scientific computing
+
+### OpenAI News (openai.com/news)
+
+1. **GPT-5.5 Released (Apr 23)** — New flagship model + system card + bio bug bounty
+2. **Workspace Agents in ChatGPT (Apr 22)** — Agentic features for enterprise workspaces
+3. **OpenAI Privacy Filter (Apr 22)** — New research on privacy-preserving filtering
+4. **ChatGPT Images 2.0 (Apr 21)** — Major image generation upgrade
+5. **Codex Scaling to Enterprises (Apr 21)** — Codex agent going worldwide
+6. **WebSockets in Responses API (Apr 22)** — Speeding up agentic workflows

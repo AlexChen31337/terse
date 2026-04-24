@@ -1,8 +1,7 @@
 {
-  "current_track_index": 2,
-  "last_run": "2026-04-23T15:00:14.317915+00:00",
+  "current_track_index": 0,
+  "last_run": "2026-04-24T15:00:14.667929+00:00",
   "last_tracks": [
-    "crypto",
     "devtools",
     "ai",
     "crypto",
@@ -11,6 +10,7 @@
     "crypto",
     "devtools",
     "ai",
-    "crypto"
+    "crypto",
+    "devtools"
   ]
 }
