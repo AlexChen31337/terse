@@ -26,6 +26,15 @@ Any task >2 minutes → delegate to sub-agent via `sessions_spawn`. Never block 
 - **PayPal/financial details:** NEVER disclose publicly.
 - **Identity (IDENTITY.md):** Private. Never in public repos.
 
+### Pre-Action Memory Search (NON-NEGOTIABLE)
+Before using any external platform tool (Twitter/X, LinkedIn, Substack, Payhip, MbD, Dev.to, Reddit, email, browser automation), you MUST:
+1. Search memory for the platform name + action. **Use clawmemory API:** `curl -s "http://localhost:7437/api/v1/facts?q=PLATFORM+ACTION&limit=5"` — NOT the broken built-in `memory_search` (node-llama-cpp missing). Fallback: `grep -rln -i "PLATFORM" memory/*.md`
+2. Read the relevant memory entry to find the **verified working method** (Playwright? API? Cookies? SSH tunnel?)
+3. Use THAT method — do not guess or default to an approach that hasn't been validated
+4. If no prior experience found: explicitly state "no prior experience with [platform] [action]" and propose a method before executing
+
+**Why:** We've wasted 30+ minutes per incident by guessing approaches (e.g., Twitter API → 402, then Playwright → wrong click method) when the correct method was already documented in memory from a prior success.
+
 ## Session Startup
 1. Read `SOUL.md`, `USER.md`, recent `memory/YYYY-MM-DD.md`
 2. In main session: also read `MEMORY.md`

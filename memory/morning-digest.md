@@ -1,4 +1,4 @@
-# ☀️ Morning Digest — Thursday, April 23, 2026
+# ☀️ Morning Digest — Friday, April 24, 2026
 
 ## 🚨 Urgent / Needs Immediate Attention
 
@@ -80,16 +80,16 @@
   🔗 https://api.github.com/repos/clawinfra/claw-chain/issues/27
 - 👤 feat: Substrate node implementation [mention]
   🔗 https://api.github.com/repos/clawinfra/claw-chain/pulls/26
+- 📌 #109 RUSTSEC-2026-0105: core2 is unmaintained, all versions yanked [open_issue]
+  🔗 https://github.com/clawinfra/claw-chain/issues/109
+- 📌 #108 RUSTSEC-2026-0104: Reachable panic in certificate revocation list parsing [open_issue]
+  🔗 https://github.com/clawinfra/claw-chain/issues/108
+- 📌 #107 RUSTSEC-2026-0104: Reachable panic in certificate revocation list parsing [open_issue]
+  🔗 https://github.com/clawinfra/claw-chain/issues/107
 - 📌 #100 RUSTSEC-2026-0099: Name constraints were accepted for certificates asserting a wildcard name [open_issue]
   🔗 https://github.com/clawinfra/claw-chain/issues/100
 - 📌 #99 RUSTSEC-2026-0098: Name constraints for URI names were incorrectly accepted [open_issue]
   🔗 https://github.com/clawinfra/claw-chain/issues/99
-- 📌 #97 RUSTSEC-2026-0098: Name constraints for URI names were incorrectly accepted [open_issue]
-  🔗 https://github.com/clawinfra/claw-chain/issues/97
-- 📌 #94 chore: migrate wasmtime 28.x → 30.x (RUSTSEC-2026-0085 through 0096) [open_issue]
-  🔗 https://github.com/clawinfra/claw-chain/issues/94
-- 📌 #91 RUSTSEC-2026-0087: Wasmtime segfault or unused out-of-sandbox load with `f64x2.splat` operator on Cranelift x86-64 [open_issue]
-  🔗 https://github.com/clawinfra/claw-chain/issues/91
 
 ### clawinfra/claw-forge
 - ✍️ bug: hard-killed runs leave commits stranded on orphaned worktree branches [author]

@@ -1,15 +1,26 @@
 {
   "processed_ids": [
-    "2604.15082",
+    "2604.16054",
     "2604.11734",
-    "2604.08540",
     "2604.08539",
+    "2604.20665",
+    "2604.20749",
+    "2604.20720",
     "2604.08545",
     "2604.18566",
-    "2604.12955",
+    "2604.20666",
     "2604.08465",
-    "2604.16054",
-    "2604.19567"
+    "2604.15082",
+    "2604.20791",
+    "2604.12955",
+    "2604.20685",
+    "2604.08540",
+    "2604.20795",
+    "2604.20806",
+    "2604.20755",
+    "2604.20659",
+    "2604.19567",
+    "2604.20658"
   ],
   "repos_created": [
     {
@@ -81,7 +92,84 @@
       "title": "Multi-modal Reasoning with LLMs for Visual Semantic Arithmetic",
       "description": "Implementation of Multi-modal Reasoning with LLMs for Visual Semantic Arithmetic (arXiv:2604.19567) https://arxiv.org/abs/2604.19567",
       "created_at": "2026-04-22T18:00:54.121985+00:00"
+    },
+    {
+      "arxiv_id": "2604.20795",
+      "repo": "Arxiv-to-code/arxiv-260420795-automatic-ontology-construction-using-llms-as-an-external-la",
+      "title": "Automatic Ontology Construction Using LLMs as an External Layer of Memory, Verification, and Planning for Hybrid Intelligent Systems",
+      "description": "Implementation of Automatic Ontology Construction Using LLMs as an External Layer of Memory, Verification, and Planning for Hybrid Intelligent Systems (arXiv:2604.20795) https://arxiv.org/abs/2604.20795",
+      "created_at": "2026-04-23T17:27:51.343736+00:00"
+    },
+    {
+      "arxiv_id": "2604.20755",
+      "repo": "Arxiv-to-code/arxiv-260420755-v-tabler1-process-supervised-multimodal-table-reasoning-with",
+      "title": "V-tableR1: Process-Supervised Multimodal Table Reasoning with Critic-Guided Policy Optimization",
+      "description": "Implementation of V-tableR1: Process-Supervised Multimodal Table Reasoning with Critic-Guided Policy Optimization (arXiv:2604.20755) https://arxiv.org/abs/2604.20755",
+      "created_at": "2026-04-23T17:27:58.343870+00:00"
+    },
+    {
+      "arxiv_id": "2604.20659",
+      "repo": "Arxiv-to-code/arxiv-260420659-grpo-vps-enhancing-group-relative-policy-optimization-with-v",
+      "title": "GRPO-VPS: Enhancing Group Relative Policy Optimization with Verifiable Process Supervision for Effective Reasoning",
+      "description": "Implementation of GRPO-VPS: Enhancing Group Relative Policy Optimization with Verifiable Process Supervision for Effective Reasoning (arXiv:2604.20659) https://arxiv.org/abs/2604.20659",
+      "created_at": "2026-04-23T17:28:04.879916+00:00"
+    },
+    {
+      "arxiv_id": "2604.20749",
+      "repo": "Arxiv-to-code/arxiv-260420749-where-and-what-reasoning-dynamic-and-implicit-preferences-in",
+      "title": "Where and What: Reasoning Dynamic and Implicit Preferences in Situated Conversational Recommendation",
+      "description": "Implementation of Where and What: Reasoning Dynamic and Implicit Preferences in Situated Conversational Recommendation (arXiv:2604.20749) https://arxiv.org/abs/2604.20749",
+      "created_at": "2026-04-23T17:28:11.653306+00:00"
+    },
+    {
+      "arxiv_id": "2604.20720",
+      "repo": "Arxiv-to-code/arxiv-260420720-compass-continual-multilingual-peft-with-adaptive-semantic-s",
+      "title": "COMPASS: COntinual Multilingual PEFT with Adaptive Semantic Sampling",
+      "description": "Implementation of COMPASS: COntinual Multilingual PEFT with Adaptive Semantic Sampling (arXiv:2604.20720) https://arxiv.org/abs/2604.20720",
+      "created_at": "2026-04-23T17:28:18.164092+00:00"
+    },
+    {
+      "arxiv_id": "2604.20658",
+      "repo": "Arxiv-to-code/arxiv-260420658-cooperative-profiles-predict-multi-agent-llm-team-performanc",
+      "title": "Cooperative Profiles Predict Multi-Agent LLM Team Performance in AI for Science Workflows",
+      "description": "Implementation of Cooperative Profiles Predict Multi-Agent LLM Team Performance in AI for Science Workflows (arXiv:2604.20658) https://arxiv.org/abs/2604.20658",
+      "created_at": "2026-04-23T17:28:24.894708+00:00"
+    },
+    {
+      "arxiv_id": "2604.20665",
+      "repo": "Arxiv-to-code/arxiv-260420665-the-expense-of-seeing-attaining-trustworthy-multimodal-reaso",
+      "title": "The Expense of Seeing: Attaining Trustworthy Multimodal Reasoning Within the Monolithic Paradigm",
+      "description": "Implementation of The Expense of Seeing: Attaining Trustworthy Multimodal Reasoning Within the Monolithic Paradigm (arXiv:2604.20665) https://arxiv.org/abs/2604.20665",
+      "created_at": "2026-04-23T17:28:31.491036+00:00"
+    },
+    {
+      "arxiv_id": "2604.20666",
+      "repo": "Arxiv-to-code/arxiv-260420666-orpheas-a-cross-lingual-greek-english-embedding-model-for-re",
+      "title": "ORPHEAS: A Cross-Lingual Greek-English Embedding Model for Retrieval-Augmented Generation",
+      "description": "Implementation of ORPHEAS: A Cross-Lingual Greek-English Embedding Model for Retrieval-Augmented Generation (arXiv:2604.20666) https://arxiv.org/abs/2604.20666",
+      "created_at": "2026-04-23T17:28:37.935291+00:00"
+    },
+    {
+      "arxiv_id": "2604.20685",
+      "repo": "Arxiv-to-code/arxiv-260420685-mgda-decoupled-geometry-aware-multi-objective-optimisation-f",
+      "title": "MGDA-Decoupled: Geometry-Aware Multi-Objective Optimisation for DPO-based LLM Alignment",
+      "description": "Implementation of MGDA-Decoupled: Geometry-Aware Multi-Objective Optimisation for DPO-based LLM Alignment (arXiv:2604.20685) https://arxiv.org/abs/2604.20685",
+      "created_at": "2026-04-23T17:28:44.291894+00:00"
+    },
+    {
+      "arxiv_id": "2604.20806",
+      "repo": "Arxiv-to-code/arxiv-260420806-omibench-benchmarking-olympiad-level-multi-image-reasoning-i",
+      "title": "OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Model",
+      "description": "Implementation of OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Model (arXiv:2604.20806) https://arxiv.org/abs/2604.20806",
+      "created_at": "2026-04-23T17:28:51.061487+00:00"
+    },
+    {
+      "arxiv_id": "2604.20791",
+      "repo": "Arxiv-to-code/arxiv-260420791-can-ai-be-a-doctor-a-study-of-empathy-readability-and-alignm",
+      "title": "Can \"AI\" Be a Doctor? A Study of Empathy, Readability, and Alignment in Clinical LLMs",
+      "description": "Implementation of Can \"AI\" Be a Doctor? A Study of Empathy, Readability, and Alignment in Clinical LLMs (arXiv:2604.20791) https://arxiv.org/abs/2604.20791",
+      "created_at": "2026-04-23T18:00:30.351543+00:00"
     }
   ],
-  "last_run": "2026-04-22T18:00:54.121997+00:00"
+  "last_run": "2026-04-23T18:00:30.351554+00:00"
 }

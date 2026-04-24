@@ -1,34 +1,6 @@
 {
   "miner_running": false,
-  "last_soc": 18,
+  "last_soc": 91,
   "last_action": "stopped@2026-04-23T16:50:01.680543",
-  "gpu_stats": [
-    {
-      "name": "NVIDIA GeForce RTX 3090",
-      "temp_c": 34.0,
-      "util_pct": 0.0,
-      "fan_pct": 0.0,
-      "power_w": 21.91,
-      "vram_used_mb": 20391.0,
-      "vram_total_mb": 24576.0
-    },
-    {
-      "name": "NVIDIA GeForce RTX 3080",
-      "temp_c": 40.0,
-      "util_pct": 0.0,
-      "fan_pct": 0.0,
-      "power_w": 14.62,
-      "vram_used_mb": 8695.0,
-      "vram_total_mb": 10240.0
-    },
-    {
-      "name": "NVIDIA GeForce RTX 2070 SUPER",
-      "temp_c": 31.0,
-      "util_pct": 0.0,
-      "fan_pct": 24.0,
-      "power_w": 8.96,
-      "vram_used_mb": 6389.0,
-      "vram_total_mb": 8192.0
-    }
-  ]
+  "gpu_stats": []
 }
