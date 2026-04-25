@@ -1,26 +1,29 @@
 {
   "processed_ids": [
-    "2604.16054",
-    "2604.11734",
-    "2604.08539",
-    "2604.20665",
-    "2604.20749",
-    "2604.20720",
-    "2604.08545",
-    "2604.18566",
-    "2604.20666",
-    "2604.08465",
-    "2604.15082",
-    "2604.20791",
-    "2604.12955",
-    "2604.20685",
-    "2604.08540",
-    "2604.20795",
-    "2604.20806",
     "2604.20755",
+    "2604.08465",
+    "2604.20685",
+    "2604.12955",
+    "2604.15082",
+    "2604.21860",
+    "2604.21794",
     "2604.20659",
+    "2604.11734",
+    "2604.08545",
+    "2604.20795",
     "2604.19567",
-    "2604.20658"
+    "2604.20720",
+    "2604.21896",
+    "2604.20658",
+    "2604.20666",
+    "2604.08540",
+    "2604.20806",
+    "2604.20791",
+    "2604.20665",
+    "2604.16054",
+    "2604.08539",
+    "2604.20749",
+    "2604.18566"
   ],
   "repos_created": [
     {
@@ -169,7 +172,21 @@
       "title": "Can \"AI\" Be a Doctor? A Study of Empathy, Readability, and Alignment in Clinical LLMs",
       "description": "Implementation of Can \"AI\" Be a Doctor? A Study of Empathy, Readability, and Alignment in Clinical LLMs (arXiv:2604.20791) https://arxiv.org/abs/2604.20791",
       "created_at": "2026-04-23T18:00:30.351543+00:00"
+    },
+    {
+      "arxiv_id": "2604.21896",
+      "repo": "Arxiv-to-code/arxiv-260421896-nemobot-games-crafting-strategic-ai-gaming-agents-for-intera",
+      "title": "Nemobot Games: Crafting Strategic AI Gaming Agents for Interactive Learning with Large Language Models",
+      "description": "Implementation of Nemobot Games: Crafting Strategic AI Gaming Agents for Interactive Learning with Large Language Models (arXiv:2604.21896) https://arxiv.org/abs/2604.21896",
+      "created_at": "2026-04-24T18:01:17.337448+00:00"
+    },
+    {
+      "arxiv_id": "2604.21860",
+      "repo": "Arxiv-to-code/arxiv-260421860-transient-turn-injection-exposing-stateless-multi-turn-vulne",
+      "title": "Transient Turn Injection: Exposing Stateless Multi-Turn Vulnerabilities in Large Language Models",
+      "description": "Implementation of Transient Turn Injection: Exposing Stateless Multi-Turn Vulnerabilities in Large Language Models (arXiv:2604.21860) https://arxiv.org/abs/2604.21860",
+      "created_at": "2026-04-24T18:01:59.108968+00:00"
     }
   ],
-  "last_run": "2026-04-23T18:00:30.351554+00:00"
+  "last_run": "2026-04-24T18:01:59.108980+00:00"
 }

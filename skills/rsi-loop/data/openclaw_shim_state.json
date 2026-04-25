@@ -1,6 +1,6 @@
 {
-  "last_scan_ts": 1777039953.103257,
-  "last_scan_iso": "2026-04-24T14:12:33.103258+00:00",
+  "last_scan_ts": 1777083030.5986238,
+  "last_scan_iso": "2026-04-25T02:10:30.598625+00:00",
   "events_logged": 1051,
   "file_offsets": {
     "04c6c576-d1fa-433f-ab13-e39aa2836368.jsonl": 127,
@@ -179,6 +179,9 @@
     "95b7252f-24df-493e-bc1d-acc19c8522e0.jsonl": 13,
     "b7f33658-ecfd-45e2-9444-e7d32dc46752.checkpoint.bf4b2f72-a9d2-415f-a75a-356d59f56e50.jsonl": 573,
     "e5ab5cd8-e657-40aa-911d-442b68472b61.jsonl": 77,
-    "5cc1d919-3afc-4fa8-b61c-cfe80f32d198.jsonl": 7
+    "5cc1d919-3afc-4fa8-b61c-cfe80f32d198.jsonl": 7,
+    "7ebba195-3815-42d1-ae2e-7c2b9e798b8b.jsonl": 21,
+    "9e54ffc1-fbdd-4d62-9930-988b992cb2f6.jsonl": 29,
+    "b3a65cf5-3777-455d-901c-15621cdb748d.jsonl": 21
   }
 }
