@@ -1,0 +1,9 @@
+{
+  "window_size": 10,
+  "identical_threshold": 3,
+  "similar_threshold": 4,
+  "jaccard_threshold": 0.85,
+  "consecutive_error_threshold": 3,
+  "context_emergency_pct": 0.20,
+  "abort_after_k_detections": 2
+}

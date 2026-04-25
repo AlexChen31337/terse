@@ -1,21 +1,15 @@
 {
-  "topic_index": 0,
-  "topics": [
-    "AI Agents in Production: Building Autonomous Systems That Actually Work",
-    "The Prompt Engineering Masterclass: Advanced Techniques for LLM Optimization",
-    "Blockchain for AI: Decentralized Infrastructure for Intelligent Agents",
-    "Building Your First Trading Bot: A Practical Guide to Algorithmic Trading with Python",
-    "The Self-Evolving Code: How AI Agents Learn to Improve Themselves",
-    "Digital Sovereignty: Privacy, Identity, and Control in the Age of AI",
-    "From Zero to ML Engineer: A Practical Roadmap for Career Changers",
-    "The Architecture of Intelligence: Designing Multi-Agent Systems",
-    "Smart Home Automation with AI: Beyond Simple Rules",
-    "The Future of Work: Human-AI Collaboration Strategies",
-    "Generative AI for Business: From Concept to Revenue",
-    "Edge Computing and AI: Running Intelligence at the Network's Edge",
-    "Cybersecurity in the AI Era: New Threats and Defenses",
-    "The Data Pipeline Handbook: Building Robust ETL Systems",
-    "Quantum Computing Demystified: A Practical Introduction"
-  ],
-  "last_published": null
+  "topic_index": 1,
+  "mbd_last_backup": "2026-04-25",
+  "drafts": [
+    {
+      "id": "mbd-daily-2026-04-25",
+      "date": "2026-04-25",
+      "topic": "AI副业指南",
+      "topic_index": 0,
+      "repo_folder": "2026-04-25_AI副业指南",
+      "cover": false,
+      "status": "backed_up"
+    }
+  ]
 }

@@ -1,144 +1,102 @@
----
-metadata.openclaw:
-  always: true
-  reason: "Auto-classified as always-load (no specific rule for 'rsi-loop')"
+
 ---
 
+## Doom Loop Detector — Pre-Flight Tool-Call Guard
 
-# RSI Loop - Recursive Self-Improvement
+The Doom Loop Detector (`scripts/doom_loop_detector.py`) is a pre-flight guard that
+detects pathological agent patterns before each tool call and issues corrective guidance.
 
-Four-stage pipeline: **Observe → Analyze → Synthesize → Deploy**
+### Detection Patterns
 
-## Quick Start
+| Pattern | Trigger | Severity |
+|---------|---------|----------|
+| `loop` | Same tool + **identical** args ≥ 3× in window | `abort` |
+| `soft_loop` | Same tool + **similar** args (Jaccard > 0.85) ≥ 4× | `warning` |
+| `flailing` | ≥ 3 **consecutive errors** from same tool | `abort` |
+| `emergency_abort` | Context < 20% remaining **AND** last 5 calls all errored | `abort` |
+
+After `abort_after_k_detections` (default: 2) total detections in a session, any
+subsequent detection is escalated to `abort` regardless of pattern severity.
+
+### Quick Start
+
+```python
+from scripts.doom_loop_detector import check_before_tool_call, reset_session_counter
+
+# Before each tool call:
+result = check_before_tool_call(
+    session_id="sess-abc123",
+    planned_tool="read_file",
+    planned_args={"path": "/tmp/data.txt"},
+    recent_history=recent_tool_calls,      # list of dicts or ToolCallRecord objects
+    context_used_tokens=8500,
+    context_total_tokens=10000,
+)
+
+if result["should_abort"]:
+    raise RuntimeError(result["corrective_message"])
+elif result["detected"]:
+    print(f"Warning: {result['corrective_message']}")
+```
+
+**Return shape** (`DetectionResult`):
+```json
+{
+  "detected": true,
+  "pattern": "loop",
+  "severity": "abort",
+  "corrective_message": "🔁 Doom Loop detected — you've called `read_file` with identical args 3 times...",
+  "should_abort": true
+}
+```
+
+### History Record Format
+
+Each entry in `recent_history` can be a dict with any of these key aliases:
+
+```json
+{
+  "tool": "exec",            // or "tool_name"
+  "args": {"cmd": "ls"},     // or "arguments", "input"
+  "errored": false,          // or "error", "is_error"
+  "timestamp": 1714000000.0  // optional
+}
+```
+
+### Configuration (`memory/doom-loop-config.json`)
+
+```json
+{
+  "window_size": 10,
+  "identical_threshold": 3,
+  "similar_threshold": 4,
+  "jaccard_threshold": 0.85,
+  "consecutive_error_threshold": 3,
+  "context_emergency_pct": 0.20,
+  "abort_after_k_detections": 2
+}
+```
+
+Set env var `DOOM_LOOP_CONFIG=/path/to/config.json` to use a custom path.
+
+### WAL Integration
+
+If `recent_history=None`, the detector reads from agent-self-governance WAL automatically,
+searching: `memory/wal-<session_id>.jsonl`, `memory/wal.jsonl`, `memory/wal/<session_id>.jsonl`.
+
+### Telemetry
+
+Every detection emits a `doom_loop_detected` fact to clawmemory:
+```
+POST http://localhost:7437/api/v1/facts
+{"content": "doom_loop_detected: session=<id> pattern=<p> tool=<t> count=<n> ts=<unix>",
+ "tags": ["doom_loop", "rsi", "pattern:<p>", "tool:<t>"]}
+```
+
+Query: `curl -s "http://localhost:7437/api/v1/facts?q=doom_loop_detected&limit=20"`
+
+### Running Tests
 
 ```bash
-# Log an outcome
-uv run python skills/rsi-loop/scripts/rsi_cli.py log \
-  --task code_generation --success true --quality 4 --model glm-4.7
-
-# Full cycle (detect patterns + generate + deploy quick wins)
-uv run python skills/rsi-loop/scripts/rsi_cli.py cycle
-
-# Status dashboard
-uv run python skills/rsi-loop/scripts/rsi_cli.py status
+uv run python -m pytest skills/rsi-loop/tests/test_doom_loop_detector.py -v
 ```
-
-## Data Layout
-
-```
-skills/rsi-loop/data/
-├── outcomes.jsonl       # All logged turn outcomes
-├── patterns.json        # Latest analysis output
-└── proposals/           # Improvement proposals (one JSON per proposal)
-    ├── abc12345.json    # draft/approved/rejected/deployed
-    └── ...
-```
-
-## Stage 1: Observer — Log Outcomes
-
-Log every significant task at completion. Be honest about quality (1=terrible, 5=perfect).
-
-```bash
-# Successful task
-uv run python skills/rsi-loop/scripts/rsi_cli.py log \
-  --task code_generation --success true --quality 4
-
-# Failed task with issues
-uv run python skills/rsi-loop/scripts/rsi_cli.py log \
-  --task code_debug --success false --quality 2 \
-  --issues skill_gap rate_limit \
-  --notes "No Rust-specific debug skill, kept hitting context limits"
-```
-
-**Task types:** code_generation, code_debug, code_review, architecture_design, file_ops,
-web_search, memory_retrieval, skill_creation, cron_management, api_integration,
-data_analysis, message_routing, infrastructure_ops, documentation, general_qa,
-trading, monitoring, blockchain, unknown
-
-**Issue types:** rate_limit, model_fallback, tool_error, wrong_output, incomplete_task,
-context_loss, memory_miss, skill_gap, bad_routing, slow_response, over_confirmation,
-repeated_mistake, missing_tool, wrong_model_tier, compaction_lost_context, other
-
-## Stage 2: Analyzer — Detect Patterns
-
-```bash
-uv run python skills/rsi-loop/scripts/analyzer.py --days 7 --top 5
-```
-
-Outputs ranked patterns by impact score = (frequency/total) × quality_deficit.
-Saves to `data/patterns.json`.
-
-## Stage 3: Synthesizer — Generate Proposals
-
-```bash
-# Generate proposals from latest patterns
-uv run python skills/rsi-loop/scripts/synthesizer.py generate --top 5
-
-# Review proposals
-uv run python skills/rsi-loop/scripts/synthesizer.py list
-
-# Show full proposal detail
-uv run python skills/rsi-loop/scripts/synthesizer.py show <proposal_id>
-
-# Approve for deployment
-uv run python skills/rsi-loop/scripts/synthesizer.py approve <proposal_id>
-```
-
-## Stage 4: Deployer — Apply Improvements
-
-```bash
-# Dry run (see what would happen)
-uv run python skills/rsi-loop/scripts/deployer.py deploy <id> --dry-run
-
-# Deploy a specific proposal
-uv run python skills/rsi-loop/scripts/deployer.py deploy <id>
-
-# Deploy all approved proposals
-uv run python skills/rsi-loop/scripts/deployer.py deploy-all
-```
-
-**Action types and what they do:**
-- `create_skill` → Scaffolds new skill directory via skill-creator
-- `update_soul` → Appends lesson to SOUL.md's "Lessons learned"
-- `fix_routing` → Prints instructions for updating intelligent-router config
-- `update_memory` → Prints HEARTBEAT.md / tiered-memory improvement instructions
-- `add_cron` → Prints cron configuration to add
-
-## Full Cycle (Automated)
-
-```bash
-# Run full cycle, auto-deploy anything estimated < 20 minutes effort
-uv run python skills/rsi-loop/scripts/deployer.py full-cycle \
-  --days 7 --auto-approve-below-mins 20
-
-# Or use the CLI shortcut
-uv run python skills/rsi-loop/scripts/rsi_cli.py cycle
-```
-
-## Cron Job (Weekly RSI)
-
-Set up automated weekly analysis:
-```bash
-# Every Sunday at 3 AM AEST
-openclaw cron add --name "Weekly RSI Cycle" \
-  --cron "0 3 * * 0" \
-  --tz "Australia/Sydney" \
-  --model "anthropic-proxy-4/glm-4.7" \
-  --system-event "Run RSI cycle: uv run python skills/rsi-loop/scripts/rsi_cli.py cycle --days 7"
-```
-
-## EvoClaw Integration
-
-For fleet-wide RSI across all hub/edge agents, see:
-- `references/evoclaw-integration.md` — MQTT topics, Go integration, ClawChain pallet spec
-- Phase roadmap: heuristic (now) → LLM synthesis → MQTT aggregation → ClawChain governance
-
-## Proactive Logging Protocol
-
-Log outcomes for every significant task. Rule of thumb:
-- Any task > 2 minutes → log it
-- Any task that used external tools → log it
-- Any task that failed → definitely log it
-- Batch similar quick tasks → log once with aggregate quality
-
-This builds the dataset that makes RSI work.

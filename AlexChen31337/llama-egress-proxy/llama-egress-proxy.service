@@ -1,0 +1,16 @@
+[Unit]
+Description=llama-egress-proxy — OpenClaw hygiene strip layer
+After=network.target
+Wants=llama-server.service
+
+[Service]
+Type=simple
+WorkingDirectory=%h/llama-egress-proxy
+ExecStart=%h/llama-egress-proxy/venv/bin/uvicorn proxy:app --host 0.0.0.0 --port 8082 --log-level info
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target
