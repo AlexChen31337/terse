@@ -1,0 +1,1 @@
+[2026-04-26T20:01:37+10:00] ANTHROPIC_TOTAL_OUTAGE: All Anthropic APIs down (direct 401, proxy1 401, CLI fail). Alert sent to Bowen via webchat. Bot token not found for Telegram notification.

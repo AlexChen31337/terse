@@ -1,6 +1,6 @@
 {
-  "topic_index": 1,
-  "mbd_last_backup": "2026-04-25",
+  "topic_index": 2,
+  "mbd_last_backup": "2026-04-26",
   "drafts": [
     {
       "id": "mbd-daily-2026-04-25",
@@ -8,6 +8,15 @@
       "topic": "AI副业指南",
       "topic_index": 0,
       "repo_folder": "2026-04-25_AI副业指南",
+      "cover": false,
+      "status": "backed_up"
+    },
+    {
+      "id": "mbd-daily-2026-04-26",
+      "date": "2026-04-26",
+      "topic": "提示词炼金术",
+      "topic_index": 1,
+      "repo_folder": "2026-04-26_提示词炼金术",
       "cover": false,
       "status": "backed_up"
     }
