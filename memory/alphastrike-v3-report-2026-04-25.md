@@ -1,14 +1,20 @@
-🚀 **AlphaStrike V3 Paper Trading Report** — 2026-04-25 11:15 AM AEDT
+# AlphaStrike V3 Paper Trade Report
+**Run Time:** 2026-04-25 17:19 UTC (2026-04-26 03:19 AEDT)
+**Period:** Last 1 day
 
-**Equity:** 1025.20 USDC (+25.19 USDC total PnL)
-**Win Rate:** 3/5 (60%)
-**Open Positions:** 0 | **Closed Trades:** 5
+## Market Signals
+| Asset | RSI | MACD Hist | Vol Ratio | OBI | V2 Signal | V3 Signal | Gates |
+|-------|-----|-----------|-----------|-----|-----------|-----------|-------|
+| BTC | 41.59 | +5.09 | 0.111 | 0.805 | FLAT | FLAT | L=True, S=False |
+| ETH | 42.28 | +0.16 | 0.102 | 0.690 | FLAT | FLAT | L=True, S=False |
+| SOL | 17.11 | -0.021 | 1.174 | 0.355 | FLAT | FLAT | L=False, S=True |
 
-**Signal Status (1d window):**
-- **BTC:** RSI=56.85, MACD_H=0.47, OBI=0.12 → FLAT (gate_S=True)
-- **ETH:** RSI=72.04, MACD_H=0.24, OBI=0.40 → FLAT (both gates False)
-- **SOL:** RSI=59.53, MACD_H=0.002, OBI=0.41 → FLAT (both gates False)
+## Performance Summary
+- **Current Equity:** 1025.20 USDC
+- **Open Positions:** 0
+- **Closed Trades:** 5
+- **Win Rate:** 60% (3/5)
+- **Total Realised PnL:** +25.19 USDC
 
-All assets currently in FLAT state. No live trades executed. ✅
-
-*Next run: 4 hours*
+## Notes
+All signals remain FLAT. SOL shows oversold conditions (RSI=17.11) with short gate enabled, but no entry triggered. BTC/ETH both show neutral momentum with long gates open.

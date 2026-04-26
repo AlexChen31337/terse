@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-04-25T20:00:58.080040",
+  "checked_at": "2026-04-26T12:01:33.263447",
   "direct_api": {
     "status": "200",
     "healthy": true
@@ -9,9 +9,9 @@
     "healthy": false
   },
   "claude_cli": {
-    "status": "ok",
-    "healthy": true
+    "status": "fail",
+    "healthy": false
   },
-  "recommendation": "claude_code_cli",
+  "recommendation": "degraded",
   "alert": null
 }

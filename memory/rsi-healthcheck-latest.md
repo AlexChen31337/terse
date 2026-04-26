@@ -1,29 +1,24 @@
-# RSI Loop Health Check — 2026-04-25 03:15 AEST
+# RSI Loop Health Check — 2026-04-26 03:17 AEST
 
 ## Status
-- **Health Score:** 0.224 ⚠️ (threshold: 0.3)
-- **Outcomes (7d):** 64 logged
-- **Success Rate:** 42%
-- **Avg Quality:** 2.75/5
+- **Health Score: 0.22** ⚠️ (below 0.3 threshold)
+- Outcomes (7d): 64 logged | Success: 41% | Avg quality: 2.7/5
+- Patterns detected: 4 | Analyzed: 2026-04-25
 
 ## Top Issues
-1. `tool_error` — 29 occurrences (100% failure rate in tool_call tasks)
-2. `context_loss` — 27 occurrences (session_management)
-3. `tool_validation_error` — 4 occurrences
+1. **tool_error** — 29 occurrences, 100% failure rate (severity 1.359)
+2. **context_loss** — 26 occurrences in session_management (severity 0.406)
+3. **tool_validation_error** — 5 occurrences, 100% failure rate (severity 0.312)
 
-## Patterns Detected (4)
-1. **[1.368]** In tool_call tasks, tool_error occurs 31x with 100% failure rate
-2. **[0.412]** In session_management tasks, context_loss occurs 28x with 0% failure rate
-3. **[0.265]** In message_routing tasks, incomplete_task occurs 5x with 100% failure rate
-4. *(1 more lower-significance pattern)*
+## Proposals
+- Generated: 4 | Deployed: 24 total | Awaiting review: 0
+- All new proposals already deployed or duplicates
 
-## Cycle Results
-- Proposals generated: 4
-- Auto-deployed: 0 (all already deployed)
-- Awaiting review: 0
-- Two existing repair mutations active: `b9e26a71` (tool_error), `15c31c37` (tool_validation_error)
+## Cycle Result
+- No new auto-deployments this cycle
+- Existing fixes (b9e26a71, 15c31c37) already addressing top issues
+- **Alert sent to Bowen** via Telegram (score < 0.3)
 
-## Action
-- ⚠️ **Alerting Bowen** — health score 0.224 < 0.3 threshold
-- Main concern: tool_error pattern has 100% failure rate despite existing repair mutation
-- May need manual investigation of tool_call failures
+## Action Items
+- Monitor tool_error rate over next 24h to see if deployed fixes take effect
+- Consider manual review of context_loss pattern if it persists

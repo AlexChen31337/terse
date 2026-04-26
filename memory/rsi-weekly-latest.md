@@ -1,32 +1,29 @@
-# RSI Weekly Report — 2026-04-19
+# RSI Weekly Report — 2026-04-26
 
-**Cycle Date:** 2026-04-18 17:00 UTC
+**Cycle Date:** 2026-04-25 17:00 UTC
 **Period:** 7 days
+**Health Score:** 0.22 ⚠️ (threshold: 0.3)
 
-## Summary
-| Metric | Value |
-|--------|-------|
-| Outcomes (7d) | 32 logged |
-| Success Rate | 31% |
-| Avg Quality | 2.28/5 |
-| Health Score | **0.143** ⚠️ |
-| Patterns Detected | 5 |
-| Proposals Generated | 5 |
-| Auto-Deployed | 0 |
-| Awaiting Review | 1 |
-| Total Deployed | 24 |
+## Outcomes (7d)
+- **Total:** 64 logged
+- **Success rate:** 41%
+- **Avg quality:** 2.7/5
+- **Top issues:** tool_error (29), context_loss (26), tool_validation_error (5)
 
-## Top Issues
-1. **context_loss** — 10 occurrences
-2. **tool_error** — 10 occurrences
-3. **incomplete_task** — 8 occurrences
+## Patterns Detected (4)
+1. **[1.359]** In `tool_call` tasks, `tool_error` occurs 29x with 100% failure rate
+2. **[0.406]** In `session_management` tasks, `context_loss` occurs 26x with 0% failure rate
+3. **[0.312]** In `tool_call` tasks, `tool_validation_error` occurs 5x with 100% failure rate
+4. (4th pattern — lower significance)
 
-## Key Patterns
-1. `[1.000]` In `message_routing` tasks, `incomplete_task` occurs 8x with 100% fail
-2. `[0.938]` In `tool_call` tasks, `tool_error` occurs 10x with 100% failure rate
-3. `[0.375]` In `tool_call` tasks, `tool_validation_error` occurs 3x with 100% fail
+## Proposals
+- **Generated:** 4 (all already deployed or auto-approved)
+- **Draft:** 0
+- **Awaiting review:** 0
+- **Deployed total:** 24
 
-## Action Items
-- 1 proposal awaiting manual review
-- Health score critically low — primarily driven by tool failures and context loss in message routing
-- All 5 auto-eligible proposals were already deployed (skipped as duplicates)
+## Assessment
+Health score below 0.3 threshold. Primary concern is the high `tool_error` rate in tool_call tasks (29 occurrences, 100% failure). Context loss in session management is frequent but non-failing. The deployed proposals haven't moved the needle yet — may need fresh analysis.
+
+## Action
+Alert sent to Bowen via Telegram.
