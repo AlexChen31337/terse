@@ -1,24 +1,29 @@
-# RSI Loop Health Check — 2026-04-26 03:17 AEST
+# RSI Loop Health Check — 2026-04-27 03:10 AEST
 
 ## Status
-- **Health Score: 0.22** ⚠️ (below 0.3 threshold)
-- Outcomes (7d): 64 logged | Success: 41% | Avg quality: 2.7/5
-- Patterns detected: 4 | Analyzed: 2026-04-25
+- **Health Score: 0.216** ⚠️ (threshold: 0.3)
+- **Outcomes (7d):** 72 logged
+- **Success Rate:** 40%
+- **Avg Quality:** 2.68/5
 
 ## Top Issues
-1. **tool_error** — 29 occurrences, 100% failure rate (severity 1.359)
-2. **context_loss** — 26 occurrences in session_management (severity 0.406)
-3. **tool_validation_error** — 5 occurrences, 100% failure rate (severity 0.312)
+1. **tool_error** — 32 occurrences (100% failure rate in tool_call tasks)
+2. **context_loss** — 29 occurrences (0% failure rate in session_management)
+3. **tool_validation_error** — 7 occurrences (100% failure rate in tool_call tasks)
 
-## Proposals
-- Generated: 4 | Deployed: 24 total | Awaiting review: 0
-- All new proposals already deployed or duplicates
+## Patterns Detected: 4
+1. `[1.315]` In 'tool_call' tasks, 'tool_error' occurs 32x with 100% failure rate
+2. `[0.397]` In 'session_management' tasks, 'context_loss' occurs 29x with 0% failure
+3. `[0.384]` In 'tool_call' tasks, 'tool_validation_error' occurs 7x with 100% failure
 
-## Cycle Result
-- No new auto-deployments this cycle
-- Existing fixes (b9e26a71, 15c31c37) already addressing top issues
-- **Alert sent to Bowen** via Telegram (score < 0.3)
+## Cycle Results
+- Proposals generated: 4
+- Auto-deployed: 0 (all already deployed or auto-approved)
+- Awaiting review: 0
 
-## Action Items
-- Monitor tool_error rate over next 24h to see if deployed fixes take effect
-- Consider manual review of context_loss pattern if it persists
+## Proposals (already deployed)
+- `b9e26a71` — Address 'tool_error' in 'tool_call' tasks
+- `15c31c37` — Address 'tool_validation_error' in 'tool_call' tasks
+
+## Alert
+⚠️ Health score below 0.3 — Telegram alert sent to Bowen.
