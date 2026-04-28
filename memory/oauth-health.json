@@ -1,17 +1,17 @@
 {
-  "checked_at": "2026-04-27T20:02:37.021058",
+  "checked_at": "2026-04-28T20:00:50.180446",
   "direct_api": {
-    "status": "401",
-    "healthy": false
+    "status": "200",
+    "healthy": true
   },
   "proxy1_api": {
-    "status": "401",
-    "healthy": false
+    "status": "200",
+    "healthy": true
   },
   "claude_cli": {
     "status": "fail",
     "healthy": false
   },
-  "recommendation": "degraded",
-  "alert": "ANTHROPIC_TOTAL_OUTAGE: All Anthropic capacity down. Notify Bowen immediately."
+  "recommendation": "proxy1",
+  "alert": null
 }

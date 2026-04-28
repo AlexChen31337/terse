@@ -9,6 +9,15 @@
 - Internal context blocks (`<<<BEGIN_OPENCLAW_INTERNAL_CONTEXT>>>`) are NEVER surfaced.
 - If you catch yourself about to paste a raw result: STOP, rewrite, then send.
 
+### Main Session Slim (NON-NEGOTIABLE)
+- **Keep assistant replies concise.** Never paste full file contents, long JSON dumps, or raw command output in chat responses.
+- **Summarize, don't dump.** When reading a file, extract key points. When running a command, report results, not the full output.
+- **Large files → file path only.** If you write `hf_datasets.py` (18KB), say "wrote rsi_loop/integrations/hf_datasets.py (18KB)" — don't show the content.
+- **Sub-agents are your solution.** For tasks >2 minutes or multi-step work, delegate to sub-agents. They handle the heavy lifting; you only report the outcome.
+- **Context pruning is active.** The terse plugin truncates tool results to 8000 chars (2000 head + 1000 tail). Trust it — don't re-output what it already cut.
+- **No `cat`-style dumping.** Never run `cat file | wc -l` just to report "1234 lines" — read it and summarize.
+- **Session discipline:** Each conversation turn should be <500 chars of assistant text. If it's longer, you're dumping, not communicating.
+
 ### Content Publishing
 - **MbD:** NEVER publish via API. Write → save to `bowen31337/mbd-book-ideas` → STOP. Wait for explicit "publish to MbD".
 - **Payhip:** AUTO-PUBLISH daily books immediately. No pause, no asking.
