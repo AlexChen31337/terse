@@ -1832,3 +1832,91 @@ RISK: ETH sub-$2200, BTC dominance >60%, quantum FUD
 
 STRATEGY: Long HYPE $41-42 → $55 | Wait for BTC $80K breakout for alt rotation
 ===========================================================================
+# 🌙 Midnight Alpha Report
+**Wednesday, April 29, 2026 — 2:00 AM AEST**
+
+---
+
+## 📊 Market Snapshot
+
+| Asset | Price | 24h | 7d | Market Cap |
+|-------|-------|-----|-----|------------|
+| **BTC** | $76,020 | -0.9% | +0.3% | $1,522.6B |
+| **ETH** | $2,279 | +0.3% | -1.3% | $275.0B |
+| **SOL** | $83.42 | -0.8% | -3.0% | $48.0B |
+| **HYPE** | $39.74 | -4.6% | -0.7% | $9.5B |
+
+**Global Metrics:** Market Cap $2.63T | 24h Vol $84.5B | BTC Dom 57.9% | ETH Dom 10.5%
+**Fear & Greed Index:** 33 — **Fear** 🟡
+
+---
+
+## 🔍 Market Analysis
+
+### Macro View
+- BTC consolidating in the $75-77K range with near-zero 7-day movement (+0.3%). Low volatility suggests accumulation phase or exhaustion.
+- Fear reading at 33 — historically a buy-the-dip zone. Last time F&G was this low (early March), BTC bounced 8% within 2 weeks.
+- BTC dominance at 57.9% continues to squeeze alts. Capital is NOT rotating yet.
+
+### Key Observations
+1. **ETH/SOL weakness persists** — ETH -1.3% and SOL -3.0% on the week despite BTC flatlining. Alt bleeding while BTC holds = distribution phase.
+2. **HYPE pullback** — -4.6% daily is notable. After the Galaxy Q1 report showed Hyperliquid gains partially offsetting losses, the market may be re-evaluating HYPE's sustainability.
+3. **Volume at $84.5B** — moderate, not panic-level. Fear is sentiment-driven, not volume-driven.
+
+---
+
+## 🔥 Narratives & Alpha Signals
+
+### 1. AI × Crypto Infrastructure (🔥 Hot)
+- **OpenAI building smartphone chips with Qualcomm & MediaTek** — signals AI compute going edge/device-level. Implications for decentralized AI inference (Render, Akash, Bittensor).
+- **Anthropic multi-GW compute deal with Google/Broadcom** — AI giants competing directly with BTC miners for energy. Miners pivoting to AI hosting (Core Scientific, Hut 8 already converting). Watch: miner-to-AI conversion plays.
+- **Jack Dorsey (Block): AI replacing middle managers** — institutional acceptance of AI workforce disruption narrative.
+
+### 2. DeFi Resilience (🟡 Emerging)
+- **DeFi United raises $300M to cover Kelp DAO $290M exploit** — Aave's Stani Kulechov leading a community bailout. This is a *huge* signal: DeFi self-governance and mutual aid. Reaffirms DeFi maturity narrative.
+- **Kelp DAO exploit ($290M)** itself is bearish for LRT (liquid restaking tokens) sector short-term.
+
+### 3. Sovereign Bitcoin (🔵 Structural)
+- **US military running a live Bitcoin node** — first public confirmation from a combatant commander (Admiral Paparo, Indo-Pacific Command). BTC treated as national security asset.
+- **US govt holds ~$24.5B in BTC** as strategic digital asset reserve. Moved $606K in Bitfinex hack BTC to Coinbase Prime.
+- **$50M BTC by 2041 case** made by EMJX CEO on NYSE floor. Institutional long-term thesis intact.
+
+### 4. Regulatory Landscape
+- **Clarity Act** progress — WH digital assets advisor Patrick Witt "cautiously optimistic." Stablecoin yield poses "limited risk to banks."
+- **xAI vs Colorado AI law** paused — potential softening of AI regulation. Bullish for AI agent sector.
+- **Invesco takes over Superstate's $900M fund** — TradFi integration of on-chain T-bills accelerating.
+
+---
+
+## 🎯 Top Picks & Action Items
+
+### 🥇 Top Pick: **HYPE (Hyperliquid)**
+- **Thesis:** Despite -4.6% daily dip, Galaxy Digital's Q1 report highlighted Hyperliquid gains as a bright spot. HYPE at $39.74 with $9.5B mcap remains the leading on-chain perps DEX token. Fear-driven pullback = accumulation opportunity for conviction holders. The DeFi United solidarity movement (Aave-led) strengthens the overall DeFi ecosystem HYPE operates in.
+- **Entry zone:** $37-40 (current)
+- **Risk:** DeFi contagion from Kelp DAO could spill over short-term.
+
+### 🥈 Watch: **BTC (Bitcoin)**
+- F&G at 33 + military node + sovereign reserve = structural bull case. Consolidation is healthy. Any break above $78K with volume = long signal.
+- **Alert:** Set $78.5K breakout alert.
+
+### 🥉 Speculative: **AI Agent Tokens**
+- OpenAI edge chips + xAI regulatory pause + Dorsey AI narrative = confluence of AI agent tailwinds. Watch AI3, VIRTUAL, or FET for momentum entries.
+
+---
+
+## ⚠️ Risk Factors
+1. **Kelp DAO exploit fallout** — $290M hack could trigger LRT contagion. Monitor ETH staking derivatives.
+2. **BTC dominance too high** — 57.9% is historically a local top signal. Alt season *may* be near, but timing uncertain.
+3. **US govt BTC movements** — transfers to Coinbase Prime could signal imminent sales. Watch on-chain.
+
+---
+
+## 📅 Looking Ahead
+- **Clarity Act** progress — could be a major catalyst for stablecoins and DeFi
+- **OpenAI chip announcement** — full details may move AI + decentralized compute tokens
+- **ETH Pectra upgrade** aftermath — check if staking flows normalize post-Kelp
+
+---
+
+*Report generated by Alex Chen | Midnight Alpha Research*
+*Sources: Hyperliquid API, CoinGecko, Alternative.me F&G, CoinDesk, Decrypt*
