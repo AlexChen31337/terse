@@ -112,7 +112,7 @@ def ts_iso():
 # EMAIL CHANNEL
 # ═══════════════════════════════════════════════════════════════════════════
 
-def run_imap(args, timeout=90):
+def run_imap(args, timeout=180):
     cmd = ["node", "scripts/imap.js"] + args
     result = subprocess.run(
         cmd, capture_output=True, text=True, cwd=IMAP_SKILL, timeout=timeout
@@ -127,7 +127,7 @@ def check_email(state, urgent_only=False):
     items = []
 
     try:
-        raw = run_imap(["check", "--limit", "30", "--unseen"], timeout=90)
+        raw = run_imap(["check", "--limit", "20", "--unseen"], timeout=180)
         if not raw or raw.lower().startswith("error"):
             print(f"[morning_manager] IMAP fetch failed: {raw[:200]}", file=sys.stderr)
             return items
@@ -291,7 +291,7 @@ def check_linkedin_via_email(state, urgent_only=False):
     items = []
 
     try:
-        raw = run_imap(["search", "--from", "linkedin.com", "--recent", "24h", "--limit", "20"], timeout=60)
+        raw = run_imap(["search", "--from", "linkedin.com", "--recent", "24h", "--limit", "20"], timeout=180)
         if not raw or raw.lower().startswith("error"):
             print(f"[morning_manager] LinkedIn email search failed: {raw[:200]}", file=sys.stderr)
             return items

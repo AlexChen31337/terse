@@ -1,4 +1,4 @@
-# ☀️ Morning Digest — Tuesday, April 28, 2026
+# ☀️ Morning Digest — Wednesday, April 29, 2026
 
 ## 🚨 Urgent / Needs Immediate Attention
 
@@ -11,7 +11,7 @@
 🐙 **[GITHUB]** security: audit + fix pallet-ibc-lite, pallet-anon-messaging, pallet-service-market
    🔗 https://api.github.com/repos/clawinfra/claw-chain/pulls/54
 
-## 🐙 GitHub — 54 Items
+## 🐙 GitHub — 55 Items
 
 ### bowen31337/dataViz-agent
 - ✍️ bug: notify-change route uses undefined permission 'embeddings:write' — always returns 403 [author]
@@ -80,16 +80,14 @@
   🔗 https://api.github.com/repos/clawinfra/claw-chain/issues/27
 - 👤 feat: Substrate node implementation [mention]
   🔗 https://api.github.com/repos/clawinfra/claw-chain/pulls/26
-- 📌 #109 RUSTSEC-2026-0105: core2 is unmaintained, all versions yanked [open_issue]
-  🔗 https://github.com/clawinfra/claw-chain/issues/109
-- 📌 #108 RUSTSEC-2026-0104: Reachable panic in certificate revocation list parsing [open_issue]
-  🔗 https://github.com/clawinfra/claw-chain/issues/108
-- 📌 #107 RUSTSEC-2026-0104: Reachable panic in certificate revocation list parsing [open_issue]
-  🔗 https://github.com/clawinfra/claw-chain/issues/107
-- 📌 #100 RUSTSEC-2026-0099: Name constraints were accepted for certificates asserting a wildcard name [open_issue]
-  🔗 https://github.com/clawinfra/claw-chain/issues/100
-- 📌 #99 RUSTSEC-2026-0098: Name constraints for URI names were incorrectly accepted [open_issue]
-  🔗 https://github.com/clawinfra/claw-chain/issues/99
+- 📌 #80 🌐 Ecosystem Builder Program [open_issue]
+  🔗 https://github.com/clawinfra/claw-chain/issues/80
+- 📌 #79 ⚙️ Mainnet Genesis Configuration [open_issue]
+  🔗 https://github.com/clawinfra/claw-chain/issues/79
+- 📌 #78 🐍 Agent SDK: Python SDK for ClawChain [open_issue]
+  🔗 https://github.com/clawinfra/claw-chain/issues/78
+- 📌 #77 🚀 Mainnet Blocker: Validator Recruitment Program [open_issue]
+  🔗 https://github.com/clawinfra/claw-chain/issues/77
 
 ### clawinfra/claw-forge
 - ✍️ bug: hard-killed runs leave commits stranded on orphaned worktree branches [author]
@@ -123,6 +121,12 @@
 - 📌 #40 feat: pluggable context engine via abstract base class [open_issue]
   🔗 https://github.com/clawinfra/evoclaw/issues/40
 
+### clawinfra/rsi-loop
+- ✍️ Mirror compacted sessions to HF Datasets for offline RSI training [author]
+  🔗 https://api.github.com/repos/clawinfra/rsi-loop/issues/3
+- ✍️ feat(integrations): mirror sessions to HF Datasets [author]
+  🔗 https://api.github.com/repos/clawinfra/rsi-loop/pulls/6
+
 ### illbnm/homelab-stack
 - ✍️ feat(tests): automated integration test suite for all stacks (Closes #14) [author]
   🔗 https://api.github.com/repos/illbnm/homelab-stack/pulls/261
@@ -136,5 +140,5 @@
   🔗 https://api.github.com/repos/openclaw/openclaw/issues/17919
 
 ---
-📊 Total: 54 items | Actionable: 43 | Urgent: 3
-Generated: 08:31 UTC+11:00
+📊 Total: 55 items | Actionable: 45 | Urgent: 3
+Generated: 08:32 UTC+11:00

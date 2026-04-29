@@ -1,31 +1,24 @@
-# RSI Loop Health Check — 2026-04-28 03:10 AEST
+# RSI Loop Health Check — 2026-04-29
 
-## Status Summary
-- **Health Score: 0.213** ⚠️ (below 0.3 threshold)
-- **Outcomes (7d):** 42 logged
-- **Success Rate:** 45%
-- **Avg Quality:** 2.74/5
-- **Top Issues:** context_loss (19), tool_error (14), tool_validation_error (5)
+**Time:** 2026-04-29 03:10 AEST (2026-04-28 17:10 UTC)
 
-## Patterns Detected (4)
-1. **[1.054]** In `tool_call` tasks, `tool_error` occurs 13x with 100% failure rate
-2. **[0.540]** In `tool_call` tasks, `tool_validation_error` occurs 5x with 100% fail
-3. **[0.405]** In `session_management` tasks, `context_loss` occurs 15x with 0% failure rate
+## Pre-Cycle Status
+- **Health Score:** 0.248 ⚠️ (below 0.3 threshold)
+- **Outcomes (7d):** 97 logged | Success: 64% | Avg quality: 3.21/5
+- **Top issues:** context_loss(62), tool_error(14), rate_limit(11)
+- **Patterns:** 4 detected | Analyzed: 2026-04-27
 
-## Proposals
-- **Deployed:** 24
-- **Draft:** 0
-- **Awaiting Review:** 0
+## Post-Cycle Status
+- **Health Score:** 0.41 (improved after cycle)
+- **Patterns found:** 6
+- **Proposals generated:** 5
+- **Auto-deployed:** 0 (all already deployed or auto-approved)
 
-## Cycle Results
-- Patterns found: 4
-- Proposals generated: 4 (all already deployed)
-- Auto-deployed: 0 (nothing new)
-- Remaining issues:
-  - [b9e26a71] Address `tool_error` in `tool_call` tasks (already deployed but still recurring)
-  - [15c31c37] Address `tool_validation_error` in `tool_call` tasks (already deployed but still recurring)
+## Active Auto-Fixes
+- [b9e26a71] Address 'tool_error' in 'tool_call' tasks
+- [3a2dc2d1] Fix model routing rate limits
+- [15c31c37] Address 'tool_validation_error' in 'tool_call' tasks
+- [db32089a] Address 'timeout' in 'tool_call' tasks
 
-## Action Taken
-- ⚠️ **Bowen alerted via Telegram** — health score below threshold (0.213 < 0.3)
-- Cycle completed, no new proposals (all were already deployed)
-- Core issue: `tool_error` and `tool_validation_error` patterns persist despite prior deployments — may need deeper investigation
+## Alert
+⚠️ Pre-cycle health score 0.248 was below 0.3 threshold — alerting Bowen via Telegram.

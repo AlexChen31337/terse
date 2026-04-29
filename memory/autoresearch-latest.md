@@ -1,6 +1,6 @@
-# 🔬 Nightly Research: AI & Agents
+# 🔬 Nightly Research: Crypto & DeFi
 
-> Generated: 2026-04-29 01:00 AEST | Track: ai (1 of 3)
+> Generated: 2026-04-30 01:00 AEST | Track: crypto (2 of 3)
 
 ---
 
@@ -13,20 +13,20 @@ _No items found for this source._
 
 ## 🔥 Trending Repos (GitHub)
 
-1. **[Alishahryar1/free-claude-code](https://github.com/Alishahryar1/free-claude-code)** — ⭐ 1,706 | 📈 +1706 today | Python
-   > Use claude-code for free in the terminal, VSCode extension or via discord like openclaw
+1. **[getumbrel/umbrel](https://github.com/getumbrel/umbrel)** — ⭐ 17 | 📈 +17 today | TypeScript
+   > An elegant home server OS. Run OpenClaw, store your files and photos, run a Bitcoin node, and do more with over 300 apps in the Umbrel App Store.
 
-2. **[sponsors/badlogic](https://github.com/sponsors/badlogic)** — ⭐ 974 | 📈 +974 today | TypeScript
-   > AI agent toolkit: coding agent CLI, unified LLM API, TUI &amp; web UI libraries, Slack bot, vLLM pods
+2. **[OpenZeppelin/openzeppelin-contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)** — ⭐ 1 | 📈 +1 today | Solidity
+   > OpenZeppelin Contracts is a library for secure smart contract development.
 
-3. **[TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents)** — ⭐ 969 | 📈 +969 today | Python
-   > TradingAgents: Multi-Agents LLM Financial Trading Framework
+3. **[euler-xyz/ethereum-vault-connector](https://github.com/euler-xyz/ethereum-vault-connector)** — Solidity
+   > The Ethereum Vault Connector (EVC) is a mediator between Vaults that may have borrowing functionality.
 
-4. **[farion1231/cc-switch](https://github.com/farion1231/cc-switch)** — ⭐ 901 | 📈 +901 today | Rust
-   > A cross-platform desktop All-in-One assistant tool for Claude Code, Codex, OpenCode, openclaw &amp; Gemini CLI.
+4. **[euler-xyz/euler-vault-kit](https://github.com/euler-xyz/euler-vault-kit)** — Solidity
+   > Build lending vaults which connect through Ethereum Vault Connector
 
-5. **[davila7/claude-code-templates](https://github.com/davila7/claude-code-templates)** — ⭐ 347 | 📈 +347 today | Python
-   > CLI tool for configuring and monitoring Claude Code
+5. **[smartcontractkit/chainlink-brownie-contracts](https://github.com/smartcontractkit/chainlink-brownie-contracts)** — Solidity
+   > A repository for automatically using the latest chainlink repo from the core chainlink repo.
 
 _(up to 5 items)_
 
@@ -34,20 +34,20 @@ _(up to 5 items)_
 
 ## 🗞️ Hacker News Highlights
 
-1. **[Microsoft and OpenAI end their exclusive and revenue-sharing deal](https://www.bloomberg.com/news/articles/2026-04-27/microsoft-to-stop-sharing-revenue-with-main-ai-partner-openai)** — 940 pts, 801 comments
-   > _bloomberg.com_
+1. **[Ghostty is leaving GitHub](https://mitchellh.com/writing/ghostty-leaving-github)** — 3027 pts, 902 comments
+   > _mitchellh.com_
 
-2. **[4TB of voice samples just stolen from 40k AI contractors at Mercor](https://app.oravys.com/blog/mercor-breach-2026)** — 577 pts, 217 comments
-   > _app.oravys.com_
+2. **[Bugs Rust won't catch](https://corrode.dev/blog/bugs-rust-wont-catch/)** — 458 pts, 247 comments
+   > _corrode.dev_
 
-3. **[Talkie: a 13B vintage language model from 1930](https://talkie-lm.com/introducing-talkie)** — 503 pts, 205 comments
-   > _talkie-lm.com_
+3. **[Soft launch of open-source code platform for government](https://www.nldigitalgovernment.nl/news/soft-launch-for-government-open-source-code-platform/)** — 361 pts, 103 comments
+   > _nldigitalgovernment.nl_
 
-4. **[China blocks Meta's acquisition of AI startup Manus](https://www.cnbc.com/2026/04/27/meta-manus-china-blocks-acquisition-ai-startup.html)** — 383 pts, 288 comments
-   > _cnbc.com_
+4. **[HashiCorp co-founder says GitHub 'no longer a place for serious work'](https://www.theregister.com/2026/04/29/mitchell_hashimoto_ghostty_quitting_github/)** — 331 pts, 175 comments
+   > _theregister.com_
 
-5. **[Show HN: OSS Agent I built topped the TerminalBench on Gemini-3-flash-preview](https://github.com/dirac-run/dirac)** — 355 pts, 132 comments
-   > _github.com_
+5. **[Tangled – We need a federation of forges](https://blog.tangled.org/federation/)** — 140 pts, 86 comments
+   > _blog.tangled.org_
 
 _(up to 5 items)_
 
@@ -64,20 +64,23 @@ _(up to 5 items)_
 
 ---
 
-_Next track: Crypto & DeFi | Archive: memory/autoresearch-archive.md_
 ---
 
-## 🌐 Web Highlights (Manual Fetch — 2026-04-29)
+## 🌐 Web Highlights (2026-04-30)
 
-### Anthropic
-- **Emotion concepts in LLMs** (Apr 2) — Interpretability team investigating emotional behaviors in language models
-- **81K user survey** (Mar 18) — Largest multilingual qualitative study on what people want from AI
-- **Economic Index Survey** (Apr 22) — New Anthropic Economic Index announced
-- **Project Vend Phase 2** (Dec 2025) — AI shopkeeper experiment update
+### Anthropic Research
+- **Economic Index Survey (Apr 22)** — Announcing Anthropic Economic Index Survey; also published "What 81,000 people told us about the economics of AI"
+- **Automated Alignment Researchers (Apr 14)** — Using LLMs to scale scalable oversight
+- **Trustworthy Agents in Practice (Apr 9)** — New policy research on agent trustworthiness
+- **Emotion Concepts in LLMs (Apr 2)** — Interpretability team investigates how LLMs exhibit emotion-like behaviors
+- **Australia Economic Index (Mar 31)** — How Australia uses Claude
 
-### OpenAI
-- **Microsoft partnership next phase** (Apr 27) — Major restructuring of MS-OpenAI deal (matches HN #1 story)
-- **Symphony: Open-source orchestration spec** (Apr 27) — New orchestration framework
-- **GPT-5.5 released** (Apr 23) — New model with system card + bio bug bounty
-- **Workspace agents in ChatGPT** (Apr 22) — Agent features for enterprise
-- **WebSockets for agentic workflows** (Apr 22) — Responses API upgrade
+### OpenAI News
+- **OpenAI on AWS (Apr 28)** — Models, Codex, and Managed Agents come to AWS
+- **Community Safety Commitment (Apr 28)** — New safety framework announcement
+- **Microsoft Partnership Next Phase (Apr 27)** — Major restructuring of MS-OpenAI deal
+- **Symphony: Open-source orchestration spec (Apr 27)** — New orchestration framework for agents
+- **GPT-5.5 Released (Apr 23)** — New model with system card + bio bug bounty
+- **Our Principles (Apr 26)** — Company values/mission statement update
+
+_Next track: Developer Tools | Archive: memory/autoresearch-archive.md_

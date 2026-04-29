@@ -1,17 +1,17 @@
 {
-  "checked_at": "2026-04-28T20:00:50.180446",
+  "checked_at": "2026-04-29T16:01:48.542533",
   "direct_api": {
     "status": "200",
     "healthy": true
   },
   "proxy1_api": {
-    "status": "200",
-    "healthy": true
-  },
-  "claude_cli": {
-    "status": "fail",
+    "status": "401",
     "healthy": false
   },
-  "recommendation": "proxy1",
+  "claude_cli": {
+    "status": "ok",
+    "healthy": true
+  },
+  "recommendation": "claude_code_cli",
   "alert": null
 }

@@ -1,6 +1,6 @@
 {
-  "last_scan_ts": 1777385433.9475348,
-  "last_scan_iso": "2026-04-28T14:10:33.947535+00:00",
+  "last_scan_ts": 1777471860.3308132,
+  "last_scan_iso": "2026-04-29T14:11:00.330814+00:00",
   "events_logged": 1122,
   "file_offsets": {
     "04c6c576-d1fa-433f-ab13-e39aa2836368.jsonl": 127,
@@ -237,7 +237,7 @@
     "d748473f-901f-453f-bf22-e708cc6e5489.checkpoint.601947a4-4418-416b-8b98-b72ed458697e.jsonl": 259,
     "d748473f-901f-453f-bf22-e708cc6e5489.checkpoint.636773cc-7ff0-418e-ad99-e5ca2f1e6aa7.jsonl": 273,
     "d748473f-901f-453f-bf22-e708cc6e5489.checkpoint.f3e7055d-ecb8-4c8a-be79-9ad0b93ffb94.jsonl": 223,
-    "d748473f-901f-453f-bf22-e708cc6e5489.jsonl": 587,
+    "d748473f-901f-453f-bf22-e708cc6e5489.jsonl": 1078,
     "11d1165b-4422-402d-8d97-6cbc90773a76.jsonl": 8,
     "7e8ececb-5919-4b45-9357-200edb5fd147.jsonl": 8,
     "d748473f-901f-453f-bf22-e708cc6e5489.checkpoint.15d2c044-8061-4b52-912f-c3596422fb17.jsonl": 289,
@@ -248,6 +248,8 @@
     "d748473f-901f-453f-bf22-e708cc6e5489.checkpoint.a71a08e3-f24f-4efd-8ab9-b73fb24fd511.jsonl": 351,
     "d748473f-901f-453f-bf22-e708cc6e5489.checkpoint.a87da95f-d60f-46c4-bbca-b9aef39e3f72.jsonl": 508,
     "d748473f-901f-453f-bf22-e708cc6e5489.checkpoint.adcccaea-4330-4ded-bcb3-1deab862daec.jsonl": 537,
-    "d748473f-901f-453f-bf22-e708cc6e5489.checkpoint.ea5d04e9-bed8-4fb2-adaf-ecbafc3997a6.jsonl": 429
+    "d748473f-901f-453f-bf22-e708cc6e5489.checkpoint.ea5d04e9-bed8-4fb2-adaf-ecbafc3997a6.jsonl": 429,
+    "a4b01bf1-78fa-498b-83d3-2cdb159d8ec7.jsonl": 8,
+    "11a921f2-225c-47dc-b3af-904d0c24b9e3.jsonl": 14
   }
 }
