@@ -25,6 +25,7 @@ v0.6.0 released. Phase 2 + SKILLRL shipped. **Next:** v0.6.1 (merge PRs #22+#23)
 | Service | Key Location | Notes |
 |---------|-------------|-------|
 | **GitHub (Alex)** | `~/.openclaw/secrets/alex-gh-token.env` | **Classic PAT, no expiry, admin scope clawinfra. Primary token for all repo work.** `source` to load `GH_TOKEN`. |
+| **GitHub (Bowen)** | `~/.openclaw/secrets/bowen-gh-token.env` | **For bowen31337/* private repos.** `source` to load `GH_TOKEN`. Alex token won't work for these. |
 | Groq | `memory/encrypted/groq-api-key.enc` | Free: 14,400 req/day (8B), 1,000/day (70B) |
 | Cerebras | `memory/encrypted/cerebras-api-key.enc` | Free: 14,400 req/day + 1M tokens |
 | MbD | `memory/encrypted/mbd-token.enc` | API: `https://x.mbd.pub/api/` |

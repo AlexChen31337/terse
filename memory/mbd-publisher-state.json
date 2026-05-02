@@ -1,6 +1,6 @@
 {
-  "topic_index": 3,
-  "mbd_last_backup": "2026-04-29",
+  "topic_index": 5,
+  "mbd_last_backup": "2026-05-02",
   "drafts": [
     {
       "id": "mbd-daily-2026-04-25",
@@ -27,6 +27,24 @@
       "topic_index": 2,
       "repo_folder": "2026-04-29_AI职场生存手册",
       "cover": false,
+      "status": "backed_up"
+    },
+    {
+      "id": "mbd-daily-2026-04-30",
+      "date": "2026-04-30",
+      "topic": "赛博朋克副业",
+      "topic_index": 3,
+      "repo_folder": "2026-04-30_赛博朋克副业",
+      "cover": false,
+      "status": "backed_up"
+    },
+    {
+      "id": "mbd-daily-2026-05-02",
+      "date": "2026-05-02",
+      "topic": "AI恋爱教练",
+      "topic_index": 4,
+      "repo_folder": "2026-05-02_AI恋爱教练",
+      "cover": true,
       "status": "backed_up"
     }
   ]

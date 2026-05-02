@@ -1,7 +1,7 @@
 [
   {
     "name": "taboola_session_id",
-    "value": "v2_0fd126d2042fd7d3767c2a42d93b2f1e_4e9b5129-bf36-4551-9df3-1fb881a037cd-tuct10de41dd_1777397404_1777397404_CNawjgYQydlHGIGjkKndMyABKAMwEDiu_QZA8IUQSIT87wNQlZoCWABgAGi74N2NnJ_V4a0BcAGAAQCIAQA",
+    "value": "v2_634cddacd36664f1ae2146116fb41e28_4e9b5129-bf36-4551-9df3-1fb881a037cd-tuct10de41dd_1777743004_1777743004_CNawjgYQydlHGK-D9s3eMyABKAMwEDiu_QZA8IUQSIT87wNQlZoCWABgAGi74N2NnJ_V4a0BcAGAAQCIAQA",
     "domain": ".taboola.com",
     "path": "/seekcomau-au-network/",
     "expires": -1,
@@ -11,7 +11,7 @@
   },
   {
     "name": "taboola_session_id",
-    "value": "v2_917a0f9d7278d40157eec09c37b75b38_4e9b5129-bf36-4551-9df3-1fb881a037cd-tuct10de41dd_1777397404_1777397404_CNawjgYQy5lIGIGjkKndMyABKAMwEDiu_QZA8IUQSIT87wNQlZoCWABgAGi74N2NnJ_V4a0BcAGAAQCIAQA",
+    "value": "v2_c6ea9dc2879aa52ef4ae273862f3f21f_4e9b5129-bf36-4551-9df3-1fb881a037cd-tuct10de41dd_1777743004_1777743004_CNawjgYQy5lIGK-D9s3eMyABKAMwEDiu_QZA8IUQSIT87wNQlZoCWABgAGi74N2NnJ_V4a0BcAGAAQCIAQA",
     "domain": ".taboola.com",
     "path": "/seekcomau-aud-sc/",
     "expires": -1,
@@ -36,7 +36,7 @@
     "value": "6635f6a6-40ec-4c5b-9892-df0f91b4a714",
     "domain": ".seek.com.au",
     "path": "/",
-    "expires": 1808933403,
+    "expires": 1809106203,
     "httpOnly": false,
     "secure": true,
     "sameSite": "Lax"
@@ -56,7 +56,7 @@
     "value": "seek/candidate-main>019da57fca960047399b4ad5d97005065002b05d0089c|",
     "domain": ".tealiumiq.com",
     "path": "/",
-    "expires": 1808933404.004281,
+    "expires": 1809279003.93578,
     "httpOnly": true,
     "secure": true,
     "sameSite": "None"
@@ -66,7 +66,7 @@
     "value": "3898798594d29de265b8ba996cb5e01e",
     "domain": ".seek.com.au",
     "path": "/",
-    "expires": 1808933404,
+    "expires": 1809106204,
     "httpOnly": false,
     "secure": false,
     "sameSite": "Lax"
@@ -76,7 +76,7 @@
     "value": "5DG%2BReN2Q4FVfV6b5dvwigkCU3DXn7m6MABaKJpLKw%2B8MnBJGzeqQpHWSbMjPjTV",
     "domain": ".app.link",
     "path": "/",
-    "expires": 1793122204.03488,
+    "expires": 1793467803.934078,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -96,7 +96,7 @@
     "value": "fb.2.1776598109840.954396064596083247",
     "domain": ".seek.com.au",
     "path": "/",
-    "expires": 1785173404,
+    "expires": 1785346204,
     "httpOnly": false,
     "secure": false,
     "sameSite": "Lax"
@@ -106,7 +106,7 @@
     "value": "4e9b5129-bf36-4551-9df3-1fb881a037cd-tuct10de41dd",
     "domain": ".taboola.com",
     "path": "/",
-    "expires": 1808933404.364917,
+    "expires": 1809279004.333871,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -116,7 +116,7 @@
     "value": "4e9b5129-bf36-4551-9df3-1fb881a037cd-tuct10de41dd",
     "domain": ".taboola.com",
     "path": "/",
-    "expires": 1808933404.364954,
+    "expires": 1809106204.297923,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None",
@@ -138,7 +138,7 @@
     "value": "dWlkPU5qVmlOMlJtTlRJdE5USTBaQzAwTkRVeUxXSmxOall0Tm1OaVpEZ3dZemd3WlRCaw",
     "domain": ".seek.com.au",
     "path": "/",
-    "expires": 1808933404,
+    "expires": 1809106204,
     "httpOnly": false,
     "secure": false,
     "sameSite": "Lax"
@@ -168,7 +168,7 @@
     "value": "a113b686-c25e-4c11-8716-2fd1377eb815|1776598110",
     "domain": ".openx.net",
     "path": "/",
-    "expires": 1808933404.68827,
+    "expires": 1809106205.627745,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -188,7 +188,7 @@
     "value": "5ddd885590084a28ad5e47eb576947ed",
     "domain": ".crwdcntrl.net",
     "path": "/",
-    "expires": 1800723660.602688,
+    "expires": 1800896460.868723,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -198,7 +198,7 @@
     "value": "5ddd885590084a28ad5e47eb576947ed",
     "domain": ".seek.com.au",
     "path": "/",
-    "expires": 1800725404,
+    "expires": 1800898204,
     "httpOnly": false,
     "secure": false,
     "sameSite": "Lax"
@@ -208,7 +208,7 @@
     "value": "7hNAQVTlRr4MroxUKtOH_1776598110238",
     "domain": ".creativecdn.com",
     "path": "/",
-    "expires": 1808760604.596316,
+    "expires": 1809192605.368525,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -230,7 +230,7 @@
     "value": "1",
     "domain": ".pinterest.com",
     "path": "/",
-    "expires": 1808933404.554108,
+    "expires": 1809279005.143426,
     "httpOnly": true,
     "secure": true,
     "sameSite": "None"
@@ -260,7 +260,7 @@
     "value": "URy-ChRZjbKcuieEGRcr8SlEsOipZMo",
     "domain": ".ladsp.com",
     "path": "/",
-    "expires": 1811871003.953929,
+    "expires": 1812043805.304615,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -302,7 +302,7 @@
     "value": "0D586C9A991A60221E817BDA98DC6189",
     "domain": ".c.bing.com",
     "path": "/",
-    "expires": 1811093406.04735,
+    "expires": 1811439006.541917,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -322,7 +322,7 @@
     "value": "eyJpZCI6IjQ5ZTBiNGFkLTNlNjktNTQ3Zi05ZjFjLWQ1NzE2YzI0MWEwMyIsImNyZWF0ZWQiOjE3NzY1OTgxMDk3NzUsImV4aXN0aW5nIjp0cnVlfQ==",
     "domain": ".seek.com.au",
     "path": "/",
-    "expires": 1808933404,
+    "expires": 1809106204,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -332,7 +332,7 @@
     "value": "d=AQABBLy85GkCEF9wWuRrTypqYNpXRfY9aM0FEgEBAQEO5mnuaQ38xiMA_eMDAA&S=AQAAAoR4GFlzXNx1udaImAuQojY",
     "domain": ".yahoo.com",
     "path": "/",
-    "expires": 1808868604.121229,
+    "expires": 1809041405.304896,
     "httpOnly": true,
     "secure": true,
     "sameSite": "None"
@@ -432,7 +432,7 @@
     "value": "aeS8v4sFVX0AOdO2ACdM.AAA",
     "domain": ".casalemedia.com",
     "path": "/",
-    "expires": 1808933404.612199,
+    "expires": 1809019804.521105,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -452,7 +452,7 @@
     "value": "4805",
     "domain": ".casalemedia.com",
     "path": "/",
-    "expires": 1785173404.612238,
+    "expires": 1785259804.521152,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -492,7 +492,7 @@
     "value": "889179149979396448288",
     "domain": ".3lift.com",
     "path": "/",
-    "expires": 1784374208.245053,
+    "expires": 1785259804.703608,
     "httpOnly": true,
     "secure": true,
     "sameSite": "None"
@@ -502,7 +502,7 @@
     "value": "v_7dae561b-1f68-445b-9746-33569f6d4225",
     "domain": ".uncn.jp",
     "path": "/",
-    "expires": 1808328607.525544,
+    "expires": 1809019804.807115,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -522,7 +522,7 @@
     "value": "1",
     "domain": ".adkernel.com",
     "path": "/",
-    "expires": 1778607005.160687,
+    "expires": 1778779805.483689,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -532,7 +532,7 @@
     "value": "A4205655985233643827",
     "domain": ".adkernel.com",
     "path": "/",
-    "expires": 1779989405.16088,
+    "expires": 1780162205.48373,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -542,7 +542,7 @@
     "value": "ffa3e7d7-e4fe-4164-b36e-b5979cdec189",
     "domain": ".sharethrough.com",
     "path": "/",
-    "expires": 1779903004.097238,
+    "expires": 1780162205.120515,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -552,7 +552,7 @@
     "value": "1E45u2Vo2uv",
     "domain": ".ad-m.asia",
     "path": "/",
-    "expires": 1811158208.32651,
+    "expires": 1812303005.052319,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -592,7 +592,7 @@
     "value": "3CZfrG9q0VyGhvcSBfIBHauGnne",
     "domain": ".pangle-ads.com",
     "path": "/",
-    "expires": 1810834204.728203,
+    "expires": 1811439004.825822,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -632,7 +632,7 @@
     "value": "69e4bcc1036ece8017d9fdab",
     "domain": ".advolve.io",
     "path": "/",
-    "expires": 1808134209.535126,
+    "expires": 1809279004.886481,
     "httpOnly": true,
     "secure": true,
     "sameSite": "None"
@@ -782,7 +782,7 @@
     "value": "%7B%22UUID%22%3A%2200912A31-D8D7-4F7F-32D9-F5B73139EDB4%22%7D",
     "domain": "ads.travelaudience.com",
     "path": "/",
-    "expires": 1810726355.504727,
+    "expires": 1811698204.159685,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -808,23 +808,11 @@
     "sameSite": "None"
   },
   {
-    "name": "audit_p",
-    "value": "1|oEHbgAFMIGgc2k702jr7lF6QvWkf1OzpV/YO9mJRhB31Gq3kvxKaQ8GusQkMX6ImCgu+moxeM3Vw0S94mtzOH8nW3ti5+Z+94+ucy4SYxjoYNLNKcawYAza7Vbvft3txLVf/lYdmIjuE1woZtfG/8g5Fg3ppyviKVSnA4rEBEmlMqJO5mR56FezYXDqzN7B/H7wUdSegBMima+WVcS1g3g==",
-    "domain": ".rubiconproject.com",
-    "path": "/",
-    "expires": 1808155805.38588,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None",
-    "partitionKey": "https://seek.com.au",
-    "_crHasCrossSiteAncestor": true
-  },
-  {
     "name": "khaos",
     "value": "MO61K79S-V-LQEC",
     "domain": ".rubiconproject.com",
     "path": "/",
-    "expires": 1808155805.386019,
+    "expires": 1809019804.853394,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -834,7 +822,7 @@
     "value": "MO61K79S-V-LQEC",
     "domain": ".rubiconproject.com",
     "path": "/",
-    "expires": 1808155805.386145,
+    "expires": 1809019804.853416,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None",
@@ -842,21 +830,11 @@
     "_crHasCrossSiteAncestor": true
   },
   {
-    "name": "audit",
-    "value": "1|oEHbgAFMIGgc2k702jr7lF6QvWkf1OzpV/YO9mJRhB31Gq3kvxKaQ8GusQkMX6ImCgu+moxeM3Vw0S94mtzOH8nW3ti5+Z+94+ucy4SYxjoYNLNKcawYAza7Vbvft3txLVf/lYdmIjuE1woZtfG/8g5Fg3ppyviKVSnA4rEBEmlMqJO5mR56FezYXDqzN7B/H7wUdSegBMima+WVcS1g3g==",
-    "domain": ".rubiconproject.com",
-    "path": "/",
-    "expires": 1808155805.386222,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
     "name": "receive-cookie-deprecation",
     "value": "1",
     "domain": ".rubiconproject.com",
     "path": "/",
-    "expires": 1784395805.386327,
+    "expires": 1785259804.853456,
     "httpOnly": true,
     "secure": true,
     "sameSite": "None",
@@ -878,7 +856,7 @@
     "value": "dd4b53ad-2ced-4579-891c-c96e1bc8e689#1776706205698",
     "domain": ".sitescout.com",
     "path": "/",
-    "expires": 1808933404.83001,
+    "expires": 1809192605.348384,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -1004,16 +982,6 @@
     "sameSite": "None"
   },
   {
-    "name": "u",
-    "value": "1776792607",
-    "domain": ".uncn.jp",
-    "path": "/",
-    "expires": 1808328607.525596,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
     "name": "bcookie",
     "value": "\"v=2&c01f07ac-21e7-421e-8547-bbb552718f3d\"",
     "domain": ".linkedin.com",
@@ -1064,16 +1032,6 @@
     "sameSite": "None"
   },
   {
-    "name": "_cfuvid",
-    "value": "zYyVv5mnsdv0VRpFBO3KJj_HbPjPSMLuVW9p6K1oLeg-1776879002.5633974-1.0.1.1-D3EfoPWcGBUMK.q0vIeH8HCzw16J5qb998bGj70yl84",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": -1,
-    "httpOnly": true,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
     "name": "TestIfCookieP",
     "value": "ok",
     "domain": ".smartadserver.com",
@@ -1118,7 +1076,7 @@
     "value": "R6KK7IY77YAGKD3174N63OEMA",
     "domain": ".toast.com",
     "path": "/",
-    "expires": 1792517404.91131,
+    "expires": 1793295005.503002,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -1144,42 +1102,12 @@
     "sameSite": "None"
   },
   {
-    "name": "sp",
-    "value": "CggIknESAxD9EQoICNllEgMQ_xE=",
-    "domain": ".quantserve.com",
-    "path": "/",
-    "expires": 1784655007.60525,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
     "name": "ghtuid",
     "value": "2839910b-030c-4253-bab4-c16b958638ec",
     "domain": ".ghtinc.com",
     "path": "/",
     "expires": 1779557405.023348,
     "httpOnly": true,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "txpub_1570163526",
-    "value": "HDzCluPfCMrRTUbBWK9hkdeeNPnpK3gmhQmfpNk08zk_:_EXP_:_1792517404_:_EXP_:_1776965404",
-    "domain": ".toast.com",
-    "path": "/",
-    "expires": 1792517404.911357,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "txsync",
-    "value": "1776965404",
-    "domain": ".toast.com",
-    "path": "/",
-    "expires": 1792517404.911371,
-    "httpOnly": false,
     "secure": true,
     "sameSite": "None"
   },
@@ -1208,27 +1136,7 @@
     "value": "R6KK7IY77YAGKD3174N63OEMA",
     "domain": ".nhnace.com",
     "path": "/",
-    "expires": 1792517405.657676,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "txpub_1570163526",
-    "value": "HDzCluPfCMrRTUbBWK9hkdeeNPnpK3gmhQmfpNk08zk_:_EXP_:_1792517405_:_EXP_:_1776965405",
-    "domain": ".nhnace.com",
-    "path": "/",
-    "expires": 1792517405.657724,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "txsync",
-    "value": "1776965405",
-    "domain": ".nhnace.com",
-    "path": "/",
-    "expires": 1792517405.657757,
+    "expires": 1793295006.224775,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -1386,26 +1294,6 @@
     "sameSite": "None"
   },
   {
-    "name": "lum",
-    "value": "CPPp9v_cMxIFCAEQqAESBQgDEOQC",
-    "domain": ".ladsp.com",
-    "path": "/",
-    "expires": 1811871003.954142,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "IDSYNC",
-    "value": "\"19h2~2vmh:19h1~2vlt:18za~2vkh\"",
-    "domain": ".analytics.yahoo.com",
-    "path": "/",
-    "expires": 1808847004.121153,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
     "name": "__mguid_",
     "value": "d7269080bd8e15832929e100mohh2zrj",
     "domain": ".admaster.cc",
@@ -1416,291 +1304,11 @@
     "sameSite": "None"
   },
   {
-    "name": "__cf_bm",
-    "value": "Gg5_sGAcOZb_aFUyaUQWsXU8_YnM0OCdNZk6IUCVARY-1777397402.2590134-1.0.1.1-VaNWApCFPI5kMXOPkfUm0gW9TE_SjKm2G4jE2RV8oj6J7Kbr1XhDwoAV5QU6AyUNxuovpTsCXk.OsXnrJCaBfduXVm0T052VAorQwUgg2KotpE69bLhMBoO5Sd23NWvF",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1777399202.830468,
-    "httpOnly": true,
-    "secure": true,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "__cf_bm",
-    "value": "W7j_m.CGqG_ZKatTtQLrzgkFkp9gVhQnOATlJuwAxzs-1777397403.011382-1.0.1.1-eqU.So2LAPvftb9vXIZiPpPrqmiihRcb1V3HR_YkAaG_1WnPK04teP8fI1azWcsl4GFjB28uZxv51MIM61TtHRrHp8FeVgqdQWlxouBTYP5sQVprYtvHHEI1H00pTspJ",
-    "domain": ".cloud.seek.com.au",
-    "path": "/",
-    "expires": 1777399203.019466,
-    "httpOnly": true,
-    "secure": true,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "_dd_s",
-    "value": "rum=0&expire=1777398303267&logs=1&id=7a0282bc-1c2c-4444-8a88-2a877d0cdbd1&created=1777397403267",
-    "domain": "www.seek.com.au",
-    "path": "/",
-    "expires": 1777398303,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Strict"
-  },
-  {
-    "name": "main",
-    "value": "V%7C2~P%7Cjobsearch~K%7CAI~D%7C7~OSF%7Cquick&set=1777397403307",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1808933403,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "JobseekerSessionId",
-    "value": "132f3193-3e5d-4732-90df-faa33d9fe218",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1808501403.844249,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "JobseekerVisitorId",
-    "value": "132f3193-3e5d-4732-90df-faa33d9fe218",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1811957403.844301,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "da_cdt",
-    "value": "visid_019da57fca960047399b4ad5d97005065002b05d0089c-sesid_1777397403841-hbvid_6635f6a6_40ec_4c5b_9892_df0f91b4a714-tempAcqSessionId_1777397403286-tempAcqVisitorId_6635f6a640ec4c5b9892df0f91b4a714",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": -1,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "da_anz_candi_sid",
-    "value": "1777397403841",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1777399203.990489,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "hubble_temp_acq_session",
-    "value": "id%3A1777397403286_end%3A1777399203941_sent%3A4",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1808933403,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "da_csq_profile",
-    "value": "%7B%22jobViewEventsCompressed%22%3A%22%22%2C%22jobApplyEventsCompressed%22%3A%22%22%2C%22lastUpdateDate%22%3A%222026-04-28T17%3A30%3A03.990Z%22%2C%22jobViewCount_30d%22%3A0%2C%22jobApplyCount_30d%22%3A0%2C%22isFirstTimeVisitor%22%3A%22false%22%7D",
-    "domain": "www.seek.com.au",
-    "path": "/",
-    "expires": 1808933403,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "Strict"
-  },
-  {
-    "name": "utag_main",
-    "value": "v_id:019da57fca960047399b4ad5d97005065002b05d0089c$_sn:11$_se:4%3Bexp-session$_ss:0%3Bexp-session$_st:1777399203987%3Bexp-session$ses_id:1777397403841%3Bexp-session$_pn:1%3Bexp-session$dc_visit:1$dc_event:11%3Bexp-session$dc_region:ap-southeast-2%3Bexp-session$_prevpage:search%20results%3Bexp-1777401003993",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1808933403,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "__rtbh.uid",
-    "value": "%7B%22eventType%22%3A%22uid%22%2C%22id%22%3A%22NULL%22%2C%22expiryDate%22%3A%222027-04-28T17%3A30%3A04.046Z%22%7D",
-    "domain": "www.seek.com.au",
-    "path": "/",
-    "expires": 1808933404,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "__rtbh.lid",
-    "value": "%7B%22eventType%22%3A%22lid%22%2C%22id%22%3A%22XzKgAS1A5mqqDlReFqvD%22%2C%22expiryDate%22%3A%222027-04-28T17%3A30%3A04.046Z%22%7D",
-    "domain": "www.seek.com.au",
-    "path": "/",
-    "expires": 1808933404,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "_hjSession_162402",
-    "value": "eyJpZCI6ImYwMDc0MzFkLWFlZjItNDY0Yy1iZjA3LTVmZmNmYTI3MjBjMyIsImMiOjE3NzczOTc0MDQzMTYsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjowLCJzcCI6MX0=",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1777399204,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "_uetsid",
-    "value": "e4a80520432711f1a5afada55b51440a",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1777483804,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "_uetvid",
-    "value": "e40827803be211f1bcf92b78fe2301d3",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1811093404,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "_ga_JYC9JXRYWC",
-    "value": "GS2.1.s1777397404$o11$g0$t1777397404$j60$l0$h0",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1811957404.538036,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "_pinterest_ct_ua",
-    "value": "TWc9PSYwOFdZUFQ1WUJqc1NuU1F2THlSdUliVFpDMVRpbWo3anUyUk9iL0RqOHBEdzJJNzdPZEp0ekhDSmlxSHNadFFlcG44MWlVeU9jT3lIZDRWZkNQdC8vSTdHMnhiSTZ6WGJWaWtFczBBYXR0RT0mV01VMVA4U1pHQXovbUVHSGcxQW9mTlZxbTJRPQ==",
-    "domain": ".ct.pinterest.com",
-    "path": "/",
-    "expires": 1808933404.55415,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "lotame_domain_check",
-    "value": "seek.com.au",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1777397414,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "panoramaId_expiry",
-    "value": "1777483804550",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1777483804,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "panoramaId",
-    "value": "f03f34bddddce810ffca6aa5b80aa9fb927a56924e664ee9c3e6f93c4f76fb64",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1777483804,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "panoramaIdType",
-    "value": "panoDevice",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1777483804,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "pd",
-    "value": "v2|1776598110.194495.86400.86399.86400.172800.86399.86401|hI.vvvXv6xeve.vqwewpwuwz.wAwFx2x4.pMwS.jEvOiuialU.uIlQjIvGsn.wJkqvyrAsP",
-    "domain": ".openx.net",
-    "path": "/",
-    "expires": 1778693404.688319,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "CLID",
-    "value": "f596af1ca76c4c67a7d327882ff1d522.20260419.20270428",
-    "domain": "www.clarity.ms",
-    "path": "/",
-    "expires": 1808933404.734101,
-    "httpOnly": true,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "_clck",
-    "value": "iquhlb%5E2%5Eg5l%5E0%5E2300",
-    "domain": ".seek.com.au",
-    "path": "/",
-    "expires": 1808933404,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "_ssuma",
-    "value": "eyI2OCI6MTc3NzM5NzQwNDcyMiwiMTciOjE3NzY3MDYyMDU4NDV9",
-    "domain": ".sitescout.com",
-    "path": "/",
-    "expires": 1779989404.830069,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "google_push",
-    "value": "AXcoOmTAiYuFz6lERXv9_u9gxBoztCUtLfszxvEfq2B8h3WHeOQN1KiZVU_OkRJnw96gKp3QDgPwI8f0UFT6K-jaBPmW7_8LJZyTJhSB6EHj1IoKU5pk3ReJz4aiwyX6LVHYLHjtvT7HvohLiR87qKsJtHAt",
-    "domain": ".bidswitch.net",
-    "path": "/",
-    "expires": 1777397704.914076,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
     "name": "presage-ssp",
     "value": "%7B%22uuid%22%3A%22516fef73-5956-42bf-93f5-378e7be3b6e0%22%7D",
     "domain": ".presage.io",
     "path": "/",
     "expires": 1793208604.91501,
-    "httpOnly": true,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "IDE",
-    "value": "AHWqTUkfn314iVQ8E5GttH7K1AhhQiMSd1TNsyvuK19gmvAMIOqC9fdHVDWJ_rmWlDM",
-    "domain": ".doubleclick.net",
-    "path": "/",
-    "expires": 1811957404.918776,
     "httpOnly": true,
     "secure": true,
     "sameSite": "None"
@@ -1726,14 +1334,662 @@
     "sameSite": "None"
   },
   {
-    "name": "_clsk",
-    "value": "wb3zgq%5E1777397405524%5E1%5E0%5Em.clarity.ms%2Fcollect",
+    "name": "_cfuvid",
+    "value": "QmSWvcFoqKwspQ5XYrDIhcR8Yq4hqZ6DPdYcFXMcpk0-1777483803.2143826-1.0.1.1-i0tPrXeAWx93MsWpFNTR8FEIqS2_Mbw7FVLZaqKKPLw",
     "domain": ".seek.com.au",
     "path": "/",
-    "expires": 1777483805,
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "u",
+    "value": "1777483804",
+    "domain": ".uncn.jp",
+    "path": "/",
+    "expires": 1809019804.807158,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "audit_p",
+    "value": "1|oEHbgAFMIGgc2k702jr7lF6QvWkf1OzpV/YO9mJRhB31Gq3kvxKaQ9OPF7rHTKnLKNXecn4Jjapw0S94mtzOH8nW3ti5+Z+94+ucy4SYxjoYNLNKcawYAza7Vbvft3txLVf/lYdmIjuE1woZtfG/8g5Fg3ppyviKVSnA4rEBEmlMqJO5mR56FezYXDqzN7B/H7wUdSegBMima+WVcS1g3g==",
+    "domain": ".rubiconproject.com",
+    "path": "/",
+    "expires": 1809019804.853334,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://seek.com.au",
+    "_crHasCrossSiteAncestor": true
+  },
+  {
+    "name": "audit",
+    "value": "1|oEHbgAFMIGgc2k702jr7lF6QvWkf1OzpV/YO9mJRhB31Gq3kvxKaQ9OPF7rHTKnLKNXecn4Jjapw0S94mtzOH8nW3ti5+Z+94+ucy4SYxjoYNLNKcawYAza7Vbvft3txLVf/lYdmIjuE1woZtfG/8g5Fg3ppyviKVSnA4rEBEmlMqJO5mR56FezYXDqzN7B/H7wUdSegBMima+WVcS1g3g==",
+    "domain": ".rubiconproject.com",
+    "path": "/",
+    "expires": 1809019804.853436,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "lum",
+    "value": "CMLkqdLdMxIECAEQeBIFCAMQ2AQ",
+    "domain": ".ladsp.com",
+    "path": "/",
+    "expires": 1812043805.304671,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "IDSYNC",
+    "value": "\"19h2~2vmh:19h1~2vlt:18za~2vnt\"",
+    "domain": ".analytics.yahoo.com",
+    "path": "/",
+    "expires": 1809019805.304871,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "main",
+    "value": "V%7C2~P%7Cjobsearch~K%7CAI~D%7C7~OSF%7Cquick&set=1777570203335",
+    "domain": ".seek.com.au",
+    "path": "/",
+    "expires": 1809106203,
     "httpOnly": false,
     "secure": false,
     "sameSite": "Lax"
+  },
+  {
+    "name": "JobseekerSessionId",
+    "value": "cf1efef2-12cc-4ac7-8a6f-60494033ed66",
+    "domain": ".seek.com.au",
+    "path": "/",
+    "expires": 1808674203.813979,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "JobseekerVisitorId",
+    "value": "cf1efef2-12cc-4ac7-8a6f-60494033ed66",
+    "domain": ".seek.com.au",
+    "path": "/",
+    "expires": 1812130203.814062,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "da_cdt",
+    "value": "visid_019da57fca960047399b4ad5d97005065002b05d0089c-sesid_1777570203863-hbvid_6635f6a6_40ec_4c5b_9892_df0f91b4a714-tempAcqSessionId_1777570203315-tempAcqVisitorId_6635f6a640ec4c5b9892df0f91b4a714",
+    "domain": ".seek.com.au",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "hubble_temp_acq_session",
+    "value": "id%3A1777570203315_end%3A1777572003969_sent%3A4",
+    "domain": ".seek.com.au",
+    "path": "/",
+    "expires": 1809106203,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "da_csq_profile",
+    "value": "%7B%22jobViewEventsCompressed%22%3A%22%22%2C%22jobApplyEventsCompressed%22%3A%22%22%2C%22lastUpdateDate%22%3A%222026-04-30T17%3A30%3A04.018Z%22%2C%22jobViewCount_30d%22%3A0%2C%22jobApplyCount_30d%22%3A0%2C%22isFirstTimeVisitor%22%3A%22false%22%7D",
+    "domain": "www.seek.com.au",
+    "path": "/",
+    "expires": 1809106204,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "utag_main",
+    "value": "v_id:019da57fca960047399b4ad5d97005065002b05d0089c$_sn:13$_se:4%3Bexp-session$_ss:0%3Bexp-session$_st:1777572004015%3Bexp-session$ses_id:1777570203863%3Bexp-session$_pn:1%3Bexp-session$dc_visit:1$dc_event:13%3Bexp-session$dc_region:ap-southeast-2%3Bexp-session$_prevpage:search%20results%3Bexp-1777573804021",
+    "domain": ".seek.com.au",
+    "path": "/",
+    "expires": 1809106204,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__rtbh.uid",
+    "value": "%7B%22eventType%22%3A%22uid%22%2C%22id%22%3A%22NULL%22%2C%22expiryDate%22%3A%222027-04-30T17%3A30%3A04.057Z%22%7D",
+    "domain": "www.seek.com.au",
+    "path": "/",
+    "expires": 1809106204,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "__rtbh.lid",
+    "value": "%7B%22eventType%22%3A%22lid%22%2C%22id%22%3A%22XzKgAS1A5mqqDlReFqvD%22%2C%22expiryDate%22%3A%222027-04-30T17%3A30%3A04.057Z%22%7D",
+    "domain": "www.seek.com.au",
+    "path": "/",
+    "expires": 1809106204,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_uetvid",
+    "value": "e40827803be211f1bcf92b78fe2301d3",
+    "domain": ".seek.com.au",
+    "path": "/",
+    "expires": 1811266204,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_clck",
+    "value": "iquhlb%5E2%5Eg5n%5E0%5E2300",
+    "domain": ".seek.com.au",
+    "path": "/",
+    "expires": 1809106204,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_ga_JYC9JXRYWC",
+    "value": "GS2.1.s1777570204$o13$g0$t1777570204$j60$l0$h0",
+    "domain": ".seek.com.au",
+    "path": "/",
+    "expires": 1812130204.915213,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "pd",
+    "value": "v2|1777051804.172800.86399.86401.86401.86400|wS.jEvOiuialU.uIlQjIvGsn.wJkqvyrAsP.hIvApMkStd.vxvwvCvzuD",
+    "domain": ".openx.net",
+    "path": "/",
+    "expires": 1778866205.627802,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "sp",
+    "value": "CggIknESAxCHEgoICNllEgMQ_xE=",
+    "domain": ".quantserve.com",
+    "path": "/",
+    "expires": 1785346205.938488,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "tuuid",
+    "value": "66fd2ddd-bda2-4011-9c1d-9252e6a1b41d",
+    "domain": "pool.liftdsp.com",
+    "path": "/",
+    "expires": 1809106206.641377,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "c",
+    "value": "1777570206",
+    "domain": "pool.liftdsp.com",
+    "path": "/",
+    "expires": 1809106206.496501,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "tuuid_lu",
+    "value": "1777570206",
+    "domain": "pool.liftdsp.com",
+    "path": "/",
+    "expires": 1809106206.641433,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "sol_id",
+    "value": "11d3dd43-a804-472d-8ee6-af2939b30cc9",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1809279003,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "JobseekerSessionId",
+    "value": "c947891c-b8f6-43f4-bf93-f9a52f86a7d0",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1808760603.322689,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "JobseekerVisitorId",
+    "value": "c947891c-b8f6-43f4-bf93-f9a52f86a7d0",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1812216603.322703,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_cfuvid",
+    "value": "McvoyOvYJ6vOjU1sgmJZr2oznuB4htgAx_WnnhSf5Zo-1777656602.6640024-1.0.1.1-ZgQcugEY5NlVCT9JG4Rw_sQ3lOMYOt9wADz2iykSvkw",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "da_searchTerm",
+    "value": "undefined",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ajs_anonymous_id",
+    "value": "cc90dc510ecd53b71fbc453aa0bd4b86",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1809279004,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "t_pt_gid",
+    "value": "4e9b5129-bf36-4551-9df3-1fb881a037cd-tuct10de41dd",
+    "domain": ".taboola.com",
+    "path": "/",
+    "expires": 1809279004.333906,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://seek.com",
+    "_crHasCrossSiteAncestor": true
+  },
+  {
+    "name": "_hjHasCachedUserAttributes",
+    "value": "true",
+    "domain": "au.seek.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_fbp",
+    "value": "fb.1.1777656604972.68410381050707417",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1785519004,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_pin_unauth",
+    "value": "dWlkPU5qVmlOMlJtTlRJdE5USTBaQzAwTkRVeUxXSmxOall0Tm1OaVpEZ3dZemd3WlRCaw",
+    "domain": ".au.seek.com",
+    "path": "/",
+    "expires": 1809279004,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_ga",
+    "value": "GA1.1.1979193247.1777656605",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1812303004.479442,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "visitor-id",
+    "value": "4206582055826889000V10",
+    "domain": ".media.net",
+    "path": "/",
+    "expires": 1809192605.265569,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "data-g",
+    "value": "CAESEKqB2HPcMeDYFspAwtws2gk~~3",
+    "domain": ".media.net",
+    "path": "/",
+    "expires": 1778866205.265615,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_ssuma",
+    "value": "eyI2OCI6MTc3NzY1NjYwNTI3NywiMTciOjE3Nzc1NzAyMDU4MjZ9",
+    "domain": ".sitescout.com",
+    "path": "/",
+    "expires": 1780248605.348427,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "c",
+    "value": "7hNAQVTlRr4MroxUKtOH_GNnNkhlrBDtRuADp2B0z_1777656605315",
+    "domain": ".creativecdn.com",
+    "path": "/",
+    "expires": 1809192605.368568,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://seek.com",
+    "_crHasCrossSiteAncestor": true
+  },
+  {
+    "name": "ts",
+    "value": "1777656605",
+    "domain": ".creativecdn.com",
+    "path": "/",
+    "expires": 1809192605.368584,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://seek.com",
+    "_crHasCrossSiteAncestor": true
+  },
+  {
+    "name": "_gcl_au",
+    "value": "1.1.704253716.1777656606",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1785432606,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__cf_bm",
+    "value": "WmXl6W_rkedCu9lFzbxbg_kJEzb7uEFZFac4FFdEQf4-1777743001.9234686-1.0.1.1-pwhhXfShWQhqljj3NxOCI9mTwaGd2oTz_X_QYzUZxSMSt3cudzg8bTFOmnu_pkRI0q7GamPaK5XIgskvBmf.USMkDCbXlu2_D0E5K0pyNCYwfD8NXvJqYLS2SpSgylLl",
+    "domain": ".seek.com.au",
+    "path": "/",
+    "expires": 1777744801.924327,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__cf_bm",
+    "value": "QC.SlvZDLoVjT81KYnBATwt4Z.a2xZtNJyrKshXqCxY-1777743001.9545403-1.0.1.1-Y19C6pwghpGS9iX1_kkZrZ3uWh8Au97zbpnCJWaHnIGBDtQWh5rlqXJwVtyU4LhGulmo65tAk5SafeJZWLpRcvCebmw_6U2fiqJZFlrcyDKL2MgJdjqmeGtdazLmxQVw",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1777744802.547047,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_dd_s",
+    "value": "rum=0&expire=1777743902971&logs=0",
+    "domain": "au.seek.com",
+    "path": "/",
+    "expires": 1777743902,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "main",
+    "value": "V%7C2~P%7Cjobsearch~K%7CAI~D%7C7~OSF%7Cquick&set=1777743003014",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1809279003,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "da_cdt",
+    "value": "visid_019de4972726006ba671b14d8ce400065002705d0089c-sesid_1777743003686-hbvid_11d3dd43_a804_472d_8ee6_af2939b30cc9-tempAcqSessionId_1777743002994-tempAcqVisitorId_11d3dd43a804472d8ee6af2939b30cc9",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "da_anz_candi_sid",
+    "value": "1777743003686",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1777744803.923669,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "hubble_temp_acq_session",
+    "value": "id%3A1777743002994_end%3A1777744803874_sent%3A4",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1809279003,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "da_csq_profile",
+    "value": "%7B%22jobViewEventsCompressed%22%3A%22%22%2C%22jobApplyEventsCompressed%22%3A%22%22%2C%22lastUpdateDate%22%3A%222026-05-02T17%3A30%3A03.924Z%22%2C%22jobViewCount_30d%22%3A0%2C%22jobApplyCount_30d%22%3A0%2C%22isFirstTimeVisitor%22%3A%22false%22%7D",
+    "domain": "au.seek.com",
+    "path": "/",
+    "expires": 1809279003,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "utag_main",
+    "value": "v_id:019de4972726006ba671b14d8ce400065002705d0089c$_sn:2$_se:4%3Bexp-session$_ss:0%3Bexp-session$_st:1777744803921%3Bexp-session$ses_id:1777743003686%3Bexp-session$_pn:1%3Bexp-session$dc_visit:1$dc_event:2%3Bexp-session$dc_region:ap-southeast-2%3Bexp-session$_prevpage:search%20results%3Bexp-1777746603928",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1809279003,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__rtbh.uid",
+    "value": "%7B%22eventType%22%3A%22uid%22%2C%22id%22%3A%22NULL%22%2C%22expiryDate%22%3A%222027-05-02T17%3A30%3A04.094Z%22%7D",
+    "domain": "au.seek.com",
+    "path": "/",
+    "expires": 1809279004,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "__rtbh.lid",
+    "value": "%7B%22eventType%22%3A%22lid%22%2C%22id%22%3A%22Tj37H3SWqRt0z11re3yK%22%2C%22expiryDate%22%3A%222027-05-02T17%3A30%3A04.094Z%22%7D",
+    "domain": "au.seek.com",
+    "path": "/",
+    "expires": 1809279004,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_hjSessionUser_162402",
+    "value": "eyJpZCI6IjEwNjhlZWM5LWMzNzMtNTRjOC1hY2U5LTk0NmJlNGNhNzEzYSIsImNyZWF0ZWQiOjE3Nzc2NTY2MDQ4ODEsImV4aXN0aW5nIjp0cnVlfQ==",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1809279004,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_hjSession_162402",
+    "value": "eyJpZCI6ImNhZGMzMjVlLWU0M2QtNDZiZC04YmJiLTI2MDU5YjhhZTE5ZiIsImMiOjE3Nzc3NDMwMDQxMTgsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjowLCJzcCI6MH0=",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1777744804,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_uetsid",
+    "value": "6441b8d0458311f18dbab9e26c2a8936",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1777829404,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_uetvid",
+    "value": "6441b400458311f18a97c1a1d19b6ca0",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1811439004,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_ga_JYC9JXRYWC",
+    "value": "GS2.1.s1777743004$o2$g0$t1777743004$j60$l0$h0",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1812303004.487332,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "CLID",
+    "value": "f596af1ca76c4c67a7d327882ff1d522.20260419.20270502",
+    "domain": "www.clarity.ms",
+    "path": "/",
+    "expires": 1809279004.624578,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_clck",
+    "value": "19g0q7c%5E2%5Eg5p%5E0%5E2312",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1809279004,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_pinterest_ct_ua",
+    "value": "TWc9PSZ0UDF5RitTeUExMGlHUUg1bWp5aXd5WmN2dWhBSkxsRUFjRVU4bCtHcDU5TGpzLzVNanpQaUJ6OCtoZGZONzhMMGRaa051UmdpTVkwN21WUG9xWXl0d1RpUFRYSlArdnpCelNVa2tlVGluWT0mSzRMUHQ5YUVhQTJZaTdiSm1KRGkwSDJyU1l3PQ==",
+    "domain": ".ct.pinterest.com",
+    "path": "/",
+    "expires": 1809279005.143462,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "txpub_1570163526",
+    "value": "HDzCluPfCMrRTUbBWK9hkdeeNPnpK3gmhQmfpNk08zk_:_EXP_:_1793295005_:_EXP_:_1777743005",
+    "domain": ".toast.com",
+    "path": "/",
+    "expires": 1793295005.503057,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "txsync",
+    "value": "1777743005",
+    "domain": ".toast.com",
+    "path": "/",
+    "expires": 1793295005.503075,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "IDE",
+    "value": "AHWqTUn0kEHQKIbPuLshTthxP4Y0OxvHm2aiU6pzVMS0UZ4s7953OB4DtIwJi-R-vwk",
+    "domain": ".doubleclick.net",
+    "path": "/",
+    "expires": 1812303005.58073,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_clsk",
+    "value": "ueomdz%5E1777743005652%5E1%5E0%5Eh.clarity.ms%2Fcollect",
+    "domain": ".seek.com",
+    "path": "/",
+    "expires": 1777829405,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "txpub_1570163526",
+    "value": "HDzCluPfCMrRTUbBWK9hkdeeNPnpK3gmhQmfpNk08zk_:_EXP_:_1793295006_:_EXP_:_1777743006",
+    "domain": ".nhnace.com",
+    "path": "/",
+    "expires": 1793295006.224829,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "txsync",
+    "value": "1777743006",
+    "domain": ".nhnace.com",
+    "path": "/",
+    "expires": 1793295006.224845,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
   },
   {
     "name": "SM",
@@ -1750,7 +2006,7 @@
     "value": "0",
     "domain": ".c.clarity.ms",
     "path": "/",
-    "expires": 1777398006.208571,
+    "expires": 1777743606.678831,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"

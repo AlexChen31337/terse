@@ -3,7 +3,7 @@
 ## SSH Hosts
 
 ### GPU Server
-- **Host:** `peter@10.0.0.35` (was 10.0.0.30, changed 2026-04-19) | **Key:** `~/.ssh/id_ed25519_alexchen`
+- **Host:** `peter@10.0.0.30` | **Key:** `~/.ssh/id_ed25519_alexchen`
 - **Sudo:** `peter@2025` | **GPUs:** 3090 (24GB), 3080 (10GB), 2070S (8GB) = 42GB total
 - **RAM:** 16GB + 256GB swap on /data2 | **Storage:** /data (SSD), /data2 (916GB HDD)
 - **ComfyUI:** `/data2/comfyui/ComfyUI/` port 8188, output at `/data2/comfyui/ComfyUI/output/`
@@ -48,7 +48,7 @@
   - `/data/models/qwen9b-opus-distilled-Q5_K_M.gguf` (broken tokenizer)
 - **Prompt template for thinking models:** must `<tool_call>tag after `<|im_start|>assistant\n` in prompt
 - **CUDA 12.0** installed via `nvidia-cuda-toolkit`
-- **GPU server (10.0.0.30):** RTX 3090 + 3080 + 2070S = 42GB total
+- **GPU server (10.0.0.30):** RTX 3090 + 3080 + 2070S = 42GB total (confirmed 2026-05-01)
 - **Dell XPS sudo:** `bowen@2025` (encrypted at `memory/encrypted/local-sudo.enc`)
 
 ## Knowledge Base Skill

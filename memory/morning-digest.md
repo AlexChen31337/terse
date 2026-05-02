@@ -1,4 +1,4 @@
-# ☀️ Morning Digest — Wednesday, April 29, 2026
+# ☀️ Morning Digest — Thursday, April 30, 2026
 
 ## 🚨 Urgent / Needs Immediate Attention
 
@@ -141,4 +141,4 @@
 
 ---
 📊 Total: 55 items | Actionable: 45 | Urgent: 3
-Generated: 08:32 UTC+11:00
+Generated: 08:31 UTC+11:00
